@@ -2,101 +2,355 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
+      {/* Subtle Background Pattern */}
+      <div className="fixed inset-0 opacity-30">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.3),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,119,198,0.3),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,rgba(120,198,255,0.2),transparent_50%)]"></div>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Navigation */}
+      <nav className="relative z-10 border-b border-slate-700/50 bg-slate-900/80 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-sm">AC</span>
+              </div>
+              <span className="text-xl font-semibold text-slate-100">
+                AgentsCamp
+              </span>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#agents" className="text-slate-300 hover:text-indigo-400 transition-colors duration-200">Agents</a>
+              <a href="#guides" className="text-slate-300 hover:text-indigo-400 transition-colors duration-200">Guides</a>
+              <a href="#about" className="text-slate-300 hover:text-indigo-400 transition-colors duration-200">About</a>
+              <button className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                Launch App
+              </button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative z-10 pt-32 pb-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            {/* Elegant Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-slate-600/50 rounded-full backdrop-blur-sm mb-8">
+              <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
+              <span className="text-indigo-300 font-medium text-sm">Launching Soon</span>
+            </div>
+            
+            {/* Main Headline */}
+            <h1 className="text-5xl sm:text-7xl font-bold tracking-tight mb-8 leading-tight">
+              <span className="text-slate-100">Intelligent AI</span>
+              <br />
+              <span className="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Agents
+              </span>
+              <br />
+              <span className="text-slate-100">for the Modern World</span>
+            </h1>
+            
+            {/* Subtitle */}
+            <p className="mx-auto max-w-3xl text-xl text-slate-300 mb-12 leading-relaxed">
+              AgentsCamp provides a curated collection of AI agents and comprehensive guides, helping developers and creators harness the power of artificial intelligence effectively and responsibly.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <button className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <span className="flex items-center gap-3 text-lg font-semibold text-white">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  Explore Agents
+                </span>
+              </button>
+              
+              <button className="px-8 py-4 border border-slate-600 text-slate-300 rounded-xl hover:border-indigo-500 hover:text-indigo-400 hover:bg-slate-800/50 transition-all duration-300">
+                <span className="flex items-center gap-3 text-lg font-semibold">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                  View Guides
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="relative z-10 py-20 border-t border-slate-700/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-8 border border-slate-700/50 rounded-2xl bg-slate-800/30 backdrop-blur-sm hover:border-slate-600/50 transition-all duration-300">
+              <div className="text-3xl font-bold text-indigo-400 mb-2">∞</div>
+              <div className="text-lg font-semibold text-slate-100 mb-2">Unlimited Potential</div>
+              <div className="text-slate-400">Every agent opens new possibilities</div>
+            </div>
+            <div className="text-center p-8 border border-slate-700/50 rounded-2xl bg-slate-800/30 backdrop-blur-sm hover:border-slate-600/50 transition-all duration-300">
+              <div className="text-3xl font-bold text-purple-400 mb-2">⚡</div>
+              <div className="text-lg font-semibold text-slate-100 mb-2">Lightning Fast</div>
+              <div className="text-slate-400">Deploy in seconds, not hours</div>
+            </div>
+            <div className="text-center p-8 border border-slate-700/50 rounded-2xl bg-slate-800/30 backdrop-blur-sm hover:border-slate-600/50 transition-all duration-300">
+              <div className="text-3xl font-bold text-pink-400 mb-2">🚀</div>
+              <div className="text-lg font-semibold text-slate-100 mb-2">Future Ready</div>
+              <div className="text-slate-400">Built for tomorrow&apos;s challenges</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Offer - Refined */}
+      <section className="relative z-10 py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <span className="text-slate-100">What We</span>
+              <br />
+              <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                Deliver
+              </span>
+            </h2>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+              Three core pillars that form the foundation of our AI ecosystem
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Agent Collection */}
+            <div className="group p-8 border border-slate-700/50 rounded-2xl bg-slate-800/30 backdrop-blur-sm hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-100 mb-4">Agent Collection</h3>
+              <p className="text-slate-300 mb-6 leading-relaxed">
+                A curated library of AI agents designed to solve specific problems and unlock new capabilities across various domains.
+              </p>
+              <div className="flex items-center text-indigo-400 font-medium text-sm">
+                <span>Coming Soon</span>
+                <div className="ml-2 w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
+              </div>
+            </div>
+
+            {/* Guides */}
+            <div className="group p-8 border border-slate-700/50 rounded-2xl bg-slate-800/30 backdrop-blur-sm hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-100 mb-4">Knowledge Hub</h3>
+              <p className="text-slate-300 mb-6 leading-relaxed">
+                Comprehensive guides, tutorials, and insights that help you master AI agent development and deployment.
+              </p>
+              <div className="flex items-center text-purple-400 font-medium text-sm">
+                <span>Coming Soon</span>
+                <div className="ml-2 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+              </div>
+            </div>
+
+            {/* Community */}
+            <div className="group p-8 border border-slate-700/50 rounded-2xl bg-slate-800/30 backdrop-blur-sm hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-slate-100 mb-4">Innovation Network</h3>
+              <p className="text-slate-300 mb-6 leading-relaxed">
+                Connect with fellow developers, share insights, and collaborate on the next generation of AI solutions.
+              </p>
+              <div className="flex items-center text-pink-400 font-medium text-sm">
+                <span>Coming Soon</span>
+                <div className="ml-2 w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Claude Code Agents - Refined */}
+      <section id="agents" className="relative z-10 py-20 border-t border-slate-700/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <span className="text-slate-100">Starting with</span>
+              <br />
+              <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                Claude Code
+              </span>
+            </h2>
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+              We&apos;re launching with a focused collection of specialized AI agents built on Anthropic&apos;s Claude platform, leveraging its superior reasoning and code expertise.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h3 className="text-2xl font-semibold text-slate-100 mb-8">Why Claude Code Agents Excel</h3>
+              <div className="space-y-6">
+                {[
+                  { title: "Code Generation & Review", desc: "Advanced code analysis and generation capabilities", icon: "⚡" },
+                  { title: "Software Development", desc: "Comprehensive support for development workflows", icon: "🚀" },
+                  { title: "Technical Problem Solving", desc: "Expert-level technical guidance and solutions", icon: "🧠" },
+                  { title: "Programming Education", desc: "Learn coding concepts and best practices", icon: "📚" }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-4 group">
+                    <div className="w-12 h-12 bg-slate-700/50 border border-slate-600/50 rounded-xl flex items-center justify-center text-xl group-hover:bg-slate-700/70 transition-colors duration-300">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-slate-100 mb-2">{item.title}</h4>
+                      <p className="text-slate-300 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-slate-100 mb-6 text-center">Claude&apos;s Advantages</h3>
+                <div className="space-y-4">
+                  {[
+                    { title: "Advanced Reasoning", desc: "Superior problem-solving capabilities", color: "indigo" },
+                    { title: "Code Expertise", desc: "Deep understanding of programming languages", color: "purple" },
+                    { title: "Safety Focused", desc: "Built with responsible AI principles", color: "pink" }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className={`w-6 h-6 rounded-full bg-${item.color}-500/20 border border-${item.color}-400/50 flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                        <div className={`w-2 h-2 bg-${item.color}-400 rounded-full`}></div>
+                      </div>
+                      <div>
+                        <p className="font-medium text-slate-100">{item.title}</p>
+                        <p className="text-slate-400 text-sm">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Future Vision - Refined */}
+      <section className="relative z-10 py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <span className="text-slate-100">Our</span>
+              <br />
+              <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                Roadmap
+              </span>
+            </h2>
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+              Our vision extends beyond today, building a comprehensive ecosystem for AI innovation.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: "🌐", title: "Multi-Platform", desc: "Agents for OpenAI, Google, and beyond", color: "indigo" },
+              { icon: "🎯", title: "Domain-Specific", desc: "Specialized agents for every industry", color: "purple" },
+              { icon: "⚙️", title: "Custom Creation", desc: "Build and deploy your own agents", color: "pink" },
+              { icon: "🏪", title: "Agent Market", desc: "Discover and share with the community", color: "indigo" }
+            ].map((item, index) => (
+              <div key={index} className="text-center p-6 border border-slate-700/50 rounded-2xl bg-slate-800/30 backdrop-blur-sm hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-300">
+                <div className={`w-16 h-16 bg-gradient-to-br from-${item.color}-500/20 to-${item.color}-600/20 rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                  <span className="text-2xl">{item.icon}</span>
+                </div>
+                <h3 className="font-semibold text-slate-100 mb-2">{item.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Refined */}
+      <section id="guides" className="relative z-10 py-20 border-t border-slate-700/50">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-slate-600/50 rounded-full backdrop-blur-sm mb-8">
+            <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
+            <span className="text-indigo-300 font-medium text-sm">Get Started Today</span>
+          </div>
+          
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-100 mb-6">
+            Ready to Build the
+            <br />
+            <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+              Future?
+            </span>
+          </h2>
+          
+          <p className="text-lg text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Join the growing community of developers and creators who are already building intelligent AI agents with AgentsCamp.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <button className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <span className="flex items-center gap-3 text-lg font-semibold text-white">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Join Waitlist
+              </span>
+            </button>
+            
+            <button className="px-8 py-4 border border-slate-600 text-slate-300 rounded-xl hover:border-indigo-500 hover:text-indigo-400 hover:bg-slate-800/50 transition-all duration-300">
+              <span className="flex items-center gap-3 text-lg font-semibold">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+                Learn More
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer - Refined */}
+      <footer className="relative z-10 border-t border-slate-700/50 bg-slate-900/80 backdrop-blur-sm py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-3 mb-6">
+              <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">AC</span>
+              </div>
+              <span className="text-2xl font-semibold text-slate-100">
+                AgentsCamp
+              </span>
+            </div>
+            
+            <p className="text-slate-300 mb-8 text-lg max-w-2xl mx-auto">
+              Empowering developers and creators to build, deploy, and innovate with intelligent AI agents.
+            </p>
+            
+            <div className="flex justify-center space-x-8 text-slate-400 mb-8">
+              <a href="#" className="hover:text-indigo-400 transition-colors duration-200 font-medium">About</a>
+              <a href="#" className="hover:text-indigo-400 transition-colors duration-200 font-medium">Contact</a>
+              <a href="#" className="hover:text-indigo-400 transition-colors duration-200 font-medium">Privacy</a>
+              <a href="#" className="hover:text-indigo-400 transition-colors duration-200 font-medium">Terms</a>
+            </div>
+            
+            <div className="pt-8 border-t border-slate-700/50">
+              <p className="text-slate-500 text-sm">
+                © 2025 AgentsCamp. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );
