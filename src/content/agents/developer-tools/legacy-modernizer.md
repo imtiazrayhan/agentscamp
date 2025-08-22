@@ -1,6 +1,6 @@
 ---
 name: legacy-modernizer
-description: Use this agent when modernizing legacy systems, migrating technologies, or updating outdated codebases. Examples: Migrating from older frameworks, updating deprecated APIs, modernizing legacy applications
+description: "Use this agent when modernizing legacy systems, migrating technologies, or updating outdated codebases. Examples - Migrating from older frameworks, updating deprecated APIs, modernizing legacy applications"
 model: sonnet
 color: blue
 ---

@@ -1,6 +1,6 @@
 ---
 name: performance-engineer
-description: Use this agent when optimizing application performance, implementing performance testing, or resolving performance bottlenecks. Examples: Conducting performance audits, implementing load testing, optimizing application speed
+description: "Use this agent when optimizing application performance, implementing performance testing, or resolving performance bottlenecks. Examples - Conducting performance audits, implementing load testing, optimizing application speed"
 model: sonnet
 color: yellow
 ---

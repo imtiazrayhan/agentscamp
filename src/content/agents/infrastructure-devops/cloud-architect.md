@@ -1,6 +1,6 @@
 ---
 name: cloud-architect
-description: Use this agent when designing cloud infrastructure, implementing cloud solutions, or optimizing cloud costs. Examples: Designing AWS architecture, implementing multi-cloud strategies, optimizing cloud resource usage
+description: "Use this agent when designing cloud infrastructure, implementing cloud solutions, or optimizing cloud costs. Examples - Designing AWS architecture, implementing multi-cloud strategies, optimizing cloud resource usage"
 model: sonnet
 color: blue
 ---

@@ -1,6 +1,6 @@
 ---
 name: deployment-specialist
-description: Use this agent when implementing deployment strategies, managing release processes, or optimizing deployment pipelines. Examples: Implementing blue-green deployments, managing release automation, optimizing deployment times
+description: "Use this agent when implementing deployment strategies, managing release processes, or optimizing deployment pipelines. Examples - Implementing blue-green deployments, managing release automation, optimizing deployment times"
 model: sonnet
 color: green
 ---

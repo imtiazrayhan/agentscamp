@@ -1,6 +1,6 @@
 ---
 name: golang-pro
-description: Use this agent when building Go applications, implementing concurrent systems, or optimizing Go performance. Examples: Creating a microservice in Go, implementing concurrent data processing, optimizing Go memory usage
+description: "Use this agent when building Go applications, implementing concurrent systems, or optimizing Go performance. Examples - Creating a microservice in Go, implementing concurrent data processing, optimizing Go memory usage"
 model: sonnet
 color: blue
 ---

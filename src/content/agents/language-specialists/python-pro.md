@@ -1,6 +1,6 @@
 ---
 name: python-pro
-description: Use this agent when building Python applications, implementing data science solutions, or optimizing Python performance. Examples: Creating a FastAPI web service, implementing machine learning pipelines, optimizing Python code for performance
+description: "Use this agent when building Python applications, implementing data science solutions, or optimizing Python performance. Examples - Creating a FastAPI web service, implementing machine learning pipelines, optimizing Python code for performance"
 model: sonnet
 color: yellow
 ---

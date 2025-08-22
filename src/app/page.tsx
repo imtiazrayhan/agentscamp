@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,8 +24,8 @@ export default function Home() {
               </span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#agents" className="text-slate-300 hover:text-indigo-400 transition-colors duration-200">Agents</a>
-              <a href="#about" className="text-slate-300 hover:text-indigo-400 transition-colors duration-200">About</a>
+              <Link href="/agents" className="text-slate-300 hover:text-indigo-400 transition-colors duration-200">Agents</Link>
+              <Link href="#about" className="text-slate-300 hover:text-indigo-400 transition-colors duration-200">About</Link>
             </div>
           </div>
         </div>
@@ -49,37 +50,37 @@ export default function Home() {
             
             {/* Main Headline */}
             <h1 className="text-5xl sm:text-7xl font-bold tracking-tight mb-8 leading-tight">
-              <span className="text-slate-100">Intelligent AI Agents</span>
+              <span className="text-slate-100">Claude Code Agents</span>
               <br />
               <span className="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                for the Modern World
+                for Development Excellence
               </span>
             </h1>
             
             {/* Subtitle */}
             <p className="mx-auto max-w-3xl text-xl text-slate-300 mb-12 leading-relaxed">
-              AgentsCamp provides a curated collection of AI agents designed to solve specific problems and unlock new capabilities.
+              AgentsCamp provides a comprehensive collection of Claude Code agents designed to assist with every aspect of software development.
             </p>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <Link href="/agents" className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 <span className="flex items-center gap-3 text-lg font-semibold text-white">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                   Explore Agents
                 </span>
-              </button>
+              </Link>
               
-              <button className="px-8 py-4 border border-slate-600 text-slate-300 rounded-xl hover:border-indigo-500 hover:text-indigo-400 hover:bg-slate-800/50 transition-all duration-300">
+              <Link href="#agents" className="px-8 py-4 border border-slate-600 text-slate-300 rounded-xl hover:border-indigo-500 hover:text-indigo-400 hover:bg-slate-800/50 transition-all duration-300">
                 <span className="flex items-center gap-3 text-lg font-semibold">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                   Learn More
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@ export default function Home() {
               <span className="text-slate-100">What We Deliver</span>
             </h2>
             <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              A focused collection of AI agents designed to solve specific problems
+              A focused collection of Claude Code agents designed to solve development challenges
             </p>
           </div>
           
@@ -116,9 +117,9 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-100 mb-4">Agent Collection</h3>
+                <h3 className="text-xl font-semibold text-slate-100 mb-4">Claude Code Agents</h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  A curated library of AI agents designed to solve specific problems and unlock new capabilities across various domains.
+                  A comprehensive library of Claude Code agents specialized for every aspect of software development, from frontend to infrastructure.
                 </p>
                 <div className="flex items-center text-indigo-400 font-medium text-sm">
                   <span>Coming Soon</span>
@@ -138,7 +139,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-slate-100 mb-4">Innovation Network</h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Connect with fellow developers, share insights, and collaborate on the next generation of AI solutions.
+                  Connect with fellow developers, share insights, and collaborate on Claude Code agent implementations.
                 </p>
                 <div className="flex items-center text-pink-400 font-medium text-sm">
                   <span>Coming Soon</span>
@@ -164,10 +165,10 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              <span className="text-slate-100">Starting with Claude Code</span>
+              <span className="text-slate-100">Claude Code Excellence</span>
             </h2>
             <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-              We&apos;re launching with a focused collection of specialized AI agents built on Anthropic&apos;s Claude platform.
+              Our specialized Claude Code agents are built on Anthropic&apos;s Claude platform, offering unparalleled development assistance.
             </p>
           </div>
           
@@ -236,21 +237,21 @@ export default function Home() {
         
         <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-100 mb-6">
-            <span className="text-slate-100">Ready to Explore AI Agents?</span>
+            <span className="text-slate-100">Ready to Explore Claude Code Agents?</span>
           </h2>
           
           <p className="text-lg text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Join the growing community of developers and creators who are already discovering intelligent AI agents with AgentsCamp.
+            Join the growing community of developers who are enhancing their workflow with Claude Code agents.
           </p>
           
-          <button className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          <Link href="/agents" className="inline-block px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             <span className="flex items-center gap-3 text-lg font-semibold text-white">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              Join Waitlist
+              Explore Agents
             </span>
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -271,7 +272,7 @@ export default function Home() {
             </div>
             
             <p className="text-slate-300 mb-8 text-lg max-w-2xl mx-auto">
-              Empowering developers and creators to discover and utilize intelligent AI agents.
+              Empowering developers to enhance their workflow with specialized Claude Code agents.
             </p>
             
             <div className="pt-8 border-t border-slate-700/50">

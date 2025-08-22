@@ -1,6 +1,6 @@
 ---
 name: php-laravel-developer
-description: Use this agent when building PHP Laravel applications, implementing web services, or optimizing PHP performance. Examples: Creating a Laravel API, implementing Eloquent patterns, optimizing PHP performance
+description: "Use this agent when building PHP Laravel applications, implementing web services, or optimizing PHP performance. Examples - Creating a Laravel API, implementing Eloquent patterns, optimizing PHP performance"
 model: sonnet
 color: purple
 ---

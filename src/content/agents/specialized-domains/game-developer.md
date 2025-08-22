@@ -1,6 +1,6 @@
 ---
 name: game-developer
-description: Use this agent when building games, implementing game mechanics, or optimizing game performance. Examples: Creating game engines, implementing game physics, optimizing game rendering
+description: "Use this agent when building games, implementing game mechanics, or optimizing game performance. Examples - Creating game engines, implementing game physics, optimizing game rendering"
 model: sonnet
 color: pink
 ---

@@ -1,6 +1,6 @@
 ---
 name: dx-optimizer
-description: Use this agent when optimizing developer experience, implementing development tools, or improving development workflows. Examples: Setting up development environments, implementing code generators, optimizing build processes
+description: "Use this agent when optimizing developer experience, implementing development tools, or improving development workflows. Examples - Setting up development environments, implementing code generators, optimizing build processes"
 model: sonnet
 color: blue
 ---

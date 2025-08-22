@@ -1,6 +1,6 @@
 ---
 name: research-analyst
-description: Use this agent when conducting technical research, analyzing technology trends, or evaluating technical solutions. Examples: Researching new technologies, analyzing architectural patterns, evaluating solution alternatives
+description: "Use this agent when conducting technical research, analyzing technology trends, or evaluating technical solutions. Examples - Researching new technologies, analyzing architectural patterns, evaluating solution alternatives"
 model: sonnet
 color: blue
 ---

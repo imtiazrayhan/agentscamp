@@ -1,6 +1,6 @@
 ---
 name: debugger
-description: Use this agent when troubleshooting issues, debugging complex problems, or implementing debugging strategies. Examples: Debugging production issues, implementing logging strategies, troubleshooting system problems
+description: "Use this agent when troubleshooting issues, debugging complex problems, or implementing debugging strategies. Examples - Debugging production issues, implementing logging strategies, troubleshooting system problems"
 model: sonnet
 color: orange
 ---

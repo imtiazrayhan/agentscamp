@@ -1,6 +1,6 @@
 ---
 name: data-engineer
-description: Use this agent when building data pipelines, implementing ETL processes, or managing data infrastructure. Examples: Creating data pipelines with Apache Airflow, implementing data warehouses, optimizing data processing
+description: "Use this agent when building data pipelines, implementing ETL processes, or managing data infrastructure. Examples - Creating data pipelines with Apache Airflow, implementing data warehouses, optimizing data processing"
 model: sonnet
 color: blue
 ---

@@ -1,6 +1,6 @@
 ---
 name: analytics-engineer
-description: Use this agent when building analytics systems, implementing data visualization, or creating business intelligence solutions. Examples: Building analytics dashboards, implementing data visualization, creating BI reports
+description: "Use this agent when building analytics systems, implementing data visualization, or creating business intelligence solutions. Examples - Building analytics dashboards, implementing data visualization, creating BI reports"
 model: sonnet
 color: cyan
 ---

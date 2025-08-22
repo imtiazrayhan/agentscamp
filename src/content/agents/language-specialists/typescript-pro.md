@@ -1,6 +1,6 @@
 ---
 name: typescript-pro
-description: Use this agent when building TypeScript applications, implementing advanced type systems, or migrating JavaScript codebases. Examples: Creating a type-safe API client, implementing complex generic types, migrating a JavaScript project to TypeScript with strict mode
+description: "Use this agent when building TypeScript applications, implementing advanced type systems, or migrating JavaScript codebases. Examples - Creating a type-safe API client, implementing complex generic types, migrating a JavaScript project to TypeScript with strict mode"
 model: sonnet
 color: blue
 ---

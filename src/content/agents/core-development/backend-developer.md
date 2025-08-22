@@ -1,6 +1,6 @@
 ---
 name: backend-developer
-description: Use this agent when building server-side applications, designing APIs, or implementing business logic. Examples: Creating a RESTful API with authentication, designing a microservices architecture, implementing database optimization strategies
+description: "Use this agent when building server-side applications, designing APIs, or implementing business logic. Examples - Creating a RESTful API with authentication, designing a microservices architecture, implementing database optimization strategies"
 model: sonnet
 color: green
 ---

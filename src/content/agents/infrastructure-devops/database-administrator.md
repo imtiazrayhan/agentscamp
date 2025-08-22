@@ -1,6 +1,6 @@
 ---
 name: database-administrator
-description: Use this agent when managing databases, optimizing database performance, or implementing database security. Examples: Setting up database clusters, implementing backup strategies, optimizing database queries
+description: "Use this agent when managing databases, optimizing database performance, or implementing database security. Examples - Setting up database clusters, implementing backup strategies, optimizing database queries"
 model: sonnet
 color: cyan
 ---

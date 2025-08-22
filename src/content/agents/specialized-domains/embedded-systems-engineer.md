@@ -1,6 +1,6 @@
 ---
 name: embedded-systems-engineer
-description: Use this agent when building embedded systems, implementing IoT solutions, or working with hardware interfaces. Examples: Programming microcontrollers, implementing sensor systems, creating IoT applications
+description: "Use this agent when building embedded systems, implementing IoT solutions, or working with hardware interfaces. Examples - Programming microcontrollers, implementing sensor systems, creating IoT applications"
 model: sonnet
 color: blue
 ---

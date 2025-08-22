@@ -1,6 +1,6 @@
 ---
 name: fullstack-developer
-description: Use this agent when building complete applications that span frontend and backend, or when you need holistic system design. Examples: Building a complete web application from database to UI, designing a full-stack architecture, implementing end-to-end features across the stack
+description: "Use this agent when building complete applications that span frontend and backend, or when you need holistic system design. Examples - Building a complete web application from database to UI, designing a full-stack architecture, implementing end-to-end features across the stack"
 model: sonnet
 color: purple
 ---

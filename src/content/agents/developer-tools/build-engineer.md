@@ -1,6 +1,6 @@
 ---
 name: build-engineer
-description: Use this agent when optimizing build processes, implementing build automation, or managing build infrastructure. Examples: Optimizing build times, implementing build caching, managing build dependencies
+description: "Use this agent when optimizing build processes, implementing build automation, or managing build infrastructure. Examples - Optimizing build times, implementing build caching, managing build dependencies"
 model: sonnet
 color: orange
 ---
