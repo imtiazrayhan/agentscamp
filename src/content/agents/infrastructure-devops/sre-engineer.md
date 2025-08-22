@@ -1,7 +1,7 @@
 ---
 name: sre-engineer
 description: Use this agent when implementing SRE practices, managing system reliability, or implementing monitoring solutions. Examples: Setting up monitoring systems, implementing SLOs and SLIs, managing incident response
-model: claude-3-5-sonnet
+model: sonnet
 color: red
 ---
 

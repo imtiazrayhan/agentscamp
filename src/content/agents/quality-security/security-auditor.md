@@ -1,7 +1,7 @@
 ---
 name: security-auditor
 description: Use this agent when implementing security measures, conducting security audits, or implementing secure coding practices. Examples: Conducting security code reviews, implementing authentication systems, identifying security vulnerabilities
-model: claude-3-5-sonnet
+model: sonnet
 color: red
 ---
 

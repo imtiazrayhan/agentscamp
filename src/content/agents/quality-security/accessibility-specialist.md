@@ -1,7 +1,7 @@
 ---
 name: accessibility-specialist
 description: Use this agent when implementing accessibility features, ensuring WCAG compliance, or creating inclusive user experiences. Examples: Implementing ARIA labels, ensuring keyboard navigation, testing with screen readers
-model: claude-3-5-sonnet
+model: sonnet
 color: purple
 ---
 

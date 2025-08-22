@@ -1,7 +1,7 @@
 ---
 name: database-optimizer
 description: Use this agent when optimizing database performance, implementing query optimization, or managing database scaling. Examples: Optimizing database queries, implementing indexing strategies, managing database performance
-model: claude-3-5-sonnet
+model: sonnet
 color: teal
 ---
 

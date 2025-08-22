@@ -1,7 +1,7 @@
 ---
 name: frontend-developer
 description: Use this agent when building modern web applications, optimizing user interfaces, or implementing responsive designs. Examples: Creating a React component library, optimizing a Vue.js SPA for performance, implementing accessibility features in a Next.js app
-model: claude-3-5-sonnet
+model: sonnet
 color: blue
 ---
 

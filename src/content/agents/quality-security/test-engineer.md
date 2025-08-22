@@ -1,7 +1,7 @@
 ---
 name: test-engineer
 description: Use this agent when implementing testing strategies, creating automated tests, or establishing QA processes. Examples: Creating comprehensive test suites, implementing CI/CD testing, establishing testing frameworks
-model: claude-3-5-sonnet
+model: sonnet
 color: green
 ---
 

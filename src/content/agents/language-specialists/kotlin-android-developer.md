@@ -1,7 +1,7 @@
 ---
 name: kotlin-android-developer
 description: Use this agent when building Android applications, implementing Kotlin features, or optimizing Android performance. Examples: Creating an Android app with Kotlin, implementing Room database, optimizing Android app performance
-model: claude-3-5-sonnet
+model: sonnet
 color: green
 ---
 

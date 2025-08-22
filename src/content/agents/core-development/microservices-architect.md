@@ -1,7 +1,7 @@
 ---
 name: microservices-architect
 description: Use this agent when designing microservices architectures, implementing service communication, or managing distributed systems. Examples: Breaking down a monolith into microservices, implementing service mesh patterns, designing event-driven architectures
-model: claude-3-5-sonnet
+model: sonnet
 color: cyan
 ---
 

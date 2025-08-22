@@ -1,7 +1,7 @@
 ---
 name: swift-ios-developer
 description: Use this agent when building iOS applications, implementing Swift features, or optimizing iOS performance. Examples: Creating an iOS app with SwiftUI, implementing Core Data, optimizing iOS app performance
-model: claude-3-5-sonnet
+model: sonnet
 color: orange
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: javascript-pro
 description: Use this agent when building JavaScript applications, implementing modern ES6+ features, or optimizing JavaScript performance. Examples: Creating a Node.js API, implementing modern frontend features, optimizing JavaScript bundles
-model: claude-3-5-sonnet
+model: sonnet
 color: amber
 ---
 

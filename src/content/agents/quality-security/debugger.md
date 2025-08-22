@@ -1,7 +1,7 @@
 ---
 name: debugger
 description: Use this agent when troubleshooting issues, debugging complex problems, or implementing debugging strategies. Examples: Debugging production issues, implementing logging strategies, troubleshooting system problems
-model: claude-3-5-sonnet
+model: sonnet
 color: orange
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: embedded-systems-engineer
 description: Use this agent when building embedded systems, implementing IoT solutions, or working with hardware interfaces. Examples: Programming microcontrollers, implementing sensor systems, creating IoT applications
-model: claude-3-5-sonnet
+model: sonnet
 color: gray
 ---
 

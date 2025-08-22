@@ -1,7 +1,7 @@
 ---
 name: java-architect
 description: Use this agent when building Java applications, implementing enterprise patterns, or optimizing JVM performance. Examples: Creating a Spring Boot application, implementing design patterns, optimizing JVM memory usage
-model: claude-3-5-sonnet
+model: sonnet
 color: red
 ---
 

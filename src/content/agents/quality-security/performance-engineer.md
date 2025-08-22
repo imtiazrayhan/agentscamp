@@ -1,7 +1,7 @@
 ---
 name: performance-engineer
 description: Use this agent when optimizing application performance, implementing performance testing, or resolving performance bottlenecks. Examples: Conducting performance audits, implementing load testing, optimizing application speed
-model: claude-3-5-sonnet
+model: sonnet
 color: yellow
 ---
 

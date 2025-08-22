@@ -1,7 +1,7 @@
 ---
 name: kubernetes-specialist
 description: Use this agent when managing Kubernetes clusters, implementing container orchestration, or optimizing Kubernetes performance. Examples: Setting up Kubernetes clusters, implementing Helm charts, optimizing pod resource usage
-model: claude-3-5-sonnet
+model: sonnet
 color: blue
 ---
 

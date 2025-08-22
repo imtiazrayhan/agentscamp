@@ -1,7 +1,7 @@
 ---
 name: algorithm-specialist
 description: Use this agent when implementing complex algorithms, optimizing performance, or solving algorithmic challenges. Examples: Implementing sorting algorithms, optimizing database queries, solving algorithmic problems
-model: claude-3-5-sonnet
+model: sonnet
 color: emerald
 ---
 

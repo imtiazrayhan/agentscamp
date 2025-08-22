@@ -1,7 +1,7 @@
 ---
 name: context-manager
 description: Use this agent when managing complex system contexts, implementing state management, or coordinating multi-system interactions. Examples: Implementing context-aware systems, managing application state, coordinating microservices
-model: claude-3-5-sonnet
+model: sonnet
 color: indigo
 ---
 

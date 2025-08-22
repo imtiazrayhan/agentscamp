@@ -1,7 +1,7 @@
 ---
 name: legacy-modernizer
 description: Use this agent when modernizing legacy systems, migrating technologies, or updating outdated codebases. Examples: Migrating from older frameworks, updating deprecated APIs, modernizing legacy applications
-model: claude-3-5-sonnet
+model: sonnet
 color: gray
 ---
 

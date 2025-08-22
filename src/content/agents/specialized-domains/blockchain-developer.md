@@ -1,7 +1,7 @@
 ---
 name: blockchain-developer
 description: Use this agent when building blockchain applications, implementing smart contracts, or working with Web3 technologies. Examples: Creating smart contracts, building DApps, implementing blockchain integrations
-model: claude-3-5-sonnet
+model: sonnet
 color: yellow
 ---
 

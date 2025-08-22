@@ -1,7 +1,7 @@
 ---
 name: sql-database-expert
 description: Use this agent when designing databases, optimizing SQL queries, or implementing database solutions. Examples: Designing a normalized database schema, optimizing complex SQL queries, implementing database migrations
-model: claude-3-5-sonnet
+model: sonnet
 color: teal
 ---
 

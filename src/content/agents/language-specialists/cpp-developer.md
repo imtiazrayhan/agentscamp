@@ -1,7 +1,7 @@
 ---
 name: cpp-developer
 description: Use this agent when building C++ applications, implementing systems programming, or optimizing C++ performance. Examples: Creating a high-performance library, implementing data structures, optimizing C++ memory usage
-model: claude-3-5-sonnet
+model: sonnet
 color: blue
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: ai-application-developer
 description: Use this agent when building AI applications, implementing LLM solutions, or creating RAG systems. Examples: Building chatbots with LLMs, implementing RAG for document search, creating AI-powered applications
-model: claude-3-5-sonnet
+model: sonnet
 color: indigo
 ---
 

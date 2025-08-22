@@ -1,7 +1,7 @@
 ---
 name: rust-engineer
 description: Use this agent when building Rust applications, implementing systems programming, or optimizing Rust performance. Examples: Creating a CLI tool in Rust, implementing memory-safe data structures, optimizing Rust compilation
-model: claude-3-5-sonnet
+model: sonnet
 color: orange
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: csharp-developer
 description: Use this agent when building C# applications, implementing .NET solutions, or optimizing C# performance. Examples: Creating an ASP.NET Core API, implementing design patterns, optimizing .NET performance
-model: claude-3-5-sonnet
+model: sonnet
 color: purple
 ---
 

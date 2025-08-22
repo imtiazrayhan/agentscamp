@@ -1,7 +1,7 @@
 ---
 name: database-administrator
 description: Use this agent when managing databases, optimizing database performance, or implementing database security. Examples: Setting up database clusters, implementing backup strategies, optimizing database queries
-model: claude-3-5-sonnet
+model: sonnet
 color: teal
 ---
 

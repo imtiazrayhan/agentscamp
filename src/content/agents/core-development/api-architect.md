@@ -1,7 +1,7 @@
 ---
 name: api-architect
 description: Use this agent when designing APIs, implementing GraphQL schemas, or creating API documentation. Examples: Designing a RESTful API with OpenAPI specs, implementing GraphQL resolvers, creating comprehensive API documentation
-model: claude-3-5-sonnet
+model: sonnet
 color: teal
 ---
 

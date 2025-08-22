@@ -1,7 +1,7 @@
 ---
 name: fintech-developer
 description: Use this agent when building financial applications, implementing payment systems, or working with financial data. Examples: Creating payment processing systems, implementing financial APIs, building trading platforms
-model: claude-3-5-sonnet
+model: sonnet
 color: green
 ---
 

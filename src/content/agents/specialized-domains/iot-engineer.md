@@ -1,7 +1,7 @@
 ---
 name: iot-engineer
 description: Use this agent when building IoT applications, implementing sensor networks, or working with connected devices. Examples: Creating IoT platforms, implementing sensor data processing, building device management systems
-model: claude-3-5-sonnet
+model: sonnet
 color: blue
 ---
 
