@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { Agent, getAgentsByFilter } from '@/lib/agents';
 
 export default function AgentsPage() {
-  const [agents, setAgents] = useState<Agent[]>([]);
   const [filteredAgents, setFilteredAgents] = useState<Agent[]>([]);
   const [activeFilter, setActiveFilter] = useState('all');
   const [loading, setLoading] = useState(true);
@@ -15,7 +14,6 @@ export default function AgentsPage() {
     const loadAgents = async () => {
       try {
         const allAgents = await getAgentsByFilter('all');
-        setAgents(allAgents);
         setFilteredAgents(allAgents);
         setLoading(false);
       } catch (error) {
@@ -164,9 +162,12 @@ export default function AgentsPage() {
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <div className={`w-3 h-3 rounded-full ${getColorClasses(agent.color)}`}></div>
-                  <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
+                  <Link
+                    href={`/agents/${agent.category}/${agent.slug}`}
+                    className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors hover:text-blue-400"
+                  >
                     {agent.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                  </h3>
+                  </Link>
                 </div>
                 {getModelBadge(agent.model)}
               </div>
@@ -191,9 +192,12 @@ export default function AgentsPage() {
                 <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">
                   Use Agent
                 </button>
-                <button className="px-4 py-2 border border-slate-600 text-slate-300 hover:border-slate-500 hover:text-white text-sm rounded-lg transition-colors">
+                <Link
+                  href={`/agents/${agent.category}/${agent.slug}`}
+                  className="px-4 py-2 border border-slate-600 text-slate-300 hover:border-slate-500 hover:text-white text-sm rounded-lg transition-colors hover:bg-slate-700"
+                >
                   Details
-                </button>
+                </Link>
               </div>
             </div>
           ))}
