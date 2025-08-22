@@ -1,6 +1,6 @@
 ---
 name: system-architect
-description: Use this agent when designing large-scale systems, planning system architecture, or implementing enterprise solutions. Examples: Designing a high-traffic web application, planning a multi-tenant SaaS architecture, implementing enterprise integration patterns
+description: "Use this agent when designing large-scale systems, planning system architecture, or implementing enterprise solutions. Examples - Designing a high-traffic web application, planning a multi-tenant SaaS architecture, implementing enterprise integration patterns"
 model: sonnet
 color: purple
 ---

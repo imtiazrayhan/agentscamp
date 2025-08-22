@@ -2,36 +2,59 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Agent, getAgentsByFilter } from '@/lib/agents';
+
+interface Agent {
+  name: string;
+  description: string;
+  model: 'haiku' | 'sonnet' | 'opus';
+  color: 'red' | 'blue' | 'green' | 'yellow' | 'purple' | 'orange' | 'pink' | 'cyan';
+  category: string;
+  slug: string;
+}
+
+interface CategoryData {
+  name: string;
+  slug: string;
+  agents: Agent[];
+  count: number;
+}
+
+interface ApiResponse {
+  categories: CategoryData[];
+  agents: Agent[];
+  total: number;
+}
 
 export default function AgentsPage() {
+  const [data, setData] = useState<ApiResponse | null>(null);
+  const [activeCategory, setActiveCategory] = useState('all');
   const [filteredAgents, setFilteredAgents] = useState<Agent[]>([]);
-  const [activeFilter, setActiveFilter] = useState('all');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Load agents on component mount
-    const loadAgents = async () => {
+    async function loadAgents() {
       try {
-        const allAgents = await getAgentsByFilter('all');
-        setFilteredAgents(allAgents);
+        const response = await fetch('/api/agents');
+        const result: ApiResponse = await response.json();
+        setData(result);
+        setFilteredAgents(result.agents);
         setLoading(false);
       } catch (error) {
         console.error('Error loading agents:', error);
         setLoading(false);
       }
-    };
+    }
 
     loadAgents();
   }, []);
 
-  const handleFilterChange = async (filter: string) => {
-    setActiveFilter(filter);
-    try {
-      const filtered = await getAgentsByFilter(filter);
-      setFilteredAgents(filtered);
-    } catch (error) {
-      console.error('Error filtering agents:', error);
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+    if (category === 'all') {
+      setFilteredAgents(data?.agents || []);
+    } else {
+      const categoryAgents = data?.categories.find(c => c.slug === category)?.agents || [];
+      setFilteredAgents(categoryAgents);
     }
   };
 
@@ -59,10 +82,24 @@ export default function AgentsPage() {
     return <span className={modelInfo.classes}>{modelInfo.label}</span>;
   };
 
+  const formatAgentName = (name: string) => {
+    return name.split('-').map(word => {
+      // Keep API and AI in all caps
+      if (word.toUpperCase() === 'API' || word.toUpperCase() === 'AI') {
+        return word.toUpperCase();
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+  };
+
+  const formatCategoryName = (name: string) => {
+    return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        <div className="container mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
             <p className="text-slate-400 mt-4">Loading agents...</p>
@@ -76,7 +113,7 @@ export default function AgentsPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Navigation */}
       <nav className="border-b border-slate-700 bg-slate-800/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
+        <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               AgentsCamp
@@ -94,137 +131,92 @@ export default function AgentsPage() {
       </nav>
 
       {/* Page Header */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-            AI Agents Collection
+          <h1 className="text-4xl font-bold text-white mb-4">
+            Claude Code Agents Collection
           </h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Discover our comprehensive collection of specialized AI agents designed to help with every aspect of software development
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+            Explore our specialized Claude Code agents organized by category
           </p>
         </div>
 
-        {/* Filter Bar */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-          <button
-            onClick={() => handleFilterChange('all')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all ${
-              activeFilter === 'all'
-                ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/25'
-                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
-            }`}
-          >
-            All Agents
-          </button>
-          <button
-            onClick={() => handleFilterChange('code-agents')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all ${
-              activeFilter === 'code-agents'
-                ? 'bg-green-500 text-white shadow-lg shadow-green-500/25'
-                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
-            }`}
-          >
-            Code Agents
-          </button>
-          <button
-            onClick={() => handleFilterChange('writing-agents')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all ${
-              activeFilter === 'writing-agents'
-                ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/25'
-                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
-            }`}
-          >
-            Writing Agents
-          </button>
-          <button
-            onClick={() => handleFilterChange('analysis-agents')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all ${
-              activeFilter === 'analysis-agents'
-                ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/25'
-                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
-            }`}
-          >
-            Analysis Agents
-          </button>
-          <div className="text-slate-400 text-sm">
-            {filteredAgents.length} agents available
+        {/* Category Tabs */}
+        <div className="mb-8">
+          <div className="flex flex-wrap gap-2 justify-center">
+            <button
+              onClick={() => handleCategoryChange('all')}
+              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                activeCategory === 'all'
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+              }`}
+            >
+              All ({data?.total || 0})
+            </button>
+            {data?.categories.map((category) => (
+              <button
+                key={category.slug}
+                onClick={() => handleCategoryChange(category.slug)}
+                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                  activeCategory === category.slug
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                }`}
+              >
+                {category.name} ({category.count})
+              </button>
+            ))}
           </div>
         </div>
 
         {/* Agents Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           {filteredAgents.map((agent) => (
-            <div
+            <Link
               key={`${agent.category}-${agent.slug}`}
-              className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 hover:border-slate-600 transition-all hover:shadow-xl hover:shadow-slate-900/20 group"
+              href={`/agents/${agent.category}/${agent.slug}`}
+              className="block bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-5 hover:border-slate-600 transition-all hover:shadow-lg hover:shadow-slate-900/20 group"
             >
               {/* Agent Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  <div className={`w-3 h-3 rounded-full ${getColorClasses(agent.color)}`}></div>
-                  <Link
-                    href={`/agents/${agent.category}/${agent.slug}`}
-                    className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors hover:text-blue-400"
-                  >
-                    {agent.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                  </Link>
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex items-center space-x-2">
+                  <div className={`w-2.5 h-2.5 rounded-full ${getColorClasses(agent.color)}`}></div>
+                  <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
+                    {formatAgentName(agent.name)}
+                  </h3>
                 </div>
                 {getModelBadge(agent.model)}
               </div>
 
               {/* Agent Description */}
-              <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+              <p className="text-slate-300 text-sm mb-3 leading-relaxed line-clamp-2">
                 {agent.description}
               </p>
 
               {/* Agent Category */}
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs text-slate-400 bg-slate-700 px-2 py-1 rounded">
-                  {agent.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                </span>
-                <span className="text-xs text-slate-500">
-                  {agent.model.toUpperCase()}
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-slate-400 bg-slate-700/50 px-2 py-1 rounded">
+                  {formatCategoryName(agent.category)}
                 </span>
               </div>
-
-              {/* Action Buttons */}
-              <div className="flex space-x-3">
-                <button className="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">
-                  Use Agent
-                </button>
-                <Link
-                  href={`/agents/${agent.category}/${agent.slug}`}
-                  className="px-4 py-2 border border-slate-600 text-slate-300 hover:border-slate-500 hover:text-white text-sm rounded-lg transition-colors hover:bg-slate-700"
-                >
-                  Details
-                </Link>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
-
-        {/* Load More Button */}
-        {filteredAgents.length > 0 && (
-          <div className="text-center">
-            <button className="bg-slate-700 hover:bg-slate-600 text-white font-medium py-3 px-8 rounded-lg transition-colors">
-              Load More Agents
-            </button>
-          </div>
-        )}
 
         {/* Empty State */}
         {filteredAgents.length === 0 && !loading && (
           <div className="text-center py-12">
             <div className="text-6xl mb-4">🤖</div>
             <h3 className="text-xl font-semibold text-slate-300 mb-2">No agents found</h3>
-            <p className="text-slate-400">Try adjusting your filters or check back later.</p>
+            <p className="text-slate-400">Try selecting a different category.</p>
           </div>
         )}
       </div>
 
       {/* Footer */}
       <footer className="border-t border-slate-700 bg-slate-800/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="text-center text-slate-400">
             <p>&copy; 2024 AgentsCamp. All rights reserved.</p>
           </div>

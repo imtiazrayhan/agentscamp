@@ -1,6 +1,6 @@
 ---
 name: network-engineer
-description: Use this agent when designing networks, implementing network security, or troubleshooting network issues. Examples: Designing network architecture, implementing VPN solutions, troubleshooting connectivity issues
+description: "Use this agent when designing networks, implementing network security, or troubleshooting network issues. Examples - Designing network architecture, implementing VPN solutions, troubleshooting connectivity issues"
 model: sonnet
 color: blue
 ---

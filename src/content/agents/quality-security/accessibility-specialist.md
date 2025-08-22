@@ -1,6 +1,6 @@
 ---
 name: accessibility-specialist
-description: Use this agent when implementing accessibility features, ensuring WCAG compliance, or creating inclusive user experiences. Examples: Implementing ARIA labels, ensuring keyboard navigation, testing with screen readers
+description: "Use this agent when implementing accessibility features, ensuring WCAG compliance, or creating inclusive user experiences. Examples - Implementing ARIA labels, ensuring keyboard navigation, testing with screen readers"
 model: sonnet
 color: purple
 ---

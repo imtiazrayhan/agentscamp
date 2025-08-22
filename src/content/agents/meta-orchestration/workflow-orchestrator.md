@@ -1,6 +1,6 @@
 ---
 name: workflow-orchestrator
-description: Use this agent when designing complex workflows, implementing business process automation, or managing multi-step processes. Examples: Creating workflow engines, implementing business process automation, managing complex system interactions
+description: "Use this agent when designing complex workflows, implementing business process automation, or managing multi-step processes. Examples - Creating workflow engines, implementing business process automation, managing complex system interactions"
 model: sonnet
 color: purple
 ---

@@ -50,12 +50,12 @@ export const agentsData: Agent[] = [
     slug: 'mobile-developer'
   },
   {
-    name: 'api-architect',
+    name: 'API-architect',
     description: 'Use this agent when designing APIs, implementing GraphQL schemas, or creating API documentation. Examples: Designing a RESTful API with OpenAPI specs, implementing GraphQL resolvers, creating comprehensive API documentation',
     model: 'sonnet',
     color: 'cyan',
     category: 'core-development',
-    slug: 'api-architect'
+    slug: 'API-architect'
   },
   {
     name: 'microservices-architect',
@@ -330,12 +330,12 @@ export const agentsData: Agent[] = [
     slug: 'ml-engineer'
   },
   {
-    name: 'ai-application-developer',
+    name: 'AI-application-developer',
     description: 'Use this agent when building AI applications, implementing LLM solutions, or creating RAG systems. Examples: Building chatbots with LLMs, implementing RAG for document search, creating AI-powered applications',
     model: 'sonnet',
     color: 'blue',
     category: 'data-ai',
-    slug: 'ai-application-developer'
+    slug: 'AI-application-developer'
   },
   {
     name: 'database-optimizer',

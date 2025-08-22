@@ -1,6 +1,6 @@
 ---
 name: refactoring-specialist
-description: Use this agent when refactoring code, improving code quality, or restructuring codebases. Examples: Refactoring complex functions, improving code organization, restructuring large codebases
+description: "Use this agent when refactoring code, improving code quality, or restructuring codebases. Examples - Refactoring complex functions, improving code organization, restructuring large codebases"
 model: sonnet
 color: green
 ---

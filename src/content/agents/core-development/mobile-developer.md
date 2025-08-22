@@ -1,6 +1,6 @@
 ---
 name: mobile-developer
-description: Use this agent when building mobile applications, optimizing mobile performance, or implementing mobile-specific features. Examples: Creating a React Native app with offline capabilities, optimizing a Flutter app for performance, implementing push notifications in a native iOS app
+description: "Use this agent when building mobile applications, optimizing mobile performance, or implementing mobile-specific features. Examples - Creating a React Native app with offline capabilities, optimizing a Flutter app for performance, implementing push notifications in a native iOS app"
 model: sonnet
 color: blue
 ---

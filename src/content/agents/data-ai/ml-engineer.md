@@ -1,6 +1,6 @@
 ---
 name: ml-engineer
-description: Use this agent when implementing machine learning systems, managing ML infrastructure, or deploying ML models. Examples: Building ML pipelines, implementing MLOps practices, deploying models to production
+description: "Use this agent when implementing machine learning systems, managing ML infrastructure, or deploying ML models. Examples - Building ML pipelines, implementing MLOps practices, deploying models to production"
 model: sonnet
 color: purple
 ---

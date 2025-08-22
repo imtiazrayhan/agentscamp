@@ -1,6 +1,6 @@
 ---
 name: data-scientist
-description: Use this agent when implementing data analysis, building machine learning models, or conducting statistical analysis. Examples: Implementing predictive models, conducting exploratory data analysis, building recommendation systems
+description: "Use this agent when implementing data analysis, building machine learning models, or conducting statistical analysis. Examples - Implementing predictive models, conducting exploratory data analysis, building recommendation systems"
 model: sonnet
 color: green
 ---

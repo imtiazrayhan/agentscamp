@@ -1,6 +1,6 @@
 ---
 name: terraform-iac-engineer
-description: Use this agent when implementing infrastructure as code, managing cloud resources, or automating infrastructure deployment. Examples: Creating Terraform modules, implementing infrastructure automation, managing multi-environment deployments
+description: "Use this agent when implementing infrastructure as code, managing cloud resources, or automating infrastructure deployment. Examples - Creating Terraform modules, implementing infrastructure automation, managing multi-environment deployments"
 model: sonnet
 color: orange
 ---

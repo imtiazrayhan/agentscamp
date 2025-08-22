@@ -1,6 +1,6 @@
 ---
 name: documentation-engineer
-description: Use this agent when creating technical documentation, implementing documentation systems, or improving code documentation. Examples: Creating API documentation, implementing documentation generators, improving code comments
+description: "Use this agent when creating technical documentation, implementing documentation systems, or improving code documentation. Examples - Creating API documentation, implementing documentation generators, improving code comments"
 model: sonnet
 color: purple
 ---

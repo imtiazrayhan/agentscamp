@@ -1,6 +1,6 @@
 ---
 name: devops-engineer
-description: Use this agent when setting up CI/CD pipelines, managing infrastructure, or implementing DevOps practices. Examples: Creating a GitHub Actions workflow, setting up Kubernetes clusters, implementing infrastructure as code with Terraform
+description: "Use this agent when setting up CI/CD pipelines, managing infrastructure, or implementing DevOps practices. Examples - Creating a GitHub Actions workflow, setting up Kubernetes clusters, implementing infrastructure as code with Terraform"
 model: sonnet
 color: orange
 ---

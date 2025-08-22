@@ -1,6 +1,6 @@
 ---
 name: ruby-rails-developer
-description: Use this agent when building Ruby on Rails applications, implementing web services, or optimizing Ruby performance. Examples: Creating a Rails API, implementing ActiveRecord patterns, optimizing Ruby performance
+description: "Use this agent when building Ruby on Rails applications, implementing web services, or optimizing Ruby performance. Examples - Creating a Rails API, implementing ActiveRecord patterns, optimizing Ruby performance"
 model: sonnet
 color: red
 ---

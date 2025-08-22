@@ -1,6 +1,6 @@
 ---
 name: code-reviewer
-description: Use this agent when reviewing code, implementing code quality standards, or establishing development practices. Examples: Conducting thorough code reviews, implementing code quality gates, establishing coding standards
+description: "Use this agent when reviewing code, implementing code quality standards, or establishing development practices. Examples - Conducting thorough code reviews, implementing code quality gates, establishing coding standards"
 model: sonnet
 color: blue
 ---
