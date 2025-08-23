@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 interface Agent {
@@ -26,7 +26,7 @@ interface ApiResponse {
   total: number;
 }
 
-export default function AgentsPage() {
+function AgentsContent() {
   const searchParams = useSearchParams();
   const [data, setData] = useState<ApiResponse | null>(null);
   const [activeCategory, setActiveCategory] = useState('all');
@@ -308,5 +308,22 @@ export default function AgentsPage() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function AgentsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="max-w-6xl mx-auto px-6 py-8">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
+            <p className="text-slate-400 mt-4">Loading agents...</p>
+          </div>
+        </div>
+      </div>
+    }>
+      <AgentsContent />
+    </Suspense>
   );
 }

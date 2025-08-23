@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://agentscamp.com'),
   title: "Claude Code Agents - 60+ AI Development Assistants | AgentsCamp",
   description: "Discover 60+ specialized Claude Code agents for software development. Expert AI assistants for frontend, backend, DevOps, testing, and more. Start coding smarter with Claude Code agents today.",
   keywords: "Claude Code agents, AI development assistants, Claude AI programming, Anthropic Claude coding, AI code generation, Claude development tools, AI pair programming, Claude Code IDE",
