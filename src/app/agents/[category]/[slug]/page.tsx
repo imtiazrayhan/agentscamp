@@ -70,26 +70,7 @@ export default function AgentPage({ params }: AgentPageProps) {
     return colorMap[color] || 'bg-gray-500 text-white';
   };
 
-  const getModelInfo = (model: string) => {
-    const modelMap: Record<string, { label: string; description: string; classes: string }> = {
-      haiku: { 
-        label: 'Fast', 
-        description: 'Fast and cost-effective for simple tasks',
-        classes: 'bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full' 
-      },
-      sonnet: { 
-        label: 'Balanced', 
-        description: 'Balanced performance for most development work',
-        classes: 'bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full' 
-      },
-      opus: { 
-        label: 'Powerful', 
-        description: 'Most capable for complex analysis and critical tasks',
-        classes: 'bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full' 
-      }
-    };
-    return modelMap[model] || { label: model, description: 'AI model', classes: 'bg-gray-100 text-gray-800 text-sm px-3 py-1 rounded-full' };
-  };
+
 
   const formatAgentName = (name: string) => {
     return name.split('-').map(word => {
