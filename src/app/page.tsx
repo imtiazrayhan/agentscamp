@@ -12,20 +12,22 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-10 border-b border-slate-700/50 bg-slate-900/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-sm">AC</span>
-              </div>
-              <span className="text-xl font-semibold text-slate-100">
-                AgentsCamp
-              </span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/agents" className="text-slate-300 hover:text-indigo-400 transition-colors duration-200">Agents</Link>
-              <Link href="#about" className="text-slate-300 hover:text-indigo-400 transition-colors duration-200">About</Link>
+      <nav className="relative z-10 border-b border-slate-700 bg-slate-800/50 backdrop-blur-sm sticky top-0">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              AgentsCamp
+            </Link>
+            <div className="flex items-center space-x-8">
+              <Link href="/" className="text-white font-medium">
+                Home
+              </Link>
+              <Link href="/agents" className="text-slate-300 hover:text-white transition-colors">
+                Agents
+              </Link>
+              <Link href="/how-to-use" className="text-slate-300 hover:text-white transition-colors">
+                How To Use
+              </Link>
             </div>
           </div>
         </div>
@@ -42,11 +44,7 @@ export default function Home() {
         
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            {/* Elegant Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-slate-600/50 rounded-full backdrop-blur-sm mb-8">
-              <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
-              <span className="text-indigo-300 font-medium text-sm">Launching Soon</span>
-            </div>
+
             
             {/* Main Headline */}
             <h1 className="text-5xl sm:text-7xl font-bold tracking-tight mb-8 leading-tight">
@@ -73,7 +71,7 @@ export default function Home() {
                 </span>
               </Link>
               
-              <Link href="#agents" className="px-8 py-4 border border-slate-600 text-slate-300 rounded-xl hover:border-indigo-500 hover:text-indigo-400 hover:bg-slate-800/50 transition-all duration-300">
+              <Link href="/how-to-use" className="px-8 py-4 border border-slate-600 text-slate-300 rounded-xl hover:border-indigo-500 hover:text-indigo-400 hover:bg-slate-800/50 transition-all duration-300">
                 <span className="flex items-center gap-3 text-lg font-semibold">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -86,70 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What We Offer - Enhanced */}
-      <section className="relative z-10 py-20">
-        {/* Section Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-800/30 to-slate-900/30"></div>
-        
-        {/* Decorative Elements */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-10 left-1/4 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-10 right-1/4 w-40 h-40 bg-purple-500/5 rounded-full blur-2xl"></div>
-        </div>
-        
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              <span className="text-slate-100">What We Deliver</span>
-            </h2>
-            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              A focused collection of Claude Code agents designed to solve development challenges
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Agent Collection */}
-            <div className="group p-8 border border-slate-700/50 rounded-2xl bg-slate-800/30 backdrop-blur-sm hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-300 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative">
-                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-slate-100 mb-4">Claude Code Agents</h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  A comprehensive library of Claude Code agents specialized for every aspect of software development, from frontend to infrastructure.
-                </p>
-                <div className="flex items-center text-indigo-400 font-medium text-sm">
-                  <span>Coming Soon</span>
-                  <div className="ml-2 w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Community */}
-            <div className="group p-8 border border-slate-700/50 rounded-2xl bg-slate-800/30 backdrop-blur-sm hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-300 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative">
-                <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-slate-100 mb-4">Innovation Network</h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  Connect with fellow developers, share insights, and collaborate on Claude Code agent implementations.
-                </p>
-                <div className="flex items-center text-pink-400 font-medium text-sm">
-                  <span>Coming Soon</span>
-                  <div className="ml-2 w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Claude Code Agents - Enhanced */}
       <section id="agents" className="relative z-10 py-20">
