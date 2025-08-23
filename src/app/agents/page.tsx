@@ -111,15 +111,6 @@ function AgentsContent() {
     return colorMap[color] || 'bg-gray-500 text-white';
   };
 
-  const getModelBadge = (model: string) => {
-    const modelMap: Record<string, { label: string; classes: string }> = {
-      haiku: { label: 'Fast', classes: 'bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full' },
-      sonnet: { label: 'Balanced', classes: 'bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full' },
-      opus: { label: 'Powerful', classes: 'bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full' }
-    };
-    const modelInfo = modelMap[model] || { label: model, classes: 'bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full' };
-    return <span className={modelInfo.classes}>{modelInfo.label}</span>;
-  };
 
   const formatAgentName = (name: string) => {
     return name.split('-').map(word => {
@@ -249,14 +240,11 @@ function AgentsContent() {
               className="block bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-5 hover:border-slate-600 transition-all hover:shadow-lg hover:shadow-slate-900/20 group"
             >
               {/* Agent Header */}
-              <div className="flex items-start justify-between mb-3">
-                <div className="flex items-center space-x-2">
-                  <div className={`w-2.5 h-2.5 rounded-full ${getColorClasses(agent.color)}`}></div>
-                  <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
-                    {formatAgentName(agent.name)}
-                  </h3>
-                </div>
-                {getModelBadge(agent.model)}
+              <div className="flex items-center space-x-2 mb-3">
+                <div className={`w-2.5 h-2.5 rounded-full ${getColorClasses(agent.color)}`}></div>
+                <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
+                  {formatAgentName(agent.name)}
+                </h3>
               </div>
 
               {/* Agent Description */}
