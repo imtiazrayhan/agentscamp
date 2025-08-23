@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 interface Agent {
   name: string;
@@ -26,6 +27,7 @@ interface ApiResponse {
 }
 
 export default function AgentsPage() {
+  const searchParams = useSearchParams();
   const [data, setData] = useState<ApiResponse | null>(null);
   const [activeCategory, setActiveCategory] = useState('all');
   const [filteredAgents, setFilteredAgents] = useState<Agent[]>([]);
@@ -38,7 +40,17 @@ export default function AgentsPage() {
         const response = await fetch('/api/agents');
         const result: ApiResponse = await response.json();
         setData(result);
-        setFilteredAgents(result.agents);
+        
+        // Check if there's a category query parameter
+        const categoryParam = searchParams.get('category');
+        if (categoryParam && result.categories.some(c => c.slug === categoryParam)) {
+          setActiveCategory(categoryParam);
+          const categoryAgents = result.categories.find(c => c.slug === categoryParam)?.agents || [];
+          setFilteredAgents(categoryAgents);
+        } else {
+          setFilteredAgents(result.agents);
+        }
+        
         setLoading(false);
       } catch (error) {
         console.error('Error loading agents:', error);
@@ -47,7 +59,7 @@ export default function AgentsPage() {
     }
 
     loadAgents();
-  }, []);
+  }, [searchParams]);
 
   const filterAgentsBySearch = (agents: Agent[], query: string) => {
     if (!query.trim()) return agents;

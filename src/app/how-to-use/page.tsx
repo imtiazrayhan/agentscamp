@@ -166,14 +166,14 @@ export default function HowToUsePage() {
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3">What are Claude Code Agents?</h3>
                   <p className="text-slate-300 mb-4">
-                    Claude Code agents are specialized AI assistants built on Anthropic's Claude platform. Each agent is fine-tuned for specific development tasks, 
+                    Claude Code agents are specialized AI assistants built on Anthropic&apos;s Claude platform. Each agent is fine-tuned for specific development tasks, 
                     from frontend development to infrastructure management, providing expert-level assistance in their domain.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3">How They Work</h3>
                   <p className="text-slate-300 mb-4">
-                    Each agent combines Claude's advanced reasoning capabilities with specialized prompts and configurations tailored to specific development needs. 
+                    Each agent combines Claude&apos;s advanced reasoning capabilities with specialized prompts and configurations tailored to specific development needs. 
                     Simply select an agent that matches your task, and interact with it using natural language.
                   </p>
                 </div>
@@ -182,7 +182,7 @@ export default function HowToUsePage() {
                   <ul className="list-disc list-inside space-y-2 text-slate-300">
                     <li>Access to Claude Code platform</li>
                     <li>Clear understanding of your development task</li>
-                    <li>Basic knowledge of the technology domain you're working in</li>
+                    <li>Basic knowledge of the technology domain you&apos;re working in</li>
                   </ul>
                 </div>
               </div>
@@ -198,7 +198,7 @@ export default function HowToUsePage() {
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-3">Adding Agents to Your Workflow</h3>
                   <p className="text-slate-300 mb-4">
-                    Claude Code provides multiple ways to add and use specialized agents in your development workflow. Here's how to get started:
+                    Claude Code provides multiple ways to add and use specialized agents in your development workflow. Here&apos;s how to get started:
                   </p>
                 </div>
                 
@@ -224,10 +224,10 @@ export default function HowToUsePage() {
                       For programmatic agent invocation, use the Task tool in your prompts:
                     </p>
                     <div className="bg-slate-800/50 rounded p-3 font-mono text-xs mb-3">
-                      <span className="text-slate-400">// Example: Invoking a code review agent</span><br />
-                      <span className="text-green-300">"Use the code-reviewer agent to analyze the changes in my pull request"</span><br /><br />
-                      <span className="text-slate-400">// Example: Invoking multiple agents</span><br />
-                      <span className="text-green-300">"First use the security-auditor agent to check for vulnerabilities, then use the performance-engineer agent to optimize"</span>
+                      <span className="text-slate-400">{`// Example: Invoking a code review agent`}</span><br />
+                      <span className="text-green-300">&quot;Use the code-reviewer agent to analyze the changes in my pull request&quot;</span><br /><br />
+                      <span className="text-slate-400">{`// Example: Invoking multiple agents`}</span><br />
+                      <span className="text-green-300">&quot;First use the security-auditor agent to check for vulnerabilities, then use the performance-engineer agent to optimize&quot;</span>
                     </div>
                     <button
                       onClick={() => handleCopy("Use the code-reviewer agent to analyze my recent changes", "task-example")}
