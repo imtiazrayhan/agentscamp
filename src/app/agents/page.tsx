@@ -30,6 +30,7 @@ export default function AgentsPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [filteredAgents, setFilteredAgents] = useState<Agent[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     async function loadAgents() {
@@ -48,14 +49,40 @@ export default function AgentsPage() {
     loadAgents();
   }, []);
 
+  const filterAgentsBySearch = (agents: Agent[], query: string) => {
+    if (!query.trim()) return agents;
+    
+    const lowerQuery = query.toLowerCase();
+    return agents.filter(agent => 
+      agent.name.toLowerCase().includes(lowerQuery) ||
+      agent.description.toLowerCase().includes(lowerQuery) ||
+      agent.category.toLowerCase().includes(lowerQuery) ||
+      formatAgentName(agent.name).toLowerCase().includes(lowerQuery)
+    );
+  };
+
+  const applyFilters = (category: string, search: string) => {
+    let agents = data?.agents || [];
+    
+    // Apply category filter
+    if (category !== 'all') {
+      agents = data?.categories.find(c => c.slug === category)?.agents || [];
+    }
+    
+    // Apply search filter
+    agents = filterAgentsBySearch(agents, search);
+    
+    setFilteredAgents(agents);
+  };
+
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
-    if (category === 'all') {
-      setFilteredAgents(data?.agents || []);
-    } else {
-      const categoryAgents = data?.categories.find(c => c.slug === category)?.agents || [];
-      setFilteredAgents(categoryAgents);
-    }
+    applyFilters(category, searchQuery);
+  };
+
+  const handleSearchChange = (query: string) => {
+    setSearchQuery(query);
+    applyFilters(activeCategory, query);
   };
 
   const getColorClasses = (color: string) => {
@@ -112,18 +139,21 @@ export default function AgentsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Navigation */}
-      <nav className="border-b border-slate-700 bg-slate-800/50 backdrop-blur-sm">
+      <nav className="border-b border-slate-700 bg-slate-800/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               AgentsCamp
             </Link>
-            <div className="flex space-x-6">
+            <div className="flex items-center space-x-8">
               <Link href="/" className="text-slate-300 hover:text-white transition-colors">
                 Home
               </Link>
-              <Link href="/agents" className="text-blue-400 font-medium">
+              <Link href="/agents" className="text-white font-medium">
                 Agents
+              </Link>
+              <Link href="/how-to-use" className="text-slate-300 hover:text-white transition-colors">
+                How To Use
               </Link>
             </div>
           </div>
@@ -139,6 +169,34 @@ export default function AgentsPage() {
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Explore our specialized Claude Code agents organized by category
           </p>
+        </div>
+
+        {/* Search Bar */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => handleSearchChange(e.target.value)}
+              placeholder="Search agents by name or description..."
+              className="block w-full pl-10 pr-10 py-3 border border-slate-700 rounded-lg bg-slate-800/50 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => handleSearchChange('')}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center"
+              >
+                <svg className="h-5 w-5 text-slate-400 hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Category Tabs */}
@@ -207,8 +265,23 @@ export default function AgentsPage() {
         {/* Empty State */}
         {filteredAgents.length === 0 && !loading && (
           <div className="text-center py-12">
-            <div className="text-6xl mb-4">🤖</div>
-            <h3 className="text-xl font-semibold text-slate-300 mb-2">No agents found</h3>
+            <div className="text-6xl mb-4">🔍</div>
+            <h3 className="text-xl font-semibold text-slate-300 mb-2">
+              {searchQuery ? 'No agents match your search' : 'No agents found'}
+            </h3>
+            {searchQuery && (
+              <div>
+                <p className="text-slate-400 mb-4">
+                  Try adjusting your search terms or browse all agents
+                </p>
+                <button
+                  onClick={() => handleSearchChange('')}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                >
+                  Clear Search
+                </button>
+              </div>
+            )}
             <p className="text-slate-400">Try selecting a different category.</p>
           </div>
         )}

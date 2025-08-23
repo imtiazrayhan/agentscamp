@@ -177,18 +177,21 @@ export default function AgentPage({ params }: AgentPageProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Navigation */}
-      <nav className="border-b border-slate-700 bg-slate-800/50 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto px-6 py-4">
+      <nav className="border-b border-slate-700 bg-slate-800/50 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
               AgentsCamp
             </Link>
-            <div className="flex space-x-6">
+            <div className="flex items-center space-x-8">
               <Link href="/" className="text-slate-300 hover:text-white transition-colors">
                 Home
               </Link>
-              <Link href="/agents" className="text-blue-400 font-medium">
+              <Link href="/agents" className="text-slate-300 hover:text-white transition-colors">
                 Agents
+              </Link>
+              <Link href="/how-to-use" className="text-slate-300 hover:text-white transition-colors">
+                How To Use
               </Link>
             </div>
           </div>
