@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import PromoHeader, { useScrollDirection } from '@/components/PromoHeader';
 
 interface Agent {
   name: string;
@@ -28,6 +29,7 @@ interface ApiResponse {
 
 function AgentsContent() {
   const searchParams = useSearchParams();
+  const { showPromo } = useScrollDirection();
   const [data, setData] = useState<ApiResponse | null>(null);
   const [activeCategory, setActiveCategory] = useState('all');
   const [filteredAgents, setFilteredAgents] = useState<Agent[]>([]);
@@ -50,10 +52,9 @@ function AgentsContent() {
         } else {
           setFilteredAgents(result.agents);
         }
-        
-        setLoading(false);
       } catch (error) {
         console.error('Error loading agents:', error);
+      } finally {
         setLoading(false);
       }
     }
@@ -99,16 +100,16 @@ function AgentsContent() {
 
   const getColorClasses = (color: string) => {
     const colorMap: Record<string, string> = {
-      red: 'bg-red-500 text-white',
-      blue: 'bg-blue-500 text-white',
-      green: 'bg-green-500 text-white',
-      yellow: 'bg-yellow-500 text-black',
-      purple: 'bg-purple-500 text-white',
-      orange: 'bg-orange-500 text-white',
-      pink: 'bg-pink-500 text-white',
-      cyan: 'bg-cyan-500 text-white'
+      red: 'bg-red-500',
+      blue: 'bg-[#4ECDC4]',
+      green: 'bg-green-500',
+      yellow: 'bg-[#FFE66D]',
+      purple: 'bg-purple-500',
+      orange: 'bg-[#FF6B35]',
+      pink: 'bg-pink-500',
+      cyan: 'bg-[#95E1D3]'
     };
-    return colorMap[color] || 'bg-gray-500 text-white';
+    return colorMap[color] || 'bg-gray-500';
   };
 
 
@@ -128,11 +129,11 @@ function AgentsContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="min-h-screen bg-[#FAFAF9]">
         <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-            <p className="text-slate-400 mt-4">Loading agents...</p>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FF6B35] mx-auto"></div>
+            <p className="text-gray-600 mt-4">Loading agents...</p>
           </div>
         </div>
       </div>
@@ -140,22 +141,31 @@ function AgentsContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-[#FAFAF9]">
+      {/* Promotional Header */}
+      <PromoHeader isVisible={showPromo} />
+      
+      {/* Subtle Grid Pattern Background */}
+      <div className="fixed inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 grid-pattern"></div>
+      </div>
+
       {/* Navigation */}
-      <nav className="border-b border-slate-700 bg-slate-800/50 backdrop-blur-sm sticky top-0 z-50">
+      <nav className={`relative z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 transition-opacity duration-300 ${showPromo ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <Link href="/" className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+              <span className="w-8 h-8 bg-[#FF6B35] rounded-lg flex items-center justify-center text-white text-sm font-bold">A</span>
               AgentsCamp
             </Link>
             <div className="flex items-center space-x-8">
-              <Link href="/" className="text-slate-300 hover:text-white transition-colors">
+              <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Home
               </Link>
-              <Link href="/agents" className="text-white font-medium">
+              <Link href="/agents" className="text-gray-900 font-medium border-b-2 border-[#FF6B35] pb-1">
                 Agents
               </Link>
-              <Link href="/how-to-use" className="text-slate-300 hover:text-white transition-colors">
+              <Link href="/how-to-use" className="text-gray-600 hover:text-gray-900 transition-colors">
                 How To Use
               </Link>
             </div>
@@ -164,21 +174,26 @@ function AgentsContent() {
       </nav>
 
       {/* Page Header */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            Claude Code Agents Collection
-          </h1>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-            Explore our specialized Claude Code agents organized by category
-          </p>
+      <div className="relative bg-white border-b border-gray-200">
+        <div className="absolute inset-0 dot-pattern opacity-[0.02]"></div>
+        <div className="relative max-w-6xl mx-auto px-6 py-12">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Claude Code Agents Collection
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Explore our specialized Claude Code agents organized by category
+            </p>
+          </div>
         </div>
+      </div>
 
+      <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Search Bar */}
         <div className="max-w-2xl mx-auto mb-8">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
@@ -187,14 +202,14 @@ function AgentsContent() {
               value={searchQuery}
               onChange={(e) => handleSearchChange(e.target.value)}
               placeholder="Search agents by name or description..."
-              className="block w-full pl-10 pr-10 py-3 border border-slate-700 rounded-lg bg-slate-800/50 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent transition-all"
             />
             {searchQuery && (
               <button
                 onClick={() => handleSearchChange('')}
                 className="absolute inset-y-0 right-0 pr-3 flex items-center"
               >
-                <svg className="h-5 w-5 text-slate-400 hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 text-gray-400 hover:text-gray-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -209,8 +224,8 @@ function AgentsContent() {
               onClick={() => handleCategoryChange('all')}
               className={`px-4 py-2 rounded-lg font-medium transition-all ${
                 activeCategory === 'all'
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                  ? 'bg-[#FF6B35] text-white'
+                  : 'bg-white border border-gray-300 text-gray-700 hover:border-[#FF6B35] hover:text-[#FF6B35]'
               }`}
             >
               All ({data?.total || 0})
@@ -221,8 +236,8 @@ function AgentsContent() {
                 onClick={() => handleCategoryChange(category.slug)}
                 className={`px-4 py-2 rounded-lg font-medium transition-all ${
                   activeCategory === category.slug
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    ? 'bg-[#FF6B35] text-white'
+                    : 'bg-white border border-gray-300 text-gray-700 hover:border-[#FF6B35] hover:text-[#FF6B35]'
                 }`}
               >
                 {category.name} ({category.count})
@@ -231,70 +246,63 @@ function AgentsContent() {
           </div>
         </div>
 
+        {/* Results Count */}
+        {searchQuery && (
+          <div className="mb-6 text-center">
+            <p className="text-gray-600">
+              Found <span className="font-semibold text-gray-900">{filteredAgents.length}</span> agents
+              {searchQuery && <span> matching "{searchQuery}"</span>}
+            </p>
+          </div>
+        )}
+
         {/* Agents Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {filteredAgents.map((agent) => (
             <Link
               key={`${agent.category}-${agent.slug}`}
               href={`/agents/${agent.category}/${agent.slug}`}
-              className="block bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-5 hover:border-slate-600 transition-all hover:shadow-lg hover:shadow-slate-900/20 group"
+              className="group block bg-white rounded-lg border-2 border-gray-200 hover:border-[#4ECDC4] p-5 transition-all hover:shadow-lg"
             >
               {/* Agent Header */}
-              <div className="flex items-center space-x-2 mb-3">
-                <div className={`w-2.5 h-2.5 rounded-full ${getColorClasses(agent.color)}`}></div>
-                <h3 className="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#FF6B35] transition-colors">
                   {formatAgentName(agent.name)}
                 </h3>
+                <div className={`w-3 h-3 rounded-full ${getColorClasses(agent.color)} flex-shrink-0 mt-1.5`}></div>
               </div>
 
               {/* Agent Description */}
-              <p className="text-slate-300 text-sm mb-3 leading-relaxed line-clamp-2">
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
                 {agent.description}
               </p>
 
-              {/* Agent Category */}
+              {/* Agent Footer */}
               <div className="flex items-center justify-between">
-                <span className="text-xs text-slate-400 bg-slate-700/50 px-2 py-1 rounded">
+                <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
                   {formatCategoryName(agent.category)}
+                </span>
+                <span className="text-[#FF6B35] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  View →
                 </span>
               </div>
             </Link>
           ))}
         </div>
 
-        {/* Empty State */}
-        {filteredAgents.length === 0 && !loading && (
+        {/* No Results */}
+        {filteredAgents.length === 0 && (
           <div className="text-center py-12">
-            <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-slate-300 mb-2">
-              {searchQuery ? 'No agents match your search' : 'No agents found'}
-            </h3>
-            {searchQuery && (
-              <div>
-                <p className="text-slate-400 mb-4">
-                  Try adjusting your search terms or browse all agents
-                </p>
-                <button
-                  onClick={() => handleSearchChange('')}
-                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-                >
-                  Clear Search
-                </button>
-              </div>
-            )}
-            <p className="text-slate-400">Try selecting a different category.</p>
+            <div className="text-gray-400 mb-4">
+              <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">No agents found</h3>
+            <p className="text-gray-600">Try adjusting your search or filter criteria</p>
           </div>
         )}
       </div>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-700 bg-slate-800/50 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-6 py-8">
-          <div className="text-center text-slate-400">
-            <p>&copy; 2024 AgentsCamp. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
@@ -302,11 +310,11 @@ function AgentsContent() {
 export default function AgentsPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="min-h-screen bg-[#FAFAF9]">
         <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-            <p className="text-slate-400 mt-4">Loading agents...</p>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FF6B35] mx-auto"></div>
+            <p className="text-gray-600 mt-4">Loading agents...</p>
           </div>
         </div>
       </div>
