@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/search",
     "/how-to-use",
+    "/feed.xml",
     ...contentTypeList.map((d) => d.basePath),
   ];
 

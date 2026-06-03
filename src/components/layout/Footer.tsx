@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Search, BookOpen, Map as SitemapIcon } from "lucide-react";
+import { Search, BookOpen, Map as SitemapIcon, Rss } from "lucide-react";
 import { contentTypeList } from "@/lib/content/registry";
 import { getCountsByType } from "@/lib/content";
 import { Logo } from "@/components/brand/Logo";
@@ -32,6 +32,13 @@ const resources = [
     label: "Sitemap",
     cmd: "cat sitemap.xml",
     icon: SitemapIcon,
+    external: true,
+  },
+  {
+    href: "/feed.xml",
+    label: "RSS feed",
+    cmd: "curl feed.xml",
+    icon: Rss,
     external: true,
   },
 ] as const;
