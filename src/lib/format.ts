@@ -26,12 +26,14 @@ const ACRONYMS: Record<string, string> = {
   json: "JSON",
   yaml: "YAML",
   oauth: "OAuth",
+  openapi: "OpenAPI",
   graphql: "GraphQL",
   iot: "IoT",
   devops: "DevOps",
   js: "JS",
   ts: "TS",
   pr: "PR",
+  prs: "PRs",
 };
 
 export function titleCaseLabel(slug: string): string {
