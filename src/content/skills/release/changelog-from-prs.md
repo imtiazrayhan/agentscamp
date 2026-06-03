@@ -1,6 +1,7 @@
 ---
 name: "changelog-from-prs"
 description: "Draft a release changelog by summarizing merged pull requests since the last tag. Use when preparing a release or writing release notes."
+date: 2026-06-03
 version: "1.0.0"
 color: "cyan"
 topics: ["workflow-prompting"]

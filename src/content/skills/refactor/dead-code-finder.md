@@ -1,6 +1,7 @@
 ---
 name: "dead-code-finder"
 description: "Find genuinely unused code — unreferenced exports, unreachable files, and unused dependencies — and remove it safely with build/test verification. Use when trimming a codebase or untangling years of accreted cruft."
+date: 2026-06-03
 allowed-tools: "Read, Grep, Glob, Bash"
 user-invocable: true
 version: "1.0.0"

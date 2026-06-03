@@ -1,5 +1,6 @@
 ---
 description: "Scaffold a new UI component matching the project conventions."
+date: 2026-06-03
 argument-hint: "<ComponentName> [props]"
 allowed-tools: "Read, Grep, Glob, Write, Edit"
 title: "New Component"

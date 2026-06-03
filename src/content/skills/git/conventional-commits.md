@@ -1,6 +1,7 @@
 ---
 name: "conventional-commits"
 description: "Generate clear Conventional Commits messages from staged changes. Use when committing code and you want a well-structured, consistent commit message."
+date: 2026-06-03
 allowed-tools: "Bash"
 user-invocable: true
 version: "1.0.0"

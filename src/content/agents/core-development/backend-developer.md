@@ -1,6 +1,7 @@
 ---
 name: "backend-developer"
 description: "Use this agent to build server-side features — endpoints, business logic, data access, background jobs. Examples — a new REST/GraphQL endpoint, a queue worker, a database integration."
+date: 2025-08-22
 model: "sonnet"
 color: "green"
 topics: ["coding-languages"]

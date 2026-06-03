@@ -1,6 +1,7 @@
 ---
 name: "sql-optimizer"
 description: "Diagnose a slow SQL query from its execution plan and propose a verified optimization — finding the real bottleneck (sequential scan, missing or unused index, bad join order, app-side N+1) and measuring the fix before and after. Use when a query is slow and you need a fix backed by EXPLAIN ANALYZE, not a guess."
+date: 2026-06-03
 allowed-tools: "Read, Grep, Glob, Bash"
 user-invocable: true
 version: "1.0.0"

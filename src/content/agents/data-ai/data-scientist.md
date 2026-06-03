@@ -1,6 +1,7 @@
 ---
 name: "data-scientist"
 description: "Use this agent for data analysis — exploration, statistics, SQL, and clear findings. Examples — analyzing a dataset, writing an analytical SQL query, summarizing experiment results."
+date: 2025-08-22
 model: "sonnet"
 color: "purple"
 topics: ["data-ml"]

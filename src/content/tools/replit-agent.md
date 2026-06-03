@@ -1,6 +1,7 @@
 ---
 name: "Replit Agent"
 description: "Replit's AI agent that builds, runs, and deploys full-stack apps from a prompt inside the Replit cloud IDE."
+date: 2026-06-03
 url: "https://replit.com"
 pricing: "freemium"
 category: "platform"

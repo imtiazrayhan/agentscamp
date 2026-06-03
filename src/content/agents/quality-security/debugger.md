@@ -1,6 +1,7 @@
 ---
 name: "debugger"
 description: "Use this agent to diagnose failing tests, runtime errors, or unexpected behavior by forming and testing hypotheses. Examples — a stack trace to root-cause, a flaky test, a \"works locally but not in CI\" bug."
+date: 2025-08-22
 model: "sonnet"
 color: "red"
 topics: ["review-qa"]

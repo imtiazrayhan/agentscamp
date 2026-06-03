@@ -1,6 +1,7 @@
 ---
 name: "Goose"
 description: "Block's open-source, on-machine AI agent that is MCP-native and model-agnostic, with a CLI and desktop app."
+date: 2026-06-03
 url: "https://goose-docs.ai/"
 pricing: "open-source"
 category: "agent"

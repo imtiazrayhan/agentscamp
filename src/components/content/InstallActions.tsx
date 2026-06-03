@@ -1,52 +1,26 @@
 "use client";
 
-import { Download, ExternalLink, Github } from "lucide-react";
+import { Download, ExternalLink, FileText, Github } from "lucide-react";
 import type { ContentItem } from "@/lib/content/types";
 import { contentTypes } from "@/lib/content/registry";
+import { buildArtifact, artifactFilename } from "@/lib/seo/artifact";
 import { CopyButton } from "./CopyButton";
 import { Button } from "@/components/ui/button";
 
-function yamlLine(key: string, value?: string | string[]) {
-  if (value == null) return null;
-  const v = Array.isArray(value) ? value.join(", ") : value;
-  if (!v) return null;
-  return `${key}: ${JSON.stringify(v)}`;
-}
-
-/** Reconstruct the install-ready artifact file (site-only keys stripped). */
-function buildFile(item: ContentItem): string | null {
-  const lines: (string | null)[] = ["---"];
-  if (item.type === "agent") {
-    lines.push(
-      yamlLine("name", item.slug),
-      yamlLine("description", item.description),
-      `model: ${item.model}`,
-      item.color ? `color: ${item.color}` : null,
-      yamlLine("tools", item.tools),
-    );
-  } else if (item.type === "skill") {
-    lines.push(
-      yamlLine("name", item.slug),
-      yamlLine("description", item.description),
-      yamlLine("allowed-tools", item.allowedTools),
-      item.version ? `version: ${item.version}` : null,
-    );
-  } else if (item.type === "command") {
-    lines.push(
-      yamlLine("description", item.description),
-      item.argumentHint ? yamlLine("argument-hint", item.argumentHint) : null,
-      yamlLine("allowed-tools", item.allowedTools),
-      item.model ? `model: ${item.model}` : null,
-    );
-  } else {
-    return null;
-  }
-  lines.push("---", "", item.body ?? "");
-  return lines.filter((l) => l !== null).join("\n");
-}
-
 function downloadHref(content: string) {
   return `data:text/markdown;charset=utf-8,${encodeURIComponent(content)}`;
+}
+
+/** "View as Markdown" — the page's clean .md twin, handy for humans and LLMs/agents. */
+function MarkdownLink({ item }: { item: ContentItem }) {
+  return (
+    <a
+      href={`${item.href}.md`}
+      className="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground hover:text-foreground"
+    >
+      <FileText className="size-3.5" /> View as Markdown
+    </a>
+  );
 }
 
 export function InstallActions({ item }: { item: ContentItem }) {
@@ -54,29 +28,33 @@ export function InstallActions({ item }: { item: ContentItem }) {
 
   if (item.type === "tool") {
     return (
-      <div className="flex flex-wrap gap-2">
-        <Button asChild>
-          <a href={item.url} target="_blank" rel="noopener noreferrer">
-            Visit website <ExternalLink className="size-4" />
-          </a>
-        </Button>
-        {item.repo && (
-          <Button asChild variant="outline">
-            <a href={item.repo} target="_blank" rel="noopener noreferrer">
-              <Github className="size-4" /> Source
+      <div className="space-y-3">
+        <div className="flex flex-wrap gap-2">
+          <Button asChild>
+            <a href={item.url} target="_blank" rel="noopener noreferrer">
+              Visit website <ExternalLink className="size-4" />
             </a>
           </Button>
-        )}
+          {item.repo && (
+            <Button asChild variant="outline">
+              <a href={item.repo} target="_blank" rel="noopener noreferrer">
+                <Github className="size-4" /> Source
+              </a>
+            </Button>
+          )}
+        </div>
+        <MarkdownLink item={item} />
       </div>
     );
   }
 
-  if (item.type === "guide") return null;
+  if (item.type === "guide") {
+    return <MarkdownLink item={item} />;
+  }
 
-  const file = buildFile(item);
+  const file = buildArtifact(item);
   if (!file) return null;
-  const filename =
-    item.type === "skill" ? `${item.slug}/SKILL.md` : `${item.slug}.md`;
+  const filename = artifactFilename(item);
 
   return (
     <div className="space-y-3">
@@ -92,6 +70,7 @@ export function InstallActions({ item }: { item: ContentItem }) {
             <Download className="size-4" /> Download
           </a>
         </Button>
+        <MarkdownLink item={item} />
       </div>
       {def.installPath && (
         <p className="text-xs text-muted-foreground">

@@ -1,6 +1,7 @@
 ---
 name: "Amp"
 description: "Sourcegraph's agentic coding tool — a CLI and editor extensions tuned for frontier-model coding."
+date: 2026-06-03
 url: "https://ampcode.com"
 pricing: "freemium"
 category: "agent"

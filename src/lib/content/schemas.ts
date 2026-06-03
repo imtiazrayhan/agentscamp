@@ -37,7 +37,25 @@ export const pricingEnum = z.enum([
 // Accept a comma string OR a YAML array for tool lists (both are valid on disk).
 const toolList = z.union([z.string(), z.array(z.string())]);
 
-// Site-only fields shared by every content type.
+// A single answer-first / FAQ entry (AEO). Rendered visibly AND marked up, so
+// there is never hidden-only structured data (a manual-action risk).
+export const faqEntry = z.object({ q: z.string(), a: z.string() });
+// A single procedural step (HowTo, AEO). Likewise rendered + marked up.
+export const howtoStep = z.object({ name: z.string(), text: z.string() });
+
+export const osEnum = z.enum([
+  "Web",
+  "macOS",
+  "Windows",
+  "Linux",
+  "iOS",
+  "Android",
+]);
+
+// Site-only fields shared by every content type. Everything is optional /
+// defaulted so all existing files keep validating; new SEO/AEO/GEO keys are
+// ignored by Claude Code when an artifact is installed (and stripped from the
+// copy-paste artifact by buildArtifact), so files stay installable.
 const siteFields = {
   topics: z.array(z.string()).default([]),
   tags: z.array(z.string()).default([]),
@@ -45,6 +63,15 @@ const siteFields = {
   related: z.array(z.string()).default([]),
   date: z.coerce.date().optional(),
   updated: z.coerce.date().optional(),
+
+  // --- SEO/AEO/GEO additions (optional escape hatches; templates cover the rest) ---
+  seoTitle: z.string().max(70).optional(), // override the <title> (template still appends brand)
+  seoDescription: z.string().max(160).optional(), // override the meta/OG description
+  keywords: z.array(z.string()).default([]), // feeds JSON-LD keywords ONLY (never <meta keywords>)
+  image: z.string().optional(), // custom OG image path (else one is generated)
+  summary: z.string().max(400).optional(), // answer-first lead: visible <p> AND JSON-LD abstract AND llms.txt
+  keyTakeaways: z.array(z.string()).max(7).default([]),
+  faq: z.array(faqEntry).default([]),
 };
 
 export const agentFrontmatter = z
@@ -82,6 +109,7 @@ export const guideFrontmatter = z
     description: z.string(),
     author: z.string().optional(),
     color: claudeColor.optional(),
+    howtoSteps: z.array(howtoStep).default([]), // procedural guides -> HowTo (AEO)
     ...siteFields,
   })
   .strict();
@@ -95,6 +123,11 @@ export const toolFrontmatter = z
     category: z.string(),
     logo: z.string().optional(),
     repo: z.string().url().optional(),
+    // Type-specific, truthful structured-data fields (entity/AEO, not rich-result bait).
+    os: z.array(osEnum).default([]), // SoftwareApplication.operatingSystem
+    alternativeTo: z.array(z.string()).default([]), // powers /tools/[slug]/alternatives + "X alternative" intent
+    license: z.string().optional(), // CreativeWork.license (e.g. "Apache-2.0")
+    sameAs: z.array(z.string().url()).default([]), // authoritative profiles for the tool
     color: claudeColor.optional(),
     title: z.string().optional(),
     ...siteFields,

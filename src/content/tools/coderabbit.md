@@ -1,6 +1,7 @@
 ---
 name: "CodeRabbit"
 description: "An AI code reviewer that posts line-by-line feedback and summaries on every pull request."
+date: 2026-06-03
 url: "https://www.coderabbit.ai"
 pricing: "freemium"
 category: "review"

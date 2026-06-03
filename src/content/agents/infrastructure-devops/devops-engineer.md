@@ -1,6 +1,7 @@
 ---
 name: "devops-engineer"
 description: "Use this agent for CI/CD, infrastructure, and automation. Examples — writing a CI pipeline, containerizing an app, infrastructure-as-code changes."
+date: 2025-08-22
 model: "sonnet"
 color: "orange"
 topics: ["devops-infra"]

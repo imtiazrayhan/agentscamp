@@ -1,6 +1,7 @@
 ---
 name: "documentation-engineer"
 description: "Use this agent to write and maintain technical docs that stay true to the code — READMEs, how-to guides, API references, and runbooks. Examples — updating a stale README after a refactor, documenting a new public API from its signatures, writing an on-call runbook for a service."
+date: 2025-08-22
 model: "sonnet"
 color: "green"
 tools: "Read, Grep, Glob, Edit, Write, Bash"

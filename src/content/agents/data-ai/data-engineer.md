@@ -1,6 +1,7 @@
 ---
 name: "data-engineer"
 description: "Use this agent to build and maintain data pipelines — ingestion, ELT/ETL, warehouse modeling, orchestration, and data-quality tests. Examples — building an idempotent ingestion job, modeling a fact/dimension table in dbt, writing a safe backfill for a changed schema."
+date: 2025-08-22
 model: "sonnet"
 color: "cyan"
 tools: "Read, Grep, Glob, Edit, Write, Bash"

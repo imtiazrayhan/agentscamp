@@ -1,6 +1,7 @@
 ---
 name: "performance-engineer"
 description: "Use this agent to profile and optimize performance — latency, throughput, memory, bundle size. Examples — a slow endpoint, an N+1 query, a heavy render, a large JS bundle."
+date: 2025-08-22
 model: "opus"
 color: "orange"
 topics: ["review-qa"]

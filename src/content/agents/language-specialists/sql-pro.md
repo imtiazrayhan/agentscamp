@@ -1,6 +1,7 @@
 ---
 name: "sql-pro"
 description: "Use this agent for SQL itself — correct joins and window functions, indexing, EXPLAIN plans, schema design, and safe migrations on Postgres/MySQL. Examples — making a slow query fast, designing a normalized schema, writing a reversible migration."
+date: 2026-06-03
 model: "sonnet"
 color: "blue"
 tools: "Read, Grep, Glob, Edit, Write, Bash"

@@ -73,6 +73,21 @@ export function getCategories(
     .sort((a, b) => b.count - a.count);
 }
 
+/** All content tagged with a given cross-type topic slug (newest-ish order kept stable). */
+export function getByTopic(topic: string): ContentItem[] {
+  return getAllContent().filter((i) => i.topics.includes(topic));
+}
+
+/** Most recent ISO date across a set of items (for landing-page lastmod). */
+export function latestDate(items: ContentItem[]): string | undefined {
+  let max: string | undefined;
+  for (const i of items) {
+    const d = i.updated ?? i.date;
+    if (d && (!max || d > max)) max = d;
+  }
+  return max;
+}
+
 /** Resolve an item's `related` slug refs into real items, both directions. */
 export function getRelated(item: ContentItem): ContentItem[] {
   const all = getAllContent();

@@ -1,6 +1,7 @@
 ---
 name: "bundle-analyzer"
 description: "Analyze a JS/TS production bundle and surface the biggest size wins — heavy dependencies, duplicate packages, missing code-splitting, oversized polyfills, and dev/server code leaking into the client. Use when a bundle is too large and you need a ranked, actionable reduction plan."
+date: 2026-06-03
 allowed-tools: "Read, Grep, Glob, Bash"
 user-invocable: true
 version: "1.0.0"

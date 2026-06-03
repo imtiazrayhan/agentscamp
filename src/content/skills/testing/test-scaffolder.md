@@ -1,6 +1,7 @@
 ---
 name: "test-scaffolder"
 description: "Scaffold a test file with sensible cases for a given module or function. Use when adding tests to untested code and you want a fast, structured starting point."
+date: 2026-06-03
 user-invocable: true
 version: "1.0.0"
 color: "cyan"

@@ -1,5 +1,6 @@
 ---
 description: "Decompose a task into an ordered checklist of small, verifiable steps."
+date: 2026-06-03
 argument-hint: "<task>"
 allowed-tools: "Read, Grep, Glob"
 title: "Breakdown Task"

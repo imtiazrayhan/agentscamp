@@ -1,6 +1,7 @@
 ---
 name: "mobile-developer"
 description: "Use this agent to build cross-platform mobile apps with React Native + Expo — screens, navigation, native modules, and shipping via EAS. Examples — adding a tab-based navigation flow, fixing a janky FlatList, shipping a build to TestFlight with EAS."
+date: 2025-08-22
 model: "sonnet"
 color: "blue"
 topics: ["coding-languages"]

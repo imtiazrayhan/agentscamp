@@ -1,6 +1,7 @@
 ---
 name: "test-engineer"
 description: "Use this agent to write and improve automated tests — unit, integration, and edge cases. Examples — adding coverage to an untested module, writing regression tests for a bug, designing a test plan."
+date: 2025-08-22
 model: "sonnet"
 color: "green"
 tools: "Read, Write, Edit, Glob, Grep, Bash"

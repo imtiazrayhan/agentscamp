@@ -1,6 +1,7 @@
 ---
 name: "security-auditor"
 description: "Use this agent to find security vulnerabilities — injection, auth flaws, secrets, unsafe deserialization, dependency risks. Examples — auditing an API surface, reviewing auth code, pre-release security pass."
+date: 2025-08-22
 model: "opus"
 color: "red"
 tools: "Read, Glob, Grep, Bash"

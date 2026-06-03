@@ -1,6 +1,7 @@
 ---
 name: "Roo Code"
 description: "A discontinued open-source VS Code agent (a Cline fork); the team has since pivoted away from the IDE extension."
+date: 2026-06-03
 url: "https://github.com/RooCodeInc/Roo-Code"
 pricing: "open-source"
 category: "extension"

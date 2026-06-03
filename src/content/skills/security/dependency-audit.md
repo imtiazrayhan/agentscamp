@@ -1,6 +1,7 @@
 ---
 name: "dependency-audit"
 description: "Audit project dependencies for known vulnerabilities and turn the raw scanner output into a triaged, prioritized upgrade plan. Use when an audit is noisy, a CVE was reported, or you need to know which advisories actually matter."
+date: 2026-06-03
 allowed-tools: "Read, Grep, Glob, Bash"
 user-invocable: true
 version: "1.0.0"

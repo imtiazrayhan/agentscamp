@@ -1,6 +1,7 @@
 ---
 name: "ml-engineer"
 description: "Use this agent for production ML — pipelines, training, serving, evaluation, and MLOps. Examples — building a training pipeline, deploying a model, setting up evaluation."
+date: 2025-08-22
 model: "opus"
 color: "purple"
 topics: ["data-ml"]

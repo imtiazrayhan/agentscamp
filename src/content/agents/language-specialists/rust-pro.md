@@ -1,6 +1,7 @@
 ---
 name: "rust-pro"
 description: "Use this agent for idiomatic Rust — ownership, lifetimes, error handling, traits, async with tokio, and the cargo toolchain. Examples — fixing borrow-checker errors, designing a trait API, making async code compile cleanly under tokio."
+date: 2026-06-03
 model: "sonnet"
 color: "orange"
 tools: "Read, Grep, Glob, Edit, Write, Bash"

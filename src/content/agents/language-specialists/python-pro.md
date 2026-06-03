@@ -1,6 +1,7 @@
 ---
 name: "python-pro"
 description: "Use this agent for idiomatic, performant Python — typing, async, packaging, and stdlib mastery. Examples — refactoring to idiomatic Python, async I/O, packaging a library."
+date: 2025-08-22
 model: "sonnet"
 color: "yellow"
 topics: ["coding-languages"]

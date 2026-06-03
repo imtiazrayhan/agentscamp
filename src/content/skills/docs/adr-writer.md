@@ -1,6 +1,7 @@
 ---
 name: "adr-writer"
 description: "Write an Architecture Decision Record capturing a decision the user describes, in Michael Nygard ADR format (Status, Context, Decision, Consequences) with an added Considered Alternatives section. Use when recording a significant architectural or technology choice."
+date: 2026-06-03
 allowed-tools: "Read, Grep, Glob, Write"
 user-invocable: true
 version: "1.0.0"

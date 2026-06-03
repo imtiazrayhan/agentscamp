@@ -1,6 +1,7 @@
 ---
 name: "cloud-architect"
 description: "Use this agent to design a cloud architecture on AWS, GCP, or Azure — compute, networking, data stores, IAM, and cost trade-offs. Examples — choosing serverless vs containers for a new service, designing a multi-account network boundary, picking a database and estimating its monthly cost."
+date: 2025-08-22
 model: "sonnet"
 color: "orange"
 tools: "Read, Grep, Glob"

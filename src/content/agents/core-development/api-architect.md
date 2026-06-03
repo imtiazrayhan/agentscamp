@@ -1,6 +1,7 @@
 ---
 name: "api-architect"
 description: "Use this agent to design APIs — resource modeling, versioning, pagination, error contracts, REST vs GraphQL. Examples — designing a public API, reviewing an API spec, planning a breaking change."
+date: 2025-08-22
 model: "opus"
 color: "purple"
 topics: ["architecture"]

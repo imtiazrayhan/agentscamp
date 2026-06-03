@@ -1,5 +1,6 @@
 ---
 description: "Stage changes and write a Conventional Commits message describing them."
+date: 2026-06-03
 title: "Commit"
 color: "purple"
 topics: ["workflow-prompting"]

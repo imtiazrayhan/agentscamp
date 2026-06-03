@@ -1,5 +1,6 @@
 ---
 description: "Diagnose and fix a failing test by finding the real root cause."
+date: 2026-06-03
 argument-hint: "[test name or path]"
 allowed-tools: "Read, Grep, Glob, Edit, Bash"
 title: "Fix Failing Test"

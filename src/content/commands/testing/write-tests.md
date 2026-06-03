@@ -1,5 +1,6 @@
 ---
 description: "Generate tests covering the happy path and edge cases for the given target."
+date: 2026-06-03
 argument-hint: "[file or function]"
 title: "Write Tests"
 color: "purple"

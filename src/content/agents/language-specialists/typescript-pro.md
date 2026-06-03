@@ -1,6 +1,7 @@
 ---
 name: "typescript-pro"
 description: "Use this agent for advanced TypeScript — generics, type-level programming, strictness, and inference. Examples — typing a tricky API, fixing type errors, designing a type-safe library surface."
+date: 2025-08-22
 model: "sonnet"
 color: "blue"
 topics: ["coding-languages"]

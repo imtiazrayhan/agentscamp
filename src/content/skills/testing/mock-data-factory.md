@@ -1,6 +1,7 @@
 ---
 name: "mock-data-factory"
 description: "Generate a typed mock/fixture factory for a given type, interface, or schema, inferring believable values from field names and types. Use when tests or local dev need realistic, type-safe sample data with per-field overrides."
+date: 2026-06-03
 allowed-tools: "Read, Grep, Glob, Write, Bash"
 user-invocable: true
 version: "1.0.0"

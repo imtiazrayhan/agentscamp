@@ -1,6 +1,7 @@
 ---
 name: "secret-scanner"
 description: "Scan a repo or a diff for committed secrets — API keys, tokens, private keys, .env files, and high-entropy strings — then triage real leaks from fixtures. Use before pushing, in review, or when a credential may have leaked."
+date: 2026-06-03
 allowed-tools: "Read, Grep, Glob, Bash"
 user-invocable: true
 version: "1.0.0"

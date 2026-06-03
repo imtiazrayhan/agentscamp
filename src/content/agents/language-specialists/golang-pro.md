@@ -1,6 +1,7 @@
 ---
 name: "golang-pro"
 description: "Use this agent for idiomatic Go — concurrency, errors, small interfaces, stdlib-first design, and profiling. Examples — fixing a goroutine leak, designing a context-aware API, profiling a hot path with pprof."
+date: 2025-08-22
 model: "sonnet"
 color: "cyan"
 tools: "Read, Grep, Glob, Edit, Write, Bash"

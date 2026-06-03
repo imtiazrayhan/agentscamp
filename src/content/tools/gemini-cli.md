@@ -1,6 +1,7 @@
 ---
 name: "Gemini CLI"
 description: "Google's open-source terminal AI agent powered by Gemini models, with a 1M-token context window and built-in tools."
+date: 2026-06-03
 url: "https://geminicli.com"
 pricing: "open-source"
 category: "cli"

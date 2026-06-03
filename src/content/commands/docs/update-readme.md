@@ -1,5 +1,6 @@
 ---
 description: "Update the README to reflect the current scripts, structure, and features of the repo."
+date: 2026-06-03
 argument-hint: "[section or focus]"
 allowed-tools: "Read, Grep, Glob, Bash, Edit, Write"
 title: "Update README"

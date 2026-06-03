@@ -1,6 +1,7 @@
 ---
 name: "Cursor"
 description: "An AI-first code editor built on VS Code with deep in-editor agent features."
+date: 2026-06-03
 url: "https://cursor.com"
 pricing: "freemium"
 category: "ide"

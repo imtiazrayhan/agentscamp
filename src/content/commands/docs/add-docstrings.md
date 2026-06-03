@@ -1,5 +1,6 @@
 ---
 description: "Add or improve docstrings for the public API of a file or symbol."
+date: 2026-06-03
 argument-hint: "<file or symbol>"
 allowed-tools: "Read, Grep, Glob, Edit"
 title: "Add Docstrings"

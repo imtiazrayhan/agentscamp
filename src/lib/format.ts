@@ -36,6 +36,17 @@ const ACRONYMS: Record<string, string> = {
   prs: "PRs",
 };
 
+/** Human-friendly date, e.g. "Jun 3, 2026". Pass an ISO yyyy-mm-dd string. */
+export function formatDate(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
 export function titleCaseLabel(slug: string): string {
   return slug
     .split(/[-_\s]+/)

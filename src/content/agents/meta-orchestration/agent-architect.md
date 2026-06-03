@@ -1,6 +1,7 @@
 ---
 name: "agent-architect"
 description: "Use this agent to design a new Claude Code subagent or review an existing one — scoping, description, toolset, model, and output contract. Examples — \"design an agent that triages flaky tests\", \"review my code-reviewer agent for scope creep\", \"why won't Claude auto-delegate to my agent?\"."
+date: 2026-06-03
 model: "opus"
 color: "purple"
 tools: "Read, Grep, Glob"

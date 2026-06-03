@@ -1,6 +1,7 @@
 ---
 name: "kubernetes-specialist"
 description: "Use this agent for Kubernetes — manifests, Helm, troubleshooting, scaling, and resource tuning. Examples — debugging a CrashLoopBackOff, writing a Deployment, tuning requests/limits."
+date: 2025-08-22
 model: "sonnet"
 color: "blue"
 topics: ["devops-infra"]

@@ -1,6 +1,7 @@
 ---
 name: "openapi-doc-writer"
 description: "Produce and maintain OpenAPI documentation for an HTTP API. Use when documenting endpoints, request/response schemas, or generating API reference docs."
+date: 2026-06-03
 version: "1.0.0"
 color: "cyan"
 topics: ["architecture"]

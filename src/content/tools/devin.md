@@ -1,6 +1,7 @@
 ---
 name: "Devin"
 description: "Cognition's autonomous AI software engineer that works in its own cloud workspace with an editor, terminal, and browser."
+date: 2026-06-03
 url: "https://devin.ai"
 pricing: "freemium"
 category: "agent"

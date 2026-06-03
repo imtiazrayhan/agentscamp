@@ -1,6 +1,7 @@
 ---
 name: "sre-engineer"
 description: "Use this agent to make reliability measurable: SLIs/SLOs and error budgets, observability, symptom-based alerting, incident response, and capacity. Examples — defining an SLO for a checkout API, fixing a noisy pager, writing a blameless postmortem."
+date: 2025-08-22
 model: "sonnet"
 color: "red"
 tools: "Read, Grep, Glob, Edit, Write, Bash"

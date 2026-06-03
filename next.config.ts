@@ -35,8 +35,15 @@ function agentRedirects() {
 
 const nextConfig: NextConfig = {
   experimental: { optimizePackageImports: ["lucide-react"] },
+  trailingSlash: false,
   async redirects() {
     return agentRedirects();
+  },
+  // Expose every page's Markdown twin at `<path>.md`. The handler lives at
+  // /raw/[...path] and sets its own canonical + noindex headers (preserved
+  // through the rewrite). Lets `alternates.types` advertise the clean .md URL.
+  async rewrites() {
+    return [{ source: "/:path*.md", destination: "/raw/:path*" }];
   },
 };
 

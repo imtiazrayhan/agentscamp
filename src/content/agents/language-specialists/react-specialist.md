@@ -1,6 +1,7 @@
 ---
 name: "react-specialist"
 description: "Use this agent for React architecture — hooks, state, performance, Server Components, and patterns. Examples — fixing re-render issues, designing component state, adopting RSC."
+date: 2025-08-25
 model: "sonnet"
 color: "cyan"
 topics: ["coding-languages"]

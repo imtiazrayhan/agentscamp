@@ -1,5 +1,6 @@
 ---
 description: "Explain what the given code does, in clear prose with a short summary."
+date: 2026-06-03
 argument-hint: "[file or symbol]"
 title: "Explain Code"
 color: "purple"

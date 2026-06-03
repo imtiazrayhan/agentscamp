@@ -1,6 +1,7 @@
 ---
 name: "terraform-specialist"
 description: "Use this agent for Terraform and infrastructure-as-code — module design, remote state, plan/apply safety, drift, and provider pinning. Examples — reviewing a plan for destroys before apply, designing a reusable module, resolving state drift after a console change."
+date: 2026-06-03
 model: "sonnet"
 color: "purple"
 tools: "Read, Grep, Glob, Edit, Write, Bash"

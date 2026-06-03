@@ -1,6 +1,7 @@
 ---
 name: "code-reviewer"
 description: "Use this agent to review code changes for correctness, security, and maintainability before merging. Examples — reviewing a PR diff, auditing a new module, checking a refactor for regressions."
+date: 2025-08-22
 model: "sonnet"
 color: "blue"
 tools: "Read, Grep, Glob, Bash"

@@ -1,6 +1,7 @@
 ---
 name: "accessibility-auditor"
 description: "Use this agent to audit web UI against WCAG 2.2 AA — semantics, keyboard, ARIA, contrast, forms, and motion. Examples — auditing a new component for keyboard traps, checking a form for accessible errors, running a pre-ship a11y pass on a page."
+date: 2026-06-03
 model: "sonnet"
 color: "green"
 tools: "Read, Grep, Glob, Bash"

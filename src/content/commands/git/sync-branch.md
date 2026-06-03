@@ -1,5 +1,6 @@
 ---
 description: "Fetch and rebase the current branch onto its base, resolving conflicts and verifying the build."
+date: 2026-06-03
 argument-hint: "[base branch]"
 allowed-tools: "Bash, Read, Edit"
 title: "Sync Branch"

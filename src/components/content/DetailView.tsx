@@ -1,15 +1,17 @@
+import Link from "next/link";
 import { Markdown } from "./Markdown";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { RelatedItems } from "./RelatedItems";
 import { InstallActions } from "./InstallActions";
+import { FaqSection } from "./FaqSection";
 import { Toc } from "./Toc";
 import { extractToc } from "@/lib/toc";
 import { contentTypes } from "@/lib/content/registry";
 import { getColorClasses, cn } from "@/lib/utils";
-import { titleCaseLabel } from "@/lib/format";
+import { titleCaseLabel, formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
-import { jsonLdFor } from "@/lib/jsonld";
-import type { ContentItem } from "@/lib/content/types";
+import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
+import type { ContentItem, GuideItem } from "@/lib/content/types";
 
 function Meta({ item }: { item: ContentItem }) {
   const chips: React.ReactNode[] = [];
@@ -63,6 +65,42 @@ function Meta({ item }: { item: ContentItem }) {
   return <div className="flex flex-wrap items-center gap-2">{chips}</div>;
 }
 
+/** Distilled procedural steps shown for guides that declare `howtoSteps` (AEO render-parity). */
+function StepsAtAGlance({ steps }: { steps: GuideItem["howtoSteps"] }) {
+  if (!steps.length) return null;
+  return (
+    <section className="mb-8 rounded-lg border border-border bg-card/50 p-5">
+      <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+        Steps at a glance
+      </h2>
+      <ol className="ml-4 list-decimal space-y-2 text-sm">
+        {steps.map((s, i) => (
+          <li key={i}>
+            <span className="font-medium text-foreground">{s.name}.</span>{" "}
+            <span className="text-muted-foreground">{s.text}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+function KeyTakeaways({ items }: { items: string[] }) {
+  if (!items.length) return null;
+  return (
+    <section className="mb-8 rounded-lg border border-primary/30 bg-primary/5 p-5">
+      <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">
+        Key takeaways
+      </h2>
+      <ul className="ml-4 list-disc space-y-1.5 text-sm text-foreground/90">
+        {items.map((t, i) => (
+          <li key={i}>{t}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export function DetailView({
   item,
   related,
@@ -74,11 +112,12 @@ export function DetailView({
   const accent = getColorClasses(item.type);
   const Icon = def.icon;
 
-  const crumbs = [
-    { label: "Home", href: "/" },
-    { label: def.label, href: def.basePath },
-    { label: item.title },
-  ];
+  const crumbs = breadcrumbsFor(item);
+  const categoryHref =
+    item.type === "tool"
+      ? `/tools/category/${item.category}`
+      : `${def.basePath}/${item.category}`;
+  const updated = item.updated ?? item.date;
 
   const toc = item.type === "guide" && item.body ? extractToc(item.body) : [];
   const withToc = toc.length >= 2;
@@ -87,7 +126,7 @@ export function DetailView({
     <article>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFor(item)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(graphFor(item)) }}
       />
       <Breadcrumbs items={crumbs} />
 
@@ -103,7 +142,14 @@ export function DetailView({
           </span>
           <span className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
             {def.singular}
-            {item.type !== "tool" && ` · ${titleCaseLabel(item.category)}`}
+            {item.type !== "tool" && (
+              <>
+                {" · "}
+                <Link href={categoryHref} className="hover:text-foreground">
+                  {titleCaseLabel(item.category)}
+                </Link>
+              </>
+            )}
           </span>
         </div>
 
@@ -114,8 +160,13 @@ export function DetailView({
           {item.description}
         </p>
 
-        <div className="mt-4">
+        <div className="mt-4 flex flex-wrap items-center gap-2">
           <Meta item={item} />
+          {updated && (
+            <span className="font-mono text-xs text-muted-foreground">
+              Updated {formatDate(updated)}
+            </span>
+          )}
         </div>
 
         {item.tags.length > 0 && (
@@ -142,7 +193,17 @@ export function DetailView({
         )}
       >
         <div className="min-w-0">
+          {item.summary && (
+            <p className="mb-6 text-lg leading-relaxed text-foreground/90">
+              {item.summary}
+            </p>
+          )}
+          {item.type === "guide" && <StepsAtAGlance steps={item.howtoSteps} />}
+          {item.keyTakeaways.length > 0 && (
+            <KeyTakeaways items={item.keyTakeaways} />
+          )}
           {item.body && <Markdown source={item.body} />}
+          <FaqSection faq={item.faq} />
         </div>
         {withToc && (
           <aside className="hidden lg:block">

@@ -1,6 +1,7 @@
 ---
 name: "refactoring-specialist"
 description: "Use this agent to safely restructure code without changing behavior — extracting, renaming, decoupling. Examples — breaking up a god object, removing duplication, improving testability."
+date: 2025-08-22
 model: "sonnet"
 color: "green"
 topics: ["review-qa"]

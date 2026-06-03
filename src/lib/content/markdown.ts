@@ -51,10 +51,14 @@ export function loadFlat(rootName: string): RawDoc[] {
   );
 }
 
+/** Word count of the raw markdown body (used for reading time + Article.wordCount). */
+export function wordCount(body: string): number {
+  return body.trim().split(/\s+/).filter(Boolean).length;
+}
+
 /** ~200 wpm reading-time estimate (minutes, min 1). */
 export function readingTime(body: string): number {
-  const words = body.trim().split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.round(words / 200));
+  return Math.max(1, Math.round(wordCount(body) / 200));
 }
 
 /** Comma-string or YAML array -> trimmed string[]. */

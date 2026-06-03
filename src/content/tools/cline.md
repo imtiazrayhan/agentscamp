@@ -1,6 +1,7 @@
 ---
 name: "Cline"
 description: "An open-source autonomous coding agent for VS Code."
+date: 2026-06-03
 url: "https://cline.bot"
 pricing: "open-source"
 category: "extension"

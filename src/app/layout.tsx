@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { siteGraph } from "@/lib/seo/jsonld";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { PromoBar } from "@/components/layout/PromoBar";
@@ -41,22 +42,7 @@ export const metadata: Metadata = {
   // Icons are auto-wired from the app dir: favicon.ico, icon.svg, apple-icon.png.
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      name: site.name,
-      url: site.url,
-      description: site.description,
-    },
-    {
-      "@type": "WebSite",
-      name: site.name,
-      url: site.url,
-    },
-  ],
-};
+const jsonLd = siteGraph();
 
 export default function RootLayout({
   children,

@@ -1,6 +1,7 @@
 ---
 name: "Aider"
 description: "AI pair programming in your terminal, with strong Git integration."
+date: 2026-06-03
 url: "https://aider.chat"
 pricing: "open-source"
 category: "cli"

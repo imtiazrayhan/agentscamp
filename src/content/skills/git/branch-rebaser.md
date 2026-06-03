@@ -1,6 +1,7 @@
 ---
 name: "branch-rebaser"
 description: "Rebase the current branch onto its base and walk every conflict methodically, resolving each by understanding both sides. Use when your feature branch has fallen behind main and you want a clean, linear history without clobbering changes."
+date: 2026-06-03
 allowed-tools: "Read, Bash, Edit"
 user-invocable: true
 version: "1.0.0"

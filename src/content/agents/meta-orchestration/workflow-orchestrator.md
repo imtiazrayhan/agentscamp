@@ -1,6 +1,7 @@
 ---
 name: "workflow-orchestrator"
 description: "Use this agent to break large tasks into coordinated multi-step plans and delegate to other agents. Examples — planning a multi-file refactor, orchestrating a migration, decomposing an epic."
+date: 2025-08-22
 model: "opus"
 color: "pink"
 topics: ["workflow-prompting"]

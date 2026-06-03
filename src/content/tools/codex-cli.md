@@ -1,6 +1,7 @@
 ---
 name: "Codex CLI"
 description: "OpenAI's open-source terminal coding agent with sandboxed execution and two-layer approval controls."
+date: 2026-06-03
 url: "https://openai.com/codex/"
 pricing: "open-source"
 category: "cli"

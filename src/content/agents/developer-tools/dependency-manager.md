@@ -1,6 +1,7 @@
 ---
 name: "dependency-manager"
 description: "Use this agent to upgrade project dependencies safely — batching low-risk bumps apart from breaking majors and verifying each step. Examples — clearing months of stale packages, taking a single major version with migration notes, resolving a peer-dependency conflict."
+date: 2026-06-03
 model: "sonnet"
 color: "yellow"
 tools: "Read, Grep, Glob, Edit, Bash"

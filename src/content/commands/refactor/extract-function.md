@@ -1,5 +1,6 @@
 ---
 description: "Extract a code region into a well-named function and update the call site."
+date: 2026-06-03
 argument-hint: "<file:lines or description>"
 allowed-tools: "Read, Grep, Glob, Edit"
 title: "Extract Function"

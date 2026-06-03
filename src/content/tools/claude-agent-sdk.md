@@ -1,6 +1,7 @@
 ---
 name: "Claude Agent SDK"
 description: "A toolkit for building custom agents on the same harness that powers Claude Code."
+date: 2026-06-03
 url: "https://code.claude.com/docs/en/agent-sdk"
 pricing: "free"
 category: "sdk"

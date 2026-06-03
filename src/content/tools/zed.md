@@ -1,6 +1,7 @@
 ---
 name: "Zed"
 description: "A high-performance, multiplayer code editor with built-in AI assistance."
+date: 2026-06-03
 url: "https://zed.dev"
 pricing: "open-source"
 category: "ide"

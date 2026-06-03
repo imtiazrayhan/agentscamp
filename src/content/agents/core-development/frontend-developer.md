@@ -1,6 +1,7 @@
 ---
 name: "frontend-developer"
 description: "Use this agent to build UI — responsive layouts, components, accessibility, and design-system work. Examples — implementing a Figma design, fixing a11y issues, building a reusable component."
+date: 2025-08-22
 model: "sonnet"
 color: "blue"
 topics: ["coding-languages"]

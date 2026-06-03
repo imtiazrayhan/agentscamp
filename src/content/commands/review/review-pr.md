@@ -1,5 +1,6 @@
 ---
 description: "Review a pull request for correctness, security, and style, and summarize findings."
+date: 2026-06-03
 argument-hint: "[PR number]"
 title: "Review PR"
 color: "purple"

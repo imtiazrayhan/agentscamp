@@ -1,6 +1,7 @@
 ---
 name: "Playwright MCP"
 description: "Microsoft's open-source MCP server that gives AI agents structured browser automation via Playwright's accessibility tree."
+date: 2026-06-03
 url: "https://github.com/microsoft/playwright-mcp"
 pricing: "open-source"
 category: "mcp"

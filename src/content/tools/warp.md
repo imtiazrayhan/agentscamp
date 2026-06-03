@@ -1,6 +1,7 @@
 ---
 name: "Warp"
 description: "A modern, AI-powered terminal with an agent mode that can run and chain commands across your codebase."
+date: 2026-06-03
 url: "https://www.warp.dev"
 repo: "https://github.com/warpdotdev/warp"
 pricing: "open-source"

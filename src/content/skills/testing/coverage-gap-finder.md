@@ -1,6 +1,7 @@
 ---
 name: "coverage-gap-finder"
 description: "Run the project's coverage tool and identify the highest-value untested paths — error branches, edge cases, and critical modules — then propose specific test cases for each gap. Use when you have a coverage report but don't know where new tests will pay off most."
+date: 2026-06-03
 allowed-tools: "Read, Grep, Glob, Bash"
 user-invocable: true
 version: "1.0.0"

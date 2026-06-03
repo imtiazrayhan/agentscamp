@@ -9,6 +9,7 @@ import {
   loadCategorized,
   loadFlat,
   readingTime,
+  wordCount,
   toList,
   titleCase,
   isoDate,
@@ -22,6 +23,8 @@ import type {
   ToolItem,
   CommandItem,
   ContentItem,
+  FaqEntry,
+  HowtoStep,
 } from "./types";
 
 /** Throw with file path + flattened zod issues for a clear build failure. */
@@ -47,6 +50,13 @@ const base = (doc: RawDoc, fm: Record<string, unknown>) => ({
   related: (fm.related as string[]) ?? [],
   date: isoDate(fm.date),
   updated: isoDate(fm.updated),
+  seoTitle: fm.seoTitle as string | undefined,
+  seoDescription: fm.seoDescription as string | undefined,
+  keywords: (fm.keywords as string[]) ?? [],
+  image: fm.image as string | undefined,
+  summary: fm.summary as string | undefined,
+  keyTakeaways: (fm.keyTakeaways as string[]) ?? [],
+  faq: (fm.faq as FaqEntry[]) ?? [],
 });
 
 export function loadAgents(): AgentItem[] {
@@ -99,6 +109,8 @@ export function loadGuides(): GuideItem[] {
       color: fm.color as GuideItem["color"],
       author: fm.author as string | undefined,
       readingTime: readingTime(doc.body),
+      wordCount: wordCount(doc.body),
+      howtoSteps: (fm.howtoSteps as HowtoStep[]) ?? [],
       href: hrefFor("guide", doc.category, doc.slug),
       body: doc.body,
       ...base(doc, fm),
@@ -119,6 +131,10 @@ export function loadTools(): ToolItem[] {
       pricing: fm.pricing as ToolItem["pricing"],
       logo: fm.logo as string | undefined,
       repo: fm.repo as string | undefined,
+      os: (fm.os as ToolItem["os"]) ?? [],
+      alternativeTo: (fm.alternativeTo as string[]) ?? [],
+      license: fm.license as string | undefined,
+      sameAs: (fm.sameAs as string[]) ?? [],
       href: hrefFor("tool", "", doc.slug),
       body: doc.body,
       ...base(doc, fm),

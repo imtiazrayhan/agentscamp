@@ -1,6 +1,7 @@
 ---
 name: "readme-generator"
 description: "Generate or refresh a project README grounded in the actual repository. Use when a project has no README, a stale one, or you want install/usage/scripts/structure sections that match the real code."
+date: 2026-06-03
 allowed-tools: "Read, Grep, Glob, Write, Bash"
 user-invocable: true
 version: "1.0.0"

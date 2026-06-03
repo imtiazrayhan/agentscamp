@@ -1,6 +1,7 @@
 ---
 name: "pr-description"
 description: "Draft a clear pull request description from the branch diff against its base. Use when you have a finished branch and want a reviewer-ready PR body before opening the PR."
+date: 2026-06-03
 allowed-tools: "Read, Bash"
 user-invocable: true
 version: "1.0.0"

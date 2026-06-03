@@ -1,5 +1,6 @@
 ---
 description: "Diagnose an error message or stack trace and propose a fix."
+date: 2026-06-03
 argument-hint: "<error message or stack trace>"
 allowed-tools: "Read, Grep, Glob, Bash"
 title: "Explain Error"

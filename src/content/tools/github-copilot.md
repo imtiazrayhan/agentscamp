@@ -1,6 +1,7 @@
 ---
 name: "GitHub Copilot"
 description: "GitHub’s AI pair programmer with inline completions and an agent mode."
+date: 2026-06-03
 url: "https://github.com/features/copilot"
 pricing: "paid"
 category: "extension"

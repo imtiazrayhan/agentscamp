@@ -1,6 +1,7 @@
 ---
 name: "Tabnine"
 description: "An AI code completion and chat assistant built around code privacy, self-hosting, and air-gapped enterprise deployment."
+date: 2026-06-03
 url: "https://www.tabnine.com"
 pricing: "paid"
 category: "extension"

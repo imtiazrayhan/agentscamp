@@ -2,6 +2,7 @@
 name: "Devin Desktop (formerly Windsurf)"
 title: "Devin Desktop (formerly Windsurf)"
 description: "An agentic IDE — formerly Windsurf, now Devin Desktop from Cognition AI — with flows that take multi-step actions across your codebase."
+date: 2026-06-03
 url: "https://devin.ai/desktop"
 pricing: "freemium"
 category: "ide"

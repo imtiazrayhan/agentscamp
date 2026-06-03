@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getContentByType, getItem, getRelated } from "@/lib/content";
+import { getItem, getRelated } from "@/lib/content";
+import { categorizedParams } from "@/lib/seo/params";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { DetailView } from "@/components/content/DetailView";
 
 type Params = Promise<{ category: string; slug: string }>;
 
 export function generateStaticParams() {
-  return getContentByType("command").map((i) => ({
-    category: i.category,
-    slug: i.slug,
-  }));
+  return categorizedParams("command");
 }
 
 export async function generateMetadata({
@@ -19,13 +18,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { category, slug } = await params;
   const item = getItem("command", category, slug);
-  if (!item) return {};
-  return {
-    title: item.title,
-    description: item.description,
-    alternates: { canonical: item.href },
-    openGraph: { title: item.title, description: item.description, type: "article" },
-  };
+  return item ? buildMetadata(item) : {};
 }
 
 export default async function Page({ params }: { params: Params }) {

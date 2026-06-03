@@ -1,6 +1,7 @@
 ---
 name: "graphql-architect"
 description: "Use this agent to design GraphQL schemas and resolvers — types, nullability, connections, dataloaders, federation, depth/complexity limits. Examples — designing a new schema from requirements, killing N+1 queries in resolvers, planning a deprecation, hardening a public graph."
+date: 2026-06-03
 model: "sonnet"
 color: "pink"
 tools: "Read, Grep, Glob, Edit, Write, Bash"

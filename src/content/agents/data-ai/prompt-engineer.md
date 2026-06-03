@@ -1,6 +1,7 @@
 ---
 name: "prompt-engineer"
 description: "Use this agent to design and iterate the prompts behind an LLM-powered product feature — instructions, few-shot examples, tool schemas, and the evals that prove a change actually helped. Examples — \"this classification prompt is flaky, make it reliable\", \"design the system prompt and function schema for our support agent\", \"our extraction prompt regressed after I tweaked it, set up evals so this stops happening\"."
+date: 2026-06-03
 model: "sonnet"
 color: "pink"
 tools: "Read, Grep, Glob, Edit, Write, Bash"

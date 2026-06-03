@@ -1,5 +1,6 @@
 ---
 description: "Explore the codebase and produce an implementation plan for a feature."
+date: 2026-06-03
 argument-hint: "<feature description>"
 allowed-tools: "Read, Grep, Glob"
 title: "Plan Feature"

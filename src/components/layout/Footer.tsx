@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Map as SitemapIcon, Rss } from "lucide-react";
+import { BookOpen, Map as SitemapIcon, Rss, Hash, FileText } from "lucide-react";
 import { contentTypeList } from "@/lib/content/registry";
 import { getCountsByType } from "@/lib/content";
 import { Logo } from "@/components/brand/Logo";
@@ -27,6 +27,20 @@ const resources = [
     cmd: "man how-to-use",
     icon: BookOpen,
     external: false,
+  },
+  {
+    href: "/topics",
+    label: "Topics",
+    cmd: "ls topics",
+    icon: Hash,
+    external: false,
+  },
+  {
+    href: "/llms.txt",
+    label: "llms.txt",
+    cmd: "cat llms.txt",
+    icon: FileText,
+    external: true,
   },
   {
     href: "/sitemap.xml",

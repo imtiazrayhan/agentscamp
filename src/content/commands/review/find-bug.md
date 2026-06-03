@@ -1,5 +1,6 @@
 ---
 description: "Investigate a reported symptom, form hypotheses, and locate the root cause."
+date: 2026-06-03
 argument-hint: "[symptom]"
 title: "Find Bug"
 color: "purple"

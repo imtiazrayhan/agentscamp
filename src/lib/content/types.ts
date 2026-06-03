@@ -28,6 +28,16 @@ export type CommandFrontmatter = z.infer<typeof commandFrontmatter>;
  * `body` (raw markdown) is present on detail loads but omitted from the search
  * index. `date`/`updated` are ISO strings once normalized for serialization.
  */
+export interface FaqEntry {
+  q: string;
+  a: string;
+}
+
+export interface HowtoStep {
+  name: string;
+  text: string;
+}
+
 export interface BaseContentItem {
   type: ContentTypeId;
   slug: string;
@@ -43,6 +53,14 @@ export interface BaseContentItem {
   updated?: string;
   href: string;
   body?: string;
+  // SEO/AEO/GEO (optional; defaulted arrays so they are always present)
+  seoTitle?: string;
+  seoDescription?: string;
+  keywords: string[];
+  image?: string;
+  summary?: string;
+  keyTakeaways: string[];
+  faq: FaqEntry[];
 }
 
 export interface AgentItem extends BaseContentItem {
@@ -64,6 +82,8 @@ export interface GuideItem extends BaseContentItem {
   type: "guide";
   author?: string;
   readingTime: number;
+  wordCount: number;
+  howtoSteps: HowtoStep[];
 }
 
 export interface ToolItem extends BaseContentItem {
@@ -72,6 +92,10 @@ export interface ToolItem extends BaseContentItem {
   pricing: "free" | "freemium" | "paid" | "open-source" | "enterprise";
   logo?: string;
   repo?: string;
+  os: ("Web" | "macOS" | "Windows" | "Linux" | "iOS" | "Android")[];
+  alternativeTo: string[];
+  license?: string;
+  sameAs: string[];
 }
 
 export interface CommandItem extends BaseContentItem {

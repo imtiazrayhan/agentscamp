@@ -1,6 +1,7 @@
 ---
 name: "Bolt"
 description: "StackBlitz's in-browser AI agent that builds, runs, and deploys full-stack web apps in a WebContainer."
+date: 2026-06-03
 url: "https://bolt.new"
 repo: "https://github.com/stackblitz/bolt.new"
 pricing: "freemium"

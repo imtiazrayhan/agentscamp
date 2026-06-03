@@ -1,6 +1,7 @@
 ---
 name: "system-architect"
 description: "Use this agent for high-level system design — service boundaries, data flow, scaling, trade-offs. Examples — designing a new system, evaluating a monolith-to-services split, a scalability review."
+date: 2025-08-22
 model: "opus"
 color: "purple"
 topics: ["architecture"]

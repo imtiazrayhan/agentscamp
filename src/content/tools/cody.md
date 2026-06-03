@@ -1,6 +1,7 @@
 ---
 name: "Cody"
 description: "Sourcegraph's AI coding assistant for the IDE, grounded in deep codebase context."
+date: 2026-06-03
 url: "https://sourcegraph.com/cody"
 pricing: "enterprise"
 category: "extension"
