@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 48" width="236" height="48" role="img" aria-label="AgentsCamp">
+  <defs>
+    <filter id="ac-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.1" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="236" height="48" fill="#0a0a0b"/>
+  <g transform="translate(8 8)">
+    <rect width="32" height="32" rx="6" fill="#111114"/>
+    <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="5.25" fill="none" stroke="#26262b" stroke-width="1"/>
+    <g filter="url(#ac-glow)" transform="translate(16.6 16) scale(1.06) translate(-16 -16)">
+      <path d="M7 8.5 L15.5 16 L7 23.5" fill="none" stroke="#4ade80" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="19" y="8.5" width="6" height="15" rx="0.5" fill="#4ade80"/>
+    </g>
+  </g>
+  <text x="52" y="31" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21" font-weight="500" letter-spacing="-0.6" fill="#e6e6e9">agentscamp</text>
+</svg>

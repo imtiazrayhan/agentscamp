@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     site: site.twitter,
     creator: site.twitter,
   },
-  icons: { icon: "/favicon.ico" },
+  // Icons are auto-wired from the app dir: favicon.ico, icon.svg, apple-icon.png.
 };
 
 const jsonLd = {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { contentTypeList } from "@/lib/content/registry";
+import { Logo } from "@/components/brand/Logo";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -7,12 +8,8 @@ export function Footer() {
     <footer className="mt-16 border-t border-border">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 md:grid-cols-4">
         <div className="col-span-2 sm:col-span-1">
-          <Link
-            href="/"
-            className="flex items-center gap-1.5 font-mono font-semibold"
-          >
-            <span className="text-primary">▍</span>
-            {site.name.toLowerCase()}
+          <Link href="/" aria-label="AgentsCamp home">
+            <Logo />
           </Link>
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
             {site.description}

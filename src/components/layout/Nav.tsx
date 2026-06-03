@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { contentTypeList } from "@/lib/content/registry";
+import { Logo } from "@/components/brand/Logo";
 import { SearchBar } from "@/components/search/SearchBar";
 import { ThemeToggle } from "./ThemeToggle";
 import { MobileNav } from "./MobileNav";
@@ -10,12 +11,8 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
-        <Link
-          href="/"
-          className="flex items-center gap-1.5 font-mono text-[15px] font-semibold"
-        >
-          <span className="cursor-blink text-primary">▍</span>
-          <span>agentscamp</span>
+        <Link href="/" aria-label="AgentsCamp home" className="text-[15px]">
+          <Logo blink />
         </Link>
 
         <nav className="ml-4 hidden items-center gap-0.5 md:flex">
