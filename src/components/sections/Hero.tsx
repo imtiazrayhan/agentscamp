@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Search } from "lucide-react";
+import { SearchCommandBox } from "@/components/search/SearchCommandBox";
 
 export interface BootLine {
   label: string;
@@ -90,17 +89,7 @@ export function Hero({ lines, total }: { lines: BootLine[]; total: number }) {
             A curated hub of agents, skills, guides, tools &amp; commands for
             building with AI coding agents — drop-in ready and format-validated.
           </p>
-          <Link
-            href="/search"
-            className="mt-7 inline-flex w-full max-w-md items-center gap-2 rounded-md border border-border bg-background px-3 py-2.5 font-mono text-sm text-muted-foreground transition-colors hover:border-primary/60"
-          >
-            <Search className="size-4" />
-            <span className="text-primary">$</span>
-            <span className="flex-1 text-left">search {total} resources</span>
-            <kbd className="hidden rounded-sm border border-border bg-muted px-1.5 text-[11px] sm:inline">
-              ⌘K
-            </kbd>
-          </Link>
+          <SearchCommandBox total={total} className="mt-7" />
         </div>
       </div>
     </section>

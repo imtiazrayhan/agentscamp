@@ -6,7 +6,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticPaths = [
     "",
-    "/search",
     "/how-to-use",
     "/feed.xml",
     ...contentTypeList.map((d) => d.basePath),

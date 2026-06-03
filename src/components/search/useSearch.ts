@@ -6,7 +6,7 @@ import type { SearchRecord } from "@/lib/content/types";
 /**
  * Lazy client search over the static index. Fetches /search-index.json and
  * builds a FlexSearch index the first time `enabled` is true (so it loads only
- * on /search and when the command palette opens — not site-wide).
+ * when the command palette opens — not site-wide).
  */
 export function useSearch(enabled: boolean) {
   const [ready, setReady] = useState(false);

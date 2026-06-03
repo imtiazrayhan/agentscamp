@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Search, BookOpen, Map as SitemapIcon, Rss } from "lucide-react";
+import { BookOpen, Map as SitemapIcon, Rss } from "lucide-react";
 import { contentTypeList } from "@/lib/content/registry";
 import { getCountsByType } from "@/lib/content";
 import { Logo } from "@/components/brand/Logo";
+import { SearchCommandBox } from "@/components/search/SearchCommandBox";
 import { site } from "@/lib/site";
 
 /**
@@ -77,22 +78,7 @@ export function Footer() {
         </div>
 
         {/* ── primary action: a hero-matched search command box ───────── */}
-        <Link
-          href="/search"
-          aria-label={`Search ${total} resources`}
-          className="group mt-6 flex w-full max-w-md items-center gap-2 rounded-md border border-border bg-background px-3 py-2.5 font-mono text-sm text-muted-foreground transition-colors hover:border-primary/60"
-        >
-          <Search className="size-4 shrink-0" aria-hidden />
-          <span className="text-primary" aria-hidden>
-            $
-          </span>
-          <span className="flex-1 text-left">
-            search <span className="text-foreground">{total}</span> resources
-          </span>
-          <kbd className="hidden rounded-sm border border-border bg-muted px-1.5 text-[11px] sm:inline">
-            ⌘K
-          </kbd>
-        </Link>
+        <SearchCommandBox total={total} className="mt-6" />
 
         {/* ── content types as a directory listing ────────────────────── */}
         <nav aria-label="Browse the hub" className="mt-10">

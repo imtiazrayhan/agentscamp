@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { PromoBar } from "@/components/layout/PromoBar";
+import { SearchProvider } from "@/components/search/SearchProvider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
@@ -53,11 +54,6 @@ const jsonLd = {
       "@type": "WebSite",
       name: site.name,
       url: site.url,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${site.url}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
     },
   ],
 };
@@ -74,19 +70,21 @@ export default function RootLayout({
         />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <TooltipProvider delayDuration={200}>
-            <a
-              href="#main"
-              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
-            >
-              Skip to content
-            </a>
-            <PromoBar />
-            <Nav />
-            <main id="main" className="mx-auto min-h-[60vh] max-w-6xl px-4 py-8">
-              {children}
-            </main>
-            <Footer />
-            <Toaster richColors position="bottom-right" />
+            <SearchProvider>
+              <a
+                href="#main"
+                className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+              >
+                Skip to content
+              </a>
+              <PromoBar />
+              <Nav />
+              <main id="main" className="mx-auto min-h-[60vh] max-w-6xl px-4 py-8">
+                {children}
+              </main>
+              <Footer />
+              <Toaster richColors position="bottom-right" />
+            </SearchProvider>
           </TooltipProvider>
         </ThemeProvider>
       </body>
