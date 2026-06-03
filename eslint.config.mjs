@@ -1,16 +1,9 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+import coreWebVitals from "eslint-config-next/core-web-vitals";
+import typescript from "eslint-config-next/typescript";
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...coreWebVitals,
+  ...typescript,
   {
     ignores: [
       "node_modules/**",
@@ -24,9 +17,14 @@ const eslintConfig = [
     rules: {
       "react/no-unescaped-entities": "off",
       "react/jsx-no-comment-textnodes": "off",
-      "@typescript-eslint/no-unused-vars": "warn"
-    }
-  }
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
+      // Intentional, hydration-safe mount/localStorage guards (next-themes idiom).
+      "react-hooks/set-state-in-effect": "off",
+    },
+  },
 ];
 
 export default eslintConfig;
