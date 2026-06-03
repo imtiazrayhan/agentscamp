@@ -6,9 +6,11 @@
     "dev": "next dev -p 3001",
     "prebuild": "tsx scripts/validate-content.ts && tsx scripts/build-search-index.ts",
     "build": "next build",
+    "postbuild": "tsx scripts/submit-indexnow.ts",
     "start": "next start -p 3001",
     "lint": "eslint",
-    "validate": "tsx scripts/validate-content.ts"
+    "validate": "tsx scripts/validate-content.ts",
+    "indexnow": "tsx scripts/submit-indexnow.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
