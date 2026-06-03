@@ -4,6 +4,7 @@ import type {
   ToolItem,
 } from "@/lib/content/types";
 import { contentTypes } from "@/lib/content/registry";
+import { getContentByType } from "@/lib/content";
 import { titleCaseLabel } from "@/lib/format";
 import { site, locale } from "@/lib/site";
 import { canonicalUrl, markdownUrl } from "./artifact";
@@ -79,10 +80,18 @@ export function breadcrumbsFor(item: ContentItem): Crumb[] {
     { label: def.label, href: def.basePath },
   ];
   if (item.type === "tool") {
-    crumbs.push({
-      label: titleCaseLabel(item.category),
-      href: `/tools/category/${item.category}`,
-    });
+    // Only link the tool-category facet when it is indexable (>= 2 tools, matching
+    // collections' MIN_INDEXABLE); otherwise an indexable page's breadcrumb would
+    // point at a noindex facet. Single-tool categories simply drop the crumb.
+    const count = getContentByType("tool").filter(
+      (t) => t.category === item.category,
+    ).length;
+    if (count >= 2) {
+      crumbs.push({
+        label: titleCaseLabel(item.category),
+        href: `/tools/category/${item.category}`,
+      });
+    }
   } else {
     crumbs.push({
       label: titleCaseLabel(item.category),

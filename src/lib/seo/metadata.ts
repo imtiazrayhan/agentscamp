@@ -24,10 +24,14 @@ export function buildMetadata(item: ContentItem): Metadata {
       types: { "text/markdown": `${item.href}.md` },
     },
     ...(isArticle ? { authors: [{ name: author }] } : {}),
+    // Next merges Metadata field-by-field but REPLACES object fields wholesale,
+    // so we must re-declare the inherited siteName / twitter.card etc. here or
+    // they are dropped from every page that uses this helper.
     openGraph: {
       title,
       description,
       url: item.href,
+      siteName: site.name,
       type: isArticle ? "article" : "website",
       ...(isArticle
         ? {
@@ -39,7 +43,13 @@ export function buildMetadata(item: ContentItem): Metadata {
           }
         : {}),
     },
-    twitter: { title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      site: site.twitter,
+      creator: site.twitter,
+    },
   };
 }
 
@@ -58,9 +68,16 @@ export function buildPageMetadata(opts: {
       title: opts.title,
       description: opts.description,
       url: opts.path,
+      siteName: site.name,
       type: "website",
     },
-    twitter: { title: opts.title, description: opts.description },
+    twitter: {
+      card: "summary_large_image",
+      title: opts.title,
+      description: opts.description,
+      site: site.twitter,
+      creator: site.twitter,
+    },
     ...(opts.noindex ? { robots: { index: false, follow: true } } : {}),
   };
 }
