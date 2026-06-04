@@ -10,12 +10,12 @@ repo: "https://github.com/promptfoo/promptfoo"
 license: "MIT"
 sameAs: ["https://github.com/promptfoo/promptfoo", "https://www.promptfoo.dev/docs"]
 color: "red"
-topics: ["llm-evals"]
+topics: ["llm-evals", "ai-safety-security"]
 tags: ["evals", "testing", "red-teaming", "security", "open-source", "cli"]
 featured: false
 alternativeTo: ["deepeval"]
 summary: "promptfoo is an open-source, config-driven CLI for evaluating and comparing LLM prompts and models side by side, plus a red-teaming mode that probes apps for prompt injection, jailbreaks, and unsafe output. Declarative YAML test cases make it CI-friendly and provider-agnostic."
-related: ["best-llm-eval-tools-2026", "deepeval", "llm-evaluation-engineer"]
+related: ["best-llm-eval-tools-2026", "deepeval", "llm-evaluation-engineer", "defending-prompt-injection", "red-team-llm"]
 ---
 
 promptfoo is an open-source, developer-first tool for evaluating LLM outputs. You declare test cases and assertions in a YAML config, point it at one or more prompts, models, or providers, and it runs a side-by-side matrix so you can see — quantitatively — which combination wins. It also ships a **red-teaming** mode that automatically probes an app for vulnerabilities like prompt injection and jailbreaks.
