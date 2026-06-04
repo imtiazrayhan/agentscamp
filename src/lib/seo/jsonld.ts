@@ -260,8 +260,9 @@ export function collectionGraph(opts: {
   items: ContentItem[];
   crumbs: Crumb[];
   lastModified?: string;
+  faq?: { q: string; a: string }[];
 }): Node {
-  const { path, name, description, items, crumbs, lastModified } = opts;
+  const { path, name, description, items, crumbs, lastModified, faq } = opts;
   const listId = entityId(path, "list");
   const collectionPage: Node = {
     "@type": "CollectionPage",
@@ -286,10 +287,26 @@ export function collectionGraph(opts: {
       name: it.title,
     })),
   };
-  return {
-    "@context": "https://schema.org",
-    "@graph": [collectionPage, breadcrumbNode(crumbs, crumbId(path)), itemList],
-  };
+  const nodes: Node[] = [
+    collectionPage,
+    breadcrumbNode(crumbs, crumbId(path)),
+    itemList,
+  ];
+  // Tie the visible listing FAQ into the same connected graph (AEO/GEO). Only
+  // emitted alongside the rendered <FaqSection>, never hidden-only markup.
+  if (faq?.length) {
+    nodes.push({
+      "@type": "FAQPage",
+      "@id": entityId(path, "faqpage"),
+      isPartOf: { "@id": pageId(path) },
+      mainEntity: faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    });
+  }
+  return { "@context": "https://schema.org", "@graph": nodes };
 }
 
 /** Standalone FAQPage graph (for static pages like /how-to-use). */

@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import { TypeListing } from "@/components/content/TypeListing";
-import { contentTypes } from "@/lib/content/registry";
+import { getContentByType } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { listingSeo, listingDescription } from "@/lib/seo/listing";
 
-export const metadata: Metadata = {
-  title: contentTypes.skill.label,
-  description: contentTypes.skill.description,
-  alternates: { canonical: "/skills" },
-};
+export function generateMetadata(): Metadata {
+  const count = getContentByType("skill").length;
+  return buildPageMetadata({
+    title: listingSeo.skill.seoTitle,
+    description: listingDescription("skill", count),
+    path: "/skills",
+  });
+}
 
 export default function Page() {
   return <TypeListing type="skill" />;
