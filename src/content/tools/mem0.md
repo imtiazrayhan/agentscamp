@@ -10,11 +10,11 @@ repo: "https://github.com/mem0ai/mem0"
 license: "Apache-2.0"
 sameAs: ["https://github.com/mem0ai/mem0", "https://docs.mem0.ai"]
 color: "purple"
-topics: ["ai-agents-systems"]
-tags: ["agents", "memory", "personalization", "open-source"]
+topics: ["ai-agents-systems", "data-ml"]
+tags: ["agents", "memory", "personalization", "vector-store", "open-source"]
 featured: false
 summary: "Mem0 adds a persistent memory layer to agents and LLM apps: it extracts, stores, and retrieves salient facts across sessions so an assistant remembers a user's preferences and history instead of starting cold each conversation. Open-source library plus a managed platform."
-related: ["agent-memory-architecture", "langgraph", "agent-tool-integration-engineer"]
+related: ["agent-memory-architecture", "best-vector-database-2026", "langgraph", "agent-tool-integration-engineer"]
 ---
 
 Mem0 is a memory layer for AI agents and LLM applications. Instead of cramming an entire conversation history into the context window every turn, Mem0 **extracts the salient facts**, stores them, and retrieves the relevant ones when needed — so an agent remembers a user's preferences, decisions, and history across sessions while keeping prompts lean.
@@ -44,4 +44,4 @@ context = m.search("what stack does the user like?", user_id="alex")
 
 ## Good to know
 
-Mem0 is open source (Apache-2.0) and free to self-host; a managed platform with a free tier is also available. It needs a vector store and an LLM provider to extract and embed memories, so factor those into cost. Pairs naturally with agent frameworks like [LangGraph](/tools/langgraph).
+Mem0 is open source (Apache-2.0) and free to self-host; a managed platform with a free tier is also available. It sits **on top of a vector store** and an LLM provider — it extracts and embeds memories, then retrieves them — so you bring (and pay for) a vector database underneath it; see [Best Vector Database in 2026](/guides/database/best-vector-database-2026) for choosing one. Pairs naturally with agent frameworks like [LangGraph](/tools/langgraph).
