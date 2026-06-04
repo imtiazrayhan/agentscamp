@@ -10,12 +10,12 @@ repo: "https://github.com/BerriAI/litellm"
 license: "MIT"
 sameAs: ["https://github.com/BerriAI/litellm", "https://docs.litellm.ai"]
 color: "blue"
-topics: ["llm-app-dev"]
+topics: ["llm-app-dev", "devops-infra"]
 tags: ["gateway", "proxy", "multi-provider", "open-source", "python"]
 featured: false
-alternativeTo: ["openrouter", "vercel-ai-sdk"]
+alternativeTo: ["openrouter", "vercel-ai-sdk", "portkey"]
 summary: "LiteLLM lets you call 100+ LLMs (OpenAI, Anthropic, Google, Bedrock, local, and more) through one OpenAI-compatible interface. Use it as a Python library, or run its proxy as a self-hosted gateway with central keys, fallbacks, retries, caching, cost tracking, and rate limits."
-related: ["openrouter", "calling-any-model-gateways", "provider-fallback-wrapper", "vercel-ai-sdk"]
+related: ["openrouter", "calling-any-model-gateways", "llm-gateways-compared", "provider-fallback-wrapper", "vercel-ai-sdk"]
 ---
 
 LiteLLM gives you one interface to call virtually any LLM. Write your code once against the OpenAI format and LiteLLM translates to 100+ providers — Anthropic, Google, Azure, AWS Bedrock, local models, and more — so switching or mixing models is a config change, not a rewrite. It comes in two forms: a **Python library** for in-process calls, and a **proxy server** you run as a centralized gateway.
