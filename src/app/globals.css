@@ -193,13 +193,14 @@
   animation: search-box-in 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Shiki dual-theme */
-.shiki,
-.shiki span {
+/* Shiki dual-theme: rehype-pretty-code emits per-token --shiki-light/--shiki-dark
+   CSS variables on the spans (no .shiki class), so apply them by theme here. */
+[data-rehype-pretty-code-figure] code,
+[data-rehype-pretty-code-figure] code span {
   color: var(--shiki-light);
 }
-.dark .shiki,
-.dark .shiki span {
+.dark [data-rehype-pretty-code-figure] code,
+.dark [data-rehype-pretty-code-figure] code span {
   color: var(--shiki-dark);
 }
 [data-rehype-pretty-code-figure] code {
