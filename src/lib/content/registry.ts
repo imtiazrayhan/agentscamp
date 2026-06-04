@@ -124,6 +124,14 @@ export const topics: TopicDef[] = [
   { slug: "data-ml", label: "Data & ML" },
   { slug: "architecture", label: "Architecture" },
   { slug: "workflow-prompting", label: "Workflow & Prompting" },
+  // Everything-AI expansion (content roadmap). A topic surfaces only once it has
+  // content (getByTopic > 0), so these are inert until their clusters land.
+  { slug: "rag-retrieval", label: "RAG & Retrieval" },
+  { slug: "llm-evals", label: "LLM Evals" },
+  { slug: "ai-agents-systems", label: "AI Agents & Systems" },
+  { slug: "llm-app-dev", label: "LLM App Dev" },
+  { slug: "mlops-ai-infra", label: "MLOps & AI Infra" },
+  { slug: "ai-safety-security", label: "AI Safety & Security" },
 ];
 
 export const topicBySlug = new Map(topics.map((t) => [t.slug, t]));
