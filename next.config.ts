@@ -39,11 +39,21 @@ const nextConfig: NextConfig = {
   async redirects() {
     return agentRedirects();
   },
-  // Expose every page's Markdown twin at `<path>.md`. The handler lives at
-  // /raw/[...path] and sets its own canonical + noindex headers (preserved
-  // through the rewrite). Lets `alternates.types` advertise the clean .md URL.
+  // Pretty suffix URLs. ORDER MATTERS (first match wins): the agent-export
+  // suffixes — several of which also end in `.md` — must precede the generic
+  // `/:path*.md` twin rule, else e.g. `/a/b.agent.md` would match `.md` with
+  // path*="a/b.agent" and 404. Export handler at /export/[...path] (last segment
+  // = format id); the .md twin handler at /raw/[...path]. Both set their own
+  // canonical header, preserved through the rewrite.
   async rewrites() {
-    return [{ source: "/:path*.md", destination: "/raw/:path*" }];
+    return [
+      { source: "/:path*.agent.md", destination: "/export/:path*/copilot" },
+      { source: "/:path*.cursor.mdc", destination: "/export/:path*/cursor" },
+      { source: "/:path*.cline.md", destination: "/export/:path*/cline" },
+      { source: "/:path*.windsurf.md", destination: "/export/:path*/windsurf" },
+      { source: "/:path*.continue.md", destination: "/export/:path*/continue" },
+      { source: "/:path*.md", destination: "/raw/:path*" },
+    ];
   },
 };
 
