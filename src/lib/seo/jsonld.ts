@@ -58,6 +58,16 @@ export function websiteNode(): Node {
     description: site.description,
     publisher: { "@id": ORG_ID },
     inLanguage: locale,
+    // Advertise on-site search to answer engines (sitelinks search box). The
+    // /search page really does resolve ?q= — never declare an action that 404s.
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${site.url}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 
@@ -200,6 +210,8 @@ function primaryEntity(item: ContentItem, path: string): Node {
       ...(t.os.length ? { operatingSystem: t.os.join(", ") } : {}),
       ...(sameAs.length ? { sameAs } : {}),
       ...(t.license ? { license: t.license } : {}),
+      ...dateFields(item),
+      ...(item.image ? { image: abs(item.image) } : {}),
       // Truthful only: a genuinely free tool. Never open-source (which has cost
       // models), never a fabricated aggregateRating (manual-action risk).
       ...(t.pricing === "free"
@@ -219,6 +231,7 @@ function primaryEntity(item: ContentItem, path: string): Node {
     programmingLanguage: { "@type": "ComputerLanguage", name: "Markdown" },
     author: { "@id": ORG_ID },
     ...dateFields(item),
+    ...(item.image ? { image: abs(item.image) } : {}),
   };
 }
 
@@ -307,6 +320,46 @@ export function collectionGraph(opts: {
     });
   }
   return { "@context": "https://schema.org", "@graph": nodes };
+}
+
+/** @graph for the /topics hub: CollectionPage + ItemList of topic landing pages. */
+export function topicsGraph(
+  entries: { slug: string; label: string }[],
+  description: string,
+): Node {
+  const path = "/topics";
+  const listId = entityId(path, "list");
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": pageId(path),
+        url: abs(path),
+        name: "Topics",
+        description,
+        isPartOf: { "@id": SITE_ID },
+        breadcrumb: { "@id": crumbId(path) },
+        mainEntity: { "@id": listId },
+        inLanguage: locale,
+      },
+      breadcrumbNode(
+        [{ label: "Home", href: "/" }, { label: "Topics" }],
+        crumbId(path),
+      ),
+      {
+        "@type": "ItemList",
+        "@id": listId,
+        numberOfItems: entries.length,
+        itemListElement: entries.map((t, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: abs(`/topics/${t.slug}`),
+          name: t.label,
+        })),
+      },
+    ],
+  };
 }
 
 /** Standalone FAQPage graph (for static pages like /how-to-use). */

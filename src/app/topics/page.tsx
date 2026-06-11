@@ -3,12 +3,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { topics, getByTopic } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { topicsGraph } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
+
+const DESCRIPTION =
+  "Browse AgentsCamp by topic — cross-cutting collections of agents, skills, guides, tools, and commands for building with AI coding agents.";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Topics",
-  description:
-    "Browse AgentsCamp by topic — cross-cutting collections of agents, skills, guides, tools, and commands for building with AI coding agents.",
+  description: DESCRIPTION,
   path: "/topics",
 });
 
@@ -19,6 +22,12 @@ export default function Page() {
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(topicsGraph(entries, DESCRIPTION)),
+        }}
+      />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Topics" }]} />
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Topics</h1>
