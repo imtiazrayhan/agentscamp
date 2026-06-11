@@ -6,6 +6,23 @@ date: 2026-05-20
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
+related: ["prompting-techniques-2026", "context-engineering", "effective-tool-use", "breakdown-task"]
+summary: "Five patterns make coding agents reliable: chain big asks into verifiable steps, pin conventions with few-shot examples instead of adjectives, manage context (point precisely, persist durable facts in CLAUDE.md, offload noise to subagents), verify-act-reverify with tools, and demand structured output. They compose — and each fixes a specific failure mode."
+keyTakeaways:
+  - "Chaining surfaces intermediate decisions where they're cheap to correct — a mega-prompt buries them inside one response."
+  - "Few-shot beats adjectives: one canonical example pins error handling, validation, and return shape without enumerating them; two or three short varied examples beat one long one."
+  - "Context management is deciding what the agent should NOT see — point at exact files and symbols, and let subagents absorb the noisy investigations."
+  - "The tool-use pattern that pays is verify → act → re-verify: gather ground truth before changing anything, confirm after instead of assuming."
+  - "Structured output (a demanded JSON shape, a diff, a table) is what makes results consumable by scripts, CI, and the next prompt in the chain."
+faq:
+  - q: "What is prompt chaining for coding agents?"
+    a: "Breaking one ambitious request into a sequence of smaller, verifiable steps where each step's output feeds the next — read the module, then design the schema, then implement against it. Each step is independently checkable, so a wrong assumption gets fixed before any code depends on it. Encode recurring chains as slash commands so you never retype them."
+  - q: "When should I use few-shot examples in a prompt?"
+    a: "Whenever the output should match a convention that's easier to show than describe — API handlers, tests, migrations in house style. Paste one canonical example and ask for the next instance; format, validation, and error handling carry over automatically. Use two or three short, varied examples to teach the pattern's boundaries."
+  - q: "How do I stop an agent's context from filling with noise?"
+    a: "Three habits: reference exact files and symbols instead of letting it grep the repo; persist durable conventions in CLAUDE.md instead of re-explaining them; and delegate heavy investigations to subagents, which do the noisy reading in their own window and return only a summary."
+  - q: "What is the verify-then-act pattern?"
+    a: "Ask the agent to gather ground truth before changing anything (run the typecheck, paste the current errors), make the change, then re-verify afterward (run it again, confirm the errors are gone and no new ones appeared). It forces the agent to work against observed reality instead of its prediction of the codebase — where most silent failures originate."
 ---
 
 Coding agents like Claude Code do their best work when the request is shaped, not just asked. A prompt is an interface: the clearer the contract, the more reliable the output. This guide consolidates five patterns that consistently improve results when you're driving an agent through real engineering work. Each pattern includes a concrete coding example you can adapt.

@@ -16,6 +16,15 @@ featured: false
 alternativeTo: ["langgraph", "crewai", "autogen"]
 summary: "OpenAI's open-source Agents SDK is a small, unopinionated framework for building agents: a core agent loop plus handoffs (delegation between agents), guardrails (input/output validation), sessions (memory), and built-in tracing. The production-grade successor to Swarm; works with non-OpenAI models too."
 related: ["langgraph", "crewai", "autogen", "agent-frameworks-2026"]
+faq:
+  - q: "What is the OpenAI Agents SDK?"
+    a: "The OpenAI Agents SDK is OpenAI's lightweight, open-source framework for building agentic applications — the production-ready successor to the experimental Swarm project. Its philosophy is 'few primitives, learned fast': a core agent loop plus handoffs for multi-agent delegation, guardrails for input/output validation, sessions for memory, and built-in tracing."
+  - q: "Is the OpenAI Agents SDK free?"
+    a: "Yes — it's open source under MIT and free; you pay your model provider for tokens."
+  - q: "Does the OpenAI Agents SDK work with non-OpenAI models?"
+    a: "Yes. Although it comes from OpenAI, it's provider-agnostic — it works with OpenAI models out of the box and with other providers through compatible interfaces, which makes it a reasonable default even outside the OpenAI ecosystem."
+  - q: "OpenAI Agents SDK vs LangGraph?"
+    a: "Reach for the Agents SDK when you want a small, standard agent loop with handoffs and guardrails and minimal ceremony. LangGraph fits when you need explicit state graphs and checkpointing; CrewAI when you want role-based crews."
 ---
 
 The OpenAI Agents SDK is OpenAI's lightweight, open-source framework for building agentic applications. It's the production-ready successor to the experimental Swarm project, and its design philosophy is "few primitives, learned fast": a core agent loop, plus a handful of well-chosen building blocks rather than a large abstraction layer.

@@ -17,6 +17,13 @@ featured: false
 alternativeTo: []
 summary: "DSPy (from Stanford NLP) lets you build LLM pipelines as Python code rather than brittle prompt strings. You declare each step as a typed signature, compose modules like ChainOfThought and ReAct, then run an optimizer (BootstrapFewShot, MIPROv2, GEPA) that searches instructions and few-shot demonstrations against your metric and data. Change models and you recompile, not rewrite."
 related: ["dspy-prompt-optimization", "prompting-techniques-2026", "prompt-optimizer"]
+faq:
+  - q: "What is DSPy?"
+    a: "DSPy is a framework from Stanford NLP for programming language models rather than prompting them. You declare each pipeline step as a typed signature, compose modules like ChainOfThought and ReAct, and let an optimizer (BootstrapFewShot, MIPROv2, GEPA) generate and tune the actual prompts — instructions and few-shot examples — against a metric you define."
+  - q: "Is DSPy free?"
+    a: "Yes — DSPy is open source under MIT and free. You pay your model provider for tokens during compilation and at runtime. It's a Python framework, so it fits Python-based LLM stacks most naturally."
+  - q: "How do I use DSPy?"
+    a: "Declare a task as typed inputs and outputs — e.g. classify = dspy.ChainOfThought('ticket -> category, urgency') — then compile it with an optimizer like dspy.MIPROv2(metric=metric).compile(classify, trainset=train). You specify the task and the metric; the optimizer figures out the prompt. Invest first in a metric that genuinely reflects quality and a dataset that includes the hard cases."
 ---
 
 DSPy is a framework for **programming** language models rather than prompting them. Instead of hand-writing and hand-tuning prompt strings, you declare what each step of a pipeline does as a typed **signature**, compose those steps with **modules**, and let an **optimizer** generate and tune the actual prompts — instructions and few-shot examples — against a metric you define. It comes out of Stanford NLP and has become the reference tool for treating prompts as something you compile, not craft.

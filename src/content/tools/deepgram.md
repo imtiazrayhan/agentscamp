@@ -15,6 +15,13 @@ featured: false
 alternativeTo: ["elevenlabs"]
 summary: "Deepgram is a voice-AI platform centered on fast, accurate speech-to-text (its Nova models, with streaming, diarization, and 45+ languages) and low-latency text-to-speech (Aura). It also offers a bundled Voice Agent API that combines STT, an LLM, and TTS. It's a common choice for the transcription stage of a voice agent, and a single-vendor option for the whole loop."
 related: ["build-a-voice-agent", "elevenlabs", "pipecat", "voice-agent-engineer"]
+faq:
+  - q: "What is Deepgram?"
+    a: "Deepgram is a voice-AI platform centered on speech-to-text: its Nova models offer fast, accurate streaming transcription across 45+ languages with speaker diarization, smart formatting, and keyterm prompting. It pairs that with Aura, a text-to-speech engine tuned for very low time-to-first-byte, and a Voice Agent API that wires STT, an LLM, and TTS into one real-time endpoint."
+  - q: "How much does Deepgram cost?"
+    a: "Deepgram is freemium: free credits to start, then usage-based pay-as-you-go — STT billed per minute, Aura TTS per character, and the Voice Agent API per hour — plus enterprise plans."
+  - q: "Deepgram vs ElevenLabs?"
+    a: "In a voice-agent pipeline, Deepgram is most often the speech-to-text stage, while ElevenLabs is the usual comparison for the text-to-speech side. Both also offer a bundled path for the whole STT, LLM, and TTS loop; to compose a custom pipeline across vendors, Pipecat is the orchestration option."
 ---
 
 Deepgram is a voice-AI platform whose core strength is **speech-to-text** — its Nova models offer fast, accurate streaming transcription across 45+ languages, with speaker diarization, smart formatting, and keyterm prompting. It pairs that with **text-to-speech** (Aura, tuned for very low time-to-first-byte) and a bundled **Voice Agent API** that wires STT, an LLM, and TTS into one real-time endpoint.

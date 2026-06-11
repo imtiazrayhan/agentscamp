@@ -15,6 +15,15 @@ featured: false
 alternativeTo: ["langfuse", "langsmith"]
 summary: "Arize Phoenix is an open-source LLM tracing and evaluation tool built on OpenTelemetry/OpenInference. Run it locally in a notebook or self-host it to capture traces, run evals (including LLM-as-judge), and debug RAG and agent runs without sending data to a vendor."
 related: ["langfuse", "langsmith", "best-llm-eval-tools-2026", "llm-observability-engineer"]
+faq:
+  - q: "What is Arize Phoenix?"
+    a: "Arize Phoenix is an open-source observability and evaluation tool for LLM applications, built on OpenTelemetry and the OpenInference tracing standard. It captures the full trace of a run, runs evals (including LLM-as-judge) for relevance, hallucination, and RAG quality, and lets you debug RAG and agent runs by inspecting the span tree behind an answer."
+  - q: "Is Arize Phoenix free?"
+    a: "Yes — Phoenix is open source and free to self-host, and because it runs locally or self-hosted, your traces never have to leave your environment. You bring an LLM provider for judge-based evals, and Arize offers a managed commercial platform if you outgrow it."
+  - q: "How do I use Arize Phoenix?"
+    a: "Launch it locally with import phoenix as px; px.launch_app(), auto-instrument your LLM or agent calls, then inspect spans and run evaluators in the local UI. Because Phoenix speaks OpenTelemetry, the instrumentation is portable — you can ship the same traces to another OTel-compatible backend later without re-instrumenting."
+  - q: "Arize Phoenix vs Langfuse?"
+    a: "Both are open-source LLM observability tools. Phoenix is OpenTelemetry-native and built to run anywhere — in a notebook during development or self-hosted in production — while Langfuse is the hosted-first open-source option; LangSmith is the commercial LangChain-native alternative."
 ---
 
 Arize Phoenix is an open-source observability and evaluation tool for LLM applications. Built on **OpenTelemetry** and the OpenInference tracing standard, it captures the full trace of a run and lets you evaluate outputs — and because it's open source and runs locally or self-hosted, your traces never have to leave your environment.

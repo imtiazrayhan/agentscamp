@@ -5,6 +5,7 @@ date: 2026-06-03
 version: "1.0.0"
 color: "cyan"
 topics: ["workflow-prompting"]
+summary: "A skill that drafts a release changelog from the pull requests merged since the last tag: it collects PRs via the GitHub CLI, classifies each into Keep a Changelog sections using labels and title prefixes, rewrites titles into reader-facing notes with PR numbers, leads with breaking changes, and suggests the version bump — publishing nothing."
 ---
 
 Turn a range of merged pull requests into a clean, human-readable changelog. This skill collects the PRs merged since the previous release tag, groups them by change type (features, fixes, breaking changes, and more), and drafts release notes that are accurate, scannable, and ready to paste into a GitHub release or `CHANGELOG.md`.

@@ -15,6 +15,13 @@ tags: ["vector-database", "rag", "managed", "serverless"]
 featured: false
 summary: "Pinecone is a fully managed, serverless vector database: you call an API to upsert and query embeddings and never run a node, tune an index, or page yourself at 3am. It supports metadata filtering, hybrid search, and integrated embedding/reranking — the zero-ops choice when engineering time is the scarce resource."
 related: ["best-vector-database-2026", "qdrant", "weaviate", "pgvector", "vector-search-engineer"]
+faq:
+  - q: "What is Pinecone?"
+    a: "Pinecone is a fully managed, serverless vector database. You create an index, upsert embeddings, and query for nearest neighbours through an API — Pinecone handles storage, scaling, replication, and index maintenance, so there's no node to provision, no HNSW parameter to tune, and no on-call rotation for the search tier."
+  - q: "Is Pinecone free?"
+    a: "There's a free starter tier to begin with, then usage-based pricing — capacity scales automatically with your data and traffic, and you're billed by usage."
+  - q: "Pinecone vs open-source vector databases like Qdrant or pgvector?"
+    a: "Pinecone is fully managed and proprietary: you trade the control and self-host option of an open-source store like Qdrant or pgvector for not having to operate anything. It suits teams where engineering time is more expensive than per-query cost and a self-host escape hatch isn't a requirement."
 ---
 
 Pinecone is a fully managed, **serverless** vector database. You create an index, upsert your embeddings, and query for nearest neighbours through an API — Pinecone handles the storage, scaling, replication, and index maintenance. There is no node to provision, no HNSW parameter to tune, and no on-call rotation for the search tier. That managed-by-default posture is the whole value proposition.

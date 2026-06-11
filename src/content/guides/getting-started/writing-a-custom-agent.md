@@ -7,6 +7,29 @@ color: "green"
 topics: ["workflow-prompting"]
 featured: true
 related: ["code-reviewer", "debugger"]
+summary: "A good custom subagent comes from five decisions: one nameable job (split anything joined by 'and'), a description written as a routing signal with 'Examples —' triggers, a minimum toolset (read-only for reviewers), a model matched to cognitive load (sonnet by default), and a system prompt well under 100 lines that says only what the model couldn't already guess."
+howtoSteps:
+  - name: "Pick one job-to-be-done"
+    text: "Scope the agent to one task a human could name in a sentence — 'reviews PR diffs for bugs', 'investigates a failing test'. If the description needs an 'and' joining unrelated tasks, that's two agents."
+  - name: "Write a description that earns delegation"
+    text: "The description field is the routing signal, not documentation. State when to use the agent and include 'Examples —' with realistic situations phrased the way people actually ask; that's what Claude pattern-matches against."
+  - name: "Scope the tools"
+    text: "Grant only what the job needs via the tools field. A reviewer gets Read, Grep, Glob, Bash and physically cannot edit code; a refactorer adds Edit and Write. Minimum first — widening later is easy, tightening is hard."
+  - name: "Pick the model"
+    text: "Match the tier to cognitive load: haiku for mechanical high-volume work, sonnet as the default for review/debugging/coding agents, opus only for genuinely hard reasoning like architecture or subtle concurrency."
+  - name: "Keep the system prompt under ~100 lines"
+    text: "Structure it as role, when to use / when not, workflow, and output shape. Cut generic advice the model already knows — spend the budget only on what's specific to this job. A prompt past a couple hundred lines means the agent has too many jobs."
+  - name: "Reload and verify delegation"
+    text: "Restart or reload Claude Code, then give it a task that should trigger the agent. If it doesn't delegate, tighten the description first — it's the lever that controls routing."
+faq:
+  - q: "How do I create a custom agent in Claude Code?"
+    a: "Add a Markdown file to .claude/agents/ (project) or ~/.claude/agents/ (personal): YAML frontmatter with name, description, and optional model/color/tools, followed by a body that becomes the agent's system prompt. Reload Claude Code and it's available for delegation — that file is the entire format."
+  - q: "Why doesn't Claude delegate to my custom agent?"
+    a: "Almost always the description. It's the routing signal Claude reads when deciding whether to hand work over — write it in terms of when to use the agent, and add 'Examples —' with situations phrased the way you'd actually ask. Vague descriptions leave agents sitting unused."
+  - q: "How long should a subagent's system prompt be?"
+    a: "Usually well under 100 lines. Long prompts dilute attention, accumulate contradictions, cost context on every invocation, and rot unmaintained. If yours is growing past a couple hundred lines, the agent is doing too many jobs — split it before you patch it."
+  - q: "What tools should a review agent have?"
+    a: "Read-only: Read, Grep, Glob, and Bash for running checks. With no write tools it physically cannot edit your code, and the restriction sharpens behavior — an agent that can only read naturally produces analysis instead of drifting into making changes."
 ---
 
 A custom subagent is one of the highest-leverage things you can add to a Claude Code setup. Done well, it gives Claude a specialist it can hand work to — a code reviewer, a debugger, a migration assistant — that runs in its own context window with its own focused instructions and a restricted toolset. Done poorly, it becomes a 1,500-line prompt that nobody trusts and Claude never delegates to.

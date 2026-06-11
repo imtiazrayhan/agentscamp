@@ -10,6 +10,14 @@ category: "ide"
 color: "cyan"
 topics: ["coding-languages"]
 tags: ["ide", "editor"]
+summary: "Devin Desktop (formerly Windsurf) is an agentic IDE built on a VS Code fork, rebranded by Cognition AI in June 2026. Its built-in Devin Local agent — which replaced Cascade — plans and executes multi-file edits, runs terminal commands, and pulls codebase-wide context; the rebrand made an Agent Command Center the default surface and added ACP support."
+faq:
+  - q: "What is Devin Desktop (formerly Windsurf)?"
+    a: "Devin Desktop is an agentic code editor built on a fork of VS Code. Cognition AI — maker of the Devin coding agent — acquired Windsurf in 2025 and rebranded the standalone editor as Devin Desktop in June 2026 (the JetBrains plugin keeps the Windsurf name). Its built-in Devin Local agent reads, reasons about, and edits multiple files in a single flow, with codebase-wide context and MCP support."
+  - q: "What happened to Cascade?"
+    a: "The June 2026 rebrand replaced the original Cascade agent with Devin Local. Legacy Cascade remains usable through July 1, 2026; after that, Devin Local is the agent."
+  - q: "Is Devin Desktop free?"
+    a: "It's freemium: a free tier exists, and paid plans add higher usage limits and access to more capable models — Cognition says plans and pricing carried over unchanged from Windsurf. It runs on macOS, Windows, and Linux."
 ---
 
 Devin Desktop (formerly Windsurf) is an agentic code editor built on a fork of VS Code. Cognition AI — maker of the Devin coding agent — acquired Windsurf in 2025 and rebranded the standalone editor as Devin Desktop in June 2026 (the JetBrains plugin keeps the Windsurf name). Its defining feature is its built-in agent — **Devin Local**, which replaced the original Cascade agent in the June 2026 rebrand — able to read, reason about, and edit multiple files in a single flow rather than completing one isolated suggestion at a time. The rebrand also made an **Agent Command Center** the default surface (the full IDE sits a click behind it) and added Agent Client Protocol (ACP) support, so compatible third-party agents can run inside the editor. It combines familiar VS Code ergonomics with deeper codebase awareness, so the agent can act on context it gathers automatically instead of relying only on the file you have open.

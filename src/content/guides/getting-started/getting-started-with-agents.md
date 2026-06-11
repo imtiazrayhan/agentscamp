@@ -7,6 +7,33 @@ color: "green"
 topics: ["workflow-prompting"]
 featured: true
 related: ["code-reviewer"]
+summary: "Subagents are specialist assistants Claude Code delegates to — each a Markdown file in .claude/agents/ with frontmatter (name, description, optional model/tools) and a system-prompt body, running in its own context window and returning only its result. Delegation is routed by the description field, so writing it well is writing the routing logic."
+keyTakeaways:
+  - "A subagent runs in its own context window and returns a clean result — noisy exploration never pollutes your main thread."
+  - "It's just a Markdown file: .claude/agents/ for the repo and team, ~/.claude/agents/ for personal agents everywhere; project files win on name collisions."
+  - "The description field is the routing logic — state what the agent does AND when to use it; phrases like 'use proactively' trigger automatic delegation."
+  - "model is optional and defaults to inherit; pin haiku for cheap mechanical jobs and opus for hard reasoning."
+  - "A tools allowlist (e.g. Read, Grep, Glob) is the safety mechanism for agents that should never write files or run commands."
+howtoSteps:
+  - name: "Create the directory"
+    text: "From your project root: mkdir -p .claude/agents — or use ~/.claude/agents for a personal agent available in every project."
+  - name: "Write the agent file"
+    text: "One Markdown file per agent: YAML frontmatter with name and description (plus optional model, color, tools), then a body that becomes the agent's system prompt. Treat the body like a job description — role, step-by-step process, constraints."
+  - name: "Make the description route"
+    text: "Claude delegates by matching your request against agent descriptions. Say what the agent does and when to use it; add 'use proactively after code changes' style triggers for automatic delegation."
+  - name: "Reload and test"
+    text: "Start a new session so the file is picked up, then invoke it explicitly: 'Use the test-runner subagent to check my last change.' If nothing happens, check the file path, the YAML frontmatter, and that the name is unique."
+  - name: "Tighten over time"
+    text: "Once the agent's job is well defined, pin the right model tier and add a tools allowlist. Start permissive while iterating; lock down when it stabilizes."
+faq:
+  - q: "What is a Claude Code subagent?"
+    a: "A specialized assistant Claude Code can delegate work to — defined by a Markdown file whose frontmatter describes the agent and whose body is its system prompt. It runs in an isolated context window and returns only its final answer, which keeps your main conversation focused while a noisy task (reading dozens of files, running a suite) happens elsewhere."
+  - q: "Where do subagent files live?"
+    a: "Two places: .claude/agents/ inside a project (shared with the repo and your team) and ~/.claude/agents/ in your home directory (personal, available everywhere). When names collide, the project-level agent wins."
+  - q: "How does Claude know when to use a subagent?"
+    a: "It matches your request against every agent's description field — that one line is effectively the routing rule. Descriptions that state both the what and the when ('runs the test suite and explains failures; use proactively after code changes') get delegated to reliably. You can always invoke one explicitly by asking in plain language."
+  - q: "Why isn't my subagent being picked up?"
+    a: "The usual suspects: the file isn't actually in .claude/agents/, the frontmatter isn't valid YAML between two --- lines, the name isn't unique, or the session predates the file — start a new session so it loads. Malformed frontmatter is the most common cause."
 ---
 
 If you have used Claude Code for a while, you have probably noticed your main conversation getting crowded. You are reviewing code, writing tests, and debugging a deploy all in the same thread, and the context fills with details that have nothing to do with the task in front of you. Subagents are the fix. They let you hand off well-scoped jobs to a separate Claude instance that runs in its own context window and reports back a clean result.

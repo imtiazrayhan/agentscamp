@@ -15,6 +15,14 @@ topics: ["mcp", "architecture"]
 tags: ["mcp", "debugging", "developer-tools", "open-source"]
 featured: false
 related: ["building-an-mcp-server", "mcp-server-engineer", "deploy-remote-mcp-server", "fastmcp", "mcp-server-scaffolder", "add-mcp-server"]
+summary: "MCP Inspector is the official open-source tool for testing and debugging Model Context Protocol servers. It connects to a local stdio or remote Streamable HTTP server, lists its tools, resources, and prompts, calls them with arbitrary inputs, and shows the raw JSON-RPC traffic — all from a local web UI run via npx, with no client or model in the loop."
+faq:
+  - q: "What is MCP Inspector?"
+    a: "MCP Inspector is the official, open-source developer tool for testing and debugging Model Context Protocol servers, maintained as part of the MCP project. It connects directly to a server so you can browse and call its tools, resources, and prompts and watch the JSON-RPC messages flowing in both directions — no client and no model involved."
+  - q: "How do I run MCP Inspector?"
+    a: "No install needed: run npx @modelcontextprotocol/inspector node ./my-server/index.js to launch it against a local stdio server (it opens a browser UI), or point it at a remote Streamable HTTP server by URL."
+  - q: "Is MCP Inspector free?"
+    a: "Yes — free and open source under MIT, run locally via Node.js. It's the standard first stop when building a server with a framework like FastMCP or the official SDKs."
 ---
 
 MCP Inspector is the official, open-source developer tool for **testing and debugging** Model Context Protocol servers. It's the fastest way to see what a server actually exposes: connect to it, browse its tools, resources, and prompts, call them with arbitrary inputs, and watch the raw request/response traffic — all from a local web UI, with no client and no model in the loop.

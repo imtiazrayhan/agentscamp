@@ -6,7 +6,23 @@ date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
 featured: false
-related: ["writing-a-custom-agent", "building-an-mcp-server", "prompt-patterns"]
+related: ["writing-a-custom-agent", "building-an-mcp-server", "prompt-patterns", "claude-code-settings-permissions", "claude-code-hooks"]
+summary: "An agent's toolset is its job description written in capabilities. Start from zero and grant the minimum; remove Edit/Write so a reviewer physically can't mutate code; pick one sharp tool per capability instead of three overlapping ones; name tools so the model routes correctly; scope MCP servers and credentials to least privilege; and gate the irreversible with hooks, not polite prompts."
+keyTakeaways:
+  - "Capability is the real boundary: a tool the agent doesn't have is the only constraint that can't be argued around — enforcement, not persuasion."
+  - "Read-only by default, and not just for safety: capability shapes behavior — strip the write tools and the same prompt produces analysis instead of unreviewed 'helpful' edits."
+  - "Bash in the allowlist is the full shell. The toolset alone doesn't make it read-only — that takes a PreToolUse hook on its commands, or a permission mode like plan."
+  - "Overlapping tools breed inconsistency: give an agent three ways to search and it picks differently every run. One sharp tool per capability keeps behavior legible."
+  - "For MCP, the credential defines the blast radius, not the prompt — connect only the servers each agent needs, on least-privilege, read-scoped tokens."
+faq:
+  - q: "How many tools should an agent have?"
+    a: "The minimum a named task requires — start from zero and add deliberately. Every extra tool is another option weighed on every turn, another misfire path, and another way to do damage. A few sharp, non-overlapping tools produce more predictable behavior than a full toolbox."
+  - q: "Does removing Edit and Write make an agent safe?"
+    a: "It guarantees the agent cannot call those tools — no prompt injection or confusion conjures a tool outside the allowlist. But if the agent also holds Bash, it still has a full shell (including sed -i or rm). Pair the trimmed toolset with a PreToolUse hook that gates write-shaped shell commands for actual read-only enforcement."
+  - q: "How do I make Bash read-only for an agent?"
+    a: "You can't through the tools allowlist — Bash is all-or-nothing there. Enforce it one layer down: a PreToolUse hook that inspects each command and blocks writes, or run the agent in a read-only permission mode like plan. The toolset removes the editing tools; the hook constrains the shell."
+  - q: "Which MCP servers should an agent get?"
+    a: "Only the ones its job touches, with credentials scoped to that job — a release-notes agent gets GitHub read access, never the production database server. Many servers offer read-only modes or roles; use them. And treat MCP output as untrusted input: never wire an untrusted server to an agent holding write or deploy tools."
 ---
 
 The fastest way to make an agent worse is to give it more tools. Every tool you add is another option the model has to consider on every turn, another way for it to misfire, and another path to a destructive mistake. The toolset is not a feature list — it's the agent's job description, written in capabilities. Get it wrong and the model wanders; get it right and a mediocre prompt still produces sharp, safe behavior.

@@ -11,6 +11,16 @@ topics: ["mcp", "review-qa"]
 tags: ["mcp", "browser", "testing", "automation"]
 featured: false
 related: ["claude-code", "test-engineer"]
+summary: "Playwright MCP is Microsoft's open-source MCP server that lets AI agents drive a real browser via Playwright. It acts on the accessibility tree rather than screenshots, so interactions are deterministic, token-efficient, and need no vision model — navigation, clicks, forms, tabs, and console/network inspection across Chromium, Firefox, and WebKit."
+faq:
+  - q: "What is Playwright MCP?"
+    a: "Playwright MCP is a Model Context Protocol server from Microsoft that gives an AI agent a full browser tool set — navigating, clicking, typing, filling forms, managing tabs, and reading console/network output. It's built on Playwright and operates on the page's accessibility tree, returning structured snapshots instead of screenshots, so no vision model is needed."
+  - q: "How do I add Playwright MCP to Claude Code?"
+    a: "Run claude mcp add playwright npx @playwright/mcp@latest, or add it to an mcpServers config block with command npx and the @playwright/mcp@latest argument. The first run downloads browser binaries via Playwright; if your environment blocks that, run npx playwright install ahead of time."
+  - q: "Is Playwright MCP free?"
+    a: "Yes — free and open source under Apache-2.0, published as @playwright/mcp on npm and maintained by Microsoft in the microsoft/playwright-mcp repo. You run it locally via Node.js; there's no hosted tier or account, and it works with any MCP-capable client."
+  - q: "Is Playwright MCP safe to run?"
+    a: "A browser agent can act on any site it's pointed at, so run it against your own apps and trusted URLs. Pass --isolated for an ephemeral profile (the default profile persists your logged-in state) and use --allowed-origins / --blocked-origins to limit reachable origins — best-effort filters, not a hard security boundary."
 ---
 
 Playwright MCP is a Model Context Protocol server from Microsoft that lets an AI agent drive a real browser. It is not a standalone app — you register it with an MCP client like Claude Code, and the agent gains a set of tools for navigating pages, clicking, typing, filling forms, and reading results. Under the hood it uses [Playwright](https://playwright.dev), the same automation engine that powers Microsoft's end-to-end testing framework.

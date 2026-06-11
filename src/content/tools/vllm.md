@@ -15,6 +15,16 @@ topics: ["mlops-ai-infra"]
 tags: ["llm", "inference", "serving", "gpu", "open-source"]
 featured: false
 related: ["llm-inference-engineer", "self-host-vs-api-llm", "scaffold-vllm-config", "ollama", "lm-studio"]
+summary: "vLLM is an open-source inference and serving engine for open-weight LLMs with high throughput on GPUs. PagedAttention manages the KV cache like virtual memory and continuous batching keeps hardware saturated, while an OpenAI-compatible server means existing clients work by swapping the base URL — the default engine for self-hosted production serving."
+faq:
+  - q: "What is vLLM?"
+    a: "vLLM is an open-source inference and serving engine built to run open-weight LLMs with high throughput and efficient GPU memory use. Its headline innovation, PagedAttention, manages the KV cache like virtual memory to minimize fragmentation, and continuous batching lets new requests join in flight — together pushing far more tokens per second than naive serving."
+  - q: "How do I serve a model with vLLM?"
+    a: "Run vllm serve meta-llama/Llama-3.1-8B-Instruct --max-model-len 8192 to start an OpenAI-compatible server, then point any OpenAI client at http://localhost:8000/v1. For multi-GPU, add --tensor-parallel-size N; tune --max-num-seqs and --gpu-memory-utilization for throughput."
+  - q: "vLLM vs Ollama?"
+    a: "Different jobs. vLLM is production-serving infrastructure for Linux/GPU deployments that need concurrency and low cost-per-token; Ollama and LM Studio are the simpler fit for running a model locally on a laptop for development. vLLM is what you move to when many concurrent users hit a self-hosted model."
+  - q: "Is vLLM free?"
+    a: "Yes — free and open source under Apache-2.0. It targets Linux with NVIDIA (and other) accelerators; you provide the GPUs."
 ---
 
 vLLM is an open-source inference and serving engine built to run open-weight LLMs with **high throughput** and efficient GPU memory use. Its headline innovation, **PagedAttention**, manages the KV cache like virtual memory so the GPU wastes far less on fragmentation and padding — which, combined with **continuous (in-flight) batching**, keeps the hardware saturated and pushes far more tokens per second than naive serving. It's the engine most teams reach for when self-hosting an LLM for production traffic.

@@ -10,6 +10,14 @@ topics: ["coding-languages"]
 tags: ["extension", "assistant", "codebase-context"]
 featured: false
 related: ["amp", "continue", "tabnine"]
+summary: "Cody is Sourcegraph's AI coding assistant for the IDE, grounded in codebase-wide context: it uses Sourcegraph's Search API to fetch relevant definitions, references, and files — across many repos on Enterprise — so answers and edits reference how your code actually works. Now Enterprise-only; the Free and Pro tiers were discontinued in 2025."
+faq:
+  - q: "What is Cody?"
+    a: "Cody is Sourcegraph's AI coding assistant that lives inside your editor and answers, completes, and edits code using context pulled from your whole codebase. Instead of seeing only the open file, it fetches relevant definitions, references, and files across the repository — and, on Enterprise, across many repositories — so responses are grounded in how your code actually works."
+  - q: "Is Cody free?"
+    a: "Not anymore. Cody is now part of the Sourcegraph Enterprise plan only: the Cody Free and Cody Pro tiers were discontinued on July 23, 2025, with new signups closed June 25, 2025. Enterprise pricing scales with team size and is quote-based."
+  - q: "Cody vs Amp?"
+    a: "Both are Sourcegraph products with different audiences. If you are an individual developer, Sourcegraph now points you to Amp (ampcode.com), its standalone agentic coding tool, while Cody continues as the IDE assistant bundled with Sourcegraph Enterprise."
 ---
 
 Cody is Sourcegraph's AI coding assistant that lives inside your editor and answers, completes, and edits code using context pulled from your whole codebase. Its differentiator is Sourcegraph's code intelligence: instead of seeing only the open file, Cody fetches relevant definitions, references, and files across the repository (and, on Enterprise, across many repositories) so its responses are grounded in how your code actually works.

@@ -6,6 +6,7 @@ title: "Refactor"
 color: "purple"
 topics: ["review-qa"]
 related: ["refactoring-specialist"]
+summary: "A slash command that refactors a file or function for readability and structure without changing behavior: it establishes a passing test baseline, targets concrete issues like vague names, duplication, deep nesting, and dead code, applies small verifiable steps re-running tests after each, and reports what changed and why."
 ---
 
 Refactor `$ARGUMENTS` to improve readability, structure, and maintainability while keeping observable behavior exactly the same. If `$ARGUMENTS` is empty, ask which file or function to target before making any changes.

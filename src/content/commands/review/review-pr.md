@@ -7,6 +7,7 @@ color: "purple"
 topics: ["review-qa"]
 featured: true
 related: ["code-reviewer"]
+summary: "A slash command that reviews a GitHub pull request end to end: it pulls metadata, diff, and CI status via gh, checks out the branch, evaluates correctness, security, and style against the PR's stated goal, classifies every finding as blocker, should-fix, or nit with file:line and a fix, and ends with a verdict — never merging."
 ---
 
 Review pull request **#$ARGUMENTS** end to end. Produce a focused, actionable review that a maintainer can act on immediately. Do not approve or merge the PR — your job is to analyze and report.

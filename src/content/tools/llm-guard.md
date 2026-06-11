@@ -15,6 +15,14 @@ topics: ["ai-safety-security"]
 tags: ["guardrails", "security", "pii", "prompt-injection", "open-source"]
 featured: false
 related: ["nemo-guardrails", "llm-guardrails-designer", "prompt-pii-redactor", "defending-prompt-injection", "promptfoo"]
+summary: "LLM Guard is an open-source (MIT) toolkit of input and output scanners for securing LLM apps. Input scanners detect prompt injection, anonymize PII, catch secrets, and ban topics; output scanners check responses for leakage, relevance, and unsafe content. Built by Protect AI, it runs self-hosted so scanned data never leaves your environment."
+faq:
+  - q: "What is LLM Guard?"
+    a: "LLM Guard is an open-source security toolkit for LLM interactions from Protect AI (acquired by Palo Alto Networks in 2025). It provides a library of composable input and output scanners — prompt-injection detection, PII anonymization, secrets detection, leakage and safety checks — that you chain into a guardrail layer around your model calls."
+  - q: "Is LLM Guard free?"
+    a: "Yes — free and open source under the MIT license. It's self-hosted and runs in your own environment, so the data being scanned never leaves it."
+  - q: "LLM Guard vs NeMo Guardrails?"
+    a: "They're complementary. LLM Guard is a ready-made library of input/output scanners (PII, secrets, prompt injection, toxicity), while NeMo Guardrails provides programmable conversational rails defined in Colang for dialog control. Many teams use both — scanners for validation, rails for flow."
 ---
 
 LLM Guard is an open-source security toolkit for LLM interactions, built around a library of **input and output scanners** you compose into a guardrail layer. On the way in, it can detect and sanitize prompt injection, strip PII, catch secrets, and ban topics; on the way out, it can check responses for sensitive-data leakage, relevance, and unsafe content. It's the ready-made scanner library you reach for when you don't want to hand-roll each detector.

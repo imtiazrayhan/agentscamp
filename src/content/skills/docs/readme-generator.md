@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["workflow-prompting"]
 related: ["documentation-engineer", "openapi-doc-writer"]
 featured: false
+summary: "A skill that generates or refreshes a README grounded in the actual repository: it detects the stack, package manager, scripts, entry points, and directory layout from real manifests, assembles install, usage, scripts, and structure sections with verbatim commands, preserves hand-written prose, and marks unknowns as TODOs instead of inventing them."
 ---
 
 Produce a `README.md` that reflects what the repository actually contains — not a generic template. The skill detects the stack, build tooling, runnable scripts, entry points, and directory layout by reading real manifest files, then assembles a title, a one-line plus short description, and install / usage / scripts / project-structure sections. Every command it prints is one the project can actually run, so a new contributor can clone, install, and start without guessing.

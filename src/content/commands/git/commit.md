@@ -5,6 +5,7 @@ title: "Commit"
 color: "purple"
 topics: ["workflow-prompting"]
 related: ["conventional-commits"]
+summary: "A slash command that creates a well-formed git commit: it inspects status, diffs, and recent log, stages only the files belonging to one logical change, writes a Conventional Commits message with an imperative subject under 72 characters, then commits and verifies — flagging secrets and never pushing unasked."
 ---
 
 Create a well-formed git commit for the current changes. Follow the steps below exactly, and only commit what the user intends.

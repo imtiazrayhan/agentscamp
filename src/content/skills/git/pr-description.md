@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["review-qa"]
 related: ["changelog-from-prs", "review-pr", "create-pr"]
 featured: true
+summary: "A skill that drafts a reviewer-ready pull request description from the branch's real diff against its base: it computes the merge-base changeset, reads commits and key hunks, mirrors any PR template, and writes summary, what changed and why, implementation notes, testing, and risk/rollout sections — read-only text to paste, never opening the PR."
 ---
 
 Turn the diff between your branch and its base into a reviewer-ready pull request description. The skill computes the real changeset with `git diff --merge-base`, reads the touched code and the commit log, and drafts a structured body: a one-line summary, what changed and *why*, notable implementation notes, how it was tested, and risk/rollout. It is strictly read-only — it produces text for you to paste, it does not open or modify the PR.

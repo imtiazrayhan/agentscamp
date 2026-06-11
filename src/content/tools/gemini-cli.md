@@ -12,6 +12,14 @@ topics: ["coding-languages"]
 tags: ["cli", "agent", "terminal"]
 related: ["claude-code", "codex-cli", "aider", "antigravity", "opencode"]
 featured: false
+summary: "Gemini CLI is Google's open-source (Apache-2.0) terminal AI agent driven by Gemini models with a 1M-token context window. It reads and writes files, runs shell commands, fetches URLs, and grounds answers with Google Search, plus MCP support and GEMINI.md context files. Google is transitioning it to Antigravity CLI; the free personal tier ends June 18, 2026."
+faq:
+  - q: "What is Gemini CLI?"
+    a: "Gemini CLI is Google's open-source AI agent that runs in your terminal, driven by Gemini models (the current line leads with Gemini 3) with a 1M-token context window. It reads and writes files, runs shell commands, fetches URLs, and grounds answers with Google Search — and the same agent core powers the Gemini Code Assist IDE extensions."
+  - q: "Is Gemini CLI free?"
+    a: "The tool is open source under Apache-2.0, and a personal Google account has offered a free tier of 60 requests/minute and 1,000 requests/day. But Google has announced that on June 18, 2026 it stops serving requests for free, Google AI Pro/Ultra, and individual Gemini Code Assist users as it transitions to Antigravity CLI — paid Gemini API keys and Gemini Code Assist Standard/Enterprise licenses keep working."
+  - q: "How do I install Gemini CLI?"
+    a: "Install it with npm install -g @google/gemini-cli (Homebrew, MacPorts, npx, and Anaconda also work; Node.js 20+ required), cd into your project, and run gemini. It edits files on disk and runs your test or lint commands, so you review the diff rather than copy-paste from a chat window."
 ---
 
 Gemini CLI is Google's open-source (Apache-2.0) AI agent that runs in your terminal. You install it with `npm`, `npx`, or Homebrew, point it at a project, and describe what you want in plain language. It reads and writes files, runs shell commands, fetches URLs, and grounds answers with Google Search — driven by Gemini models (the current line leads with Gemini 3) with a 1M-token context window. The same agent core also powers the Gemini Code Assist IDE extensions.

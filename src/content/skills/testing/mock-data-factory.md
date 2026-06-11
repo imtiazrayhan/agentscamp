@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["review-qa"]
 related: ["test-scaffolder", "test-engineer"]
 featured: false
+summary: "A skill that generates a typed mock-data factory for a type, interface, or schema: it reads the definition, infers believable values from field names and types (email, UUID, recent ISO date), matches the project's existing fixture conventions and faker library, and emits a build() returning a complete valid object with per-field overrides."
 ---
 
 Generate a type-safe factory that produces realistic mock data for a named type, interface, or schema. The skill reads the target definition, infers each field's semantics from its name and type (an `email` becomes a valid address, `createdAt` a recent ISO date, `id` a UUID, `count` a small non-negative integer), and emits a `build()` factory that returns a complete, valid object while accepting a partial override for any field. It matches the project's existing fixture conventions instead of inventing a new one.

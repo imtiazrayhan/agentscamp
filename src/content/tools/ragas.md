@@ -16,6 +16,15 @@ featured: false
 alternativeTo: ["deepeval"]
 summary: "RAGAS is an open-source framework built specifically to evaluate RAG pipelines. Its metrics — faithfulness, answer relevancy, context precision, and context recall — pinpoint whether failures come from retrieval or generation, many of them reference-free so you can score without gold answers."
 related: ["deepeval", "best-llm-eval-tools-2026", "how-rag-works", "rag-pipeline-engineer", "langfuse"]
+faq:
+  - q: "What is RAGAS?"
+    a: "RAGAS is an open-source framework purpose-built for evaluating retrieval-augmented generation. Its metrics — faithfulness, answer relevancy, context precision, and context recall — tell you whether a failure came from retrieval (the right context wasn't fetched) or generation (the model ignored or contradicted the context). Many metrics are reference-free, so you can score without gold answers."
+  - q: "Is RAGAS free?"
+    a: "Yes — free and open source under Apache-2.0. Its metrics call an LLM as judge, so expect token cost when you run a suite."
+  - q: "How do I interpret RAGAS scores?"
+    a: "Read them as a diagnosis: low context precision/recall means fix retrieval; high context scores but low faithfulness means fix generation — grounding and citations. Faithfulness is the core hallucination check: whether the answer is actually supported by the retrieved context."
+  - q: "RAGAS vs DeepEval?"
+    a: "RAGAS specializes in RAG metrics that split retrieval failures from generation failures; DeepEval is a general, pytest-style eval framework. They're often used together — RAGAS for pipeline diagnosis, DeepEval when you also need non-RAG metrics."
 ---
 
 RAGAS is an open-source framework purpose-built for evaluating retrieval-augmented generation. Generic LLM metrics tell you an answer was bad; RAGAS tells you *why* — whether the **retrieval** half failed (the right context wasn't fetched) or the **generation** half did (the model ignored or contradicted the context it was given). That split is exactly the diagnosis a RAG team needs.

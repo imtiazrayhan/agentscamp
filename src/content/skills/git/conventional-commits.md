@@ -8,6 +8,7 @@ version: "1.0.0"
 color: "cyan"
 topics: ["workflow-prompting"]
 featured: true
+summary: "A skill that turns staged changes into a spec-compliant Conventional Commits message: it reads the staged diff, picks the right type and scope, writes an imperative subject under 72 characters, adds a why-focused body for non-trivial changes, marks breaking changes with ! and a BREAKING CHANGE footer, then commits after the user confirms."
 ---
 
 This skill inspects your staged changes and produces a commit message that follows the [Conventional Commits](https://www.conventionalcommits.org/) specification. It picks the right type and scope, writes a concise imperative subject, adds a body explaining the *why* when the change is non-trivial, and flags breaking changes correctly — so your history stays readable and your tooling (changelogs, semantic-release) keeps working.

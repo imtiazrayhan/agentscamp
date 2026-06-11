@@ -15,6 +15,13 @@ featured: false
 alternativeTo: ["deepgram"]
 summary: "ElevenLabs is a voice-AI platform best known for state-of-the-art text-to-speech: natural, expressive voices in many languages, plus voice cloning, dubbing, sound effects, and a speech-to-text model. It also offers conversational AI agents, and everything is available via API under one credit-based plan — a common choice for the TTS (or the whole voice) stage of a voice agent."
 related: ["build-a-voice-agent", "deepgram", "pipecat", "voice-agent-engineer"]
+faq:
+  - q: "What is ElevenLabs?"
+    a: "ElevenLabs is a voice-AI platform best known for state-of-the-art text-to-speech: natural, expressive voices in 70+ languages, with low-latency Flash and Turbo models built for real-time use. Around that core it offers voice cloning, dubbing, sound effects, music, a speech-to-text model (Scribe), and conversational AI agents — all accessible via API under one credit system."
+  - q: "How much does ElevenLabs cost?"
+    a: "ElevenLabs is freemium: a free tier (with attribution and limited credits) and paid Creator, Pro, Scale, and Enterprise tiers priced in credits, where credits map to characters of TTS, minutes of speech-to-text, and minutes of agent conversation."
+  - q: "ElevenLabs vs Deepgram?"
+    a: "In a voice-agent pipeline, ElevenLabs is most often the TTS stage — the voice your agent speaks with — while Deepgram is the usual comparison for the speech-to-text side. ElevenLabs' bundled conversational-agent product can also cover the whole STT, LLM, and TTS loop when you want the simplest path."
 ---
 
 ElevenLabs is a voice-AI platform whose core strength is **text-to-speech** — among the most natural and expressive synthetic voices available, across many languages, with low-latency models (Flash, Turbo) built for real-time use. Around that it has grown a full voice suite: voice cloning, dubbing, sound effects, music, a speech-to-text model (Scribe), and **conversational AI agents** — all accessible via API and billed under one credit system.

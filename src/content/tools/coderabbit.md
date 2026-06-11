@@ -10,6 +10,14 @@ topics: ["review-qa"]
 tags: ["code-review", "pr", "ci"]
 featured: false
 related: ["code-reviewer", "review-pr"]
+summary: "CodeRabbit is an AI code reviewer that installs as a bot on GitHub, GitLab, Azure DevOps, or Bitbucket and comments on every pull request automatically: a summary and walkthrough plus line-by-line suggestions flagging likely bugs, edge cases, and style issues. You reply to it in the PR thread, tune it via .coderabbit.yaml, and it learns from your feedback."
+faq:
+  - q: "What is CodeRabbit?"
+    a: "CodeRabbit is an AI reviewer that installs as a bot on your Git host and comments on every pull request automatically. When a PR opens or updates, it posts a high-level summary and walkthrough, then leaves line-by-line suggestions on the diff — flagging likely bugs, missing edge cases, and style issues — and you can reply to it in the review thread."
+  - q: "How much does CodeRabbit cost?"
+    a: "The Free plan is $0/user and covers public and private repos, but is limited to PR summaries and IDE/CLI reviews plus a 14-day Pro Plus trial. Pro ($24/user/month, billed annually) adds line-by-line reviews, full codebase context, linters and SAST tools, and Jira/Linear integrations; Pro Plus ($48/user/month) adds unit test generation and merge-conflict resolution; Enterprise adds SSO/SAML, custom RBAC, and self-hosting at custom pricing."
+  - q: "How do I use CodeRabbit?"
+    a: "It runs on the server, so there is nothing to add to your editor or CI — once installed, every PR gets reviewed. You interact in the PR thread with commands like @coderabbitai Generate unit tests for the changed functions, ask why a comment was made, or tell it a pattern is intentional so it remembers. It reviews but does not merge — a human still approves and merges."
 ---
 
 CodeRabbit is an AI reviewer that installs as a bot on your Git host and comments on every pull request automatically. When a PR opens or updates, it posts a high-level summary and walkthrough of the change, then leaves line-by-line suggestions on the diff — flagging likely bugs, missing edge cases, and style issues — the same way a human reviewer would in the review thread.

@@ -5,8 +5,31 @@ author: "AgentsCamp"
 date: 2026-06-03
 color: "green"
 topics: ["mcp", "architecture"]
-related: ["building-multi-step-workflows", "claude-agent-sdk"]
+related: ["building-multi-step-workflows", "claude-agent-sdk", "claude-code-mcp-setup", "deploy-remote-mcp-server", "fastmcp", "mcp-inspector"]
 featured: false
+summary: "An MCP server exposes three primitives — tools (model-called functions), resources (read-only data by URI), and prompts (user-invoked templates) — over JSON-RPC via two transports: stdio for local child processes, Streamable HTTP for remote services that own their auth. Define each tool as name + typed schema + handler, register it with claude mcp add, and verify with /mcp."
+howtoSteps:
+  - name: "Pick the right primitive"
+    text: "Tools are model-controlled functions (the workhorse — default here), resources are application-controlled read-only data behind a URI, prompts are user-invoked templates. The deciding question is who's in control of triggering it."
+  - name: "Choose the transport"
+    text: "stdio for anything local and single-user — the client launches your server as a child process, no ports or auth. Streamable HTTP for remote or shared servers — and then authentication, validation, and scoping are yours to own."
+  - name: "Define the tool: name, schema, handler"
+    text: "A verb-object name (search_issues, not query_jira_api_v2), a typed input schema with a one-line description per field, and a handler that returns concise, model-ready results — filtered fields, not a 5,000-line JSON dump."
+  - name: "Register it with Claude Code"
+    text: "claude mcp add weather -- node /path/to/server.js for stdio (options like --env and --scope go before the server name), or claude mcp add --transport http <name> <url> for remote. --scope project commits it to a shared .mcp.json."
+  - name: "Verify the connection"
+    text: "claude mcp list shows configured servers with status; /mcp inside a session shows live connections, each server's tools, and OAuth prompts. A server that's added but not connected has shipped nothing yet."
+  - name: "Tune descriptions as routing signals"
+    text: "The model picks tools by reading names and descriptions. Test yours by reading only the tool list cold — if you couldn't pick the right tool for a task from that alone, neither can the model."
+faq:
+  - q: "What is an MCP server?"
+    a: "A separate process that exposes capabilities — tools, resources, and prompts — to any Model Context Protocol client over JSON-RPC. Write the integration once and it works in Claude Code, Claude Desktop, and every other compliant client: MCP replaces N×M bespoke glue with one interface on each side."
+  - q: "What's the difference between tools, resources, and prompts in MCP?"
+    a: "Who controls them. Tools are model-controlled — the model decides when to call them, and they may have side effects. Resources are application-controlled — read-only data the host attaches to context by URI. Prompts are user-controlled — parameterized templates surfaced as commands. When in doubt, build a tool; it's the primitive clients support best."
+  - q: "Should my MCP server use stdio or Streamable HTTP?"
+    a: "stdio if it runs on the user's machine for one user — simplest setup, lifecycle tied to the client, no network surface. Streamable HTTP once the server is remote, shared, or deployed centrally — at which point it's a public API and you own auth (OAuth), input validation, and per-token scoping."
+  - q: "How do I connect a custom MCP server to Claude Code?"
+    a: "Register it with claude mcp add: for stdio, claude mcp add my-server -- <command to launch it> (env vars via --env, options before the name); for remote, claude mcp add --transport http my-server <url>. Then confirm it actually connected with /mcp — its tools appear to the model namespaced as mcp__<server>__<tool>."
 ---
 
 A model is only as capable as the things it can reach. Out of the box it can reason about your prompt, but it can't query your database, hit your internal API, or read the ticket you're describing. The **Model Context Protocol (MCP)** is the open standard that closes that gap: instead of hard-wiring every integration into every client, you write one server that exposes capabilities, and any MCP-compatible client — Claude Code, the Claude desktop app, IDE plugins — can use it. Write the integration once, plug it in everywhere.

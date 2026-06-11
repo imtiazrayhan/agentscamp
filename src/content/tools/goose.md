@@ -11,6 +11,14 @@ topics: ["workflow-prompting", "coding-languages"]
 tags: ["agent", "open-source", "mcp"]
 related: ["claude-code", "aider", "codex-cli"]
 featured: false
+summary: "Goose is an open-source (Apache-2.0), general-purpose AI agent that runs entirely on your machine — it executes shell commands, edits files, runs tests, and chains multi-step tasks. MCP-native with 70+ documented extensions and model-agnostic across 15+ providers including local models, it ships as a Rust CLI and a desktop app for macOS, Linux, and Windows."
+faq:
+  - q: "What is Goose?"
+    a: "Goose is an open-source, general-purpose AI agent that runs entirely on your machine. Originally built by Block and written in Rust, it goes beyond code suggestions: it executes shell commands, edits files, runs tests, and orchestrates multi-step tasks autonomously. Stewardship has since moved to the Agentic AI Foundation (AAIF) under the Linux Foundation."
+  - q: "Is Goose free?"
+    a: "Yes — Goose is free and open source under Apache-2.0. You supply your own model API key or run a local model (it works with 15+ providers including Anthropic, OpenAI, Google, Ollama, OpenRouter, Azure, and Bedrock), so usage cost depends on the provider and model you choose."
+  - q: "How do I use Goose?"
+    a: "Run goose configure to pick a provider and model, then goose session for an interactive agent session — or goose run -t 'your task' for scripted, repeatable runs. Connect MCP extensions (a database, a browser, your issue tracker) and the same agent can reach across tools to complete a task end to end, then hand you the diffs."
 ---
 
 Goose is an open-source, general-purpose AI agent that runs entirely on your machine. Originally built by Block and written in Rust, it goes beyond code suggestions: it executes shell commands, edits files, runs tests, and orchestrates multi-step tasks autonomously. Because it is on-machine, your code and credentials stay local — Goose only talks to whichever model provider you point it at.

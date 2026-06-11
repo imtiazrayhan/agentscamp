@@ -15,6 +15,14 @@ topics: ["mcp", "architecture"]
 tags: ["mcp", "python", "sdk", "open-source"]
 featured: false
 related: ["building-an-mcp-server", "mcp-server-engineer", "mcp-inspector", "deploy-remote-mcp-server", "mcp-server-scaffolder"]
+summary: "FastMCP is a Pythonic framework for building Model Context Protocol servers and clients: decorate plain functions with @mcp.tool, @mcp.resource, or @mcp.prompt and it generates a compliant server, deriving schemas from type hints and docstrings. Version 1.0 was folded into the official MCP Python SDK; standalone 3.x adds auth, deployment, and composition."
+faq:
+  - q: "What is FastMCP?"
+    a: "FastMCP is a high-level, Pythonic framework for building Model Context Protocol servers and clients. Instead of hand-wiring JSON-RPC and transports, you decorate plain Python functions with @mcp.tool, @mcp.resource, or @mcp.prompt, and FastMCP turns them into a compliant server — generating the schemas the client advertises to the model from your type hints and docstrings."
+  - q: "Is FastMCP free?"
+    a: "Yes — FastMCP is free and open source under Apache-2.0. Its original version (1.0) was incorporated into the official MCP Python SDK; the actively developed standalone framework is FastMCP 3.x, which adds authentication, deployment helpers, server composition, proxying, and generation from OpenAPI/FastAPI apps."
+  - q: "How do I build an MCP server with FastMCP?"
+    a: "Create a FastMCP instance, decorate a typed function with @mcp.tool, and call mcp.run() — stdio by default, or Streamable HTTP for remote use. The function's name, type hints, and docstring become the tool's name, schema, and description, so write the docstring for the model: what the tool does, what it returns, and when to use it."
 ---
 
 FastMCP is a high-level, **Pythonic** framework for building Model Context Protocol servers (and clients). Instead of hand-wiring JSON-RPC and transports, you decorate plain Python functions — `@mcp.tool`, `@mcp.resource`, `@mcp.prompt` — and FastMCP turns them into a compliant server, generating the schemas the client advertises to the model from your type hints and docstrings.

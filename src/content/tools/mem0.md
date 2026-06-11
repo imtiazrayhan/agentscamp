@@ -15,6 +15,13 @@ tags: ["agents", "memory", "personalization", "vector-store", "open-source"]
 featured: false
 summary: "Mem0 adds a persistent memory layer to agents and LLM apps: it extracts, stores, and retrieves salient facts across sessions so an assistant remembers a user's preferences and history instead of starting cold each conversation. Open-source library plus a managed platform."
 related: ["agent-memory-architecture", "best-vector-database-2026", "langgraph", "agent-tool-integration-engineer"]
+faq:
+  - q: "What is Mem0?"
+    a: "Mem0 is a memory layer for AI agents and LLM applications. Instead of cramming entire conversation histories into the context window, it extracts the salient facts, stores them, and retrieves the relevant ones when needed — so an agent remembers a user's preferences, decisions, and history across sessions while keeping prompts lean."
+  - q: "Is Mem0 free?"
+    a: "The library is open source under Apache-2.0 and free to self-host; a managed platform with a free tier is also available. Mem0 sits on top of a vector store and an LLM provider, so you bring (and pay for) those underneath it."
+  - q: "How is Mem0 different from a vector database?"
+    a: "Mem0 isn't a database — it's the layer above one. It decides what's worth remembering via automatic extraction from conversations, embeds and stores memories in a pluggable vector backend, and retrieves the ones relevant to the current turn, scoped per user, agent, or session."
 ---
 
 Mem0 is a memory layer for AI agents and LLM applications. Instead of cramming an entire conversation history into the context window every turn, Mem0 **extracts the salient facts**, stores them, and retrieves the relevant ones when needed — so an agent remembers a user's preferences, decisions, and history across sessions while keeping prompts lean.

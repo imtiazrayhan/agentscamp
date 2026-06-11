@@ -15,6 +15,16 @@ topics: ["data-ml"]
 tags: ["postgres", "migrations", "cli", "zero-downtime", "open-source"]
 featured: false
 related: ["zero-downtime-postgres-migrations", "postgres-migration-engineer", "db-migrate", "postgres-index-strategist"]
+summary: "pgroll is an open-source CLI from Xata for zero-downtime, reversible Postgres schema migrations. It automates the expand-contract pattern: old and new schema versions stay live simultaneously behind versioned views, with backfills and lock-friendly DDL handled for you — start a migration, roll your app, then complete it or roll back instantly."
+faq:
+  - q: "What is pgroll?"
+    a: "pgroll is an open-source command-line tool for zero-downtime, reversible schema migrations on Postgres, built by the team at Xata. It automates the expand-contract pattern: each migration keeps the old and new schema versions live at the same time behind versioned views, so currently-deployed and new application code can coexist during a rolling deploy."
+  - q: "How do I use pgroll?"
+    a: "Define migrations declaratively as JSON or YAML, then run them in two phases: pgroll start migrations/01_add_column.json brings up the new schema version alongside the old (backfilling as needed); after rolling out and verifying the new app version, pgroll complete finalizes and removes the old version."
+  - q: "How does pgroll roll back a migration?"
+    a: "Before you run pgroll complete, rolling back simply drops the new schema version's views — no data is lost and there's no reverse migration to write. The destructive contract step only happens when you explicitly complete the migration."
+  - q: "Is pgroll free?"
+    a: "Yes — free and open source under Apache-2.0, and it works against standard Postgres."
 ---
 
 pgroll is an open-source command-line tool for **zero-downtime, reversible** schema migrations on Postgres. It automates the [expand-contract pattern](/guides/database/zero-downtime-postgres-migrations): for each migration, pgroll keeps the **old and new schema versions live at the same time**, each exposed through its own set of views, so the currently-deployed application and the new one can each connect to the schema shape they expect during a rolling deploy. When the rollout is done, you complete the migration and the old version is removed.

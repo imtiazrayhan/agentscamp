@@ -17,6 +17,13 @@ tags: ["vector-database", "rag", "embedded", "multimodal", "open-source"]
 featured: false
 summary: "LanceDB is an open-source embedded vector database built on the Lance columnar format: it runs in-process with no server, persists to local disk or object storage (S3), and stores vectors alongside raw multimodal data and metadata — bridging laptop prototype to large-scale dataset without changing systems."
 related: ["best-vector-database-2026", "chroma", "vector-search-engineer", "embedding-index-tuner"]
+faq:
+  - q: "What is LanceDB?"
+    a: "LanceDB is an open-source, embedded vector database built on Lance, a modern columnar data format optimized for ML. It runs in-process with no server to operate, persists to local disk or directly to object storage like S3, and stores vectors alongside the raw multimodal data and metadata — so the same code that runs a laptop prototype can search a very large dataset without standing up a cluster."
+  - q: "Is LanceDB free?"
+    a: "Yes — LanceDB is free and open source under Apache-2.0, with managed LanceDB Cloud and Enterprise options for teams that want them."
+  - q: "LanceDB vs Chroma?"
+    a: "Both are embedded vector databases, but LanceDB is designed to scale: it persists to object storage, searches efficiently from disk with IVF-PQ indexes, and supports hybrid search with SQL-style filters. Reach for it when Chroma is too small for your data but a dedicated server like Qdrant is more than you want to operate."
 ---
 
 LanceDB is an open-source, **embedded** vector database built on **Lance**, a modern columnar data format optimized for ML. Like Chroma it runs in-process with no server to operate, but it's designed to scale: it persists to local disk or directly to **object storage** (S3 and friends), so the same code that runs a laptop prototype can search a very large dataset without standing up a cluster. Because it's built on a columnar format, it stores vectors, the original multimodal data, and metadata together in one place.

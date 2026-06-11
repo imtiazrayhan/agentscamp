@@ -11,6 +11,14 @@ topics: ["coding-languages", "workflow-prompting"]
 tags: ["web", "generation", "in-browser"]
 featured: false
 related: ["v0", "lovable", "replit-agent"]
+summary: "Bolt (bolt.new) is StackBlitz's AI app builder that turns a prompt into a running full-stack web app. The dev environment — Node.js runtime, terminal, dev server, and preview — runs in a WebContainer in your browser tab, so the agent can run the app, read errors, and fix them in the loop. Freemium, metered by tokens, with deploys to a live URL from chat."
+faq:
+  - q: "What is Bolt?"
+    a: "Bolt (bolt.new) is StackBlitz's AI app builder that turns a prompt into a running full-stack web application. The whole dev environment — Node.js runtime, package manager, terminal, dev server, and preview — runs inside a WebContainer in your browser tab, so there's nothing to install and the agent controls the full filesystem and processes."
+  - q: "How much does Bolt cost?"
+    a: "Bolt is freemium. The free tier caps at 300K tokens/day and 1M tokens/month; Pro ($25/month) lifts the daily cap and raises the monthly allowance to a 10M-token baseline with rollover; Teams is $30/member/month and Enterprise is custom-quoted. Every prompt, iteration, and fix consumes tokens, so vague or repeated re-prompts get expensive fast."
+  - q: "Is Bolt open source?"
+    a: "StackBlitz open-sourced the original bolt.new codebase under MIT, but the live, fully-featured product at bolt.new is the hosted, token-metered service — not a self-host target for most users. It's also distinct from the Bolt.diy / oTToDev community fork and from unrelated apps called Bolt."
 ---
 
 Bolt (bolt.new) is StackBlitz's AI app builder that turns a prompt into a running full-stack web application. The twist is where it executes: the entire dev environment — Node.js runtime, package manager, terminal, dev server, and preview — runs inside a WebContainer in your browser tab, so there's nothing to install and the agent has full control of the filesystem and processes.

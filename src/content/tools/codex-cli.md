@@ -11,6 +11,16 @@ topics: ["coding-languages"]
 tags: ["cli", "agent", "terminal"]
 featured: true
 related: ["claude-code", "aider", "gemini-cli"]
+summary: "Codex CLI is OpenAI's open-source (Apache-2.0) coding agent that runs entirely in your terminal: it reads files, edits them on disk, and runs shell commands inside an OS-level sandbox that defaults to no network and workspace-scoped writes. Sandbox modes and approval policies control what it can do and when it must ask; auth is a ChatGPT plan or API key."
+faq:
+  - q: "What is Codex CLI?"
+    a: "Codex CLI is OpenAI's open-source coding agent that runs entirely in your terminal. You point it at a repository, describe a task in plain language, and it reads files, edits them on disk, and runs shell commands — all inside an OS-level sandbox that defaults to no network access and write permissions scoped to your workspace. It is written in Rust."
+  - q: "Is Codex CLI free?"
+    a: "The tool itself is free and open source under Apache-2.0, but model usage is not: you either consume your ChatGPT plan's included Codex allowance (Plus, Pro, Business, Edu, or Enterprise) or pay per token with an OPENAI_API_KEY."
+  - q: "How do I install Codex CLI?"
+    a: "Install it with npm install -g @openai/codex — it also ships via Homebrew or a one-line shell installer — then run it in a repo, e.g. codex 'Add a retry with backoff to the API client and a test for it'. The same binary works on macOS, Linux, and Windows (natively or via WSL)."
+  - q: "Codex CLI vs Aider?"
+    a: "One concrete difference: unlike Aider, Codex does not auto-commit each change. It edits the working tree and leaves staging and committing to you, so review the diff before committing."
 ---
 
 Codex CLI is OpenAI's open-source coding agent that runs entirely in your terminal. You point it at a repository, describe a task in plain language, and it reads files, edits them on disk, and runs shell commands to get the job done — all inside an OS-level sandbox that defaults to no network access and write permissions scoped to your workspace. It is written in Rust and ships as a binary installable via npm, Homebrew, or a one-line shell installer.

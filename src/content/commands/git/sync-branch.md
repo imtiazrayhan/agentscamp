@@ -8,6 +8,7 @@ color: "purple"
 topics: ["workflow-prompting"]
 related: ["commit", "branch-rebaser"]
 featured: false
+summary: "A slash command that brings a feature branch up to date by rebasing it onto its base: it confirms a clean tree (stashing if needed), fetches and resolves the base branch, rebases onto the remote-tracking ref, resolves conflicts by understanding both sides, verifies build and tests, then reports — never force-pushing without confirmation."
 ---
 
 Bring the current feature branch up to date by rebasing it onto its base. Follow the steps below in order. Stop and report rather than improvise if anything is ambiguous — a rebase rewrites history, so correctness matters more than speed.

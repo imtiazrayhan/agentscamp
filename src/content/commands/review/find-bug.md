@@ -6,6 +6,7 @@ title: "Find Bug"
 color: "purple"
 topics: ["review-qa"]
 related: ["debugger"]
+summary: "A slash command that investigates a reported symptom to locate the root cause: it pins down a reliable reproduction, gathers evidence from traces, greps, and recent commits, forms ranked testable hypotheses, tests them one variable at a time (bisecting when needed), and reports the defect with evidence and a suggested fix — without applying it."
 ---
 
 You are debugging a reported issue. The symptom to investigate is: **$ARGUMENTS**

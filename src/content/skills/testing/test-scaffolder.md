@@ -6,6 +6,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["review-qa"]
+summary: "A skill that scaffolds a ready-to-run test file for a module or function with no coverage: it reads the target's public surface, detects the project's test framework, naming, and assertion style, enumerates happy-path, boundary, and error cases, writes the suite with clear names and stubbed dependencies, then runs it to confirm it executes."
 ---
 
 Generate a ready-to-run test file for a module or function that currently has no coverage. The skill reads the target source, infers its public surface and likely edge cases, picks the project's existing test framework and conventions, and writes a focused suite of meaningful cases — happy path, boundaries, and error handling — so you start from a real structure instead of a blank file.

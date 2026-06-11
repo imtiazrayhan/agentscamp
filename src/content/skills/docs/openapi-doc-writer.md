@@ -5,6 +5,7 @@ date: 2026-06-03
 version: "1.0.0"
 color: "cyan"
 topics: ["architecture"]
+summary: "A skill that authors and maintains spec-compliant OpenAPI 3.1 documents for an HTTP API: it inventories routes from the code, models reusable component schemas with $ref, writes each operation with operationId, parameters, request bodies, and error responses, adds validating examples, and lints the spec before finishing."
 ---
 
 Author and maintain accurate, spec-compliant OpenAPI 3.1 documents that describe an HTTP API end to end — paths, operations, request bodies, responses, and reusable component schemas. This skill produces a single source of truth that drives reference docs, client SDK generation, and contract tests, while keeping the spec in sync with the actual code.

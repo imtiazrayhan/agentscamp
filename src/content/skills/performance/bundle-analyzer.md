@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["review-qa"]
 related: ["performance-engineer", "frontend-developer"]
 featured: false
+summary: "A skill that analyzes a JS/TS production bundle to find where the bytes actually go: it builds a stats report with the project's own analyzer, attributes weight to packages, and hunts heavy dependencies, duplicate versions, missing code-splitting, oversized polyfills, and leaked server code — returning a plan ranked by estimated gzip savings."
 ---
 
 Inspect a JavaScript/TypeScript production bundle and find where the bytes actually go. The skill builds a stats report, attributes weight to specific modules and packages, and hunts for the patterns that bloat bundles in practice — a 200KB date library imported for one helper, two copies of the same package at different versions, a route that ships eagerly instead of lazily, a polyfill set targeting browsers you dropped years ago, or server-only code that slipped past the client boundary. It returns a ranked list of concrete reductions with the estimated savings of each, so you fix the 80KB win before the 4KB one.

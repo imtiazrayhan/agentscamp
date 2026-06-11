@@ -6,6 +6,7 @@ title: "Write Tests"
 color: "purple"
 topics: ["review-qa"]
 related: ["test-engineer"]
+summary: "A slash command that writes a focused test suite for a file, function, or class: it reads the target and its entry points, matches the project's test framework and conventions, plans deliberate happy-path, edge-case, and error cases, writes independent deterministic tests that mock only true boundaries, then runs the suite and flags real bugs."
 ---
 
 Write a focused, high-value test suite for the target supplied in `$ARGUMENTS`. The target may be a file path (e.g. `src/lib/parse.ts`), a specific function or method (e.g. `parseConfig`), or a class. If `$ARGUMENTS` is empty, ask which file or function to cover before continuing.

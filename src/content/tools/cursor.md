@@ -10,6 +10,14 @@ color: "blue"
 topics: ["coding-languages"]
 tags: ["ide", "editor"]
 featured: true
+summary: "Cursor is an AI-first code editor forked from VS Code, so extensions, themes, and keybindings carry over. It layers on tab completion, inline natural-language edits, an agent mode that reads, writes, and runs commands across files, and parallel agents across repos and worktrees. Freemium: a free Hobby tier, with Pro and Teams raising included usage."
+faq:
+  - q: "What is Cursor?"
+    a: "Cursor is a code editor forked from VS Code that puts AI at the center of the editing experience: multi-line tab completion, inline edits described in natural language, and an agent mode that can read, write, and run commands across multiple files. Cursor 3.0 rebuilt the interface agent-first, running many agents at once across repos — locally, in git worktrees, in the cloud, or over SSH."
+  - q: "How much does Cursor cost?"
+    a: "Cursor is freemium. The free Hobby tier includes limited AI usage; paid Individual (Pro and up) and Teams plans raise included usage and unlock premium models, with on-demand usage billed beyond the included amount. You can also supply your own API keys."
+  - q: "Cursor vs VS Code?"
+    a: "Cursor is a separate application built on the VS Code codebase, not an extension — it runs alongside (not inside) a standard VS Code install. Existing extensions, themes, keybindings, and settings carry over, so the learning curve is mostly the AI features layered on top."
 ---
 
 Cursor is a code editor forked from VS Code that puts AI assistance at the center of the editing experience. Because it is built on the VS Code codebase, existing extensions, themes, keybindings, and settings carry over, so the learning curve is mostly about the AI features layered on top.

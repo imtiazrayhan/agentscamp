@@ -16,6 +16,13 @@ featured: false
 alternativeTo: []
 summary: "Qwen3-VL is the vision-language model series from Alibaba's Qwen team: it reads images, documents, and video alongside text for OCR, visual reasoning, spatial grounding, and agentic use. Open-weights under Apache-2.0 (dense 2B–32B plus 30B-A3B and 235B-A22B MoE variants, Instruct and Thinking editions) on Hugging Face and ModelScope — a strong open VLM you can self-host."
 related: ["vlm-ocr-documents", "multimodal-document-extractor", "self-host-vs-api-llm", "llm-inference-engineer"]
+faq:
+  - q: "What is Qwen3-VL?"
+    a: "Qwen3-VL is the open-weights vision-language model family from Alibaba's Qwen team — models that read images, documents, and video alongside text. It covers OCR and document understanding, visual reasoning, spatial grounding, video comprehension, and agentic use, with dense models from 2B to 32B plus 30B-A3B and 235B-A22B MoE variants in Instruct and Thinking editions."
+  - q: "Is Qwen3-VL free?"
+    a: "Yes — the weights are released under Apache-2.0, free for research and commercial use, and available on Hugging Face and ModelScope. You provide the compute: self-host behind a serving engine like vLLM, or call the models through Alibaba Cloud's hosted API if you'd rather not run infrastructure."
+  - q: "Which Qwen3-VL size should I use?"
+    a: "Right-size to the task: a 2B–8B model often handles routine OCR and form extraction at a fraction of the cost and latency of the largest variants, while the 32B and MoE models are for the hardest reasoning. Measure on your own documents before committing."
 ---
 
 Qwen3-VL is the open-weights **vision-language model** family from Alibaba's Qwen team — models that read images, documents, and video alongside text. It targets the full range of multimodal work: OCR and document understanding, visual reasoning, spatial grounding, video comprehension, and agentic use (driving tools from what it sees). Released under **Apache-2.0**, it's one of the strongest open VLMs you can download and run yourself.

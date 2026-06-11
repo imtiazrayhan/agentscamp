@@ -9,6 +9,14 @@ repo: "https://github.com/zed-industries/zed"
 color: "pink"
 topics: ["coding-languages"]
 tags: ["ide", "editor", "rust"]
+summary: "Zed is a high-performance code editor written in Rust with GPU-accelerated rendering, real-time multiplayer collaboration (shared cursors, voice, screen sharing), and integrated AI — inline completions plus an agent panel that connects to Anthropic, OpenAI, or local models through Ollama. Open source and free on macOS, Linux, and Windows."
+faq:
+  - q: "What is Zed?"
+    a: "Zed is a code editor written in Rust and built for speed, using GPU-accelerated rendering (via its own GPUI framework) to keep typing, scrolling, and search responsive even on large files. It targets developers who want a lightweight native editor without Electron overhead, while still getting real-time collaboration and integrated AI."
+  - q: "Is Zed free?"
+    a: "Yes — Zed is open source (GPL-3.0 and Apache-2.0, depending on component) and free to download, running natively on macOS, Linux, and Windows. Collaboration and some hosted AI features rely on Zed's cloud services, and bring-your-own API keys are supported for AI providers."
+  - q: "How does AI work in Zed?"
+    a: "Zed offers inline completions and an agent panel that can read your codebase, propose multi-file edits you review before applying, and run shell commands as tools. It connects to providers such as Anthropic and OpenAI or local models through Ollama, with the default model configured in a JSON settings file."
 ---
 
 Zed is a code editor written in Rust and built for speed. It uses GPU-accelerated rendering (via its own GPUI framework) to keep typing, scrolling, and search responsive even on large files. Zed is aimed at developers who want a lightweight native editor without the overhead of an Electron-based IDE, while still getting modern features like real-time collaboration and integrated AI.

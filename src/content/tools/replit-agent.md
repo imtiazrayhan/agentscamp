@@ -10,6 +10,14 @@ topics: ["coding-languages"]
 tags: ["cloud-ide", "agent"]
 featured: false
 related: ["bolt", "lovable", "v0"]
+summary: "Replit Agent is the AI builder inside Replit's browser-based cloud IDE: describe an app and it scaffolds the project, writes code, installs packages, runs it, and deploys to a live URL with database, auth, and hosting provisioned for you. Agent 4 adds a Design Canvas, concurrent task forks, and checkpoint-based effort billing on freemium plans."
+faq:
+  - q: "What is Replit Agent?"
+    a: "Replit Agent is the AI builder inside Replit's browser-based cloud IDE. You describe an app in plain language and the agent scaffolds the project, writes the code, installs packages, runs the app, and can publish it to a live URL — with database, auth, hosting, and monitoring provisioned for you. The current generation is Agent 4."
+  - q: "How much does Replit Agent cost?"
+    a: "Pricing is freemium. The free Starter tier includes limited daily Agent credits and one published project. Core ($20/month billed annually, $25 monthly) adds $25 of monthly usage credits; Pro ($95/month annually, $100 monthly) raises credits to $100/month with 10 concurrent agents and database rollbacks; Enterprise adds SSO/SAML and VPC peering on custom pricing."
+  - q: "Do Replit credits roll over?"
+    a: "On Core, no — credits are a shared pool covering Agent runs, hosting, database compute, and data transfer, and they expire each billing cycle. Replit bills per checkpoint with effort-based pricing: simple edits are cheap, while complex multi-component builds cost proportionally more."
 ---
 
 Replit Agent is the AI builder inside Replit's browser-based cloud IDE. You describe an app in plain language and the agent scaffolds the project, writes the code, installs packages, runs the app, and can push it to a live URL — all without leaving the browser or configuring a local environment. The infrastructure (database, auth, hosting, monitoring) is provisioned for you, so a prompt can go from idea to deployed app in one session.

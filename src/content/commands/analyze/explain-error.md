@@ -7,6 +7,7 @@ title: "Explain Error"
 color: "purple"
 topics: ["review-qa"]
 related: ["debugger", "explain-code", "fix-failing-test"]
+summary: "A slash command that diagnoses an error message, stack trace, or failing log output against the codebase: it locates the first in-repo frame, identifies the root cause one level beneath the message, confirms it with read-only checks, and reports a specific fix — or ranked candidates — without changing any files."
 ---
 
 Diagnose the error in `$ARGUMENTS` against this codebase and propose a specific fix. Your job is to explain *why* it happens and *how* to fix it — not to restate the message back. Do not change any files; report your findings and the recommended fix.

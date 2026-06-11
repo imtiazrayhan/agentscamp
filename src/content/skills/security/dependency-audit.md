@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["devops-infra"]
 related: ["dependency-manager", "security-auditor"]
 featured: false
+summary: "A skill that runs the ecosystem's native vulnerability audit and triages the output: it traces each flagged package to actual imports to judge reachability, rewrites severity in context so unreachable criticals stop outranking reachable moderates, computes minimal safe version bumps, verifies with tests and a re-audit, and reports prioritized tiers."
 ---
 
 Run the ecosystem's vulnerability audit, then do the part the scanner won't: separate exploitable, reachable advisories from transitive noise and propose the minimal upgrade that closes the real risk. The skill reads the actual lockfile, runs the native audit tool, traces each flagged package to how it's used in the codebase, and rewrites the severity in context — so a critical-rated advisory in a build-only dependency you never call doesn't outrank a moderate one on the request path.

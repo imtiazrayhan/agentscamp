@@ -11,6 +11,14 @@ topics: ["workflow-prompting"]
 tags: ["terminal", "agent"]
 featured: false
 related: ["claude-code", "codex-cli"]
+summary: "Warp is a modern, AI-powered terminal whose agent can plan, run, and chain commands while you approve what executes. Output is grouped into navigable blocks, workflows share vetted commands across teams, and the agent grounds itself in your indexed codebase. The client is open source (mostly AGPL-3.0), with a free tier, paid plans, and BYOK on every tier."
+faq:
+  - q: "What is Warp?"
+    a: "Warp is a rebuilt, AI-powered terminal that pairs a fast, modern CLI experience with a built-in coding agent. Output is grouped into navigable blocks instead of endless scrollback, the input editor behaves like a real text editor, and Warp Agent can read your repo, propose and run commands, and chain multi-step tasks with permission controls over what executes."
+  - q: "Is Warp free?"
+    a: "The client is open source (mostly AGPL-3.0, UI-framework crates under MIT) and the Free tier includes the terminal plus 75 AI credits/month (150 for the first two months). Build is $20/mo with 1,500 credits and full agent access; Business ($50/user/mo) adds SAML SSO and Zero Data Retention; Enterprise adds custom credit pools and self-hosted cloud agents. BYOK is available on every plan."
+  - q: "Does Warp replace Claude Code?"
+    a: "No — it complements terminal agents rather than replacing them. You can run a dedicated coding agent like Claude Code inside Warp's terminal and let Warp's blocks, workflows, and shell context speed up everything around it."
 ---
 
 Warp is a rebuilt terminal that pairs a fast, modern command-line interface with a built-in coding agent. Output is grouped into navigable **blocks** instead of an endless scrollback, and the input editor behaves like a real text editor with selections, cursor positioning, and autocomplete. On top of that, Warp Agent can read your repo, propose and run commands, and chain multi-step tasks while you stay in control of what executes.

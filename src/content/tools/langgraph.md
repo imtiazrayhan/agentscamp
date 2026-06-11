@@ -16,6 +16,13 @@ featured: false
 alternativeTo: ["crewai", "autogen", "openai-agents-sdk", "claude-agent-sdk"]
 summary: "LangGraph models an agent as an explicit state graph of nodes and edges, trading some abstraction for control. Its built-in persistence (checkpointing), human-in-the-loop interrupts, and streaming make it a common choice for production agents that need to be debuggable and resumable."
 related: ["crewai", "openai-agents-sdk", "autogen", "agent-frameworks-2026", "mem0"]
+faq:
+  - q: "What is LangGraph?"
+    a: "LangGraph is a low-level orchestration library for building agents as explicit state graphs: you define nodes (steps), edges (transitions), and a shared state object, so the agent's control flow becomes something you can see, test, and resume. Built-in checkpointing, human-in-the-loop interrupts, and streaming make runs durable and debuggable. Despite the name, it does not require the rest of LangChain."
+  - q: "Is LangGraph free?"
+    a: "Yes — LangGraph is open source under MIT and free to self-host. The optional LangGraph Platform (hosted deployment) and LangSmith (observability) are commercial."
+  - q: "LangGraph vs CrewAI?"
+    a: "LangGraph trades one-line convenience for control: explicit graphs, persistence, and human-in-the-loop, which production agents tend to need once they outgrow a demo. For quick role-based multi-agent setups, a higher-level framework like CrewAI is faster to start."
 ---
 
 LangGraph is a low-level orchestration library for building agents as **explicit state graphs**: you define nodes (steps), edges (transitions), and a shared state object, and the agent's control flow becomes something you can see, test, and resume. It trades the one-line convenience of higher-level frameworks for control — which is exactly what production agents tend to need once they outgrow a demo.

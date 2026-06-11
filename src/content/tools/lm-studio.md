@@ -13,6 +13,16 @@ topics: ["mlops-ai-infra"]
 tags: ["local-llm", "desktop", "gui", "inference"]
 featured: false
 related: ["ollama", "vllm", "self-host-vs-api-llm", "llm-inference-engineer"]
+summary: "LM Studio is a desktop app for running open-weight LLMs locally through a GUI: browse and download models, chat and tune parameters visually, then flip on a local OpenAI-compatible server for development. It runs GGUF (and MLX on Apple Silicon) models on macOS, Windows, and Linux — free for personal and work use, with no data leaving your machine."
+faq:
+  - q: "What is LM Studio?"
+    a: "LM Studio is a desktop application for discovering, downloading, and running open-weight LLMs locally through a graphical interface. It includes a built-in chat UI for experimenting with models and a local server that exposes an OpenAI-compatible API, so your app code can target a local model without changes."
+  - q: "Is LM Studio free?"
+    a: "Yes — free to download and use for both personal and commercial/work use, on macOS, Windows, and Linux. Organizations can buy an optional Enterprise tier that adds SSO and governance."
+  - q: "LM Studio vs Ollama?"
+    a: "Both run open-weight models locally; they differ in interface. LM Studio is a GUI app for browsing models, chatting, and tuning parameters visually, while Ollama is CLI-first and suited to scripting and automation. Pick by preference — both expose a local OpenAI-compatible API."
+  - q: "How do I use LM Studio with my app?"
+    a: "Download a model in the GUI, open Local Server, and click Start. Then point any OpenAI client at http://localhost:1234/v1 — existing OpenAI-format code works unchanged against the local model."
 ---
 
 LM Studio is a desktop application for running open-weight LLMs locally through a **graphical interface**. Where a CLI tool asks you to know the model name and flags, LM Studio lets you browse and download models, chat with them in a built-in UI, and tune parameters with sliders — then, when you're ready to build, flip on a **local server** that exposes an OpenAI-compatible API. It's the most approachable on-ramp to local models for people who'd rather not live in the terminal.

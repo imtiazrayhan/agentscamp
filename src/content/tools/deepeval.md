@@ -16,6 +16,15 @@ featured: false
 alternativeTo: ["ragas", "promptfoo"]
 summary: "DeepEval is an open-source Python framework that brings unit-testing ergonomics to LLM evaluation. It ships research-backed metrics (G-Eval, faithfulness, answer relevancy, hallucination, RAG and agent metrics) you assert on like pytest, so eval becomes a CI gate instead of a vibe check."
 related: ["ragas", "best-llm-eval-tools-2026", "write-llm-evals", "llm-eval-suite-scaffolder", "run-evals"]
+faq:
+  - q: "What is DeepEval?"
+    a: "DeepEval is an open-source evaluation framework that makes testing an LLM application feel like writing unit tests. You write test cases with inputs and expected behavior, attach research-backed metrics — G-Eval, faithfulness, answer relevancy, hallucination, plus RAG and agent/tool-use metrics — and assert that the scores clear a threshold, pytest-style."
+  - q: "Is DeepEval free?"
+    a: "Yes — DeepEval is free and open source under Apache-2.0. You bring an LLM provider for the judge-based metrics, so those incur token cost; the optional Confident AI cloud adds hosted reporting, dashboards, and dataset management."
+  - q: "How do I use DeepEval?"
+    a: "Define an LLMTestCase, attach metrics like AnswerRelevancyMetric(threshold=0.7), and call assert_test — then run the suite from the CLI and wire deepeval test run into CI so a build fails when a metric regresses. Start with 15–30 representative cases, including the adversarial ones that broke before."
+  - q: "DeepEval vs RAGAS?"
+    a: "DeepEval is a general LLM eval framework with pytest ergonomics that includes RAG metrics like contextual precision and recall. RAGAS is the RAG-specific metric set — compare the two if retrieval evaluation is your main need."
 ---
 
 DeepEval is an open-source evaluation framework that makes testing an LLM application feel like writing unit tests. If you know `pytest`, you already know the shape: you write test cases with inputs and expected behavior, attach metrics, and assert that the scores clear a threshold — except the "assertions" are research-backed LLM metrics rather than exact-match checks.

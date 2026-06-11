@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["architecture"]
 related: ["system-architect", "documentation-engineer"]
 featured: false
+summary: "A skill that writes a Nygard-format Architecture Decision Record — Status, Context, Decision, Consequences, plus Considered Alternatives — for a decision the user describes: it locates and numbers the ADR log, mines the repo for the real constraints, names honest negative consequences, and flags anything filled from assumption."
 ---
 
 Turn an architectural decision into a durable, reviewable record. The skill takes the decision the user describes, gathers the real constraints that shaped it from the repository, and writes a Nygard-style Architecture Decision Record — context and problem, the decision and its status, the consequences, and the alternatives that were considered and rejected. The result is a numbered, immutable document that explains *why* a choice was made to whoever reads the code in two years.

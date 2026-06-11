@@ -7,6 +7,24 @@ color: "green"
 topics: ["workflow-prompting"]
 featured: false
 related: ["what-is-claude-code", "context-engineering"]
+summary: "CLAUDE.md loads into context on every turn, so it should read like onboarding for a fast new engineer: exact build/test commands, conventions a linter can't enforce, a few-line architecture map, and the gotchas that have burned someone — and nothing the model already knows. Target under 200 lines, split by scope, and update it in the same PR that changes reality."
+keyTakeaways:
+  - "The filter for every line: would a sharp engineer get this wrong on their first day despite reading the code? If the code makes it obvious, cut it."
+  - "Four categories carry the value: exact commands (with the non-obvious flags), conventions no linter enforces, a terse architecture map, and the landmines."
+  - "Length is a recurring cost — the file loads on every turn. Target under 200 lines; terse bullets and fenced commands beat prose."
+  - "Three scopes: the committed project file (true for the team), CLAUDE.local.md (true for you, here), ~/.claude/CLAUDE.md (true for you, everywhere) — plus nested files, .claude/rules/, and @path imports for big repos."
+  - "Stale is worse than missing: update CLAUDE.md in the same PR that changes the command it documents, and prune on a cadence."
+faq:
+  - q: "What is CLAUDE.md?"
+    a: "The Markdown file Claude Code automatically loads into context at the start of every session — persistent project memory for the durable facts about a codebase: how to build and test it, the conventions that matter, where things live, and what not to touch. It's the highest-leverage configuration file in a Claude Code setup."
+  - q: "What should I put in CLAUDE.md?"
+    a: "Four things: exact build/test/run commands including non-obvious flags; project conventions a linter can't enforce; a few-line architecture map so Claude reads the right files instead of grepping; and the gotchas that have burned someone before. Leave out anything the model already knows or the code makes obvious."
+  - q: "How long should CLAUDE.md be?"
+    a: "Anthropic recommends targeting under 200 lines, and a tight, high-signal file lands well under that. The file loads on every turn, so a 600-line CLAUDE.md isn't 600 lines of help — it's 600 lines competing for attention against the actual task, every single response."
+  - q: "What's the difference between CLAUDE.md, CLAUDE.local.md, and ~/.claude/CLAUDE.md?"
+    a: "Scope. The project CLAUDE.md is committed and shared — team conventions, commands, gotchas. CLAUDE.local.md is gitignored and personal to you in this project — local paths, machine-specific notes. ~/.claude/CLAUDE.md follows you across every project — your personal style rules. Team-true → committed; you-everywhere → user file; you-here → local."
+  - q: "Can I put secrets in CLAUDE.md?"
+    a: "Never. It's committed to version control and loaded verbatim into model context every session — treat it as fully public. Document how secrets are loaded (.env.local, your secrets manager), never the values themselves."
 ---
 
 `CLAUDE.md` is the one file Claude Code reads automatically on every session, before you've typed a word. That makes it the highest-leverage configuration you own — and the easiest to get wrong. A tight `CLAUDE.md` saves you from re-explaining the build command, the test runner, and the one migration gotcha that breaks production. A bloated one quietly taxes every single turn, burning context budget on instructions the model either already knew or didn't need yet.

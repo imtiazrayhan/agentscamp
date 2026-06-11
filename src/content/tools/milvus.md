@@ -17,6 +17,13 @@ tags: ["vector-database", "rag", "scale", "open-source"]
 featured: false
 summary: "Milvus is an open-source vector database engineered for scale — a distributed architecture that separates storage and compute and a broad set of index types (HNSW, IVF, DiskANN, GPU) for billion-vector search. Milvus Lite runs embedded for prototyping; Zilliz Cloud is the managed option."
 related: ["best-vector-database-2026", "qdrant", "weaviate", "vector-search-engineer", "embedding-index-tuner"]
+faq:
+  - q: "What is Milvus?"
+    a: "Milvus is an open-source vector database built for billion-scale similarity search. Its distributed architecture separates storage from compute so ingestion, indexing, and query capacity scale independently, and it offers a wide menu of index types — HNSW, IVF variants, DiskANN, and GPU-accelerated indexes. It's a graduated LF AI & Data Foundation project, originally from Zilliz."
+  - q: "Is Milvus free?"
+    a: "Yes — free and open source under Apache-2.0, self-hostable from a single binary up to a distributed cluster. Milvus Lite covers embedded/local prototyping with the same API, and Zilliz Cloud is the managed option when you don't want to operate the cluster."
+  - q: "When should I choose Milvus over Qdrant or pgvector?"
+    a: "When your scale genuinely justifies a distributed system — hundreds of millions to billions of vectors with independent scaling of storage and compute. A distributed Milvus cluster is real operational weight (sharding, replication, monitoring, capacity planning); for a few million vectors, a single Qdrant node or pgvector ships faster and costs less to run."
 ---
 
 Milvus is an open-source vector database built from the ground up for **scale**. Its distributed architecture separates storage from compute, so you can grow ingestion, indexing, and query capacity independently and run similarity search over hundreds of millions to billions of vectors. It offers an unusually wide menu of index types — HNSW, IVF variants, DiskANN, and GPU-accelerated indexes — so you can match the index to your latency, memory, and cost constraints.

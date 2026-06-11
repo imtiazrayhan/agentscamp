@@ -5,8 +5,25 @@ author: "AgentsCamp"
 date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting", "architecture"]
-related: ["workflow-orchestrator", "building-multi-step-workflows", "agent-architect"]
+related: ["workflow-orchestrator", "building-multi-step-workflows", "agent-architect", "parallel-claude-code-worktrees"]
 featured: false
+summary: "Multi-agent orchestration buys one thing: a clean, purpose-built context per agent. Four shapes arrange the hand-offs — fan-out for independent slices, pipeline for ordered stages with narrowing between them, orchestrator-worker for dynamic decomposition, and verify/critic for adversarial checking in a fresh window. Default to a single thread; promote only when a pattern clearly fits."
+keyTakeaways:
+  - "Context isolation is the actual product: focus (the reviewer sees only the diff), bounded cost (40 files burn in the subagent's window, 12 lines return), and independence (separate contexts agreeing is real corroboration)."
+  - "Fan-out for independent slices — parallelize reads and analysis freely, serialize writes that touch shared files."
+  - "A pipeline narrows between stages — stage 3 sees the approved schema, not the research transcript — so gate every boundary or a confident-wrong stage 1 poisons everything after it."
+  - "Orchestrator-worker fits dynamic decomposition; strip Edit/Write from the orchestrator so the process owner physically can't do a worker's job."
+  - "The critic only works in a clean window: let it inherit the author's context and it inherits the author's blind spots and rubber-stamps."
+  - "Coordination isn't free — every hand-off spends tokens and risks dropping a detail. One sequential thread is the right default."
+faq:
+  - q: "What is multi-agent orchestration?"
+    a: "Coordinating several agents — each in its own context window, each returning only a summary — so every stage of a hard task works from a clean, purpose-built context instead of one thread's accumulated noise. The four standard shapes are fan-out, pipeline, orchestrator-worker, and verify/critic."
+  - q: "When is multi-agent actually better than a single agent?"
+    a: "Three conditions: the work splits into independent slices or cleanly ordered stages; one context would overflow or degrade; or you need independent corroboration (a critic whose value is precisely that it didn't watch the work happen). Outside those, the hand-offs cost more than they return — stay in one thread."
+  - q: "Why must the critic agent get a fresh context?"
+    a: "Because the isolation is load-bearing: an author believes its own output, having rationalized every decision. A critic that sees only the artifact and the requirements has no stake and no inherited blind spots. Give it the author's reasoning and you've built an expensive rubber stamp."
+  - q: "Can subagents see each other's work or the main conversation?"
+    a: "No — each starts blank and returns only its summary. That's what makes parallelism safe and corroboration meaningful, but it means every constraint ('the DB is Postgres', 'don't touch legacy/') must be written into each task prompt explicitly. Nothing crosses the boundary unless you pass it."
 ---
 
 A single agent on a hard task accumulates everything in one context window: the files it read, the dead ends it explored, the half-formed plan it revised twice. By the time it reaches the part that matters, the signal is buried in its own history. Multi-agent orchestration is the fix — not because two agents are smarter than one, but because each agent gets a **clean, purpose-built context** and hands back only what the next stage needs.

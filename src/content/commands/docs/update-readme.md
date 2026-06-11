@@ -8,6 +8,7 @@ color: "purple"
 topics: ["workflow-prompting"]
 related: ["explain-code", "readme-generator"]
 featured: false
+summary: "A slash command that brings a README back in sync with the code: it inventories every claim (scripts, paths, ports, env vars), ground-truths each against the real repo, then surgically fixes stale entries, adds missing ones, and removes phantom features — preserving structure and touching only lines that drifted."
 ---
 
 Bring the README back in sync with the code. Your job is to find where the README has drifted from reality and correct only those parts — not to rewrite the document. Every claim you keep or add must be backed by something in the repository.

@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["review-qa"]
 related: ["test-scaffolder", "test-engineer"]
 featured: false
+summary: "A skill that runs the project's existing coverage tool and turns the report into a ranked plan: it parses per-line and per-branch data, weights gaps by risk — uncovered error handlers, unguarded edge cases, critical modules — names the exact untested branch, and proposes concrete test cases for each, prioritizing risk reduction over a 100% badge."
 ---
 
 Turn a raw coverage report into a ranked, actionable plan. This skill runs the project's existing coverage tool, reads the per-line and per-branch data, and surfaces the gaps that actually matter — uncovered error handlers, unguarded edge cases, and critical modules with thin coverage — rather than nudging an arbitrary percentage upward. For each gap it proposes concrete, named test cases you can hand straight to a scaffolder. The goal is risk reduction per test written, not a green 100% badge.

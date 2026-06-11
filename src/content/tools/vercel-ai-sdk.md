@@ -16,6 +16,15 @@ featured: false
 alternativeTo: ["litellm", "instructor"]
 summary: "The Vercel AI SDK is the de facto TypeScript toolkit for AI apps: one provider-agnostic API for text, structured objects, and tool calls, first-class streaming, and framework UI hooks (React, Svelte, Vue) for building chat and generative interfaces fast."
 related: ["litellm", "openrouter", "structured-output-2026", "calling-any-model-gateways", "add-streaming-endpoint"]
+faq:
+  - q: "What is the Vercel AI SDK?"
+    a: "The Vercel AI SDK is an open-source TypeScript toolkit for building AI-powered applications. It provides one provider-agnostic API for generating text, generating structured objects, tool calling, and streaming — generateText, streamText, generateObject — plus React, Svelte, and Vue hooks like useChat for wiring chat and generative UI into your app."
+  - q: "Is the Vercel AI SDK free?"
+    a: "Yes — open source under Apache-2.0 and free; you pay your model provider for tokens. Despite the Vercel name it's framework-agnostic and runs anywhere Node or edge runtimes run."
+  - q: "Vercel AI SDK vs LiteLLM?"
+    a: "They overlap on provider-switching but live at different layers: the AI SDK is a TypeScript application toolkit with streaming and UI hooks, while LiteLLM is a Python library/self-hosted gateway for routing all LLM traffic. They also pair well — put OpenRouter or LiteLLM behind the AI SDK when you want centralized routing and cost control."
+  - q: "Does the Vercel AI SDK support structured output?"
+    a: "Yes — generateObject and streamObject produce schema-validated output (Zod and friends), with streaming supported. For Python backends, libraries like Instructor or BAML fill the same niche."
 ---
 
 The Vercel AI SDK is an open-source TypeScript toolkit for building AI-powered applications. It gives you one **provider-agnostic** API for the things every LLM app needs — generating text, generating **structured objects**, **tool calling**, and **streaming** — plus framework hooks for wiring those into a UI. It has become the default way to build AI features in the TypeScript/JavaScript ecosystem.

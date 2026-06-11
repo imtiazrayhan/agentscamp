@@ -13,6 +13,14 @@ topics: ["mcp", "architecture"]
 tags: ["mcp", "registry", "hosting", "platform"]
 featured: false
 related: ["govern-mcp-servers", "building-an-mcp-server", "mcp-server-engineer", "add-mcp-server", "mcp-inspector"]
+summary: "Smithery is a registry and hosting platform for Model Context Protocol servers. It solves discovery — a searchable catalog with provenance — and deployment: install a server into your client with one Smithery CLI command, or connect to hosted remote instances instead of running them yourself. Freemium, with a free tier for discovery."
+faq:
+  - q: "What is Smithery?"
+    a: "Smithery is a registry and hosting platform for MCP servers. It tackles the two problems that show up once MCP servers multiply: discovery (a searchable catalog with provenance, so finding servers isn't word-of-mouth) and deployment (hosted remote instances you connect to instead of running servers yourself). Server authors can publish and host what they build there."
+  - q: "How do I install an MCP server from Smithery?"
+    a: "Use the Smithery CLI: npx smithery install <server-name> --client claude connects a registry server to your client without hand-editing config."
+  - q: "Is Smithery free?"
+    a: "It's a hosted platform with a free tier for discovery and getting started. Even when installing from a registry, treat third-party servers as supply-chain surface — vet provenance, pin versions, and scope credentials to least privilege."
 ---
 
 Smithery is a **registry and hosting platform** for Model Context Protocol servers. It tackles the two problems that show up once MCP servers multiply: **discovery** (finding servers that exist and seeing who published them) and **deployment** (getting a server running and connectable without standing up your own infrastructure). You browse a catalog of servers, install one into your client with a command, and — for servers that support it — connect to a hosted, remote instance instead of running it yourself.

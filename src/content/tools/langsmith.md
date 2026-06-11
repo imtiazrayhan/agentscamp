@@ -14,6 +14,15 @@ featured: false
 alternativeTo: ["langfuse", "arize-phoenix", "braintrust"]
 summary: "LangSmith is LangChain's hosted platform for tracing, evaluating, and monitoring LLM applications. It captures every step of a chain or agent run, lets you build datasets and run offline/online evals, and works whether or not you use LangChain."
 related: ["langfuse", "arize-phoenix", "best-llm-eval-tools-2026", "llm-observability-engineer"]
+faq:
+  - q: "What is LangSmith?"
+    a: "LangSmith is LangChain's platform for the operational side of LLM apps: tracing every step of a run, evaluating against datasets, and monitoring quality, latency, and cost in production. Despite the name, it is framework-agnostic — you can instrument an app built with or without LangChain."
+  - q: "How much does LangSmith cost?"
+    a: "LangSmith is a commercial platform with a free tier and usage-based paid plans. It is hosted, and a self-hostable enterprise option exists."
+  - q: "How do I use LangSmith?"
+    a: "Set a few environment variables — LANGSMITH_TRACING=true and LANGSMITH_API_KEY — and your runs start showing up as traces. From there, promote interesting traces into a dataset and run evaluations against it as you change prompts or models. Tracing is the foundation: instrument first, then build datasets from real traffic."
+  - q: "LangSmith vs Langfuse?"
+    a: "LangSmith is the commercial, hosted option from LangChain. For fully open-source alternatives, the usual comparisons are Langfuse and Arize Phoenix."
 ---
 
 LangSmith is LangChain's platform for the operational side of LLM apps: **tracing** every step of a run, **evaluating** against datasets, and **monitoring** quality, latency, and cost in production. Despite the name, it is framework-agnostic — you can instrument an app built with or without LangChain.

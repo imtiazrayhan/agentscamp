@@ -14,6 +14,13 @@ featured: false
 alternativeTo: ["langsmith", "langfuse"]
 summary: "Braintrust is a hosted platform that ties together LLM evaluation, a prompt playground, datasets, and production logging in one loop — write evals, iterate on prompts side by side, and watch real traffic, so the dev-and-monitor cycle lives in one place."
 related: ["deepeval", "best-llm-eval-tools-2026", "langsmith"]
+faq:
+  - q: "What is Braintrust?"
+    a: "Braintrust is a commercial platform that unifies the LLM development loop: evaluation, a prompt playground, datasets, and production logging in one place. You build datasets, run and compare evals across prompt and model versions, then monitor the same metrics on live traffic — closing the loop from production logs back into evaluation."
+  - q: "How much does Braintrust cost?"
+    a: "Braintrust is a hosted commercial product with a free tier and usage-based paid plans. If you prefer open source, Langfuse and Arize Phoenix are the usual comparisons; DeepEval is a code-first eval library you run yourself."
+  - q: "How do I use Braintrust?"
+    a: "A typical loop: log production traffic, curate the interesting and failing cases into a dataset, iterate on the prompt in the playground, then run an experiment to confirm the change improves your scorers before shipping — with CI failing on regressions. Scorers can include LLM-as-judge and custom metrics."
 ---
 
 Braintrust is a commercial platform that unifies the LLM development loop: **evaluation**, a **prompt playground**, **datasets**, and **production logging** in one place. Rather than stitching an eval library to a separate observability tool, you build datasets, run and compare evals across prompt and model versions, and then monitor the same metrics on live traffic.

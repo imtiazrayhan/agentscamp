@@ -8,6 +8,14 @@ category: "extension"
 color: "blue"
 topics: ["coding-languages"]
 tags: ["vscode", "github"]
+summary: "GitHub Copilot is GitHub's AI coding assistant: inline completions as you type, Copilot Chat for questions, tests, and refactors, and an agent mode that plans and applies multi-file changes. It works in VS Code, Visual Studio, JetBrains IDEs, Neovim, and the GitHub web UI. Paid subscription with a limited free tier; free for verified students."
+faq:
+  - q: "What is GitHub Copilot?"
+    a: "GitHub Copilot is an AI coding assistant that integrates directly into the editor to suggest code as you type. Built on large language models trained on public code, it offers inline completions, a chat interface for explaining code and generating tests, and an autonomous agent mode that can plan and apply multi-file changes."
+  - q: "Is GitHub Copilot free?"
+    a: "Copilot is a paid subscription, with a limited free tier and free access for verified students and maintainers of popular open-source projects. It requires a GitHub account and a supported editor, and suggestion quality and available models vary by plan."
+  - q: "How do I install GitHub Copilot?"
+    a: "For the terminal, install the Copilot CLI with npm install -g @github/copilot (or brew install copilot-cli) and start an interactive session with copilot. In the editor, Copilot supports VS Code, Visual Studio, JetBrains IDEs, Neovim, and the GitHub web UI."
 ---
 
 GitHub Copilot is an AI coding assistant that integrates directly into the editor to suggest code as you type. Built on large language models trained on public code, it offers inline completions, a chat interface, and an autonomous agent mode that can plan and apply multi-file changes. It is aimed at individual developers, teams, and enterprises who want AI assistance without leaving their existing tooling.

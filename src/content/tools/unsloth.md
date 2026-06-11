@@ -15,6 +15,14 @@ topics: ["mlops-ai-infra"]
 tags: ["fine-tuning", "lora", "qlora", "llm", "open-source"]
 featured: false
 related: ["finetuning-engineer", "qlora-finetune-runner", "finetune-dataset-prep", "vllm"]
+summary: "Unsloth is an open-source library (Apache-2.0) that makes LoRA/QLoRA fine-tuning of open-weight LLMs roughly 2x faster and far lighter on VRAM via hand-optimized kernels, so fine-tunes run on a single consumer GPU or free Colab. It integrates with Hugging Face TRL/PEFT and supports Llama, Mistral, Qwen, Gemma, Phi, and other popular architectures."
+faq:
+  - q: "What is Unsloth?"
+    a: "Unsloth is an open-source library that makes fine-tuning open-weight LLMs dramatically faster and lighter on memory. Through hand-optimized kernels and a QLoRA-first design (4-bit base plus LoRA adapters), a fine-tune that would otherwise need a multi-GPU box runs on a single consumer or cloud GPU — including free Colab and Kaggle notebooks."
+  - q: "Is Unsloth free?"
+    a: "The core package is free and open source under Apache-2.0 (the optional Unsloth Studio UI is AGPL-3.0). An Unsloth Pro/Enterprise option exists for optimized multi-GPU and multi-node scaling."
+  - q: "What models does Unsloth support?"
+    a: "Popular open architectures including Llama, Mistral, Qwen, Gemma, and Phi. It's Hugging Face-native — it works with TRL/PEFT and standard datasets, so it drops into existing training workflows on Linux and Windows with NVIDIA GPUs."
 ---
 
 Unsloth is an open-source library that makes fine-tuning open-weight LLMs dramatically faster and lighter on memory. Through hand-optimized kernels and a QLoRA-first design, it cuts training time and VRAM use enough that a fine-tune which would otherwise need a big multi-GPU box runs on a **single consumer or cloud GPU** — including free Colab notebooks. It's a common default for parameter-efficient fine-tuning when you don't have a cluster.

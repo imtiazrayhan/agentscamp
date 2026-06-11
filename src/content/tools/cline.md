@@ -9,6 +9,14 @@ repo: "https://github.com/cline/cline"
 color: "green"
 topics: ["coding-languages"]
 tags: ["vscode", "open-source"]
+summary: "Cline is an open-source autonomous coding agent that runs as a VS Code extension, with a JetBrains plugin and terminal CLI as well. Describe a goal and it plans, edits files, and runs commands, showing every change as a diff you approve before it executes. Bring your own model: Anthropic, OpenAI, OpenRouter, Google, Bedrock, or local runtimes like Ollama."
+faq:
+  - q: "What is Cline?"
+    a: "Cline is an open-source autonomous coding agent that runs as a Visual Studio Code extension. It adds a chat-driven agent to your editor that reads your codebase, writes and edits files, and executes terminal commands to complete multi-step tasks — with every file change and command shown for review and approval before it runs."
+  - q: "Is Cline free?"
+    a: "Yes, Cline is free and open source under Apache-2.0. It does not include model inference, though — you supply your own API key (Anthropic, OpenAI, OpenRouter, Google, AWS Bedrock, and others) or point it at a local model via Ollama or LM Studio, so costs depend on the provider you connect."
+  - q: "How do I install Cline?"
+    a: "Install it from the VS Code Marketplace and add a provider key, then open the Cline panel and state a task. Cline proposes edits and commands, and you approve each before it executes. It's also available as a JetBrains plugin and a terminal CLI for headless or scripted runs."
 ---
 
 Cline is an open-source autonomous coding agent that runs as a Visual Studio Code extension. Rather than living in a separate application, it adds a chat-driven agent to the editor you already use, where it can read your codebase, write and edit files, and execute terminal commands to complete multi-step tasks.

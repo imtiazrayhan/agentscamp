@@ -5,7 +5,23 @@ author: "AgentsCamp"
 date: 2026-05-16
 color: "green"
 topics: ["workflow-prompting"]
-related: ["workflow-orchestrator"]
+related: ["workflow-orchestrator", "multi-agent-orchestration", "breakdown-task", "plan-feature", "parallel-claude-code-worktrees"]
+summary: "Big tasks become reliable through four habits: decompose into independently verifiable steps (plan first), fan out genuinely independent work to parallel subagents and do the fan-in deliberately, verify with mechanical checks plus a fresh-eyes reviewer, and persist critical state to a file because summaries drop detail. Add an orchestrator only when the coordination pattern repeats."
+keyTakeaways:
+  - "Decompose until each step is independently verifiable, then stop — a step whose output is 'I thought about it' isn't a step, and over-splitting drowns the work in handoffs."
+  - "Plan in plain text before touching files: reviewing a 6-line plan is cheaper than reviewing the wrong 600-line implementation."
+  - "Fan-out works because subagents share no memory — which also means fan-in is real work: the parent must merge, dedupe, and resolve conflicts itself."
+  - "Agents are optimistic and will report success on code that doesn't compile — make verification an explicit step: build/lint/test, plus a fresh subagent reviewing the diff with no stake in it."
+  - "Subagents inherit nothing from the parent conversation; pass every constraint explicitly, and persist must-not-lose facts to a PLAN.md every step re-reads."
+faq:
+  - q: "How do I break a big task into steps for an agent?"
+    a: "Ask for the plan first, as plain text, before any code — each numbered step should name the files touched, the change, and how to verify it in isolation. The heuristic: every step produces an artifact you could review on its own (a diff, a file, a test result). Then each item becomes a unit you can run, check, and roll back independently."
+  - q: "When should agent work run in parallel?"
+    a: "Only when slices are genuinely independent — no slice needs another's output, and no two touch the same files. Read-heavy research fans out beautifully (three scanners over different concerns); writes that share state should serialize. If two steps always run together, they're one step."
+  - q: "Why use a separate subagent to review the work?"
+    a: "The agent that wrote the code is primed to believe it's correct — it rationalized every decision on the way. A reviewer with a clean context window, given only the diff and the requirements, has no stake in the implementation and catches what the author talked itself past. Pair it with mechanical checks for the objectively broken."
+  - q: "Why does the agent lose details halfway through a long workflow?"
+    a: "Two mechanics: subagents return only summaries, and long main threads compact — so specifics like exact filenames or a constraint mentioned once evaporate between steps. The defense is durable state in a file (PLAN.md, scratch notes) that every step re-reads, instead of trusting the conversation to remember."
 ---
 
 Most non-trivial work — migrating a codebase, shipping a feature with tests, auditing a security surface — is too big to one-shot. The reliable path is to break the work into smaller pieces, run them with the right amount of parallelism, and verify the result before declaring victory. This guide covers the core patterns for multi-step agent workflows in Claude Code: decomposition, fan-out/fan-in, verification passes, when to reach for an orchestrator subagent, and the pitfalls that quietly wreck long runs.

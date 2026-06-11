@@ -17,6 +17,13 @@ featured: false
 alternativeTo: ["litellm", "helicone", "openrouter"]
 summary: "Portkey is an AI gateway and LLMOps platform: route to 1,600+ LLMs through one OpenAI-compatible API with simple and semantic caching, automatic retries, fallbacks, and load balancing — plus observability (logs, traces, cost and latency), prompt management, guardrails, virtual keys, and budgets. The fast routing gateway is open source (MIT) and self-hostable; the hosted control plane is freemium."
 related: ["llm-gateways-compared", "helicone", "litellm", "llm-cost-latency-engineering", "llm-cost-optimizer"]
+faq:
+  - q: "What is Portkey?"
+    a: "Portkey is an AI gateway paired with an LLMOps control plane. The gateway puts 1,600+ models across 45+ providers behind one OpenAI-compatible API and adds caching (simple and semantic), automatic retries, fallbacks, and load balancing; the platform layers on observability, prompt management, guardrails, and governance with virtual keys and budgets."
+  - q: "Is Portkey free?"
+    a: "The routing gateway is open source (MIT) and self-hostable from its repo. The hosted platform is freemium — a free tier for prototyping, a paid production tier, and enterprise plans with governance and compliance."
+  - q: "Portkey vs LiteLLM vs Helicone?"
+    a: "All three sit in the gateway space with different centers of gravity: Portkey couples routing with an LLMOps control plane (caching, guardrails, budgets, observability), LiteLLM is the library-or-self-hosted proxy, and Helicone is observability-first."
 ---
 
 Portkey is an **AI gateway** paired with an **LLMOps control plane**. The gateway puts 1,600+ models behind one OpenAI-compatible API and adds the reliability and cost levers you'd otherwise build yourself — caching, retries, fallbacks, load balancing — while the hosted platform layers on observability, prompt management, and governance. It's aimed at teams who want one managed control point for all their LLM traffic, with caching and cost control built in rather than bolted on.

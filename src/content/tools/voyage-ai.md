@@ -14,6 +14,13 @@ featured: false
 alternativeTo: ["cohere-rerank"]
 summary: "Voyage AI provides retrieval-tuned embedding and reranking models accessible via API, consistently among the top performers on retrieval benchmarks. Acquired by MongoDB in 2025, it offers general-purpose and domain-specific (code, finance, law) embeddings plus rerankers."
 related: ["choosing-embeddings-2026", "cohere-rerank", "qdrant", "embedding-set-inspector"]
+faq:
+  - q: "What is Voyage AI?"
+    a: "Voyage AI provides embedding and reranking models through a simple API, tuned specifically for retrieval quality rather than general-purpose representation. Its models consistently rank among the top performers on retrieval benchmarks, with general-purpose and domain-specific variants (code, finance, law) plus cross-encoder rerankers. It was acquired by MongoDB in 2025."
+  - q: "Is Voyage AI free?"
+    a: "It's a hosted API with a free tier of monthly tokens to start, then usage-based pricing."
+  - q: "How do I use Voyage AI in a RAG pipeline?"
+    a: "Embed documents at ingestion with input_type='document' and the question with input_type='query' — asymmetric embedding improves retrieval quality. Store vectors in a database like Qdrant, then optionally rerank candidates to reorder them by true relevance. Note that switching embedding models later means re-embedding and re-indexing your whole corpus."
 ---
 
 Voyage AI provides **embedding** and **reranking** models accessible through a simple API, tuned specifically for retrieval quality rather than general-purpose representation. Its models consistently rank among the top performers on retrieval benchmarks, which is why many teams reach for Voyage embeddings when retrieval accuracy is the bottleneck in their RAG system. Voyage AI was acquired by MongoDB in 2025.

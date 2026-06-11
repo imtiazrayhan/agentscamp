@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["data-ml"]
 related: ["sql-pro", "performance-engineer"]
 featured: false
+summary: "A skill that diagnoses a slow SQL query from its real execution plan: it captures an EXPLAIN ANALYZE baseline, reads the plan for the actual bottleneck — sequential scan, stale statistics, non-sargable predicate, bad join order, or app-side N+1 — proposes one targeted fix, and re-runs the identical plan to prove the improvement."
 ---
 
 Take a slow SQL query and find out *why* it is slow from the database's own execution plan, then fix the actual bottleneck instead of the first thing that looks suspicious. The skill runs `EXPLAIN` (and `EXPLAIN ANALYZE` where safe), reads the plan to locate the dominant cost — a sequential scan over a large table, an index the planner refused to use, a join order that materializes millions of rows before filtering, or an app-side N+1 firing the same query in a loop — and proposes one concrete change: a rewrite, an index, a statistics refresh, or a fetch-pattern fix. Every proposal is measured before and after on the real plan, so you ship a change you have proven, not one you hoped would help.

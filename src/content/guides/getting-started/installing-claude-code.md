@@ -7,6 +7,29 @@ color: "green"
 topics: ["workflow-prompting"]
 featured: false
 related: ["what-is-claude-code", "getting-started-with-agents"]
+summary: "Install Claude Code with the zero-dependency native installer (one curl command on macOS/Linux/WSL, a PowerShell one-liner on Windows) or via npm with Node 18+. Authenticate once with your Claude.ai or Console account, start it inside a real repository, and run /init to scaffold the CLAUDE.md that makes every later session better."
+howtoSteps:
+  - name: "Install the CLI"
+    text: "Use the native installer — curl -fsSL https://claude.ai/install.sh | bash on macOS/Linux/WSL, or irm https://claude.ai/install.ps1 | iex in PowerShell on Windows. It has no dependencies and auto-updates. Prefer npm tooling instead? npm install -g @anthropic-ai/claude-code requires Node 18+."
+  - name: "Verify and authenticate"
+    text: "Run claude --version to confirm the install, then run claude and complete the one-time browser sign-in. You need a Claude Pro/Max, Team/Enterprise, or Anthropic Console account — the free Claude.ai plan doesn't include Claude Code."
+  - name: "Start inside a real project"
+    text: "cd into an actual repository before launching — Claude Code's context is the directory you start it from. Ask something concrete first ('what does the auth middleware do?') and let it read the code before it changes anything."
+  - name: "Create the CLAUDE.md"
+    text: "Run /init to scaffold a CLAUDE.md from what's in the repo, then trim it to the essentials: build/test commands and the conventions that must hold. Everything you document there is something Claude stops guessing at."
+  - name: "Learn the day-one controls"
+    text: "/help lists commands, Esc interrupts mid-action, /clear resets a noisy session, and claude doctor is the health check when anything misbehaves."
+faq:
+  - q: "How do I install Claude Code?"
+    a: "The recommended path is the native installer: curl -fsSL https://claude.ai/install.sh | bash on macOS, Linux, or WSL (PowerShell: irm https://claude.ai/install.ps1 | iex). It has zero dependencies and auto-updates in the background. The npm alternative — npm install -g @anthropic-ai/claude-code — works too but requires Node.js 18+."
+  - q: "Do I need Node.js for Claude Code?"
+    a: "Only if you install via npm. The native installer and Homebrew paths have no Node dependency at all — which also sidesteps the classic npm EACCES permission errors."
+  - q: "Is Claude Code free?"
+    a: "The tool itself has no separate price, but it requires a paid account: a Claude Pro or Max subscription, a Team/Enterprise plan, or Anthropic API (Console) billing. The free Claude.ai plan does not include Claude Code access."
+  - q: "How do I update Claude Code?"
+    a: "The native install updates itself in the background; force one immediately with claude update. On the npm path, run npm install -g @anthropic-ai/claude-code@latest — avoid npm update -g, which can silently leave you on a stale version."
+  - q: "Why can't Claude Code see my files?"
+    a: "You launched it from the wrong directory. Claude Code treats the directory it starts in as the project — quit, cd into the actual repo root, and start again. It only sees the tree below its working directory."
 ---
 
 Claude Code is a command-line agent: you run it from a terminal inside a project, and it reads files, runs commands, and edits code in place while you watch. Getting it installed and authenticated takes a couple of minutes, but the difference between a frustrating first session and a productive one is mostly about *where* you start it and *what context* you give it on the way in. This guide covers the install, the first run, and the one file — `CLAUDE.md` — that makes every later session better.

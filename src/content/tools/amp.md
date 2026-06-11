@@ -10,6 +10,14 @@ topics: ["workflow-prompting"]
 tags: ["agent", "sourcegraph"]
 related: ["cody", "claude-code", "devin"]
 featured: false
+summary: "Amp is Sourcegraph's agentic coding tool: a CLI plus extensions for VS Code, Cursor, Windsurf, JetBrains, Neovim, and Zed that runs frontier models to read, edit, and run commands across a repository. Subagents parallelize independent sub-tasks, the Oracle adds a second-opinion reasoning model, and threads can be shared with a workspace."
+faq:
+  - q: "What is Amp?"
+    a: "Amp is Sourcegraph's agentic coding tool. You drive it from the terminal or an editor extension, describe a task, and the agent reads, edits, and runs commands across your repository. It tracks the strongest available models rather than locking you to one, and adds subagents, a second-opinion Oracle model, and shareable threads."
+  - q: "How much does Amp cost?"
+    a: "Pricing is usage-based: Amp Free grants $10/day of credits (new sign-ups are currently paused), and beyond that you pay as you go for actual model usage with no markup for individuals and a $5 minimum top-up — there is no subscription. Enterprise pricing is 50% higher than individual rates and starts with a one-time $1,000 credit purchase."
+  - q: "How do I install Amp?"
+    a: "Install the CLI with curl -fsSL https://ampcode.com/install.sh | bash, then run amp inside your project. The CLI runs on macOS, Linux, and Windows via WSL, with extensions for VS Code and its forks, JetBrains, Neovim, and Zed."
 ---
 
 Amp is Sourcegraph's agentic coding tool, built to run frontier models with as little ceremony as possible. You drive it from the terminal or an editor extension, describe a task, and the agent reads, edits, and runs commands across your repository to carry it out. Its stated philosophy is to "go where the models take it" — no legacy modes or backward-compatibility shims — so the product tracks the strongest available models rather than locking you to one.

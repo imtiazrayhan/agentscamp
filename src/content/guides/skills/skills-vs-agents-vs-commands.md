@@ -5,8 +5,24 @@ author: "AgentsCamp"
 date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
-related: ["writing-a-custom-agent", "writing-your-first-skill"]
+related: ["writing-a-custom-agent", "writing-your-first-skill", "getting-started-with-agents", "claude-code-plugins"]
 featured: false
+summary: "Two mechanisms, three patterns: a subagent is a delegate Claude routes to (own context window, own tools); a skill is on-demand knowledge loaded into the main context when the task matches; a slash command is just a skill with disable-model-invocation: true, so you pull the trigger. Decide on two axes — who invokes it, and whether the work needs an isolated context."
+keyTakeaways:
+  - "Custom commands merged into skills: .claude/commands/*.md still works as legacy, but .claude/skills/<name>/SKILL.md is canonical, and every skill is invocable as /<name>."
+  - "A subagent is a worker with isolation; a skill is knowledge in your main context; a 'slash command' is a skill you trigger by name."
+  - "The fastest filter is who pulls the trigger — you (command) or Claude (agent/skill). The second is isolation: only subagents get their own context window by default."
+  - "Noisy middle, clean summary → subagent. 'The way we do X here' recipe → skill. A prompt you retype → slash command."
+  - "The classic mistake: building a subagent for something you always invoke yourself — the isolation buys nothing and the auto-delegation never fires. You wanted a command."
+faq:
+  - q: "What's the difference between a skill and a subagent in Claude Code?"
+    a: "A subagent is a separate worker: Claude delegates to it based on its description, it runs in its own context window with its own toolset, and only a summary comes back. A skill is knowledge: it loads into the main context when the task matches and shapes how Claude does the work directly. Worker vs. know-how, isolated vs. in-context."
+  - q: "Are slash commands deprecated?"
+    a: "Merged, not dead. .claude/commands/*.md files still work as a legacy path, but skills are the canonical mechanism — any .claude/skills/<name>/SKILL.md is invocable as /<name>, and adding disable-model-invocation: true makes it fire only when you type it, which is exactly the old slash-command behavior plus support for bundled files and arguments."
+  - q: "When should I use a subagent instead of a skill?"
+    a: "When the work has a noisy middle and a clean summary — running a test suite, sweeping logs, auditing files. The subagent churns through hundreds of lines in its own window and hands back three sentences. If you're really just teaching Claude a procedure and don't need isolation, that's a skill (which can still opt into a forked context with context: fork)."
+  - q: "How do I make a skill run only when I type it?"
+    a: "Set disable-model-invocation: true in its frontmatter. Without it, Claude may auto-load the skill whenever it judges the task relevant; with it, the skill fires only on its /name. Skills also take arguments — $0 for the first (substitution is 0-indexed), $ARGUMENTS for all — plus an argument-hint, which makes them feel like CLI subcommands for your repo."
 ---
 
 Claude Code really has **two** extension mechanisms, and they get conflated constantly because all three patterns are Markdown-based with YAML frontmatter (a skill is a folder whose `SKILL.md` carries the frontmatter, and can bundle supporting scripts and templates alongside it). But they answer three different questions. A **subagent** answers "who should Claude hand this off to?" A **skill** answers "what does Claude need to know to do this well?" A **skill invoked as a slash command** answers "what do I want to type to kick this off?" Pick the wrong one and you end up fighting the tool — a skill that never loads, an agent that never gets delegated to, a command nobody remembers exists.

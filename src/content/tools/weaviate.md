@@ -17,6 +17,13 @@ tags: ["vector-database", "rag", "hybrid-search", "open-source"]
 featured: false
 summary: "Weaviate is an open-source, Go-based vector database with first-class hybrid search, a module system that can vectorize your data for you, and GraphQL/REST/gRPC APIs. Batteries-included is the pitch: it can embed, store, filter, and hybrid-search out of the box, self-hosted or as a managed cloud."
 related: ["best-vector-database-2026", "qdrant", "milvus", "pinecone", "vector-search-engineer"]
+faq:
+  - q: "What is Weaviate?"
+    a: "Weaviate is an open-source vector database written in Go, built around the idea that the store should do more than hold vectors. Its module system can call an embedding provider (or a local model) to vectorize objects on insert, and its hybrid search fuses BM25 keyword and vector scores natively. You interact through GraphQL, REST, or gRPC APIs and well-supported client libraries."
+  - q: "Is Weaviate free?"
+    a: "Yes — free and open source under BSD-3-Clause, self-hostable with Docker or Kubernetes. Weaviate Cloud is the managed option, with a free sandbox to start."
+  - q: "Weaviate vs Qdrant?"
+    a: "Weaviate's differentiator is batteries-included: vectorizer modules that let the database own the embedding step, native hybrid search, and multi-tenancy. If you don't want the store to own embedding, a leaner database like Qdrant may be simpler. Either way, switching embedding models later still means re-vectorizing the collection."
 ---
 
 Weaviate is an open-source vector database written in Go, built around the idea that the store should do more than hold vectors. Its **module system** can call an embedding provider (or a local model) to vectorize your objects on insert, so you can hand it raw text and let it manage embeddings — and its **hybrid search** fuses keyword (BM25) and vector scores natively rather than leaving you to wire fusion yourself.

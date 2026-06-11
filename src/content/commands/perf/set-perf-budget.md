@@ -9,6 +9,7 @@ date: 2026-06-04
 topics: ["devops-infra"]
 related: ["llm-cost-latency-engineering", "llm-cost-optimizer", "prompt-cache-optimizer", "llm-gateways-compared"]
 featured: false
+summary: "A slash command that turns 'fast and cheap' into enforced ceilings for an LLM feature: it pins p95/p99 latency and cost-per-request targets, measures the baseline on representative traffic, instruments per-request metrics, wires CI checks or runtime caps that fail loudly when the budget is breached, and documents it all."
 ---
 
 ## Scope

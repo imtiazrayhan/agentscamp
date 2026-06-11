@@ -7,6 +7,24 @@ color: "green"
 topics: ["workflow-prompting"]
 featured: true
 related: ["getting-started-with-agents", "installing-claude-code"]
+summary: "Claude Code is Anthropic's agentic command-line coding tool: give it a goal in plain language and it reads your files, runs commands, edits code, observes the results, and iterates until done. Unlike autocomplete assistants, it closes the loop itself — you set the objective and review the diff. It extends via subagents, skills, slash commands, and MCP servers."
+keyTakeaways:
+  - "Claude Code is an agent, not autocomplete: the unit of work is a goal, not a suggestion — it runs commands, reads the output, and self-corrects."
+  - "The loop is decide → act → observe → repeat; verifying its own edits by re-running the failing test is what separates it from a code generator."
+  - "It lives in the terminal first, but the same engine runs in IDE extensions, GitHub, and the SDK/headless mode."
+  - "Four extension points, four jobs: subagents (delegate a focused role), skills (reuse a procedure), slash commands (replay a prompt), MCP servers (reach outside the repo)."
+  - "It excels where success is verifiable — failing tests, mechanical multi-file changes, investigation; it struggles on ambiguous goals with no signal to check against."
+faq:
+  - q: "What is Claude Code?"
+    a: "Claude Code is Anthropic's agentic coding tool. You give it a goal in plain language from the terminal, and it works in a loop — reading files, running commands like your test suite, editing code, observing the output, and iterating until the goal is met or it needs your input. You direct and review; it executes."
+  - q: "How is Claude Code different from autocomplete tools like Copilot?"
+    a: "Autocomplete operates one suggestion at a time: it sees context, produces text, and stops — you run the tests and paste back the errors. Claude Code closes that loop itself: it runs your commands, reads stderr, and adjusts. The unit of work shifts from 'the next few lines' to 'achieve this outcome.'"
+  - q: "Where does Claude Code run?"
+    a: "The terminal is home — an interactive session started with claude in a project directory, plus a one-shot claude -p mode for scripting. The same engine also runs in VS Code and JetBrains extensions, on GitHub via the Action, and embedded in your own software through the Agent SDK."
+  - q: "What is Claude Code actually good at?"
+    a: "Tasks with a verifiable signal: making a failing test pass, mechanical multi-file changes like renames and migrations, investigating why something breaks, and scaffolding against an existing pattern. It struggles when success has no check — ambiguous product decisions, or goals only a human eyeballing a UI can judge."
+  - q: "Do I need subagents, skills, and MCP servers to start?"
+    a: "No. Start with a CLAUDE.md capturing your project's commands and conventions, give Claude Code a real task with a test attached, and add one skill for your most-repeated request. The extension system is there when the basics start paying off — not a prerequisite."
 ---
 
 Most AI coding tools you have used are autocomplete: you type, they predict the next few lines, you accept or reject. Claude Code is a different category. It is an **agentic** command-line tool — you give it a goal in plain language, and it reads your files, runs commands, edits code, checks the result, and keeps going until the goal is met or it needs you. The difference between "suggest the next token" and "achieve this outcome" is the whole point.

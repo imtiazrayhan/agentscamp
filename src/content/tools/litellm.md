@@ -16,6 +16,15 @@ featured: false
 alternativeTo: ["openrouter", "vercel-ai-sdk", "portkey"]
 summary: "LiteLLM lets you call 100+ LLMs (OpenAI, Anthropic, Google, Bedrock, local, and more) through one OpenAI-compatible interface. Use it as a Python library, or run its proxy as a self-hosted gateway with central keys, fallbacks, retries, caching, cost tracking, and rate limits."
 related: ["openrouter", "calling-any-model-gateways", "llm-gateways-compared", "provider-fallback-wrapper", "vercel-ai-sdk"]
+faq:
+  - q: "What is LiteLLM?"
+    a: "LiteLLM is an open-source tool that lets you call 100+ LLM providers — Anthropic, Google, Azure, AWS Bedrock, local models, and more — through one OpenAI-format interface. It comes as a Python library for in-process calls and as a proxy server you run as a centralized gateway with key management, fallbacks, retries, caching, and cost tracking."
+  - q: "Is LiteLLM free?"
+    a: "Yes — LiteLLM is open source under MIT and free to self-host. An enterprise edition adds advanced gateway features and support."
+  - q: "LiteLLM vs OpenRouter?"
+    a: "Both put many models behind one OpenAI-compatible interface. LiteLLM is software you run — a library or a self-hosted proxy you operate, with full control over keys and policies — while OpenRouter is a fully hosted gateway with one key and one bill. Choose by whether you want to operate the gateway yourself."
+  - q: "When should I use the LiteLLM proxy instead of the library?"
+    a: "Use the library for simple multi-provider code inside one app. Run the proxy when you want a single control point for many apps — central API-key management, per-team budgets and rate limits, fallbacks, and cost tracking across the org."
 ---
 
 LiteLLM gives you one interface to call virtually any LLM. Write your code once against the OpenAI format and LiteLLM translates to 100+ providers — Anthropic, Google, Azure, AWS Bedrock, local models, and more — so switching or mixing models is a config change, not a rewrite. It comes in two forms: a **Python library** for in-process calls, and a **proxy server** you run as a centralized gateway.

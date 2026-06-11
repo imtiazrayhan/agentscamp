@@ -5,6 +5,7 @@ argument-hint: "[file or symbol]"
 title: "Explain Code"
 color: "purple"
 topics: ["workflow-prompting"]
+summary: "A slash command that explains what a file, function, class, or line range does in clear prose: it reads the actual source, traces purpose, inputs, outputs, control flow, and dependencies, then reports a short summary, an execution-order walkthrough, an inputs/outputs table, and edge-case gotchas — without modifying code."
 ---
 
 Explain the code identified by `$ARGUMENTS`. The argument may be a file path, a function or class name, a module, or a line range. Produce an explanation that a teammate could read once and understand without opening the source themselves.

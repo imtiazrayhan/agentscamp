@@ -8,6 +8,7 @@ color: "purple"
 topics: ["workflow-prompting"]
 related: ["explain-code", "documentation-engineer"]
 featured: false
+summary: "A slash command that adds or improves docstrings for the public API of a file or symbol: it reads the real implementation, identifies exported symbols, matches the language's docstring convention (TSDoc, Google-style Python, Go doc comments), and documents parameters, returns, errors, and side effects — never editing logic."
 ---
 
 Add or improve docstrings for the code identified by `$ARGUMENTS`. Document the public surface so a caller can use it correctly without reading the implementation. Edit only the documentation — never the logic.

@@ -14,6 +14,13 @@ featured: false
 alternativeTo: ["voyage-ai"]
 summary: "Cohere Rerank is a hosted cross-encoder API that takes a query plus a list of retrieved passages and returns them sorted by genuine relevance. Dropping it in after first-stage retrieval is one of the cheapest, highest-leverage upgrades to RAG quality."
 related: ["hybrid-search-reranking", "voyage-ai", "qdrant", "retrieval-engineer", "benchmark-rerankers"]
+faq:
+  - q: "What is Cohere Rerank?"
+    a: "Cohere Rerank is a hosted reranking API: you give it a query and a list of candidate passages from your vector or keyword search, and it returns them reordered by genuine relevance, each with a score. As a cross-encoder it reads the query and each passage together, so it judges relevance far more accurately than the bi-encoder embeddings used for first-stage retrieval."
+  - q: "How much does Cohere Rerank cost?"
+    a: "It is a commercial API with a free trial tier for evaluation and usage-based pricing in production. It's hosted only (no self-hosting), so factor in the added per-query latency and cost of the rerank call — though reranking only the top candidates keeps both modest."
+  - q: "How do I use Cohere Rerank?"
+    a: "The standard pattern is retrieve-wide, rerank-narrow: pull 25–50 candidates from your retriever, then call co.rerank(model='rerank-v3.5', query=question, documents=candidates, top_n=5) and put only the top passages in your prompt. It drops in after any retriever — vector, keyword, or hybrid — with no re-indexing required."
 ---
 
 Cohere Rerank is a hosted **reranking** API: you give it a query and a list of candidate passages (from your vector or keyword search), and it returns them reordered by genuine relevance, each with a score. Unlike the bi-encoder embeddings used for first-stage retrieval, a reranker is a **cross-encoder** — it reads the query and each passage together, so it judges relevance far more accurately at the cost of running per candidate.

@@ -16,6 +16,13 @@ featured: false
 alternativeTo: ["langfuse", "langsmith", "portkey"]
 summary: "Helicone is an open-source LLM observability platform and AI gateway with a one-line integration — logging, tracing, caching, and cost/latency tracking across providers. Note: Mintlify acquired Helicone in March 2026 and it's now in maintenance mode (security and bug fixes only, no new features), though the Apache-2.0 proxy still works and is self-hostable."
 related: ["llm-gateways-compared", "portkey", "litellm", "llm-cost-latency-engineering", "langfuse"]
+faq:
+  - q: "What is Helicone?"
+    a: "Helicone is an open-source LLM observability platform with a built-in AI gateway, known for one-line setup: change your base URL or add a header and your calls are logged, traced, and analyzed. It adds caching and rate limiting at the proxy, cost and latency tracking per call, prompt management, and datasets/evals. Note: Mintlify acquired Helicone in March 2026 and it is now in maintenance mode — security and bug fixes only, no new features."
+  - q: "Is Helicone free?"
+    a: "Helicone is open source under Apache-2.0 and free to self-host (Docker/Helm), with a hosted cloud offering a free tier and paid plans."
+  - q: "How do I use Helicone?"
+    a: "Point your client at the proxy — e.g. OpenAI(base_url='https://oai.helicone.ai/v1', default_headers={'Helicone-Auth': f'Bearer {HELICONE_API_KEY}'}) — and traffic becomes observable with no SDK rewrite. Async logging is available if you'd rather not route requests through a proxy. Given the maintenance-mode status, new projects should also weigh actively developed alternatives like Langfuse, LangSmith, or Portkey."
 ---
 
 Helicone is an open-source **LLM observability** platform with a built-in **AI gateway**, known for a famously low-friction setup: change your base URL (or add a header) and your calls are logged, traced, and analyzed — no SDK rewrite. On top of monitoring it offers caching and rate limiting at the proxy, cost and latency tracking, prompt management, and datasets/evals.

@@ -16,6 +16,15 @@ featured: false
 alternativeTo: ["deepeval"]
 summary: "promptfoo is an open-source, config-driven CLI for evaluating and comparing LLM prompts and models side by side, plus a red-teaming mode that probes apps for prompt injection, jailbreaks, and unsafe output. Declarative YAML test cases make it CI-friendly and provider-agnostic."
 related: ["best-llm-eval-tools-2026", "deepeval", "llm-evaluation-engineer", "defending-prompt-injection", "red-team-llm"]
+faq:
+  - q: "What is promptfoo?"
+    a: "promptfoo is an open-source, developer-first CLI for evaluating LLM outputs. You declare test cases and assertions in YAML, point it at one or more prompts, models, or providers, and it runs a side-by-side matrix showing which combination wins. It also ships a red-teaming mode that automatically probes an app for prompt injection, jailbreaks, PII leakage, and unsafe content."
+  - q: "Is promptfoo free?"
+    a: "Yes — free and open source under MIT. Judge-based assertions and red-team probes call an LLM, so those incur token cost."
+  - q: "How do I run promptfoo?"
+    a: "Define prompts, providers, and tests in promptfooconfig.yaml, then run npx promptfoo@latest eval and npx promptfoo@latest view to see the results matrix. It runs headlessly in CI and can fail the build on a regression or a failed safety probe."
+  - q: "promptfoo vs DeepEval?"
+    a: "promptfoo is a config-driven YAML CLI; DeepEval is a Python, pytest-style framework. Pick promptfoo for declarative, provider-agnostic matrix comparisons and red teaming; pick DeepEval if you want evals written as Python tests."
 ---
 
 promptfoo is an open-source, developer-first tool for evaluating LLM outputs. You declare test cases and assertions in a YAML config, point it at one or more prompts, models, or providers, and it runs a side-by-side matrix so you can see — quantitatively — which combination wins. It also ships a **red-teaming** mode that automatically probes an app for vulnerabilities like prompt injection and jailbreaks.

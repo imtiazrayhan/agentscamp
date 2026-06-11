@@ -15,6 +15,16 @@ topics: ["mlops-ai-infra"]
 tags: ["local-llm", "cli", "inference", "open-source"]
 featured: false
 related: ["lm-studio", "self-host-vs-api-llm", "llm-inference-engineer", "vllm"]
+summary: "Ollama is an open-source (MIT) tool for running open-weight LLMs locally: ollama run pulls and runs a model with no API key or account. It manages a local model library, supports Modelfile customization and GGUF imports, and exposes a REST plus OpenAI-compatible API on localhost, so apps can target a local model by changing the base URL."
+faq:
+  - q: "What is Ollama?"
+    a: "Ollama is an open-source tool for running open-weight LLMs on your own machine. It handles downloading and quantizing models, manages a local model library, and exposes a local API — including OpenAI-compatible endpoints — so you can chat in the terminal or build apps against a model on localhost. Nothing leaves your computer."
+  - q: "Is Ollama free?"
+    a: "Yes — free and open source under MIT for local use on macOS, Windows, and Linux. An optional paid Ollama Cloud (Pro/Max) runs larger hosted models but isn't required."
+  - q: "How do I run a model with Ollama?"
+    a: "Install Ollama and run ollama run llama3.1 — it pulls the model and starts a chat in the terminal. To use it from code, call the local OpenAI-compatible endpoint at http://localhost:11434/v1 with any OpenAI client."
+  - q: "Ollama vs LM Studio?"
+    a: "Both run open models locally. Ollama is CLI-first, suited to scripting and one-command runs; LM Studio is the GUI alternative for browsing and tuning models visually. Neither is built for high-concurrency production serving — for that, move to a dedicated engine like vLLM."
 ---
 
 Ollama is the simplest way to run open-weight LLMs **on your own machine**. Install it, run `ollama run llama3`, and you have a model answering prompts locally — no API key, no account, and nothing leaving your computer. It handles downloading and quantizing models, manages a local model library, and exposes a **local API** (including OpenAI-compatible endpoints) so you can build against a model running on localhost.

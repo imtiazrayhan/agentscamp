@@ -6,7 +6,32 @@ date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
-related: ["writing-a-custom-agent", "skills-vs-agents-vs-commands", "test-scaffolder"]
+related: ["writing-a-custom-agent", "skills-vs-agents-vs-commands", "test-scaffolder", "claude-code-plugins"]
+summary: "A skill is a folder with a SKILL.md — frontmatter whose description decides when it fires, plus a runbook body. Progressive disclosure makes skills cheap: only name and description load at session start, the body loads when the task matches, and bundled files only when reached for. One job per skill, a trigger-first description, and deterministic work pushed into bundled scripts."
+howtoSteps:
+  - name: "Pick one repeatable procedure"
+    text: "Skills earn their keep through repetition — if you've typed roughly the same multi-step instructions three times, that's a skill. One job per skill: an '…and it can also…' branch is a second skill."
+  - name: "Create the folder and SKILL.md"
+    text: "Project skills live in .claude/skills/<name>/SKILL.md, personal ones in ~/.claude/skills/<name>/. The directory name becomes the /command; the file is YAML frontmatter plus a Markdown body."
+  - name: "Write a trigger-first description"
+    text: "The description is the only thing loaded until the skill fires — write what it does plus when to use it, using the verbs people actually say ('Use when the user asks to create, add, or generate a component'). Too vague never triggers; too broad loads on everything."
+  - name: "Scope tools and invocation"
+    text: "allowed-tools pre-approves tools so the skill runs friction-free — it's about prompts, not sandboxing (use disallowed-tools to actually block). Add disable-model-invocation: true if the skill should only ever fire when you type its /name."
+  - name: "Write the body as a runbook"
+    text: "Concrete numbered steps, a pointer to a canonical example in the repo to anchor style, and an explicit boundary ('Do not run the migration — creating the file is the whole job'). Cut anything the model already knows."
+  - name: "Bundle scripts for deterministic work"
+    text: "Drop scripts, templates, and reference docs next to SKILL.md and reference them by relative path — they load only when the instructions reach for them. Ten lines of Python the skill runs beats prose the model interprets."
+faq:
+  - q: "What is a Claude Code skill?"
+    a: "A reusable procedure packaged as a folder with a SKILL.md file — frontmatter that controls when it activates, plus a body of instructions Claude follows once it loads. Skills sit dormant until the task matches their description, which makes them the right home for 'the way we do X here' recipes without bloating CLAUDE.md."
+  - q: "Do installed skills eat my context window?"
+    a: "Barely — that's the point of progressive disclosure. At session start Claude reads only each skill's name and description (a few dozen tokens apiece); a skill's full body loads only when its description matches the task, and bundled files later still, when the instructions reference them. Twenty installed skills cost almost nothing until one is relevant."
+  - q: "Why doesn't my skill trigger?"
+    a: "The description — it's the routing signal and the only field Claude sees most of the time. Front-load it with trigger phrasing that matches how people actually ask ('Use when cutting a release or asked for release notes'), not implementation language. If it fires too often instead, the description is too broad."
+  - q: "What does allowed-tools do in a skill?"
+    a: "It pre-approves listed tools so Claude can use them without per-call permission prompts while the skill is active — friction reduction, not a sandbox. Every other tool remains callable under your normal permission settings; to genuinely keep a tool out of a skill's reach, use disallowed-tools."
+  - q: "Do I need to restart Claude Code after adding a skill?"
+    a: "Usually not — skill directories are watched live, so adding or editing a SKILL.md takes effect in the current session. The one exception: if the top-level skills directory itself didn't exist when the session started, restart once so it can be watched."
 ---
 
 A skill is the cheapest way to give Claude Code a capability it doesn't already have — a recurring procedure, a house convention, a multi-step workflow — without bloating your context or your `CLAUDE.md`. Done well, a skill sits dormant until the moment its task comes up, then loads its instructions, runs the work, and gets out of the way. Done poorly, it either never triggers or it loads on every unrelated request and burns context you needed elsewhere.

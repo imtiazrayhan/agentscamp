@@ -10,6 +10,14 @@ topics: ["coding-languages"]
 tags: ["extension", "completion", "privacy"]
 featured: false
 related: ["github-copilot", "cody", "continue"]
+summary: "Tabnine is an AI coding assistant built around code privacy and governance: inline completions, in-editor chat, and agentic workflows that deploy as SaaS, in your VPC, on-premises, or fully air-gapped, with zero code retention. It offers 15+ switchable LLMs (Claude, GPT, Gemini, open models) and is paid-only, starting at $39/user/month."
+faq:
+  - q: "What is Tabnine?"
+    a: "Tabnine is an AI coding assistant that runs as an extension in your existing editor, providing inline completions, chat across the development lifecycle, and agentic workflows. Its defining angle is control: it deploys as SaaS, in a VPC, on-premises, or fully air-gapped, with zero data retention so your code never trains a model shared with other customers."
+  - q: "How much does Tabnine cost?"
+    a: "There's no free plan — both tiers are paid annual subscriptions, with a free trial for evaluation. The Code Assistant platform is $39/user/month for completions, IDE chat, flexible deployment, and enterprise compliance (GDPR, SOC 2, ISO 27001); the Agentic platform is $59/user/month, adding the Context Engine, Tabnine CLI, MCP tool integration, and autonomous agents."
+  - q: "Which editors does Tabnine support?"
+    a: "VS Code, JetBrains IDEs (IntelliJ, PyCharm, WebStorm, GoLand, Rider, CLion, and others), Eclipse, and Visual Studio 2022/2026. Xcode is not supported, and Vim/Neovim have only a legacy plugin with basic completions — no chat or agents."
 ---
 
 Tabnine is an AI coding assistant that runs as an extension inside your existing editor, providing inline code completions, chat across the development lifecycle, and agentic workflows. Its defining angle is control: where most assistants route your code through a vendor cloud, Tabnine is built to deploy on SaaS, in your VPC, on-premises, or fully air-gapped, with zero code retention so nothing you write trains a shared model.

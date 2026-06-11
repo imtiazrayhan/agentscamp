@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["review-qa"]
 related: ["refactoring-specialist", "refactor"]
 featured: false
+summary: "A skill that finds genuinely unused code — unreferenced exports, unreachable files, unused dependencies — and removes it safely: it walks from the real entry points, runs ecosystem tools like knip or vulture, greps the whole repo for dynamic usage before trusting any candidate, then deletes one item at a time, re-running build and tests after each."
 ---
 
 Hunt down code that nothing references and delete it without breaking the build. The skill walks the dependency graph from the project's real entry points, flags exports no module imports, files no path reaches, and dependencies no source line uses — then removes them one at a time, re-running the build and tests after each deletion so a false positive surfaces immediately instead of in production.

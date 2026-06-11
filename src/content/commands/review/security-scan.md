@@ -8,6 +8,7 @@ color: "purple"
 topics: ["review-qa"]
 related: ["review-pr", "find-bug", "security-auditor"]
 featured: false
+summary: "A slash command that audits the current diff or given paths for security vulnerabilities, read-only: it maps untrusted input and traces it to dangerous sinks — injection, missing authorization, hardcoded secrets, SSRF, path traversal, unsafe deserialization, weak validation — and reports findings ranked by severity with fixes and confidence."
 ---
 
 Audit code for security vulnerabilities and report what you find by severity. This command is **read-only** — investigate and report, but do not edit code, rewrite history, or "fix it while you're in there." Work through the steps below and trace every finding to a concrete line.

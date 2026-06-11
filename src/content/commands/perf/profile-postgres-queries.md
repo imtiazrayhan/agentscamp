@@ -9,6 +9,7 @@ date: 2026-06-04
 topics: ["data-ml"]
 related: ["postgres-indexing-at-scale", "postgres-index-strategist", "sql-optimizer", "performance-engineer", "db-migrate"]
 featured: false
+summary: "A slash command that triages a Postgres workload to find the queries actually costing you: it ranks queries by total execution time via pg_stat_statements, runs EXPLAIN (ANALYZE, BUFFERS) on the worst offenders, classifies each fix — index, stale statistics, rewrite, or app-side N+1 — and reports a plan ordered by total cost."
 ---
 
 ## Scope

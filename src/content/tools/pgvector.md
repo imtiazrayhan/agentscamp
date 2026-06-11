@@ -17,6 +17,15 @@ tags: ["vector-database", "postgres", "rag", "open-source"]
 featured: false
 summary: "pgvector turns Postgres into a vector database: it adds a vector column type, distance operators, and HNSW/IVFFlat indexes so you can run similarity search next to your relational data, with full SQL filtering and transactions — no separate vector store to operate."
 related: ["best-vector-database-2026", "scaffold-pgvector-schema", "vector-search-engineer", "qdrant", "pinecone"]
+faq:
+  - q: "What is pgvector?"
+    a: "pgvector is an open-source extension that gives Postgres a native vector type, distance operators, and approximate-nearest-neighbour indexes (HNSW and IVFFlat). Your embeddings live in the same database as your relational data — searchable with ordinary SQL, filterable with WHERE, and consistent inside the same transaction — so there's no separate vector database to deploy or sync."
+  - q: "Is pgvector free?"
+    a: "Yes — free and open source under the permissive PostgreSQL License, and it ships in most managed Postgres offerings, including Supabase, Neon, RDS, and Cloud SQL."
+  - q: "When does pgvector stop being enough?"
+    a: "It's the pragmatic default when you already run Postgres and have up to a few million vectors. For billion-scale workloads or heavy out-of-the-box quantization and sharding, weigh a dedicated store; the pgvectorscale extension can also push past in-memory limits while staying in Postgres."
+  - q: "Should I use HNSW or IVFFlat with pgvector?"
+    a: "HNSW for high recall and low latency; IVFFlat for smaller memory footprints. Both expose tuning parameters for the recall/speed trade-off — and match the operator class to your embedding model's distance metric (vector_cosine_ops, vector_l2_ops, or vector_ip_ops), since a mismatch silently degrades recall."
 ---
 
 pgvector is an open-source extension that gives Postgres a native `vector` type, distance operators, and approximate-nearest-neighbour indexes. With it, your embeddings live **in the same database as your relational data** — searchable with ordinary SQL, filterable with `WHERE`, and consistent inside the same transaction. For a large share of RAG and semantic-search workloads, that means there's no separate vector database to deploy, sync, or back up.

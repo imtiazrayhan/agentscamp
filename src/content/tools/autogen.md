@@ -16,6 +16,15 @@ featured: false
 alternativeTo: ["langgraph", "crewai", "openai-agents-sdk"]
 summary: "AutoGen pioneered the conversational multi-agent pattern: agents (and humans) collaborate by passing messages, including group chats and a code-executing agent. It originated at Microsoft Research; AG2 is the community-driven fork that continues that lineage. Both are open source."
 related: ["langgraph", "crewai", "openai-agents-sdk", "agent-frameworks-2026"]
+faq:
+  - q: "What is AutoGen?"
+    a: "AutoGen is an open-source framework that models multi-agent systems as conversations: specialized agents — and optionally a human — exchange messages to solve a task together, including multi-agent group chats and a built-in code-executing agent that writes and runs code in a loop. It helped popularize the conversational multi-agent pattern many later frameworks built on."
+  - q: "Is AutoGen free?"
+    a: "Yes. AutoGen and the AG2 fork are open source under permissive licenses (the Microsoft repo is MIT) and free to use; you bring your own model provider."
+  - q: "What is the difference between AutoGen and AG2?"
+    a: "AutoGen originated at Microsoft Research; AG2 is the community-driven fork (formerly AutoGen) that carries the project forward, so you'll see both names in the ecosystem. Check which distribution you're adopting — Microsoft's autogen or the community ag2 — since APIs and momentum can differ."
+  - q: "AutoGen vs LangGraph?"
+    a: "AutoGen's conversational model is flexible and great for prototyping collaborative or self-correcting agent systems. For production you may want the explicit control of LangGraph or the structured roles of CrewAI."
 ---
 
 AutoGen is an open-source framework that models multi-agent systems as **conversations**: specialized agents — and optionally a human — exchange messages to solve a task together, including multi-agent **group chats** and a built-in code-executing agent that can write and run code in a loop. It helped popularize the conversational multi-agent pattern that many later frameworks built on.

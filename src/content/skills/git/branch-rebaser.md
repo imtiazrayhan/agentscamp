@@ -9,6 +9,7 @@ color: "cyan"
 topics: ["workflow-prompting"]
 related: ["git-github-expert", "sync-branch"]
 featured: false
+summary: "A skill that rebases the current branch onto its detected base and resolves every conflict methodically: it confirms a clean tree, fetches and identifies the real base, reconstructs each conflicted hunk so both sides' intent survives, then rebuilds and re-runs tests to prove behavior held — never force-pushing without explicit confirmation."
 ---
 
 Bring the current branch up to date by rebasing it onto its base, replaying your commits one at a time on top of the latest upstream. The skill confirms the working tree is clean before touching anything, fetches the real base, then steps through conflicts deliberately — reading both versions of each hunk and reconstructing the intended result rather than blindly accepting one side — and finishes by rebuilding and re-running tests so you know the rebase preserved behavior, not just resolved markers.

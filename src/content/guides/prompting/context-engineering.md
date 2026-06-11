@@ -6,7 +6,23 @@ date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
 featured: false
-related: ["prompt-patterns", "choosing-the-right-model"]
+related: ["prompt-patterns", "choosing-the-right-model", "claude-md-best-practices", "claude-code-memory-context"]
+summary: "Context engineering treats the window as a budget: load the 2–4 files the task touches, not the repo; keep durable facts in CLAUDE.md and ephemeral ones in the prompt; scope asks so discovery stays cheap; /clear at task boundaries and /compact mid-task; and push noisy investigations into subagents that return only the verdict. Signal-to-noise beats raw token count."
+keyTakeaways:
+  - "The window is a budget, not a backpack: a focused 8K-token context routinely outperforms a 120K one that contains the same answer somewhere inside it."
+  - "Durable facts go in CLAUDE.md, task-specific facts go in the prompt — the most common mistake is the reverse."
+  - "Scoping the ask is the cheapest optimization: one extra sentence of precision saves thousands of tokens of exploratory noise."
+  - "/clear at every task boundary is the single highest-leverage habit; /compact is for long sessions whose conclusions still matter."
+  - "Whole-repo dumps fail three ways: attention dilutes, the agent 'improves' files you never mentioned, and tokens spent on noise aren't available for reasoning."
+faq:
+  - q: "What is context engineering?"
+    a: "The discipline of spending an agent's finite context window deliberately — deciding what loads (the files in play, the one error message, durable conventions), what stays out (whole-repo dumps, stale transcripts, passing-test logs), and when to reset. It's distinct from prompt wording: a perfect request still fails inside a noisy window."
+  - q: "Doesn't a bigger context window make this unnecessary?"
+    a: "No. Long context isn't infinite attention — as the window fills, the model gets worse at finding the relevant fact and tends to lose things buried in the middle. The useful question is never 'does it fit' but 'does adding this make the next answer better or worse.'"
+  - q: "When should I use /clear versus /compact?"
+    a: "/clear at task boundaries: the finished task's transcript is pure noise for the next one, and a fresh window with a sharp prompt beats a stale one that 'remembers everything.' /compact mid-task: it summarizes a long but relevant session so earlier decisions survive while the bulk frees up."
+  - q: "Why not just give the agent the whole codebase for context?"
+    a: "Three concrete failures: attention dilutes (3 relevant files among 80 collapses signal-to-noise), it invites scope creep (the agent helpfully touches code that was merely visible), and it crowds out the actual work — tokens on irrelevant files aren't available for reasoning and the diff. Curation beats accumulation."
 ---
 
 Every token an agent reads competes for the same finite window. Fill it with the right three files and Claude reasons sharply; fill it with a `git ls-files` dump and the signal you actually care about gets buried under noise the model still has to weigh. Context engineering is the discipline of spending that budget deliberately — deciding what loads, what stays out, and when to clear the table and start fresh.

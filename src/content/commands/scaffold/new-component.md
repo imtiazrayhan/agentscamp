@@ -7,6 +7,7 @@ title: "New Component"
 color: "purple"
 topics: ["coding-languages"]
 related: ["frontend-developer", "react-specialist", "write-tests"]
+summary: "A slash command that scaffolds a new UI component matched to the repo's existing conventions: it studies the closest neighbor component for framework, file layout, styling, prop typing, and test/story patterns, generates the component plus only the supporting files neighbors have, then verifies with lint and typecheck and reports."
 ---
 
 Scaffold a new UI component named in `$ARGUMENTS`, generated to match this repository's existing conventions exactly. Discover the conventions first by reading real neighbor components — never impose a structure the repo does not already use.

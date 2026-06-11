@@ -8,6 +8,7 @@ color: "purple"
 topics: ["workflow-prompting"]
 related: ["plan-feature", "workflow-orchestrator"]
 featured: false
+summary: "A slash command that decomposes a task into a dependency-ordered Markdown checklist of small, verifiable steps: it reads the code to ground the plan, splits work into atomic, reversible steps, marks which can run in parallel, and gives each a one-line definition of done — a planning pass only, with no files edited."
 ---
 
 Break the task in `$ARGUMENTS` into the smallest sensible, dependency-ordered steps and return them as a Markdown checklist. This is a planning pass only — read the code to ground the plan, but do not edit, run, or create any files.

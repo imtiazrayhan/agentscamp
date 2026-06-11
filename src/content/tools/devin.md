@@ -10,6 +10,14 @@ topics: ["coding-languages", "workflow-prompting"]
 tags: ["autonomous", "agent", "cloud"]
 featured: false
 related: ["claude-code", "goose", "amp"]
+summary: "Devin is Cognition's autonomous AI software engineer. You hand it a task — a bug, refactor, migration, or ticket — and it works unattended in a sandboxed cloud VM with an editor, terminal, and browser, then opens a pull request you review. Trigger it from Slack, Teams, or Linear, run sessions in parallel, and pay via usage quotas measured in ACUs."
+faq:
+  - q: "What is Devin?"
+    a: "Devin is an autonomous AI software engineer from Cognition. You hand it a task and it works on its own in a sandboxed cloud workspace with a code editor, terminal, and browser — planning the work, running commands, reading logs, and opening a pull request you review at the end. It is most at home on well-scoped chores like dependency bumps, test backfills, migrations, and bug triage."
+  - q: "How much does Devin cost?"
+    a: "Self-serve tiers are Free (a limited quota to try it), Pro at $20/month, and Max at $200/month, each with daily and weekly usage quotas that refresh automatically. Teams is $80/month base plus $40/month per full developer seat; Enterprise is custom-priced. Usage is measured in ACUs (Agent Compute Units — roughly 15 minutes of active work per ACU), with extra usage purchasable at API pricing."
+  - q: "How do I use Devin?"
+    a: "Write a clear, self-contained task and hand it off — tag Devin in Slack or Microsoft Teams, assign it a Linear ticket, or drive it from the CLI, desktop app, or API. It works in its cloud VM, pushes a branch, opens a PR, and responds to review comments, so you review the diff like any other contributor's."
 ---
 
 Devin is an autonomous AI software engineer from Cognition. You hand it a task — a bug, a refactor, a migration, a ticket — and it works on its own in a sandboxed cloud workspace that has a code editor, a terminal, and a browser. Rather than suggesting edits inside your editor, Devin plans the work, runs commands, reads logs, navigates docs, and opens a pull request you review at the end.

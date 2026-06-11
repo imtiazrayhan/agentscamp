@@ -5,6 +5,22 @@ author: "AgentsCamp"
 date: 2026-05-10
 color: "green"
 topics: ["workflow-prompting"]
+summary: "Match each Claude Code agent to a tier: Haiku for mechanical, high-volume transformations; Sonnet as the balanced default for real coding work; Opus for architecture, security, and anything where a mistake is expensive. The model field is optional (defaults to inherit). Start on Sonnet; demote to Haiku when a task proves mechanical, promote to Opus on real reasoning failures."
+keyTakeaways:
+  - "Three tiers, three jobs: Haiku is fast and cheap for mechanical work, Sonnet is the balanced default, Opus is deepest reasoning for high-stakes problems."
+  - "The rubric in order: mechanical and well-specified → Haiku; real coding within a known pattern → Sonnet; costly mistakes or cross-system reasoning → Opus."
+  - "When two tiers feel plausible, weigh frequency against stakes — runs-hundreds-of-times leans cheaper, gates-a-release leans smarter."
+  - "model: inherit makes an agent follow the main session — right for general helpers, wrong for agents whose quality must not silently degrade (pin your security auditor to opus)."
+  - "Don't default to Opus for prestige: on simple tasks it costs more without being measurably better."
+faq:
+  - q: "Which Claude model tier should I use for coding agents?"
+    a: "Sonnet, until proven otherwise — it handles real codebases, multi-step instructions, and quality diffs at sensible cost. Drop an agent to Haiku once you confirm its task is mechanical (formatting, extraction, classification). Promote to Opus only for genuinely hard reasoning or expensive-mistake territory: architecture, security audits, race conditions, migrations."
+  - q: "What does model: inherit do in a subagent?"
+    a: "The subagent runs on whatever model the main session is using instead of a pinned tier. It's the default when you omit the field, and it's right for general-purpose helpers that should match the room — but pin an explicit tier for agents whose quality depends on it, so they never silently run on something weaker."
+  - q: "When is Opus actually worth the cost?"
+    a: "When the problem is hard in a way that shows up as reasoning failures on Sonnet, or when the blast radius of a subtle mistake is large: designing a public API, auditing auth, planning a database migration, untangling concurrency bugs that span services. If you can't articulate why a task needs Opus, it belongs on Sonnet."
+  - q: "Can skills and slash commands set a model too?"
+    a: "Yes, but with different semantics: a skill or slash command's model field is a per-turn override that reverts to the session model on your next prompt, while a subagent's model pins the tier for every invocation of that agent."
 ---
 
 A Claude Code subagent can set a model in its frontmatter — and that one line decides how fast, how cheap, and how smart the agent is. (It's optional: omit it and the agent inherits the main session's model.) Pick wrong and you either burn budget on trivial work or starve a hard problem of reasoning. This guide gives you a clear decision rubric and concrete per-agent examples so you can match each task to the right tier.

@@ -9,6 +9,14 @@ repo: "https://github.com/continuedev/continue"
 color: "blue"
 topics: ["coding-languages"]
 tags: ["vscode", "jetbrains", "open-source"]
+summary: "Continue is an open-source extension for VS Code and JetBrains that lets you assemble your own AI coding assistant. It supplies the editor integration — chat, tab autocomplete, inline edits, and agent modes — while you pick the model: hosted providers like Anthropic and OpenAI, or local models via Ollama, all in shareable, version-controlled config."
+faq:
+  - q: "What is Continue?"
+    a: "Continue is an open-source extension for VS Code and JetBrains IDEs (plus a terminal CLI) that lets developers assemble their own AI coding assistant. It provides chat, tab autocomplete, inline edit, and agent modes, while leaving the choice of model and provider up to you — and because configuration lives as code, setups can be version-controlled and shared across a team."
+  - q: "Is Continue free?"
+    a: "Yes — Continue is open source under Apache 2.0 and free to install. You supply your own model access: hosted models incur provider API costs, while local models via Ollama and similar runtimes avoid that but require capable hardware."
+  - q: "How do I use Continue with my own model?"
+    a: "Connect a model in a config file, then use chat for questions, autocomplete while typing, and inline edits for targeted refactors. A minimal model entry declares a name, a provider (e.g. anthropic), a model (e.g. claude-sonnet-4-6), and an apiKey reference like ${ANTHROPIC_API_KEY}."
 ---
 
 Continue is an open-source extension for VS Code and JetBrains IDEs that lets developers assemble their own AI coding assistant. Instead of locking you into one vendor's model, it provides the editor integration (chat, autocomplete, inline edits, and agent actions) while leaving the choice of model and provider up to you.

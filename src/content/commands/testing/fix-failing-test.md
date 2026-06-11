@@ -7,6 +7,7 @@ title: "Fix Failing Test"
 color: "purple"
 topics: ["review-qa"]
 related: ["write-tests", "find-bug", "debugger"]
+summary: "A slash command that makes a failing test green by fixing the actual root cause: it reproduces the scoped failure, traces from the assertion to the code under test, explicitly decides whether the test or the code is wrong before editing, applies the smallest fix to the correct side, then re-runs the full suite — never weakening assertions."
 ---
 
 Make a failing test green by fixing the **actual root cause**, not by papering over it. Follow the steps below in order. The hard part is the judgment call in Step 3 — whether the test or the code is wrong — so do not skip it.

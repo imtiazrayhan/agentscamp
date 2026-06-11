@@ -9,6 +9,7 @@ date: 2026-06-04
 topics: ["ai-safety-security"]
 related: ["defending-prompt-injection", "prompt-injection-auditor", "promptfoo", "owasp-agentic-top-10"]
 featured: false
+summary: "A slash command that actively red-teams an LLM app or agent you are authorized to test: it maps every channel reaching the model — user input, RAG content, tool outputs, system prompt — runs adversarial probes for injection, jailbreaks, leakage, exfiltration, and tool misuse, records what got through with its blast radius, and recommends fixes."
 ---
 
 ## Scope
