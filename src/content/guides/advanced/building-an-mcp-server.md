@@ -4,7 +4,7 @@ description: "An accurate introduction to the Model Context Protocol: server ana
 author: "AgentsCamp"
 date: 2026-06-03
 color: "green"
-topics: ["architecture"]
+topics: ["mcp", "architecture"]
 related: ["building-multi-step-workflows", "claude-agent-sdk"]
 featured: false
 ---

@@ -6,7 +6,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
-topics: ["architecture"]
+topics: ["mcp", "architecture"]
 related: ["building-an-mcp-server", "mcp-server-engineer", "fastmcp", "mcp-inspector", "add-mcp-server"]
 featured: false
 summary: "Turn 'I want an MCP server for X' into a runnable skeleton: this skill picks the SDK and transport, generates a typed first tool with a strict schema and a routing-quality description, and wires up Inspector testing plus the client-registration command — a correct starting point, not boilerplate to debug."

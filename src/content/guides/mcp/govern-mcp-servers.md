@@ -4,7 +4,7 @@ description: "As MCP servers multiply, discovery, trust, and tool sprawl become 
 author: "AgentsCamp"
 date: 2026-06-04
 color: "green"
-topics: ["architecture"]
+topics: ["mcp", "architecture"]
 tags: ["mcp", "governance", "security", "architecture", "registry"]
 featured: false
 summary: "One MCP server is easy; twenty is a governance problem: discovery (which servers exist and are trustworthy), tool sprawl (too many tools bloat context and confuse the model), and security (every third-party server is supply-chain risk). Registries solve discovery, gateways add a control point for auth and tool filtering, and curation keeps the tool list small and sharp."

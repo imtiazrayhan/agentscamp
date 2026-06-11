@@ -6,7 +6,7 @@ model: "sonnet"
 title: "Add MCP Server"
 color: "purple"
 date: 2026-06-04
-topics: ["architecture"]
+topics: ["mcp", "architecture"]
 related: ["building-an-mcp-server", "govern-mcp-servers", "mcp-inspector", "smithery", "mcp-server-engineer"]
 featured: false
 ---

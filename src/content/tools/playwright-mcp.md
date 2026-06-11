@@ -7,7 +7,7 @@ pricing: "open-source"
 category: "mcp"
 repo: "https://github.com/microsoft/playwright-mcp"
 color: "green"
-topics: ["review-qa"]
+topics: ["mcp", "review-qa"]
 tags: ["mcp", "browser", "testing", "automation"]
 featured: false
 related: ["claude-code", "test-engineer"]

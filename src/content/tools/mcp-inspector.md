@@ -11,7 +11,7 @@ license: "MIT"
 sameAs: ["https://github.com/modelcontextprotocol/inspector", "https://modelcontextprotocol.io"]
 os: ["macOS", "Linux", "Windows"]
 color: "blue"
-topics: ["architecture"]
+topics: ["mcp", "architecture"]
 tags: ["mcp", "debugging", "developer-tools", "open-source"]
 featured: false
 related: ["building-an-mcp-server", "mcp-server-engineer", "deploy-remote-mcp-server", "fastmcp", "mcp-server-scaffolder", "add-mcp-server"]

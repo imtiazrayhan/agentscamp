@@ -11,7 +11,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/PrefectHQ/fastmcp", "https://gofastmcp.com"]
 os: ["Linux", "macOS", "Windows"]
 color: "green"
-topics: ["architecture"]
+topics: ["mcp", "architecture"]
 tags: ["mcp", "python", "sdk", "open-source"]
 featured: false
 related: ["building-an-mcp-server", "mcp-server-engineer", "mcp-inspector", "deploy-remote-mcp-server", "mcp-server-scaffolder"]
