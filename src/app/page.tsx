@@ -14,11 +14,13 @@ import { ContentGrid } from "@/components/content/ContentGrid";
 import { ContentCard } from "@/components/content/ContentCard";
 import { cn } from "@/lib/utils";
 
+// 4-col bento; spans sum (with the col-span-2 CTA tile) to full rows.
 const SPANS: Record<ContentTypeId, string> = {
   agent: "sm:col-span-2 sm:row-span-2",
-  skill: "sm:col-span-2",
+  skill: "sm:col-span-1",
   guide: "sm:col-span-1",
   tool: "sm:col-span-1",
+  glossary: "sm:col-span-1",
   command: "sm:col-span-2",
 };
 

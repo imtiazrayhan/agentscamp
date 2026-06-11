@@ -157,6 +157,23 @@ export const listingSeo: Record<ContentTypeId, ListingSeo> = {
       },
     ],
   },
+  glossary: {
+    seoTitle: "AI Glossary",
+    seoDescription:
+      "Plain-language definitions of {count} AI and LLM-engineering terms — RAG, MCP, agents, embeddings, fine-tuning, guardrails — each linked to a deeper guide.",
+    intro:
+      "Precise, plain-language definitions of the AI and LLM-engineering terms used across the hub. Every entry opens with the answer, covers the nuance that actually matters, and links to the deeper guide or tool.",
+    faq: [
+      {
+        q: "What does this glossary cover?",
+        a: "The working vocabulary of building with AI: retrieval and RAG, agents and MCP, model mechanics like tokens and context windows, training techniques like fine-tuning and quantization, and safety concepts like prompt injection and guardrails.",
+      },
+      {
+        q: "How are terms defined?",
+        a: "Answer-first: each entry opens with a one-sentence definition you can quote, followed by the practical context — how it works, when it matters, and the common confusion — with links to the deeper guides.",
+      },
+    ],
+  },
 };
 
 /** Meta description with the live item count interpolated. */

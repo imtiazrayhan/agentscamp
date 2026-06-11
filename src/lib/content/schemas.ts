@@ -146,10 +146,24 @@ export const commandFrontmatter = z
   })
   .strict();
 
+// Glossary terms are short, definitional AEO pages (DefinedTerm in JSON-LD).
+// `term` is the canonical display term; `description` is the one-line
+// definition used for SERP/meta. Body = the full 150–300 word entry.
+export const glossaryFrontmatter = z
+  .object({
+    term: z.string(),
+    description: z.string(),
+    title: z.string().optional(),
+    color: claudeColor.optional(),
+    ...siteFields,
+  })
+  .strict();
+
 export const frontmatterByType = {
   agent: agentFrontmatter,
   skill: skillFrontmatter,
   guide: guideFrontmatter,
   tool: toolFrontmatter,
   command: commandFrontmatter,
+  glossary: glossaryFrontmatter,
 } as const;

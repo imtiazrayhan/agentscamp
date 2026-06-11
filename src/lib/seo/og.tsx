@@ -20,6 +20,7 @@ const ACCENT_HEX: Record<Accent, string> = {
   mint: "#4ade80",
   amber: "#fbbf24",
   violet: "#a78bfa",
+  sky: "#38bdf8",
 };
 
 function markSvg(hex: string) {

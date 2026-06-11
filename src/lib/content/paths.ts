@@ -6,17 +6,24 @@ export const basePaths: Record<ContentTypeId, string> = {
   guide: "/guides",
   tool: "/tools",
   command: "/commands",
+  glossary: "/glossary",
 };
 
+/** Types with a flat /[base]/[slug] URL space (no category segment). */
+export const flatTypes: ReadonlySet<ContentTypeId> = new Set([
+  "tool",
+  "glossary",
+]);
+
 /**
- * The single URL constructor. Tools use a flat /tools/[slug] space (tag-faceted,
- * DB-bound later); every other type uses /[base]/[category]/[slug].
+ * The single URL constructor. Tools and glossary terms use a flat
+ * /[base]/[slug] space; every other type uses /[base]/[category]/[slug].
  */
 export function hrefFor(
   type: ContentTypeId,
   category: string,
   slug: string,
 ): string {
-  if (type === "tool") return `${basePaths.tool}/${slug}`;
+  if (flatTypes.has(type)) return `${basePaths[type]}/${slug}`;
   return `${basePaths[type]}/${category}/${slug}`;
 }

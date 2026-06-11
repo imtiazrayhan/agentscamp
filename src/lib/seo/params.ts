@@ -25,6 +25,11 @@ export function toolParams() {
   return getContentByType("tool").map((i) => ({ slug: i.slug }));
 }
 
+/** {slug} for the flat glossary detail route. */
+export function glossaryParams() {
+  return getContentByType("glossary").map((i) => ({ slug: i.slug }));
+}
+
 /** {category} for the category landing routes. */
 export function categoryParams(type: ContentTypeId) {
   return getCategories(type).map((c) => ({ category: c.slug }));

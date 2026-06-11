@@ -4,6 +4,7 @@ import {
   BookOpen,
   Wrench,
   TerminalSquare,
+  Library,
   type LucideIcon,
 } from "lucide-react";
 import type { Accent, ContentTypeId } from "./types";
@@ -100,6 +101,18 @@ export const contentTypes: Record<ContentTypeId, ContentTypeDef> = {
     install: "command",
     installPath: "~/.claude/commands/<slug>.md",
   },
+  glossary: {
+    id: "glossary",
+    label: "Glossary",
+    singular: "Term",
+    basePath: basePaths.glossary,
+    icon: Library,
+    accent: "sky",
+    tagline: "AI terms, defined precisely",
+    description:
+      "Plain-language definitions of the AI and LLM-engineering terms you'll meet across the hub — answer-first, with the deeper guide linked.",
+    install: "none",
+  },
 };
 
 export const contentTypeList: ContentTypeDef[] = [
@@ -108,6 +121,7 @@ export const contentTypeList: ContentTypeDef[] = [
   contentTypes.guide,
   contentTypes.tool,
   contentTypes.command,
+  contentTypes.glossary,
 ];
 
 // Shared cross-type taxonomy. A topic should ship as a pill only once >=2 items

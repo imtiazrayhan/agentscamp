@@ -11,6 +11,7 @@ import {
   loadGuides,
   loadTools,
   loadCommands,
+  loadGlossary,
 } from "../src/lib/content/loaders";
 import { getCategories } from "../src/lib/content/index";
 import { topics, topicBySlug } from "../src/lib/content/registry";
@@ -74,6 +75,7 @@ function run() {
     groups.guide = loadGuides();
     groups.tool = loadTools();
     groups.command = loadCommands();
+    groups.glossary = loadGlossary();
   } catch (e) {
     err((e as Error).message);
     return;
@@ -102,7 +104,11 @@ function run() {
     // agent/skill/command the `description` is the installable artifact field
     // Claude Code uses for delegation (legitimately long); `seoDescription` is
     // the SEO escape hatch there.
-    if (item.type === "guide" || item.type === "tool") {
+    if (
+      item.type === "guide" ||
+      item.type === "tool" ||
+      item.type === "glossary"
+    ) {
       const dlen = (item.seoDescription ?? item.description).length;
       if (dlen > 320) err(`${id}: description too long (${dlen} > 320)`);
       else if (dlen > 160)
@@ -168,11 +174,12 @@ function run() {
     "guide",
     "tool",
     "command",
+    "glossary",
   ];
   for (const type of typeList) {
     const items = groups[type];
     const g = collectionGraph({
-      path: `/${type === "agent" ? "agents" : type === "skill" ? "skills" : type === "guide" ? "guides" : type === "tool" ? "tools" : "commands"}`,
+      path: `/${type === "agent" ? "agents" : type === "skill" ? "skills" : type === "guide" ? "guides" : type === "tool" ? "tools" : type === "glossary" ? "glossary" : "commands"}`,
       name: type,
       description: "x",
       items,

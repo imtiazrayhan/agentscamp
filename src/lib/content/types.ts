@@ -5,14 +5,27 @@ import type {
   guideFrontmatter,
   toolFrontmatter,
   commandFrontmatter,
+  glossaryFrontmatter,
   claudeColor,
 } from "./schemas";
 
-export type ContentTypeId = "agent" | "skill" | "guide" | "tool" | "command";
+export type ContentTypeId =
+  | "agent"
+  | "skill"
+  | "guide"
+  | "tool"
+  | "command"
+  | "glossary";
 
 // Per-type accent colors (brand palette). Applied at the component level via
 // getColorClasses(type) — NOT by swapping CSS --primary per route.
-export type Accent = "coral" | "turquoise" | "mint" | "amber" | "violet";
+export type Accent =
+  | "coral"
+  | "turquoise"
+  | "mint"
+  | "amber"
+  | "violet"
+  | "sky";
 
 export type ClaudeColor = z.infer<typeof claudeColor>;
 
@@ -22,6 +35,7 @@ export type SkillFrontmatter = z.infer<typeof skillFrontmatter>;
 export type GuideFrontmatter = z.infer<typeof guideFrontmatter>;
 export type ToolFrontmatter = z.infer<typeof toolFrontmatter>;
 export type CommandFrontmatter = z.infer<typeof commandFrontmatter>;
+export type GlossaryFrontmatter = z.infer<typeof glossaryFrontmatter>;
 
 /**
  * The common shape every card / search hit / nav iteration relies on.
@@ -105,12 +119,19 @@ export interface CommandItem extends BaseContentItem {
   model?: "haiku" | "sonnet" | "opus" | "inherit";
 }
 
+export interface GlossaryItem extends BaseContentItem {
+  type: "glossary";
+  /** The canonical term being defined (also used as the page title). */
+  term: string;
+}
+
 export type ContentItem =
   | AgentItem
   | SkillItem
   | GuideItem
   | ToolItem
-  | CommandItem;
+  | CommandItem
+  | GlossaryItem;
 
 // Lightweight record shipped in the static search index (no body).
 export interface SearchRecord {

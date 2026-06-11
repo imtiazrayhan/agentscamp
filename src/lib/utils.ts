@@ -45,6 +45,7 @@ const TYPE_ACCENT: Record<ContentTypeId, Accent> = {
   guide: "mint",
   tool: "amber",
   command: "violet",
+  glossary: "sky",
 };
 
 export function accentForType(type: ContentTypeId): Accent {

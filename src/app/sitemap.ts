@@ -35,9 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(def.basePath, latestDate(getContentByType(def.id)));
   }
 
-  // Category landings for the categorized types.
+  // Category landings for the categorized types (flat types have none).
   for (const def of contentTypeList) {
-    if (def.id === "tool") continue;
+    if (def.id === "tool" || def.id === "glossary") continue;
     for (const c of getCategories(def.id)) {
       const items = getContentByType(def.id).filter(
         (i) => i.category === c.slug,

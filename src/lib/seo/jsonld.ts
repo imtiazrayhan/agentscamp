@@ -89,6 +89,11 @@ export function breadcrumbsFor(item: ContentItem): Crumb[] {
     { label: "Home", href: "/" },
     { label: def.label, href: def.basePath },
   ];
+  if (item.type === "glossary") {
+    // Flat type with no category facet pages — Home > Glossary > Term.
+    crumbs.push({ label: item.title });
+    return crumbs;
+  }
   if (item.type === "tool") {
     // Only link the tool-category facet when it is indexable (>= 2 tools, matching
     // collections' MIN_INDEXABLE); otherwise an indexable page's breadcrumb would
@@ -220,6 +225,23 @@ function primaryEntity(item: ContentItem, path: string): Node {
     };
   }
 
+  if (item.type === "glossary") {
+    // DefinedTerm with its DefinedTermSet defined inline (closed graph).
+    return {
+      "@type": "DefinedTerm",
+      "@id": entityId(path, "term"),
+      url,
+      ...common,
+      inDefinedTermSet: {
+        "@type": "DefinedTermSet",
+        "@id": `${site.url}/glossary#set`,
+        name: `${site.name} AI Glossary`,
+        url: abs("/glossary"),
+      },
+      ...dateFields(item),
+    };
+  }
+
   // agent / skill / command -> installable source artifact.
   return {
     "@type": "SoftwareSourceCode",
@@ -320,6 +342,47 @@ export function collectionGraph(opts: {
     });
   }
   return { "@context": "https://schema.org", "@graph": nodes };
+}
+
+/** @graph for the /glossary hub: CollectionPage + DefinedTermSet + every term. */
+export function glossaryHubGraph(
+  items: ContentItem[],
+  description: string,
+): Node {
+  const path = "/glossary";
+  const setId = `${site.url}/glossary#set`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": pageId(path),
+        url: abs(path),
+        name: "AI Glossary",
+        description,
+        isPartOf: { "@id": SITE_ID },
+        breadcrumb: { "@id": crumbId(path) },
+        mainEntity: { "@id": setId },
+        inLanguage: locale,
+      },
+      breadcrumbNode(
+        [{ label: "Home", href: "/" }, { label: "Glossary" }],
+        crumbId(path),
+      ),
+      {
+        "@type": "DefinedTermSet",
+        "@id": setId,
+        name: `${site.name} AI Glossary`,
+        url: abs(path),
+        hasDefinedTerm: items.map((i) => ({
+          "@type": "DefinedTerm",
+          name: i.title,
+          description: i.description,
+          url: canonicalUrl(i),
+        })),
+      },
+    ],
+  };
 }
 
 /** @graph for the /topics hub: CollectionPage + ItemList of topic landing pages. */

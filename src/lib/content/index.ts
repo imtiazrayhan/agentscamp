@@ -1,5 +1,6 @@
 import { loaders, loadAllByType } from "./loaders";
 import { contentTypes } from "./registry";
+import { flatTypes } from "./paths";
 import type {
   ContentItem,
   ContentTypeId,
@@ -32,7 +33,8 @@ export function getItem(
   slug: string,
 ): ContentItem | undefined {
   return getContentByType(type).find(
-    (i) => i.slug === slug && (type === "tool" || i.category === category),
+    (i) =>
+      i.slug === slug && (flatTypes.has(type) || i.category === category),
   );
 }
 
@@ -44,6 +46,7 @@ export function getCountsByType(): Record<ContentTypeId, number> {
     guide: byType.guide.length,
     tool: byType.tool.length,
     command: byType.command.length,
+    glossary: byType.glossary.length,
   };
 }
 

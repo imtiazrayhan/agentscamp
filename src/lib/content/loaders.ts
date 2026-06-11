@@ -4,6 +4,7 @@ import {
   guideFrontmatter,
   toolFrontmatter,
   commandFrontmatter,
+  glossaryFrontmatter,
 } from "./schemas";
 import {
   loadCategorized,
@@ -22,6 +23,7 @@ import type {
   GuideItem,
   ToolItem,
   CommandItem,
+  GlossaryItem,
   ContentItem,
   FaqEntry,
   HowtoStep,
@@ -161,12 +163,33 @@ export function loadCommands(): CommandItem[] {
   });
 }
 
+export function loadGlossary(): GlossaryItem[] {
+  return loadFlat("glossary").map((doc) => {
+    const fm = parseOrThrow<Record<string, unknown>>(glossaryFrontmatter, doc);
+    const term = fm.term as string;
+    return {
+      type: "glossary",
+      // Flat URL space; "term" is a constant pseudo-category so shared code
+      // (chips, breadcrumb fallbacks) has something sensible to render.
+      category: "term",
+      term,
+      title: (fm.title as string) ?? term,
+      description: fm.description as string,
+      color: fm.color as GlossaryItem["color"],
+      href: hrefFor("glossary", "", doc.slug),
+      body: doc.body,
+      ...base(doc, fm),
+    } satisfies GlossaryItem;
+  });
+}
+
 export const loaders = {
   agent: loadAgents,
   skill: loadSkills,
   guide: loadGuides,
   tool: loadTools,
   command: loadCommands,
+  glossary: loadGlossary,
 } as const;
 
 export function loadAllByType(): Record<string, ContentItem[]> {
@@ -176,5 +199,6 @@ export function loadAllByType(): Record<string, ContentItem[]> {
     guide: loadGuides(),
     tool: loadTools(),
     command: loadCommands(),
+    glossary: loadGlossary(),
   };
 }
