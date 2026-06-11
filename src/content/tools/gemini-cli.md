@@ -2,6 +2,7 @@
 name: "Gemini CLI"
 description: "Google's open-source terminal AI agent powered by Gemini models, with a 1M-token context window and built-in tools."
 date: 2026-06-03
+updated: 2026-06-11
 url: "https://geminicli.com"
 pricing: "open-source"
 category: "cli"
@@ -9,7 +10,7 @@ repo: "https://github.com/google-gemini/gemini-cli"
 color: "blue"
 topics: ["coding-languages"]
 tags: ["cli", "agent", "terminal"]
-related: ["claude-code", "codex-cli", "aider"]
+related: ["claude-code", "codex-cli", "aider", "antigravity", "opencode"]
 featured: false
 ---
 

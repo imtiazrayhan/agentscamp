@@ -1,7 +1,8 @@
 ---
 name: "Cursor"
-description: "An AI-first code editor built on VS Code with deep in-editor agent features."
+description: "An AI-first code editor built on VS Code with deep in-editor agent features, parallel agents, in-house Composer models, and a plugin marketplace."
 date: 2026-06-03
+updated: 2026-06-11
 url: "https://cursor.com"
 pricing: "freemium"
 category: "ide"
@@ -20,8 +21,10 @@ It is aimed at developers who want inline completions and chat-driven edits with
 - **Tab completion** — multi-line, context-aware suggestions that can edit across the current file.
 - **Inline edits** — select code, press the edit shortcut, and describe the change in natural language.
 - **Agent mode** — a chat agent that can read, write, and run commands across multiple files to complete a task.
+- **Parallel agents** — Cursor 3.0 (April 2026) rebuilt the interface agent-first: run many agents at once across repos — locally, in git worktrees, in the cloud, or over SSH — with side-by-side agent tabs.
 - **Codebase context** — reference files, symbols, or docs with `@` mentions so the model grounds its answers in your code.
-- **Model choice** — switch between frontier models (Anthropic, OpenAI, and others) per request.
+- **Model choice** — switch between frontier models (Anthropic, OpenAI, and others) per request, including Cursor's in-house **Composer** models tuned for fast agentic coding.
+- **Plugin marketplace** — reviewed plugins (Atlassian, Datadog, GitLab, and more) extend the editor and its agents.
 
 ## In an AI-assisted workflow
 
@@ -37,4 +40,4 @@ and update all call sites in @app/.
 
 ## Good to know
 
-Cursor is available on macOS, Windows, and Linux. The free Hobby tier includes limited AI usage; paid Pro and Teams plans raise request limits and unlock premium models. You can also supply your own API keys. Because it is a separate application rather than an extension, it runs alongside (not inside) a standard VS Code install.
+Cursor is available on macOS, Windows, and Linux. The free Hobby tier includes limited AI usage; paid Individual (Pro and up) and Teams plans raise included usage and unlock premium models, with on-demand usage billed beyond the included amount. You can also supply your own API keys. Because it is a separate application rather than an extension, it runs alongside (not inside) a standard VS Code install.

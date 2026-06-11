@@ -1,29 +1,31 @@
 ---
 title: "AI Coding Agents in 2026: The Open-Source & CLI Edition"
-description: "Cursor and Windsurf vs the open-source agents — Cline, Aider, Codex CLI, Roo Code, and more. Who should bring their own model, and when to stay in the terminal."
+description: "Cursor and Windsurf vs the open-source agents — OpenCode, Cline, Aider, Codex CLI, and more. Who should bring their own model, and when to stay in the terminal."
 author: "AgentsCamp"
 date: 2026-06-03
+updated: 2026-06-11
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 tags: ["comparison", "cli", "open-source", "agents", "byo-model"]
 featured: false
-summary: "The open-source and CLI coding agents trade polish for control: bring your own model (or run one locally), keep your code on your terms, and script the agent into CI. Cline and Roo Code live in VS Code; Aider and Codex CLI live in the terminal; Cursor and Windsurf are the proprietary editors you'd give up for them. Choose by where you work and how much you value model and data control."
+summary: "The open-source and CLI coding agents trade polish for control: bring your own model (or run one locally), keep your code on your terms, and script the agent into CI. OpenCode is the category's most-starred breakout. Cline and Roo Code live in VS Code; OpenCode, Aider, and Codex CLI live in the terminal. Choose by where you work and how much you value model and data control."
 keyTakeaways:
   - "Open-source agents are bring-your-own-model: you supply API keys or run a local model, so cost and data handling stay yours."
-  - "Cline and Roo Code are VS Code extensions; Aider, Codex CLI, and Gemini CLI are terminal-native; Goose runs locally as a CLI/desktop agent."
+  - "Cline and Roo Code are VS Code extensions; OpenCode, Aider, and Codex CLI are terminal-native; Goose runs locally as a CLI/desktop agent."
   - "Aider auto-commits each change (git-native); Codex CLI sandboxes execution and leaves committing to you — a real workflow difference."
   - "The trade vs Cursor/Windsurf is polish and tab-completion UX for model freedom, scriptability, and no vendor lock-in."
   - "Almost all of them speak MCP, so your custom tools and data sources are portable across agents."
+  - "Gemini CLI stops serving free, AI Pro, and Ultra requests on June 18, 2026 — Google's migration path is the closed-source Antigravity CLI; enterprise Gemini Code Assist licenses keep access."
 faq:
   - q: "What is the best open-source AI coding agent in 2026?"
-    a: "There's no single winner — it depends on where you work. For an agent inside VS Code, Cline and Roo Code lead. For terminal-first workflows, Aider (git-native, auto-commits) and OpenAI's Codex CLI (sandboxed, model-switching) are the strongest. Gemini CLI is compelling for its free tier and large context, and Goose for a local, extensible agent."
+    a: "By adoption, OpenCode — it's the most-starred coding agent in the category, with a polished terminal TUI, 75+ model providers (including local), and LSP-powered context. For an agent inside VS Code, Cline and Roo Code lead. In the terminal, Aider (git-native, auto-commits) and OpenAI's Codex CLI (sandboxed, model-switching) remain strong picks, and Goose is the local, extensible option."
   - q: "Why choose an open-source agent over Cursor or Copilot?"
     a: "Three reasons: model freedom (bring any provider's key or run a local model), data control (your code goes only where you send it), and scriptability (run the agent headlessly in CI). The trade-off is less out-of-the-box polish than a proprietary AI-first editor."
   - q: "What's the difference between Aider and Codex CLI?"
     a: "Both are terminal agents that edit files on disk. Aider commits each change to git automatically, so every step is reviewable and revertible. Codex CLI runs edits inside an OS-level sandbox with two-layer approval controls and leaves staging and committing to you. Aider is model-agnostic; Codex CLI is built around OpenAI's models."
   - q: "Can I use these without paying a subscription?"
-    a: "The tools themselves are free and open source, but most need a model. You either pay a provider per token via your own API key, use a free tier (Gemini CLI is notably generous), or run a local model with Ollama or LM Studio for no per-token cost."
-related: ["cline", "aider", "codex-cli", "roo-code", "continue", "gemini-cli", "goose", "cursor", "windsurf", "claude-code"]
+    a: "The tools themselves are free and open source, but most need a model. You either pay a provider per token via your own API key, sign in with a subscription you already have (OpenCode accepts GitHub Copilot and ChatGPT accounts), or run a local model with Ollama or LM Studio for no per-token cost. Note that Gemini CLI's famously generous free tier ends June 18, 2026."
+related: ["opencode", "cline", "aider", "codex-cli", "roo-code", "continue", "gemini-cli", "antigravity", "goose", "cursor", "windsurf", "claude-code"]
 ---
 
 The proprietary AI editors — [Cursor](/tools/cursor), [Windsurf](/tools/windsurf), [GitHub Copilot](/tools/github-copilot) — are the most polished way to get AI into your day. But a large and fast-growing tier of **open-source and CLI agents** wins on a different axis: **control.** You bring your own model (or run one locally), your code goes only where you choose, and you can script the agent into CI. This guide compares that tier and helps you decide when it's the right call. For the proprietary editors head-to-head, see [Cursor vs Claude Code vs Copilot vs Windsurf](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026).
@@ -48,23 +50,25 @@ The cost is polish: you won't get the same seamless tab-completion and onboardin
 
 ### In your terminal (CLI agents)
 
+- **[OpenCode](/tools/opencode)** — the **most-starred open-source coding agent** (~173k GitHub stars by mid-2026) and the category's breakout. A genuinely polished terminal TUI that's fully **provider-agnostic** — 75+ providers including local models — loads your **language servers** for symbol-level context, runs **parallel sessions**, and can sign in with an existing **GitHub Copilot or ChatGPT subscription** instead of an API key.
 - **[Aider](/tools/aider)** — a terminal pair-programmer that's **git-native**: it edits files on disk and **commits each change** with a descriptive message, so every step is reviewable and `git revert`-able. It builds a repo map for context and is **model-agnostic**.
 - **[Codex CLI](/tools/codex-cli)** — OpenAI's open-source, Rust-based terminal agent with a **two-layer security model** (sandbox modes plus approval policies). It defaults to workspace-scoped writes and no network, supports **model switching** and **MCP**, and has a headless `codex exec` for CI. Unlike Aider, it **doesn't auto-commit** — it leaves staging to you.
-- **[Gemini CLI](/tools/gemini-cli)** — Google's open-source terminal agent, notable for a **generous free tier**, large context windows, and MCP support.
+- **[Gemini CLI](/tools/gemini-cli)** — Google's open-source terminal agent, long notable for a **generous free tier**, large context windows, and MCP support. **Now sunsetting:** on June 18, 2026 it stops serving requests for free, AI Pro, and Ultra users as Google folds the effort into [Antigravity](/tools/antigravity) and its closed-source Antigravity CLI (enterprise Gemini Code Assist licenses keep access, and the repo stays open source).
 - **[Goose](/tools/goose)** — an open-source, extensible agent that runs **locally** (CLI and desktop), BYO-model and MCP-first, aimed at developers who want an on-machine autonomous agent.
 
 ## How to choose
 
+- **You want maximum model freedom with the most momentum behind it** → **OpenCode**. Any provider or local model, LSP-grade context, and the largest community in the category.
 - **You live in VS Code and want approvals on every step** → **Cline** (or **Roo Code** if you want role-based modes).
 - **You live in the terminal and want git as the safety net** → **Aider**. Auto-commits make every step reversible.
 - **You live in the terminal and want sandboxed execution + model switching** → **Codex CLI**. Strong guardrails, headless mode for CI.
-- **You want the lowest cost to start** → **Gemini CLI** (free tier) or any BYO agent pointed at a **local model** via Ollama/LM Studio.
+- **You want the lowest cost to start** → a BYO agent pointed at a **local model** via Ollama/LM Studio, or **OpenCode** signed in with a Copilot/ChatGPT plan you already pay for. (Gemini CLI's free tier ends June 18, 2026.)
 - **You want a configurable assistant, not a hands-off agent** → **Continue**.
 - **You want a local-first, extensible agent** → **Goose**.
 
 ### When the proprietary editors still win
 
-If you value a frictionless inner loop — best-in-class tab completion, zero configuration, polished multi-file review — **Cursor** and **Windsurf** are still the smoother experience, at the cost of model/data control and a paid plan. And if you want a deeply agentic, programmable workflow but don't want to manage model keys and configuration yourself, [Claude Code](/tools/claude-code) sits between the two worlds: a first-party terminal agent with MCP, subagents, and hooks.
+If you value a frictionless inner loop — best-in-class tab completion, zero configuration, polished multi-file review — **Cursor** and **Windsurf (Devin Desktop)** are still the smoother experience, at the cost of model/data control and a paid plan; Google's free-preview [Antigravity](/tools/antigravity) is the newest proprietary entrant, an agent-first IDE with multi-agent orchestration. And if you want a deeply agentic, programmable workflow but don't want to manage model keys and configuration yourself, [Claude Code](/tools/claude-code) sits between the two worlds: a first-party terminal agent with MCP, subagents, and hooks.
 
 > [!TIP]
 > The choice isn't permanent. Because nearly all of these speak **MCP**, the custom tools and data sources you build for one agent move to the next. Invest in your MCP servers and `AGENTS.md`/`CLAUDE.md` context, and switching agents becomes cheap.
