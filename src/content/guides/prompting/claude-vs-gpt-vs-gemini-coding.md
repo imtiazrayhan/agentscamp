@@ -7,7 +7,7 @@ color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 tags: ["claude", "gpt", "gemini", "models", "comparison"]
 featured: true
-summary: "All three families write excellent code; they differ in posture. Claude leads on agentic coding — long autonomous sessions, careful diffs, and the Claude Code harness built around it. GPT pairs frontier reasoning with the broadest ecosystem (Codex, ubiquitous APIs). Gemini brings context scale and Google's platform reach. Pick by harness and workflow, not leaderboard deltas — and test on your own repo."
+summary: "All three families write excellent code; they differ in posture. Claude leads on agentic coding — long autonomous sessions, careful diffs, and the Claude Code harness built around it. GPT pairs frontier reasoning with the broadest ecosystem (Codex, ubiquitous APIs). Gemini brings context scale and Google's platform reach. Pick by harness and workflow, not leaderboard deltas."
 keyTakeaways:
   - "Benchmark gaps between frontier families are small and shift with every release; harness fit (which agent/editor you'll live in) dominates real-world outcomes."
   - "Claude's edge is agentic coding posture: sustained multi-step autonomy, disciplined edits, and first-party tooling (Claude Code, Agent SDK) tuned around the models."
