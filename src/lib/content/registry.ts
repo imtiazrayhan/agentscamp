@@ -132,6 +132,9 @@ export const topics: TopicDef[] = [
   { slug: "llm-app-dev", label: "LLM App Dev" },
   { slug: "mlops-ai-infra", label: "MLOps & AI Infra" },
   { slug: "ai-safety-security", label: "AI Safety & Security" },
+  // Phase 2 (content-roadmap-phase2.md): MCP earns its own pill with the Wave 5
+  // server-directory cluster; existing MCP items dual-tag mcp + architecture.
+  { slug: "mcp", label: "MCP" },
 ];
 
 export const topicBySlug = new Map(topics.map((t) => [t.slug, t]));
