@@ -4,7 +4,7 @@ description: "How to use vision-language models for OCR, documents, and video: h
 author: "AgentsCamp"
 date: 2026-06-04
 color: "green"
-topics: ["mlops-ai-infra", "data-ml"]
+topics: ["multimodal-ai", "mlops-ai-infra", "data-ml"]
 tags: ["vision-language-model", "ocr", "multimodal", "document-understanding", "video"]
 featured: false
 summary: "Vision-language models read images and text together, so they grasp layout, tables, charts, and handwriting — where traditional OCR only extracts characters. They're powerful on varied documents, but can hallucinate exact values, so you constrain output to a schema and verify critical fields. Covers VLM vs. OCR, document and video understanding, and open vs. proprietary models."

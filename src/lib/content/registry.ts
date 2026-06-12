@@ -149,6 +149,9 @@ export const topics: TopicDef[] = [
   // Phase 2 (content-roadmap-phase2.md): MCP earns its own pill with the Wave 5
   // server-directory cluster; existing MCP items dual-tag mcp + architecture.
   { slug: "mcp", label: "MCP" },
+  // Promoted in Wave 7 with the voice/vision depth cluster (was deferred in
+  // Phase 1, riding mlops-ai-infra until it earned the pill).
+  { slug: "multimodal-ai", label: "Voice & Multimodal" },
 ];
 
 export const topicBySlug = new Map(topics.map((t) => [t.slug, t]));

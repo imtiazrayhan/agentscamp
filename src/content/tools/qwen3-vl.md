@@ -10,7 +10,7 @@ repo: "https://github.com/QwenLM/Qwen3-VL"
 license: "Apache-2.0"
 sameAs: ["https://huggingface.co/Qwen", "https://github.com/QwenLM/Qwen3-VL"]
 color: "orange"
-topics: ["mlops-ai-infra", "data-ml"]
+topics: ["multimodal-ai", "mlops-ai-infra", "data-ml"]
 tags: ["vision-language-model", "multimodal", "ocr", "open-weights", "qwen"]
 featured: false
 alternativeTo: []

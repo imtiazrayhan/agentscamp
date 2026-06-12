@@ -5,11 +5,11 @@ description: "A voice-AI platform for high-quality text-to-speech, voice cloning
 url: "https://elevenlabs.io"
 date: 2026-06-04
 pricing: "freemium"
-category: "platform"
+category: "voice"
 sameAs: ["https://elevenlabs.io/docs"]
 color: "pink"
 os: ["Web"]
-topics: ["mlops-ai-infra"]
+topics: ["mlops-ai-infra", "multimodal-ai"]
 tags: ["text-to-speech", "voice", "tts", "conversational-ai", "api"]
 featured: false
 alternativeTo: ["deepgram"]

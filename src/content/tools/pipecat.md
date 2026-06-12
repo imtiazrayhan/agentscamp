@@ -5,13 +5,13 @@ description: "An open-source Python framework for real-time voice and multimodal
 url: "https://pipecat.ai"
 date: 2026-06-04
 pricing: "open-source"
-category: "sdk"
+category: "voice"
 repo: "https://github.com/pipecat-ai/pipecat"
 license: "BSD-2-Clause"
 os: ["Linux", "macOS", "Windows"]
 sameAs: ["https://github.com/pipecat-ai/pipecat", "https://docs.pipecat.ai"]
 color: "blue"
-topics: ["mlops-ai-infra"]
+topics: ["mlops-ai-infra", "multimodal-ai"]
 tags: ["voice", "real-time", "framework", "open-source", "python"]
 featured: false
 alternativeTo: []

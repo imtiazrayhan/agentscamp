@@ -5,11 +5,11 @@ description: "A voice-AI platform with fast, accurate speech-to-text (Nova) and 
 url: "https://deepgram.com"
 date: 2026-06-04
 pricing: "freemium"
-category: "platform"
+category: "voice"
 sameAs: ["https://developers.deepgram.com"]
 color: "green"
 os: ["Web"]
-topics: ["mlops-ai-infra"]
+topics: ["mlops-ai-infra", "multimodal-ai"]
 tags: ["speech-to-text", "text-to-speech", "voice", "stt", "api"]
 featured: false
 alternativeTo: ["elevenlabs"]
