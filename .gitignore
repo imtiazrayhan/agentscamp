@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# internal dev docs & local automation — kept out of the public repo
+/CLAUDE.md
+/docs/
+/.claude/
+/scripts/freshness-refresh.sh
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
