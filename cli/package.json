@@ -1,0 +1,44 @@
+{
+  "name": "agentscamp",
+  "version": "0.1.0",
+  "description": "Install AgentsCamp agents, skills, and slash commands into Claude Code from your terminal.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "agentscamp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "content"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && esbuild src/index.ts --bundle --platform=node --format=esm --target=node20 --outfile=dist/index.js",
+    "prepublishOnly": "npm --prefix .. run cli:build && node scripts/verify-bundle.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imtiazrayhan/agentscamp.git",
+    "directory": "cli"
+  },
+  "homepage": "https://agentscamp.com",
+  "bugs": "https://github.com/imtiazrayhan/agentscamp/issues",
+  "keywords": [
+    "claude",
+    "claude-code",
+    "agents",
+    "subagents",
+    "skills",
+    "slash-commands",
+    "cli",
+    "ai"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0"
+  }
+}

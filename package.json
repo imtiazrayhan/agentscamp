@@ -10,7 +10,9 @@
     "start": "next start -p 3001",
     "lint": "eslint",
     "validate": "tsx scripts/validate-content.ts",
-    "indexnow": "tsx scripts/submit-indexnow.ts"
+    "indexnow": "tsx scripts/submit-indexnow.ts",
+    "cli:content": "tsx scripts/build-cli-content.ts",
+    "cli:build": "tsx scripts/build-cli-content.ts && npm --prefix cli run build"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",

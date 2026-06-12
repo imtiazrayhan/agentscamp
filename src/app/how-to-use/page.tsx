@@ -18,7 +18,11 @@ const faq = [
   },
   {
     q: "How do I install a Claude Code agent?",
-    a: "Copy the agent's Markdown file to .claude/agents/<name>.md in your project, or ~/.claude/agents/<name>.md for all your projects. Claude Code delegates to it automatically based on its description, or you can invoke it explicitly.",
+    a: "Run npx agentscamp add agents/<name> to install it into your project's .claude/agents/ directory (add -g for ~/.claude/agents/), or copy the agent's Markdown file there manually. Claude Code delegates to it automatically based on its description, or you can invoke it explicitly.",
+  },
+  {
+    q: "Can I install AgentsCamp content from the command line?",
+    a: "Yes. The agentscamp npm package bundles the full catalog: npx agentscamp add <type>/<name> installs into your project's .claude directory (or ~/.claude with -g), and npx agentscamp list and search explore the catalog offline.",
   },
   {
     q: "What is the difference between an agent, a skill, and a slash command?",
@@ -48,7 +52,27 @@ export default function Page() {
         <p>
           Everything here is copy-paste ready. Each agent, skill, and command
           page has install actions — copy the file or download it, then drop it
-          into the right folder.
+          into the right folder. Or skip the copying entirely and use the CLI.
+        </p>
+
+        <h2>Quick install with the CLI</h2>
+        <p>
+          The <code>agentscamp</code> npm package bundles the full catalog, so
+          you can install anything in one command with npx — nothing to set up:
+        </p>
+        <pre>
+          <code>
+            {`npx agentscamp add agents/api-architect
+npx agentscamp add skills/dependency-audit commands/plan-feature
+npx agentscamp search "code review"
+npx agentscamp list skills`}
+          </code>
+        </pre>
+        <p>
+          <code>add</code> writes into your project&apos;s <code>.claude/</code>{" "}
+          directory by default; pass <code>-g</code> to install to{" "}
+          <code>~/.claude/</code> for all your projects. Every agent, skill, and
+          command page on this site shows its exact <code>add</code> command.
         </p>
 
         <h2>Agents</h2>

@@ -109,9 +109,16 @@ export function InstallActions({ item }: { item: ContentItem }) {
   const file = buildArtifact(item);
   if (!file) return null;
   const filename = artifactFilename(item);
+  const cliCommand = `npx agentscamp add ${def.basePath.slice(1)}/${item.slug}`;
 
   return (
     <div className="space-y-3">
+      <div className="flex flex-wrap items-center gap-2">
+        <code className="rounded-md border border-border bg-secondary px-3 py-2 font-mono text-xs text-foreground">
+          {cliCommand}
+        </code>
+        <CopyButton text={cliCommand} label="Copy" copiedLabel="Copied!" />
+      </div>
       <div className="flex flex-wrap gap-2">
         <CopyButton
           text={file}
