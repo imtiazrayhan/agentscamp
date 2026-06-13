@@ -1,5 +1,14 @@
 import Link from "next/link";
-import { BookOpen, Map as SitemapIcon, Rss, Hash, FileText } from "lucide-react";
+import {
+  BookOpen,
+  Map as SitemapIcon,
+  Rss,
+  Hash,
+  FileText,
+  Search,
+  Kanban,
+  Sparkles,
+} from "lucide-react";
 import { contentTypeList } from "@/lib/content/registry";
 import { getCountsByType } from "@/lib/content";
 import { Logo } from "@/components/brand/Logo";
@@ -55,6 +64,30 @@ const resources = [
     cmd: "curl feed.xml",
     icon: Rss,
     external: true,
+  },
+] as const;
+
+const projects = [
+  {
+    href: "https://optimizecamp.com",
+    label: "OptimizeCamp",
+    cmd: "open optimizecamp.com",
+    tagline: "Audit & optimize content for AI search",
+    icon: Search,
+  },
+  {
+    href: "https://gritship.com",
+    label: "GritShip",
+    cmd: "open gritship.com",
+    tagline: "Lightweight project management for makers",
+    icon: Kanban,
+  },
+  {
+    href: "https://sureprompts.com",
+    label: "SurePrompts",
+    cmd: "open sureprompts.com",
+    tagline: "Free AI prompt generator & builder",
+    icon: Sparkles,
   },
 ] as const;
 
@@ -136,8 +169,8 @@ export function Footer() {
           </ul>
         </nav>
 
-        {/* ── resources + about ───────────────────────────────────────── */}
-        <div className="mt-10 grid gap-8 border-t border-border pt-8 md:grid-cols-2">
+        {/* ── resources + projects + about ────────────────────────────── */}
+        <div className="mt-10 grid gap-8 border-t border-border pt-8 md:grid-cols-3">
           <nav aria-label="Resources">
             <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
               {"// resources"}
@@ -179,6 +212,40 @@ export function Footer() {
                         {inner}
                       </Link>
                     )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <nav aria-label="Our other projects">
+            <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+              {"// our projects"}
+            </h3>
+            <ul className="mt-4 space-y-1">
+              {projects.map((p) => {
+                const Icon = p.icon;
+                return (
+                  <li key={p.href}>
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group -mx-2 flex items-start gap-3 rounded-sm px-2 py-1.5 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <Icon
+                        className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
+                        aria-hidden
+                      />
+                      <span className="flex min-w-0 flex-col">
+                        <span className="font-mono text-sm text-foreground transition-colors group-hover:text-primary">
+                          {p.label}
+                        </span>
+                        <span className="truncate text-xs text-muted-foreground">
+                          {p.tagline}
+                        </span>
+                      </span>
+                    </a>
                   </li>
                 );
               })}
