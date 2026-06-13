@@ -1,5 +1,5 @@
 import { getContentByType, contentTypeList } from "@/lib/content";
-import { site } from "@/lib/site";
+import { site, network } from "@/lib/site";
 import { toMarkdownFile, canonicalUrl } from "./artifact";
 
 /**
@@ -28,6 +28,12 @@ export function buildLlmsIndex(): string {
     }
     lines.push("");
   }
+
+  lines.push("## Network", "");
+  for (const project of network) {
+    lines.push(`- [${project.name}](${project.url}): ${project.tagline}`);
+  }
+  lines.push("");
 
   lines.push(
     "## Optional",

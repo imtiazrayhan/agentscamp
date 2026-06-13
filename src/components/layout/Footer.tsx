@@ -13,7 +13,8 @@ import { contentTypeList } from "@/lib/content/registry";
 import { getCountsByType } from "@/lib/content";
 import { Logo } from "@/components/brand/Logo";
 import { SearchCommandBox } from "@/components/search/SearchCommandBox";
-import { site } from "@/lib/site";
+import { site, network } from "@/lib/site";
+import type { ComponentType, SVGProps } from "react";
 
 /**
  * Site footer, styled as the tail of a terminal session. A prompt header with
@@ -67,29 +68,15 @@ const resources = [
   },
 ] as const;
 
-const projects = [
-  {
-    href: "https://optimizecamp.com",
-    label: "OptimizeCamp",
-    cmd: "open optimizecamp.com",
-    tagline: "Audit & optimize content for AI search",
-    icon: Search,
-  },
-  {
-    href: "https://gritship.com",
-    label: "GritShip",
-    cmd: "open gritship.com",
-    tagline: "Lightweight project management for makers",
-    icon: Kanban,
-  },
-  {
-    href: "https://sureprompts.com",
-    label: "SurePrompts",
-    cmd: "open sureprompts.com",
-    tagline: "Free AI prompt generator & builder",
-    icon: Sparkles,
-  },
-] as const;
+/** Icon per network sibling, keyed by its `id` in the site registry. */
+const networkIcons: Record<
+  (typeof network)[number]["id"],
+  ComponentType<SVGProps<SVGSVGElement>>
+> = {
+  optimizecamp: Search,
+  gritship: Kanban,
+  sureprompts: Sparkles,
+};
 
 export function Footer() {
   const counts = getCountsByType();
@@ -223,12 +210,12 @@ export function Footer() {
               {"// our projects"}
             </h3>
             <ul className="mt-4 space-y-1">
-              {projects.map((p) => {
-                const Icon = p.icon;
+              {network.map((p) => {
+                const Icon = networkIcons[p.id];
                 return (
-                  <li key={p.href}>
+                  <li key={p.id}>
                     <a
-                      href={p.href}
+                      href={p.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group -mx-2 flex items-start gap-3 rounded-sm px-2 py-1.5 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -239,7 +226,7 @@ export function Footer() {
                       />
                       <span className="flex min-w-0 flex-col">
                         <span className="font-mono text-sm text-foreground transition-colors group-hover:text-primary">
-                          {p.label}
+                          {p.name}
                         </span>
                         <span className="truncate text-xs text-muted-foreground">
                           {p.tagline}

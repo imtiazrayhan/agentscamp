@@ -11,6 +11,32 @@ export const site = {
   sameAs: ["https://x.com/agentscamp"] as string[],
 } as const;
 
+/**
+ * Sibling products in the same network — surfaced in the footer and llms.txt to
+ * cross-promote across the family. Data only (no React/icons) so this module
+ * stays client-safe; the Footer maps each `id` to a lucide icon locally.
+ */
+export const network = [
+  {
+    id: "optimizecamp",
+    name: "OptimizeCamp",
+    url: "https://optimizecamp.com",
+    tagline: "Audit & optimize content for AI search",
+  },
+  {
+    id: "gritship",
+    name: "GritShip",
+    url: "https://gritship.com",
+    tagline: "Lightweight project management for makers",
+  },
+  {
+    id: "sureprompts",
+    name: "SurePrompts",
+    url: "https://sureprompts.com",
+    tagline: "Free AI prompt generator & builder",
+  },
+] as const;
+
 export const locale = "en";
 
 /**
