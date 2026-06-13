@@ -12,7 +12,12 @@ import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { ContentGrid } from "@/components/content/ContentGrid";
 import { ContentCard } from "@/components/content/ContentCard";
+import { CopyButton } from "@/components/content/CopyButton";
 import { cn } from "@/lib/utils";
+
+// A skill here (the hero features an agent) so the two commands together show
+// the CLI installs more than one kind of artifact.
+const GETTING_STARTED_CMD = "npx agentscamp add skills/dependency-audit";
 
 // 4-col bento; spans sum (with the col-span-2 CTA tile) to full rows.
 const SPANS: Record<ContentTypeId, string> = {
@@ -98,25 +103,37 @@ export default function Home() {
           />
         ))}
 
-        {/* CTA tile completes the bento */}
-        <Link
-          href="/how-to-use"
-          className="group flex flex-col justify-between rounded-md border border-border bg-secondary p-5 transition-colors hover:border-primary/50 sm:col-span-2"
-        >
+        {/* CTA tile completes the bento — promotes the CLI */}
+        <div className="flex flex-col rounded-md border border-border bg-secondary p-5 sm:col-span-2">
           <div className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
             // getting started
           </div>
           <div className="mt-3">
-            <p className="text-lg font-semibold">New to AI agents?</p>
+            <p className="text-lg font-semibold">Install in one command</p>
             <p className="text-sm text-muted-foreground">
-              Learn how to install and use them in your own workflow.
+              The <code className="font-mono text-foreground">agentscamp</code>{" "}
+              CLI drops any agent, skill, or command straight into Claude Code.
             </p>
           </div>
-          <span className="mt-auto inline-flex items-center gap-1 pt-5 font-mono text-sm text-primary">
-            read the guide
-            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-          </span>
-        </Link>
+          <div className="mt-4 inline-flex max-w-full items-center gap-1 self-start rounded-md border border-primary/40 bg-background py-1.5 pl-3 pr-1.5">
+            <code className="truncate font-mono text-xs">
+              <span className="select-none text-primary">$ </span>
+              {GETTING_STARTED_CMD}
+            </code>
+            <CopyButton
+              text={GETTING_STARTED_CMD}
+              iconOnly
+              className="shrink-0 border-0 bg-transparent hover:bg-secondary"
+            />
+          </div>
+          <Link
+            href="/how-to-use"
+            className="group/cta mt-auto inline-flex items-center gap-1 self-start pt-5 font-mono text-sm text-primary"
+          >
+            how it works
+            <ArrowRight className="size-3.5 transition-transform group-hover/cta:translate-x-0.5" />
+          </Link>
+        </div>
       </section>
 
       {newest.length > 0 && (
