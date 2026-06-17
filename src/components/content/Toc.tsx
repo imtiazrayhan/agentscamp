@@ -33,6 +33,7 @@ export function Toc({ items }: { items: TocItem[] }) {
           <li key={i.id} style={{ paddingLeft: i.depth === 3 ? 16 : 0 }}>
             <a
               href={`#${i.id}`}
+              aria-current={active === i.id ? "location" : undefined}
               className={cn(
                 "-ml-px block border-l-2 border-transparent pl-3 text-muted-foreground transition-colors hover:text-foreground",
                 active === i.id && "border-primary font-medium text-foreground",

@@ -21,6 +21,7 @@ export function SearchCommandBox({
       type="button"
       onClick={open}
       aria-label={`Search ${total} resources`}
+      aria-keyshortcuts="Meta+K Control+K"
       className={cn(
         "group flex w-full max-w-md items-center gap-2 rounded-md border border-border bg-background px-3 py-2.5 font-mono text-sm text-muted-foreground transition-colors hover:border-primary/60",
         className,

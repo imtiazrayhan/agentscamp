@@ -12,6 +12,7 @@ export function SearchBar({ className }: { className?: string }) {
       type="button"
       onClick={open}
       aria-label="Search"
+      aria-keyshortcuts="Meta+K Control+K"
       className={cn(
         "inline-flex items-center gap-2 rounded-md border border-border bg-background px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         className,
