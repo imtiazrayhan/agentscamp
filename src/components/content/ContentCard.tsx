@@ -66,7 +66,7 @@ export function ContentCard({ item }: { item: ContentItem }) {
   const Icon = def.icon;
 
   return (
-    <div className="group relative flex flex-col rounded-md border border-border bg-card p-4 transition-colors hover:border-primary/50">
+    <div className="group relative flex flex-col rounded-md border border-border bg-card p-4 transition-colors hover:border-primary/50 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-ring has-[a:focus-visible]:ring-offset-2 has-[a:focus-visible]:ring-offset-background">
       <div className="mb-2.5 flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-muted-foreground">
         <Icon className="size-3.5 text-primary" />
         {def.singular}
