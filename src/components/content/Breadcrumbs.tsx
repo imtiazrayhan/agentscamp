@@ -17,7 +17,9 @@ export function Breadcrumbs({
                 {item.label}
               </Link>
             ) : (
-              <span className="text-foreground">{item.label}</span>
+              <span className="text-foreground" aria-current="page">
+                {item.label}
+              </span>
             )}
           </li>
         ))}

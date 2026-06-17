@@ -78,7 +78,7 @@ export default function RootLayout({
               </a>
               <PromoBar />
               <Nav />
-              <main id="main" className="mx-auto min-h-[60vh] max-w-6xl px-4 py-8">
+              <main id="main" tabIndex={-1} className="mx-auto min-h-[60vh] max-w-6xl px-4 py-8 focus:outline-none">
                 {children}
               </main>
               <Footer />
