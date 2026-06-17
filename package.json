@@ -12,7 +12,8 @@
     "validate": "tsx scripts/validate-content.ts",
     "indexnow": "tsx scripts/submit-indexnow.ts",
     "cli:content": "tsx scripts/build-cli-content.ts",
-    "cli:build": "tsx scripts/build-cli-content.ts && npm --prefix cli run build"
+    "cli:build": "tsx scripts/build-cli-content.ts && npm --prefix cli run build",
+    "mirror:build": "tsx scripts/build-mirror-repo.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
