@@ -31,7 +31,7 @@ It is aimed at developers who live in the terminal and want an agent backed by O
 
 - **Two-layer security model** — sandbox modes (`read-only`, `workspace-write`, `danger-full-access`, via `--sandbox`) control what the agent can technically do; approval policies (`on-request`, `untrusted`, `never`) control when it must stop and ask before acting.
 - **Sandboxed by default** — the `workspace-write` mode limits writes to the active workspace and blocks outbound network, so edits stay local until you explicitly widen the boundary.
-- **Model switching** — use `/model` to move between GPT-5.4, GPT-5.3-Codex, and other available models, and adjust reasoning effort per task.
+- **Model switching** — use `/model` to move between GPT-5.5, GPT-5.4, GPT-5.4-mini, and other available models, and adjust reasoning effort per task.
 - **MCP support** — connect external tools by configuring Model Context Protocol servers (STDIO or streaming HTTP) in the config file.
 - **Non-interactive `codex exec`** — run Codex headlessly in scripts and CI, piping the final result to stdout.
 - **Session resume and image input** — pick up past transcripts with `codex resume`, and attach screenshots or design specs as context.

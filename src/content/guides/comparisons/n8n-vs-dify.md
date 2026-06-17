@@ -34,7 +34,7 @@ n8n and Dify both put AI workflows on a visual canvas, which makes them look lik
 
 ## What each is
 
-**[n8n](/tools/n8n)** brings a decade of automation muscle (~192k stars, 400+ integrations, a $2.5B-valuation Series C) and added a serious AI layer: LangChain-based agent nodes (Tools, ReAct, Plan-and-Execute), conversation memory backends, vector-store nodes for RAG, every major model provider. Its killer property is that **the agent has hands**: the intelligence step slots between real triggers and real actions, and 900+ templates show the patterns. The 2.0 release (December 2025) hardened security defaults for exactly this run-arbitrary-workflows reality.
+**[n8n](/tools/n8n)** brings a decade of automation muscle (~192k stars, 400+ integrations, a $5.2B valuation after SAP's May 2026 strategic investment) and added a serious AI layer: LangChain-based agent nodes (Tools, ReAct, Plan-and-Execute), conversation memory backends, vector-store nodes for RAG, every major model provider. Its killer property is that **the agent has hands**: the intelligence step slots between real triggers and real actions, and 900+ templates show the patterns. The 2.0 release (December 2025) hardened security defaults for exactly this run-arbitrary-workflows reality.
 
 **[Dify](/tools/dify)** built the AI-app factory (~145k stars): a canvas for chatflows and agentic workflows where the LLM-specific machinery is native — a RAG pipeline from ingestion to retrieval, a prompt IDE with model comparison, agent nodes with 50+ tools, hundreds of models behind one panel, and LLMOps for the improve-from-production loop. Its killer property is the **publishing path**: canvas → working app → backend-as-a-service API your product embeds.
 

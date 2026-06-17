@@ -42,6 +42,10 @@ yarn-error.log*
 /.claude/
 /scripts/freshness-refresh.sh
 
+# generated public mirror repo (awesome-agentscamp) — built from src/content,
+# pushed to its own GitHub repo; never tracked here (matches cli/content)
+/mirror/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

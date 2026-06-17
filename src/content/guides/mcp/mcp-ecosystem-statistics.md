@@ -7,12 +7,12 @@ color: "green"
 topics: ["mcp", "architecture"]
 tags: ["mcp", "statistics", "ecosystem", "data"]
 featured: false
-summary: "MCP's growth since the December 2025 Linux Foundation donation, measured against live registries: SDK downloads roughly 4x'd in six months (npm SDK 38.5M→153M monthly; PyPI's mcp adds 268M), registries list 6,000–22,000 servers depending on curation bar, and the AAIF counts 8 founding plus 41 gold/silver members. Every count dated and sourced."
+summary: "MCP's growth since the December 2025 Linux Foundation donation, measured against live registries: SDK downloads roughly 4x'd in six months (npm SDK 38.5M→153M monthly; PyPI's mcp adds 268M), registries list 6,000–22,000 servers depending on curation bar, and the AAIF has grown to ~146 members (from 41 at the December 2025 launch). Every count dated and sourced."
 keyTakeaways:
   - "At donation (December 9, 2025): 97M+ monthly SDK downloads and ~10,000 active servers — the official baseline numbers from Anthropic and the Linux Foundation."
   - "Six months later: the npm TypeScript SDK alone exceeds 150M monthly downloads (4x its December rate) and PyPI's mcp package adds ~268M — combined core-SDK volume roughly quadrupled."
   - "Server counts depend on the registry's bar: Smithery curates ~6,200, PulseMCP tracks ~18,200, mcp.so self-reports ~22,000 — cite the registry with the number, never a bare 'there are X servers.'"
-  - "Governance is genuinely multi-vendor now: the Agentic AI Foundation's founding eight include Anthropic, OpenAI, Google, Microsoft, AWS, and Block, with 18 gold and 23 silver supporting members."
+  - "Governance is genuinely multi-vendor now: the Agentic AI Foundation's eight Platinum members include Anthropic, OpenAI, Google, Microsoft, AWS, and Block, with the supporting Gold/Silver roster now past 130 members (up from 41 at launch)."
   - "The reference monorepo (modelcontextprotocol/servers) sits at ~87k GitHub stars — top-thousandth-percentile open source — with first-class client support across ChatGPT, Claude, Cursor, Gemini, Copilot, and VS Code."
 faq:
   - q: "How many MCP servers exist in 2026?"
@@ -20,7 +20,7 @@ faq:
   - q: "How fast is MCP growing?"
     a: "The cleanest series is SDK downloads: at donation (December 2025) the project cited 97M monthly across SDKs; by June 2026 the npm TypeScript SDK alone runs ~153M/month (vs 38.5M in December) and PyPI's mcp package ~268M/month — combined core-SDK volume roughly 4x in six months, measured directly from registry APIs."
   - q: "Who controls MCP now?"
-    a: "The Agentic AI Foundation under the Linux Foundation, since December 9, 2025 — co-founded by Anthropic (donating MCP), Block (goose), and OpenAI (AGENTS.md), with AWS, Bloomberg, Cloudflare, Google, and Microsoft completing the founding eight, plus 41 gold/silver members from Cisco to Hugging Face. Anthropic stated maintainers and governance processes carried over unchanged."
+    a: "The Agentic AI Foundation under the Linux Foundation, since December 9, 2025 — co-founded by Anthropic (donating MCP), Block (goose), and OpenAI (AGENTS.md), with AWS, Bloomberg, Cloudflare, Google, and Microsoft completing the founding eight, plus 41 gold/silver members at launch (Cisco to Hugging Face), a roster since grown past 130. Anthropic stated maintainers and governance processes carried over unchanged."
 related: ["model-context-protocol", "best-mcp-servers-2026", "mcp-vs-a2a", "claude-code-mcp-setup", "govern-mcp-servers", "ai-coding-statistics-2026", "smithery"]
 ---
 
@@ -61,7 +61,7 @@ The spread is the lesson: "how many MCP servers exist" has no single answer — 
 ## Ecosystem signals
 
 - **modelcontextprotocol/servers**: ~87,100 GitHub stars; the Python SDK ~23,300, TypeScript SDK ~12,700, spec repo ~8,400 *(GitHub API, primary)*.
-- **AAIF membership** beyond the founding eight: **18 gold members** (including Cisco, Datadog, Docker, IBM, JetBrains, Oracle, Salesforce, SAP, Shopify, Snowflake) and **23 silver** (including Hugging Face, Uber, Zapier, Pydantic, Elastic) *(Linux Foundation, primary)*.
+- **AAIF membership** beyond the founding eight: **18 Gold members at launch** (including Cisco, Datadog, Docker, IBM, JetBrains, Oracle, Salesforce, SAP, Shopify, Snowflake) and **23 Silver** (including Hugging Face, Uber, Zapier, Pydantic, Elastic), since expanded to **146 total members** by February 2026 *(Linux Foundation, primary)*.
 - The protocol's sibling under the same roof: [A2A](/guides/mcp/mcp-vs-a2a) for agent-to-agent, donated by Google in mid-2025 — both halves of the agent stack now sit in neutral governance.
 
 The arc these numbers trace: MCP won the agent-to-tool layer the way standards win — not by mandate but by **default-ness**, until "does it speak MCP" stopped being a question. The practical guides for living in that ecosystem: [adding servers to Claude Code](/guides/mcp/claude-code-mcp-setup) and [the 2026 server shortlist](/guides/mcp/best-mcp-servers-2026).
