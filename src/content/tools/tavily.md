@@ -52,4 +52,4 @@ In agent stacks it's typically *the* web tool: the [agentic-RAG](/guides/concept
 
 ## Good to know
 
-The company grew out of open-source GPT Researcher and announced $25M in funding (August 2025, Insight Partners-led per coverage), now claiming 2M+ developers. SDKs and the MCP server are MIT; the API is the product. Credits aren't 1:1 with calls — budget for advanced/research multipliers. Field positioning against [Exa](/tools/exa) and [Firecrawl](/tools/firecrawl): [Getting Web Data into AI Agents](/guides/concepts/web-data-for-ai-agents).
+The company grew out of open-source GPT Researcher and raised ~$25M (a $20M Series A led by Insight Partners, August 2025); in February 2026 Nebius Group agreed to acquire it for $275M (up to ~$400M with milestones), with Tavily continuing under its own brand. It now claims 2M+ developers. SDKs and the MCP server are MIT; the API is the product. Credits aren't 1:1 with calls — budget for advanced/research multipliers. Field positioning against [Exa](/tools/exa) and [Firecrawl](/tools/firecrawl): [Getting Web Data into AI Agents](/guides/concepts/web-data-for-ai-agents).

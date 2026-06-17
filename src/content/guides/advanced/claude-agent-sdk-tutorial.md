@@ -13,7 +13,7 @@ keyTakeaways:
   - "The core API is one function: query(prompt, options) returning an async iterator of messages; options carry allowedTools, permissionMode, mcpServers, agents, hooks, maxTurns."
   - "Custom tools are in-process MCP servers: define them with tool() + createSdkMcpServer() (zod-typed in TS) — no separate server process to run."
   - "Subagents and hooks work in the SDK exactly as in Claude Code, so patterns you proved interactively port straight into your application."
-  - "Auth is ANTHROPIC_API_KEY (or Bedrock/Vertex env switches) — and from June 15, 2026, subscription plans meter SDK/headless usage as a separate Agent SDK credit, not your interactive limits."
+  - "Auth is ANTHROPIC_API_KEY (or Bedrock/Vertex env switches); on subscription plans, SDK/headless usage currently still draws from your normal plan limits — Anthropic announced a separate Agent SDK credit for June 15, 2026 but paused it, so check the current policy before you rely on either model."
 howtoSteps:
   - name: "Install the SDK"
     text: "TypeScript: npm install @anthropic-ai/claude-agent-sdk (bundles the agent binary). Python: pip install claude-agent-sdk, which requires Python 3.10+."
@@ -37,7 +37,7 @@ faq:
   - q: "How do I add custom tools to an SDK agent?"
     a: "Through in-process MCP: define each tool with the tool() helper (name, description, a zod schema in TypeScript, and an async handler), group them with createSdkMcpServer(), and pass it via options.mcpServers. No separate server process — your application functions become agent tools."
   - q: "How is SDK usage billed?"
-    a: "Via the API (per token) when authenticated with an API key, or through Bedrock/Vertex on those platforms. On Claude subscription plans, note the June 15, 2026 change: Agent SDK and claude -p usage draws from a separate monthly Agent SDK credit rather than your interactive plan limits."
+    a: "Via the API (per token) when authenticated with an API key, or through Bedrock/Vertex on those platforms. On Claude subscription plans, Agent SDK and claude -p usage currently still draws from your normal plan limits — Anthropic announced a separate monthly Agent SDK credit for June 15, 2026 but paused it before it took effect, so verify the current policy."
 related: ["claude-agent-sdk", "claude-code-ci-github-actions", "agent-frameworks-2026", "writing-a-custom-agent", "agent-reliability-reviewer", "openai-agents-sdk", "production-tool-calling", "claude-code"]
 ---
 
@@ -146,7 +146,7 @@ options: {
 ## Production notes
 
 - **Auth:** `ANTHROPIC_API_KEY` for the Claude API; `CLAUDE_CODE_USE_BEDROCK=1` or `CLAUDE_CODE_USE_VERTEX=1` to run on AWS/GCP with their credential chains. Consumer claude.ai logins aren't a thing here — this is the API surface.
-- **Billing:** API usage is per-token. If your team is on Claude subscription plans, note that from **June 15, 2026**, SDK and `claude -p` usage meters against a separate monthly Agent SDK credit rather than interactive limits — budget accordingly.
+- **Billing:** API usage is per-token. If your team is on Claude subscription plans, note that Anthropic announced a separate monthly Agent SDK credit for SDK and `claude -p` usage (planned for June 15, 2026) but **paused** it before it took effect — for now that usage still meters against your normal plan limits, so check the current policy before you budget.
 - **Where it sits in the landscape:** against [LangGraph, CrewAI, and the OpenAI Agents SDK](/guides/concepts/agent-frameworks-2026), the Claude Agent SDK's pitch is the *harness*: you inherit a battle-tested tool-execution loop, permission system, and context management instead of assembling them. The trade is the same as [Claude Code's](/tools/claude-code) — it runs Anthropic's models, tuned for them.
 
 Start with the smallest version of your agent that does real work — one `query()`, three tools, `maxTurns: 10` — and grow it the way you'd grow a Claude Code workflow: add a custom tool when the model needs your data, a subagent when one context stops being enough, a hook when a rule must hold every time. For making the result *reliable*, the [production tool-calling guide](/guides/concepts/production-tool-calling) and the [agent-reliability-reviewer](/agents/meta-orchestration/agent-reliability-reviewer) pick up where this tutorial ends.

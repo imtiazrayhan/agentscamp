@@ -17,7 +17,7 @@ alternativeTo: ["playwright-mcp"]
 sameAs:
   - "https://www.npmjs.com/package/chrome-devtools-mcp"
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "playwright-mcp", "performance-engineer", "accessibility-auditor", "debugger"]
-summary: "Chrome DevTools MCP (Google's Chrome DevTools team, ~43k stars, v1.x since May 2026) gives agents a real browser with the debugger attached: 48 tools spanning Puppeteer-driven navigation and input, network request analysis, console messages with source-mapped stack traces, screenshots, emulation, and performance trace recording with actionable insights plus CrUX field data."
+summary: "Chrome DevTools MCP (Google's Chrome DevTools team, ~43k stars, v1.x since May 2026) gives agents a real browser with the debugger attached: 49 tools spanning Puppeteer-driven navigation and input, network request analysis, console messages with source-mapped stack traces, screenshots, emulation, and performance trace recording with actionable insights plus CrUX field data."
 faq:
   - q: "How do I add Chrome DevTools MCP to Claude Code?"
     a: "One command, verbatim from the README: claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest. There's also a plugin with bundled skills: /plugin marketplace add ChromeDevTools/chrome-devtools-mcp then /plugin install chrome-devtools-mcp@chrome-devtools-plugins. Requirements: Node LTS and a current stable Chrome."
@@ -31,7 +31,7 @@ Chrome DevTools MCP is Google's answer to a blind spot every coding agent has: i
 
 ## Highlights
 
-- **48 tools across the debugging surface** — input and navigation automation, emulation, network, console, memory, performance, and a WebMCP category.
+- **49 tools across the debugging surface** — input and navigation automation, emulation, network, console, memory, performance, and a WebMCP category.
 - **Performance traces with insights** — record a trace and get the analysis, augmented with CrUX real-user field data for the URL.
 - **Debugging-grade visibility** — console messages with source-mapped stacks; network requests inspectable individually.
 - **Reliable automation** — Puppeteer-driven with auto-waiting, the same engineering as Google's own testing stack.

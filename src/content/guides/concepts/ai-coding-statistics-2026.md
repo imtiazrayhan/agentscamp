@@ -47,7 +47,7 @@ AI-coding statistics are mostly laundered guesses — numbers that trace to an S
 
 - **Preference:** Claude Code ranked **most-used and most-loved** (46% most-loved, vs Cursor 19%, Copilot 9%) — Pragmatic Engineer, **February 2026** *(survey)*.
 - **Scale:** GitHub Copilot crossed **20M all-time users** (July 2025) and **4.7M paid subscribers**, +75% YoY (January 2026) *(reported, Microsoft earnings)*; ~80% of new GitHub users adopt Copilot in week one (Octoverse, *primary*).
-- **Revenue:** Claude Code hit **$1B run-rate six months after GA** (December 2025) and **>$2.5B by February 2026**, with enterprise over half of it — Anthropic *(primary)*. Cursor's annualized revenue was **reported at $2B (February) and $3B (April 2026)** — Bloomberg/TechCrunch *(reported; tied to unclosed deal coverage — treat as reported)*. OpenAI's Codex claimed **4M+ weekly developers** (April 2026, *primary*).
+- **Revenue:** Claude Code hit **$1B run-rate six months after GA** (December 2025) and **>$2.5B by February 2026**, with enterprise over half of it — Anthropic *(primary)*. Cursor's annualized revenue climbed from **$2B (February)** to **$3B (late April)** to **~$4B (early June 2026)** — Bloomberg/TechCrunch/Dealroom *(reported)*; on **June 16, 2026** SpaceX announced a definitive agreement to acquire Cursor (Anysphere) in a **$60B all-stock** deal, expected to close Q3 2026 *(reported, deal announced)*. OpenAI's Codex claimed **4M+ weekly developers** (April 2026, *primary*).
 - **The builders:** Lovable confirmed **$400M ARR with 146 employees** (February 2026, after $100M added in a single month) *(reported, company-confirmed)*; Bolt went **$0→$20M ARR in two months** post-launch *(reported, founder on record)*.
 
 ## What it does to productivity and quality

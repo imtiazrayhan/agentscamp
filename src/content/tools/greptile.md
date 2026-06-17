@@ -19,7 +19,7 @@ related: ["coderabbit", "qodo", "best-ai-code-review-tools-2026", "code-reviewer
 summary: "Greptile reviews pull requests with full context of the codebase — not just the diff — so it catches multi-file logical bugs diff-scoped reviewers miss. It learns team standards from your engineers' own PR comments, takes custom rules in plain English (and reads CLAUDE.md/.cursorrules), and hands fixes off to Claude Code or Cursor. Paid per seat, 14-day trial; free for qualifying open source."
 faq:
   - q: "What makes Greptile different from other AI code reviewers?"
-    a: "Codebase-wide context and learned standards. It indexes the whole repository, so a review considers callers, conventions, and side effects beyond the diff — and its v3 architecture learns from how your engineers actually comment on PRs, cutting nitpick noise over time. Custom rules are plain English, and it auto-detects CLAUDE.md and .cursorrules files."
+    a: "Codebase-wide context and learned standards. It indexes the whole repository, so a review considers callers, conventions, and side effects beyond the diff — and its v4 architecture learns from how your engineers actually comment on PRs, cutting nitpick noise over time. Custom rules are plain English, and it auto-detects CLAUDE.md and .cursorrules files."
   - q: "How much does Greptile cost?"
     a: "It's a paid product — Pro runs $30 per seat/month with 50 reviews per seat included ($1 per extra review), with a 14-day trial, a 50% startup discount, and custom Enterprise plans. There's no permanent free tier, but qualifying open-source projects (MIT/Apache/GPL, non-commercial) get it free."
   - q: "Does Greptile work with GitLab and self-hosting?"
@@ -31,7 +31,7 @@ Greptile attacks the weakness of diff-scoped review: most real bugs aren't visib
 ## Highlights
 
 - **Full-codebase context** — reviews reason over the repository, not the diff, targeting cross-file logic errors.
-- **Learns your standards** — the v3 agent architecture (September 2025) learns from your engineers' own PR comments, so the bot's taste converges on the team's and nitpick noise drops.
+- **Learns your standards** — the v4 agent architecture (March 2026) learns from your engineers' own PR comments, so the bot's taste converges on the team's and nitpick noise drops.
 - **Rules in plain English** — codify standards conversationally; it also auto-detects existing `CLAUDE.md` and `.cursorrules` files as conventions.
 - **Agent handoff** — "Fix with your Agent" sends findings straight to Claude Code, Cursor, or Codex; an MCP server exposes reviews and patterns inside those tools.
 - **CLI for local review** — `npm i -g greptile` reviews branches from the terminal before a PR exists.

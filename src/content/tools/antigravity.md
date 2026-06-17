@@ -36,7 +36,7 @@ At I/O 2026 (May 19), Google expanded it from an IDE into a product family — *
 - **Manager surface** — run several agents in parallel on different tasks and supervise them from one board, rather than babysitting a single chat.
 - **Browser-using agents** — agents can drive a browser to verify the UI they just built, attaching screenshots and recordings as evidence.
 - **Artifacts over logs** — plans, task lists, and recordings designed for human verification of agent work.
-- **Gemini 3 models, plus others** — launched with Gemini 3 Pro at generous rate limits, alongside Claude Sonnet 4.5 and GPT-OSS; the agent harness is co-optimized with newer Gemini releases.
+- **Gemini 3 models, plus others** — launched with Gemini 3 Pro at generous rate limits, alongside Claude Sonnet 4.6 and GPT-OSS; the agent harness is co-optimized with newer Gemini releases.
 - **A whole product family** — IDE, desktop app, terminal CLI sharing the same Core Agent Engine, and a Python SDK (Apache-2.0).
 
 ## In an AI-assisted workflow
