@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import type { ContentItem } from "@/lib/content/types";
 import { ContentCard } from "./ContentCard";
@@ -8,11 +8,21 @@ import { ContentGrid } from "./ContentGrid";
 import { EmptyState } from "./EmptyState";
 import { Input } from "@/components/ui/input";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Pagination } from "./Pagination";
 import { titleCaseLabel } from "@/lib/format";
 
-export function ListingView({ items }: { items: ContentItem[] }) {
+// `items` should arrive in the order they will display (the server sorts them);
+// the filter below preserves that order, and `pageSize` then paginates it.
+export function ListingView({
+  items,
+  pageSize,
+}: {
+  items: ContentItem[];
+  pageSize?: number;
+}) {
   const [query, setQuery] = useState("");
   const [cats, setCats] = useState<string[]>([]);
+  const [page, setPage] = useState(1);
 
   const categories = useMemo(() => {
     const counts = new Map<string, number>();
@@ -32,6 +42,17 @@ export function ListingView({ items }: { items: ContentItem[] }) {
       );
     });
   }, [items, query, cats]);
+
+  // Reset to the first page whenever the filtered set changes.
+  useEffect(() => setPage(1), [query, cats]);
+
+  const totalPages = pageSize ? Math.max(1, Math.ceil(filtered.length / pageSize)) : 1;
+  const current = Math.min(page, totalPages);
+  const visible = pageSize
+    ? filtered.slice((current - 1) * pageSize, current * pageSize)
+    : filtered;
+  const rangeStart = filtered.length === 0 ? 0 : (current - 1) * (pageSize ?? 0) + 1;
+  const rangeEnd = pageSize ? rangeStart + visible.length - 1 : filtered.length;
 
   return (
     <div>
@@ -65,15 +86,30 @@ export function ListingView({ items }: { items: ContentItem[] }) {
       </div>
 
       <p className="mb-4 text-sm text-muted-foreground" aria-live="polite">
-        {filtered.length} {filtered.length === 1 ? "result" : "results"}
+        {pageSize && filtered.length
+          ? `Showing ${rangeStart}–${rangeEnd} of ${filtered.length} ${filtered.length === 1 ? "result" : "results"}`
+          : `${filtered.length} ${filtered.length === 1 ? "result" : "results"}`}
       </p>
 
       {filtered.length ? (
-        <ContentGrid>
-          {filtered.map((item) => (
-            <ContentCard key={item.href} item={item} />
-          ))}
-        </ContentGrid>
+        <>
+          <ContentGrid>
+            {visible.map((item) => (
+              <ContentCard key={item.href} item={item} />
+            ))}
+          </ContentGrid>
+          {totalPages > 1 && (
+            <Pagination
+              page={current}
+              totalPages={totalPages}
+              onPageChange={(p) => {
+                setPage(p);
+                if (typeof window !== "undefined")
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            />
+          )}
+        </>
       ) : (
         <EmptyState
           title="No matches"

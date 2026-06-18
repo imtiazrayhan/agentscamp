@@ -21,7 +21,17 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
   const Icon = def.icon;
   const all = getContentByType(type);
   // strip body for client payload
-  const items = all.map(({ body: _body, ...rest }) => rest);
+  let items = all.map(({ body: _body, ...rest }) => rest);
+
+  // Guides display newest-first, paginated; other listings keep loader order.
+  const paginated = type === "guide";
+  if (paginated) {
+    items = [...items].sort(
+      (a, b) =>
+        (b.date ?? "").localeCompare(a.date ?? "") ||
+        a.title.localeCompare(b.title),
+    );
+  }
 
   // Real <a> links to indexable category landing pages — internal-linking /
   // crawl depth the client-side filter toggles can't provide.
@@ -91,7 +101,7 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
           </nav>
         )}
       </header>
-      <ListingView items={items} />
+      <ListingView items={items} pageSize={paginated ? 9 : undefined} />
       <FaqSection faq={seo.faq} />
     </div>
   );
