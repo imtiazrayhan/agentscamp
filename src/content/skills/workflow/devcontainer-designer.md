@@ -1,0 +1,48 @@
+---
+name: "devcontainer-designer"
+description: "Design a reproducible dev environment (Dev Container / Docker) so onboarding is one command and 'works on my machine' dies — by detecting the project's real stack and versions, authoring a devcontainer.json (+ Dockerfile/compose) that pins the runtime to what the repo targets, wires dependent services, caches dependencies, and injects secrets instead of baking them. Use when new contributors struggle to set up the project, when environment drift causes inconsistent behavior, or when standardizing tooling across a team."
+allowed-tools: "Read, Grep, Glob, Write"
+user-invocable: true
+version: "1.0.0"
+color: "cyan"
+title: "Dev Container Designer"
+date: 2026-06-17
+topics: ["devops-infra"]
+related: ["github-actions-optimizer", "devops-engineer", "scaffold-dockerfile"]
+featured: false
+summary: "A README with 14 setup steps is a drift generator: everyone lands on a slightly different machine. This skill detects the project's actual stack and pinned versions, then authors a devcontainer.json (plus Dockerfile/compose) that reproduces it exactly — services wired, dependencies cached, secrets injected not baked — so the whole stack comes up with one 'Reopen in Container'."
+---
+
+The phrase "works on my machine" is a confession that the project has no defined machine. Two contributors on Node 18.17 and 20.4, one with a system `libpq` and one without, a Postgres someone installed via Homebrew in 2023 — that spread is exactly the environment drift a dev container exists to kill. But a container only does that if it pins what the repo actually targets and brings the *whole* stack up together; an unpinned `node:latest` reintroduces the drift you containerized to remove, and a `:latest` Postgres can rev a major version under you on the next rebuild. This skill reads the repo to find the real stack, then writes a `devcontainer.json` (with a Dockerfile and/or compose when services are involved) where every version is pinned, services come up as one unit, dependencies are cached so rebuilds are cheap, and secrets are injected at runtime — never baked into the image.
+
+## When to use this skill
+
+- New contributors burn their first day on setup, or the onboarding README has more than a handful of "install X, then Y" steps that drift out of date.
+- The same code behaves differently across machines (passes locally, fails in CI, or vice versa) and you suspect runtime/version/system-lib differences rather than a real bug.
+- You're standardizing tooling across a team and want one definition of "the dev environment" that an editor can rebuild on demand.
+- The project needs a DB, cache, queue, or other service running alongside the app and people manage those by hand today.
+
+## When NOT to use this skill
+
+- The drift is a missing lockfile, not a missing container — if `package.json`/`pyproject.toml` has unpinned ranges and no committed lock, fix that first; a container around floating deps still drifts.
+- You need a production deployment image. A dev container optimizes for fast inner-loop edit/run with the source mounted; a production image optimizes for a small, immutable artifact with the source baked in. They are different files with different tradeoffs — don't ship this one.
+
+## Instructions
+
+1. **Detect the real stack before writing anything.** Glob and read the manifests that declare the runtime and pin it: `.nvmrc` / `.node-version` / `engines` in `package.json`, `.python-version` / `pyproject.toml` `requires-python`, `.ruby-version`, `go.mod` `go` directive, `.tool-versions` (asdf/mise), `rust-toolchain.toml`. Identify the package manager from the lockfile that exists (`package-lock.json` → npm, `pnpm-lock.yaml` → pnpm, `yarn.lock` → yarn, `poetry.lock` → poetry, `uv.lock` → uv) — the container must use the same one, or it builds a different tree. The repo's declared version is the source of truth; never round to "latest stable."
+2. **Find the services the app actually talks to.** Grep config and env templates (`.env.example`, `config/`, `docker-compose*.yml`, `application.yml`) for connection strings and ports — `DATABASE_URL`, `REDIS_URL`, `postgres://`, `amqp://`, ES/OpenSearch hosts. Read the dependency manifest for client libraries (`pg`, `redis`, `psycopg`, `pika`, `kafkajs`) as corroboration. Every external service the app expects at runtime must come up in the dev environment, or the container is half a setup and contributors are back to installing Postgres by hand.
+3. **Pin the base image to the repo's exact runtime version.** Use a digest-stable, version-specific tag — `mcr.microsoft.com/devcontainers/python:3.12` or `node:20.17-bookworm`, never `:latest`, `:lts`, or a bare major like `:20`. Match the minor the repo targets (a `.nvmrc` of `20.17.0` means `node:20.17`, not `node:20`). If you author a Dockerfile, install system libraries the build needs that the base lacks (`libpq-dev` for `psycopg`, `build-essential`, `libvips` for `sharp`, `default-libmysqlclient-dev`) — these are the silent "missing on my machine" failures. Set the pinned image in `devcontainer.json` `image`, or `build.dockerfile` if you need the extra libs.
+4. **Bring the whole stack up with compose when services exist.** When step 2 found a DB/cache/queue, write a `docker-compose.yml` with the app service plus each dependency pinned to a *specific* version (`postgres:16.4`, `redis:7.4`) — a major Postgres bump on rebuild can refuse to read the old data dir. Point `devcontainer.json` at it via `dockerComposeFile` + `service` + `workspaceFolder`, list `runServices` so the DB starts with the workspace, and use a named volume for the DB data dir so a container rebuild doesn't wipe local seed data. Set service `DATABASE_URL` to the compose service hostname (`postgres`, not `localhost`) so the app connects across the compose network.
+5. **Mount the workspace and cache dependencies so rebuilds stay cheap.** A 10-minute container build trains people to never rebuild — and a never-rebuilt container is the drift you were eliminating. Keep the source bind-mounted (default `workspaceFolder`) so edits are instant. Put the package manager's *store* (not `node_modules`/`.venv`) in a named volume mount so deps survive rebuilds: a volume on `~/.npm`, `~/.cache/pnpm`, `~/.cache/pip`, `~/.cargo`. For compiled-language or heavy-system-lib stacks, structure the Dockerfile so dependency-install layers come before the source copy, so a code change doesn't bust the dep cache.
+6. **Preinstall tooling and run a `postCreateCommand` that leaves the env ready.** Add the editor extensions and settings the project assumes under `customizations.vscode.extensions` (linter, formatter, language server, the DB client) — so everyone gets the same lint-on-save, not a personal config. Use a `postCreateCommand` to run the dependency install with the detected package manager (`pnpm install --frozen-lockfile`) plus any project setup (DB migrate + seed, generate types, copy `.env.example` to `.env` if absent). The goal: open the project, and after postCreate it runs — no manual step. Prefer `devcontainer features` (`ghcr.io/devcontainers/features/*`) for common add-ons (docker-in-docker, gh CLI) over hand-rolled `apt-get` lines.
+7. **Inject secrets at runtime — never bake them into the image.** Reference required secrets in `containerEnv`/`remoteEnv` sourced from the host (`${localEnv:OPENAI_API_KEY}`) or via a secret mount, and keep a committed `.env.example` documenting the keys with empty/placeholder values. Anything sensitive stays in the developer's local `.env` (gitignored) or their host env. Do not `ENV SECRET=...`, `COPY .env`, or `ARG` a credential in the Dockerfile, and don't commit a populated `.env` — an image layer is shipped verbatim to everyone who pulls it.
+
+> [!WARNING]
+> An unpinned base or runtime (`node:latest`, `python:3`, `postgres:16` without a minor) is the single change that reintroduces the exact drift the container is meant to eliminate. The image silently revs out from under the team on the next pull or rebuild, and now "works in the container" depends on *when* you built it. Pin every base image and every service to a specific version, and update those pins as a reviewed, deliberate commit.
+
+> [!CAUTION]
+> A secret baked into an image — via `ENV`, `ARG`, `COPY .env`, or a committed populated `.env` — leaks to everyone who pulls the image and persists in the layer history even if a later layer deletes it. Injecting credentials into a built image is publishing them. Keep all secrets in the developer's local env/secret store and reference them at runtime; commit only an empty `.env.example`.
+
+## Output
+
+A `devcontainer.json` plus the Dockerfile and/or `docker-compose.yml` the project needs, written via Write, with: every base image and service tag pinned to the version the repo targets (and the detected source of that version called out — e.g. `node:20.17 (from .nvmrc)`, `postgres:16.4`); the dependent services wired through compose with named data volumes and correct service-hostname connection strings; a dependency-store cache mount and a layer-ordered Dockerfile so rebuilds are fast; the preinstalled extensions and a `postCreateCommand` that installs and sets up so the env is ready on first open; and a clear note of which secrets are injected from the host env / secret mount versus the committed empty `.env.example` — none baked into the image. The skill reads the repo and writes config files only; it does not build images, start containers, or run install commands.

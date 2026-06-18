@@ -10,7 +10,7 @@ npx agentscamp add agents/api-architect
 
 ## The `agentscamp` CLI
 
-The npm package bundles the full AgentsCamp catalog — 168 curated, format-validated items — and installs them straight into Claude Code's standard locations. Zero runtime dependencies, no network calls; everything works offline.
+The npm package bundles the full AgentsCamp catalog — 183 curated, format-validated items — and installs them straight into Claude Code's standard locations. Zero runtime dependencies, no network calls; everything works offline.
 
 ```bash
 npx agentscamp add agents/api-architect          # → ./.claude/agents/api-architect.md
@@ -32,7 +32,7 @@ Full CLI docs: [`cli/README.md`](cli/README.md) · npm: [npmjs.com/package/agent
 ## What's in the catalog
 
 - **58 agents** — specialized subagents for development, data/AI, infra, security, and more → [agentscamp.com/agents](https://agentscamp.com/agents)
-- **60 skills** — on-demand capabilities for testing, databases, refactoring, releases → [agentscamp.com/skills](https://agentscamp.com/skills)
+- **75 skills** — on-demand capabilities for testing, databases, refactoring, releases → [agentscamp.com/skills](https://agentscamp.com/skills)
 - **50 commands** — reusable slash commands for planning, review, git, scaffolding → [agentscamp.com/commands](https://agentscamp.com/commands)
 
 The site adds guides, a tool directory, and an AI glossary. Every page has a clean Markdown twin at the same URL plus `.md`, and the whole catalog is machine-readable at [/llms.txt](https://agentscamp.com/llms.txt).
