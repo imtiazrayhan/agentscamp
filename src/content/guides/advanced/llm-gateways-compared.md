@@ -42,7 +42,7 @@ Once more than one app talks to an LLM, you start wanting a single place to hand
 
 ### [Portkey](/tools/portkey) — gateway + LLMOps control plane
 
-The most platform-complete option. An **open-source (MIT) routing gateway** — 1,600+ models, retries, fallbacks, load balancing, and both **simple and semantic caching** — paired with a **freemium hosted control plane** for observability, prompt management, virtual keys, budgets, guardrails, and governance. Best when you want caching and cost control as a managed, batteries-included service. (Palo Alto Networks acquired Portkey in 2026 — unlike Helicone's, a continuity move: it becomes the gateway in PANW's AI-security platform and stays actively developed.)
+The most platform-complete option. An **open-source (MIT) routing gateway** — 1,600+ models, retries, fallbacks, load balancing, and both **simple and semantic caching** — paired with a **freemium hosted control plane** for observability, prompt management, virtual keys, budgets, guardrails, and governance — the [LLMOps](/glossary/llmops) layer on top of the raw gateway. Best when you want caching and cost control as a managed, batteries-included service. (Palo Alto Networks acquired Portkey in 2026 — unlike Helicone's, a continuity move: it becomes the gateway in PANW's AI-security platform and stays actively developed.)
 
 ### [LiteLLM](/tools/litellm) — open-source library or self-hosted proxy
 

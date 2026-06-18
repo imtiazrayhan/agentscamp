@@ -50,7 +50,7 @@ Sometimes economics don't get a vote:
 - **Privacy / compliance / data residency** — if data legally or contractually can't leave your environment, you self-host regardless of cost.
 - **Offline / air-gapped** — no connectivity, no API.
 - **Frontier quality** — if the task genuinely needs the strongest model available, that's an API today; an open model "good enough" is a real test you should run, not assume.
-- **Speed to market** — an API is running this afternoon; a serving stack is a project.
+- **Speed to market** — an API is running this afternoon; a serving stack is a project — see [Deploying LLMs to Production](/guides/mlops/deploying-llms-to-production) for what that project entails.
 
 > [!WARNING]
 > Don't forget the hidden costs of self-hosting when you compare. GPU **idle time**, serving and scaling **ops**, **model updates** and re-evaluation, monitoring, and on-call are all real and recurring. The honest comparison is total cost of ownership versus the API bill — not the GPU's busy-hour token price versus the API's.

@@ -30,7 +30,7 @@ Prompt injection is the defining security problem of LLM applications, and the u
 
 ## Why it works (and why there's no clean fix)
 
-Classic injection attacks — SQL injection, XSS — happen when data is mistaken for code. Prompt injection is the same bug at the semantic layer: in an LLM, **instructions and data share one channel.** You can ask the model to "only follow instructions in the system prompt," but the model is a probabilistic text predictor, not an interpreter with a privilege boundary — a sufficiently convincing injected instruction can win. Researchers keep finding new bypasses; defenders keep patching phrasings. Anyone selling a complete fix is selling you a false sense of security. Prompt injection sits at **LLM01** in the OWASP Top 10 for LLM Applications precisely because it's foundational and unsolved.
+Classic injection attacks — SQL injection, XSS — happen when data is mistaken for code. Prompt injection is the same bug at the semantic layer: in an LLM, **instructions and data share one channel.** You can ask the model to "only follow instructions in the system prompt," but the model is a probabilistic text predictor, not an interpreter with a privilege boundary — a sufficiently convincing injected instruction can win. Researchers keep finding new bypasses; defenders keep patching phrasings. Anyone selling a complete fix is selling you a false sense of security. Prompt injection sits at **LLM01** in the OWASP Top 10 for LLM Applications precisely because it's foundational and unsolved. Keeping sensitive data out of that shared context is a companion discipline — see [data privacy for LLM apps](/guides/ai-safety/data-privacy-for-llm-apps).
 
 ## The dangerous variant: indirect injection
 

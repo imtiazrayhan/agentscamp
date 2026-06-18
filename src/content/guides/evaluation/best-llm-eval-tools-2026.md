@@ -59,7 +59,7 @@ The framework answers *"is this version better?"* before you ship. The platform 
 - **You need production tracing + online evals, open-source** → **Langfuse** or **Arize Phoenix**.
 - **You want a hosted, all-in-one platform** → **LangSmith** (LangChain-native) or **Braintrust** (eval + playground + logging).
 
-The most common 2026 setup: **one framework** wired into CI as the offline gate, **one platform** tracing production and feeding real failures back into the offline dataset. If data control or cost at scale matters, the open-source picks (DeepEval/RAGAS/promptfoo + Langfuse/Phoenix) cover the whole loop without sending traces to a vendor.
+The most common 2026 setup: **one framework** wired into CI as the offline gate, **one platform** tracing production and feeding real failures back into the offline dataset. If data control or cost at scale matters, the open-source picks (DeepEval/RAGAS/promptfoo + Langfuse/Phoenix) cover the whole loop without sending traces to a vendor. For the two code-first frameworks head-to-head, see [DeepEval vs RAGAS](/guides/comparisons/deepeval-vs-ragas).
 
 > [!TIP]
 > Don't start by choosing a tool. Start by [building a dataset and a baseline](/guides/evaluation/write-llm-evals) — the method matters more than the framework, and every tool here implements the same underlying loop.

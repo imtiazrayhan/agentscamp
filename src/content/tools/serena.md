@@ -49,7 +49,7 @@ claude mcp add --scope user serena -- serena start-mcp-server \
 # > and update the call sites — use Serena's symbol tools
 ```
 
-It shines on exactly the work the [refactoring-specialist](/agents/quality-security/refactoring-specialist) agent does: cross-cutting renames, signature changes, dead-code sweeps — now with reference-accurate ground truth instead of grep confidence.
+It shines on exactly the work the [refactoring-specialist](/agents/developer-tools/refactoring-specialist) agent does: cross-cutting renames, signature changes, dead-code sweeps — now with reference-accurate ground truth instead of grep confidence.
 
 > [!TIP]
 > Slow first start? Language servers take a moment to warm up on big repos — launch with `MCP_TIMEOUT=60000 claude` and let `serena init`'s indexing finish once per project.

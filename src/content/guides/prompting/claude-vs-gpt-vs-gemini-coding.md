@@ -38,7 +38,7 @@ The honest version of this comparison starts with a confession: **all three fami
 
 **GPT (OpenAI)** is the ubiquity play with frontier reasoning at the top: the o-series lineage made test-time reasoning mainstream, the GPT-5.x line carries the broad work, and Codex (CLI and cloud) is a credible first-party agent family. Whatever tool, library, or platform you touch, GPT integration came first. If your stack is OpenAI-shaped — or you lean hard on its reasoning tiers — the gravity is real.
 
-**Gemini (Google)** competes on scale and integration: million-token-class context as standard, strong native multimodality, aggressive price-performance at the flash end, and the Google platform — Cloud, Workspace, and now Antigravity as the agentic front door (with [Gemini CLI sunsetting into it](/tools/gemini-cli)). For context-monster tasks and Google-native shops, it's the natural pick.
+**Gemini (Google)** competes on scale and integration: million-token-class context as standard, strong native multimodality, aggressive price-performance at the flash end, and the Google platform — Cloud, Workspace, and now Antigravity as the agentic front door (with [Gemini CLI sunsetting into it](/tools/gemini-cli)). For context-monster tasks and Google-native shops, it's the natural pick — and for the terminal agents specifically, [Claude Code vs Gemini CLI](/guides/comparisons/claude-code-vs-gemini-cli) goes head-to-head.
 
 ## How to actually choose
 

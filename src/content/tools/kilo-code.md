@@ -5,6 +5,7 @@ url: "https://kilo.ai/"
 pricing: "freemium"
 category: "extension"
 repo: "https://github.com/Kilo-Org/kilocode"
+related: ["roo-code", "cline", "continue", "ai-coding-agents-cli-2026"]
 license: "MIT"
 os:
   - macOS

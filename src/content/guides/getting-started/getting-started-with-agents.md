@@ -42,7 +42,7 @@ This guide explains what a subagent is, how the `.claude/agents` file format wor
 
 ## What a subagent is
 
-A subagent is a specialized assistant that Claude Code can delegate to. Each one is defined by a single Markdown file with two parts: YAML frontmatter that describes the agent, and a body that becomes the agent's system prompt.
+A subagent is a specialized assistant that Claude Code can delegate to. Each one is defined by a single Markdown file with two parts: YAML frontmatter that describes the agent, and a body that becomes the agent's system prompt. Writing that body well is its own craft — see [Designing System Prompts](/guides/prompting/designing-system-prompts).
 
 The important thing to understand is that a subagent runs in its own context window. When the main agent delegates a task, the subagent does its work in isolation and returns only its final answer. Your primary conversation stays focused, and the subagent's intermediate exploration never pollutes it.
 

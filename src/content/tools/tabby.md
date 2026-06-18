@@ -5,6 +5,7 @@ url: "https://www.tabbyml.com/"
 pricing: "open-source"
 category: "extension"
 repo: "https://github.com/TabbyML/tabby"
+related: ["tabnine", "continue", "github-copilot"]
 license: "Apache-2.0"
 os: ["macOS", "Windows", "Linux"]
 alternativeTo: ["github-copilot", "continue", "cody"]

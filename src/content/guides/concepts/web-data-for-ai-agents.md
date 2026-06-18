@@ -24,7 +24,7 @@ faq:
 related: ["exa", "firecrawl", "tavily", "jina-reader", "agentic-rag", "rag", "defending-prompt-injection", "web-research-pipeline"]
 ---
 
-An agent without web access is frozen at its training cutoff; an agent with *raw* web access drowns in HTML. The web-data layer exists to solve both — and the 2026 field divides cleanly along two verbs: **find** (which pages matter) and **fetch** (turn them into clean model input).
+An agent without web access is frozen at its [training cutoff](/glossary/knowledge-cutoff); an agent with *raw* web access drowns in HTML. The web-data layer exists to solve both — and the 2026 field divides cleanly along two verbs: **find** (which pages matter) and **fetch** (turn them into clean model input).
 
 ## The short list
 
@@ -41,7 +41,7 @@ An agent without web access is frozen at its training cutoff; an agent with *raw
 
 **[Firecrawl](/tools/firecrawl)** is the extraction workhorse (~131k stars of consensus): `/scrape` renders any page — JavaScript included — to Markdown, `/crawl` walks whole sites with limits, `/extract` returns schema-validated objects from messy pages. It's the step before [chunking](/glossary/rag) in web-fed RAG, and the heavy machinery when fetch volume is the job.
 
-**[Tavily](/tools/tavily)** bets on integration economy: search (with latency as its pitch), extract, crawl, map, and a multi-step research endpoint behind one key and credit pool, with a hosted MCP server making it a one-liner in Claude Code. For agents that need *a bit of everything* without three vendor accounts, it's the pragmatic default.
+**[Tavily](/tools/tavily)** bets on integration economy: search (with latency as its pitch), extract, crawl, map, and a multi-step research endpoint behind one key and credit pool, with a hosted MCP server making it a one-liner in Claude Code. For agents that need *a bit of everything* without three vendor accounts, it's the pragmatic default. Deciding between the two search specialists? [Exa vs Tavily](/guides/comparisons/exa-vs-tavily) breaks it down.
 
 **[Jina Reader](/tools/jina-reader)** wins on ceremony — there is none: prepend `r.jina.ai/` to a URL and markdown comes back (PDFs, Office docs, captioned images included); `s.jina.ai` searches and returns the full content of top results. It's the fetcher for workflows where an SDK would be overkill.
 

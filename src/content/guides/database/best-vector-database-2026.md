@@ -53,7 +53,7 @@ Answer those and the shortlist writes itself.
 All three are open-source, self-hostable, and offer a managed cloud — the sweet spot when you want control, data residency, or cost-at-scale **and** an off-ramp to hosted.
 
 - **[Qdrant](/tools/qdrant)** — Rust, lean and fast, with excellent payload filtering, hybrid search, and aggressive quantization (scalar/product/binary, on-disk). Starts as one Docker container and shards into a cluster. A great default open-source server.
-- **[Weaviate](/tools/weaviate)** — Go, with a rich module ecosystem, built-in hybrid search, and optional in-database vectorization so it can embed your data for you. Strong when you want batteries included.
+- **[Weaviate](/tools/weaviate)** — Go, with a rich module ecosystem, built-in hybrid search, and optional in-database vectorization so it can embed your data for you. Strong when you want batteries included. (Weighing it against the managed option? [Weaviate vs Pinecone](/guides/comparisons/weaviate-vs-pinecone).)
 - **[Milvus](/tools/milvus)** — built from the ground up for **billion-scale**, with a distributed architecture that separates storage and compute and a wide menu of index types. The pick when your scale genuinely justifies the operational weight.
 
 ### Embedded, no server → Chroma, LanceDB

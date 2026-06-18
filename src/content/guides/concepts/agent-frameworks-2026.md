@@ -62,7 +62,7 @@ Anthropic's first-party toolkit for building agents on Claude, with native tool 
 
 ## How to choose
 
-- **Production agent needing state, checkpoints, HITL** → **LangGraph**.
+- **Production agent needing state, checkpoints, HITL** → **LangGraph** (head-to-head with the minimal loop: [OpenAI Agents SDK vs LangGraph](/guides/comparisons/openai-agents-sdk-vs-langgraph)).
 - **Fast role-based multi-agent prototype** → **CrewAI**.
 - **Conversational / research multi-agent or code-exec loops** → **AutoGen/AG2**.
 - **A clean, minimal, provider-agnostic loop** → **OpenAI Agents SDK**.

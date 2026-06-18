@@ -53,6 +53,8 @@ BLEU, ROUGE, and exact-match all reward **surface overlap with a reference strin
 
 Exact-match is binary and brutal: "$1,200.00" vs "1200 dollars" is a miss. These metrics are fine for genuinely templated outputs and as a cheap sanity check, but they correlate poorly with human judgment on free-form generation. Do not ship a chat or summarization feature gated on ROUGE alone.
 
+One classic metric is deliberately absent here: [perplexity](/glossary/perplexity) measures how well a model *intrinsically* predicts text, which is useful for comparing base models and quantization trade-offs — but it says nothing about whether your feature's output is correct, so it has no place in a task-quality eval.
+
 ## Reference-based vs reference-free
 
 Two families:
@@ -60,7 +62,7 @@ Two families:
 - **Reference-based** metrics compare the output to a gold answer you wrote (exact match, F1, BLEU/ROUGE, semantic similarity). They need labeled data but give a stable target.
 - **Reference-free** metrics judge the output against the input or context with no gold answer (faithfulness, answer relevance, most LLM-as-judge rubrics). They scale to cases where writing a single correct answer is impossible.
 
-Most production stacks mix both: reference-based for the verifiable slice, reference-free for the open slice.
+Most production stacks mix both: reference-based for the verifiable slice, reference-free for the open slice. Wiring these metrics into a repeatable test suite is its own discipline — see [Testing LLM Applications](/guides/testing/testing-llm-applications).
 
 ## Closed tasks: precision, recall, F1, exact match
 

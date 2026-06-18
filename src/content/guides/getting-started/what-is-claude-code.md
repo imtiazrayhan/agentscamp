@@ -94,7 +94,7 @@ A **subagent** is a specialist Claude can delegate to — a code reviewer, a deb
 
 ### Skills
 
-A **skill** is a `SKILL.md` file inside its own directory (`.claude/skills/<name>/SKILL.md`) that packages a reusable procedure — the steps, conventions, and sometimes scripts for a task you do repeatedly ("generate a release changelog," "scaffold a new component"). The directory name becomes the command name, so a skill is also invocable directly as `/<name>`, not only auto-loaded. Claude loads a skill on demand, so its instructions stay out of context until the task actually calls for them. See [Writing Your First Skill](/guides/getting-started/writing-your-first-skill).
+A **skill** is a `SKILL.md` file inside its own directory (`.claude/skills/<name>/SKILL.md`) that packages a reusable procedure — the steps, conventions, and sometimes scripts for a task you do repeatedly ("generate a release changelog," "scaffold a new component"). The directory name becomes the command name, so a skill is also invocable directly as `/<name>`, not only auto-loaded. Claude loads a skill on demand, so its instructions stay out of context until the task actually calls for them. See [Writing Your First Skill](/guides/skills/writing-your-first-skill).
 
 ### Slash commands
 
@@ -104,7 +104,7 @@ Skills and slash commands are the same mechanism under the hood. A `.claude/comm
 
 ### MCP servers
 
-**MCP** (Model Context Protocol) servers connect Claude Code to the world outside your repo — a database, an issue tracker, a browser, an internal API. Where the other three extensions live as files in `.claude/`, an MCP server is a running process that exposes tools and data Claude can call. See [Building an MCP Server](/guides/getting-started/building-an-mcp-server).
+**MCP** (Model Context Protocol) servers connect Claude Code to the world outside your repo — a database, an issue tracker, a browser, an internal API. Where the other three extensions live as files in `.claude/`, an MCP server is a running process that exposes tools and data Claude can call. See [Building an MCP Server](/guides/advanced/building-an-mcp-server).
 
 A quick way to keep them straight:
 

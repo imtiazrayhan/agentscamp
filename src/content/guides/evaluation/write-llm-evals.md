@@ -56,7 +56,7 @@ Collect 20–50 representative inputs and what good output looks like for each. 
 
 ## Choose the few metrics that matter
 
-Pick the two or three the feature is actually graded on, not every metric a framework offers:
+Pick the two or three the feature is actually graded on, not every metric a framework offers — [the metrics catalog](/guides/evaluation/llm-evaluation-metrics-explained) maps each one to its task type:
 
 - **Deterministic checks** — exact match, JSON-schema validity, a regex, a numeric tolerance. Cheap, fast, perfectly consistent. Use them wherever they apply.
 - **RAG metrics** — faithfulness (is the answer grounded in the retrieved context?), answer relevancy, context precision/recall. (See [RAGAS](/tools/ragas) and [How RAG Actually Works](/guides/concepts/how-rag-works).)

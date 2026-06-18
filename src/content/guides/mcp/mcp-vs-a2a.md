@@ -26,7 +26,7 @@ faq:
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "building-an-mcp-server", "deploy-remote-mcp-server", "agent-frameworks-2026", "multi-agent-orchestration", "production-tool-calling"]
 ---
 
-Two protocols keep getting compared as rivals when they standardize **different edges of the same system**. MCP is how an agent reaches its tools and data. A2A is how agents reach each other. The cleanest summary is the official one, from the A2A documentation itself: *"A2A focuses on agents partnering on tasks, whereas MCP focuses on agents using capabilities."*
+Two protocols keep getting compared as rivals when they standardize **different edges of the same system**. MCP is how an agent reaches its tools and data. [A2A](/glossary/a2a-protocol) is how agents reach each other. The cleanest summary is the official one, from the A2A documentation itself: *"A2A focuses on agents partnering on tasks, whereas MCP focuses on agents using capabilities."*
 
 ## What each protocol standardizes
 

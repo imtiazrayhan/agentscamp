@@ -5,6 +5,7 @@ url: "https://swe-agent.com"
 pricing: open-source
 category: agent
 repo: "https://github.com/SWE-agent/SWE-agent"
+related: ["openhands", "devin", "amp"]
 license: "MIT"
 os:
   - macOS

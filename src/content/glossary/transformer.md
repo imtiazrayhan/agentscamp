@@ -14,7 +14,7 @@ faq:
 
 **A Transformer is a neural-network architecture, introduced by Vaswani et al. in the 2017 paper "Attention Is All You Need," that uses self-attention to process an entire sequence in parallel — and it underpins virtually every modern large language model.**
 
-The key move was dropping recurrence. Earlier sequence models read tokens one at a time, which made training slow. The Transformer instead uses self-attention so each [token](/glossary/tokenization) can directly weigh every other token in the input at once. That parallelism is the whole point: it scales efficiently on GPUs, which is what made it practical to train models on enormous datasets.
+The key move was dropping recurrence. Earlier sequence models read tokens one at a time, which made training slow. The Transformer instead uses [self-attention](/glossary/attention-mechanism) so each [token](/glossary/tokenization) can directly weigh every other token in the input at once. That parallelism is the whole point: it scales efficiently on GPUs, which is what made it practical to train models on enormous datasets.
 
 Architecturally, a Transformer stacks repeated blocks, each combining an attention layer with a feed-forward layer. Because attention itself is order-agnostic — it has no built-in sense of sequence — the model adds positional information so it knows which token came where.
 

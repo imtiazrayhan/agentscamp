@@ -69,7 +69,7 @@ The loop is simple; the reliability is in the engineering around it:
 - **Schemas the model can't misuse.** Tool definitions are prompt surface — precise types, enums, honest required fields, and model-facing descriptions prevent most bad calls before they happen (the [tool-definition-generator](/skills/api/tool-definition-generator) skill builds these). See also [Effective Tool Use](/guides/prompting/effective-tool-use) on scoping the toolset.
 - **Bounded retries.** Retry transient failures (timeouts, rate limits) with backoff and a hard cap; don't retry non-retryable ones (bad request, auth) — that just burns budget.
 - **Idempotent side effects.** For tools that change state, use idempotency keys or pre-checks so a retry or re-run can't double-charge or duplicate.
-- **Human gates on irreversible actions.** Payments, deletions, deploys, outbound messages — gate behind approval enforced at the tool layer, not requested in the prompt ([human-in-the-loop-gate](/skills/workflow/human-in-the-loop-gate)).
+- **Human gates on irreversible actions.** Payments, deletions, deploys, outbound messages — gate behind approval enforced at the tool layer, not requested in the prompt ([human-in-the-loop-gate](/skills/workflow/human-in-the-loop-gate)) — [designing human-in-the-loop workflows](/guides/workflow/human-in-the-loop-ai-workflows) covers where those gates belong.
 - **Termination.** Always cap steps and budget so the loop can't run forever.
 - **Safe parallelism.** Run independent calls concurrently for latency, but keep dependent or state-mutating calls ordered.
 

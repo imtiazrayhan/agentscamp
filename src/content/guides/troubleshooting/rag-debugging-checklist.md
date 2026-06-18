@@ -32,7 +32,7 @@ Collect 10–20 real failing queries with the *expected* answers and, ideally, t
 
 ## Step 1: Is the answer in the corpus at all? (Ingestion)
 
-Text-search your *indexed chunks* — not the source documents — for the expected answer. Misses here are silent and common: the parser dropped the table or PDF page, the document never entered the pipeline, or **chunking severed the answer** so no single chunk contains the complete thought. Fixes: repair parsing (tables and PDFs are the usual victims — [VLM-based extraction](/guides/vision/vlm-ocr-documents) for the hostile ones), revisit [chunk boundaries and overlap](/skills/data/chunking-strategy-optimizer), verify ingestion coverage. **If the answer isn't in any chunk, stop — no downstream fix applies.**
+Text-search your *indexed chunks* — not the source documents — for the expected answer. Misses here are silent and common: the parser dropped the table or PDF page, the document never entered the pipeline, or **chunking severed the answer** so no single chunk contains the complete thought. Fixes: repair parsing (tables and PDFs are the usual victims — [VLM-based extraction](/guides/vision/vlm-ocr-documents) for the hostile ones), revisit [chunk boundaries and overlap](/skills/data/chunking-strategy-optimizer), verify ingestion coverage. Retrieving over image- and PDF-heavy corpora has its own playbook — [multimodal RAG over images & PDFs](/guides/vision/multimodal-rag-images-pdfs). **If the answer isn't in any chunk, stop — no downstream fix applies.**
 
 ## Step 2: Does retrieval find it? (Recall)
 

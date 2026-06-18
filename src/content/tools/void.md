@@ -6,6 +6,7 @@ url: "https://voideditor.com"
 pricing: "open-source"
 category: "ide"
 repo: "https://github.com/voideditor/void"
+related: ["cursor", "zed", "windsurf"]
 license: "Apache-2.0"
 os:
   - macOS

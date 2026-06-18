@@ -41,7 +41,7 @@ faq:
 related: ["best-mcp-servers-2026", "building-an-mcp-server", "deploy-remote-mcp-server", "govern-mcp-servers", "add-mcp-server", "mcp-inspector", "claude-code-troubleshooting", "claude-code-settings-permissions", "context7", "github-mcp-server"]
 ---
 
-MCP servers are how [Claude Code](/tools/claude-code) reaches beyond your filesystem — into GitHub, your database, your issue tracker, a headless browser, your docs. The protocol is open, the ecosystem is in the thousands of servers, and wiring one up is a single command. The decisions that actually matter are the **transport**, the **scope**, and **how much you trust the thing** — this guide covers all three.
+MCP servers are how [Claude Code](/tools/claude-code) reaches beyond your filesystem — into GitHub, your database, your issue tracker, a headless browser, your docs. The protocol is open, the ecosystem is in the thousands of servers, and wiring one up is a single command. The decisions that actually matter are the **transport**, the **scope**, and **how much you trust the thing** — this guide covers all three. (When a server is added but won't connect, the [MCP troubleshooting guide](/guides/troubleshooting/mcp-troubleshooting) walks the fixes.)
 
 ## One command, two transports
 

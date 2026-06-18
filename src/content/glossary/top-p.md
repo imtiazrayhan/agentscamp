@@ -14,6 +14,6 @@ faq:
 
 **Top-p (nucleus sampling) limits the model's next-token candidates to the smallest set whose cumulative probability reaches p — at p = 0.9, sampling happens only among tokens covering the top 90% of probability mass, and the unlikely tail is discarded.**
 
-Its virtue over a fixed top-k cutoff is adaptivity: when the model is confident, the nucleus may be two tokens; when many continuations are plausible, it widens automatically. That trims the failure mode of pure [temperature](/glossary/temperature) sampling — rare, incoherent tokens occasionally getting picked — while preserving variety where it's genuine.
+Its virtue over a fixed [top-k](/glossary/top-k) cutoff is adaptivity: when the model is confident, the nucleus may be two tokens; when many continuations are plausible, it widens automatically. That trims the failure mode of pure [temperature](/glossary/temperature) sampling — rare, incoherent tokens occasionally getting picked — while preserving variety where it's genuine.
 
 In practice top-p is a set-and-forget parameter (defaults around 0.9–1.0), tuned downward when outputs wander, with temperature as the primary creativity dial. The same caveat applies as everywhere in sampling-land: machine-consumed output wants minimal randomness, and [reasoning models](/glossary/reasoning-model) may constrain these parameters — read the provider's current docs rather than cargo-culting 2023 settings.

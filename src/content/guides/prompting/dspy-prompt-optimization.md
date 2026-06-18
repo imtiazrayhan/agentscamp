@@ -55,7 +55,7 @@ So you stop arguing with prompt wording and start improving the things that actu
 ## The building blocks
 
 - **Signatures** — declarative input→output specs. `summarize: document -> summary`, with optional field descriptions and types.
-- **Modules** — the strategies that turn a signature into a call: `dspy.Predict` (direct), `dspy.ChainOfThought` (reason first), `dspy.ReAct` (reason + tools). You compose them like layers in a network.
+- **Modules** — the strategies that turn a signature into a call: `dspy.Predict` (direct), `dspy.ChainOfThought` (reason first), `dspy.ReAct` (the [ReAct](/glossary/react-agent) reason-and-act loop). You compose them like layers in a network.
 - **Metrics** — a function that scores an output against the expected one. This is the objective the optimizer maximizes, so it has to mean something.
 - **Optimizers (teleprompters)** — `BootstrapFewShot` generates few-shot demonstrations from your data; `MIPROv2` jointly searches instructions and demonstrations; `GEPA` reflectively evolves instructions from feedback. They compile your program into tuned prompts.
 

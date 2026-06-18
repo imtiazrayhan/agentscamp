@@ -61,7 +61,7 @@ When calls share context, caching beats everything else. Two kinds:
 
 ### Right-sizing — stop overpaying per request
 
-Most requests don't need the frontier model. Route the easy, structured, or high-volume majority to a smaller, cheaper, faster model and reserve the strongest model for the hard slice — a **cascade** or **router**. Validate each downshift against an eval set; "cheaper" that drops accuracy isn't cheaper once you count the retries and bad outputs. See [Choosing the Right Model](/guides/getting-started/choosing-the-right-model).
+Most requests don't need the frontier model. Route the easy, structured, or high-volume majority to a smaller, cheaper, faster model and reserve the strongest model for the hard slice — a **cascade** or **[router](/glossary/model-routing)**. Validate each downshift against an eval set; "cheaper" that drops accuracy isn't cheaper once you count the retries and bad outputs. See [Choosing the Right Model](/guides/getting-started/choosing-the-right-model).
 
 ### Token trimming — pay less on every call
 
