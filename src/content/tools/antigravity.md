@@ -3,6 +3,7 @@ name: "Google Antigravity"
 title: "Google Antigravity"
 description: "Google's agentic development platform — an agent-first IDE and Manager surface where multiple agents work across editor, terminal, and browser, on Gemini 3."
 date: 2026-06-11
+updated: 2026-06-20
 url: "https://antigravity.google"
 pricing: "freemium"
 category: "ide"
@@ -17,19 +18,19 @@ sameAs:
   - "https://en.wikipedia.org/wiki/Google_Antigravity"
   - "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/"
 related: ["gemini-cli", "cursor", "windsurf", "claude-code", "cursor-vs-claude-code-vs-copilot-vs-windsurf-2026"]
-summary: "Google Antigravity is Google's agentic development platform: an agent-first IDE (a VS Code fork) plus a Manager surface that spawns and oversees multiple asynchronous agents working across editor, terminal, and browser. Launched with Gemini 3 in November 2025 and expanded at I/O 2026 with a desktop app, the Antigravity CLI, and an SDK. Free public preview; it succeeds Gemini CLI."
+summary: "Google Antigravity is Google's agentic development platform: an agent-first IDE plus a Manager surface that spawns and oversees multiple agents across editor, terminal, and browser. Launched with Gemini 3 in November 2025 and expanded at I/O 2026 (May 19) with a desktop app, the Antigravity CLI, and an SDK. Free public preview; it succeeded Gemini CLI, whose free service ended June 18, 2026."
 faq:
   - q: "Is Google Antigravity free?"
     a: "As of mid-2026 it's in public preview at no cost for individuals, with Gemini 3 Pro access at generous rate limits. Google AI paid subscriptions advertise higher Antigravity usage limits, so expect the free tier to be the entry point rather than the whole story — check antigravity.google/pricing for current terms."
   - q: "Is Antigravity replacing Gemini CLI?"
-    a: "Yes. Google announced in May 2026 that it is unifying its developer-agent efforts into Antigravity, and Gemini CLI stops serving requests for free, Google AI Pro, and Ultra users on June 18, 2026 (enterprise Gemini Code Assist licenses keep access). The Antigravity CLI is the designated migration path."
+    a: "Yes. Google announced at I/O 2026 (May 19, 2026) that it was unifying its developer-agent efforts into Antigravity, and as of June 18, 2026 Gemini CLI stopped serving requests for free, Google AI Pro, and Ultra users (enterprise Gemini Code Assist licenses and paid API keys keep access). The Antigravity CLI is the designated migration path."
   - q: "Is Antigravity open source?"
     a: "No. Unlike Gemini CLI (Apache-2.0), Antigravity is proprietary — free to use during the preview, but the IDE and CLI ship without source. Only the Python SDK is open (Apache-2.0). The closed-source CLI has drawn criticism from former Gemini CLI contributors."
 ---
 
 Google Antigravity is Google's **agentic development platform**, launched alongside Gemini 3 in November 2025. It pairs an agent-first IDE (a heavily modified VS Code fork) with a **Manager surface** — a mission-control view where you spawn, orchestrate, and observe multiple agents working asynchronously across different workspaces. Agents don't just edit code: they act **across the editor, the terminal, and a browser**, and report back with **Artifacts** — task lists, implementation plans, screenshots, and browser recordings you can verify instead of reading raw logs.
 
-At I/O 2026 (May 19), Google expanded it from an IDE into a product family — **Antigravity 2.0** added a standalone desktop app, the **Antigravity CLI** for terminal-first work, and an SDK for custom agent behaviors. It is also the designated successor to [Gemini CLI](/tools/gemini-cli), whose free-tier service ends June 18, 2026.
+At I/O 2026 (May 19, 2026), Google expanded it from an IDE into a product family — **Antigravity 2.0** added a standalone desktop app, the **Antigravity CLI** for terminal-first work, and an SDK for custom agent behaviors. It is also the designated successor to [Gemini CLI](/tools/gemini-cli): as of June 18, 2026, Gemini CLI's free, Pro, and Ultra service stopped, and those users were moved to Antigravity CLI.
 
 ## Highlights
 
