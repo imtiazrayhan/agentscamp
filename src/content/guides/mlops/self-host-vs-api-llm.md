@@ -30,7 +30,7 @@ related: ["llm-inference-engineer", "vllm", "ollama", "lm-studio", "calling-any-
 
 ## What each model gives you
 
-**Hosted API** (frontier providers, or open models via a gateway) — you call an endpoint and run nothing. You get the best models the moment they ship, zero infrastructure, instant scaling, and pay-per-token billing with no fixed cost. The trade: your data goes to a third party, you live with their rate limits and pricing, and cost scales linearly forever with usage.
+**Hosted API** (frontier providers, or open models served by inference clouds like [Groq](/tools/groq), [Together AI](/tools/together-ai), and [Fireworks AI](/tools/fireworks-ai)) — you call an endpoint and run nothing. You get the best models the moment they ship, zero infrastructure, instant scaling, and pay-per-token billing with no fixed cost. The trade: your data goes to a third party, you live with their rate limits and pricing, and cost scales linearly forever with usage.
 
 **Self-hosted** (an open-weight model served on your own or rented GPUs) — you get control, privacy, and the ability to run offline and customize the model, with **no per-token fee**. The trade: you pay for the GPUs whether or not they're busy, you operate the whole stack, and open models still trail the frontier on the hardest tasks.
 
@@ -41,7 +41,7 @@ Here's the economic heart of it. An API's cost is **variable** (per token, zero 
 - **Low or spiky volume** → the GPU sits idle much of the time, your cost-per-token is high, and the **API wins**.
 - **High, steady volume** → you keep the GPU saturated (a good serving engine like [vLLM](/tools/vllm) with continuous batching is what makes this possible), your cost-per-token drops below the API's, and **self-hosting wins**.
 
-The mistake is comparing the API's per-token price to the GPU's per-token price *at full utilization* — when real traffic is bursty and your GPUs are half-idle. Model it at your actual utilization. (Rented, spot, and autoscaled GPUs make the fixed cost partly elastic, and some providers offer reserved-throughput API pricing — so "fixed vs. variable" is really a spectrum — but the utilization logic holds.)
+The mistake is comparing the API's per-token price to the GPU's per-token price *at full utilization* — when real traffic is bursty and your GPUs are half-idle. Model it at your actual utilization. (Rented, spot, and autoscaled GPUs make the fixed cost partly elastic — managed-GPU platforms like [Baseten](/tools/baseten) and [Replicate](/tools/replicate) let you deploy your own model with autoscaling and scale-to-zero, a middle ground between an API and running raw infrastructure — and some providers offer reserved-throughput API pricing, so "fixed vs. variable" is really a spectrum, but the utilization logic holds.)
 
 ## When the decision isn't about cost at all
 

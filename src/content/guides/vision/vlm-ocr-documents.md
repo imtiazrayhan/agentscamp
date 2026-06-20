@@ -34,10 +34,10 @@ related: ["qwen3-vl", "multimodal-document-extractor", "structured-output-2026",
 
 Traditional OCR transcribes characters: fast, cheap, deterministic, and excellent on clean printed text. It struggles the moment a document has structure or variety — tables, multi-column layouts, forms, stamps, handwriting, poor scans — because it has no understanding of what it's reading.
 
-A VLM reads the image and the text together, so it grasps **layout and meaning**: it knows the number in the bottom-right cell is the total, that a block is a shipping address, that a signature box is empty. For messy, varied documents it generalizes without the per-format templates that make classic document pipelines brittle.
+A VLM reads the image and the text together, so it grasps **layout and meaning**: it knows the number in the bottom-right cell is the total, that a block is a shipping address, that a signature box is empty. For messy, varied documents it generalizes without the per-format templates that make classic document pipelines brittle. Dedicated parsers like [Docling](/tools/docling) and [Marker](/tools/marker) sit between the two — they recover layout, tables, and reading order into clean Markdown without a full VLM, and are often the cheaper first pass before you reach for a model.
 
 > [!WARNING]
-> The failure mode that matters is **faithfulness**. A VLM can occasionally mis-read or hallucinate an *exact* value — a total, a date, an account number — while producing confident, well-formatted output. Never trust a critical extracted value just because the JSON parsed. Constrain output to a schema and **verify the fields that matter** against the source (or a traditional OCR pass) before acting on them.
+> The failure mode that matters is **faithfulness**. A VLM can occasionally mis-read or hallucinate an *exact* value — a total, a date, an account number — while producing confident, well-formatted output. Never trust a critical extracted value just because the JSON parsed. Constrain output to a schema and **verify the fields that matter** against the source (or a traditional OCR pass — a high-accuracy parser like [Reducto](/tools/reducto) or a hosted service like [LlamaParse](/tools/llamaparse)) before acting on them.
 
 ## Getting reliable structured output
 

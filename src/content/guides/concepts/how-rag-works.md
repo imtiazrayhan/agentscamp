@@ -53,7 +53,7 @@ RAG is a pipeline of stages, and **a failure in an early stage cannot be repaire
 
 ### Ingestion
 
-You load the source material and clean it. The unglamorous part matters: stripping navigation, repeated headers/footers, and boilerplate prevents that text from later dominating retrieval and crowding out real answers.
+You load the source material and clean it. Messy formats are where this gets hard — PDFs, scans, and tables rarely come as clean text, so most teams reach for a parser like [LlamaParse](/tools/llamaparse), [Unstructured](/tools/unstructured), or [Docling](/tools/docling) to turn raw files into chunk-ready markdown or JSON. The unglamorous part matters: stripping navigation, repeated headers/footers, and boilerplate prevents that text from later dominating retrieval and crowding out real answers.
 
 ### Chunking
 

@@ -24,7 +24,7 @@ faq:
 related: ["llamaindex", "langchain", "dspy", "how-rag-works", "langchain-vs-llamaindex", "best-vector-database-2026"]
 ---
 
-A RAG framework is the wiring between your documents and your model: it loads and [chunks](/glossary/chunking) data, builds an index, retrieves the right context, and hands it to the LLM. You can hand-roll all of that against a [vector database](/glossary/vector-database) and a model SDK — and for a single index it's worth it. Frameworks earn their keep once you need multiple retrieval strategies, reranking, evaluation, and [agentic retrieval](/guides/concepts/agentic-rag). If you're new to the pattern, start with [how RAG works](/guides/concepts/how-rag-works).
+A RAG framework is the wiring between your documents and your model: it loads and [chunks](/glossary/chunking) data, builds an index, retrieves the right context, and hands it to the LLM. The loading step often leans on a dedicated parsing layer — tools like [Unstructured](/tools/unstructured), [Docling](/tools/docling), and [Marker](/tools/marker) turn messy PDFs, docs, and images into clean text before chunking. You can hand-roll all of that against a [vector database](/glossary/vector-database) and a model SDK — and for a single index it's worth it. Frameworks earn their keep once you need multiple retrieval strategies, reranking, evaluation, and [agentic retrieval](/guides/concepts/agentic-rag). If you're new to the pattern, start with [how RAG works](/guides/concepts/how-rag-works).
 
 ## The short answer
 
@@ -35,7 +35,7 @@ A RAG framework is the wiring between your documents and your model: it loads an
 
 ## LlamaIndex — the data framework
 
-**If retrieval quality is what makes or breaks your app, LlamaIndex is the default.** Born at the start of the RAG wave, it remains the toolkit that takes indexing and querying most seriously — pluggable data loaders, multiple index types, query engines, routers, and a deep bench of retrieval strategies beyond plain vector search. By 2026 it has grown past pure RAG into agentic document processing and agent building, but data-centric retrieval is still its center of gravity. If your bottleneck is "the model keeps missing the relevant context," this is where you start. [Tool profile →](/tools/llamaindex)
+**If retrieval quality is what makes or breaks your app, LlamaIndex is the default.** Born at the start of the RAG wave, it remains the toolkit that takes indexing and querying most seriously — pluggable data loaders, multiple index types, query engines, routers, and a deep bench of retrieval strategies beyond plain vector search. For messy source documents it pairs with [LlamaParse](/tools/llamaparse), its hosted parser that turns complex PDFs into clean, LLM-ready Markdown. By 2026 it has grown past pure RAG into agentic document processing and agent building, but data-centric retrieval is still its center of gravity. If your bottleneck is "the model keeps missing the relevant context," this is where you start. [Tool profile →](/tools/llamaindex)
 
 ## LangChain — orchestration with strong RAG support
 

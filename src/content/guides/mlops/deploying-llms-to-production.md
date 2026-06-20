@@ -61,7 +61,7 @@ This is the first fork and it shapes everything downstream.
 - **Latency / control** — you need predictable tail latency or custom batching the API won't give you.
 - **Data residency** — compliance forbids sending data to a third party.
 
-If none of those apply, self-hosting is a tax. See [self-host vs API](/guides/mlops/self-host-vs-api-llm) for the full decision and break-even analysis.
+If none of those apply, self-hosting is a tax. There is also a middle ground: managed inference providers that host open models for you so you get open-weights flexibility without running GPUs — [Together AI](/tools/together-ai) and [Fireworks AI](/tools/fireworks-ai) for fast production inference, [Groq](/tools/groq) for ultra-low-latency serving, and [Replicate](/tools/replicate) or [Baseten](/tools/baseten) to deploy your own models on autoscaling GPUs. See [self-host vs API](/guides/mlops/self-host-vs-api-llm) for the full decision and break-even analysis.
 
 ### Serving a self-hosted model (high level)
 

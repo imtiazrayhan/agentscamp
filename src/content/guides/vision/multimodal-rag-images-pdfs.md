@@ -62,7 +62,7 @@ If your corpus is born-digital prose (clean reports, docs, contracts), text extr
 
 ### Approach 1: Parse to structured text, then do normal RAG
 
-Use a layout-aware OCR engine or a [vision-language model](/glossary/vision-language-model) to convert each page into clean **markdown** — tables stay as tables, headings stay as headings, reading order is correct. Then run a standard text [RAG pipeline](/guides/concepts/how-rag-works): chunk, embed, retrieve.
+Use a layout-aware OCR engine or a [vision-language model](/glossary/vision-language-model) to convert each page into clean **markdown** — tables stay as tables, headings stay as headings, reading order is correct. Open-source converters like [Docling](/tools/docling) and [Marker](/tools/marker) handle this locally, while hosted parsers like [LlamaParse](/tools/llamaparse) and [Reducto](/tools/reducto) trade cost for higher accuracy on dense tables and figures. Then run a standard text [RAG pipeline](/guides/concepts/how-rag-works): chunk, embed, retrieve.
 
 This is the right default. It is cheaper at query time (text [embeddings](/glossary/embedding) are small and fast), debuggable (you can read exactly what got indexed), and it reuses your existing [vector database](/glossary/vector-database) and retrieval stack. The [multimodal-document-extractor skill](/skills/data/multimodal-document-extractor) automates the schema-driven version of this.
 
