@@ -8,16 +8,18 @@ import { CliError } from "./output";
 
 export type Scope = "project" | "global";
 
-/** Default install target when neither --global nor --project is passed. */
-export const DEFAULT_SCOPE: Scope = "project";
-
-export function resolveScope(flags: Flags): Scope {
+/**
+ * Resolve the install target. Explicit flags always win; otherwise the command
+ * supplies its own default — targeted `add` defaults to the project, while
+ * bulk `install` defaults to global (reusable across every project).
+ */
+export function resolveScope(flags: Flags, fallback: Scope = "project"): Scope {
   if (flags.global && flags.project) {
     throw new CliError("Pass either --global or --project, not both.");
   }
   if (flags.global) return "global";
   if (flags.project) return "project";
-  return DEFAULT_SCOPE;
+  return fallback;
 }
 
 export function installRoot(scope: Scope): string {

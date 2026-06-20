@@ -4,6 +4,7 @@ export interface Flags {
   global: boolean;
   project: boolean;
   force: boolean;
+  all: boolean;
   help: boolean;
   version: boolean;
 }
@@ -20,6 +21,8 @@ const FLAG_MAP: Record<string, keyof Flags> = {
   "--project": "project",
   "-f": "force",
   "--force": "force",
+  "-a": "all",
+  "--all": "all",
   "-h": "help",
   "--help": "help",
   "-v": "version",
@@ -31,6 +34,7 @@ export function parseArgs(argv: string[]): Parsed {
     global: false,
     project: false,
     force: false,
+    all: false,
     help: false,
     version: false,
   };

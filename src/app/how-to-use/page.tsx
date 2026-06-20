@@ -18,11 +18,11 @@ const faq = [
   },
   {
     q: "How do I install a Claude Code agent?",
-    a: "Run npx agentscamp add agents/<name> to install it into your project's .claude/agents/ directory (add -g for ~/.claude/agents/), or copy the agent's Markdown file there manually. Claude Code delegates to it automatically based on its description, or you can invoke it explicitly.",
+    a: "Run npx agentscamp add agents/<name> to install one into your project's .claude/agents/ directory (add -g for ~/.claude/agents/), or run npx agentscamp to pick from the full catalog interactively. You can also copy the agent's Markdown file there manually. Claude Code delegates to it automatically based on its description, or you can invoke it explicitly.",
   },
   {
     q: "Can I install AgentsCamp content from the command line?",
-    a: "Yes. The agentscamp npm package bundles the full catalog: npx agentscamp add <type>/<name> installs into your project's .claude directory (or ~/.claude with -g), and npx agentscamp list and search explore the catalog offline.",
+    a: "Yes. The agentscamp npm package bundles the full catalog. Run npx agentscamp to pick what to install interactively, npx agentscamp --all to install everything into ~/.claude, or npx agentscamp add <type>/<name> to install specific items into your project. npx agentscamp list and search explore the catalog offline.",
   },
   {
     q: "What is the difference between an agent, a skill, and a slash command?",
@@ -58,21 +58,27 @@ export default function Page() {
         <h2>Quick install with the CLI</h2>
         <p>
           The <code>agentscamp</code> npm package bundles the full catalog, so
-          you can install anything in one command with npx — nothing to set up:
+          you can install anything in one command with npx — nothing to set up.
+          Run it with no arguments to pick what you want, or install everything
+          at once:
         </p>
         <pre>
           <code>
-            {`npx agentscamp add agents/api-architect
+            {`npx agentscamp              # interactive picker
+npx agentscamp --all        # install the whole catalog
+npx agentscamp install agents   # all agents
 npx agentscamp add skills/dependency-audit commands/plan-feature
-npx agentscamp search "code review"
-npx agentscamp list skills`}
+npx agentscamp search "code review"`}
           </code>
         </pre>
         <p>
-          <code>add</code> writes into your project&apos;s <code>.claude/</code>{" "}
-          directory by default; pass <code>-g</code> to install to{" "}
-          <code>~/.claude/</code> for all your projects. Every agent, skill, and
-          command page on this site shows its exact <code>add</code> command.
+          Bulk installs (<code>--all</code>, <code>install</code>, or the picker)
+          default to <code>~/.claude/</code> so the items work in every project;
+          targeted <code>add</code> writes into the current project&apos;s{" "}
+          <code>.claude/</code> directory. Pass <code>-g</code> or{" "}
+          <code>--project</code> anywhere to override. Every agent, skill, and
+          command page on this site also shows its exact <code>add</code>{" "}
+          command.
         </p>
 
         <h2>Agents</h2>

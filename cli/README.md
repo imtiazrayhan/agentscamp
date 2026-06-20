@@ -6,37 +6,64 @@
 
 ## Quick start
 
+Run it with no arguments and pick what to install:
+
 ```bash
-npx agentscamp add agents/api-architect
+npx agentscamp
 ```
 
 ```
-✓ agents/api-architect → /your/project/.claude/agents/api-architect.md
-1 installed
+What do you want to install?
+❯ Everything            198 items
+  Agents only          58
+  Skills only          90
+  Commands only        50
+  Pick individual items…
+  Cancel
+```
+
+Or skip the menu and install the whole catalog in one shot:
+
+```bash
+npx agentscamp --all
+```
+
+```
+Installing 198 items into ~/.claude …
+✓ 58 agents, 90 skills, 50 commands installed
+198 installed · ~/.claude
 ```
 
 ## Commands
 
-| Command                       | What it does                                                                              |
-| ----------------------------- | ----------------------------------------------------------------------------------------- |
-| `npx agentscamp add <id...>`  | Install one or more items (`agents/x`, `skills/x`, `commands/x`, or a bare slug if unique) |
-| `npx agentscamp list [type]`  | List the whole catalog, or one type (`agents` \| `skills` \| `commands`)                   |
-| `npx agentscamp search <query>` | Search by name, title, topic, or description                                             |
-| `npx agentscamp info <id>`    | Show details and install paths for an item                                                |
+| Command                          | What it does                                                                               |
+| -------------------------------- | ------------------------------------------------------------------------------------------ |
+| `npx agentscamp`                 | Interactive picker — install everything, a whole type, or hand-pick items                  |
+| `npx agentscamp --all`           | Install the entire catalog, no prompts                                                      |
+| `npx agentscamp install [type...]` | Install whole types (`agents` \| `skills` \| `commands`), `--all`, or pick interactively  |
+| `npx agentscamp add <id...>`     | Install specific items (`agents/x`, `skills/x`, `commands/x`, or a bare slug if unique)     |
+| `npx agentscamp list [type]`     | List the whole catalog, or one type                                                        |
+| `npx agentscamp search <query>`  | Search by name, title, topic, or description                                               |
+| `npx agentscamp info <id>`       | Show details and install paths for an item                                                 |
 
 | Flag           | Effect                                                                  |
 | -------------- | ----------------------------------------------------------------------- |
-| `-g, --global` | Install to `~/.claude/` (default is `./.claude/` in the current project) |
-| `--project`    | Install to `./.claude/` explicitly                                       |
-| `-f, --force`  | Overwrite existing files (re-running `add` without it is a safe no-op)   |
+| `-a, --all`    | Install the whole catalog (with `install` or no command)                |
+| `-g, --global` | Install to `~/.claude/`, available in every project                     |
+| `--project`    | Install to `./.claude/` in the current project                          |
+| `-f, --force`  | Overwrite existing files (re-running without it is a safe no-op)        |
 
 ## Where files go
 
-| Type     | Project (default)                   | Global (`-g`)                      |
-| -------- | ----------------------------------- | ---------------------------------- |
-| Agents   | `./.claude/agents/<name>.md`        | `~/.claude/agents/<name>.md`       |
-| Skills   | `./.claude/skills/<name>/SKILL.md`  | `~/.claude/skills/<name>/SKILL.md` |
-| Commands | `./.claude/commands/<name>.md`      | `~/.claude/commands/<name>.md`     |
+Bulk installs (`install` / `--all` / the picker) default to **`~/.claude/`** so the
+items are available in every project. Targeted `add` defaults to **`./.claude/`** in
+the current project. Pass `-g` or `--project` anywhere to override.
+
+| Type     | Global (`install` default)         | Project (`add` default, `--project`) |
+| -------- | ---------------------------------- | ------------------------------------ |
+| Agents   | `~/.claude/agents/<name>.md`       | `./.claude/agents/<name>.md`         |
+| Skills   | `~/.claude/skills/<name>/SKILL.md` | `./.claude/skills/<name>/SKILL.md`   |
+| Commands | `~/.claude/commands/<name>.md`     | `./.claude/commands/<name>.md`       |
 
 These are Claude Code's standard locations — agents get delegated to automatically based on their description, skills load on demand, and commands run as `/<name>`.
 

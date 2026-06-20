@@ -3,7 +3,7 @@
 > Ready-to-use Claude Code agents, skills, and slash commands — browse at [agentscamp.com](https://agentscamp.com), install in one command.
 
 ```bash
-npx agentscamp add agents/api-architect
+npx agentscamp          # pick what to install, or --all for everything
 ```
 
 [![npm](https://img.shields.io/npm/v/agentscamp)](https://www.npmjs.com/package/agentscamp)
@@ -13,19 +13,24 @@ npx agentscamp add agents/api-architect
 The npm package bundles the full AgentsCamp catalog — 198 curated, format-validated items — and installs them straight into Claude Code's standard locations. Zero runtime dependencies, no network calls; everything works offline.
 
 ```bash
-npx agentscamp add agents/api-architect          # → ./.claude/agents/api-architect.md
-npx agentscamp add skills/dependency-audit -g    # → ~/.claude/skills/dependency-audit/SKILL.md
-npx agentscamp add commands/plan-feature         # → ./.claude/commands/plan-feature.md
+npx agentscamp                       # interactive picker: everything, a type, or hand-pick
+npx agentscamp --all                 # install the whole catalog into ~/.claude/
+npx agentscamp install agents        # install all agents
 
-npx agentscamp list skills                       # browse the catalog by type
-npx agentscamp search "code review"              # search names, titles, topics, descriptions
-npx agentscamp info agents/prompt-engineer       # details + install paths for an item
+npx agentscamp add skills/dependency-audit   # install a specific item → ./.claude/
+npx agentscamp list skills                   # browse the catalog by type
+npx agentscamp search "code review"          # search names, titles, topics, descriptions
+npx agentscamp info agents/prompt-engineer   # details + install paths for an item
 ```
 
-| Flag           | Effect                                                                   |
-| -------------- | ------------------------------------------------------------------------ |
-| `-g, --global` | Install to `~/.claude/` (default is `./.claude/` in the current project)  |
-| `-f, --force`  | Overwrite existing files (re-running `add` without it is a safe no-op)    |
+Bulk installs (`--all`, `install`, the picker) default to `~/.claude/` so items work in every project; targeted `add` defaults to `./.claude/` in the current project.
+
+| Flag           | Effect                                                          |
+| -------------- | -------------------------------------------------------------- |
+| `-a, --all`    | Install the whole catalog (with `install` or no command)        |
+| `-g, --global` | Install to `~/.claude/`, available in every project             |
+| `--project`    | Install to `./.claude/` in the current project                  |
+| `-f, --force`  | Overwrite existing files (re-running without it is a safe no-op) |
 
 Full CLI docs: [`cli/README.md`](cli/README.md) · npm: [npmjs.com/package/agentscamp](https://www.npmjs.com/package/agentscamp)
 
