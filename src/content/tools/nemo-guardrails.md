@@ -15,6 +15,7 @@ topics: ["ai-safety-security"]
 tags: ["guardrails", "safety", "llm", "open-source"]
 featured: false
 related: ["llm-guardrails-designer", "llm-guard", "defending-prompt-injection", "owasp-agentic-top-10"]
+alternativeTo: ["llm-guard", "portkey"]
 summary: "NeMo Guardrails is NVIDIA's open-source toolkit (Apache-2.0) for adding programmable guardrails to LLM apps. You define rails — input, dialog, retrieval, and output — in the Colang modeling language to detect jailbreaks and injection, keep conversations on allowed topics, filter retrieved context, and moderate or fact-check responses."
 faq:
   - q: "What is NeMo Guardrails?"

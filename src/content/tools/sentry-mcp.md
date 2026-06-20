@@ -17,6 +17,7 @@ sameAs:
   - "https://github.com/getsentry/sentry-mcp"
   - "https://www.npmjs.com/package/@sentry/mcp-server"
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "debugger", "explain-error", "find-bug", "claude-code-plugins"]
+alternativeTo: ["github-mcp-server", "postgres-mcp", "playwright-mcp"]
 summary: "Sentry MCP connects agents to production reality: 38 tools for searching issues and events, pulling stack traces and trace details, updating and annotating issues, and invoking Seer root-cause analysis. For Claude Code, Sentry ships it as a plugin that installs a sentry-mcp subagent — errors get debugged against the actual telemetry instead of your memory of it."
 faq:
   - q: "How do I add Sentry MCP to Claude Code?"

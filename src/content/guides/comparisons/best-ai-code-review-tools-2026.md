@@ -1,6 +1,6 @@
 ---
 title: "Best AI Code Review Tools in 2026"
-description: "The AI code reviewers worth running in 2026 — CodeRabbit, Greptile, and Qodo compared, plus the open-source PR-Agent and when Copilot's built-in review is enough."
+description: "The AI code reviewers worth running in 2026 — CodeRabbit, Greptile, and Qodo compared, plus open-source PR-Agent and when Copilot's review is enough."
 author: "AgentsCamp"
 date: 2026-06-11
 color: "green"

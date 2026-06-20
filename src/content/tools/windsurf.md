@@ -10,6 +10,7 @@ category: "ide"
 color: "cyan"
 topics: ["coding-languages"]
 tags: ["ide", "editor"]
+alternativeTo: ["cursor", "antigravity", "void", "zed", "github-copilot"]
 summary: "Devin Desktop (formerly Windsurf) is an agentic IDE built on a VS Code fork, rebranded by Cognition AI in June 2026. Its built-in Devin Local agent — which replaced Cascade — plans and executes multi-file edits, runs terminal commands, and pulls codebase-wide context; the rebrand made an Agent Command Center the default surface and added ACP support."
 faq:
   - q: "What is Devin Desktop (formerly Windsurf)?"

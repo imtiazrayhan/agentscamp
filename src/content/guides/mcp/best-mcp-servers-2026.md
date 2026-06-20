@@ -1,6 +1,6 @@
 ---
 title: "The Best MCP Servers in 2026"
-description: "The MCP servers actually worth connecting in 2026 — Context7, GitHub, Chrome DevTools, Playwright, Serena, Exa, Firecrawl, and the best official vendor servers, by use case."
+description: "The MCP servers actually worth connecting in 2026 — Context7, GitHub, Chrome DevTools, Playwright, Serena, Exa, Firecrawl, and official vendor servers."
 author: "AgentsCamp"
 date: 2026-06-11
 color: "green"

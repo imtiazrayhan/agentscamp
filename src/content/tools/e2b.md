@@ -1,6 +1,6 @@
 ---
 name: "E2B"
-description: "Open-source Firecracker-microVM sandboxes where AI agents safely execute untrusted code — stateful code interpreters with full Linux, pause/resume, and desktop VMs."
+description: "Open-source Firecracker-microVM sandboxes where AI agents safely run untrusted code — stateful interpreters, full Linux, pause/resume, desktop VMs."
 date: 2026-06-11
 url: "https://e2b.dev"
 pricing: "freemium"

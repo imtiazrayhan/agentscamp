@@ -13,6 +13,7 @@ topics: ["mcp", "architecture"]
 tags: ["mcp", "registry", "hosting", "platform"]
 featured: false
 related: ["govern-mcp-servers", "building-an-mcp-server", "mcp-server-engineer", "add-mcp-server", "mcp-inspector"]
+alternativeTo: ["fastmcp", "mcp-inspector", "cloudflare-mcp"]
 summary: "Smithery is a registry and hosting platform for Model Context Protocol servers. It solves discovery — a searchable catalog with provenance — and deployment: install a server into your client with one Smithery CLI command, or connect to hosted remote instances instead of running them yourself. Freemium, with a free tier for discovery."
 faq:
   - q: "What is Smithery?"

@@ -8,6 +8,7 @@ category: "sdk"
 color: "purple"
 topics: ["workflow-prompting"]
 tags: ["sdk", "anthropic"]
+alternativeTo: ["openai-agents-sdk", "langgraph", "crewai", "autogen", "pydantic-ai"]
 summary: "The Claude Agent SDK is a toolkit for building custom AI agents on the same harness that powers Claude Code. Official Python and TypeScript SDKs expose the core agent loop — reading files, running commands, calling tools, iterating on feedback — as a programmable library, with MCP support, configurable permissions, streaming, and multi-turn sessions."
 faq:
   - q: "What is the Claude Agent SDK?"

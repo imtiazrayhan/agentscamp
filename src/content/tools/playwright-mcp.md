@@ -11,6 +11,7 @@ topics: ["mcp", "review-qa"]
 tags: ["mcp", "browser", "testing", "automation"]
 featured: false
 related: ["claude-code", "test-engineer"]
+alternativeTo: ["chrome-devtools-mcp", "browser-use", "stagehand", "skyvern"]
 summary: "Playwright MCP is Microsoft's open-source MCP server that lets AI agents drive a real browser via Playwright. It acts on the accessibility tree rather than screenshots, so interactions are deterministic, token-efficient, and need no vision model — navigation, clicks, forms, tabs, and console/network inspection across Chromium, Firefox, and WebKit."
 faq:
   - q: "What is Playwright MCP?"

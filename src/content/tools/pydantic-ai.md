@@ -1,6 +1,6 @@
 ---
 name: "Pydantic AI"
-description: "The type-safe agent framework from the Pydantic team — validated structured outputs, dependency injection, durable execution, and 'that FastAPI feeling' for agents."
+description: "Type-safe agent framework from the Pydantic team: validated structured outputs, dependency injection, durable execution, 'that FastAPI feeling.'"
 date: 2026-06-11
 url: "https://ai.pydantic.dev"
 pricing: "open-source"

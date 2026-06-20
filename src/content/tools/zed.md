@@ -7,6 +7,7 @@ pricing: "open-source"
 category: "ide"
 repo: "https://github.com/zed-industries/zed"
 related: ["cursor", "void", "windsurf"]
+alternativeTo: ["cursor", "void", "windsurf", "antigravity"]
 color: "pink"
 topics: ["coding-languages"]
 tags: ["ide", "editor", "rust"]

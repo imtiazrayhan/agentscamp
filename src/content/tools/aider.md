@@ -1,6 +1,6 @@
 ---
 name: "Aider"
-description: "AI pair programming in your terminal, with strong Git integration."
+description: "Open-source terminal AI pair programmer that edits files in your Git repo and auto-commits each change, working with Claude, GPT, and other models you bring."
 date: 2026-06-03
 url: "https://aider.chat"
 pricing: "open-source"
@@ -9,6 +9,7 @@ repo: "https://github.com/Aider-AI/aider"
 color: "purple"
 topics: ["coding-languages"]
 tags: ["cli", "open-source"]
+alternativeTo: ["codex-cli", "claude-code", "gemini-cli", "cline", "continue"]
 summary: "Aider is an open-source (Apache-2.0) command-line tool for AI pair programming. Run it inside a Git repository, describe a change in plain language, and it edits files on disk and commits each step with a descriptive message. Model-agnostic: bring your own API key for Claude, GPT, and others; a repo map gives the model context in large codebases."
 faq:
   - q: "What is Aider?"

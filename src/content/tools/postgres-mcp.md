@@ -16,6 +16,7 @@ featured: false
 sameAs:
   - "https://pypi.org/project/postgres-mcp/"
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "postgres-index-strategist", "sql-optimizer", "profile-postgres-queries", "supabase-mcp", "postgres-indexing-at-scale"]
+alternativeTo: ["supabase-mcp", "pgroll", "github-mcp-server"]
 summary: "Postgres MCP Pro (MIT) is the maintained successor to the archived reference Postgres server — and goes further: alongside schema browsing and execute_sql with a restricted read-only mode, it pairs the LLM with classical optimization algorithms: explain_query with hypothetical-index simulation, workload index analysis via pg_stat_statements, and a multi-dimension analyze_db_health check."
 faq:
   - q: "What happened to the official Postgres MCP server?"

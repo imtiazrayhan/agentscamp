@@ -16,6 +16,7 @@ featured: false
 sameAs:
   - "https://www.npmjs.com/package/slack-mcp-server"
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "govern-mcp-servers", "notion-mcp", "linear-mcp", "claude-settings-auditor"]
+alternativeTo: ["notion-mcp", "linear-mcp", "github-mcp-server"]
 summary: "Anthropic's reference Slack server was archived in 2025; korotovsky/slack-mcp-server (MIT, v1.3+) is the maintained community standard. Seventeen tools: smart history fetch with 1d/7d/30d windows, message and thread search, channel listings, reactions, user-group management, and unread tracking — with message posting disabled by default and enabled per-channel via env vars."
 faq:
   - q: "What happened to the official Slack MCP server?"

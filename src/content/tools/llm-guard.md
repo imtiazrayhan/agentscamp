@@ -15,6 +15,7 @@ topics: ["ai-safety-security"]
 tags: ["guardrails", "security", "pii", "prompt-injection", "open-source"]
 featured: false
 related: ["nemo-guardrails", "llm-guardrails-designer", "prompt-pii-redactor", "defending-prompt-injection", "promptfoo"]
+alternativeTo: ["nemo-guardrails", "portkey", "promptfoo"]
 summary: "LLM Guard is an open-source (MIT) toolkit of input and output scanners for securing LLM apps. Input scanners detect prompt injection, anonymize PII, catch secrets, and ban topics; output scanners check responses for leakage, relevance, and unsafe content. Built by Protect AI, it runs self-hosted so scanned data never leaves your environment."
 faq:
   - q: "What is LLM Guard?"

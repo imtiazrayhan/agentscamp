@@ -1,6 +1,6 @@
 ---
 name: "AssemblyAI"
-description: "Speech AI platform: Universal STT models (promptable Universal-3 Pro), a flat-rate Voice Agent API, and speech understanding — summarization, sentiment, PII redaction."
+description: "Speech AI platform: promptable Universal-3 Pro STT, a flat-rate Voice Agent API, and speech understanding — summarization, sentiment, PII redaction."
 date: 2026-06-11
 url: "https://www.assemblyai.com"
 pricing: "freemium"

@@ -1,6 +1,6 @@
 ---
 title: "Claude Code Troubleshooting: Fixes for the Most Common Problems"
-description: "Practical fixes for the Claude Code issues people actually hit — install and auth failures, context-limit errors, MCP servers that won't connect, permission loops, and CI quirks."
+description: "Fixes for the Claude Code problems people actually hit — install and auth failures, context-limit errors, MCP servers that won't connect, permission loops."
 author: "AgentsCamp"
 date: 2026-06-11
 color: "green"

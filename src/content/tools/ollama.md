@@ -15,6 +15,7 @@ topics: ["mlops-ai-infra"]
 tags: ["local-llm", "cli", "inference", "open-source"]
 featured: false
 related: ["lm-studio", "self-host-vs-api-llm", "llm-inference-engineer", "vllm"]
+alternativeTo: ["lm-studio", "llama-cpp", "jan", "vllm"]
 summary: "Ollama is an open-source (MIT) tool for running open-weight LLMs locally: ollama run pulls and runs a model with no API key or account. It manages a local model library, supports Modelfile customization and GGUF imports, and exposes a REST plus OpenAI-compatible API on localhost, so apps can target a local model by changing the base URL."
 faq:
   - q: "What is Ollama?"

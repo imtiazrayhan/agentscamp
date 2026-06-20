@@ -16,6 +16,7 @@ sameAs:
   - "https://www.notion.com/blog/notions-hosted-mcp-server-an-inside-look"
   - "https://github.com/makenotion/notion-mcp-server"
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "adr-writer", "readme-generator", "linear-mcp", "govern-mcp-servers"]
+alternativeTo: ["linear-mcp", "slack-mcp", "context7", "github-mcp-server"]
 summary: "Notion's hosted MCP server (mcp.notion.com) exposes 18 tools built around Notion-flavored Markdown for token efficiency: notion-search across the workspace (and connected Slack/Drive/Jira with Notion AI), notion-fetch by URL, page and database create/update/move, comments, and user/team lookups. OAuth-only — one claude mcp add plus a browser flow, and your workspace becomes agent-readable."
 faq:
   - q: "How do I connect Notion to Claude Code?"

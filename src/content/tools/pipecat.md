@@ -14,7 +14,7 @@ color: "blue"
 topics: ["mlops-ai-infra", "multimodal-ai"]
 tags: ["voice", "real-time", "framework", "open-source", "python"]
 featured: false
-alternativeTo: []
+alternativeTo: ["livekit", "vapi"]
 summary: "Pipecat is an open-source Python framework for building real-time voice and multimodal conversational agents. It orchestrates the streaming STT → LLM → TTS loop, the audio transport (WebRTC/WebSocket), and turn-taking into composable pipelines, with integrations across dozens of speech and model providers — so you build the agent's behavior instead of the real-time plumbing."
 related: ["build-a-voice-agent", "voice-agent-engineer", "deepgram", "elevenlabs"]
 faq:

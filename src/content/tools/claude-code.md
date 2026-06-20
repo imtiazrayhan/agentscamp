@@ -9,6 +9,7 @@ color: "orange"
 topics: ["workflow-prompting"]
 tags: ["cli", "agent", "anthropic"]
 featured: true
+alternativeTo: ["codex-cli", "aider", "gemini-cli", "cursor", "amp"]
 summary: "Claude Code is Anthropic's official agentic coding tool for the terminal, IDE (VS Code, JetBrains), and web. It works as an agent rather than autocomplete: it reads your codebase, plans changes, edits files, runs commands, and iterates against test or build feedback. Extensible via MCP servers, slash commands, subagents, and hooks; requires a paid plan."
 faq:
   - q: "What is Claude Code?"

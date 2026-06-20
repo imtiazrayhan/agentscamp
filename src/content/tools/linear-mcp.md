@@ -14,6 +14,7 @@ featured: false
 sameAs:
   - "https://linear.app/changelog/2025-05-01-mcp"
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "plan-feature", "breakdown-task", "create-pr", "github-mcp-server"]
+alternativeTo: ["github-mcp-server", "notion-mcp", "slack-mcp", "sentry-mcp"]
 summary: "Linear's centrally hosted MCP server connects agents to your issue tracker: find, create, and update issues, projects, and comments. One command (claude mcp add --transport http linear-server https://mcp.linear.app/mcp), an OAuth browser flow, and your agent can turn 'fix LIN-123' into reading the actual ticket — and closing it with a comment when the PR is up."
 faq:
   - q: "How do I add the Linear MCP server to Claude Code?"

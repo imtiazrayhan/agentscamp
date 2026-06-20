@@ -1,6 +1,6 @@
 ---
 name: "n8n"
-description: "Fair-code workflow automation with native AI — a visual canvas plus code, 400+ integrations, and LangChain-based agent nodes; self-host free or cloud per-execution."
+description: "Fair-code workflow automation with native AI: a visual canvas plus code, 400+ integrations, and LangChain agent nodes; self-host free or cloud per-run."
 date: 2026-06-11
 url: "https://n8n.io"
 pricing: "freemium"

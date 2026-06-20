@@ -18,6 +18,7 @@ sameAs:
   - "https://docs.firecrawl.dev"
   - "https://www.npmjs.com/package/firecrawl-mcp"
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "exa", "data-engineer", "how-rag-works", "chunking-strategy-optimizer"]
+alternativeTo: ["exa", "jina-reader", "tavily", "browser-use"]
 summary: "Firecrawl (~131k GitHub stars) turns the messy web into agent-ready data: /scrape renders any page to clean Markdown, /crawl walks whole sites, /map discovers URLs, /search queries the web, and /extract pulls structured data with an LLM. Open-source core (AGPL-3.0) with a hosted API, and an MIT MCP server installable into Claude Code as a hosted remote or local npx server."
 faq:
   - q: "What does Firecrawl do that plain fetching doesn't?"

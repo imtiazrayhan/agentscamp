@@ -11,6 +11,7 @@ topics: ["workflow-prompting"]
 tags: ["terminal", "agent"]
 featured: false
 related: ["claude-code", "codex-cli"]
+alternativeTo: ["claude-code", "codex-cli", "gemini-cli", "opencode"]
 summary: "Warp is a modern, AI-powered terminal whose agent can plan, run, and chain commands while you approve what executes. Output is grouped into navigable blocks, workflows share vetted commands across teams, and the agent grounds itself in your indexed codebase. The client is open source (mostly AGPL-3.0), with a free tier, paid plans, and BYOK on every tier."
 faq:
   - q: "What is Warp?"

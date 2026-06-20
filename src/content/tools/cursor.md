@@ -10,6 +10,7 @@ color: "blue"
 topics: ["coding-languages"]
 tags: ["ide", "editor"]
 featured: true
+alternativeTo: ["windsurf", "github-copilot", "zed", "void", "antigravity"]
 summary: "Cursor is an AI-first code editor forked from VS Code, so extensions, themes, and keybindings carry over. It layers on tab completion, inline natural-language edits, an agent mode that reads, writes, and runs commands across files, and parallel agents across repos and worktrees. Freemium: a free Hobby tier, with Pro and Teams raising included usage."
 faq:
   - q: "What is Cursor?"

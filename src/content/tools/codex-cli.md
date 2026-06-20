@@ -11,6 +11,7 @@ topics: ["coding-languages"]
 tags: ["cli", "agent", "terminal"]
 featured: true
 related: ["claude-code", "aider", "gemini-cli"]
+alternativeTo: ["claude-code", "aider", "gemini-cli", "opencode"]
 summary: "Codex CLI is OpenAI's open-source (Apache-2.0) coding agent that runs entirely in your terminal: it reads files, edits them on disk, and runs shell commands inside an OS-level sandbox that defaults to no network and workspace-scoped writes. Sandbox modes and approval policies control what it can do and when it must ask; auth is a ChatGPT plan or API key."
 faq:
   - q: "What is Codex CLI?"

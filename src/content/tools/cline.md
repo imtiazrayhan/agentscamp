@@ -1,6 +1,6 @@
 ---
 name: "Cline"
-description: "An open-source autonomous coding agent for VS Code."
+description: "Open-source autonomous coding agent for VS Code that plans, edits files, and runs commands with diff approval, using any model you bring or a local runtime."
 date: 2026-06-03
 url: "https://cline.bot"
 pricing: "open-source"
@@ -9,6 +9,7 @@ repo: "https://github.com/cline/cline"
 color: "green"
 topics: ["coding-languages"]
 tags: ["vscode", "open-source"]
+alternativeTo: ["roo-code", "kilo-code", "continue", "cursor", "claude-code"]
 summary: "Cline is an open-source autonomous coding agent that runs as a VS Code extension, with a JetBrains plugin and terminal CLI as well. Describe a goal and it plans, edits files, and runs commands, showing every change as a diff you approve before it executes. Bring your own model: Anthropic, OpenAI, OpenRouter, Google, Bedrock, or local runtimes like Ollama."
 faq:
   - q: "What is Cline?"

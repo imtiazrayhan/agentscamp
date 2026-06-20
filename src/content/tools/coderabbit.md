@@ -10,6 +10,7 @@ topics: ["review-qa"]
 tags: ["code-review", "pr", "ci"]
 featured: false
 related: ["code-reviewer", "review-pr"]
+alternativeTo: ["greptile", "qodo", "github-copilot"]
 summary: "CodeRabbit is an AI code reviewer that installs as a bot on GitHub, GitLab, Azure DevOps, or Bitbucket and comments on every pull request automatically: a summary and walkthrough plus line-by-line suggestions flagging likely bugs, edge cases, and style issues. You reply to it in the PR thread, tune it via .coderabbit.yaml, and it learns from your feedback."
 faq:
   - q: "What is CodeRabbit?"

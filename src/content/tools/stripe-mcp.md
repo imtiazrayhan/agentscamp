@@ -18,6 +18,7 @@ sameAs:
   - "https://docs.stripe.com/agents"
   - "https://www.npmjs.com/package/@stripe/mcp"
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "backend-developer", "api-architect", "claude-code-settings-permissions"]
+alternativeTo: ["github-mcp-server", "supabase-mcp", "notion-mcp"]
 summary: "Stripe's official MCP server — hosted at mcp.stripe.com with OAuth, or local via npx @stripe/mcp — lets agents work the Stripe API: create and list customers, products, prices, and invoices, generate payment links, manage subscriptions and refunds, handle disputes, and search Stripe's documentation. Tool availability follows your key's permissions, so a restricted key is the safety mechanism."
 faq:
   - q: "How do I add the Stripe MCP server to Claude Code?"

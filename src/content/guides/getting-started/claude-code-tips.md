@@ -1,6 +1,6 @@
 ---
 title: "25 Claude Code Tips, Shortcuts, and Power Features"
-description: "The 25 highest-leverage Claude Code tips — keyboard shortcuts, bash and memory shortcuts, session commands, model tricks, and the power features most people miss."
+description: "The 25 highest-leverage Claude Code tips — keyboard shortcuts, bash and memory prefixes, session commands, model tricks, and power features most people miss."
 author: "AgentsCamp"
 date: 2026-06-11
 color: "green"

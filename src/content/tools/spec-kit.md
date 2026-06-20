@@ -1,6 +1,6 @@
 ---
 name: "Spec Kit"
-description: "GitHub's open-source toolkit for spec-driven development — the specify CLI and /speckit slash commands that walk any coding agent from constitution to implementation."
+description: "GitHub's open-source toolkit for spec-driven development — a specify CLI and /speckit slash commands that walk any coding agent from spec to implementation."
 date: 2026-06-11
 url: "https://github.com/github/spec-kit"
 pricing: "open-source"
@@ -16,6 +16,7 @@ sameAs:
   - "https://github.com/github/spec-kit"
   - "https://github.github.io/spec-kit/"
 related: ["spec-driven-development", "vibe-coding-guide", "plan-feature", "breakdown-task", "claude-code", "github-copilot"]
+alternativeTo: ["claude-code", "codex-cli", "aider", "opencode"]
 summary: "Spec Kit (GitHub, MIT, ~111k stars since its September 2025 launch) productized spec-driven development: specify init scaffolds a project, then /speckit.constitution, .specify, .plan, .tasks, and .implement walk your coding agent through the pipeline — each phase emitting a markdown artifact that feeds the next. Works with 30+ agents including Claude Code, Copilot, and Cursor."
 faq:
   - q: "What is Spec Kit?"

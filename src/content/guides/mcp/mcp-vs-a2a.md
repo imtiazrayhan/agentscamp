@@ -1,6 +1,6 @@
 ---
 title: "MCP vs A2A: AI Agent Protocols Explained"
-description: "What MCP and A2A each standardize, how Agent Cards and Tasks work, why the protocols are complementary — and who governs them now (spoiler: both are Linux Foundation)."
+description: "What MCP and A2A each standardize, how Agent Cards and Tasks work, why the two protocols are complementary, and who governs them now (both Linux Foundation)."
 author: "AgentsCamp"
 date: 2026-06-11
 color: "green"

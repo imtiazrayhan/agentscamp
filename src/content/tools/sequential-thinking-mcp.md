@@ -15,6 +15,7 @@ featured: false
 sameAs:
   - "https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking"
 related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "breakdown-task", "plan-feature", "workflow-orchestrator", "building-multi-step-workflows"]
+alternativeTo: ["context7", "serena"]
 summary: "One of the seven still-maintained official MCP reference servers, Sequential Thinking exposes a single tool — sequential_thinking — that scaffolds structured problem-solving: numbered thoughts, revisions of earlier ones, branched alternative paths, and dynamic adjustment of how many steps the problem needs. Zero config, no auth, runs locally via npx."
 faq:
   - q: "What does the Sequential Thinking server actually do?"

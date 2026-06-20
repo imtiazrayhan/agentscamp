@@ -1,6 +1,6 @@
 ---
 title: "Sandboxing AI-Generated Code: E2B vs Modal vs Daytona vs Vercel Sandbox"
-description: "Where should agent-written code run? The four sandbox platforms compared — isolation models, persistence, economics — plus the design rules that keep execution safe."
+description: "Where should agent-written code run? E2B vs Modal vs Daytona vs Vercel Sandbox compared on isolation, persistence, and cost, plus rules for safe execution."
 author: "AgentsCamp"
 date: 2026-06-11
 color: "green"

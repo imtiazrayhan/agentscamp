@@ -7,13 +7,14 @@ color: "green"
 topics: ["coding-languages", "ai-agents-systems"]
 tags: ["statistics", "ai-coding", "data", "adoption", "research"]
 featured: true
-summary: "The sourced numbers, June 2026: Google says 75% of its new code is AI-generated; 84% of developers use or plan AI tools and 51% use them daily (Stack Overflow); Claude Code passed $2.5B run-rate, Copilot 20M users; and the METR RCT found experienced devs 19% slower — adoption runs ahead of measured productivity. Every figure dated and traced to a primary source."
+summary: "The sourced numbers, June 2026: Google says 75% of new code is AI-generated; 84% of developers use or plan AI tools, 51% daily (Stack Overflow); Claude Code passed $2.5B run-rate; SpaceX announced a $60B all-stock deal to acquire Cursor (June 16, closing Q3); and the METR RCT found experienced devs 19% slower. Every figure dated and traced to a primary source."
 keyTakeaways:
   - "The code-share headline: Google reports 75% of its new code is AI-generated and engineer-approved (April 2026, up from ~25% in late 2024); Microsoft reported 20–30% a year earlier."
   - "Adoption is near-saturation: 84% of developers use or plan AI tools (Stack Overflow, 49k respondents), 90% of tech professionals use AI at work (DORA), 85% regularly (JetBrains) — the question moved from whether to how."
   - "Agents crossed the chasm in 2025–26: 31% of developers used them (SO 2025), 55% of engineers regularly (Pragmatic Engineer 2026, senior-skewed sample), with Claude Code the most-used and most-loved tool in that survey."
   - "The productivity evidence is genuinely mixed: DORA 2025 found AI adoption finally correlating with delivery throughput (but still hurting stability); the METR RCT found experienced devs 19% SLOWER while believing they were faster."
   - "Trust lags usage: 46% of developers distrust AI output accuracy (up from 31% in 2024), and debugging AI-generated code is the #1 reported frustration."
+  - "The category's biggest deal yet: on June 16, 2026 SpaceX announced a definitive agreement to acquire Cursor (Anysphere) in a $60B all-stock deal, expected to close Q3 2026."
 faq:
   - q: "What percentage of code is written by AI in 2026?"
     a: "The best-sourced datapoint: Google's CEO stated in April 2026 that 75% of the company's new code is AI-generated and approved by engineers — up from 'more than 25%' in late 2024 and 'well over 30%' in early 2025. Microsoft reported 20–30% in April 2025. Industry-wide there's no single credible figure; one external analysis cited by Anthropic put Claude Code alone at ~4% of all public GitHub commits by February 2026."
