@@ -3,7 +3,7 @@ title: "Cursor vs Claude Code vs GitHub Copilot vs Windsurf in 2026"
 description: "A practical, opinionated comparison of the four mainstream AI coding tools — form factor, agentic depth, model choice, and who each one is for."
 author: "AgentsCamp"
 date: 2026-06-03
-updated: 2026-06-11
+updated: 2026-07-01
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 tags: ["comparison", "ide", "agents", "cursor", "claude-code", "copilot", "windsurf"]
@@ -21,7 +21,7 @@ faq:
   - q: "Is GitHub Copilot still worth it when agents exist?"
     a: "Yes, if you want AI without changing tools. Copilot now has an agent mode in addition to its inline completions, and it runs inside VS Code, Visual Studio, JetBrains, and Neovim. It's the lowest-friction option for teams already standardized on those editors."
   - q: "Is Windsurf the same as Devin Desktop?"
-    a: "Yes. Cognition AI acquired Windsurf in 2025 and rebranded the standalone editor as Devin Desktop in June 2026; the JetBrains plugin keeps the Windsurf name. In the same update, the built-in Cascade agent was replaced by Devin Local (legacy Cascade works through July 1, 2026), and an Agent Command Center became the default surface with the full IDE behind it."
+    a: "Yes. Cognition AI acquired Windsurf in 2025 and rebranded the standalone editor as Devin Desktop in June 2026; the JetBrains plugin keeps the Windsurf name. In the same update, the built-in Cascade agent was replaced by Devin Local (legacy Cascade retired July 1, 2026), and an Agent Command Center became the default surface with the full IDE behind it."
   - q: "Which one is best for large, multi-file changes?"
     a: "Claude Code and the agent modes in Cursor and Windsurf are all built for multi-file work. Claude Code tends to go furthest autonomously in a repo (running commands, iterating against test output, opening PRs), while Cursor and Windsurf keep that work inside a review-as-you-go editor surface."
 related: ["cursor", "claude-code", "github-copilot", "windsurf", "what-is-claude-code", "choosing-the-right-model", "installing-claude-code"]
@@ -46,7 +46,7 @@ If you already love your editor and just want AI in it, that points to Copilot o
 All four can take a natural-language task and edit across files. They differ in how far they'll run on their own:
 
 - **Claude Code** is the most agentic of the four. It plans, edits, runs commands, reads the output, self-corrects against failing tests or builds, and can stage commits and open pull requests on request. It's designed to be handed a task and trusted to iterate.
-- **Cursor's agents** and **Devin Desktop's Devin Local** (formerly Cascade) run multi-step edits with command execution, but keep you in an editor where you accept or reject each diff as it goes — autonomy with a tight review loop. Cursor 3.0 (April 2026) pushed this furthest among the editors: an agent-first interface that runs many agents in parallel — locally, in git worktrees, or in the cloud.
+- **Cursor's agents** and **Devin Desktop's Devin Local** (formerly Cascade) run multi-step edits with command execution, but keep you in an editor where you accept or reject each diff as it goes — autonomy with a tight review loop. Cursor 3.0 (April 2026, now on the 3.9 line) pushed this furthest among the editors: an agent-first interface that runs many agents in parallel — locally, in git worktrees, or in the cloud.
 - **Copilot's agent mode** delegates multi-file tasks and iterates, layered on top of its strong inline completion. Its inner loop (accept a completion as you type) remains its most-used feature.
 
 > [!NOTE]

@@ -2,12 +2,12 @@
 title: "LLM Context Windows Compared (2026)"
 description: "Context windows and max output tokens across Claude, GPT, Gemini, DeepSeek, and Grok — the million-token era, what it costs, and what fits in practice."
 author: "AgentsCamp"
-date: 2026-06-12
+date: 2026-07-01
 color: "green"
 topics: ["llm-app-dev"]
 tags: ["context-window", "models", "comparison", "data"]
 featured: false
-summary: "The frontier standardized on a million tokens in 2026: Claude Fable 5, Opus 4.8, and Sonnet 4.6 (1M, at standard pricing), GPT-5.5 and 5.4 (1M), Gemini's lineup (~1M), DeepSeek V4 and Grok 4.3 (1M). Budget tiers trail: Haiku 4.5 at 200K, GPT-5.4 mini/nano at 400K. Max outputs range 64K–384K. Capacity is now rarely the constraint — cost, latency, and attention quality are."
+summary: "The frontier standardized on a million tokens in 2026: Claude Fable 5, Opus 4.8, and Sonnet 5 (1M, at standard pricing), GPT-5.5 and 5.4 (1M), Gemini's lineup (~1M), DeepSeek V4 and Grok 4.3 (1M). Budget tiers trail: Haiku 4.5 at 200K, GPT-5.4 mini/nano at 400K. Max outputs range 64K–384K. Capacity is now rarely the constraint — cost, latency, and attention quality are."
 keyTakeaways:
   - "A million tokens is the 2026 frontier baseline — roughly 750k words, several large codebases — across Anthropic, OpenAI, Google, DeepSeek, and xAI flagships."
   - "Pricing models differ: Anthropic includes 1M at flat per-token rates; Google roughly doubles Pro per-token pricing beyond 200K. Same capacity, different bill shapes."
@@ -16,7 +16,7 @@ keyTakeaways:
   - "Fitting ≠ using well: cost scales with tokens sent, latency with prefill, and mid-window attention measurably lags — retrieval and context discipline outlive every window increase."
 faq:
   - q: "Which LLM has the biggest context window in 2026?"
-    a: "The frontier clusters at 1M tokens — Claude's Fable 5/Opus 4.8/Sonnet 4.6, GPT-5.5/5.4, Gemini's current lineup, DeepSeek V4, and Grok 4.3 all claim it. Differentiation moved from headline size to quality-at-depth (how well the model uses token 800,000) and to pricing shape across the window."
+    a: "The frontier clusters at 1M tokens — Claude's Fable 5/Opus 4.8/Sonnet 5, GPT-5.5/5.4, Gemini's current lineup, DeepSeek V4, and Grok 4.3 all claim it. Differentiation moved from headline size to quality-at-depth (how well the model uses token 800,000) and to pricing shape across the window."
   - q: "How much fits in a million tokens?"
     a: "About 750,000 English words: several long novels, a year of meeting notes, or a substantial codebase (rule of thumb: ~1M tokens covers roughly 100k–200k lines of code with comments). What typically doesn't fit: enterprise document corpora and monorepos — which is why retrieval still exists."
   - q: "Does a bigger window replace RAG?"
@@ -24,7 +24,7 @@ faq:
 related: ["context-window", "llm-api-pricing-2026", "rag-vs-long-context", "context-engineering", "prompt-caching", "claude-code-memory-context"]
 ---
 
-Specs verified against vendor docs on **June 12, 2026** (same methodology as the [pricing table](/guides/advanced/llm-api-pricing-2026): vendor pages only, unverifiable cells omitted). The headline: **the million-token window became the frontier baseline** — and stopped being the interesting number.
+Specs verified against vendor docs on **July 1, 2026** (same methodology as the [pricing table](/guides/advanced/llm-api-pricing-2026): vendor pages only, unverifiable cells omitted). The headline: **the million-token window became the frontier baseline** — and stopped being the interesting number.
 
 ## The table
 
@@ -32,7 +32,7 @@ Specs verified against vendor docs on **June 12, 2026** (same methodology as the
 | --- | --- | --- | --- |
 | Claude Fable 5 | 1M | 128K | Standard rates across full window |
 | Claude Opus 4.8 | 1M | 128K | Standard rates across full window |
-| Claude Sonnet 4.6 | 1M | 64K | Standard rates across full window |
+| Claude Sonnet 5 | 1M | 128K | Standard rates across full window |
 | Claude Haiku 4.5 | 200K | 64K | — |
 | GPT-5.5 | 1M | 128K | Standard |
 | GPT-5.5-pro | ~1.05M | 128K | Standard (premium model) |
