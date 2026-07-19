@@ -43,7 +43,7 @@ faq:
     a: "That is a body problem, not a description problem. The instructions are unclear or missing a boundary. Add concrete numbered steps, point to a canonical example so the model copies the right shape, and state explicitly where the work ends. Verify by comparing the output against a run with the skill disabled in a fresh session."
   - q: "Do I have to restart Claude Code to pick up skill edits while debugging?"
     a: "Usually no. Claude Code watches skill directories, so adding, editing, or removing a SKILL.md under a watched skills folder takes effect within the current session. The one case that needs a restart is creating a top-level skills directory that did not exist when the session started, so it can begin being watched. Note that an already-invoked skill's content stays in context as written — re-invoke it to pick up edits mid-task."
-related: ["writing-your-first-skill", "claude-code-skills-best-practices", "skills-vs-agents-vs-commands", "packaging-and-sharing-skills"]
+related: ["what-are-claude-skills", "skill-auditor", "writing-your-first-skill", "claude-code-skills-best-practices", "skills-vs-agents-vs-commands", "packaging-and-sharing-skills"]
 ---
 
 A skill that fires is not a skill that works. Seeing Claude pick up your skill tells you the routing matched — it says nothing about whether the skill did what you meant. So test two things, separately: **does it trigger on the prompts it should (and stay quiet on the ones it shouldn't), and is the output correct when it does.** Most failures collapse into a handful of causes, and almost all of them live in one of two places — the `description` (which controls firing) or the body (which controls behavior).

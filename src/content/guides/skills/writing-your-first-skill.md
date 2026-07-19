@@ -6,7 +6,7 @@ date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
-related: ["writing-a-custom-agent", "skills-vs-agents-vs-commands", "test-scaffolder", "claude-code-plugins"]
+related: ["what-are-claude-skills", "skill-md-reference", "writing-a-custom-agent", "skills-vs-agents-vs-commands", "test-scaffolder", "claude-code-plugins"]
 summary: "A skill is a folder with a SKILL.md — frontmatter whose description decides when it fires, plus a runbook body. Progressive disclosure makes skills cheap: only name and description load at session start, the body loads when the task matches, and bundled files only when reached for. One job per skill, a trigger-first description, and deterministic work pushed into bundled scripts."
 howtoSteps:
   - name: "Pick one repeatable procedure"

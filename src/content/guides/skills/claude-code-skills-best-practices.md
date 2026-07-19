@@ -26,7 +26,7 @@ faq:
     a: "When the capability is a live connection to an external system — a database, a SaaS API, a ticketing tool — that needs real-time data, auth, and structured tool calls. Skills are know-how loaded into context; MCP servers are integrations that expose tools and resources. If you find yourself describing API endpoints and credentials in a SKILL.md, you wanted a server."
   - q: "Does allowed-tools sandbox a skill?"
     a: "No. allowed-tools pre-approves listed tools so Claude can use them without a permission prompt while the skill is active — it removes friction, it doesn't restrict. Every other tool stays callable under your normal permission settings. To actually keep a tool out of a skill's reach, use disallowed-tools, and for a hard block across everything, add deny rules in your permission settings."
-related: ["writing-your-first-skill", "skills-vs-agents-vs-commands", "writing-a-custom-agent", "claude-md-best-practices", "skills-vs-mcp-servers", "testing-and-debugging-skills"]
+related: ["what-are-claude-skills", "claude-skills-examples", "writing-your-first-skill", "skills-vs-agents-vs-commands", "writing-a-custom-agent", "claude-md-best-practices", "skills-vs-mcp-servers", "testing-and-debugging-skills"]
 ---
 
 You can write a skill that works in five minutes. Writing one that fires when it should, stays quiet when it shouldn't, does exactly one thing, and still works six months from now is a different discipline. The mechanics are easy; the reliability is the craft. This guide is about the craft — the handful of patterns that separate a skill you trust from one you keep re-explaining or quietly disabling.

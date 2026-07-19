@@ -39,7 +39,7 @@ faq:
     a: "Almost always a portability problem. Installs copy the plugin into a cache (~/.claude/plugins/cache), so any path that points outside the plugin directory — an absolute path, a ~/ reference, or ../shared-utils — won't exist on the other machine. Reference bundled files with ${CLAUDE_SKILL_DIR} or ${CLAUDE_PLUGIN_ROOT} and keep everything inside the plugin folder."
   - q: "Is it safe to install a team or third-party skill?"
     a: "Treat it like running someone else's code, because it is. Skills can declare allowed-tools that pre-approve tool use, and plugins can ship hooks and MCP servers that execute on your machine. Review project skills before accepting a repo's trust dialog, pin third-party plugins to a specific commit SHA, and let admins restrict which marketplaces the org can add via managed settings."
-related: ["writing-your-first-skill", "claude-code-skills-best-practices", "skills-vs-agents-vs-commands", "claude-md-best-practices", "testing-and-debugging-skills"]
+related: ["what-are-claude-skills", "how-to-install-claude-skills", "writing-your-first-skill", "claude-code-skills-best-practices", "skills-vs-agents-vs-commands", "claude-md-best-practices", "testing-and-debugging-skills"]
 ---
 
 You wrote a skill, it works great, and now someone else wants it. The problem: a skill in your `~/.claude/skills/` folder lives on exactly one laptop — yours. Sharing it isn't a copy-paste job. Claude Code gives you three real distribution scopes, and picking the right one is the whole game: **commit it to a repo for one project, or bundle it into a plugin and publish that plugin through a marketplace for the whole team.**

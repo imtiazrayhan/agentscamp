@@ -5,7 +5,7 @@ author: "AgentsCamp"
 date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
-related: ["writing-a-custom-agent", "writing-your-first-skill", "getting-started-with-agents", "claude-code-plugins"]
+related: ["what-are-claude-skills", "writing-a-custom-agent", "writing-your-first-skill", "getting-started-with-agents", "claude-code-plugins"]
 featured: false
 summary: "Two mechanisms, three patterns: a subagent is a delegate Claude routes to (own context window, own tools); a skill is on-demand knowledge loaded into the main context when the task matches; a slash command is just a skill with disable-model-invocation: true, so you pull the trigger. Decide on two axes — who invokes it, and whether the work needs an isolated context."
 keyTakeaways:
