@@ -1,0 +1,59 @@
+# Meta description fix: Bing "short description" flags (2026-07-31) — SHIPPED (33ce91d)
+
+Bing Site Scan CSV (12 URLs) was a sample; real scope = every meta description <100 chars.
+Threshold inferred at 100 (all flagged pages 67-98; keep new copy 110-160).
+
+## Done
+- 4 template strings in src/lib/seo/collections.ts enriched (category, tool-category,
+  pricing, alternatives) → all 202 listing pages now 113-158 chars (verified by executing
+  the collection fns). Alternatives template shortened so longest tool title (Void, 48ch) fits ≤160.
+- 46 detail pages got bespoke `seoDescription` frontmatter (24 commands, 18 tools, 4 guides);
+  inserted after the description line, all 100-160 length-gated by script. `description`
+  untouched — it IS the installable artifact description; buildArtifact allowlist confirms
+  seoDescription never ships in artifacts/CLI.
+- npm run validate green (561 items); full npm run build green (785 pages); built HTML spot-checked
+  for 7 of the originally flagged pages.
+
+## Next
+- Commit + push (deploy), then mirror:build + push mirror, then request Bing re-scan /
+  IndexNow resubmit of the 12 flagged URLs.
+- If Bing's next scan still flags stragglers sitting at exactly 100-110 chars, nudge those.
+
+---
+
+# Content wave: "claude skills" keyword (2026-07-18) — SHIPPED (waves 1+2)
+
+## Wave 2 (same day) — SHIPPED, commit "SEO: 'claude skills' cluster wave 2…" (ee1fd29)
+6 long-tail guides: troubleshooting/claude-skills-not-working, skills/claude-document-skills,
+skills/claude-skills-use-cases, ai-safety/are-claude-skills-safe,
+skills/agent-skills-open-standard, comparisons/claude-skills-vs-custom-gpts.
+Hub at 561; validated first pass, build green, pushed, mirror synced (1793588).
+No CLI republish needed (guides aren't bundled).
+Web-verified facts used: Workspace Agents = GPTs successor (Apr 22 2026, org plans; NO published
+individual-GPT sunset; do NOT cite the "Aug 26" date or pricing); Codex supports Agent Skills
+standard (first-party docs); agentskills.io showcase = 44 clients ("40+" citable); verified load
+paths Copilot/VS Code/Cursor/Gemini CLI/Codex; .agents/skills = neutral dir; claude.ai skills on
+ALL plans incl. Free; anthropics/skills now 17 skills incl. skill-creator; doc skills in Claude
+Code (beta) + M365 add-ins; mobile support UNVERIFIED (avoided the claim).
+
+## Done
+- 6 new guides in src/content/guides/skills/: what-are-claude-skills (pillar, featured),
+  skill-md-reference, how-to-install-claude-skills, claude-skills-on-claude-ai-and-api,
+  claude-skills-examples, best-claude-skills-2026
+- New skill: src/content/skills/workflow/skill-auditor.md (skipped skill-creator — create-skill command exists)
+- New glossary: src/content/glossary/agent-skills.md
+- Interlinks: pillar added to related[] of all 6 pre-existing skills guides
+- Facts verified against official docs (claude-code-guide agent + claude-api reference):
+  no `version` field in spec; full field set incl. when_to_use/paths/context: fork;
+  agentskills.io open standard (Dec 2025); API betas + /v1/skills; surfaces don't sync
+- validate + full build green (555 items); search index rebuilt
+- Committed ("SEO: 'claude skills' cluster…") + pushed master → deploy
+- Mirror rebuilt (mirror:build) + committed + pushed (agentscamp-library main)
+- Local-only scripts/audit-links.ts: fixed tsc error (item.body possibly undefined) that broke next build
+
+## Blocked (owner action)
+- (none — CLI 0.7.2 published to npm 2026-07-31; version bump committed as 1d2149b)
+
+## Next session
+- Watch Search Console for the cluster; consider a follow-up "claude skills not working" troubleshooting
+  page if impressions warrant (testing-and-debugging-skills partially covers it).
