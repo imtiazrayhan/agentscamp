@@ -1,5 +1,6 @@
 ---
 description: "Diagnose and fix a failing test by finding the real root cause."
+seoDescription: "/fix-failing-test diagnoses a failing test, decides whether the test or the code is wrong, and applies the correct fix — a Claude Code slash command."
 date: 2026-06-03
 argument-hint: "[test name or path]"
 allowed-tools: "Read, Grep, Glob, Edit, Bash"

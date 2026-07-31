@@ -1,5 +1,6 @@
 ---
 description: "Explore the codebase and write a decision-oriented design doc / RFC for a feature or system change."
+seoDescription: "/write-design-doc explores the codebase and writes a decision-oriented design doc or RFC — context, options, trade-offs — as a Claude Code slash command."
 date: 2026-06-17
 argument-hint: "<feature or system to design>"
 allowed-tools: "Read, Grep, Glob"

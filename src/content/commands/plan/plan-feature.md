@@ -1,5 +1,6 @@
 ---
 description: "Explore the codebase and produce an implementation plan for a feature."
+seoDescription: "/plan-feature explores the codebase and produces a step-by-step implementation plan for a feature — a Claude Code slash command for planning before building."
 date: 2026-06-03
 argument-hint: "<feature description>"
 allowed-tools: "Read, Grep, Glob"

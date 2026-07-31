@@ -1,6 +1,7 @@
 ---
 title: "Effective Tool Use: Scoping an Agent's Toolset"
 description: "How to scope tools and permissions so an agent reaches for the right one and can't do damage."
+seoDescription: "How to scope an AI coding agent's tools and permissions so it reaches for the right tool and can't do damage — allowlists, scoping rules, and safe defaults."
 author: "AgentsCamp"
 date: 2026-06-03
 color: "green"

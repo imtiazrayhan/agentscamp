@@ -1,5 +1,6 @@
 ---
 description: "Decompose a task into an ordered checklist of small, verifiable steps."
+seoDescription: "/breakdown-task decomposes a task into an ordered checklist of small, verifiable steps — a Claude Code slash command for planning before coding."
 date: 2026-06-03
 argument-hint: "<task>"
 allowed-tools: "Read, Grep, Glob"

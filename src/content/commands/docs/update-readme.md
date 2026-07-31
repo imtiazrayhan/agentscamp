@@ -1,5 +1,6 @@
 ---
 description: "Update the README to reflect the current scripts, structure, and features of the repo."
+seoDescription: "/update-readme audits your README against the repo's actual scripts, structure, and features, then updates the stale parts — a Claude Code slash command."
 date: 2026-06-03
 argument-hint: "[section or focus]"
 allowed-tools: "Read, Grep, Glob, Bash, Edit, Write"

@@ -1,5 +1,6 @@
 ---
 description: "Investigate a reported symptom, form hypotheses, and locate the root cause."
+seoDescription: "/find-bug investigates a reported symptom, forms hypotheses, and locates the root cause before any fix — a Claude Code slash command for debugging."
 date: 2026-06-03
 argument-hint: "[symptom]"
 title: "Find Bug"

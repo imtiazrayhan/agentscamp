@@ -2,6 +2,7 @@
 name: "Qdrant"
 title: "Qdrant"
 description: "An open-source vector database written in Rust, built for low-latency similarity search at scale."
+seoDescription: "Qdrant is an open-source vector database written in Rust, built for low-latency similarity search at scale — self-hosted or managed cloud."
 url: "https://qdrant.tech"
 date: 2026-06-03
 pricing: "open-source"

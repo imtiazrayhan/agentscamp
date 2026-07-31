@@ -1,6 +1,7 @@
 ---
 name: "Lovable"
 description: "An AI app builder that turns natural-language prompts into shippable full-stack web apps."
+seoDescription: "Lovable is an AI app builder that turns natural-language prompts into shippable full-stack web apps — features, pricing, and closest alternatives."
 date: 2026-06-03
 url: "https://lovable.dev"
 pricing: "freemium"

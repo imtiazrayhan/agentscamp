@@ -1,5 +1,6 @@
 ---
 description: "Drive git bisect to find the exact commit that introduced a regression."
+seoDescription: "/git-bisect drives git bisect to find the exact commit that introduced a regression, testing and marking each step — a Claude Code slash command."
 date: 2026-06-17
 argument-hint: "<bug description; optional good and bad refs>"
 allowed-tools: "Bash, Read"

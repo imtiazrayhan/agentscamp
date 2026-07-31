@@ -1,6 +1,7 @@
 ---
 name: "Continue"
 description: "An open-source IDE extension for building custom AI coding assistants."
+seoDescription: "Continue is an open-source IDE extension for building custom AI coding assistants — bring your own models, rules, and context providers."
 date: 2026-06-03
 url: "https://continue.dev"
 pricing: "open-source"

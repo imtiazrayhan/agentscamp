@@ -2,6 +2,7 @@
 name: "Langfuse"
 title: "Langfuse"
 description: "An open-source LLM engineering platform for tracing, evals, prompt management, and metrics."
+seoDescription: "Langfuse is an open-source LLM engineering platform for tracing, evals, prompt management, and metrics — self-hosted or cloud. Pricing and alternatives."
 url: "https://langfuse.com"
 date: 2026-06-03
 pricing: "open-source"

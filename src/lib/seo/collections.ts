@@ -46,7 +46,7 @@ export function categoryCollection(
   const title = `${label} ${def.label}`;
   const description =
     CATEGORY_OVERRIDES[`${type}/${category}`] ??
-    `A curated collection of ${items.length} ${label.toLowerCase()} ${def.label.toLowerCase()} for building with AI coding agents.`;
+    `Explore ${items.length} curated ${label.toLowerCase()} ${def.label.toLowerCase()} for building with AI coding agents — what each one does, when to use it, and how to add it to your workflow.`;
   return {
     title,
     description,
@@ -89,7 +89,7 @@ export function toolCategoryCollection(category: string): Collection | null {
   const label = titleCaseLabel(category);
   return {
     title: `${label} Tools`,
-    description: `AI coding tools in the ${label.toLowerCase()} category — ${items.length} curated for building with AI coding agents.`,
+    description: `${items.length} curated ${label.toLowerCase()} tools for AI coding — compare what each one does, how it's priced, and where it fits in an AI-assisted development stack.`,
     items,
     crumbs: [{ label: "Home", href: "/" }, toolsCrumb, { label }],
     noindex: items.length < MIN_INDEXABLE,
@@ -102,7 +102,7 @@ export function toolPricingCollection(pricing: string): Collection | null {
   const label = titleCaseLabel(pricing);
   return {
     title: `${label} AI Coding Tools`,
-    description: `${label} AI coding tools, editors, agents, and MCP servers — ${items.length} curated.`,
+    description: `${label} AI coding tools — ${items.length} curated editors, agents, CLIs, and MCP servers with notes on what each does best and how it fits your development stack.`,
     items,
     crumbs: [{ label: "Home", href: "/" }, toolsCrumb, { label }],
     noindex: items.length < MIN_INDEXABLE,
@@ -128,7 +128,7 @@ export function toolAlternativesCollection(slug: string): Collection | null {
   }
   return {
     title: `${tool.title} Alternatives`,
-    description: `${alts.length} alternatives to ${tool.title} — comparable AI coding tools for building with AI agents.`,
+    description: `${alts.length} alternatives to ${tool.title} — free and paid AI coding tools covering similar jobs, with pricing and standout strengths.`,
     items: alts,
     crumbs: [
       { label: "Home", href: "/" },

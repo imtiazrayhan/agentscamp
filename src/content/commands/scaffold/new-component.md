@@ -1,5 +1,6 @@
 ---
 description: "Scaffold a new UI component matching the project conventions."
+seoDescription: "/new-component scaffolds a new UI component that matches your project's conventions — naming, styling, tests, exports — as a Claude Code slash command."
 date: 2026-06-03
 argument-hint: "<ComponentName> [props]"
 allowed-tools: "Read, Grep, Glob, Write, Edit"

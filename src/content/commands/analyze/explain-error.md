@@ -1,5 +1,6 @@
 ---
 description: "Diagnose an error message or stack trace and propose a fix."
+seoDescription: "/explain-error is a Claude Code slash command that reads an error message or stack trace, finds the real root cause in your code, and proposes a concrete fix."
 date: 2026-06-03
 argument-hint: "<error message or stack trace>"
 allowed-tools: "Read, Grep, Glob, Bash"

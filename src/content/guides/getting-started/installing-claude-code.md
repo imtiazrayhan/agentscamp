@@ -1,6 +1,7 @@
 ---
 title: "Installing Claude Code"
 description: "Install Claude Code, authenticate, start a session in a real project, and add a minimal CLAUDE.md."
+seoDescription: "How to install Claude Code, authenticate, and start your first session in a real project — plus the minimal CLAUDE.md that makes it productive from day one."
 author: "AgentsCamp"
 date: 2026-06-03
 color: "green"

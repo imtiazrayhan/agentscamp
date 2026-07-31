@@ -1,5 +1,6 @@
 ---
 description: "Fetch and rebase the current branch onto its base, resolving conflicts and verifying the build."
+seoDescription: "/sync-branch fetches and rebases the current branch onto its base, resolves conflicts, and verifies the build afterward — a Claude Code slash command."
 date: 2026-06-03
 argument-hint: "[base branch]"
 allowed-tools: "Bash, Read, Edit"

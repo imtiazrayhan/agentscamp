@@ -2,6 +2,7 @@
 name: "Voyage AI"
 title: "Voyage AI"
 description: "Embedding and reranking models tuned for retrieval, now part of MongoDB."
+seoDescription: "Voyage AI builds embedding and reranking models tuned for retrieval quality, now part of MongoDB — model lineup, pricing, and alternatives."
 url: "https://www.voyageai.com"
 date: 2026-06-03
 pricing: "freemium"

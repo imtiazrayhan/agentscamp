@@ -1,5 +1,6 @@
 ---
 description: "Extract a code region into a well-named function and update the call site."
+seoDescription: "/extract-function pulls a code region into a well-named function and updates the call site without changing behavior — a Claude Code slash command."
 date: 2026-06-03
 argument-hint: "<file:lines or description>"
 allowed-tools: "Read, Grep, Glob, Edit"

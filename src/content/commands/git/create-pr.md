@@ -1,5 +1,6 @@
 ---
 description: "Push the current branch and open a GitHub pull request with a generated title and body."
+seoDescription: "/create-pr pushes the current branch and opens a GitHub pull request with a generated title and body — a Claude Code slash command for faster reviews."
 date: 2026-06-03
 argument-hint: "[base branch or notes]"
 allowed-tools: "Bash"

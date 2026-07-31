@@ -1,5 +1,6 @@
 ---
 description: "Trace how a value, field, or variable flows through the codebase from source to sink."
+seoDescription: "/trace-data-flow follows a value, field, or variable through the codebase from source to sink — a Claude Code slash command for understanding data movement."
 date: 2026-06-17
 argument-hint: "<variable, field, or value to trace>"
 allowed-tools: "Read, Grep, Glob"

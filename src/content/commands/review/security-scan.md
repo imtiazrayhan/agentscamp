@@ -1,5 +1,6 @@
 ---
 description: "Scan the current diff or given paths for security vulnerabilities."
+seoDescription: "/security-scan checks the current diff or given paths for security vulnerabilities — injection, secrets, unsafe patterns — as a Claude Code slash command."
 date: 2026-06-03
 argument-hint: "[paths]"
 allowed-tools: "Read, Grep, Glob, Bash"

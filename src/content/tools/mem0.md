@@ -2,6 +2,7 @@
 name: "Mem0"
 title: "Mem0"
 description: "A memory layer for AI agents and apps — persistent, personalized long-term memory across sessions."
+seoDescription: "Mem0 is a memory layer for AI agents and apps — persistent, personalized long-term memory that carries across sessions. Features, pricing, alternatives."
 url: "https://mem0.ai"
 date: 2026-06-03
 pricing: "open-source"

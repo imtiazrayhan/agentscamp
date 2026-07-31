@@ -1,5 +1,6 @@
 ---
 description: "Generate tests covering the happy path and edge cases for the given target."
+seoDescription: "/write-tests generates tests covering the happy path and edge cases for a given target, matching your test framework — a Claude Code slash command."
 date: 2026-06-03
 argument-hint: "[file or function]"
 title: "Write Tests"

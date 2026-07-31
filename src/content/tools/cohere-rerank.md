@@ -2,6 +2,7 @@
 name: "Cohere Rerank"
 title: "Cohere Rerank"
 description: "A hosted reranking API that reorders retrieved passages by true relevance to a query."
+seoDescription: "Cohere Rerank is a hosted reranking API that reorders retrieved passages by true relevance to a query — a drop-in precision boost for RAG and search."
 url: "https://cohere.com/rerank"
 date: 2026-06-03
 pricing: "freemium"

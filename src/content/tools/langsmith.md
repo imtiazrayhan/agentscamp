@@ -2,6 +2,7 @@
 name: "LangSmith"
 title: "LangSmith"
 description: "LangChain's platform for tracing, evaluating, and monitoring LLM apps — framework-agnostic."
+seoDescription: "LangSmith is LangChain's platform for tracing, evaluating, and monitoring LLM apps — framework-agnostic, with datasets, evals, and dashboards."
 url: "https://www.langchain.com/langsmith"
 date: 2026-06-03
 pricing: "freemium"

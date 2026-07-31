@@ -1,6 +1,7 @@
 ---
 name: "Claude Code"
 description: "Anthropic’s official agentic coding tool that runs in the terminal, IDE, and web."
+seoDescription: "Claude Code is Anthropic's official agentic coding tool for the terminal, IDE, and web — what it does, pricing, and how it compares to alternatives."
 date: 2026-06-03
 url: "https://claude.com/product/claude-code"
 pricing: "paid"

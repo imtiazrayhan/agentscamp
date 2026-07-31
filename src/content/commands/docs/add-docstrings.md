@@ -1,5 +1,6 @@
 ---
 description: "Add or improve docstrings for the public API of a file or symbol."
+seoDescription: "/add-docstrings writes or improves docstrings for a file or symbol's public API — a Claude Code slash command that matches your project's doc style."
 date: 2026-06-03
 argument-hint: "<file or symbol>"
 allowed-tools: "Read, Grep, Glob, Edit"

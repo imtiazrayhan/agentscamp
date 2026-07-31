@@ -2,6 +2,7 @@
 name: "Arize Phoenix"
 title: "Arize Phoenix"
 description: "An open-source LLM observability and evaluation tool built on OpenTelemetry, runnable anywhere."
+seoDescription: "Arize Phoenix is an open-source LLM observability and evaluation platform built on OpenTelemetry — self-hostable tracing, evals, and datasets."
 url: "https://phoenix.arize.com"
 date: 2026-06-03
 pricing: "open-source"

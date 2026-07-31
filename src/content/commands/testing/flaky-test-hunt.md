@@ -1,5 +1,6 @@
 ---
 description: "Reproduce a flaky test, find the real source of nondeterminism, and fix the cause."
+seoDescription: "/flaky-test-hunt reproduces a flaky test, isolates the real source of nondeterminism, and fixes the cause instead of adding retries — a Claude Code command."
 date: 2026-06-17
 argument-hint: "<suspected test or area (optional)>"
 allowed-tools: "Bash, Read, Edit"

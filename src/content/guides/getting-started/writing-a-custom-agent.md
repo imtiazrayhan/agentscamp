@@ -1,6 +1,7 @@
 ---
 title: "Writing Your First Custom Agent"
 description: "A step-by-step guide to authoring a focused, effective custom subagent."
+seoDescription: "A step-by-step guide to authoring a focused Claude Code subagent — scoping the job, writing the description, picking tools, and testing the result."
 author: "AgentsCamp"
 date: 2026-05-06
 color: "green"

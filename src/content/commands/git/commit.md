@@ -1,5 +1,6 @@
 ---
 description: "Stage changes and write a Conventional Commits message describing them."
+seoDescription: "/commit stages your changes and writes a Conventional Commits message describing them — a Claude Code slash command for clean, consistent git history."
 date: 2026-06-03
 title: "Commit"
 color: "purple"

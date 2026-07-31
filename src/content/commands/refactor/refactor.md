@@ -1,5 +1,6 @@
 ---
 description: "Refactor the target for readability and structure without changing behavior."
+seoDescription: "/refactor restructures the target for readability and structure without changing behavior — a Claude Code slash command for safe, incremental cleanup."
 date: 2026-06-03
 argument-hint: "[file or function]"
 title: "Refactor"

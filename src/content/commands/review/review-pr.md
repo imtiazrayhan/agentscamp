@@ -1,5 +1,6 @@
 ---
 description: "Review a pull request for correctness, security, and style, and summarize findings."
+seoDescription: "/review-pr reviews a pull request for correctness, security, and style, then summarizes the findings by severity — a Claude Code slash command."
 date: 2026-06-03
 argument-hint: "[PR number]"
 title: "Review PR"

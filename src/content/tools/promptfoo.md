@@ -2,6 +2,7 @@
 name: "promptfoo"
 title: "promptfoo"
 description: "An open-source CLI for testing, comparing, and red-teaming LLM prompts, models, and apps."
+seoDescription: "promptfoo is an open-source CLI for testing, comparing, and red-teaming LLM prompts, models, and apps — run evals in CI without writing a harness."
 url: "https://www.promptfoo.dev"
 date: 2026-06-03
 pricing: "open-source"

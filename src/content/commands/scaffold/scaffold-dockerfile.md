@@ -1,5 +1,6 @@
 ---
 description: "Scaffold a production-grade multi-stage Dockerfile and .dockerignore for the current project."
+seoDescription: "/scaffold-dockerfile generates a production-grade multi-stage Dockerfile and .dockerignore tuned to the current project — a Claude Code slash command."
 date: 2026-06-17
 argument-hint: "<optional: stack/runtime hint>"
 allowed-tools: "Read, Write, Glob, Grep"

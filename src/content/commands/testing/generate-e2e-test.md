@@ -1,5 +1,6 @@
 ---
 description: "Scaffold a resilient end-to-end test for a user flow grounded in the real UI."
+seoDescription: "/generate-e2e-test scaffolds a resilient end-to-end test for a user flow, grounded in the real UI — a Claude Code slash command for E2E coverage."
 date: 2026-06-17
 argument-hint: "<user flow to test>"
 allowed-tools: "Read, Write, Glob, Grep"

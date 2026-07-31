@@ -1,5 +1,6 @@
 ---
 description: "Produce a grounded effort and complexity estimate for a task by exploring the codebase read-only."
+seoDescription: "/estimate-effort explores the codebase read-only and produces a grounded effort and complexity estimate — a Claude Code slash command, no code changes made."
 date: 2026-06-17
 argument-hint: "<task or feature to estimate>"
 allowed-tools: "Read, Grep, Glob"

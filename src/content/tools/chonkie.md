@@ -2,6 +2,7 @@
 name: "Chonkie"
 title: "Chonkie"
 description: "A lightweight, fast chunking library for RAG with many splitting strategies in one API."
+seoDescription: "Chonkie is a lightweight, fast chunking library for RAG — token, sentence, semantic, and code splitting strategies behind one simple API."
 url: "https://chonkie.ai"
 date: 2026-06-03
 pricing: "open-source"

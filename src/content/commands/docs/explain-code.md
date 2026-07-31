@@ -1,5 +1,6 @@
 ---
 description: "Explain what the given code does, in clear prose with a short summary."
+seoDescription: "/explain-code explains what the given code does in clear prose — a Claude Code slash command that leads with a short summary, then covers the tricky parts."
 date: 2026-06-03
 argument-hint: "[file or symbol]"
 title: "Explain Code"
