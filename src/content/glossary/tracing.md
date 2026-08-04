@@ -4,7 +4,7 @@ description: "LLM tracing records every step of a model-driven request — promp
 date: 2026-06-12
 topics: ["llm-evals"]
 tags: ["tracing", "observability", "debugging", "llmops"]
-related: ["langfuse-vs-langsmith", "llm-observability-engineer", "debugging-ai-agents", "write-llm-evals", "llm-cost-latency-engineering"]
+related: ["llm-observability-production", "langfuse-vs-langsmith", "llm-observability-engineer", "debugging-ai-agents", "write-llm-evals", "llm-cost-latency-engineering"]
 faq:
   - q: "What does an LLM trace actually contain?"
     a: "The full request tree: each model call with its exact prompt and response, every tool invocation with arguments and results, retrieval steps with what was fetched, token counts and cost per step, latency per span, and errors — nested to mirror the application's structure (a trace contains spans; an agent run contains its tool-call spans)."

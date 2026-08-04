@@ -4,7 +4,7 @@ description: "LLM-as-judge uses a language model to score AI outputs against a r
 date: 2026-06-11
 topics: ["llm-evals"]
 tags: ["evals", "llm-as-judge", "evaluation", "quality"]
-related: ["write-llm-evals", "llm-as-judge-scorer", "best-llm-eval-tools-2026", "hallucination", "llm-evaluation-engineer"]
+related: ["llm-as-judge-guide", "write-llm-evals", "llm-as-judge-scorer", "best-llm-eval-tools-2026", "hallucination", "llm-evaluation-engineer"]
 faq:
   - q: "Why use a model to judge a model?"
     a: "Because most LLM output quality is subjective-but-describable: helpfulness, faithfulness to sources, tone. Exact-match metrics can't score an open-ended answer, and humans don't scale to thousands of cases per release. A judge model with a precise rubric gets you scalable evaluation that correlates with human judgment — when built carefully."
