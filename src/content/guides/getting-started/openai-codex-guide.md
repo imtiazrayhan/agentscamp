@@ -23,7 +23,7 @@ faq:
     a: "Use the CLI when the terminal is your center of gravity, the IDE extension when you want editor context, the desktop app for interactive planning and multiple workstreams, and cloud tasks when work should continue in a hosted environment. The same repository can use more than one surface."
   - q: "How do I get better results from Codex?"
     a: "State the goal, point to relevant files or errors, name constraints, and define done with observable checks. Add stable build commands and conventions to AGENTS.md, and ask Codex to run tests and review the final diff before it stops."
-related: ["codex-cli", "claude-code-vs-codex-cli", "codex-agents-md", "codex-skills-guide", "codex-mcp-setup", "agents-md", "agent-skills"]
+related: ["codex-cli", "claude-code-vs-codex-cli", "codex-agents-md", "codex-config-toml", "codex-skills-guide", "codex-mcp-setup", "codex-subagents", "codex-automations", "codex-troubleshooting", "agents-md", "agent-skills"]
 ---
 
 **OpenAI Codex is a software-development agent: it can inspect a repository, plan a change, edit files, run commands, test the result, and review its own diff.** The useful mental model is not “a chatbot that writes code snippets,” but a teammate operating inside a bounded development environment.

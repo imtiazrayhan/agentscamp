@@ -10,7 +10,7 @@ color: "cyan"
 topics: ["workflow-prompting", "ai-agents-systems"]
 tags: ["cli", "agent", "terminal", "openai", "codex"]
 featured: true
-related: ["openai-codex-guide", "codex-agents-md", "codex-skills-guide", "codex-mcp-setup", "claude-code", "aider", "gemini-cli"]
+related: ["openai-codex-guide", "codex-agents-md", "codex-config-toml", "codex-skills-guide", "codex-mcp-setup", "codex-subagents", "codex-automations", "codex-troubleshooting", "claude-code", "aider", "gemini-cli"]
 alternativeTo: ["claude-code", "aider", "gemini-cli", "opencode"]
 summary: "Codex CLI is OpenAI's open-source (Apache-2.0) coding agent that runs entirely in your terminal: it reads files, edits them on disk, and runs shell commands inside an OS-level sandbox that defaults to no network and workspace-scoped writes. Sandbox modes and approval policies control what it can do and when it must ask; auth is a ChatGPT plan or API key."
 faq:
