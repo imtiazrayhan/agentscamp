@@ -7,10 +7,10 @@ pricing: "open-source"
 category: "cli"
 repo: "https://github.com/openai/codex"
 color: "cyan"
-topics: ["coding-languages"]
-tags: ["cli", "agent", "terminal"]
+topics: ["workflow-prompting", "ai-agents-systems"]
+tags: ["cli", "agent", "terminal", "openai", "codex"]
 featured: true
-related: ["claude-code", "aider", "gemini-cli"]
+related: ["openai-codex-guide", "codex-agents-md", "codex-skills-guide", "codex-mcp-setup", "claude-code", "aider", "gemini-cli"]
 alternativeTo: ["claude-code", "aider", "gemini-cli", "opencode"]
 summary: "Codex CLI is OpenAI's open-source (Apache-2.0) coding agent that runs entirely in your terminal: it reads files, edits them on disk, and runs shell commands inside an OS-level sandbox that defaults to no network and workspace-scoped writes. Sandbox modes and approval policies control what it can do and when it must ask; auth is a ChatGPT plan or API key."
 faq:
@@ -32,14 +32,14 @@ It is aimed at developers who live in the terminal and want an agent backed by O
 
 - **Two-layer security model** — sandbox modes (`read-only`, `workspace-write`, `danger-full-access`, via `--sandbox`) control what the agent can technically do; approval policies (`on-request`, `untrusted`, `never`) control when it must stop and ask before acting.
 - **Sandboxed by default** — the `workspace-write` mode limits writes to the active workspace and blocks outbound network, so edits stay local until you explicitly widen the boundary.
-- **Model switching** — use `/model` to move between GPT-5.5, GPT-5.4, GPT-5.4-mini, and other available models, and adjust reasoning effort per task.
-- **MCP support** — connect external tools by configuring Model Context Protocol servers (STDIO or streaming HTTP) in the config file.
+- **Model switching** — use `/model` to choose among the models available to your account and adjust reasoning effort per task.
+- **[MCP support](/guides/mcp/codex-mcp-setup)** — connect external tools through STDIO or Streamable HTTP servers configured in `config.toml`.
 - **Non-interactive `codex exec`** — run Codex headlessly in scripts and CI, piping the final result to stdout.
 - **Session resume and image input** — pick up past transcripts with `codex resume`, and attach screenshots or design specs as context.
 
 ## In an AI-assisted workflow
 
-Codex CLI fits where you already run Git and your build. A typical loop is to start it in a repo with the default `workspace-write` sandbox mode and `on-request` approval policy, let it draft edits, and approve anything that reaches outside the workspace or touches the network. It reads `AGENTS.md` files for project-specific context, so you can encode conventions and commands once and have them apply on every run.
+Codex CLI fits where you already run Git and your build. A typical loop is to start it in a repo with the default `workspace-write` sandbox mode and `on-request` approval policy, let it draft edits, and approve anything that reaches outside the workspace or touches the network. It reads [`AGENTS.md`](/guides/configuration/codex-agents-md) files for project-specific context, so you can encode conventions and commands once and have them apply on every run. Repeatable procedures can move into [Codex skills](/guides/skills/codex-skills-guide) instead of growing the always-on instruction file.
 
 ```bash
 npm install -g @openai/codex
