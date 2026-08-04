@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["devops-infra"]
-related: ["dependency-manager", "security-auditor"]
+related: ["software-supply-chain-security", "dependency-manager", "security-auditor"]
 featured: false
 summary: "A skill that runs the ecosystem's native vulnerability audit and triages the output: it traces each flagged package to actual imports to judge reachability, rewrites severity in context so unreachable criticals stop outranking reachable moderates, computes minimal safe version bumps, verifies with tests and a re-audit, and reports prioritized tiers."
 ---

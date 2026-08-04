@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["architecture"]
-related: ["rate-limiter-designer", "webhook-handler-scaffolder", "contract-test-designer"]
+related: ["idempotency-keys-api-design", "rate-limiter-designer", "webhook-handler-scaffolder", "contract-test-designer"]
 featured: false
 summary: "A retried POST that isn't idempotent double-charges. This skill makes unsafe operations safe to retry: a client-generated idempotency key, an atomic store-and-check (unique constraint or conditional write — never read-then-act), in-flight conflict handling so a concurrent retry doesn't run the work twice, and a TTL so the dedup store doesn't grow forever."
 ---
