@@ -6,7 +6,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Scaffold GitHub Action"
 color: "purple"
 topics: ["devops-infra"]
-related: ["scaffold-dockerfile", "setup-claude-ci", "setup-precommit-hooks"]
+related: ["command:scaffold-dockerfile", "command:setup-claude-ci", "command:setup-precommit-hooks"]
 featured: false
 summary: "Turns $ARGUMENTS into a hardened GitHub Actions workflow: detects the package manager and test/lint/build scripts, then writes .github/workflows/<name>.yml with correct triggers, dependency caching, SHA-pinned actions, least-privilege GITHUB_TOKEN permissions, concurrency cancellation, and secrets.* references — reporting the secrets and permissions you must configure."
 ---

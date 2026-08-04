@@ -7,7 +7,7 @@ allowed-tools: "Read, Grep, Glob, Edit"
 title: "Add Docstrings"
 color: "purple"
 topics: ["workflow-prompting"]
-related: ["explain-code", "documentation-engineer"]
+related: ["command:explain-code", "agent:documentation-engineer", "command:update-readme", "skill:readme-generator"]
 featured: false
 summary: "A slash command that adds or improves docstrings for the public API of a file or symbol: it reads the real implementation, identifies exported symbols, matches the language's docstring convention (TSDoc, Google-style Python, Go doc comments), and documents parameters, returns, errors, and side effects — never editing logic."
 ---

@@ -60,7 +60,16 @@ const siteFields = {
   topics: z.array(z.string()).default([]),
   tags: z.array(z.string()).default([]),
   featured: z.boolean().default(false),
-  related: z.array(z.string()).default([]),
+  // Typed IDs avoid cross-type slug collisions (for example a guide and a
+  // glossary entry both named `context-engineering`).
+  related: z
+    .array(
+      z.string().regex(
+        /^(agent|skill|guide|tool|command|glossary):[a-z0-9]+(?:-[a-z0-9]+)*$/,
+        "use a typed content ID such as guide:context-engineering",
+      ),
+    )
+    .default([]),
   date: z.coerce.date().optional(),
   updated: z.coerce.date().optional(),
 

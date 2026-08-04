@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "orange"
 date: 2026-06-11
 topics: ["workflow-prompting"]
-related: ["claude-code-settings-permissions", "claude-code-hooks", "hook-writer", "claude-code-mcp-setup", "security-auditor"]
+related: ["guide:claude-code-settings-permissions", "guide:claude-code-hooks", "skill:hook-writer", "guide:claude-code-mcp-setup", "agent:security-auditor"]
 featured: false
 summary: "Reads every settings layer — user, project, local, managed — plus .mcp.json and hook scripts, computes which rules win after precedence, and reports findings by severity: permission holes (broad Bash allows, no secret denies), risky defaults (bypassPermissions, auto-approved MCP servers), suspicious hooks, and dead rules — each with a concrete safer replacement."
 ---

@@ -4,7 +4,7 @@ description: "Reranking is a second-pass scoring step: a cross-encoder model re-
 date: 2026-06-11
 topics: ["rag-retrieval"]
 tags: ["reranking", "retrieval", "rag", "search"]
-related: ["hybrid-search-reranking", "semantic-search", "rag", "cohere-rerank", "benchmark-rerankers", "voyage-ai"]
+related: ["guide:hybrid-search-reranking", "glossary:semantic-search", "glossary:rag", "tool:cohere-rerank", "command:benchmark-rerankers", "tool:voyage-ai"]
 faq:
   - q: "Why rerank if retrieval already ranks by similarity?"
     a: "Because first-pass retrieval optimizes for speed over millions of documents, scoring query and document separately (a bi-encoder). A reranker is a cross-encoder: it reads the query and each candidate together, capturing interactions the fast pass can't — much more accurate, far too slow to run on everything. So you retrieve 50 fast, rerank to a precise top 5."

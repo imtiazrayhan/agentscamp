@@ -23,7 +23,7 @@ faq:
     a: "Run /mcp, select the server, choose Authenticate, and finish in the browser — a 401 status means exactly this. If the browser flow loops: check the system clock (token validation hates skew), try removing and re-adding the server to clear stale tokens, and for header-auth servers verify the --header value isn't expired."
   - q: "Why is my MCP tool's output cut off?"
     a: "By design — output is capped (~25k tokens default) to protect your context window. Raise MAX_MCP_OUTPUT_TOKENS if genuinely needed, but the better fix is asking the server for less: filters, pagination, read-only modes. A tool dumping megabytes is a tool design problem."
-related: ["claude-code-mcp-setup", "claude-code-troubleshooting", "mcp-inspector", "best-mcp-servers-2026", "building-an-mcp-server", "add-mcp-server"]
+related: ["guide:claude-code-mcp-setup", "guide:claude-code-troubleshooting", "tool:mcp-inspector", "guide:best-mcp-servers-2026", "guide:building-an-mcp-server", "command:add-mcp-server"]
 ---
 
 MCP problems feel mysterious because three programs are involved — your client, a transport, and someone else's server — but the failures cluster tightly. Debug in layers and almost everything localizes in minutes. (Setup itself is covered in [Adding MCP Servers to Claude Code](/guides/mcp/claude-code-mcp-setup); this is the page for when it doesn't work.)

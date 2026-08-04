@@ -15,7 +15,7 @@ tags: ["evals", "testing", "rag", "open-source", "python"]
 featured: false
 alternativeTo: ["ragas", "promptfoo"]
 summary: "DeepEval is an open-source Python framework that brings unit-testing ergonomics to LLM evaluation. It ships research-backed metrics (G-Eval, faithfulness, answer relevancy, hallucination, RAG and agent metrics) you assert on like pytest, so eval becomes a CI gate instead of a vibe check."
-related: ["ragas", "best-llm-eval-tools-2026", "write-llm-evals", "llm-eval-suite-scaffolder", "run-evals"]
+related: ["tool:ragas", "guide:best-llm-eval-tools-2026", "guide:write-llm-evals", "skill:llm-eval-suite-scaffolder", "command:run-evals"]
 faq:
   - q: "What is DeepEval?"
     a: "DeepEval is an open-source evaluation framework that makes testing an LLM application feel like writing unit tests. You write test cases with inputs and expected behavior, attach research-backed metrics — G-Eval, faithfulness, answer relevancy, hallucination, plus RAG and agent/tool-use metrics — and assert that the scores clear a threshold, pytest-style."

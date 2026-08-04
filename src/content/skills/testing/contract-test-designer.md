@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 title: "Contract Test Designer"
 topics: ["review-qa"]
-related: ["contract-testing-microservices", "test-scaffolder", "openapi-doc-writer", "coverage-gap-finder"]
+related: ["guide:contract-testing-microservices", "skill:test-scaffolder", "skill:openapi-doc-writer", "skill:coverage-gap-finder"]
 featured: false
 summary: "Cross-service E2E tests are slow, flaky, and catch breaking API changes too late. This skill flips it: the consumer declares the requests it sends and the exact fields it depends on, the provider replays those expectations in its own CI, and a contract-violating change fails the provider's build before deploy — interface shape only, business logic stays in unit tests."
 ---

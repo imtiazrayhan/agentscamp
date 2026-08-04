@@ -9,7 +9,7 @@ color: "orange"
 topics: ["coding-languages"]
 tags: ["cloud-ide", "agent"]
 featured: false
-related: ["bolt", "lovable", "v0"]
+related: ["tool:bolt", "tool:lovable", "tool:v0"]
 alternativeTo: ["bolt", "lovable", "v0", "devin"]
 summary: "Replit Agent is the AI builder inside Replit's browser-based cloud IDE: describe an app and it scaffolds the project, writes code, installs packages, runs it, and deploys to a live URL with database, auth, and hosting provisioned for you. Agent 4 adds a Design Canvas, concurrent task forks, and checkpoint-based effort billing on freemium plans."
 faq:

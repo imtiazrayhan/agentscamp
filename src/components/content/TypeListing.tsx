@@ -8,7 +8,7 @@ import { titleCaseLabel } from "@/lib/format";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { ListingView } from "./ListingView";
 import { FaqSection } from "./FaqSection";
-import type { ContentTypeId } from "@/lib/content/types";
+import type { ContentTypeId, ToolItem } from "@/lib/content/types";
 
 // Category facets become indexable (and so worth crawl-linking) at >=2 items,
 // matching MIN_INDEXABLE in lib/seo/collections.
@@ -44,6 +44,20 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
       label: titleCaseLabel(cat),
       count: n,
       href: type === "tool" ? `/tools/category/${cat}` : `${def.basePath}/${cat}`,
+    }));
+  const pricingCounts = new Map<string, number>();
+  if (type === "tool") {
+    for (const tool of all as ToolItem[]) {
+      pricingCounts.set(tool.pricing, (pricingCounts.get(tool.pricing) ?? 0) + 1);
+    }
+  }
+  const pricingLinks = [...pricingCounts.entries()]
+    .filter(([, n]) => n >= MIN_LINKABLE)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([pricing, n]) => ({
+      label: titleCaseLabel(pricing),
+      count: n,
+      href: `/tools/pricing/${pricing}`,
     }));
 
   const crumbs = [{ label: "Home", href: "/" }, { label: def.label }];
@@ -94,6 +108,26 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
                   >
                     {c.label}
                     <span className="text-xs opacity-60">{c.count}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+        {pricingLinks.length > 1 && (
+          <nav className="mt-4" aria-label="Browse Tools by pricing">
+            <h2 className="mb-2 text-sm font-semibold text-foreground">
+              Browse by pricing
+            </h2>
+            <ul className="flex flex-wrap gap-2">
+              {pricingLinks.map((pricing) => (
+                <li key={pricing.href}>
+                  <Link
+                    href={pricing.href}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-sm text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
+                  >
+                    {pricing.label}
+                    <span className="text-xs opacity-60">{pricing.count}</span>
                   </Link>
                 </li>
               ))}

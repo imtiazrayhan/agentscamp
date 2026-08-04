@@ -5,7 +5,7 @@ allowed-tools: "Bash, Read"
 title: "Clean Branches"
 color: "purple"
 topics: ["review-qa"]
-related: ["sync-branch", "commit", "git-bisect", "resolve-conflict"]
+related: ["command:sync-branch", "command:commit", "command:git-bisect", "command:resolve-conflict"]
 featured: false
 summary: "A slash command that prunes Git branches without losing work: it prunes dead remote-tracking refs, identifies local branches already merged into the main branch (excluding current, main/master/develop, and protected branches), surfaces unmerged branches for manual review, shows the full deletion plan, then deletes only with the safe git branch -d — never blind -D."
 ---

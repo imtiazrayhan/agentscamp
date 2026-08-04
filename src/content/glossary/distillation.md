@@ -4,7 +4,7 @@ description: "Distillation trains a smaller model to imitate a larger one — us
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["distillation", "training", "small-models", "mlops"]
-related: ["fine-tuning", "finetune-vs-rag-vs-prompt", "synthetic-data", "quantization", "finetune-dataset-prep"]
+related: ["glossary:fine-tuning", "guide:finetune-vs-rag-vs-prompt", "glossary:synthetic-data", "glossary:quantization", "guide:finetune-dataset-prep"]
 faq:
   - q: "How is distillation different from fine-tuning?"
     a: "Distillation is a kind of fine-tuning where the training data comes from a teacher model: you collect the big model's outputs on your task (a form of synthetic data) and train a small model to reproduce them. Classic fine-tuning uses human-curated examples; distillation manufactures them from a model you wish you could afford to run everywhere."

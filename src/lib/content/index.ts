@@ -91,20 +91,82 @@ export function latestDate(items: ContentItem[]): string | undefined {
   return max;
 }
 
-/** Resolve an item's `related` slug refs into real items, both directions. */
-export function getRelated(item: ContentItem): ContentItem[] {
+const contentId = (item: ContentItem) => `${item.type}:${item.slug}`;
+
+/**
+ * Resolve typed related refs in both directions, then rank the candidates.
+ * Direct editorial choices beat backlinks; shared taxonomy breaks ties. The
+ * type-aware fill prevents a large guide cluster from crowding every other
+ * useful resource type out of the module.
+ */
+export function getRelated(item: ContentItem, limit = 8): ContentItem[] {
   const all = getAllContent();
-  const out = new Map<string, ContentItem>();
+  const byId = new Map(all.map((i) => [contentId(i), i]));
+  type RelatedCandidate = {
+    item: ContentItem;
+    direct: boolean;
+    reverse: boolean;
+  };
+  const candidates = new Map<string, RelatedCandidate>();
+
   for (const ref of item.related) {
-    const found = all.find((i) => i.slug === ref);
-    if (found && found.href !== item.href) out.set(found.href, found);
-  }
-  for (const other of all) {
-    if (other.href !== item.href && other.related.includes(item.slug)) {
-      out.set(other.href, other);
+    const found = byId.get(ref);
+    if (found && found.href !== item.href) {
+      candidates.set(found.href, { item: found, direct: true, reverse: false });
     }
   }
-  return [...out.values()];
+
+  const id = contentId(item);
+  for (const other of all) {
+    if (other.href !== item.href && other.related.includes(id)) {
+      const current = candidates.get(other.href);
+      candidates.set(other.href, {
+        item: other,
+        direct: current?.direct ?? false,
+        reverse: true,
+      });
+    }
+  }
+
+  const score = (candidate: RelatedCandidate) => {
+    const sharedTopics = candidate.item.topics.filter((t) =>
+      item.topics.includes(t),
+    ).length;
+    const sharedTags = candidate.item.tags.filter((t) =>
+      item.tags.includes(t),
+    ).length;
+    return (
+      (candidate.direct ? 100 : 0) +
+      (candidate.reverse ? 40 : 0) +
+      sharedTopics * 10 +
+      sharedTags * 3 +
+      (candidate.item.type !== item.type ? 2 : 0)
+    );
+  };
+
+  const ranked = [...candidates.values()].sort(
+    (a, b) =>
+      score(b) - score(a) ||
+      a.item.title.localeCompare(b.item.title),
+  );
+  if (ranked.length <= limit) return ranked.map((c) => c.item);
+
+  const selected: typeof ranked = [];
+  const selectedHrefs = new Set<string>();
+  const perType = new Map<ContentTypeId, number>();
+  for (const candidate of ranked) {
+    const count = perType.get(candidate.item.type) ?? 0;
+    if (count >= 3) continue;
+    selected.push(candidate);
+    selectedHrefs.add(candidate.item.href);
+    perType.set(candidate.item.type, count + 1);
+    if (selected.length === limit) break;
+  }
+  for (const candidate of ranked) {
+    if (selected.length === limit) break;
+    if (!selectedHrefs.has(candidate.item.href)) selected.push(candidate);
+  }
+  return selected.map((c) => c.item);
 }
 
 /** Lightweight records for the static search index (no body). */

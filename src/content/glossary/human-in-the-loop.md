@@ -4,7 +4,7 @@ description: "Human-in-the-loop design inserts human judgment at decisive points
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 tags: ["hitl", "agents", "safety", "workflow"]
-related: ["human-in-the-loop-gate", "add-human-approval", "agentic-ai", "claude-code-settings-permissions", "agent-reliability-reviewer"]
+related: ["skill:human-in-the-loop-gate", "command:add-human-approval", "glossary:agentic-ai", "guide:claude-code-settings-permissions", "agent:agent-reliability-reviewer"]
 faq:
   - q: "Where should the human be in the loop?"
     a: "At the points where errors are expensive or irreversible: before deploys, payments, deletions, and external sends; when the agent's confidence is low or inputs are ambiguous; and at plan-approval time for large changes. Everywhere else, approval friction just trains people to click yes — gate the decisive moments, automate the rest."

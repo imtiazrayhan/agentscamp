@@ -8,7 +8,7 @@ color: "cyan"
 title: "Agent Memory Designer"
 date: 2026-06-17
 topics: ["workflow-prompting", "ai-agents-systems"]
-related: ["hook-writer", "claude-settings-auditor", "plugin-scaffolder"]
+related: ["skill:hook-writer", "skill:claude-settings-auditor", "skill:plugin-scaffolder"]
 featured: false
 summary: "CLAUDE.md is always in context, so every token spent on filler dilutes the rules that matter. This skill explores your repo to learn its real commands, architecture, and gotchas, then drafts a tight, skimmable project memory — keeping stable conventions and hard rules, excluding transient state, secrets, and anything derivable by reading the code."
 ---

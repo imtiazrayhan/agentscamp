@@ -14,7 +14,7 @@ tags: ["inference", "llm-api", "low-latency", "open-models"]
 featured: false
 alternativeTo: ["together-ai", "fireworks-ai", "openrouter", "replicate", "baseten"]
 summary: "Groq is a hosted inference service that serves open-weight models — Llama, Qwen, Mistral, OpenAI open-weights, Whisper — on its custom LPU chips for unusually high tokens-per-second and low latency. The GroqCloud API is OpenAI-compatible, so most SDKs work by changing the base URL, and pricing is per-token with a free tier."
-related: ["deploying-llms-to-production", "self-host-vs-api-llm", "llm-cost-latency-engineering", "choosing-the-right-model", "calling-any-model-gateways"]
+related: ["guide:deploying-llms-to-production", "guide:self-host-vs-api-llm", "guide:llm-cost-latency-engineering", "guide:choosing-the-right-model", "guide:calling-any-model-gateways"]
 faq:
   - q: "What is Groq?"
     a: "Groq is an AI inference company that runs open-weight large language models on its own custom silicon, the Language Processing Unit (LPU). Through GroqCloud, it serves models like Llama, Qwen, Mistral, OpenAI open-weights, and Whisper at very high throughput and low latency over an OpenAI-compatible API. Note: this is Groq the hardware/inference company, not Grok the chatbot."
@@ -33,4 +33,4 @@ The API is **OpenAI-compatible**: point an OpenAI client at `https://api.groq.co
 > [!NOTE]
 > Groq (the LPU inference company) is unrelated to Grok, the xAI chatbot — they're easy to confuse but different products.
 
-Groq sits alongside other hosted open-model inference services like [Together AI](/tools/together-ai), [Fireworks AI](/tools/fireworks-ai), and [Baseten](/tools/baseten); its differentiator is latency and throughput from the LPU. If you're weighing a hosted API against running models yourself, see [self-host vs API](/guides/architecture/self-host-vs-api-llm) and [LLM cost and latency engineering](/guides/architecture/llm-cost-latency-engineering).
+Groq sits alongside other hosted open-model inference services like [Together AI](/tools/together-ai), [Fireworks AI](/tools/fireworks-ai), and [Baseten](/tools/baseten); its differentiator is latency and throughput from the LPU. If you're weighing a hosted API against running models yourself, see [self-host vs API](/guides/mlops/self-host-vs-api-llm) and [LLM cost and latency engineering](/guides/advanced/llm-cost-latency-engineering).

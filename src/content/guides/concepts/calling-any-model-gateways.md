@@ -23,7 +23,7 @@ faq:
     a: "Not exactly — it's a TypeScript application toolkit that's provider-agnostic, so it gives you the 'swap models with a config change' benefit in app code, plus streaming, structured output, and UI hooks. It doesn't centralize keys, cost, and fallback for a whole org the way a gateway/proxy does. A common setup is the AI SDK in your app with LiteLLM or OpenRouter behind it for routing and cost control."
   - q: "Do I need a gateway for a simple app?"
     a: "No. If you call one model and don't need fallback, central key management, or cost attribution across teams, a direct provider SDK (or a provider-agnostic SDK like Vercel AI SDK) is simpler. Reach for a gateway/proxy when you need multi-provider resilience, one bill across providers, or a single control point for keys, budgets, and rate limits across many apps."
-related: ["structured-output-2026", "litellm", "openrouter", "vercel-ai-sdk", "provider-fallback-wrapper", "llm-integration-engineer"]
+related: ["guide:structured-output-2026", "tool:litellm", "tool:openrouter", "tool:vercel-ai-sdk", "skill:provider-fallback-wrapper", "agent:llm-integration-engineer"]
 ---
 
 Hardwiring one provider's SDK into your app is a decision you'll regret the first time that provider has an outage, raises prices, or ships a worse model than a competitor. A **unified model-access layer** fixes that: you call one interface, and switching or mixing models becomes a config change instead of a rewrite. It also buys you resilience (fallback) and control (central keys, cost tracking). This guide covers the layer and how the main options differ.

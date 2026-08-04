@@ -4,7 +4,7 @@ description: "Batch inference processes many LLM requests asynchronously instead
 date: 2026-06-12
 topics: ["llm-app-dev"]
 tags: ["batch", "inference", "cost", "throughput"]
-related: ["inference", "llm-cost-latency-engineering", "prompt-caching", "synthetic-data"]
+related: ["glossary:inference", "guide:llm-cost-latency-engineering", "glossary:prompt-caching", "glossary:synthetic-data"]
 faq:
   - q: "When should I use a batch API?"
     a: "Whenever no human is waiting: backfills, dataset labeling, synthetic-data generation, nightly summarization, embedding refreshes, bulk evals. Provider batch tiers typically cost about half of interactive pricing in exchange for results within a window (commonly up to 24 hours, usually much faster) — free money for offline workloads."

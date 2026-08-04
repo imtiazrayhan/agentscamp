@@ -12,7 +12,7 @@ color: "orange"
 topics: ["mlops-ai-infra"]
 tags: ["local-llm", "desktop", "gui", "inference"]
 featured: false
-related: ["ollama", "vllm", "self-host-vs-api-llm", "llm-inference-engineer"]
+related: ["tool:ollama", "tool:vllm", "guide:self-host-vs-api-llm", "agent:llm-inference-engineer"]
 alternativeTo: ["ollama", "jan", "llama-cpp", "vllm"]
 summary: "LM Studio is a desktop app for running open-weight LLMs locally through a GUI: browse and download models, chat and tune parameters visually, then flip on a local OpenAI-compatible server for development. It runs GGUF (and MLX on Apple Silicon) models on macOS, Windows, and Linux — free for personal and work use, with no data leaving your machine."
 faq:

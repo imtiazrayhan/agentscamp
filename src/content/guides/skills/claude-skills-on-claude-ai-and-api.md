@@ -29,7 +29,7 @@ faq:
     a: "No — the code-execution container has no network access and no runtime package installation, so skills can only rely on the pre-installed library set (pandas, numpy, matplotlib, openpyxl, python-docx, python-pptx, and similar). Bundle pure-Python helpers as files inside the skill instead of pip-installing."
   - q: "Do skills work with the Claude Agent SDK?"
     a: "Yes — the SDK discovers skills from ~/.claude/skills/ and the project's .claude/skills/ via the setting_sources option, and you select them with the skills option ('all' or a list). One difference from Claude Code: the allowed-tools frontmatter field is ignored; tool permissions come from the SDK's own allowedTools."
-related: ["what-are-claude-skills", "skill-md-reference", "how-to-install-claude-skills", "claude-code-skills-best-practices", "skills-vs-mcp-servers", "agent-skills"]
+related: ["guide:what-are-claude-skills", "guide:skill-md-reference", "guide:how-to-install-claude-skills", "guide:claude-code-skills-best-practices", "guide:skills-vs-mcp-servers", "glossary:agent-skills"]
 ---
 
 Skills started in Claude Code, but the format was designed to travel: the same folder-with-a-SKILL.md now runs on claude.ai, on the Claude API, inside Managed Agents, and in the Agent SDK. What changes per surface is *how skills get there* and *what executes them*. This guide covers each. (New to the format? Start with [What Are Claude Skills?](/guides/skills/what-are-claude-skills))

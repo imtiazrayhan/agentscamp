@@ -40,7 +40,7 @@ faq:
     a: "Yes. The message content is an array, so you can interleave several image blocks with text and the model reasons over them jointly — useful for comparing a before/after, the front and back of a document, or a sequence of frames. Providers cap the number of images per request and the total request size, and every image adds tokens, latency, and cost. Label each image in your prompt ('Image 1…', 'Image 2…') so the model attributes details to the correct one, and don't pad a request with images the task doesn't need."
   - q: "Is vision provider-specific, or does the same approach work everywhere?"
     a: "The mechanics differ slightly — Claude, GPT, and Gemini each have their own way of passing images, controlling resolution, and a Files API for reuse — but the reliability pattern is identical across all of them: pass the image (base64 for private), right-size resolution, prompt for grounded reading with an UNKNOWN escape hatch, force structured output against a schema, and verify critical fields. Build your app around that pattern and switching providers is a thin adapter, not a rewrite."
-related: ["multimodal-document-extractor", "llm-output-schema-generator", "vlm-ocr-documents", "structured-output-2026", "choosing-the-right-model", "vision-language-models-compared-2026"]
+related: ["skill:multimodal-document-extractor", "skill:llm-output-schema-generator", "guide:vlm-ocr-documents", "guide:structured-output-2026", "guide:choosing-the-right-model", "guide:vision-language-models-compared-2026"]
 ---
 
 Adding image understanding to an app is mostly a solved problem now — the frontier models from Anthropic, OpenAI, and Google all take images natively, and the call looks almost identical to a text call. The hard part isn't sending the image; it's getting an answer you can act on. A vision-language model will happily return a confident, well-formatted total that's off by a digit. This guide is the practical path: how to pass images, how to control resolution and cost, and — the part that actually matters — how to prompt and structure output so the model **reads what's there instead of guessing**.
@@ -105,3 +105,7 @@ Vision tokens add up fast — a single high-resolution page can cost more than a
 ## Error and uncertainty handling
 
 Two failure classes, handled separately. **Hard errors** — unsupported format, oversized request, a URL the provider couldn't fetch — return API errors; validate image size and format before you send, and fall back to base64 if a URL fetch fails. **Soft errors** are worse because they look like success: the model returns clean, schema-valid JSON with a wrong value. Your defenses are the ones above — the `UNKNOWN` escape hatch, evidence quotes, and source verification of critical fields — plus a confidence threshold that sends anything uncertain to a human. Design for the soft case from day one; it's the one that ships bad data quietly.
+
+## Continue exploring
+
+- [Screenshot-to-Code: Building UIs from Images with AI](/guides/vision/screenshot-to-code-with-ai) — Turn a screenshot, mockup, or Figma frame into working frontend code with AI vision models — the realistic workflow, the right tools, and the honest pitfalls.

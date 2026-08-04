@@ -26,7 +26,7 @@ faq:
     a: "For caching and cost control specifically, Portkey is the most complete out of the box: it offers both simple and semantic caching plus cost tracking, budgets, and rate limits in one managed control plane. LiteLLM's proxy also supports caching, fallbacks, and cost tracking and lets you own all of it self-hosted. Helicone provides proxy-level caching and excellent cost/latency visibility, with the maintenance-mode caveat above. If your priority is a managed, batteries-included cost-control plane, Portkey; if it's self-hosted control, LiteLLM."
   - q: "Is it safe to self-host an LLM gateway?"
     a: "Yes, with the right practices — but treat it as security-sensitive infrastructure, because a gateway sees every prompt and every API key you route through it. 2026 made this concrete: LiteLLM had a supply-chain incident (briefly backdoored PyPI packages, fixed in a clean release with a hardened CI pipeline) and a critical proxy SQL-injection vulnerability (CVE-2026-42208, patched) that was exploited soon after disclosure. The lesson isn't to avoid gateways — it's to operate them well: pin and verify package versions, patch promptly, restrict network and key access, and monitor the proxy. The same care applies to any self-hosted gateway, Portkey's included."
-related: ["portkey", "helicone", "litellm", "llm-cost-latency-engineering", "prompt-cache-optimizer", "llm-cost-optimizer", "calling-any-model-gateways", "openrouter"]
+related: ["tool:portkey", "tool:helicone", "tool:litellm", "guide:llm-cost-latency-engineering", "skill:prompt-cache-optimizer", "agent:llm-cost-optimizer", "guide:calling-any-model-gateways", "tool:openrouter"]
 ---
 
 Once more than one app talks to an LLM, you start wanting a single place to handle caching, fallback, keys, cost, and budgets — instead of reimplementing them in every service. That place is an **LLM gateway**. This guide compares the three most common choices for **caching and cost control** — [Portkey](/tools/portkey), [LiteLLM](/tools/litellm), and [Helicone](/tools/helicone) — including each one's current status, which matters more than usual in 2026.
@@ -77,3 +77,7 @@ A gateway sees **every prompt and every key** you route through it, so self-host
 - **Just need a hosted router with zero ops** (not a full control plane) → the hosted [OpenRouter](/tools/openrouter) is the lighter-weight cousin.
 
 For the techniques these gateways automate — caching, right-sizing, and p95 budgets — see [LLM Cost and Latency Engineering](/guides/advanced/llm-cost-latency-engineering), restructure prompts for cache hits with the [prompt-cache-optimizer](/skills/performance/prompt-cache-optimizer), and let the [llm-cost-optimizer](/agents/data-ai/llm-cost-optimizer) run the whole optimization loop.
+
+## Continue exploring
+
+- [LiteLLM vs OpenRouter: One API for Every Model (2026)](/guides/comparisons/litellm-vs-openrouter) — LiteLLM vs OpenRouter compared — self-hosted gateway library vs hosted model marketplace.

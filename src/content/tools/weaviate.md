@@ -16,7 +16,7 @@ topics: ["rag-retrieval", "data-ml"]
 tags: ["vector-database", "rag", "hybrid-search", "open-source"]
 featured: false
 summary: "Weaviate is an open-source, Go-based vector database with first-class hybrid search, a module system that can vectorize your data for you, and GraphQL/REST/gRPC APIs. Batteries-included is the pitch: it can embed, store, filter, and hybrid-search out of the box, self-hosted or as a managed cloud."
-related: ["best-vector-database-2026", "qdrant", "milvus", "pinecone", "vector-search-engineer"]
+related: ["guide:best-vector-database-2026", "tool:qdrant", "tool:milvus", "tool:pinecone", "agent:vector-search-engineer"]
 faq:
   - q: "What is Weaviate?"
     a: "Weaviate is an open-source vector database written in Go, built around the idea that the store should do more than hold vectors. Its module system can call an embedding provider (or a local model) to vectorize objects on insert, and its hybrid search fuses BM25 keyword and vector scores natively. You interact through GraphQL, REST, or gRPC APIs and well-supported client libraries."

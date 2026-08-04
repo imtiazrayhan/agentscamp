@@ -4,7 +4,7 @@ description: "Tree of Thoughts is a prompting method that explores multiple reas
 date: 2026-06-17
 topics: ["workflow-prompting"]
 tags: ["prompting", "reasoning", "search", "tree-of-thoughts"]
-related: ["chain-of-thought", "reasoning-model", "test-time-compute"]
+related: ["glossary:chain-of-thought", "glossary:reasoning-model", "glossary:test-time-compute"]
 faq:
   - q: "How is Tree of Thoughts different from chain-of-thought?"
     a: "Chain-of-thought produces one linear sequence of reasoning steps. Tree of Thoughts generalizes that into a search: it generates several candidate next steps at each point, scores them, and explores or abandons branches — so it can recover from a bad step instead of committing to a single line. It trades far more compute for the ability to backtrack."

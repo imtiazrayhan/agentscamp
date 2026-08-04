@@ -8,7 +8,7 @@ color: "cyan"
 title: "Dockerfile Optimizer"
 date: 2026-07-01
 topics: ["devops-infra"]
-related: ["devcontainer-designer", "github-actions-optimizer", "cold-start-optimizer"]
+related: ["skill:devcontainer-designer", "skill:github-actions-optimizer", "skill:cold-start-optimizer"]
 featured: false
 summary: "Takes a working Dockerfile and makes it smaller, faster to build, and safer to run: a multi-stage build that keeps compilers out of the final image, layer order that puts dependency manifests before source so the cache hits, a lean pinned base, a .dockerignore, and a non-root USER — behavior-preserving and verified with a real build and an image-size comparison."
 faq:

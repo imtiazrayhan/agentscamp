@@ -25,7 +25,7 @@ faq:
     a: "Almost always the description. Claude sees only the name and description until the skill fires, so a description written in implementation language ('handles VCS metadata normalization') won't match how people ask ('write a commit message'). Front-load trigger phrasing: 'Use when committing changes or asked for a commit message.'"
   - q: "Can a skill include files besides SKILL.md?"
     a: "Yes — scripts, templates, and reference docs sit in the same folder and are referenced by relative path from the body. They load only when the instructions reach for them, so bundled files cost nothing until used. That's the progressive-disclosure design."
-related: ["what-are-claude-skills", "writing-your-first-skill", "claude-code-skills-best-practices", "skill-md-reference", "testing-and-debugging-skills", "conventional-commits"]
+related: ["guide:what-are-claude-skills", "guide:writing-your-first-skill", "guide:claude-code-skills-best-practices", "guide:skill-md-reference", "guide:testing-and-debugging-skills", "skill:conventional-commits"]
 ---
 
 The fastest way to learn the skill format is to read working ones. Below are five annotated patterns, from minimal to advanced — each is a real, runnable `SKILL.md` shape you can copy and refill with your own procedure. For the field-by-field spec, see the [SKILL.md reference](/guides/skills/skill-md-reference); for the concept itself, [What Are Claude Skills?](/guides/skills/what-are-claude-skills)

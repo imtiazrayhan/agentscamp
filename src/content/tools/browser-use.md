@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/browser-use/browser-use"
   - "https://docs.browser-use.com"
   - "https://x.com/browser_use"
-related: ["browser-agents-compared-2026", "how-computer-use-agents-work", "stagehand", "skyvern", "browser-agent-engineer", "computer-use"]
+related: ["guide:browser-agents-compared-2026", "guide:how-computer-use-agents-work", "tool:stagehand", "tool:skyvern", "agent:browser-agent-engineer", "glossary:computer-use"]
 summary: "Browser Use (MIT, ~98k stars) is the breakout browser-agent framework: hand it a task string and an LLM and it autonomously navigates, clicks, types, and extracts — driving Chromium over the DevTools Protocol. Model-agnostic (their hosted models, OpenAI, Anthropic, Gemini, local), with domain guardrails, and a 2026 Rust-core beta agent for persistence and recovery."
 faq:
   - q: "What does Browser Use actually do?"

@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["devops-infra"]
-related: ["slo-definer", "structured-logging-designer", "github-actions-optimizer", "load-test-designer"]
+related: ["skill:slo-definer", "skill:structured-logging-designer", "skill:github-actions-optimizer", "skill:load-test-designer"]
 featured: false
 summary: "A skill that writes a single-symptom operational runbook for a 3am responder: confirm the problem is real, mitigate to stop user pain (with the literal copy-pasteable command), then diagnose, escalate, and verify recovery. Every step is an imperative command with expected output and a link — no judgment calls, no hand-waving."
 ---

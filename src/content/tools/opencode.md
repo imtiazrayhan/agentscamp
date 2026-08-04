@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/anomalyco/opencode"
   - "https://opencode.ai/docs/"
   - "https://x.com/opencode"
-related: ["claude-code", "codex-cli", "aider", "cursor", "gemini-cli", "ai-coding-agents-cli-2026"]
+related: ["tool:claude-code", "tool:codex-cli", "tool:aider", "tool:cursor", "tool:gemini-cli", "guide:ai-coding-agents-cli-2026"]
 summary: "OpenCode is the most-starred open-source coding agent (~173k GitHub stars by mid-2026) — a terminal TUI from Anomaly (formerly SST) that works with 75+ model providers including local ones, loads language servers for real code intelligence, runs parallel sessions, and shares sessions via links. MIT-licensed; bring your own keys or use the optional Zen gateway."
 faq:
   - q: "Is OpenCode free?"

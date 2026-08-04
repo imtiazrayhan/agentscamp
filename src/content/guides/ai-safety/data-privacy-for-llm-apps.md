@@ -6,11 +6,11 @@ color: "green"
 topics: ["ai-safety-security"]
 tags: ["privacy", "pii", "security", "rag", "compliance"]
 related:
-  - "defending-prompt-injection"
-  - "owasp-agentic-top-10"
-  - "prompt-injection"
-  - "prompt-pii-redactor"
-  - "llm-guardrails-designer"
+  - "guide:defending-prompt-injection"
+  - "guide:owasp-agentic-top-10"
+  - "glossary:prompt-injection"
+  - "skill:prompt-pii-redactor"
+  - "skill:llm-guardrails-designer"
 featured: false
 date: 2026-06-17
 summary: "Sensitive data leaks at every hop of an LLM app — prompts, logs, traces, vector stores, and third-party providers. Defend it by redacting PII before the model and before logging, turning on zero-data-retention/no-train, enforcing tenant isolation in RAG, and never putting secrets in context the model doesn't need."

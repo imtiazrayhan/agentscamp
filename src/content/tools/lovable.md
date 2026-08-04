@@ -10,7 +10,7 @@ color: "pink"
 topics: ["coding-languages"]
 tags: ["web", "generation", "no-code"]
 featured: false
-related: ["v0", "bolt", "replit-agent"]
+related: ["tool:v0", "tool:bolt", "tool:replit-agent"]
 alternativeTo: ["v0", "bolt", "replit-agent"]
 summary: "Lovable is a prompt-driven AI app builder: describe an app in plain language and it generates a full-stack web app — React, Vite, TypeScript, Tailwind, and shadcn/ui with a Supabase backend — in a live preview you refine by chat. Two-way GitHub sync, one-click deploy, Stripe payments, and a freemium credit model make it a fast idea-to-MVP path."
 faq:

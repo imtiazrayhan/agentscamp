@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "sonnet"
 color: "orange"
 topics: ["devops-infra"]
-related: ["kubernetes-specialist"]
+related: ["agent:kubernetes-specialist"]
 summary: "A subagent that owns the path from a commit to a running, observable system — CI/CD pipelines, hardened container builds, infrastructure-as-code, secrets handling, and safe, reversible deploys with explicit rollback paths. Reach for it when writing a CI pipeline, containerizing an app, or making Terraform, Pulumi, or Helm-values changes."
 ---
 

@@ -6,7 +6,7 @@ date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
-related: ["getting-started-with-agents", "installing-claude-code"]
+related: ["guide:getting-started-with-agents", "guide:installing-claude-code"]
 summary: "Claude Code is Anthropic's agentic command-line coding tool: give it a goal in plain language and it reads your files, runs commands, edits code, observes the results, and iterates until done. Unlike autocomplete assistants, it closes the loop itself — you set the objective and review the diff. It extends via subagents, skills, slash commands, and MCP servers."
 keyTakeaways:
   - "Claude Code is an agent, not autocomplete: the unit of work is a goal, not a suggestion — it runs commands, reads the output, and self-corrects."

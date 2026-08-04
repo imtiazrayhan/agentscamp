@@ -8,7 +8,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["coding-languages"]
-related: ["dead-code-finder", "extract-module", "strangler-fig-migrator"]
+related: ["skill:dead-code-finder", "skill:extract-module", "skill:strangler-fig-migrator"]
 featured: false
 summary: "Temporary flags rarely get removed; they accrete into branching debt. This skill retires them safely: confirm each flag's decided state (fully-on vs abandoned), grep exhaustively for every reference, collapse each conditional to the winning branch, delete the loser and the code only it reached — one flag at a time, tests green after each."
 ---

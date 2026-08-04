@@ -4,7 +4,7 @@ description: "Temperature controls how random an LLM's token choices are: low va
 date: 2026-06-11
 topics: ["llm-app-dev"]
 tags: ["temperature", "sampling", "llm", "parameters"]
-related: ["top-p", "structured-output", "llm-token", "prompting-techniques-2026"]
+related: ["glossary:top-p", "glossary:structured-output", "glossary:llm-token", "guide:prompting-techniques-2026"]
 faq:
   - q: "What temperature should I use?"
     a: "Match it to the task's tolerance for variation: at or near 0 for extraction, classification, code, and anything tests or parsers consume; moderate (~0.5–0.8) for general assistance; higher (~0.8–1.2) for brainstorming and creative variety. When in doubt, lower it — most production failures from sampling are too-much-randomness, not too-little."

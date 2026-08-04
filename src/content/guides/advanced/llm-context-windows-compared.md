@@ -21,7 +21,7 @@ faq:
     a: "About 750,000 English words: several long novels, a year of meeting notes, or a substantial codebase (rule of thumb: ~1M tokens covers roughly 100k–200k lines of code with comments). What typically doesn't fit: enterprise document corpora and monorepos — which is why retrieval still exists."
   - q: "Does a bigger window replace RAG?"
     a: "It moved the threshold, not the conclusion. Under a few hundred pages of stable content, stuffing (plus prompt caching) beats building a pipeline. At corpus scale, four walls remain — per-query cost, prefill latency, mid-window attention degradation, and access control — covered honestly in our RAG vs Long Context guide."
-related: ["context-window", "llm-api-pricing-2026", "rag-vs-long-context", "context-engineering", "prompt-caching", "claude-code-memory-context"]
+related: ["glossary:context-window", "guide:llm-api-pricing-2026", "guide:rag-vs-long-context", "guide:context-engineering", "glossary:prompt-caching", "guide:claude-code-memory-context"]
 ---
 
 Specs verified against vendor docs on **July 1, 2026** (same methodology as the [pricing table](/guides/advanced/llm-api-pricing-2026): vendor pages only, unverifiable cells omitted). The headline: **the million-token window became the frontier baseline** — and stopped being the interesting number.

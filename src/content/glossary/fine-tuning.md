@@ -4,7 +4,7 @@ description: "Fine-tuning continues training a pretrained model on your own exam
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["fine-tuning", "training", "lora", "mlops"]
-related: ["finetune-vs-rag-vs-prompt", "lora", "finetune-dataset-prep", "distillation", "finetuning-engineer", "rag"]
+related: ["guide:finetune-vs-rag-vs-prompt", "glossary:lora", "guide:finetune-dataset-prep", "glossary:distillation", "agent:finetuning-engineer", "glossary:rag"]
 faq:
   - q: "When should I fine-tune instead of using RAG or prompting?"
     a: "Fine-tune for behavior, retrieve for knowledge. If the gap is facts the model doesn't have (your docs, fresh data), RAG fixes it without training. If the gap is how the model behaves — a strict output format, a house style, a specialized task it keeps fumbling despite good prompts — fine-tuning encodes that durably. Exhaust prompting first; it's the cheapest experiment."

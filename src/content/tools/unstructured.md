@@ -15,7 +15,7 @@ tags: ["rag", "document-processing", "etl", "preprocessing", "ocr"]
 featured: false
 alternativeTo: ["llamaparse", "reducto", "docling", "marker"]
 summary: "Unstructured preprocesses messy documents — PDF, HTML, docx, images, email — into clean, chunked JSON ready for LLMs and RAG. It ships as an Apache-2.0 Python library and a hosted Platform/API with source and destination connectors, partitioning files into typed elements, then enriching, chunking, and embedding them as an ingestion ETL layer."
-related: ["how-rag-works", "best-rag-frameworks-2026", "chunking-strategy-optimizer", "multimodal-document-extractor", "multimodal-rag-images-pdfs"]
+related: ["guide:how-rag-works", "guide:best-rag-frameworks-2026", "skill:chunking-strategy-optimizer", "skill:multimodal-document-extractor", "guide:multimodal-rag-images-pdfs"]
 faq:
   - q: "What is Unstructured?"
     a: "Unstructured is a document preprocessing and ETL layer for LLMs. It partitions messy files — PDFs (digital and scanned), HTML, DOCX, PPTX, XLSX, images, EML/MSG email, and dozens of other formats — into clean, typed elements like Title, NarrativeText, and Table, then chunks and serializes them into JSON ready for RAG and other LLM pipelines."
@@ -38,4 +38,4 @@ It comes in two forms. The **open-source library** (`unstructured`, Apache-2.0) 
 
 ## Good to know
 
-Unstructured is freemium: the core library is free and self-hostable under Apache-2.0, while the hosted Platform/API is usage-based with a free tier and enterprise (dedicated/VPC) options. It sits at the start of a RAG stack — see [how RAG works](/guides/foundations/how-rag-works) and [best RAG frameworks 2026](/guides/foundations/best-rag-frameworks-2026) for where ingestion fits, and pair it with a [chunking strategy optimizer](/skills/rag-knowledge/chunking-strategy-optimizer) once documents are parsed.
+Unstructured is freemium: the core library is free and self-hostable under Apache-2.0, while the hosted Platform/API is usage-based with a free tier and enterprise (dedicated/VPC) options. It sits at the start of a RAG stack — see [how RAG works](/guides/concepts/how-rag-works) and [best RAG frameworks 2026](/guides/comparisons/best-rag-frameworks-2026) for where ingestion fits, and pair it with a [chunking strategy optimizer](/skills/data/chunking-strategy-optimizer) once documents are parsed.

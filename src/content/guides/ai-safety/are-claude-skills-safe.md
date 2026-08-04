@@ -28,7 +28,7 @@ faq:
     a: "Both are public and reviewable, which is the real answer: safety comes from being able to read the SKILL.md before installing, not from any badge. Every AgentsCamp page shows the full file; treat that read as part of installing, especially for skills that touch git remotes, credentials, or deploy paths."
   - q: "How should a team govern skills?"
     a: "Three practices: skills enter the repo only via PR review (a SKILL.md diff is a behavior diff); plugins are pinned to versions so an upstream change can't silently alter behavior; and org-wide distribution goes through enterprise managed settings rather than each engineer's personal folder."
-related: ["what-are-claude-skills", "skill-md-reference", "how-to-install-claude-skills", "claude-settings-auditor", "packaging-and-sharing-skills", "claude-code-settings-permissions"]
+related: ["guide:what-are-claude-skills", "guide:skill-md-reference", "guide:how-to-install-claude-skills", "skill:claude-settings-auditor", "guide:packaging-and-sharing-skills", "guide:claude-code-settings-permissions"]
 ---
 
 Skills are the most benign-looking thing you can install — a Markdown file — and that's exactly why they deserve a real threat model. A SKILL.md is instructions an agent will follow and code it may execute, running with your session's permissions, triggered automatically when a task matches. That's an **instruction supply chain**, and it deserves the same posture as a package registry. Here's what can actually go wrong, and the five-minute review that covers it.
@@ -67,3 +67,7 @@ For a repo you've just cloned, run [claude-settings-auditor](/skills/workflow/cl
 ## The honest summary
 
 Skills are as safe as your review habit. The format has real guardrails — permissions still apply, grants are turn-scoped, nothing installs itself — but the same property that makes skills powerful (instructions that load and act automatically) is the property that rewards a hostile author. Read what you install. It's Markdown; it takes five minutes; it's the whole defense.
+
+## Continue exploring
+
+- [Software Supply Chain Security: Dependencies, Builds, and Releases](/guides/ai-safety/software-supply-chain-security) — Secure the software supply chain from dependency selection through release — lockfiles, provenance, least privilege, secret controls, SBOMs, and response.

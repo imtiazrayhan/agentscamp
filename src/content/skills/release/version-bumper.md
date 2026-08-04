@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["changelog-from-prs", "semver-advisor", "migration-writer"]
+related: ["skill:changelog-from-prs", "skill:semver-advisor", "skill:migration-writer"]
 featured: false
 summary: "A skill that bumps the version consistently across every artifact at once. It greps out all the places a version string hides — package.json, lockfile, nested CLI/submodule manifests, constants, badges, docs — sets them to one agreed value, moves the changelog's Unreleased entries under the new version and date, and stages (never runs unprompted) the annotated tag and release commit."
 faq:

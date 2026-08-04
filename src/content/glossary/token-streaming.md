@@ -4,7 +4,7 @@ description: "Token streaming delivers model output incrementally as it's genera
 date: 2026-06-12
 topics: ["llm-app-dev"]
 tags: ["streaming", "sse", "latency", "ux"]
-related: ["llm-token", "inference", "add-streaming-endpoint", "context-window"]
+related: ["glossary:llm-token", "glossary:inference", "command:add-streaming-endpoint", "glossary:context-window"]
 faq:
   - q: "Why stream tokens instead of waiting for the full response?"
     a: "Perceived latency. Generation takes as long as it takes, but streaming moves the user's wait from 'full response time' to 'time-to-first-token' — often 10x shorter. For chat and agents, watching text arrive is the difference between feeling instant and feeling broken; nothing about the total time changed, only when value starts arriving."

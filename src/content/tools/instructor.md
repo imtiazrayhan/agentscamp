@@ -15,7 +15,7 @@ tags: ["structured-output", "pydantic", "validation", "open-source", "python"]
 featured: false
 alternativeTo: ["baml", "vercel-ai-sdk"]
 summary: "Instructor turns an LLM into a typed function: define a Pydantic model (or a Zod/equivalent schema in its ports), and Instructor coerces the model's output into that shape, validating it and automatically re-asking on failure. The simplest way to get reliable structured data out of an LLM."
-related: ["baml", "structured-output-2026", "llm-output-schema-generator", "vercel-ai-sdk"]
+related: ["tool:baml", "guide:structured-output-2026", "skill:llm-output-schema-generator", "tool:vercel-ai-sdk"]
 faq:
   - q: "What is Instructor?"
     a: "Instructor makes structured output from LLMs feel like calling a typed function. You define the shape you want as a Pydantic model (Python, with ports for TypeScript, Go, and others), and Instructor instructs the model, parses the response into your type, validates it, and automatically retries with the validation errors fed back if the output doesn't conform."

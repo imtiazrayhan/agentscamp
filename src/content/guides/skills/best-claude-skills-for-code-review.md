@@ -25,7 +25,7 @@ faq:
     a: "No. Review and remediation are different permission levels. Read-only review is easier to trust, while automatic fixes can alter behavior or suppress symptoms. Approve changes only after checking evidence and impact."
   - q: "How do I install a Claude code-review skill?"
     a: "Run npx agentscamp add skills/<slug> for project scope or add -g for your personal Claude skills directory. Each linked skill page also exposes its complete SKILL.md."
-related: ["best-claude-skills-2026", "best-claude-skills-for-testing", "least-privilege-auditor", "dependency-audit", "coverage-gap-finder", "auth-flow-reviewer"]
+related: ["guide:best-claude-skills-2026", "guide:best-claude-skills-for-testing", "skill:least-privilege-auditor", "skill:dependency-audit", "skill:coverage-gap-finder", "skill:auth-flow-reviewer"]
 ---
 
 The best Claude skills for code review divide the job into explicit checks. A dependency review needs vulnerability evidence; a permissions review needs a map of principals and actions; a test review needs changed branches and failure modes. One prompt that says “review this PR” tends to blur all three.
@@ -95,3 +95,10 @@ npx agentscamp add skills/coverage-gap-finder
 ```
 
 Keep review and remediation separate. First ask Claude to produce findings with file references, impact, confidence, and a verification step. Then approve only the fixes whose behavior you understand.
+
+## Continue exploring
+
+- [Extract Module](/skills/refactor/extract-module) — Split an overgrown file into cohesive, well-bounded modules — find the natural seams, design each new module's public interface before moving a line, then relocate one unit at…
+- [Feature Flag Retirer](/skills/refactor/feature-flag-retirer) — Retire stale feature flags by confirming each flag's decided final state, then collapsing every conditional to the winning branch and deleting the loser plus the now-dead code…
+- [Strangler Fig Migrator](/skills/refactor/strangler-fig-migrator) — Plan the incremental replacement of a legacy module or service using the strangler-fig pattern — grow new code around the old behind an interception seam until the old is dead,…
+- [Monorepo Boundary Auditor](/skills/workflow/monorepo-boundary-auditor) — Audit a monorepo's package boundaries, dependency direction, public entry points, ownership, build graph, and affected-test rules, then report cycles and cross-layer imports…

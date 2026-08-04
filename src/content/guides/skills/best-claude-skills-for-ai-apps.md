@@ -25,7 +25,7 @@ faq:
     a: "Use token-usage-profiler to find spend, model-router-designer to assign the cheapest model that meets each task's quality bar, and semantic-cache-designer for safely reusable results. Re-run evals after every change."
   - q: "Are LLM guardrails enough to make agent tools safe?"
     a: "No. Combine input and output guardrails with least-privilege credentials, constrained tool schemas, server-side authorization, idempotency, rate limits, human approval for consequential actions, and audit logs."
-related: ["best-claude-skills-for-api-development", "best-claude-skills-for-security", "llm-output-schema-generator", "llm-eval-suite-scaffolder", "model-router-designer", "llm-guardrails-designer"]
+related: ["guide:best-claude-skills-for-api-development", "guide:best-claude-skills-for-security", "skill:llm-output-schema-generator", "skill:llm-eval-suite-scaffolder", "skill:model-router-designer", "skill:llm-guardrails-designer"]
 ---
 
 The best Claude skills for AI applications cover the engineering around the model call. Reliable systems validate outputs, survive provider failures, measure behavioral quality, control cost, protect sensitive data, and constrain actions. A polished prompt alone does none of that consistently.
@@ -94,3 +94,8 @@ npx agentscamp add skills/prompt-pii-redactor
 ```
 
 Establish the eval dataset before optimizing models, prompts, routing, or caching. That baseline turns every later change into a measurable tradeoff instead of a demo-driven guess.
+
+## Continue exploring
+
+- [10 Best Claude Skills for API Development](/guides/skills/best-claude-skills-for-api-development) — Choose Claude skills for error contracts, idempotency, pagination, limits, webhooks, CORS, GraphQL, OpenAPI, tools, and MCP servers.
+- [10 Best Claude Skills for Security Work](/guides/skills/best-claude-skills-for-security) — Compare Claude skills for secrets, dependencies, permissions, auth, RBAC, threats, headers, PII, data retention, and LLM guardrails.

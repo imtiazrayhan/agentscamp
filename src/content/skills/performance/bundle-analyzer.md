@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["review-qa"]
-related: ["performance-engineer", "frontend-developer"]
+related: ["agent:performance-engineer", "agent:frontend-developer"]
 featured: false
 summary: "A skill that analyzes a JS/TS production bundle to find where the bytes actually go: it builds a stats report with the project's own analyzer, attributes weight to packages, and hunts heavy dependencies, duplicate versions, missing code-splitting, oversized polyfills, and leaked server code — returning a plan ranked by estimated gzip savings."
 ---

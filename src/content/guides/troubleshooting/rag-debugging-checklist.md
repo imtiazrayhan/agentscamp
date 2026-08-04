@@ -21,7 +21,7 @@ faq:
     a: "Check in order: (1) chunking — are chunks coherent units, or mid-sentence fragments that embed poorly? (2) query-document mismatch — user phrasing vs document vocabulary often needs hybrid search or query rewriting; (3) embedding fit — generic embeddings on specialized jargon underperform (test a domain-stronger model on a sample); (4) missing filters — retrieval across tenants/versions pollutes results metadata filtering would fix."
   - q: "When do I need a reranker vs better retrieval?"
     a: "Measure recall@50 on your failing queries. Right answer usually present in the top-50 but absent from the top-5 → reranking converts that recall into precision. Right answer absent from the top-50 entirely → no reranker can help; fix retrieval first (hybrid search, embeddings, chunking)."
-related: ["how-rag-works", "hybrid-search-reranking", "agentic-rag", "chunking-strategy-optimizer", "embedding-set-inspector", "benchmark-rerankers", "write-llm-evals"]
+related: ["guide:how-rag-works", "guide:hybrid-search-reranking", "guide:agentic-rag", "skill:chunking-strategy-optimizer", "skill:embedding-set-inspector", "command:benchmark-rerankers", "guide:write-llm-evals"]
 ---
 
 RAG fails in four places, and the fixes don't transfer: weeks of prompt-tuning can't repair a chunking bug, and a new embedding model can't fix answers your parser never indexed. The discipline is **localize first** — walk a failing query through the stages, in order, and fix where it actually broke. ([How RAG Actually Works](/guides/concepts/how-rag-works) covers the healthy pipeline; this is the page for when it isn't.)

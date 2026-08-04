@@ -14,7 +14,7 @@ color: "blue"
 topics: ["data-ml"]
 tags: ["postgres", "migrations", "cli", "zero-downtime", "open-source"]
 featured: false
-related: ["zero-downtime-postgres-migrations", "postgres-migration-engineer", "db-migrate", "postgres-index-strategist"]
+related: ["guide:zero-downtime-postgres-migrations", "agent:postgres-migration-engineer", "command:db-migrate", "skill:postgres-index-strategist"]
 alternativeTo: ["postgres-mcp", "supabase-mcp"]
 summary: "pgroll is an open-source CLI from Xata for zero-downtime, reversible Postgres schema migrations. It automates the expand-contract pattern: old and new schema versions stay live simultaneously behind versioned views, with backfills and lock-friendly DDL handled for you — start a migration, roll your app, then complete it or roll back instantly."
 faq:

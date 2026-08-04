@@ -21,7 +21,7 @@ faq:
     a: "They're LLM-as-judge with structure — which means useful, not gospel. Treat scores as relative signals (did faithfulness drop after this change?) rather than absolute truth, spot-check against human labels before trusting a threshold, and keep the judge model fixed across comparisons. The calibration discipline from LLM-as-judge applies verbatim."
   - q: "Which should a team adopt first?"
     a: "If your product IS a RAG pipeline, start with RAGAS to get the retrieval diagnostics, then add DeepEval when you want CI gates. For any other LLM feature — agents, chat, extraction — start with DeepEval; it generalizes. Either way the framework is the easy part: the dataset and metric choices are where evals are won."
-related: ["deepeval", "ragas", "best-llm-eval-tools-2026", "write-llm-evals", "llm-as-judge", "llm-eval-suite-scaffolder", "run-evals"]
+related: ["tool:deepeval", "tool:ragas", "guide:best-llm-eval-tools-2026", "guide:write-llm-evals", "glossary:llm-as-judge", "skill:llm-eval-suite-scaffolder", "command:run-evals"]
 ---
 
 DeepEval vs RAGAS is a scope question wearing a rivalry costume: one is a **testing framework** for LLM applications broadly, the other a **metric suite** that defined how the field measures RAG. They overlap in the middle and excel at different jobs.

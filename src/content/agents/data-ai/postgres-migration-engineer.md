@@ -6,7 +6,7 @@ color: "blue"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-04
 topics: ["data-ml"]
-related: ["zero-downtime-postgres-migrations", "pgroll", "db-migrate", "postgres-index-strategist", "sql-pro"]
+related: ["guide:zero-downtime-postgres-migrations", "tool:pgroll", "command:db-migrate", "skill:postgres-index-strategist", "agent:sql-pro"]
 featured: false
 summary: "Specialist in changing a live Postgres schema without downtime: it decomposes a breaking change into expand-contract steps, writes batched/resumable backfills, builds indexes CONCURRENTLY, validates constraints online, and sequences each phase as its own reversible deploy — using the project's existing migration tool, not ad-hoc DDL."
 ---

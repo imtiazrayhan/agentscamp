@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "purple"
 date: 2026-08-04
 topics: ["review-qa", "devops-infra"]
-related: ["best-claude-skills-for-testing", "test-scaffolder", "integration-test-designer", "mutation-test-runner", "coverage-gap-finder", "github-actions-optimizer"]
+related: ["guide:best-claude-skills-for-testing", "skill:test-scaffolder", "skill:integration-test-designer", "skill:mutation-test-runner", "skill:coverage-gap-finder", "skill:github-actions-optimizer"]
 featured: true
 summary: "Diagnoses nondeterministic tests through repeated, reordered, isolated, parallel, and seeded runs. It classifies the flake, identifies the smallest condition that changes the outcome, distinguishes test defects from product races, and reports evidence plus a targeted fix and verification plan instead of treating retries as a solution."
 faq:

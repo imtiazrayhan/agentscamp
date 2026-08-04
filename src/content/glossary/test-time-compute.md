@@ -4,7 +4,7 @@ description: "Test-time compute is spending more computation at inference — lo
 date: 2026-06-17
 topics: ["data-ml"]
 tags: ["inference", "scaling", "reasoning", "compute"]
-related: ["reasoning-model", "chain-of-thought", "extended-thinking"]
+related: ["glossary:reasoning-model", "glossary:chain-of-thought", "glossary:extended-thinking"]
 faq:
   - q: "How is test-time compute different from training-time scaling?"
     a: "Training-time scaling makes a model smarter by using more data and compute to set its weights once, up front. Test-time compute leaves the weights fixed and instead spends more effort per query at inference. It's a separate scaling axis: a fixed model can produce better answers simply by being allowed to think, sample, or search more."

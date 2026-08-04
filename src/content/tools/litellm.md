@@ -15,7 +15,7 @@ tags: ["gateway", "proxy", "multi-provider", "open-source", "python"]
 featured: false
 alternativeTo: ["openrouter", "vercel-ai-sdk", "portkey"]
 summary: "LiteLLM lets you call 100+ LLMs (OpenAI, Anthropic, Google, Bedrock, local, and more) through one OpenAI-compatible interface. Use it as a Python library, or run its proxy as a self-hosted gateway with central keys, fallbacks, retries, caching, cost tracking, and rate limits."
-related: ["openrouter", "calling-any-model-gateways", "llm-gateways-compared", "provider-fallback-wrapper", "vercel-ai-sdk"]
+related: ["tool:openrouter", "guide:calling-any-model-gateways", "guide:llm-gateways-compared", "skill:provider-fallback-wrapper", "tool:vercel-ai-sdk"]
 faq:
   - q: "What is LiteLLM?"
     a: "LiteLLM is an open-source tool that lets you call 100+ LLM providers — Anthropic, Google, Azure, AWS Bedrock, local models, and more — through one OpenAI-format interface. It comes as a Python library for in-process calls and as a proxy server you run as a centralized gateway with key management, fallbacks, retries, caching, and cost tracking."

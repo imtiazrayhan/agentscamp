@@ -23,7 +23,7 @@ faq:
     a: "Two concurrent requests can both read that the key is absent and both execute the side effect. The first operation must be an atomic claim—a unique-constraint insert or conditional write—so exactly one request wins before any work begins."
   - q: "How long should idempotency records be retained?"
     a: "Retain them longer than every legitimate retry path, including mobile clients, queues, and delayed webhooks. Choose a documented TTL based on that window and business risk; high-value operations may need a longer audit record than routine job submissions."
-related: ["idempotency-designer", "webhook-handler-scaffolder", "production-tool-calling", "api-architect", "rate-limiter-designer", "contract-test-designer", "provider-fallback-wrapper"]
+related: ["skill:idempotency-designer", "skill:webhook-handler-scaffolder", "guide:production-tool-calling", "agent:api-architect", "skill:rate-limiter-designer", "skill:contract-test-designer", "skill:provider-fallback-wrapper"]
 howtoSteps:
   - name: "Define the logical operation"
     text: "Specify who creates the key, when a new key is required, which endpoint and caller scope it belongs to, and how long retries remain valid."
@@ -183,3 +183,7 @@ Assert the external side effect count, not only the HTTP response. The invariant
 > Idempotency does not mean every failure becomes success. It means repeated delivery of the same logical command converges on one recorded outcome without repeating the protected effect.
 
 Use the [Idempotency Designer](/skills/api/idempotency-designer) for an implementation-ready schema and handler, and apply the same identity discipline to [production tool calls](/guides/concepts/production-tool-calling) where agent retries can repeat real-world actions.
+
+## Continue exploring
+
+- [api-architect](/agents/core-development/api-architect) — Use this agent to design APIs — resource modeling, versioning, pagination, error contracts, REST vs GraphQL.

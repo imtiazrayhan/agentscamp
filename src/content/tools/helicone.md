@@ -15,7 +15,7 @@ tags: ["observability", "gateway", "caching", "cost-control", "open-source"]
 featured: false
 alternativeTo: ["langfuse", "langsmith", "portkey"]
 summary: "Helicone is an open-source LLM observability platform and AI gateway with a one-line integration — logging, tracing, caching, and cost/latency tracking across providers. Note: Mintlify acquired Helicone in March 2026 and it's now in maintenance mode (security and bug fixes only, no new features), though the Apache-2.0 proxy still works and is self-hostable."
-related: ["llm-gateways-compared", "portkey", "litellm", "llm-cost-latency-engineering", "langfuse"]
+related: ["guide:llm-gateways-compared", "tool:portkey", "tool:litellm", "guide:llm-cost-latency-engineering", "tool:langfuse"]
 faq:
   - q: "What is Helicone?"
     a: "Helicone is an open-source LLM observability platform with a built-in AI gateway, known for one-line setup: change your base URL or add a header and your calls are logged, traced, and analyzed. It adds caching and rate limiting at the proxy, cost and latency tracking per call, prompt management, and datasets/evals. Note: Mintlify acquired Helicone in March 2026 and it is now in maintenance mode — security and bug fixes only, no new features."

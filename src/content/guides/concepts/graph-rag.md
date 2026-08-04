@@ -23,7 +23,7 @@ faq:
     a: "Because the index is expensive and fragile: building it means LLM extraction over the entire corpus (a real bill), keeping it current means re-extraction on updates, and every extraction error becomes a retrieval error downstream. Teams that adopt it successfully have query patterns that genuinely need traversal — not just enthusiasm for graphs."
   - q: "Do I need a graph database for GraphRAG?"
     a: "Not necessarily. Microsoft's reference GraphRAG implementation works over parquet files; modest graphs fit in memory or even Postgres. Dedicated graph databases earn their place at scale or when you want graph query languages and ops — the concept doesn't require one on day one."
-related: ["how-rag-works", "agentic-rag", "rag-vs-long-context", "rag", "hybrid-search-reranking", "graphrag-scaffolder", "vector-database"]
+related: ["guide:how-rag-works", "guide:agentic-rag", "guide:rag-vs-long-context", "glossary:rag", "guide:hybrid-search-reranking", "skill:graphrag-scaffolder", "glossary:vector-database"]
 ---
 
 Vector [RAG](/glossary/rag) has a structural blind spot: it retrieves passages that *resemble the question*. Ask something whose answer is **assembled from connections** — across documents, through relationships, over the whole corpus — and no chunk resembles the question, so retrieval returns fragments and the model improvises. **GraphRAG** is the fix for exactly that class of question: retrieval over a knowledge graph instead of a similarity index.

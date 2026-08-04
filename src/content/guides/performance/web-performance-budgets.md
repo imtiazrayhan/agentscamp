@@ -23,7 +23,7 @@ faq:
     a: "Lab data runs a controlled device, network, and test flow, making regressions reproducible in CI. Field data records real users across actual devices, locations, caches, and behavior. Lab tests catch changes before release; field monitoring verifies that the budget reflects reality."
   - q: "How should a team handle a necessary budget exception?"
     a: "Record the user or business reason, affected route, measured cost, owner, expiry date, and repayment work. Keep the absolute user-experience ceiling visible; exceptions should spend an explicit allowance, not silently redefine the budget."
-related: ["web-vitals-optimizer", "bundle-analyzer", "react-render-profiler", "set-perf-budget", "performance-engineer", "load-test-designer", "cold-start-optimizer"]
+related: ["skill:web-vitals-optimizer", "skill:bundle-analyzer", "skill:react-render-profiler", "command:set-perf-budget", "agent:performance-engineer", "skill:load-test-designer", "skill:cold-start-optimizer"]
 howtoSteps:
   - name: "Classify pages and journeys"
     text: "Group routes by user expectation and business importance, then select representative pages and critical interactions for each class."
@@ -181,3 +181,9 @@ Celebrate deleting bytes and latency the same way the team celebrates shipping f
 > Give a new feature a budget during design: which page-class allowance will it spend, and what will be removed or optimized if that allowance is already committed?
 
 Use the [Web Vitals Optimizer](/skills/performance/web-vitals-optimizer) to diagnose a failing route, the [Bundle Analyzer](/skills/performance/bundle-analyzer) to attribute JavaScript growth, and [Set Perf Budget](/commands/perf/set-perf-budget) to turn chosen thresholds into repository enforcement.
+
+## Continue exploring
+
+- [accessibility-auditor](/agents/quality-security/accessibility-auditor) — Use this agent to audit web UI against WCAG 2.2 AA — semantics, keyboard, ARIA, contrast, forms, and motion.
+- [SLOs and Error Budgets: A Practical Reliability Guide](/guides/observability/slo-error-budget-guide) — Define user-centered SLIs and SLOs, calculate error budgets, create burn-rate alerts, set release policy, and keep reliability targets meaningful.
+- [Find N+1 Queries](/commands/perf/find-n-plus-one) — Scan code read-only for N+1 query patterns — loops that query per iteration and handlers that fan out per-row — and report each with a location, why it is N+1, and the concrete…

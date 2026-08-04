@@ -34,7 +34,7 @@ faq:
     a: "Short-term (working) memory is what's in the model's context window right now — the current task's recent turns and retrieved facts; it's wiped when the session ends. Long-term memory is persisted outside the model (a database/vector store) and survives across sessions, so the agent can recall a user's preferences and history later. Production agents use both: long-term to remember, short-term to work."
   - q: "Should I just put the whole conversation history in the context window?"
     a: "Only up to a point. Appending full history grows cost and latency, hits context limits, and suffers the 'lost in the middle' effect where the model overlooks buried details. Better to keep recent turns verbatim, summarize older ones, and retrieve specific long-term facts on demand — remembering more by storing less in context."
-related: ["agent-frameworks-2026", "mem0", "langgraph", "context-engineering", "agent-tool-integration-engineer"]
+related: ["guide:agent-frameworks-2026", "tool:mem0", "tool:langgraph", "guide:context-engineering", "agent:agent-tool-integration-engineer"]
 ---
 
 An agent without memory is a stranger every conversation — it forgets your name, your preferences, and what it did five minutes ago. Memory is what makes an agent feel continuous and competent. But "give it memory" doesn't mean "stuff everything into the prompt." Good agent memory is an architecture: two layers, each with a job.
@@ -70,3 +70,7 @@ A library like [Mem0](/tools/mem0) implements exactly this extract-store-retriev
 - **Memory as a dumping ground for bad retrieval.** If the *task's* knowledge belongs in a knowledge base, that's [RAG](/guides/concepts/how-rag-works), not agent memory. Memory is for the agent's own continuity, not your document corpus.
 
 Once memory is in place, the other half of a capable agent is robust [tool calling](/guides/concepts/production-tool-calling) — and then [hardening it for production](/agents/meta-orchestration/agent-reliability-reviewer).
+
+## Continue exploring
+
+- [Agno](/tools/agno) — A Python framework for building multi-agent systems with memory, knowledge, and tools — formerly Phidata, now with the AgentOS runtime.

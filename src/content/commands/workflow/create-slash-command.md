@@ -5,7 +5,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Create Slash Command"
 color: "purple"
 topics: ["workflow-prompting"]
-related: ["create-subagent", "create-skill", "plan-feature"]
+related: ["command:create-subagent", "command:create-skill", "command:plan-feature"]
 featured: false
 date: 2026-06-17
 summary: "A slash command that writes another slash command into .claude/commands/<slug>.md: it derives a slug from your description, picks the minimum allowed-tools, and generates a valid file with frontmatter plus a $ARGUMENTS-driven body — numbered steps, an empty-args branch, and a final Report — then tells you exactly how to invoke it."

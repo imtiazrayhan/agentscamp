@@ -4,7 +4,7 @@ description: "Embedding dimension is the length of an embedding vector — how m
 date: 2026-06-12
 topics: ["rag-retrieval"]
 tags: ["embeddings", "dimensions", "vectors", "rag"]
-related: ["embedding", "vector-database", "cosine-similarity", "choosing-embeddings-2026", "quantization"]
+related: ["glossary:embedding", "glossary:vector-database", "glossary:cosine-similarity", "guide:choosing-embeddings-2026", "glossary:quantization"]
 faq:
   - q: "Are more embedding dimensions better?"
     a: "Capacity rises with dimension, but with hard diminishing returns — and cost rises linearly: every dimension is paid in storage, memory, and search compute on every vector forever. Modern models at 512–1,536 dimensions routinely match older 3,072-dim quality. Benchmark retrieval quality per dimension on your corpus; don't default to the maximum."

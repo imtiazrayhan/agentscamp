@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "green"
 date: 2026-06-03
 topics: ["ai-agents-systems"]
-related: ["production-tool-calling", "agent-tool-integration-engineer", "openapi-doc-writer", "agent-frameworks-2026"]
+related: ["guide:production-tool-calling", "agent:agent-tool-integration-engineer", "skill:openapi-doc-writer", "guide:agent-frameworks-2026"]
 featured: false
 summary: "Most bad tool calls come from bad tool definitions, not a weak model. This skill turns a function or API spec into a clean tool/function schema written for the model: precise types, honest required fields, enums that constrain choices, and descriptions that say when and how to call it — so invalid calls become structurally impossible."
 ---

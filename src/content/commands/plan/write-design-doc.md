@@ -7,7 +7,7 @@ allowed-tools: "Read, Grep, Glob"
 title: "Write Design Doc"
 color: "purple"
 topics: ["architecture", "workflow-prompting"]
-related: ["plan-feature", "breakdown-task", "trace-data-flow"]
+related: ["command:plan-feature", "command:breakdown-task", "command:trace-data-flow"]
 featured: false
 summary: "A read-only slash command that writes a design doc / RFC for a feature or system change. It grounds the design in the real codebase, then delivers context, goals/non-goals, proposed design, alternatives with why-rejected, trade-offs and risks, a rollout/observability plan, and the open questions that need a decision."
 ---

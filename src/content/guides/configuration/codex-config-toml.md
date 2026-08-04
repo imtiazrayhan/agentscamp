@@ -23,7 +23,7 @@ faq:
     a: "From highest to lowest precedence: CLI and --config overrides, project .codex/config.toml files from the root toward the working directory, the selected profile, user config, system config, and built-in defaults. Managed requirements may still forbid certain values."
   - q: "Should a team commit .codex/config.toml?"
     a: "Yes when the repository needs shared operational defaults, such as a project MCP server or scoped sandbox behavior. Codex loads project configuration only for trusted projects, and credentials should stay in environment variables or OAuth rather than the committed file."
-related: ["codex-agents-md", "codex-mcp-setup", "codex-subagents", "openai-codex-guide", "codex-cli", "sandboxing-ai-generated-code"]
+related: ["guide:codex-agents-md", "guide:codex-mcp-setup", "guide:codex-subagents", "guide:openai-codex-guide", "tool:codex-cli", "guide:sandboxing-ai-generated-code"]
 howtoSteps:
   - name: "Separate instructions from settings"
     text: "Keep repository conventions in AGENTS.md and put only runtime behavior such as permissions, models, integrations, and subagents in config.toml."

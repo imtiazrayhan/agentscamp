@@ -4,7 +4,7 @@ description: "AI slop is low-effort, mass-produced AI-generated content — flue
 date: 2026-06-12
 topics: ["workflow-prompting"]
 tags: ["ai-slop", "content-quality", "culture"]
-related: ["vibe-coding", "hallucination", "testing-ai-generated-code", "ai-code-review-workflow"]
+related: ["glossary:vibe-coding", "glossary:hallucination", "guide:testing-ai-generated-code", "guide:ai-code-review-workflow"]
 faq:
   - q: "What makes something AI slop versus just AI-generated?"
     a: "Effort and verification, not origin. Slop is generation without judgment: unreviewed, generic, often subtly wrong, produced because output is cheap. AI-assisted work with real curation — checked facts, edited voice, tested code — isn't slop regardless of how much a model contributed. The term indicts the workflow, not the tool."

@@ -14,7 +14,7 @@ tags: ["structured-output", "type-safe", "dsl", "open-source"]
 featured: false
 alternativeTo: ["instructor"]
 summary: "BAML is a small domain-specific language for defining LLM functions with typed inputs and outputs. You write the function and schema once in .baml files and generate type-safe clients for Python, TypeScript, and more; its schema-aligned parser reliably coerces messy model output into your types."
-related: ["instructor", "structured-output-2026", "llm-output-schema-generator"]
+related: ["tool:instructor", "guide:structured-output-2026", "skill:llm-output-schema-generator"]
 faq:
   - q: "What is BAML?"
     a: "BAML, by BoundaryML, is a small domain-specific language for type-safe LLM functions. You define an LLM function — its prompt, typed inputs, and typed output — in a .baml file, and BAML generates type-safe clients for Python, TypeScript, and other languages, with schema-aligned parsing that coerces the imperfect, almost-JSON models often emit into your declared types."

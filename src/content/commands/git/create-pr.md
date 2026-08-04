@@ -8,7 +8,7 @@ title: "Create PR"
 color: "purple"
 topics: ["review-qa"]
 featured: true
-related: ["commit", "pr-description", "review-pr"]
+related: ["command:commit", "skill:pr-description", "command:review-pr"]
 summary: "A slash command that opens a GitHub pull request for the current branch: it confirms the base branch, pushes if needed, reads the commits and diff to synthesize a concise title and a structured body covering summary, changes, testing, and risk, creates the PR via gh, and reports the URL — without merging."
 ---
 

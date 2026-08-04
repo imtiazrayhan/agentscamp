@@ -23,7 +23,7 @@ faq:
     a: "An embedded vector database (Chroma in-process, LanceDB) runs inside your application process and reads/writes local files or object storage — no separate service to deploy, ideal for prototypes, notebooks, and edge or single-node apps. A server vector database (Qdrant, Weaviate, Milvus, Pinecone) runs as its own service you connect to over the network, which is what you want for shared access, horizontal scale, and high availability."
   - q: "Which vector databases support hybrid search and metadata filtering?"
     a: "Nearly all of them in 2026. Qdrant, Weaviate, Milvus, Pinecone, and pgvector (via SQL plus an FTS/BM25 column) all support combining dense vector similarity with sparse/keyword signals and filtering by metadata. The differences are in ergonomics and fusion quality, not whether the feature exists — so choose on deployment model, scale, and cost rather than the hybrid-search checkbox."
-related: ["how-rag-works", "choosing-embeddings-2026", "hybrid-search-reranking", "pgvector", "pinecone", "qdrant", "weaviate", "milvus", "chroma", "lancedb", "mem0", "vector-search-engineer", "embedding-index-tuner", "scaffold-pgvector-schema"]
+related: ["guide:how-rag-works", "guide:choosing-embeddings-2026", "guide:hybrid-search-reranking", "tool:pgvector", "tool:pinecone", "tool:qdrant", "tool:weaviate", "tool:milvus", "tool:chroma", "tool:lancedb", "tool:mem0", "agent:vector-search-engineer", "skill:embedding-index-tuner", "command:scaffold-pgvector-schema"]
 ---
 
 Once you've [chosen an embedding model](/guides/concepts/choosing-embeddings-2026) and [chunked your corpus](/guides/concepts/how-rag-works), the vectors have to live somewhere that can find the nearest matches to a query — fast, with filtering, at your scale. That somewhere is a **vector database**. The market is crowded, but the choice is not actually about who has the longest feature list. By 2026 they all do approximate nearest-neighbour search, hybrid search, and metadata filtering. The decision is about **where you run it, at what scale, and what you already operate.**
@@ -81,3 +81,7 @@ All three are open-source, self-hostable, and offer a managed cloud — the swee
 A vector database stores and searches embeddings — it doesn't decide *what an agent should remember*. If you're building an assistant that needs persistent, per-user memory on top of retrieval, a memory layer like [Mem0](/tools/mem0) sits above your vector store and manages extraction and recall (see [Agent Memory Architecture](/guides/concepts/agent-memory-architecture)). And whichever store you pick, the index itself has knobs — HNSW graph parameters and quantization trade recall against speed and memory; the [Embedding Index Tuner](/skills/database/embedding-index-tuner) skill tunes them against your latency budget.
 
 For the end-to-end retrieval build, the [vector-search-engineer](/agents/data-ai/vector-search-engineer) takes a corpus and a query set and returns a measured, filtered, hybrid retrieval setup on the store you chose.
+
+## Continue exploring
+
+- [Seed Data](/commands/db/seed-data) — Generate realistic, referentially-consistent seed data and a re-runnable seed script from your actual schema — types and constraints respected, plausible values, FK-dependency…

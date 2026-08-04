@@ -23,7 +23,7 @@ faq:
     a: "Use pointwise scoring when you need an absolute threshold, longitudinal metric, or pass/fail gate. Use pairwise comparison when selecting between two variants; models often distinguish which output is better more consistently than assigning an absolute score."
   - q: "Can the same model judge its own answers?"
     a: "It can, but self-preference and shared failure modes make the result riskier. Prefer a capable independent judge, blind model identity, and verify agreement with humans. If self-judging is unavoidable, make the limitation explicit and increase human spot checks."
-related: ["llm-as-judge", "write-llm-evals", "llm-evaluation-metrics-explained", "llm-as-judge-scorer", "llm-evaluation-engineer", "eval-dataset", "prompt-regression-tester"]
+related: ["glossary:llm-as-judge", "guide:write-llm-evals", "guide:llm-evaluation-metrics-explained", "skill:llm-as-judge-scorer", "agent:llm-evaluation-engineer", "glossary:eval-dataset", "skill:prompt-regression-tester"]
 howtoSteps:
   - name: "Choose a semantic criterion"
     text: "Define the one quality dimension the judge must evaluate and confirm a deterministic assertion cannot score it more reliably."

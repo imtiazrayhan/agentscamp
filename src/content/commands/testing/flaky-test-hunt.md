@@ -7,7 +7,7 @@ allowed-tools: "Bash, Read, Edit"
 title: "Hunt Flaky Tests"
 color: "purple"
 topics: ["review-qa"]
-related: ["fix-failing-test", "write-tests", "trace-data-flow"]
+related: ["command:fix-failing-test", "command:write-tests", "command:trace-data-flow"]
 summary: "Hunts a flaky test to its root cause: reproduces the intermittency by looping the suspect with randomized order/seed, classifies the nondeterminism (shared state, real time, unseeded RNG, async races, network, leaks, locale/TZ), fixes the source — inject a clock, seed RNG, await properly, isolate state, mock the network — then re-runs to prove stability. Never hides it with retries or sleeps."
 faq:
   - q: "Why not just add a retry or a longer sleep to fix a flaky test?"

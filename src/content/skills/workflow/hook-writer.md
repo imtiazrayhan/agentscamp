@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-11
 topics: ["workflow-prompting"]
-related: ["claude-code-hooks", "claude-code-settings-permissions", "claude-settings-auditor", "plugin-scaffolder", "setup-claude-ci"]
+related: ["guide:claude-code-hooks", "guide:claude-code-settings-permissions", "skill:claude-settings-auditor", "skill:plugin-scaffolder", "command:setup-claude-ci"]
 featured: false
 summary: "Describe the automation you want and this skill ships the hook: it picks the correct event (PreToolUse to gate, PostToolUse to react, UserPromptSubmit to validate, Notification/Stop for signals), writes a hardened script that parses the stdin JSON and uses exit codes correctly, registers it in the right settings file with a scoped matcher and timeout, and tells you exactly how to verify it fires."
 ---

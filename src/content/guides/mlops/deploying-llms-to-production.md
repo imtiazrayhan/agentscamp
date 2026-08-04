@@ -6,11 +6,11 @@ color: "green"
 topics: ["mlops-ai-infra"]
 tags: ["production", "reliability", "serving", "observability", "rollout"]
 related:
-  - "self-host-vs-api-llm"
-  - "llm-cost-latency-engineering"
-  - "calling-any-model-gateways"
-  - "provider-fallback-wrapper"
-  - "token-usage-profiler"
+  - "guide:self-host-vs-api-llm"
+  - "guide:llm-cost-latency-engineering"
+  - "guide:calling-any-model-gateways"
+  - "skill:provider-fallback-wrapper"
+  - "skill:token-usage-profiler"
 featured: false
 date: 2026-06-17
 summary: "A prototype that works in a notebook is not a production system. Shipping an LLM feature means engineering around a slow, non-deterministic, rate-limited, occasionally-down dependency you don't control. The work that separates demo from production is reliability, observability, cost control, and safe rollout — not the prompt."
@@ -124,3 +124,7 @@ Before you flip a feature on for real traffic, confirm:
 - **Secrets** — API keys in a secrets manager (never in code, env files in the repo, or client bundles), scoped and rotatable; per-environment keys so a leak is contained.
 
 The prompt got you the demo. This list gets you to production.
+
+## Continue exploring
+
+- [Scaffold Dockerfile](/commands/scaffold/scaffold-dockerfile) — Scaffold a production-grade multi-stage Dockerfile and `.dockerignore` for the current project.

@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["llm-evals"]
-related: ["llm-eval-suite-scaffolder", "llm-as-judge-scorer", "agent-trajectory-evaluator"]
+related: ["skill:llm-eval-suite-scaffolder", "skill:llm-as-judge-scorer", "skill:agent-trajectory-evaluator"]
 featured: false
 summary: "Confident and fluent is not the same as grounded. This skill measures faithfulness — whether each claim in an answer is entailed by the retrieved source — by decomposing answers into atomic claims and checking entailment, then splits retrieval vs generation failures and gates releases on a groundedness score."
 ---

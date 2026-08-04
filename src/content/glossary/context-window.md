@@ -4,7 +4,7 @@ description: "The context window is the maximum text — measured in tokens — 
 date: 2026-06-11
 topics: ["llm-app-dev"]
 tags: ["context", "tokens", "llm", "limits"]
-related: ["llm-token", "context-engineering", "claude-code-memory-context", "prompt-caching", "rag"]
+related: ["glossary:llm-token", "glossary:context-engineering", "guide:claude-code-memory-context", "glossary:prompt-caching", "glossary:rag"]
 faq:
   - q: "What happens when the context window fills up?"
     a: "Nothing more fits — so something must go. Applications truncate old turns, summarize them (Claude Code's /compact), or retrieve selectively instead of loading everything (RAG). Quality usually degrades before the hard limit: models weight the start and end of a long window more than the middle, so buried facts get missed."

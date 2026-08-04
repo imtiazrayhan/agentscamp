@@ -7,7 +7,7 @@ title: "Setup Claude CI"
 color: "blue"
 date: 2026-06-11
 topics: ["workflow-prompting"]
-related: ["claude-code-ci-github-actions", "claude-code-settings-permissions", "claude-code-hooks", "create-pr", "review-pr"]
+related: ["guide:claude-code-ci-github-actions", "guide:claude-code-settings-permissions", "guide:claude-code-hooks", "command:create-pr", "command:review-pr"]
 featured: false
 summary: "A slash command that wires Claude Code into a repo's CI via anthropics/claude-code-action: it picks mention or prompt mode for the job, uses the installer or scaffolds the workflow YAML, scopes tools and turns to the minimum, sets the ANTHROPIC_API_KEY secret correctly, and verifies with a real trigger like an @claude comment."
 ---

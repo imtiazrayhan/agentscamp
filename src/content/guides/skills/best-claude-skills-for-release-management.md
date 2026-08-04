@@ -25,7 +25,7 @@ faq:
     a: "Use it before retiring an endpoint, field, event version, SDK method, or agent tool. It inventories consumers, verifies replacement parity, defines telemetry and communications, and requires reversible disablement before deletion."
   - q: "Can Claude publish the release automatically?"
     a: "Skills can prepare artifacts and checks, but production deployment, tag publication, and rollback should follow the repository's authorization process with the exact target and scope confirmed."
-related: ["best-claude-skills-for-devops-sre", "release-readiness-reviewer", "canary-release-planner", "rollback-plan-writer", "api-deprecation-planner", "migration-writer"]
+related: ["guide:best-claude-skills-for-devops-sre", "skill:release-readiness-reviewer", "skill:canary-release-planner", "skill:rollback-plan-writer", "skill:api-deprecation-planner", "skill:migration-writer"]
 ---
 
 The best Claude release skills turn shipping into an evidence-backed sequence: freeze scope, verify readiness, preserve compatibility, control exposure, observe the result, recover if necessary, and communicate what changed. A version bump alone is not release management.
@@ -88,3 +88,7 @@ npx agentscamp add skills/release-notes-writer
 ```
 
 Run the readiness review against the immutable artifact you intend to ship. If scope changes afterward, rerun the affected checks; approval for one commit is not approval for a moving branch.
+
+## Continue exploring
+
+- [10 Best Claude Skills for DevOps and SRE](/guides/skills/best-claude-skills-for-devops-sre) — Use Claude skills for incidents, rollbacks, SLOs, alerts, dashboards, logs, traces, containers, CI, and safer releases.

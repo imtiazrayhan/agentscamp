@@ -8,7 +8,7 @@ color: "cyan"
 title: "Token Usage Profiler"
 date: 2026-06-17
 topics: ["llm-app-dev"]
-related: ["prompt-cache-optimizer", "prompt-regression-tester", "llm-eval-suite-scaffolder"]
+related: ["skill:prompt-cache-optimizer", "skill:prompt-regression-tester", "skill:llm-eval-suite-scaffolder"]
 featured: false
 summary: "An LLM bill is a total until you tag it. This skill instruments every model call with input/output tokens, model, and a feature/tenant tag, breaks spend down by that tag, ranks the dominant waste, and assigns each driver a concrete lever — trim context, cap output, downshift the model, or cache — plus the budgets to catch regressions."
 faq:

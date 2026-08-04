@@ -21,7 +21,7 @@ faq:
     a: "By gravity: building agent products from scratch → E2B (the SDKs and patterns are agent-native); needing fastest spin-up or Windows/Android targets → Daytona; already running inference/batch on Modal → its Sandboxes keep one platform; deployed on Vercel → Vercel Sandbox shares your auth, billing, and SDK idioms. Isolation quality won't be your differentiator — fit will."
   - q: "Do I need a sandbox for code the agent writes into my repo?"
     a: "Different threat: repo code gets reviewed and tested before it runs with privileges (that's the verification stack). Sandboxes are for code that executes IMMEDIATELY as part of the agent loop — analysis snippets, generated scripts, tool-built programs — where review-before-run is impossible by design."
-related: ["e2b", "daytona", "modal", "vercel-sandbox", "how-computer-use-agents-work", "guardrails", "agent-engineering", "owasp-agentic-top-10"]
+related: ["tool:e2b", "tool:daytona", "tool:modal", "tool:vercel-sandbox", "guide:how-computer-use-agents-work", "glossary:guardrails", "glossary:agent-engineering", "guide:owasp-agentic-top-10"]
 ---
 
 The moment agents could write code, the question became *where it runs* — because generated code is **untrusted input that executes**. The answer that won: give every agent a disposable computer. Four platforms industrialized that answer, and they're more alike on safety than their marketing suggests — which moves the real decision elsewhere.

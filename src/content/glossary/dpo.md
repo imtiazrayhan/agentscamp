@@ -4,7 +4,7 @@ description: "DPO aligns a model to preferences directly from chosen-vs-rejected
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
 tags: ["dpo", "alignment", "training", "post-training"]
-related: ["rlhf", "fine-tuning", "constitutional-ai", "finetune-dataset-prep"]
+related: ["glossary:rlhf", "glossary:fine-tuning", "glossary:constitutional-ai", "guide:finetune-dataset-prep"]
 faq:
   - q: "How is DPO different from RLHF?"
     a: "RLHF is two systems: train a reward model on preference rankings, then run reinforcement learning against it. DPO collapses that into one supervised-style step — a loss function that directly raises the probability of chosen responses over rejected ones. Same preference data, no reward model, no PPO instability."

@@ -18,10 +18,10 @@ sameAs:
 alternativeTo: ["cursor", "github-copilot", "windsurf", "cody", "continue"]
 summary: "Augment Code is an AI coding assistant built for large, real-world codebases. Its Context Engine indexes the whole repo so agents, chat, and completions reason over your actual architecture rather than a few open files. It runs in VS Code and JetBrains IDEs and as the Auggie CLI. Proprietary, with a free trial and paid plans."
 related:
-  - "cursor-vs-claude-code-vs-copilot-vs-windsurf-2026"
-  - "github-copilot-vs-cursor"
-  - "ai-coding-statistics-2026"
-  - "best-ai-code-review-tools-2026"
+  - "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026"
+  - "guide:github-copilot-vs-cursor"
+  - "guide:ai-coding-statistics-2026"
+  - "guide:best-ai-code-review-tools-2026"
 faq:
   - q: "What is Augment Code?"
     a: "Augment Code is an AI coding assistant built for large, real-world codebases. Its Context Engine indexes an entire repository — across many files and repos — so its agents, chat, and completions reason over your actual architecture, call relationships, and conventions instead of just the files you have open. It is available as IDE extensions for VS Code and JetBrains and as the Auggie CLI."

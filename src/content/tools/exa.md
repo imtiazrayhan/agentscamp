@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/exa-labs"
   - "https://dashboard.exa.ai"
   - "https://www.npmjs.com/package/exa-mcp-server"
-related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "firecrawl", "data-scientist", "how-rag-works", "agent-tool-integration-engineer"]
+related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "tool:firecrawl", "agent:data-scientist", "guide:how-rag-works", "agent:agent-tool-integration-engineer"]
 alternativeTo: ["tavily", "firecrawl", "jina-reader"]
 summary: "Exa is a search engine designed for AI consumers, not human browsers: a semantic Search API with deep-search profiles, a Contents API returning clean page text and summaries, Websets for building enriched entity sets, and research endpoints. Its hosted MCP server (mcp.exa.ai/mcp) is the most-used search server in the ecosystem and even works keyless on a rate-limited free tier."
 faq:

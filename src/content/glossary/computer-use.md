@@ -4,7 +4,7 @@ description: "Computer use is an AI agent operating software through its real in
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 tags: ["computer-use", "browser-agents", "automation", "agents"]
-related: ["ai-agent", "vision-language-model", "playwright-mcp", "chrome-devtools-mcp", "human-in-the-loop"]
+related: ["glossary:ai-agent", "glossary:vision-language-model", "tool:playwright-mcp", "tool:chrome-devtools-mcp", "glossary:human-in-the-loop"]
 faq:
   - q: "How does computer use actually work?"
     a: "A perception-action loop: the agent receives a screenshot (or accessibility/DOM data), a vision-language model decides the next action — click these coordinates, type this text, scroll — the action executes, and a fresh screenshot comes back as the observation. Reliability comes from grounding (finding the right element) and recovery (noticing a mis-click and correcting)."

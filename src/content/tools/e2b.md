@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/e2b-dev/E2B"
   - "https://e2b.dev/docs"
   - "https://github.com/e2b-dev/infra"
-related: ["sandboxing-ai-generated-code", "daytona", "modal", "vercel-sandbox", "computer-use", "agent-engineering"]
+related: ["guide:sandboxing-ai-generated-code", "tool:daytona", "tool:modal", "tool:vercel-sandbox", "glossary:computer-use", "glossary:agent-engineering"]
 summary: "E2B is the category-defining agent sandbox: Firecracker microVMs your agent spins up to run untrusted code — stateful Python/JS interpreters with rich outputs, full Linux terminals, package installs, pause/resume persistence, and a Desktop Sandbox for computer-use agents. SDKs and the production infra are Apache-2.0 (self-hostable); the hosted cloud is freemium with per-second billing."
 faq:
   - q: "What is E2B used for?"

@@ -7,7 +7,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Scaffold Dockerfile"
 color: "purple"
 topics: ["devops-infra"]
-related: ["devops-engineer", "setup-claude-ci", "cloud-architect"]
+related: ["agent:devops-engineer", "command:setup-claude-ci", "agent:cloud-architect"]
 featured: false
 summary: "A slash command that detects the project's stack from its manifests (or a $ARGUMENTS hint), then writes a multi-stage Dockerfile with a pinned minimal base, a non-root user, cache-friendly layer ordering, a HEALTHCHECK, and a matching .dockerignore — reporting the build and run commands at the end."
 ---

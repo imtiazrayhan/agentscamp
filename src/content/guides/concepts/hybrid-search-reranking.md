@@ -36,7 +36,7 @@ faq:
     a: "Not always, but it's usually worth it. Reranking is one of the cheapest, highest-leverage upgrades to RAG precision because it reads the query and each passage together. The cost is added latency and per-query expense — so over-retrieve, rerank only the candidates, and measure the lift before shipping it."
   - q: "What's the difference between an embedding model and a reranker?"
     a: "An embedding model is a bi-encoder: it encodes the query and documents separately into vectors, which makes first-stage search fast and scalable but approximate. A reranker is a cross-encoder: it processes the query and a candidate passage jointly, which is far more accurate at judging relevance but too slow to run over the whole corpus — so you use it only on the retrieved candidates."
-related: ["how-rag-works", "retrieval-engineer", "qdrant", "cohere-rerank", "benchmark-rerankers"]
+related: ["guide:how-rag-works", "agent:retrieval-engineer", "tool:qdrant", "tool:cohere-rerank", "command:benchmark-rerankers"]
 ---
 
 Pure vector search is where most RAG demos start and most RAG production systems get stuck. Vectors match on *meaning*, which is exactly what you want for "how do I cancel my plan?" → "subscription termination." But they're surprisingly bad at *exact* matches — an error code like `ERR_2043`, a product name, a function identifier — because nothing is semantically "close" to an opaque token; it has to match. Production retrieval fixes this with two moves: **hybrid search** for recall, and **reranking** for precision.
@@ -79,3 +79,7 @@ A **reranker** is a cross-encoder: it reads the query and a candidate passage to
 Both hybrid search and reranking add latency and cost, so don't add them on faith — measure. On a labeled eval set, track **recall@k after fusion** (did hybrid search get the answer into the candidate set?) and **nDCG@k after reranking** (did reranking move it to the top?). The [Benchmark Rerankers](/commands/review/benchmark-rerankers) command runs exactly this comparison, and the [retrieval-engineer](/agents/data-ai/retrieval-engineer) agent owns tuning the whole retrieval stage against the numbers.
 
 For where these stages sit in the full pipeline, see [How RAG Actually Works](/guides/concepts/how-rag-works).
+
+## Continue exploring
+
+- [turbopuffer](/tools/turbopuffer) — A serverless vector and full-text search database built on object storage (S3/GCS/Azure) — usage-based pricing, hybrid search, and low cost per GB at scale.

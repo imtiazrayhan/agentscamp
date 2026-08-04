@@ -21,7 +21,7 @@ faq:
     a: "Transport (WebRTC or telephony), speech recognition with endpointing, turn detection, the agent brain (LLM + tools + memory), speech synthesis, and interruption handling — plus observability over all of it. The model calls are the easy 30%; the realtime systems engineering is why platforms and frameworks exist."
   - q: "What does Cartesia Line change?"
     a: "It's a fourth posture: vertically integrated. Line runs Cartesia's own Sonic TTS and Ink STT in a hosted agent platform with per-minute pricing — competing with Vapi on convenience while owning the models. Compelling if Cartesia's latency thesis is your priority; the trade is provider flexibility."
-related: ["livekit", "vapi", "pipecat", "cartesia", "build-a-voice-agent", "best-tts-apis-2026", "best-stt-apis-2026", "voice-agent-engineer"]
+related: ["tool:livekit", "tool:vapi", "tool:pipecat", "tool:cartesia", "guide:build-a-voice-agent", "guide:best-tts-apis-2026", "guide:best-stt-apis-2026", "agent:voice-agent-engineer"]
 ---
 
 Voice agents crossed the production threshold — a billion-plus calls on the major platforms — and the tooling sorted into three honest postures. The question isn't which is "best"; it's **how much of the realtime stack you want to own**.

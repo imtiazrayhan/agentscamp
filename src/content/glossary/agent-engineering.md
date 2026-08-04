@@ -4,7 +4,7 @@ description: "Agent engineering is the discipline of building reliable AI agents
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 tags: ["agent-engineering", "agents", "reliability", "engineering"]
-related: ["agentic-ai", "production-tool-calling", "agent-reliability-reviewer", "write-llm-evals", "multi-agent-orchestration", "agent-frameworks-2026"]
+related: ["glossary:agentic-ai", "guide:production-tool-calling", "agent:agent-reliability-reviewer", "guide:write-llm-evals", "guide:multi-agent-orchestration", "guide:agent-frameworks-2026"]
 faq:
   - q: "How is agent engineering different from prompt engineering?"
     a: "Scope. Prompt engineering optimizes what you say to the model; agent engineering designs the system around it — which tools exist and how they're described, what enters context when, what's allowed without approval, how failures feed back, and how quality is measured. In a production agent, the prompt is one component among many, and rarely the one that fails."

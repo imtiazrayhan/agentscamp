@@ -16,7 +16,7 @@ tags: ["agents", "memory", "personalization", "vector-store", "open-source"]
 featured: false
 alternativeTo: ["zep", "letta"]
 summary: "Mem0 adds a persistent memory layer to agents and LLM apps: it extracts, stores, and retrieves salient facts across sessions so an assistant remembers a user's preferences and history instead of starting cold each conversation. Open-source library plus a managed platform."
-related: ["agent-memory-architecture", "best-vector-database-2026", "langgraph", "agent-tool-integration-engineer"]
+related: ["guide:agent-memory-architecture", "guide:best-vector-database-2026", "tool:langgraph", "agent:agent-tool-integration-engineer"]
 faq:
   - q: "What is Mem0?"
     a: "Mem0 is a memory layer for AI agents and LLM applications. Instead of cramming entire conversation histories into the context window, it extracts the salient facts, stores them, and retrieves the relevant ones when needed — so an agent remembers a user's preferences, decisions, and history across sessions while keeping prompts lean."

@@ -23,7 +23,7 @@ faq:
     a: "PR-Agent — the project that pioneered the category, donated by Qodo to community governance in early 2026 (Apache-2.0, ~11.5k stars). Self-host it with your own model keys for full control of cost and data; you trade the commercial products' learned standards and platform polish."
   - q: "Isn't GitHub Copilot's code review enough?"
     a: "It's a real baseline for GitHub-native teams — zero procurement, decent diff-level feedback. The dedicated tools justify themselves on context depth (whole-repo reasoning), rule customization, and noise control. Start with Copilot's if you have it; graduate when you catch yourself ignoring its comments."
-related: ["coderabbit", "greptile", "qodo", "github-copilot", "review-pr", "code-reviewer", "claude-code-ci-github-actions"]
+related: ["tool:coderabbit", "tool:greptile", "tool:qodo", "tool:github-copilot", "command:review-pr", "agent:code-reviewer", "guide:claude-code-ci-github-actions"]
 ---
 
 AI code review went from novelty to necessity for one reason: **AI writes the code now.** With agents producing a large share of diffs, the bottleneck moved to verification — and a reviewer that reads every line with repo-wide context, never tires, and learns your standards is the cheapest verification you can add. Here's the 2026 field, honestly ranked by what each is best at.

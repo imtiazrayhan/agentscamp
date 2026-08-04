@@ -7,7 +7,7 @@ model: "sonnet"
 color: "pink"
 tools: "Read, Grep, Glob, Edit, Bash"
 topics: ["review-qa"]
-related: ["test-engineer", "accessibility-auditor", "debugger", "flaky-test-hunt"]
+related: ["agent:test-engineer", "agent:accessibility-auditor", "agent:debugger", "command:flaky-test-hunt"]
 featured: false
 summary: "A subagent that owns the UI/E2E layer — building reliable Playwright/Cypress flows with role/text/test-id locators and web-first waits, setting up state via API instead of clicking through the UI, structuring page objects and fixtures, parallelizing in CI, and adding visual + a11y checks. It also pushes logic down the test pyramid and says what it moved off E2E and why."
 ---

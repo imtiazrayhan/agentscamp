@@ -6,7 +6,7 @@ model: "sonnet"
 color: "cyan"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["coding-languages"]
-related: ["rust-pro", "backend-developer", "devops-engineer"]
+related: ["agent:rust-pro", "agent:backend-developer", "agent:devops-engineer"]
 summary: "A subagent for idiomatic Go — concurrency around ownership and cancellation, errors as values, small consumer-side interfaces, stdlib-first design, and profile-driven performance — verified with go vet and the race detector. Reach for it when fixing a goroutine leak, cleaning up error wrapping, shaping a context-aware API, or profiling a hot path with pprof."
 ---
 

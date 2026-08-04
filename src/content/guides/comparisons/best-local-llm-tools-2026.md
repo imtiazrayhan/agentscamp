@@ -21,7 +21,7 @@ faq:
     a: "Less than the mystique suggests: 4-bit quantized 7–8B models run on ~8GB-RAM laptops; Apple Silicon's unified memory is the sweet spot for mid-size models; a 24GB GPU comfortably runs quantized models into the 30B class. The working rule: 4-bit ≈ 0.5–0.6 GB per billion parameters, plus headroom for context."
   - q: "Are local models actually good enough?"
     a: "For an expanding set of jobs, yes — current open-weight models handle drafting, summarization, extraction, and casual coding credibly, and they're unbeatable where privacy or offline matters. Frontier APIs still win clearly on hard reasoning and big-context agentic work; the honest pattern is local for the private/cheap/offline, API for the hard."
-related: ["ollama", "lm-studio", "jan", "llama-cpp", "vllm", "ollama-vs-lm-studio", "vllm-vs-ollama", "quantization", "self-host-vs-api-llm"]
+related: ["tool:ollama", "tool:lm-studio", "tool:jan", "tool:llama-cpp", "tool:vllm", "guide:ollama-vs-lm-studio", "guide:vllm-vs-ollama", "glossary:quantization", "guide:self-host-vs-api-llm"]
 ---
 
 Running models locally stopped being a hobbyist stunt: privacy-sensitive work, offline use, zero-marginal-cost experimentation, and plain curiosity all justify it, and the tooling matured into a clean stack. The 2026 field is really **one ecosystem** — GGUF models on llama.cpp-family engines — wrapped four ways for four jobs.
@@ -52,3 +52,7 @@ Running models locally stopped being a hobbyist stunt: privacy-sensitive work, o
 ## How to actually choose
 
 Install [Ollama](/tools/ollama) if code is the consumer; add [Jan](/tools/jan) or [LM Studio](/tools/lm-studio) if you want a face on it (open source vs polish is the only real fork — [the head-to-head](/guides/comparisons/ollama-vs-lm-studio) covers it); drop to [llama.cpp](/tools/llama-cpp) when you hit the wrappers' ceilings. The stack is friendly: same models, same format, zero lock-in between layers.
+
+## Continue exploring
+
+- [Wave Terminal](/tools/wave-terminal) — Open-source terminal that blends the CLI with inline file previews, a built-in editor, a web browser, and a context-aware AI assistant in one window.

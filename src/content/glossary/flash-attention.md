@@ -4,7 +4,7 @@ description: "FlashAttention is an IO-aware, exact attention algorithm that runs
 date: 2026-06-17
 topics: ["mlops-ai-infra"]
 tags: ["flash-attention", "gpu", "attention", "inference", "kernels"]
-related: ["context-window", "inference", "kv-cache", "speculative-decoding", "batch-inference"]
+related: ["glossary:context-window", "glossary:inference", "glossary:kv-cache", "glossary:speculative-decoding", "glossary:batch-inference"]
 faq:
   - q: "Does FlashAttention change the model's output?"
     a: "No. FlashAttention is exact, not an approximation — it computes the same numbers standard attention would, just in a different order that avoids writing the full attention matrix to slow memory. You get identical results (up to tiny floating-point reordering differences) at higher speed and lower memory, which is why it can be swapped in without retraining."

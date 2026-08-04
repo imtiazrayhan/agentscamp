@@ -25,7 +25,7 @@ faq:
     a: "Both are terminal agents that edit files on disk. Aider commits each change to git automatically, so every step is reviewable and revertible. Codex CLI runs edits inside an OS-level sandbox with two-layer approval controls and leaves staging and committing to you. Aider is model-agnostic; Codex CLI is built around OpenAI's models."
   - q: "Can I use these without paying a subscription?"
     a: "The tools themselves are free and open source, but most need a model. You either pay a provider per token via your own API key, sign in with a subscription you already have (OpenCode accepts GitHub Copilot and ChatGPT accounts), or run a local model with Ollama or LM Studio for no per-token cost. Note that Gemini CLI's famously generous free tier ended June 18, 2026 — that free agent loop now lives in Antigravity CLI."
-related: ["opencode", "cline", "aider", "codex-cli", "roo-code", "continue", "gemini-cli", "antigravity", "goose", "cursor", "windsurf", "claude-code"]
+related: ["tool:opencode", "tool:cline", "tool:aider", "tool:codex-cli", "tool:roo-code", "tool:continue", "tool:gemini-cli", "tool:antigravity", "tool:goose", "tool:cursor", "tool:windsurf", "tool:claude-code"]
 ---
 
 The proprietary AI editors — [Cursor](/tools/cursor), [Windsurf](/tools/windsurf), [GitHub Copilot](/tools/github-copilot) — are the most polished way to get AI into your day. But a large and fast-growing tier of **open-source and CLI agents** wins on a different axis: **control.** You bring your own model (or run one locally), your code goes only where you choose, and you can script the agent into CI. This guide compares that tier and helps you decide when it's the right call. For the proprietary editors head-to-head, see [Cursor vs Claude Code vs Copilot vs Windsurf](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026).
@@ -77,3 +77,13 @@ If you value a frictionless inner loop — best-in-class tab completion, zero co
 > "Open source" refers to the agent, not the model. You still need a model behind it — a hosted API key, a free tier, or a local model you run yourself.
 
 New to running a model locally or wiring up your own keys? The MCP and configuration guides in the [Guides](/guides) section cover the setup these agents share.
+
+## Continue exploring
+
+- [Scaffold CLI Command](/commands/scaffold/scaffold-cli) — Scaffold a new subcommand for an existing CLI with argument parsing, help text, input validation, and correct exit codes.
+- [graphql-architect](/agents/core-development/graphql-architect) — Use this agent to design GraphQL schemas and resolvers — types, nullability, connections, dataloaders, federation, depth/complexity limits.
+- [Java Pro](/agents/language-specialists/java-pro) — Use this agent for idiomatic, modern Java (17/21+) — records, sealed types, pattern matching, virtual threads and structured concurrency, the Streams API, and JVM/GC performance.
+- [php-pro](/agents/language-specialists/php-pro) — Use this agent for idiomatic, modern PHP 8.3+ — strict types, enums, readonly and promoted properties, Composer/PSR-4 autoloading, and safe PDO data access.
+- [Amp](/tools/amp) — Sourcegraph's agentic coding tool — a CLI and editor extensions tuned for frontier-model coding.
+- [Kilo Code](/tools/kilo-code) — Open-source AI coding agent extension for VS Code and JetBrains, built as a superset of Roo Code and Cline, with bring-your-own-key and zero model markup.
+- [SWE-agent](/tools/swe-agent) — Open-source autonomous coding agent from Princeton/Stanford that turns an LLM into a software engineer to fix real GitHub issues.

@@ -25,7 +25,7 @@ faq:
     a: "No. Some examples need credentials, paid services, production data, unsupported platforms, or destructive actions. The skill classifies those cases, performs safe static checks where possible, and reports the unverified boundary."
   - q: "Should generated docs be committed automatically?"
     a: "Documentation file edits are usually reviewable, but commits and pushes should remain explicit. Inspect accuracy, generated diffs, links, and verification results before publishing."
-related: ["best-claude-skills-2026", "code-example-verifier", "readme-generator", "openapi-doc-writer", "runbook-writer", "adr-writer"]
+related: ["guide:best-claude-skills-2026", "skill:code-example-verifier", "skill:readme-generator", "skill:openapi-doc-writer", "skill:runbook-writer", "skill:adr-writer"]
 ---
 
 The best Claude documentation skills are artifact-specific and evidence-driven. A README, API contract, incident runbook, onboarding path, architecture decision, and system diagram have different readers and truth sources. Pair the relevant writer with a verification skill instead of asking for “complete docs” in one pass.
@@ -83,3 +83,7 @@ npx agentscamp add skills/openapi-doc-writer
 ```
 
 A useful completion report lists changed files, evidence consulted, commands executed, examples that passed, and anything left unverified. That makes the documentation auditable and gives maintainers a precise follow-up list.
+
+## Continue exploring
+
+- [Add Docstrings](/commands/docs/add-docstrings) — Add or improve docstrings for the public API of a file or symbol.

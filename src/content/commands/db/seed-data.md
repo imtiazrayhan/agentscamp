@@ -6,7 +6,7 @@ title: "Seed Data"
 color: "purple"
 date: 2026-06-17
 topics: ["data-ml"]
-related: ["db-migrate", "migration-writer", "sql-pro"]
+related: ["command:db-migrate", "skill:migration-writer", "agent:sql-pro"]
 featured: false
 summary: "A slash command that reads your schema (migrations, ORM models, or DDL) and writes a re-runnable seed script: it derives tables, columns, types, and foreign keys, generates plausible values that satisfy every constraint, inserts in FK-dependency order, and makes the script idempotent and clearly scoped away from production."
 ---

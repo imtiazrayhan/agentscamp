@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "sonnet"
 color: "green"
 topics: ["review-qa"]
-related: ["code-reviewer"]
+related: ["agent:code-reviewer"]
 summary: "A subagent that restructures existing code without changing observable behavior — extracting, renaming, decoupling — in small, test-backed steps from a green baseline. Reach for it when breaking up a god object, removing duplication, introducing a seam for testability, or replacing conditionals with polymorphism."
 ---
 

@@ -4,7 +4,7 @@ description: "Guardrails are programmatic checks around an LLM — validating in
 date: 2026-06-11
 topics: ["ai-safety-security"]
 tags: ["guardrails", "safety", "validation", "llm"]
-related: ["llm-guardrails-designer", "defending-prompt-injection", "nemo-guardrails", "llm-guard", "claude-code-hooks", "structured-output"]
+related: ["skill:llm-guardrails-designer", "guide:defending-prompt-injection", "tool:nemo-guardrails", "tool:llm-guard", "guide:claude-code-hooks", "glossary:structured-output"]
 faq:
   - q: "How are guardrails different from the system prompt?"
     a: "A system prompt asks; a guardrail enforces. Instructions shape model behavior probabilistically and can be overridden or ignored. Guardrails run as code outside the model — schema validators, PII scanners, policy classifiers, permission gates — and deterministically block, redact, or rewrite what violates the rules, no matter what the model 'wants'."

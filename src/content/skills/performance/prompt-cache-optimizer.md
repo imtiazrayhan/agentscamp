@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
 topics: ["devops-infra"]
-related: ["llm-cost-latency-engineering", "llm-gateways-compared", "llm-cost-optimizer", "set-perf-budget", "prompt-optimizer"]
+related: ["guide:llm-cost-latency-engineering", "guide:llm-gateways-compared", "agent:llm-cost-optimizer", "command:set-perf-budget", "skill:prompt-optimizer"]
 featured: false
 summary: "Prompt caching bills a repeated prefix at a discount and serves it faster — but only if the prefix is stable and comes first. This skill reorders a prompt so the static part (system, instructions, few-shot, context) leads as the cacheable prefix and variable input trails it, sets cache breakpoints where supported, adds response/semantic caching, and verifies the hit rate and cost/latency drop."
 ---

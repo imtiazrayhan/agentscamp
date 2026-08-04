@@ -4,7 +4,7 @@ description: "Semantic search retrieves results by meaning rather than keyword o
 date: 2026-06-11
 topics: ["rag-retrieval"]
 tags: ["search", "embeddings", "retrieval", "rag"]
-related: ["hybrid-search-reranking", "embedding", "vector-database", "reranking", "rag"]
+related: ["guide:hybrid-search-reranking", "glossary:embedding", "glossary:vector-database", "glossary:reranking", "glossary:rag"]
 faq:
   - q: "How is semantic search different from keyword search?"
     a: "Keyword (lexical) search matches the words themselves — great for exact identifiers, brittle for paraphrases. Semantic search matches meaning via embeddings, so 'laptop won't turn on' finds 'computer fails to boot.' The trade flips for exact strings: error codes and product SKUs are where keyword search still wins."

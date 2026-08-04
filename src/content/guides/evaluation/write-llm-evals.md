@@ -38,7 +38,7 @@ faq:
     a: "It can be, if you build it carefully: an explicit rubric, a small discrete scale with anchors, reference examples, and controls for known biases (length, position, self-preference). Crucially, validate it against human labels before trusting it — an uncalibrated judge is confident noise. Prefer a deterministic check whenever one applies."
   - q: "What's the difference between offline evals and online evals?"
     a: "Offline evals run a fixed dataset before you ship — they're your regression gate in CI. Online evals score a sample of real production traffic after you ship — they catch drift and failure modes your dataset didn't cover. You need both: offline to prevent regressions, online to discover what to add to the offline set."
-related: ["best-llm-eval-tools-2026", "llm-evaluation-engineer", "llm-eval-suite-scaffolder", "llm-as-judge-scorer", "run-evals", "prompt-engineer"]
+related: ["guide:best-llm-eval-tools-2026", "agent:llm-evaluation-engineer", "skill:llm-eval-suite-scaffolder", "skill:llm-as-judge-scorer", "command:run-evals", "agent:prompt-engineer"]
 ---
 
 You changed the prompt. Is the feature better, or did you just fix the three examples you happened to look at while quietly breaking twenty you didn't? Without evals, you cannot answer that — and LLM features regress silently, because a change that helps one input often hurts another. **Evals turn "this feels better" into a number you can defend.** This guide is the practical method, the same whether you're building extraction, RAG, an agent, or a chatbot.
@@ -78,3 +78,7 @@ An eval suite you run by hand is an eval suite you'll stop running. Wire it into
 Offline evals prevent regressions; they can't predict every real-world input. After you ship, **trace production and run online evals** on a sample of live traffic to catch drift and new failure modes — then add those failures back to the offline dataset so the same bug can't return. That feedback loop is what the [llm-observability-engineer](/agents/data-ai/llm-observability-engineer) and [llm-evaluation-engineer](/agents/data-ai/llm-evaluation-engineer) own together.
 
 For which tool to build all this on, see [Best LLM & RAG Evaluation Tools in 2026](/guides/evaluation/best-llm-eval-tools-2026).
+
+## Continue exploring
+
+- [LLM Observability in Production: Traces, Evals, Cost, and Feedback](/guides/mlops/llm-observability-production) — Instrument production LLM applications with end-to-end traces, online evals, cost and latency metrics, privacy controls, alerts, and a failure-feedback loop.

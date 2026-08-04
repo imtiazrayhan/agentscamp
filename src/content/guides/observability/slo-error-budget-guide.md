@@ -23,7 +23,7 @@ faq:
     a: "A 100% target leaves no room for deployments, maintenance, experiments, dependency failures, or ordinary risk. It usually produces an impossible promise or stops useful change. Set a target from user need and business impact, then engineer enough headroom to meet it consistently."
   - q: "What is a burn-rate alert?"
     a: "Burn rate compares current bad-event consumption with the rate that would use the budget evenly across the whole window. A high burn over a short and long window signals an urgent incident; a slower sustained burn creates a ticket before the budget is exhausted."
-related: ["slo-definer", "alerting-rules-tuner", "dashboard-designer", "structured-logging-designer", "distributed-tracing-instrumenter", "sre-engineer", "incident-responder"]
+related: ["skill:slo-definer", "skill:alerting-rules-tuner", "skill:dashboard-designer", "skill:structured-logging-designer", "skill:distributed-tracing-instrumenter", "agent:sre-engineer", "agent:incident-responder"]
 howtoSteps:
   - name: "Identify the user and service boundary"
     text: "Name the consumer, critical journeys, and measurement point closest to their experience before choosing metrics."
@@ -189,3 +189,8 @@ Do not tighten the target merely because the service happened to outperform it. 
 > An SLO is a decision tool, not a vanity percentage. If nobody changes a release, incident, or investment decision when the budget moves, the program is measuring without governing.
 
 Use the [SLO Definer](/skills/observability/slo-definer) to produce the initial spec and the [Alerting Rules Tuner](/skills/observability/alerting-rules-tuner) to convert burn thresholds into actionable alerts.
+
+## Continue exploring
+
+- [Incident Responder](/agents/infrastructure-devops/incident-responder) — Use this agent during a live production incident to restore service fast and learn from it — triage and severity, mitigation-first action (roll back, fail over, shed load),…
+- [sre-engineer](/agents/infrastructure-devops/sre-engineer) — Use this agent to make reliability measurable: SLIs/SLOs and error budgets, observability, symptom-based alerting, incident response, and capacity.

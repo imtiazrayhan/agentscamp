@@ -21,7 +21,7 @@ faq:
     a: "Not meaningfully — Cursor replaces Copilot's role with its own completion and agent stack, and Copilot's extension targets Microsoft's VS Code builds. Choose one per editor. (Claude Code, being editor-agnostic, pairs with either.)"
   - q: "Which is better for a large engineering org?"
     a: "Copilot, usually, on logistics: seat management, policy controls, IP indemnity posture, GitHub-org integration, and zero editor migration across thousands of developers. Cursor's enterprise motion has matured, and individual teams adopt it bottom-up — but org-wide rollouts still default to Copilot's path of least resistance."
-related: ["github-copilot", "cursor", "cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "claude-code-vs-cursor", "cursor-vs-windsurf"]
+related: ["tool:github-copilot", "tool:cursor", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "guide:claude-code-vs-cursor", "guide:cursor-vs-windsurf"]
 ---
 
 Copilot versus Cursor is really a question about *where AI should enter your workflow*: as a layer added to the editor you already trust, or as a reason to change editors. Capability differences are real but second-order; the form-factor decision dominates.
@@ -53,3 +53,10 @@ Copilot versus Cursor is really a question about *where AI should enter your wor
 ## How to actually choose
 
 Individuals: try Cursor for a week — if the inline-edit experience hooks you, that's your answer; if it doesn't clear the bar of leaving your setup, Copilot gives you 80% with zero disruption. Teams: weigh the *real* cost of migration (plugins, dotfiles, muscle memory, JetBrains holdouts) against the in-editor capability gap, and remember the two aren't the whole field — a terminal agent like Claude Code pairs with *either* choice and covers the delegation use case both are stretching toward ([Claude Code vs Cursor](/guides/comparisons/claude-code-vs-cursor), [the four-way](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026)).
+
+## Continue exploring
+
+- [Cody](/tools/cody) — Sourcegraph's AI coding assistant for the IDE, grounded in deep codebase context.
+- [Tabby](/tools/tabby) — Self-hosted, open-source AI coding assistant by TabbyML — run your own completion and chat models on your infrastructure, with IDE extensions.
+- [Tabnine](/tools/tabnine) — An AI code completion and chat assistant built around code privacy, self-hosting, and air-gapped enterprise deployment.
+- [Void — Open-Source AI Code Editor (VS Code Fork)](/tools/void) — Open-source AI code editor forked from VS Code, an alternative to Cursor that connects directly to your chosen model with no proprietary backend.

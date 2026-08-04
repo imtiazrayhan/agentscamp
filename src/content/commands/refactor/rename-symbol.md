@@ -6,7 +6,7 @@ allowed-tools: "Read, Grep, Glob, Edit, Bash"
 title: "Rename Symbol"
 color: "purple"
 topics: ["coding-languages"]
-related: ["extract-function", "refactor", "find-bug"]
+related: ["command:extract-function", "command:refactor", "command:find-bug"]
 featured: false
 summary: "A slash command that renames a function, class, variable, type, or constant project-wide without collateral damage: it locates the definition, separates the real symbol from coincidental substring matches by scope and word boundary, updates every reference, import/export, test, comment, and name-encoding filename, then proves nothing broke with the project's typecheck, build, and tests."
 faq:

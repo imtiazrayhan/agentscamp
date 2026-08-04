@@ -4,7 +4,7 @@ description: "An open-weights model publishes its parameters for anyone to downl
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
 tags: ["open-weights", "open-source", "models", "licensing"]
-related: ["self-host-vs-api-llm", "quantization", "frontier-model", "llama-cpp", "fine-tuning"]
+related: ["guide:self-host-vs-api-llm", "glossary:quantization", "glossary:frontier-model", "tool:llama-cpp", "glossary:fine-tuning"]
 faq:
   - q: "Is open weights the same as open source?"
     a: "No — and the distinction matters. Open weights means the parameters are downloadable; open source traditionally requires the full recipe (training data, code) and an OSI license. Many 'open' models ship weights under custom licenses with use restrictions, and almost none publish training data. Read the license, not the marketing."

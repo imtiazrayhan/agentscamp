@@ -37,7 +37,7 @@ faq:
     a: "Yes — zip the skill folder and upload it under Settings → Customize → Skills, with code execution enabled under Settings → Capabilities. Note that surfaces don't sync: a skill on claude.ai doesn't appear in Claude Code or the API."
   - q: "Is it safe to install skills from the internet?"
     a: "The same way installing packages is: read before you run. A skill's instructions and bundled scripts execute with your session's permissions, so review the SKILL.md, check what its allowed-tools pre-approves, and prefer sources you trust."
-related: ["what-are-claude-skills", "best-claude-skills-2026", "packaging-and-sharing-skills", "writing-your-first-skill", "claude-settings-auditor", "skill-md-reference"]
+related: ["guide:what-are-claude-skills", "guide:best-claude-skills-2026", "guide:packaging-and-sharing-skills", "guide:writing-your-first-skill", "skill:claude-settings-auditor", "guide:skill-md-reference"]
 ---
 
 A Claude skill installs by existing in the right folder — there's no package manager step, no registry, no build. This guide covers every route: manual copy, the one-command CLI, GitHub repos, plugins, teams, and the non-Claude-Code surfaces. If you're not sure what a skill is yet, read [What Are Claude Skills?](/guides/skills/what-are-claude-skills) first.

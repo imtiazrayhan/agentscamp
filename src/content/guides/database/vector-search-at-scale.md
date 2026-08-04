@@ -6,11 +6,11 @@ color: "green"
 topics: ["rag-retrieval", "data-ml"]
 tags: ["vector-search", "ann", "hnsw", "quantization", "sharding", "rag"]
 related:
-  - "best-vector-database-2026"
-  - "hybrid-search-reranking"
-  - "choosing-embeddings-2026"
-  - "vector-database"
-  - "embedding"
+  - "guide:best-vector-database-2026"
+  - "guide:hybrid-search-reranking"
+  - "guide:choosing-embeddings-2026"
+  - "glossary:vector-database"
+  - "glossary:embedding"
 featured: false
 date: 2026-06-17
 summary: "Vector search at scale is a three-way trade-off between recall, latency, and memory. HNSW gives fast, accurate in-memory search; IVF-PQ trades recall for a fraction of the RAM; flat is exact but linear. Pick the index for your recall target, quantize to fit RAM, shard for throughput, and measure recall against exact neighbours — not vibes."

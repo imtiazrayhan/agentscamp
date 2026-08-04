@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/cloudflare/mcp-server-cloudflare"
   - "https://github.com/cloudflare/mcp"
   - "https://blog.cloudflare.com/code-mode-mcp/"
-related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "claude-code-plugins", "devops-engineer", "cloud-architect", "deploy-remote-mcp-server"]
+related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "guide:claude-code-plugins", "agent:devops-engineer", "agent:cloud-architect", "guide:deploy-remote-mcp-server"]
 alternativeTo: ["github-mcp-server", "supabase-mcp", "sentry-mcp", "stripe-mcp"]
 summary: "Cloudflare ships two kinds of official MCP servers, all hosted: 16 domain servers (docs, Workers bindings and builds, observability, browser rendering, Radar, and more at <name>.mcp.cloudflare.com/mcp) and the newer Code Mode server at mcp.cloudflare.com/mcp, which exposes the entire 2,500-endpoint Cloudflare API in about 1k tokens by letting the agent write code against the API spec server-side."
 faq:

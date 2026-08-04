@@ -9,7 +9,7 @@ color: "blue"
 topics: ["coding-languages", "workflow-prompting"]
 tags: ["autonomous", "agent", "cloud"]
 featured: false
-related: ["claude-code", "goose", "amp"]
+related: ["tool:claude-code", "tool:goose", "tool:amp"]
 alternativeTo: ["openhands", "swe-agent", "amp", "goose", "claude-code"]
 summary: "Devin is Cognition's autonomous AI software engineer. You hand it a task — a bug, refactor, migration, or ticket — and it works unattended in a sandboxed cloud VM with an editor, terminal, and browser, then opens a pull request you review. Trigger it from Slack, Teams, or Linear, run sessions in parallel, and pay via usage quotas measured in ACUs."
 faq:

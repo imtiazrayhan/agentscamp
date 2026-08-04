@@ -4,7 +4,7 @@ description: "A knowledge cutoff is the date a model's training data ends, so it
 date: 2026-06-17
 topics: ["data-ml"]
 tags: ["knowledge-cutoff", "training-data", "freshness", "rag", "llm"]
-related: ["rag", "hallucination", "grounding", "how-rag-works"]
+related: ["glossary:rag", "glossary:hallucination", "glossary:grounding", "guide:how-rag-works"]
 faq:
   - q: "Is the knowledge cutoff the same as the model's release date?"
     a: "No. The cutoff is when the training data stops; the release date is when the model ships. Months of training, evaluation, and safety work usually sit between them, so a model released in one quarter often has a cutoff several months earlier — it knows nothing about events in that gap unless you supply them at query time."

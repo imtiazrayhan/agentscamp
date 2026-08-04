@@ -16,7 +16,7 @@ topics: ["data-ml", "rag-retrieval"]
 tags: ["vector-database", "postgres", "rag", "open-source"]
 featured: false
 summary: "pgvector turns Postgres into a vector database: it adds a vector column type, distance operators, and HNSW/IVFFlat indexes so you can run similarity search next to your relational data, with full SQL filtering and transactions — no separate vector store to operate."
-related: ["best-vector-database-2026", "scaffold-pgvector-schema", "vector-search-engineer", "qdrant", "pinecone"]
+related: ["guide:best-vector-database-2026", "command:scaffold-pgvector-schema", "agent:vector-search-engineer", "tool:qdrant", "tool:pinecone"]
 faq:
   - q: "What is pgvector?"
     a: "pgvector is an open-source extension that gives Postgres a native vector type, distance operators, and approximate-nearest-neighbour indexes (HNSW and IVFFlat). Your embeddings live in the same database as your relational data — searchable with ordinary SQL, filterable with WHERE, and consistent inside the same transaction — so there's no separate vector database to deploy or sync."

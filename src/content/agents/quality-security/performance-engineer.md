@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "opus"
 color: "orange"
 topics: ["review-qa"]
-related: ["debugger"]
+related: ["agent:debugger"]
 summary: "A subagent that makes slow things fast by measuring first — establishing a baseline, profiling to the dominant bottleneck, applying the smallest fix, and proving the win against the same measurement. Reach for it when a specific endpoint, query, or page is measurably slow: an N+1 query, a heavy render, a hot loop, or a large JS bundle."
 ---
 

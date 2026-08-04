@@ -14,7 +14,7 @@ topics: ["rag-retrieval", "data-ml"]
 tags: ["vector-database", "rag", "managed", "serverless"]
 featured: false
 summary: "Pinecone is a fully managed, serverless vector database: you call an API to upsert and query embeddings and never run a node, tune an index, or page yourself at 3am. It supports metadata filtering, hybrid search, and integrated embedding/reranking — the zero-ops choice when engineering time is the scarce resource."
-related: ["best-vector-database-2026", "qdrant", "weaviate", "pgvector", "vector-search-engineer"]
+related: ["guide:best-vector-database-2026", "tool:qdrant", "tool:weaviate", "tool:pgvector", "agent:vector-search-engineer"]
 faq:
   - q: "What is Pinecone?"
     a: "Pinecone is a fully managed, serverless vector database. You create an index, upsert embeddings, and query for nearest neighbours through an API — Pinecone handles storage, scaling, replication, and index maintenance, so there's no node to provision, no HNSW parameter to tune, and no on-call rotation for the search tier."

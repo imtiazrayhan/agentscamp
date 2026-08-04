@@ -6,7 +6,7 @@ color: "cyan"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-04
 topics: ["mcp", "architecture"]
-related: ["building-an-mcp-server", "deploy-remote-mcp-server", "govern-mcp-servers", "mcp-server-scaffolder", "fastmcp", "mcp-inspector"]
+related: ["guide:building-an-mcp-server", "guide:deploy-remote-mcp-server", "guide:govern-mcp-servers", "skill:mcp-server-scaffolder", "tool:fastmcp", "tool:mcp-inspector"]
 featured: false
 summary: "Specialist in building and productionizing MCP servers: it designs the tool/resource/prompt surface, picks the right transport, takes servers remote with OAuth and stateless horizontal scaling, and proves the server works with the MCP Inspector — so the model gets a small, sharp, secure set of capabilities, not a leaky API."
 ---

@@ -4,7 +4,7 @@ description: "Multimodal AI processes more than one kind of input or output — 
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["multimodal", "vision", "audio", "models"]
-related: ["vision-language-model", "vlm-ocr-documents", "build-a-voice-agent", "computer-use"]
+related: ["glossary:vision-language-model", "guide:vlm-ocr-documents", "guide:build-a-voice-agent", "glossary:computer-use"]
 faq:
   - q: "What can multimodal models actually do today?"
     a: "Production-grade as of 2026: read and reason over images, screenshots, charts, and documents (vision-language); transcribe and generate speech, including realtime voice conversation; understand video at the frames-plus-audio level; and generate images. The developer workhorses are document/screenshot understanding and voice."

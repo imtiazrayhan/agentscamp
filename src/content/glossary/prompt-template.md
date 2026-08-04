@@ -4,7 +4,7 @@ description: "A prompt template is a parameterized prompt — fixed instructions
 date: 2026-06-12
 topics: ["workflow-prompting"]
 tags: ["prompts", "templates", "llmops", "engineering"]
-related: ["system-prompt", "prompt-patterns", "few-shot-prompting", "write-llm-evals", "langfuse-vs-langsmith"]
+related: ["glossary:system-prompt", "guide:prompt-patterns", "glossary:few-shot-prompting", "guide:write-llm-evals", "guide:langfuse-vs-langsmith"]
 faq:
   - q: "Why use templates instead of building prompt strings inline?"
     a: "The same reasons you don't inline SQL: separation of concerns (prompt content evolves independently of code), versioning (which prompt produced this output?), testability (evals run against template versions), and safety (explicit slots make untrusted input visible instead of concatenated invisibly into instructions)."

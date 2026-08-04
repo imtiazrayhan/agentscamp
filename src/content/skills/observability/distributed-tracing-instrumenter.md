@@ -8,7 +8,7 @@ color: "cyan"
 title: "Distributed Tracing Instrumenter"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["structured-logging-designer", "slo-definer", "alerting-rules-tuner", "runbook-writer"]
+related: ["skill:structured-logging-designer", "skill:slo-definer", "skill:alerting-rules-tuner", "skill:runbook-writer"]
 featured: false
 summary: "Logs tell you what happened in one service; they can't show you a slow request's path across five. This skill instruments services with OpenTelemetry — propagating trace context across every hop (including the async/queue boundaries that silently break traces), spanning the boundaries that matter, sampling whole traces at the edge, and stamping trace_id on logs."
 faq:

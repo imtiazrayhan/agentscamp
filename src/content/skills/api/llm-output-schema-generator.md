@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "green"
 date: 2026-06-03
 topics: ["llm-app-dev"]
-related: ["structured-output-2026", "instructor", "baml", "llm-integration-engineer", "tool-definition-generator"]
+related: ["guide:structured-output-2026", "tool:instructor", "tool:baml", "agent:llm-integration-engineer", "skill:tool-definition-generator"]
 featured: false
 summary: "Infers a strict output schema from a sample of the data you want an LLM to return — choosing types, enums, optionals, and descriptions — then wires it into a structured-output call (Instructor, BAML, or the AI SDK). It designs the target shape; it is not a test-fixture or API-doc generator."
 ---

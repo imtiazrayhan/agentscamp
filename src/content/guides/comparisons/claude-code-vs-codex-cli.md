@@ -21,7 +21,7 @@ faq:
     a: "They're safe through different mechanisms. Codex CLI's default workspace-write sandbox plus approval policies contains the blast radius at the OS level — strong for unfamiliar repos. Claude Code's permission rules, modes (plan/acceptEdits), and hooks give finer-grained, programmable control — stronger for encoding team policy. For untrusted code, Codex's sandbox-by-default is the conservative pick; for governed team use, Claude Code's policy layer goes deeper."
   - q: "Can I switch models in each?"
     a: "Codex CLI switches among OpenAI models (/model, reasoning-effort control). Claude Code switches among Anthropic tiers (/model, opusplan). Neither is multi-provider — that's OpenCode's lane. In practice the choice tracks whose models you already bet on."
-related: ["claude-code", "codex-cli", "claude-code-vs-opencode", "claude-code-vs-cursor", "ai-coding-agents-cli-2026", "claude-code-settings-permissions"]
+related: ["tool:claude-code", "tool:codex-cli", "guide:claude-code-vs-opencode", "guide:claude-code-vs-cursor", "guide:ai-coding-agents-cli-2026", "guide:claude-code-settings-permissions"]
 ---
 
 The two first-party terminal agents — Anthropic's **Claude Code** and OpenAI's **Codex CLI** — look interchangeable from a distance: run a command in a repo, describe a task, review the diff. Up close they encode different philosophies about what makes an agent trustworthy: Claude Code bets on *programmable governance*, Codex CLI bets on *contained execution*.
@@ -55,3 +55,9 @@ The two first-party terminal agents — Anthropic's **Claude Code** and OpenAI's
 For most teams this decision is downstream of two prior bets. **The model bet:** both agents are conspicuously better with their own provider's models; if your org runs on Claude or on OpenAI, the agent follows. **The trust bet:** if your nightmare is an agent touching what it shouldn't on *unfamiliar* code, Codex's sandbox-by-default is the comfortable posture; if your goal is encoding *team* policy — these commands always allowed, these paths never touched, this approval always required — Claude Code's permission-and-hooks layer is the deeper instrument.
 
 And if the real requirement is model freedom — any provider, local models included — neither is the answer: that's [OpenCode's comparison](/guides/comparisons/claude-code-vs-opencode) and the broader [open-source CLI field](/guides/prompting/ai-coding-agents-cli-2026).
+
+## Continue exploring
+
+- [OpenAI Codex: A Practical Guide for Developers](/guides/getting-started/openai-codex-guide) — Learn how OpenAI Codex works across the terminal, IDE, desktop app, and cloud — then set up a safe, repeatable workflow for real repositories.
+- [Factory](/tools/factory) — Factory is an agent-native software development platform whose Droids plan, write, test, and ship code from the terminal, IDE, and web with org context.
+- [Warp](/tools/warp) — A modern, AI-powered terminal with an agent mode that can run and chain commands across your codebase.

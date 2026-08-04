@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["postgres-index-strategist", "connection-pool-tuner", "migration-writer"]
+related: ["skill:postgres-index-strategist", "skill:connection-pool-tuner", "skill:migration-writer"]
 featured: false
 summary: "A slow query is rarely slow for the reason you assume. This skill reads the REAL plan (EXPLAIN ANALYZE + BUFFERS, not bare EXPLAIN guesses), works from the most expensive node outward, names the real culprit — Seq Scan, stale-stats row gap, Nested Loop blowup, disk Sort, an index defeated by a cast — gives the specific fix, and re-runs to prove the bad node is gone."
 faq:

@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["changelog-from-prs", "semver-advisor", "version-bumper", "migration-writer"]
+related: ["skill:changelog-from-prs", "skill:semver-advisor", "skill:version-bumper", "skill:migration-writer"]
 featured: false
 summary: "Release notes are not a commit dump. This skill starts from the real changes since the last release, drops internal churn, and translates the rest into user-benefit language — grouped New / Improved / Fixed, with breaking changes and required migration steps surfaced first and unmissable, plus upgrade steps and doc links ready to publish."
 ---

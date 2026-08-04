@@ -6,7 +6,7 @@ model: "opus"
 color: "purple"
 topics: ["data-ml"]
 featured: true
-related: ["data-scientist"]
+related: ["agent:data-scientist"]
 summary: "A subagent that ships ML to production — reproducible training pipelines, model serving, honest evaluation harnesses, and MLOps plumbing like registries, monitoring, and retraining triggers. Reach for it when building a training pipeline, deploying a model behind an interface, setting up regression gates, or diagnosing train/serve skew and drift."
 ---
 

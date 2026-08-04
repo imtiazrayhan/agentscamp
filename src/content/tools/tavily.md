@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/tavily-ai"
   - "https://docs.tavily.com"
   - "https://app.tavily.com"
-related: ["web-data-for-ai-agents", "exa", "firecrawl", "jina-reader", "claude-code-mcp-setup", "rag"]
+related: ["guide:web-data-for-ai-agents", "tool:exa", "tool:firecrawl", "tool:jina-reader", "guide:claude-code-mcp-setup", "glossary:rag"]
 summary: "Tavily packages agent web access as one API: Search tuned for LLM consumption (vendor-claimed 180ms p50), Extract for clean page content, Crawl and Map for site traversal, and a Research endpoint for multi-step investigations — plus SDKs and a hosted MCP server (mcp.tavily.com). Freemium: 1,000 free credits monthly, no card, then pay-as-you-go."
 faq:
   - q: "How is Tavily different from Exa and Firecrawl?"

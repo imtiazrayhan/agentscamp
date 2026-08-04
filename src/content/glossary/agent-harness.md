@@ -4,7 +4,7 @@ description: "An agent harness is the system around the model that makes it an a
 date: 2026-06-12
 topics: ["ai-agents-systems"]
 tags: ["harness", "agents", "infrastructure", "agent-engineering"]
-related: ["agent-engineering", "ai-agent", "what-is-claude-code", "claude-agent-sdk-tutorial", "agent-frameworks-2026", "claude-code-vs-opencode"]
+related: ["glossary:agent-engineering", "glossary:ai-agent", "guide:what-is-claude-code", "guide:claude-agent-sdk-tutorial", "guide:agent-frameworks-2026", "guide:claude-code-vs-opencode"]
 faq:
   - q: "What's the difference between the model and the harness?"
     a: "The model decides; the harness is everything that lets deciding become doing — the execution loop, tool definitions and dispatch, context assembly and compaction, permissions, error feedback, retries, and state. Two products on the same model can perform wildly differently: that gap is harness quality."

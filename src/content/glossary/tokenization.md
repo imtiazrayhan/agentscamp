@@ -4,7 +4,7 @@ description: "Tokenization splits text into tokens — the sub-word units a mode
 date: 2026-06-17
 topics: ["data-ml"]
 tags: ["tokenization", "tokens", "bpe", "preprocessing", "llm"]
-related: ["llm-token", "context-window", "embedding", "inference", "llm-api-pricing-2026"]
+related: ["glossary:llm-token", "glossary:context-window", "glossary:embedding", "glossary:inference", "guide:llm-api-pricing-2026"]
 faq:
   - q: "Why don't character counts equal token counts?"
     a: "Because a tokenizer groups characters into sub-word units, not single letters. A common word like 'the' is one token; a rare word splits into several. On average one token is about 3–4 characters or 0.75 words of English, so the same text maps to far fewer tokens than characters — and the ratio shifts with the content."

@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "pink"
 date: 2026-06-03
 topics: ["ai-agents-systems"]
-related: ["add-human-approval", "agent-reliability-reviewer", "production-tool-calling", "agent-frameworks-2026"]
+related: ["command:add-human-approval", "agent:agent-reliability-reviewer", "guide:production-tool-calling", "guide:agent-frameworks-2026"]
 featured: false
 summary: "Autonomy is great until an agent does something irreversible. This skill inserts a human-in-the-loop gate: classify which actions are consequential, interrupt the agent before them with the proposed action and its context, and resume (or abort) based on the human's decision — durably, so a restart doesn't lose state."
 ---

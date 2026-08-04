@@ -14,7 +14,7 @@ tags: ["ide", "bytedance", "coding", "agent", "editor"]
 featured: false
 alternativeTo: ["cursor", "windsurf", "zed", "void", "kilo-code"]
 summary: "Trae is an AI-native IDE from ByteDance, built on a fork of VS Code so existing settings and extensions carry over. Its built-in Builder agent plans and edits code across files, while SOLO mode runs as a more autonomous AI engineer that scaffolds whole projects from a prompt. It is freemium: a free tier plus paid plans."
-related: ["cursor-vs-windsurf", "cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "ai-coding-agents-cli-2026", "ai-coding-statistics-2026"]
+related: ["guide:cursor-vs-windsurf", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "guide:ai-coding-agents-cli-2026", "guide:ai-coding-statistics-2026"]
 faq:
   - q: "What is Trae?"
     a: "Trae is an AI-native IDE from ByteDance, built on a fork of Visual Studio Code. It pairs a familiar VS Code-style editor with a built-in agent (Builder) and an autonomous SOLO mode that can plan a task, write code across multiple files, and run terminal commands. It bundles access to several frontier models and supports most VS Code extensions and imported settings."

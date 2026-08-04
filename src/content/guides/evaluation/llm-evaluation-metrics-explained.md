@@ -7,11 +7,11 @@ color: "green"
 topics: ["llm-evals"]
 tags: ["evals", "metrics", "rag", "llm-as-judge", "retrieval"]
 related:
-  - "write-llm-evals"
-  - "best-llm-eval-tools-2026"
-  - "llm-as-judge"
-  - "eval-dataset"
-  - "grounding"
+  - "guide:write-llm-evals"
+  - "guide:best-llm-eval-tools-2026"
+  - "glossary:llm-as-judge"
+  - "glossary:eval-dataset"
+  - "glossary:grounding"
 featured: false
 summary: "There is no single LLM metric — you pick one that matches the task. Use exact match and F1 for closed tasks like extraction and routing, retrieval metrics (recall@k, MRR, NDCG) for the retriever, RAG metrics (faithfulness, answer relevance, context precision/recall) for grounded answers, and a calibrated LLM-as-judge or human preference for open-ended generation."
 keyTakeaways:

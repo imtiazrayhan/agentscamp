@@ -15,7 +15,7 @@ sameAs:
   - "https://x.com/vaboratory"
   - "https://www.linkedin.com/company/vapi-ai"
   - "https://github.com/VapiAI"
-related: ["realtime-voice-apis", "build-a-voice-agent", "livekit", "pipecat", "cartesia", "assemblyai"]
+related: ["guide:realtime-voice-apis", "guide:build-a-voice-agent", "tool:livekit", "tool:pipecat", "tool:cartesia", "tool:assemblyai"]
 summary: "Vapi is the buy side of voice agents: define an Assistant (prompt, model, voice, tools), attach a phone number, and you're live — the platform owns orchestration, turn-taking (vendor-claimed sub-600ms responses), interruptions, telephony, and multi-assistant Squads with context handoffs. Bring any STT/LLM/TTS providers (at cost with your own keys) plus a per-minute platform fee."
 faq:
   - q: "How does Vapi pricing actually work?"

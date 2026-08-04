@@ -23,7 +23,7 @@ faq:
     a: "A skill defines how to perform a repeatable workflow; a scheduled task defines when and where it runs. A scheduled prompt can invoke a skill explicitly so the procedure stays versioned, testable, and reusable outside the schedule."
   - q: "How should an unattended Codex task handle approvals?"
     a: "Design it to succeed inside its default sandbox without interactive approval. Grant only the filesystem, network, and tool access it needs, prefer read-only checks where possible, and make blocked or risky actions produce a report instead of attempting a workaround."
-related: ["openai-codex-guide", "codex-skills-guide", "codex-subagents", "parallel-claude-code-worktrees", "github-actions-optimizer", "human-in-the-loop-ai-workflows"]
+related: ["guide:openai-codex-guide", "guide:codex-skills-guide", "guide:codex-subagents", "guide:parallel-claude-code-worktrees", "skill:github-actions-optimizer", "guide:human-in-the-loop-ai-workflows"]
 howtoSteps:
   - name: "Prove the workflow manually"
     text: "Run the exact prompt or skill in a normal chat until its inputs, output, and failure behavior are predictable."

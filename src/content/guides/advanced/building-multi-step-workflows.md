@@ -5,7 +5,7 @@ author: "AgentsCamp"
 date: 2026-05-16
 color: "green"
 topics: ["workflow-prompting"]
-related: ["workflow-orchestrator", "multi-agent-orchestration", "breakdown-task", "plan-feature", "parallel-claude-code-worktrees"]
+related: ["agent:workflow-orchestrator", "guide:multi-agent-orchestration", "command:breakdown-task", "command:plan-feature", "guide:parallel-claude-code-worktrees"]
 summary: "Big tasks become reliable through four habits: decompose into independently verifiable steps (plan first), fan out genuinely independent work to parallel subagents and do the fan-in deliberately, verify with mechanical checks plus a fresh-eyes reviewer, and persist critical state to a file because summaries drop detail. Add an orchestrator only when the coordination pattern repeats."
 keyTakeaways:
   - "Decompose until each step is independently verifiable, then stop — a step whose output is 'I thought about it' isn't a step, and over-splitting drowns the work in handoffs."
@@ -144,3 +144,9 @@ A good rule: decompose until each step is independently verifiable, then **stop*
 ## Putting it together
 
 The throughline is simple: plan in plain text, run independent work in parallel and dependent work in sequence, verify every step with mechanical checks plus a fresh-eyes review, and persist anything you can't afford to lose to a file. Start sequential, add an orchestrator only when the coordination pattern repeats, and resist the urge to slice the work finer than you can check.
+
+## Continue exploring
+
+- [context-engineer](/agents/meta-orchestration/context-engineer) — Use this agent to engineer what an LLM agent carries in its context window — deciding what to include vs exclude vs retrieve on demand, designing project/agent memory…
+- [workflow-orchestrator](/agents/meta-orchestration/workflow-orchestrator) — Use this agent to break large tasks into coordinated multi-step plans and delegate to other agents.
+- [Scaffold GitHub Action](/commands/scaffold/scaffold-github-action) — Scaffold a hardened GitHub Actions workflow for a stated goal, wired to the project's real test/lint/build commands.

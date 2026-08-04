@@ -7,7 +7,7 @@ title: "Add Human Approval Step"
 color: "purple"
 date: 2026-06-03
 topics: ["ai-agents-systems"]
-related: ["human-in-the-loop-gate", "agent-reliability-reviewer", "production-tool-calling"]
+related: ["skill:human-in-the-loop-gate", "agent:agent-reliability-reviewer", "guide:production-tool-calling"]
 featured: false
 summary: "Wraps a consequential agent action in an approval gate: the agent pauses with the proposed action and context, a human approves/edits/rejects, and it resumes from a durable checkpoint. Scaffolds the interrupt, the three outcome paths, fail-safe defaults, and an audit log."
 ---

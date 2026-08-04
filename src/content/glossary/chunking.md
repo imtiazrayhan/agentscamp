@@ -4,7 +4,7 @@ description: "Chunking splits documents into retrievable pieces before embedding
 date: 2026-06-12
 topics: ["rag-retrieval"]
 tags: ["chunking", "rag", "ingestion", "retrieval"]
-related: ["rag", "embedding", "how-rag-works", "chunking-strategy-optimizer", "chonkie", "rag-debugging-checklist"]
+related: ["glossary:rag", "glossary:embedding", "guide:how-rag-works", "skill:chunking-strategy-optimizer", "tool:chonkie", "guide:rag-debugging-checklist"]
 faq:
   - q: "What chunk size should I use?"
     a: "Start around 300–800 tokens with 10–15% overlap and measure — but the real answer is shape, not size: chunks should be self-contained units of meaning (a section, a complete thought), which is why structure-aware splitting (headings, paragraphs) beats fixed-size slicing on most corpora. The right size is whatever your retrieval evals say it is."

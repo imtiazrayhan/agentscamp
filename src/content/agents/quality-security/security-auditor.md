@@ -7,7 +7,7 @@ color: "red"
 tools: "Read, Glob, Grep, Bash"
 topics: ["review-qa"]
 featured: true
-related: ["code-reviewer"]
+related: ["agent:code-reviewer"]
 summary: "A subagent that reads code the way an attacker would — mapping the attack surface, tracing untrusted input to dangerous sinks, auditing auth and authz, hunting secrets, and checking dependencies — reporting validated findings with file:line and a fix. Reach for it when auditing an API surface, reviewing auth code, or running a pre-release security pass."
 ---
 

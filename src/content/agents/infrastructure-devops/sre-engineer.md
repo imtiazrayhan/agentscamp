@@ -6,7 +6,7 @@ model: "sonnet"
 color: "red"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["devops-infra"]
-related: ["devops-engineer", "cloud-architect", "performance-engineer"]
+related: ["agent:devops-engineer", "agent:cloud-architect", "agent:performance-engineer"]
 summary: "A subagent that makes a service's reliability measurable — defining SLIs, SLOs, and error budgets from user journeys, instrumenting metrics, logs, and traces, and wiring symptom-based burn-rate alerts an on-call human can act on. Reach for it when defining an SLO for an API, fixing a noisy pager, or writing a blameless postmortem."
 ---
 

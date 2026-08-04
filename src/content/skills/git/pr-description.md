@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["review-qa"]
-related: ["changelog-from-prs", "review-pr", "create-pr"]
+related: ["skill:changelog-from-prs", "command:review-pr", "command:create-pr"]
 featured: true
 summary: "A skill that drafts a reviewer-ready pull request description from the branch's real diff against its base: it computes the merge-base changeset, reads commits and key hunks, mirrors any PR template, and writes summary, what changed and why, implementation notes, testing, and risk/rollout sections — read-only text to paste, never opening the PR."
 ---

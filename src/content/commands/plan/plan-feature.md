@@ -7,7 +7,7 @@ allowed-tools: "Read, Grep, Glob"
 title: "Plan Feature"
 color: "purple"
 topics: ["workflow-prompting", "architecture"]
-related: ["breakdown-task", "system-architect"]
+related: ["command:breakdown-task", "agent:system-architect"]
 featured: false
 summary: "A slash command that explores the codebase read-only and writes an implementation plan for a feature: it restates the request, maps the affected files and patterns with Read/Grep/Glob, then delivers a structured plan covering assumptions, approach, trade-offs, risks, ordered implementation steps, and a test plan."
 ---

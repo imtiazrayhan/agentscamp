@@ -8,7 +8,7 @@ color: "cyan"
 title: "Canary Release Planner"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["slo-definer", "migration-writer", "strangler-fig-migrator"]
+related: ["skill:slo-definer", "skill:migration-writer", "skill:strangler-fig-migrator"]
 featured: false
 summary: "An all-at-once deploy bets the whole user base on a green CI run. This skill designs a canary: staged traffic (1% → 10% → 50% → 100%) with bake times, gating metrics measured against the concurrently-running stable version (not yesterday), an auto-rollback trigger, and the schema/session-affinity prerequisites that make a canary safe."
 faq:

@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-08-04
 topics: ["review-qa"]
-related: ["best-claude-skills-for-testing", "test-scaffolder", "coverage-gap-finder", "integration-test-designer", "contract-test-designer", "fix-failing-test"]
+related: ["guide:best-claude-skills-for-testing", "skill:test-scaffolder", "skill:coverage-gap-finder", "skill:integration-test-designer", "skill:contract-test-designer", "command:fix-failing-test"]
 featured: true
 summary: "Converts a bug into a durable regression test by tracing the real failure path, choosing the lowest reliable test layer, reproducing the defect against the pre-fix behavior, and asserting the user-visible invariant rather than the implementation. It proves red before green, avoids oversized fixtures and mocks, and reports the exact command and failure signal."
 faq:

@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-08-04
 topics: ["review-qa", "workflow-prompting"]
-related: ["best-claude-skills-for-documentation", "readme-generator", "openapi-doc-writer", "runbook-writer", "onboarding-guide-writer", "documentation-engineer"]
+related: ["guide:best-claude-skills-for-documentation", "skill:readme-generator", "skill:openapi-doc-writer", "skill:runbook-writer", "skill:onboarding-guide-writer", "agent:documentation-engineer"]
 featured: true
 summary: "Turns documentation snippets into tested examples. It inventories fenced code and shell commands, maps each example to the current API and supported versions, extracts or reproduces snippets in a minimal harness, runs them with sanitized inputs, verifies expected output, fixes the documentation rather than hiding errors, and reports examples that cannot be executed automatically."
 faq:

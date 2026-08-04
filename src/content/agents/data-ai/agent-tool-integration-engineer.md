@@ -6,7 +6,7 @@ color: "green"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-03
 topics: ["ai-agents-systems"]
-related: ["agent-reliability-reviewer", "production-tool-calling", "tool-definition-generator", "langgraph", "agent-architect"]
+related: ["agent:agent-reliability-reviewer", "guide:production-tool-calling", "skill:tool-definition-generator", "tool:langgraph", "agent:agent-architect"]
 featured: false
 summary: "Builds the tool-calling layer that makes an agent actually work: clean schemas the model can't misuse, tool errors returned as observations the agent can recover from, bounded retries, idempotent side-effecting calls, and safe parallel execution — the difference between an agent that uses tools and one that fumbles them."
 ---

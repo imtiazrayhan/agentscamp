@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "sonnet"
 color: "blue"
 topics: ["coding-languages"]
-related: ["frontend-developer", "react-specialist", "typescript-pro"]
+related: ["agent:frontend-developer", "agent:react-specialist", "agent:typescript-pro"]
 summary: "A subagent that builds and ships cross-platform mobile apps with React Native and Expo — screens, navigation, platform-specific code, native modules, and EAS builds. Reach for it when wiring tab or stack navigation, fixing a janky FlatList, integrating camera or notifications, or submitting to TestFlight and Play Console via EAS."
 ---
 

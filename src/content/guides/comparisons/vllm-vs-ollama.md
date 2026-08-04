@@ -21,7 +21,7 @@ faq:
     a: "For low-concurrency internal tools, yes — it's stable and simple. But it isn't built for high-QPS multi-tenant serving: no continuous batching of vLLM's class, limited horizontal-serving story. If you're writing SLOs or buying GPUs, that's the signal you've outgrown it."
   - q: "Do I have to change my app code to switch?"
     a: "Barely — both speak the OpenAI-compatible API, so the swap is usually a base URL and model name. The work moves to model artifacts (GGUF vs HF weights), GPU provisioning, and a serving config — which is exactly what the scaffold-vllm-config command sets up."
-related: ["vllm", "ollama", "self-host-vs-api-llm", "scaffold-vllm-config", "llm-inference-engineer", "ollama-vs-lm-studio", "kv-cache"]
+related: ["tool:vllm", "tool:ollama", "guide:self-host-vs-api-llm", "command:scaffold-vllm-config", "agent:llm-inference-engineer", "guide:ollama-vs-lm-studio", "glossary:kv-cache"]
 ---
 
 vLLM vs Ollama looks like a versus and is really a **graduation path**. Both serve open-weight models behind an OpenAI-compatible API; they're built for opposite ends of the load curve.

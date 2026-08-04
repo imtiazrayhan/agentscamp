@@ -15,7 +15,7 @@ sameAs:
   - "https://github.com/greptileai"
   - "https://twitter.com/greptile"
   - "https://www.linkedin.com/company/greptile"
-related: ["coderabbit", "qodo", "best-ai-code-review-tools-2026", "code-reviewer", "review-pr", "claude-code-ci-github-actions"]
+related: ["tool:coderabbit", "tool:qodo", "guide:best-ai-code-review-tools-2026", "agent:code-reviewer", "command:review-pr", "guide:claude-code-ci-github-actions"]
 summary: "Greptile reviews pull requests with full context of the codebase — not just the diff — so it catches multi-file logical bugs diff-scoped reviewers miss. It learns team standards from your engineers' own PR comments, takes custom rules in plain English (and reads CLAUDE.md/.cursorrules), and hands fixes off to Claude Code or Cursor. Paid per seat, 14-day trial; free for qualifying open source."
 faq:
   - q: "What makes Greptile different from other AI code reviewers?"

@@ -4,7 +4,7 @@ description: "Prompt engineering is the practice of designing an LLM's inputs �
 date: 2026-06-17
 topics: ["workflow-prompting"]
 tags: ["prompting", "llm", "instructions", "few-shot"]
-related: ["system-prompt", "few-shot-prompting", "chain-of-thought", "context-engineering"]
+related: ["glossary:system-prompt", "glossary:few-shot-prompting", "glossary:chain-of-thought", "glossary:context-engineering"]
 faq:
   - q: "How is prompt engineering different from fine-tuning?"
     a: "Prompt engineering shapes the model's behavior purely through its inputs — instructions, examples, and format — and changes nothing about the model itself. Fine-tuning retrains the model's weights on your data to bake in new behavior. Prompting is fast, cheap, and reversible, so you try it first; fine-tuning is worth the cost only when prompting can't get you there reliably."

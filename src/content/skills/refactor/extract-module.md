@@ -8,7 +8,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["coding-languages", "architecture"]
-related: ["rename-symbol", "trace-data-flow", "dead-code-finder"]
+related: ["command:rename-symbol", "command:trace-data-flow", "skill:dead-code-finder"]
 featured: false
 summary: "An overgrown file rarely needs to be one file. This skill splits it by cohesion, not line count: it maps which functions share state and purpose, designs the new module boundaries and their public interfaces first, then moves one cohesive unit at a time — updating imports and keeping the suite green after every step, and routing shared types to a leaf module so no cycle forms."
 ---

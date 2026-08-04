@@ -14,7 +14,7 @@ tags: ["text-to-speech", "voice", "tts", "conversational-ai", "api"]
 featured: false
 alternativeTo: ["deepgram"]
 summary: "ElevenLabs is a voice-AI platform best known for state-of-the-art text-to-speech: natural, expressive voices in many languages, plus voice cloning, dubbing, sound effects, and a speech-to-text model. It also offers conversational AI agents, and everything is available via API under one credit-based plan — a common choice for the TTS (or the whole voice) stage of a voice agent."
-related: ["build-a-voice-agent", "deepgram", "pipecat", "voice-agent-engineer"]
+related: ["guide:build-a-voice-agent", "tool:deepgram", "tool:pipecat", "agent:voice-agent-engineer"]
 faq:
   - q: "What is ElevenLabs?"
     a: "ElevenLabs is a voice-AI platform best known for state-of-the-art text-to-speech: natural, expressive voices in 70+ languages, with low-latency Flash and Turbo models built for real-time use. Around that core it offers voice cloning, dubbing, sound effects, music, a speech-to-text model (Scribe), and conversational AI agents — all accessible via API under one credit system."

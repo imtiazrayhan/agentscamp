@@ -10,6 +10,7 @@ color: "green"
 topics: ["coding-languages"]
 tags: ["vscode", "open-source"]
 alternativeTo: ["roo-code", "kilo-code", "continue", "cursor", "claude-code"]
+related: ["tool:roo-code", "tool:kilo-code", "tool:continue", "guide:ai-coding-agents-cli-2026"]
 summary: "Cline is an open-source autonomous coding agent that runs as a VS Code extension, with a JetBrains plugin and terminal CLI as well. Describe a goal and it plans, edits files, and runs commands, showing every change as a diff you approve before it executes. Bring your own model: Anthropic, OpenAI, OpenRouter, Google, Bedrock, or local runtimes like Ollama."
 faq:
   - q: "What is Cline?"

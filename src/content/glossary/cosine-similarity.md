@@ -4,7 +4,7 @@ description: "Cosine similarity measures how alike two embeddings are by the ang
 date: 2026-06-12
 topics: ["rag-retrieval"]
 tags: ["cosine-similarity", "embeddings", "vectors", "search"]
-related: ["embedding", "semantic-search", "vector-database", "embedding-dimension", "reranking"]
+related: ["glossary:embedding", "glossary:semantic-search", "glossary:vector-database", "glossary:embedding-dimension", "glossary:reranking"]
 faq:
   - q: "Why cosine similarity instead of plain distance?"
     a: "Because direction carries the meaning in embedding space, not length. Cosine compares angle only, ignoring vector magnitude — and with normalized vectors (most modern embedding models normalize), cosine similarity, dot product, and Euclidean distance rank results identically, so engines default to the cheapest equivalent computation."

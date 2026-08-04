@@ -23,7 +23,7 @@ faq:
     a: "Codex can choose a skill automatically from its description. In the CLI or IDE extension, use /skills to browse or type $ to mention one explicitly. Explicit invocation is useful for testing; good metadata enables reliable automatic selection."
   - q: "Should I use a skill or AGENTS.md?"
     a: "Use AGENTS.md for guidance that should affect nearly every task in a repository, such as commands and architecture boundaries. Use a skill for a recognizable workflow that is relevant only sometimes, such as triaging CI, drafting release notes, or planning a migration."
-related: ["agent-skills", "agent-skills-open-standard", "writing-your-first-skill", "skill-md-reference", "codex-agents-md", "openai-codex-guide", "skill-auditor"]
+related: ["glossary:agent-skills", "guide:agent-skills-open-standard", "guide:writing-your-first-skill", "guide:skill-md-reference", "guide:codex-agents-md", "guide:openai-codex-guide", "skill:skill-auditor"]
 howtoSteps:
   - name: "Choose one repeatable job"
     text: "Define a narrow workflow with recognizable inputs and a concrete output; do not combine unrelated capabilities in one skill."
@@ -150,3 +150,7 @@ Then inspect the artifact: did it read the right inputs, respect its boundary, h
 > Local folders are ideal while a workflow is evolving. Once it is stable and meant for other people — especially when it bundles multiple skills or MCP integration — package it as a plugin instead of asking users to copy directories by hand.
 
 Official reference: [Build skills for ChatGPT and Codex](https://learn.chatgpt.com/docs/build-skills).
+
+## Continue exploring
+
+- [Codex Automations: Schedule Reliable Background Work](/guides/workflow/codex-automations) — Schedule Codex tasks for recurring checks and follow-ups — choose chat or standalone runs, local projects or worktrees, skills, permissions, and stopping rules.

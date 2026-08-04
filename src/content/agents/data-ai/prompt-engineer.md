@@ -6,7 +6,7 @@ model: "sonnet"
 color: "pink"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["data-ml", "workflow-prompting"]
-related: ["ml-engineer", "agent-architect", "prompt-patterns"]
+related: ["agent:ml-engineer", "agent:agent-architect", "guide:prompt-patterns"]
 featured: false
 summary: "A subagent that treats prompts as production code — designing instructions, few-shot examples, and tool schemas for LLM features, and building the eval set that scores every change against a baseline. Reach for it when a classification or extraction prompt is flaky, a feature needs its system prompt and tool schemas, or tweaks keep regressing unmeasured."
 ---

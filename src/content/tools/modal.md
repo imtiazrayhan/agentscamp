@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/modal-labs"
   - "https://modal.com/docs"
   - "https://pypi.org/project/modal/"
-related: ["sandboxing-ai-generated-code", "e2b", "daytona", "vllm", "llm-inference-engineer", "self-host-vs-api-llm"]
+related: ["guide:sandboxing-ai-generated-code", "tool:e2b", "tool:daytona", "tool:vllm", "agent:llm-inference-engineer", "guide:self-host-vs-api-llm"]
 summary: "Modal is serverless compute that feels like writing Python: decorate a function, declare its container image and GPU in code, and it runs in the cloud with sub-second cold starts and per-second billing. For agent builders, Sandboxes execute untrusted LLM-generated code in secure containers; for ML teams, it's GPU inference and massive batch jobs without Kubernetes."
 faq:
   - q: "What is Modal in one sentence?"

@@ -8,7 +8,7 @@ color: "cyan"
 title: "RBAC Designer"
 date: 2026-06-17
 topics: ["architecture"]
-related: ["auth-flow-reviewer", "threat-model-builder"]
+related: ["skill:auth-flow-reviewer", "skill:threat-model-builder"]
 featured: false
 summary: "Designs the authorization model itself, not a review. Models permissions as fine-grained resource:action capabilities (invoice:approve), composes them into roles, picks granularity (pure RBAC, scoped RBAC, or ReBAC/ABAC), and centralizes enforcement so code asks \"can this actor do this on this resource?\" not \"is this an admin?\". Scopes every check to the tenant to stop IDOR."
 faq:

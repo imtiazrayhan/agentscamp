@@ -7,7 +7,7 @@ allowed-tools: "Read, Grep, Glob"
 title: "Trace Data Flow"
 color: "purple"
 topics: ["coding-languages", "architecture"]
-related: ["find-n-plus-one", "rename-symbol", "auth-flow-reviewer"]
+related: ["command:find-n-plus-one", "command:rename-symbol", "skill:auth-flow-reviewer"]
 featured: false
 summary: "Read-only command that traces a value, field, or variable across the codebase: where it originates, every place it is transformed, validated, or renamed, where it is read, and where it is persisted or sent out — following renames across boundaries — then reports a directed source-to-sink flow map with file:line citations, flagging missing validation, plaintext logging, or unit/type mismatches."
 ---

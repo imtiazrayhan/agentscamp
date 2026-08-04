@@ -25,7 +25,7 @@ faq:
     a: "Start with slo-definer, structured-logging-designer, alerting-rules-tuner, rollback-plan-writer, and incident-postmortem-writer. Together they cover targets, evidence, detection, recovery, and learning."
   - q: "Is a canary plan the same as a rollback plan?"
     a: "No. A canary plan controls exposure and promotion; a rollback plan defines how to restore a known-safe state, including compatibility checks, triggers, commands, owners, and verification. Use both for risky changes."
-related: ["best-claude-skills-2026", "incident-postmortem-writer", "rollback-plan-writer", "slo-definer", "alerting-rules-tuner", "canary-release-planner"]
+related: ["guide:best-claude-skills-2026", "skill:incident-postmortem-writer", "skill:rollback-plan-writer", "skill:slo-definer", "skill:alerting-rules-tuner", "skill:canary-release-planner"]
 ---
 
 The best Claude skills for DevOps and SRE support a cycle: set reliability targets, collect useful signals, detect actionable failures, release gradually, recover safely, and learn from incidents. Installing only a Docker or CI helper leaves most of that cycle uncovered.
@@ -100,3 +100,10 @@ npx agentscamp add skills/incident-postmortem-writer
 ```
 
 Before using any generated operational command, verify the environment, target, credentials, expected blast radius, abort condition, and recovery path. Claude can make the procedure clearer; authorization still belongs to the operator.
+
+## Continue exploring
+
+- [cloud-architect](/agents/infrastructure-devops/cloud-architect) — Use this agent to design a cloud architecture on AWS, GCP, or Azure — compute, networking, data stores, IAM, and cost trade-offs.
+- [kubernetes-specialist](/agents/infrastructure-devops/kubernetes-specialist) — Use this agent for Kubernetes — manifests, Helm, troubleshooting, scaling, and resource tuning.
+- [Background Job Reliability Auditor](/skills/observability/background-job-reliability-auditor) — Audit scheduled jobs, queue consumers, workers, and asynchronous workflows for delivery assumptions, idempotency, retries, poison messages, concurrency, timeouts, checkpoints,…
+- [9 Best Claude Skills for Release Management](/guides/skills/best-claude-skills-for-release-management) — Use Claude skills for readiness reviews, canaries, rollbacks, API deprecations, migrations, versioning, changelogs, and release notes.

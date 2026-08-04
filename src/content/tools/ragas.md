@@ -15,7 +15,7 @@ tags: ["evals", "rag", "retrieval", "open-source", "python"]
 featured: false
 alternativeTo: ["deepeval"]
 summary: "RAGAS is an open-source framework built specifically to evaluate RAG pipelines. Its metrics — faithfulness, answer relevancy, context precision, and context recall — pinpoint whether failures come from retrieval or generation, many of them reference-free so you can score without gold answers."
-related: ["deepeval", "best-llm-eval-tools-2026", "how-rag-works", "rag-pipeline-engineer", "langfuse"]
+related: ["tool:deepeval", "guide:best-llm-eval-tools-2026", "guide:how-rag-works", "agent:rag-pipeline-engineer", "tool:langfuse"]
 faq:
   - q: "What is RAGAS?"
     a: "RAGAS is an open-source framework purpose-built for evaluating retrieval-augmented generation. Its metrics — faithfulness, answer relevancy, context precision, and context recall — tell you whether a failure came from retrieval (the right context wasn't fetched) or generation (the model ignored or contradicted the context). Many metrics are reference-free, so you can score without gold answers."

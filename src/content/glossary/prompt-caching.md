@@ -4,7 +4,7 @@ description: "Prompt caching reuses the computed state of a repeated prompt pref
 date: 2026-06-11
 topics: ["llm-app-dev"]
 tags: ["prompt-caching", "cost", "latency", "llm"]
-related: ["prompt-cache-optimizer", "llm-cost-latency-engineering", "kv-cache", "context-window", "system-prompt"]
+related: ["skill:prompt-cache-optimizer", "guide:llm-cost-latency-engineering", "glossary:kv-cache", "glossary:context-window", "glossary:system-prompt"]
 faq:
   - q: "What actually gets cached in prompt caching?"
     a: "The model's internal computed state (the KV cache) for a prefix of your prompt — not the text, and not the response. When the next request starts with the exact same prefix, the provider skips recomputing it and starts where the cache ends. Cached input tokens are billed at a steep discount and processed near-instantly."

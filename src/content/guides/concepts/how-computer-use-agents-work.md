@@ -23,7 +23,7 @@ faq:
     a: "Use it — always, when one exists. Computer use exists for the long tail with no API: legacy desktop software, vendor portals, government forms, arbitrary third-party sites. The rule: API first, structured browser automation (Playwright-grade) second, pixel-level control last."
   - q: "What's the difference between computer use and RPA?"
     a: "Classic RPA replays brittle recorded scripts — pixel positions, fixed selectors — that break when the UI shifts. Computer-use agents perceive the current screen and decide actions semantically, so they tolerate layout changes and handle variation. The trade: RPA is deterministic and cheap per run; agents are adaptive and cost model calls per step."
-related: ["computer-use", "vision-language-model", "ai-agent", "playwright-mcp", "chrome-devtools-mcp", "human-in-the-loop", "browser-agent-engineer"]
+related: ["glossary:computer-use", "glossary:vision-language-model", "glossary:ai-agent", "tool:playwright-mcp", "tool:chrome-devtools-mcp", "glossary:human-in-the-loop", "agent:browser-agent-engineer"]
 ---
 
 [Computer use](/glossary/computer-use) is tool calling with the world's most universal tool: the screen. No API, no integration — the agent operates software the way you do, by looking and clicking. Understanding how the loop works explains both why it's suddenly everywhere and why it remains the *last* resort, not the first.

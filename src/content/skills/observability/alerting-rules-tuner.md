@@ -8,7 +8,7 @@ color: "cyan"
 title: "Alerting Rules Tuner"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["slo-definer", "structured-logging-designer"]
+related: ["skill:slo-definer", "skill:structured-logging-designer"]
 featured: false
 summary: "Most alert fatigue comes from paging on causes (CPU, memory, disk) instead of symptoms the user feels. This skill audits your rules, moves cause-metrics to dashboards, rewrites paging alerts to fire on error rate / latency / SLO burn with duration windows, routes by severity, dedups related alerts into one notification, and attaches an owner and runbook to every page."
 faq:

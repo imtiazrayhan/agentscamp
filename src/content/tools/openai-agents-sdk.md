@@ -15,7 +15,7 @@ tags: ["agents", "framework", "openai", "open-source", "python"]
 featured: false
 alternativeTo: ["langgraph", "crewai", "autogen"]
 summary: "OpenAI's open-source Agents SDK is a small, unopinionated framework for building agents: a core agent loop plus handoffs (delegation between agents), guardrails (input/output validation), sessions (memory), and built-in tracing. The production-grade successor to Swarm; works with non-OpenAI models too."
-related: ["langgraph", "crewai", "autogen", "agent-frameworks-2026"]
+related: ["tool:langgraph", "tool:crewai", "tool:autogen", "guide:agent-frameworks-2026"]
 faq:
   - q: "What is the OpenAI Agents SDK?"
     a: "The OpenAI Agents SDK is OpenAI's lightweight, open-source framework for building agentic applications — the production-ready successor to the experimental Swarm project. Its philosophy is 'few primitives, learned fast': a core agent loop plus handoffs for multi-agent delegation, guardrails for input/output validation, sessions for memory, and built-in tracing."

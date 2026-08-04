@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["postgres-connection-pooling-guide", "postgres-index-strategist", "migration-writer", "structured-logging-designer"]
+related: ["guide:postgres-connection-pooling-guide", "skill:postgres-index-strategist", "skill:migration-writer", "skill:structured-logging-designer"]
 featured: false
 summary: "Connection pools fail two ways: too large (every instance's pool sums past the DB's max_connections and exhausts it) or naively large (a pool bigger than the DB has cores just queues, adding latency). This skill sizes the per-instance pool from concurrency and core count, does the instances-times-pool math with headroom, sets the timeouts, and routes serverless through a pooler."
 faq:

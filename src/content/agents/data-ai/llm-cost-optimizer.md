@@ -6,7 +6,7 @@ color: "blue"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-04
 topics: ["devops-infra"]
-related: ["llm-cost-latency-engineering", "llm-gateways-compared", "prompt-cache-optimizer", "set-perf-budget", "portkey", "llm-inference-engineer", "llm-integration-engineer"]
+related: ["guide:llm-cost-latency-engineering", "guide:llm-gateways-compared", "skill:prompt-cache-optimizer", "command:set-perf-budget", "tool:portkey", "agent:llm-inference-engineer", "agent:llm-integration-engineer"]
 featured: false
 summary: "Owns the API-side economics of an LLM feature: profiles where tokens, dollars, and milliseconds go, then cuts them with caching, per-task model right-sizing, prompt trimming, and enforced cost/latency budgets — always re-checking quality against an eval bar so cheaper and faster never means worse. Distinct from self-hosted serving (the llm-inference-engineer)."
 ---

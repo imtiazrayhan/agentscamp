@@ -9,6 +9,7 @@ color: "orange"
 topics: ["coding-languages"]
 tags: ["vscode", "open-source"]
 alternativeTo: ["cline", "kilo-code", "continue", "cursor"]
+related: ["tool:cline", "tool:kilo-code", "tool:continue", "guide:ai-coding-agents-cli-2026"]
 summary: "Roo Code was an open-source AI coding agent for VS Code, forked from Cline, known for its configurable mode system (Code, Architect, Ask, Debug) with per-mode models and tool permissions. It was discontinued in May 2026 — the extension and hosted services are archived — and the maintainers recommend migrating to Cline."
 faq:
   - q: "What is Roo Code?"

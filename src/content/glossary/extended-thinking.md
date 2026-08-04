@@ -4,7 +4,7 @@ description: "Extended thinking is the reasoning tokens a model generates before
 date: 2026-06-17
 topics: ["workflow-prompting"]
 tags: ["reasoning", "thinking", "tokens", "accuracy"]
-related: ["reasoning-model", "chain-of-thought", "llm-token", "test-time-compute", "context-engineering"]
+related: ["glossary:reasoning-model", "glossary:chain-of-thought", "glossary:llm-token", "glossary:test-time-compute", "glossary:context-engineering"]
 faq:
   - q: "What's the difference between extended thinking and chain-of-thought prompting?"
     a: "Chain-of-thought is a prompting technique you trigger with instructions like 'think step by step.' Extended thinking is a built-in model capability: the model produces a dedicated stream of reasoning tokens before answering, often with a budget you control. The mechanism overlaps, but extended thinking is native rather than coaxed."

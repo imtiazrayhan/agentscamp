@@ -6,7 +6,7 @@ date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
 featured: false
-related: ["what-is-claude-code", "context-engineering"]
+related: ["guide:what-is-claude-code", "guide:context-engineering"]
 summary: "CLAUDE.md loads into context on every turn, so it should read like onboarding for a fast new engineer: exact build/test commands, conventions a linter can't enforce, a few-line architecture map, and the gotchas that have burned someone — and nothing the model already knows. Target under 200 lines, split by scope, and update it in the same PR that changes reality."
 keyTakeaways:
   - "The filter for every line: would a sharp engineer get this wrong on their first day despite reading the code? If the code makes it obvious, cut it."

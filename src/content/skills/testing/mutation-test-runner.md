@@ -8,7 +8,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["review-qa"]
-related: ["coverage-gap-finder", "property-test-designer", "contract-test-designer"]
+related: ["skill:coverage-gap-finder", "skill:property-test-designer", "skill:contract-test-designer"]
 featured: false
 summary: "Coverage proves a line ran, not that a test would notice if it broke. This skill runs mutation testing — Stryker, mutmut, PIT — to plant small faults and see which the suite kills, reads each surviving mutant as a missing assertion, and outputs the precise tests to add, scoped to the diff so it actually finishes."
 faq:

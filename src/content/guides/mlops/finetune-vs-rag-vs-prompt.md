@@ -23,7 +23,7 @@ faq:
     a: "Distillation transfers the capability of a large, expensive model into a smaller, cheaper, faster one — typically by fine-tuning the small model on the large model's outputs (or its probability distributions). You reach for it after you have a working pipeline built on a frontier model and want to cut cost and latency at scale: the distilled model approximates the big model's behavior on your specific task at a fraction of the inference cost. It trades some general capability for efficiency on the narrow task it was distilled for."
   - q: "Can I combine RAG and fine-tuning?"
     a: "Yes, and it's a powerful pattern. Fine-tune a model to reliably follow your task's format, tone, and tool-use behavior, then use RAG to feed it the current, specific knowledge it needs at query time. The fine-tuning handles 'how to respond,' RAG handles 'what to respond about.' This is common in production — for example a support assistant fine-tuned for your voice and answer structure, retrieving from your live docs for the facts."
-related: ["how-rag-works", "self-host-vs-api-llm", "finetune-dataset-prep", "finetuning-engineer", "choosing-the-right-model"]
+related: ["guide:how-rag-works", "guide:self-host-vs-api-llm", "guide:finetune-dataset-prep", "agent:finetuning-engineer", "guide:choosing-the-right-model"]
 ---
 
 When a model isn't doing what you need, there are four levers — prompt engineering, RAG, fine-tuning, and distillation — and teams routinely grab the wrong one: fine-tuning to add facts (RAG's job), or building a RAG pipeline to fix a formatting problem (a prompt's job). They aren't competitors ranked by power; they solve **different problems.** Pick by naming the gap, not by reaching for the most sophisticated tool.

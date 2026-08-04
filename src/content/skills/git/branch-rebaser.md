@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["workflow-prompting"]
-related: ["git-github-expert", "sync-branch"]
+related: ["agent:git-github-expert", "command:sync-branch"]
 featured: false
 summary: "A skill that rebases the current branch onto its detected base and resolves every conflict methodically: it confirms a clean tree, fetches and identifies the real base, reconstructs each conflicted hunk so both sides' intent survives, then rebuilds and re-runs tests to prove behavior held — never force-pushing without explicit confirmation."
 ---

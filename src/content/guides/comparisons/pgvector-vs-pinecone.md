@@ -21,7 +21,7 @@ faq:
     a: "The specialist features and the zero-ops ceiling: serverless elasticity, vector-native namespaces and tiering, vendor-tuned ANN at extreme scale. And your vectors share resources with your transactional load — a heavy index build and your checkout queries compete unless you separate replicas. For many products those costs stay theoretical for years."
   - q: "When is Pinecone clearly the right call?"
     a: "When vector search IS the product (search-heavy SaaS, large multi-tenant corpora), when scale is real today (tens of millions of vectors, high QPS), or when the team explicitly wants no database operations at all. Paying the meter for headroom you measurably need is good engineering; paying it for imagined scale is the classic premature optimization."
-related: ["pgvector", "pinecone", "best-vector-database-2026", "qdrant-vs-pinecone", "scaffold-pgvector-schema", "postgres-indexing-at-scale"]
+related: ["tool:pgvector", "tool:pinecone", "guide:best-vector-database-2026", "guide:qdrant-vs-pinecone", "command:scaffold-pgvector-schema", "guide:postgres-indexing-at-scale"]
 ---
 
 This comparison hides a better question: **do you need a separate vector database at all?** [pgvector](/tools/pgvector) — the open-source extension adding vector search to Postgres — exists precisely so the answer can be "not yet," and for a large share of RAG applications, "not yet" lasts the product's whole life.

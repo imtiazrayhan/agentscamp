@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/janhq/jan"
   - "https://huggingface.co/janhq"
   - "https://x.com/jandotai"
-related: ["lm-studio", "ollama", "llama-cpp", "best-local-llm-tools-2026", "quantization", "model-context-protocol"]
+related: ["tool:lm-studio", "tool:ollama", "tool:llama-cpp", "guide:best-local-llm-tools-2026", "glossary:quantization", "glossary:model-context-protocol"]
 summary: "Jan (janhq/jan, Apache-2.0, ~43k stars, by Menlo Research) is the open-source answer to LM Studio: a Tauri desktop app that downloads and runs local models via a llama.cpp engine, exposes an OpenAI-compatible API on localhost:1337, supports MCP for agentic use, and optionally connects cloud providers with your own keys. 100% offline-capable; 5.7M+ downloads."
 faq:
   - q: "Jan vs LM Studio — what's the real difference?"

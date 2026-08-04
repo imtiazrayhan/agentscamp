@@ -18,7 +18,7 @@ tags: ["agents", "python", "java", "google", "multi-agent", "open-source"]
 featured: false
 alternativeTo: ["langgraph", "crewai", "openai-agents-sdk", "autogen", "pydantic-ai"]
 summary: "Google ADK (Agent Development Kit) is an open-source, code-first framework for building, evaluating, and deploying AI agents in Python (Java also available). It's model-agnostic and deployment-agnostic — run agents locally, on Cloud Run, or in Vertex AI Agent Engine, which it powers."
-related: ["agent-frameworks-2026", "openai-agents-sdk-vs-langgraph", "multi-agent-orchestration", "mcp-vs-a2a", "production-tool-calling"]
+related: ["guide:agent-frameworks-2026", "guide:openai-agents-sdk-vs-langgraph", "guide:multi-agent-orchestration", "guide:mcp-vs-a2a", "guide:production-tool-calling"]
 faq:
   - q: "What is Google ADK?"
     a: "Google ADK (Agent Development Kit) is an open-source, code-first framework for building, evaluating, and deploying AI agents. You define agents and their tools in Python (Java is also available), compose them into multi-agent systems, evaluate runs, and deploy locally, to Cloud Run, or to Vertex AI Agent Engine. It is model-agnostic — it integrates tightly with Gemini but works with other models via adapters like LiteLLM."

@@ -5,7 +5,7 @@ author: "AgentsCamp"
 color: "green"
 topics: ["llm-evals", "review-qa"]
 tags: ["testing", "evals", "llm-as-judge", "regression", "ci"]
-related: ["write-llm-evals", "best-llm-eval-tools-2026", "production-tool-calling", "prompt-regression-tester", "agent-trajectory-evaluator"]
+related: ["guide:write-llm-evals", "guide:best-llm-eval-tools-2026", "guide:production-tool-calling", "skill:prompt-regression-tester", "skill:agent-trajectory-evaluator"]
 featured: false
 date: 2026-06-17
 summary: "You can't assertEqual an LLM output. Split your app into a deterministic layer you test like normal code and a model-behavior layer you test with evals over a golden dataset. Validate structure deterministically, judge subjective quality with a rubric or an LLM judge, pin a baseline, and gate CI on the score — not on exact strings."

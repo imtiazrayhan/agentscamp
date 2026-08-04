@@ -4,7 +4,7 @@ description: "Attention lets a model weigh how relevant every other token is to 
 date: 2026-06-17
 topics: ["data-ml"]
 tags: ["attention", "self-attention", "transformer", "deep-learning", "neural-networks"]
-related: ["context-window", "kv-cache", "llm-token", "tokenization", "embedding"]
+related: ["glossary:context-window", "glossary:kv-cache", "glossary:llm-token", "glossary:tokenization", "glossary:embedding"]
 faq:
   - q: "What is self-attention?"
     a: "Self-attention is attention applied within a single sequence: every token attends to every other token in the same input (including itself), so each position's representation is recomputed as a relevance-weighted blend of all the others. It is the core operation inside a transformer block, and it is what lets a model resolve a pronoun against a noun fifty words back."

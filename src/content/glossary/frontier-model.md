@@ -4,7 +4,7 @@ description: "A frontier model is one of the most capable AI models available �
 date: 2026-06-12
 topics: ["llm-app-dev"]
 tags: ["frontier", "models", "llm"]
-related: ["reasoning-model", "small-language-model", "open-weights", "choosing-the-right-model", "claude-vs-gpt-vs-gemini-coding"]
+related: ["glossary:reasoning-model", "glossary:small-language-model", "glossary:open-weights", "guide:choosing-the-right-model", "guide:claude-vs-gpt-vs-gemini-coding"]
 faq:
   - q: "Which models count as frontier in 2026?"
     a: "The current flagship families from the major labs — Anthropic's latest Claude line, OpenAI's top GPT/reasoning tiers, Google's leading Gemini models — plus the strongest open-weight releases that approach them. Membership shifts with every release cycle; 'frontier' names the moving edge, not a fixed list."

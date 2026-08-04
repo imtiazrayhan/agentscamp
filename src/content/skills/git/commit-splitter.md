@@ -8,7 +8,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["review-qa"]
-related: ["conventional-commits", "branch-rebaser", "pr-description"]
+related: ["skill:conventional-commits", "skill:branch-rebaser", "skill:pr-description"]
 featured: false
 summary: "Turns one fat, mixed change into a series of atomic commits a reviewer can actually read. It inventories the diff, groups hunks by intent (feature, refactor, fix, formatting), stages each group with git add -p, orders them so every commit builds and passes tests independently, and writes a focused conventional message per commit."
 ---

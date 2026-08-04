@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["review-qa"]
-related: ["test-scaffolder", "test-engineer"]
+related: ["skill:test-scaffolder", "agent:test-engineer"]
 featured: false
 summary: "A skill that runs the project's existing coverage tool and turns the report into a ranked plan: it parses per-line and per-branch data, weights gaps by risk — uncovered error handlers, unguarded edge cases, critical modules — names the exact untested branch, and proposes concrete test cases for each, prioritizing risk reduction over a 100% badge."
 ---

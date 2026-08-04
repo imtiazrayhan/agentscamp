@@ -6,7 +6,7 @@ allowed-tools: "Read, Bash"
 title: "Git Undo"
 color: "purple"
 topics: ["review-qa"]
-related: ["resolve-conflict", "commit", "clean-branches"]
+related: ["command:resolve-conflict", "command:commit", "command:clean-branches"]
 featured: false
 summary: "A slash command that undoes the last Git action safely: it inspects the repo state and whether the change was pushed, then picks the right tool — restore to unstage or discard, reset --soft/--mixed to walk back a local commit while keeping the work, revert to reverse a pushed commit without rewriting history, or reflog to recover a lost commit — confirming before anything destructive."
 ---

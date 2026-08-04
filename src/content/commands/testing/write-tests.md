@@ -6,7 +6,7 @@ argument-hint: "[file or function]"
 title: "Write Tests"
 color: "purple"
 topics: ["review-qa"]
-related: ["test-engineer"]
+related: ["agent:test-engineer"]
 summary: "A slash command that writes a focused test suite for a file, function, or class: it reads the target and its entry points, matches the project's test framework and conventions, plans deliberate happy-path, edge-case, and error cases, writes independent deterministic tests that mock only true boundaries, then runs the suite and flags real bugs."
 ---
 

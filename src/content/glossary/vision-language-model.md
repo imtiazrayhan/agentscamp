@@ -4,7 +4,7 @@ description: "A VLM jointly understands images and text — reading documents, s
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["vlm", "vision", "multimodal", "ocr"]
-related: ["vlm-ocr-documents", "multimodal-ai", "multimodal-document-extractor", "qwen3-vl", "computer-use"]
+related: ["guide:vlm-ocr-documents", "glossary:multimodal-ai", "skill:multimodal-document-extractor", "tool:qwen3-vl", "glossary:computer-use"]
 faq:
   - q: "Do VLMs replace OCR?"
     a: "For most document understanding, effectively yes. Classic OCR outputs characters and leaves structure to you; a VLM reads the page like a person — tables, layout, handwriting, checkboxes, the figure the text refers to — and can return structured data directly. Dedicated OCR still wins on raw character accuracy for clean, high-volume scanning at minimal cost."

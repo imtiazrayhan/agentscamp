@@ -4,7 +4,7 @@ description: "Speculative decoding speeds up generation: a small draft model pro
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["speculative-decoding", "inference", "performance", "serving"]
-related: ["inference", "kv-cache", "quantization", "vllm", "llm-inference-engineer"]
+related: ["glossary:inference", "glossary:kv-cache", "glossary:quantization", "tool:vllm", "agent:llm-inference-engineer"]
 faq:
   - q: "Does speculative decoding change the model's output?"
     a: "No — that's its defining property. The large model verifies every drafted token and rejects any it wouldn't have produced, falling back to its own choice. Accepted-or-corrected, the final sequence is distributed exactly as if the large model generated alone; you trade nothing but the draft model's overhead."

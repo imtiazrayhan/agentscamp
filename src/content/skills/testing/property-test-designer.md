@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 title: "Property Test Designer"
 topics: ["review-qa"]
-related: ["coverage-gap-finder", "test-scaffolder", "mock-data-factory"]
+related: ["skill:coverage-gap-finder", "skill:test-scaffolder", "skill:mock-data-factory"]
 featured: false
 summary: "Example-based tests only check the cases you thought of. This skill finds the invariants that must hold for every valid input — round-trip, idempotence, oracle, metamorphic — defines generators that hit the nasty regions, writes the test in the language's framework, and pins each shrunk counterexample as a permanent regression case."
 ---

@@ -21,7 +21,7 @@ faq:
     a: "Spiky or small workloads: Pinecone's serverless metering usually wins (pay near-zero at rest). Large, steady workloads: self-hosted Qdrant on fixed infra typically wins by a wide margin, at the cost of operating it. Qdrant Cloud sits between. Model your read/write volume before trusting anyone's pricing page — including theirs."
   - q: "Can I switch later?"
     a: "Mechanically yes — both store vectors + payloads and the migration is an export/re-upsert job — but embeddings are the sticky part only if you also change models. The real lock-in is operational: Pinecone-specific features (serverless namespaces, integrated inference) and Qdrant-specific tuning don't transfer 1:1. Keep your ingestion pipeline vendor-neutral and switching stays a project, not a rewrite."
-related: ["qdrant", "pinecone", "best-vector-database-2026", "pgvector-vs-pinecone", "vector-database", "vector-search-engineer"]
+related: ["tool:qdrant", "tool:pinecone", "guide:best-vector-database-2026", "guide:pgvector-vs-pinecone", "glossary:vector-database", "agent:vector-search-engineer"]
 ---
 
 Qdrant vs Pinecone is the open-vs-managed question wearing a vector-database costume. Both are credible, production-proven engines for [RAG](/glossary/rag) retrieval; what you're actually choosing is **who operates it and who you depend on**.

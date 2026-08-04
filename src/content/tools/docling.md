@@ -15,7 +15,7 @@ tags: ["document-processing", "pdf", "rag", "ocr", "parsing"]
 featured: false
 alternativeTo: ["marker", "unstructured", "llamaparse", "reducto"]
 summary: "Docling is an open-source (MIT) Python library, started at IBM Research and now an LF AI & Data project, that converts PDFs, DOCX, PPTX, XLSX, HTML, and images into structured Markdown and JSON. It understands page layout, reading order, table structure, formulas, and code, runs locally, and plugs into LangChain, LlamaIndex, Crew AI, and Haystack for RAG."
-related: ["how-rag-works", "multimodal-rag-images-pdfs", "vlm-ocr-documents", "best-rag-frameworks-2026", "multimodal-document-extractor"]
+related: ["guide:how-rag-works", "guide:multimodal-rag-images-pdfs", "guide:vlm-ocr-documents", "guide:best-rag-frameworks-2026", "skill:multimodal-document-extractor"]
 faq:
   - q: "What is Docling?"
     a: "Docling is an open-source Python library for document parsing. It converts PDFs, DOCX, PPTX, XLSX, HTML, EPUB, and images into a unified DoclingDocument and exports clean Markdown or lossless JSON, capturing page layout, reading order, table structure, formulas, and code so the output is ready for retrieval-augmented generation (RAG) and other LLM pipelines."
@@ -33,4 +33,4 @@ It runs **locally**, which means sensitive documents never leave your environmen
 
 ## Good to know
 
-Docling is MIT-licensed and free to self-host. It was started by IBM Research's AI for knowledge team in Zurich and is now an [LF AI & Data Foundation](https://lfaidata.foundation/) project. It sits at the ingestion layer of a RAG stack — see [how RAG works](/guides/foundations/how-rag-works) and [best RAG frameworks 2026](/guides/foundations/best-rag-frameworks-2026) for where parsing fits, and pair it with a [multimodal document extractor](/skills/rag-knowledge/multimodal-document-extractor) when documents demand vision-language understanding.
+Docling is MIT-licensed and free to self-host. It was started by IBM Research's AI for knowledge team in Zurich and is now an [LF AI & Data Foundation](https://lfaidata.foundation/) project. It sits at the ingestion layer of a RAG stack — see [how RAG works](/guides/concepts/how-rag-works) and [best RAG frameworks 2026](/guides/comparisons/best-rag-frameworks-2026) for where parsing fits, and pair it with a [multimodal document extractor](/skills/data/multimodal-document-extractor) when documents demand vision-language understanding.

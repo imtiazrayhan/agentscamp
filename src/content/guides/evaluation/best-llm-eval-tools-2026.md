@@ -23,7 +23,7 @@ faq:
     a: "DeepEval (Apache-2.0), RAGAS (Apache-2.0), promptfoo (MIT), Langfuse (MIT), and Arize Phoenix are open-source and self-hostable. LangSmith and Braintrust are commercial hosted platforms with free tiers. Open-source wins when you need to control cost at scale or keep traces in your own environment."
   - q: "Should I use RAGAS or DeepEval for a RAG system?"
     a: "Use both, or RAGAS if you must pick one for RAG. RAGAS is purpose-built for RAG with metrics that separate retrieval failures from generation failures (context precision/recall vs. faithfulness). DeepEval is a broader framework that also includes RAG metrics plus general and agent metrics, with a pytest-style API. Many teams run RAGAS metrics inside a DeepEval or CI harness."
-related: ["deepeval", "ragas", "langsmith", "arize-phoenix", "braintrust", "langfuse", "promptfoo", "write-llm-evals", "llm-evaluation-engineer"]
+related: ["tool:deepeval", "tool:ragas", "tool:langsmith", "tool:arize-phoenix", "tool:braintrust", "tool:langfuse", "tool:promptfoo", "guide:write-llm-evals", "agent:llm-evaluation-engineer"]
 ---
 
 Once you've decided to [write evals](/guides/evaluation/write-llm-evals), the next question is what to build them on. The landscape looks crowded, but it splits cleanly into **two categories** — and the right answer for most teams is to pick one from each, not to agonize over a single winner.

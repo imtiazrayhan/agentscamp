@@ -4,7 +4,7 @@ description: "The neural-network architecture (Vaswani et al., 2017) that uses s
 date: 2026-06-17
 topics: ["data-ml"]
 tags: ["transformer", "architecture", "attention", "llm", "deep-learning"]
-related: ["tokenization", "inference", "context-window", "mixture-of-experts", "reasoning-model"]
+related: ["glossary:tokenization", "glossary:inference", "glossary:context-window", "glossary:mixture-of-experts", "glossary:reasoning-model"]
 faq:
   - q: "Why was the Transformer such a breakthrough?"
     a: "Earlier sequence models (RNNs, LSTMs) processed tokens one after another, which made training slow and hard to parallelize. The Transformer replaced that recurrence with self-attention, letting it look at every token in a sequence at once. That parallelism scales cleanly on GPUs, so models could be trained on far more data and parameters — and scaling the Transformer is exactly what produced today's large language models."

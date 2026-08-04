@@ -15,7 +15,7 @@ tags: ["agents", "framework", "multi-agent", "open-source", "microsoft"]
 featured: false
 alternativeTo: ["langgraph", "crewai", "openai-agents-sdk"]
 summary: "AutoGen pioneered the conversational multi-agent pattern: agents (and humans) collaborate by passing messages, including group chats and a code-executing agent. It originated at Microsoft Research; AG2 is the community-driven fork that continues that lineage. Both are open source."
-related: ["langgraph", "crewai", "openai-agents-sdk", "agent-frameworks-2026"]
+related: ["tool:langgraph", "tool:crewai", "tool:openai-agents-sdk", "guide:agent-frameworks-2026"]
 faq:
   - q: "What is AutoGen?"
     a: "AutoGen is an open-source framework that models multi-agent systems as conversations: specialized agents — and optionally a human — exchange messages to solve a task together, including multi-agent group chats and a built-in code-executing agent that writes and runs code in a loop. It helped popularize the conversational multi-agent pattern many later frameworks built on."

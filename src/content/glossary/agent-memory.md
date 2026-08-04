@@ -4,7 +4,7 @@ description: "Agent memory is how an AI agent retains information beyond its con
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 tags: ["memory", "agents", "state", "persistence"]
-related: ["agent-memory-architecture", "claude-code-memory-context", "context-window", "mem0", "rag"]
+related: ["guide:agent-memory-architecture", "guide:claude-code-memory-context", "glossary:context-window", "tool:mem0", "glossary:rag"]
 faq:
   - q: "What's the difference between short-term and long-term agent memory?"
     a: "Short-term memory is the context window — everything the agent currently sees, gone when the session ends. Long-term memory is anything persisted outside it — files, databases, vector stores — that survives across sessions and gets selectively loaded back. The engineering is in the 'selectively': what to write down, and what to recall when."

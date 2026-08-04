@@ -6,7 +6,7 @@ model: "sonnet"
 color: "green"
 tools: "Read, Write, Edit, Glob, Grep, Bash"
 topics: ["review-qa"]
-related: ["code-reviewer", "debugger"]
+related: ["agent:code-reviewer", "agent:debugger"]
 summary: "A subagent that writes automated tests that pin down real behavior — unit, integration, and edge cases — matching the project's harness and conventions, with regression tests that fail first against the buggy code. Reach for it when adding coverage to an untested module, reproducing a reported bug as a test, or designing a test plan for a new feature."
 ---
 

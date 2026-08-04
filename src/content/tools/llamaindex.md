@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/run-llama/llama_index"
   - "https://developers.llamaindex.ai"
   - "https://pypi.org/project/llama-index/"
-related: ["langchain-vs-llamaindex", "how-rag-works", "langchain", "chunking-strategy-optimizer", "vlm-ocr-documents", "multimodal-document-extractor"]
+related: ["guide:langchain-vs-llamaindex", "guide:how-rag-works", "tool:langchain", "skill:chunking-strategy-optimizer", "guide:vlm-ocr-documents", "skill:multimodal-document-extractor"]
 summary: "LlamaIndex (MIT, ~50k stars) is the data-first framework: connectors and ingestion pipelines, indexes and query engines for RAG, agents over documents, and event-driven Workflows for orchestration. The company's 2026 center of gravity is document processing — LlamaParse's agentic OCR for 50+ file types and the LlamaCloud parse/extract/index platform."
 faq:
   - q: "What is LlamaIndex best at?"

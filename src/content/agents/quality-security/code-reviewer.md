@@ -7,7 +7,7 @@ color: "blue"
 tools: "Read, Grep, Glob, Bash"
 topics: ["review-qa"]
 featured: true
-related: ["test-engineer", "security-auditor", "refactoring-specialist"]
+related: ["agent:test-engineer", "agent:security-auditor", "agent:refactoring-specialist"]
 summary: "A subagent that reviews code changes the way a careful senior colleague would — hunting correctness bugs, security and data-loss risks, and maintainability problems in the diff, with each finding ranked by severity and confidence. Reach for it when reviewing a PR before merge, auditing a new module, or sanity-checking a refactor for regressions."
 ---
 

@@ -16,7 +16,7 @@ alternativeTo: ["assemblyai", "deepgram"]
 sameAs:
   - "https://github.com/openai/whisper"
   - "https://arxiv.org/abs/2212.04356"
-related: ["best-stt-apis-2026", "assemblyai", "deepgram", "llama-cpp", "quantization", "build-a-voice-agent"]
+related: ["guide:best-stt-apis-2026", "tool:assemblyai", "tool:deepgram", "tool:llama-cpp", "glossary:quantization", "guide:build-a-voice-agent"]
 summary: "Whisper (OpenAI, MIT, ~102k stars) is the open-weights STT baseline: multilingual transcription across ~99 languages, speech-to-English translation, six model sizes from tiny (runs anywhere) to large, with turbo — an 8x-faster large-v3 — as the practical default. Production deployments mostly run it through faster-whisper or whisper.cpp; hosted Whisper is offered by many APIs."
 faq:
   - q: "Is Whisper still the best open STT in 2026?"

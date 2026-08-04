@@ -7,7 +7,7 @@ model: "sonnet"
 color: "cyan"
 tools: "Read, Grep, Glob, Edit, Bash"
 topics: ["devops-infra"]
-related: ["devops-engineer", "cloud-architect", "terraform-specialist", "kubernetes-specialist"]
+related: ["agent:devops-engineer", "agent:cloud-architect", "agent:terraform-specialist", "agent:kubernetes-specialist"]
 featured: false
 summary: "A subagent that designs and hardens CI/CD pipelines provider-agnostically — build→test→deploy stage design, dependency and layer caching, matrix parallelism for fast feedback, artifact promotion across environments, blue-green/canary/rolling deploys with safe rollback, least-privilege OIDC tokens, and supply-chain hardening (pinned actions, provenance)."
 faq:

@@ -6,7 +6,7 @@ color: orange
 date: 2026-06-12
 topics: ["ai-agents-systems"]
 tags: ["browser-agents", "automation", "computer-use", "reliability"]
-related: ["browser-agents-compared-2026", "how-computer-use-agents-work", "browser-use", "stagehand", "skyvern", "playwright-mcp"]
+related: ["guide:browser-agents-compared-2026", "guide:how-computer-use-agents-work", "tool:browser-use", "tool:stagehand", "tool:skyvern", "tool:playwright-mcp"]
 featured: false
 summary: "A subagent that owns browser-automation engineering end to end: it picks the right layer (data API vs structured browser control vs vision agent), designs the task with grounding and verification per step, wires the safety fences (domain allowlists, isolated profiles, human gates on irreversible actions), and debugs flakiness with the discipline the category demands."
 ---

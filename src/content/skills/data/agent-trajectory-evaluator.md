@@ -8,7 +8,7 @@ color: "cyan"
 title: "Agent Trajectory Evaluator"
 date: 2026-06-17
 topics: ["llm-evals", "ai-agents-systems"]
-related: ["token-usage-profiler", "contract-test-designer", "mutation-test-runner"]
+related: ["skill:token-usage-profiler", "skill:contract-test-designer", "skill:mutation-test-runner"]
 featured: false
 summary: "Final-answer evals hide process failures — an agent can reach the right answer via a broken, expensive, or lucky path that breaks next input. This skill captures full trajectories and scores tool selection, argument correctness, step efficiency, error recovery, and goal completion, asserting checkable steps programmatically and reserving an LLM-judge for the subjective ones."
 faq:

@@ -21,7 +21,7 @@ faq:
     a: "Scoped ones, yes — the 2026 frameworks industrialized verification, retries, and caching. The reliability ladder: deterministic replay (Stagehand cached actions, Skyvern code-gen) > structure-grounded AI steps > pure-vision steps. Production deployments narrow the task, verify after consequential actions, and gate the irreversible."
   - q: "Why not just use Playwright scripts?"
     a: "If the site is stable and the flow is known — do. AI layers earn their cost where scripts die: changing layouts, unfamiliar sites, natural-language task variation. The mature pattern is hybrid: deterministic where possible, AI at the joints — exactly what Stagehand's primitives and Skyvern's code-gen mode encode."
-related: ["browser-use", "stagehand", "skyvern", "playwright-mcp", "chrome-devtools-mcp", "how-computer-use-agents-work", "browser-agent-engineer"]
+related: ["tool:browser-use", "tool:stagehand", "tool:skyvern", "tool:playwright-mcp", "tool:chrome-devtools-mcp", "guide:how-computer-use-agents-work", "agent:browser-agent-engineer"]
 ---
 
 Giving AI a browser stopped being one product category — it's four, sorted by **who's driving**. The frameworks converged technically (everyone grounds in DOM structure plus vision, everyone wraps CDP-grade execution) while diverging in posture. Map your job to the posture and the choice mostly makes itself.
@@ -48,3 +48,8 @@ Giving AI a browser stopped being one product category — it's four, sorted by 
 ## How to actually choose
 
 Ask **who drives** (an autonomous agent → Browser Use; your code → Stagehand; an ops team's workflow → Skyvern; your existing coding agent → MCP) and **what failure costs** (high-stakes flows want the deterministic end of each tool: cached actions, generated scripts, verified steps). Then apply the universal fence, because every one of these reads hostile pages with a session attached: domain allowlists, throwaway profiles, [human gates](/glossary/human-in-the-loop) on payments and sends — the [prompt-injection surface](/glossary/prompt-injection) is the category's shared tax. The conceptual foundations — grounding, verification, the API-first hierarchy — live in [How Computer-Use Agents Work](/guides/concepts/how-computer-use-agents-work).
+
+## Continue exploring
+
+- [browser-agent-engineer](/agents/data-ai/browser-agent-engineer) — Use this agent to build, harden, or debug browser-automation agents — web tasks via Browser Use, Stagehand, Skyvern, or Playwright-based stacks.
+- [Browserbase](/tools/browserbase) — Managed headless-browser infrastructure for AI agents and web automation — serverless cloud browsers with stealth, proxies, live view, and Playwright/Stagehand.

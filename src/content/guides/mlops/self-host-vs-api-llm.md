@@ -23,7 +23,7 @@ faq:
     a: "At minimum: GPUs sized for your model and throughput, an inference/serving engine like vLLM to get acceptable tokens-per-second and concurrency, an open-weight model that fits your task, and the ops to run it — autoscaling, monitoring, capacity planning, and a way to evaluate quality as you update models. For local or development use (single user, no scale), tools like Ollama or LM Studio run a model on a laptop with almost no setup, but that's a different use case from serving production traffic."
   - q: "Can I run a large language model locally on my own machine?"
     a: "Yes, for development, prototyping, and single-user use. Tools like Ollama (CLI) and LM Studio (desktop app) download and run open-weight models locally, often with an OpenAI-compatible local endpoint, so you can build against a local model with no API key and no data leaving your machine. The constraint is hardware: model size and quantization determine whether it fits in your RAM/VRAM and how fast it runs. For serving many concurrent users in production, you move to a dedicated serving engine like vLLM on appropriately sized GPUs."
-related: ["llm-inference-engineer", "vllm", "ollama", "lm-studio", "calling-any-model-gateways", "finetune-vs-rag-vs-prompt"]
+related: ["agent:llm-inference-engineer", "tool:vllm", "tool:ollama", "tool:lm-studio", "guide:calling-any-model-gateways", "guide:finetune-vs-rag-vs-prompt"]
 ---
 
 "Self-hosting is cheaper" and "APIs are cheaper" are both true — for different workloads — which is why the question only has an answer once you put numbers on *your* usage. The decision isn't really about the per-token sticker price. It's about **GPU utilization**, the constraints you can't negotiate (privacy, offline), and the total cost of operating a serving stack you'd otherwise rent.
@@ -62,3 +62,8 @@ Most mature stacks are hybrid: a hosted frontier API for the hardest or spikiest
 ## Putting it together
 
 Decide in this order: if a hard constraint (privacy, offline) forces self-hosting, that's your answer. Otherwise default to an **API** for speed and frontier quality, and switch tasks to **self-hosting** only where you have steady volume to keep GPUs busy *and* an open model that clears your eval bar — counting the full operating cost, not the sticker price. For the serving side of self-hosting, the [llm-inference-engineer](/agents/data-ai/llm-inference-engineer) sizes and tunes it; for trying models locally first, [Ollama](/tools/ollama) and [LM Studio](/tools/lm-studio) get you there in minutes.
+
+## Continue exploring
+
+- [fal](/tools/fal) — fal is a generative-media inference cloud for running image, video, and audio diffusion models fast — 1,000+ models, a simple API, and pay-per-use pricing.
+- [Mixture of Experts (MoE)](/glossary/mixture-of-experts) — MoE is a model architecture where a router activates only a few expert subnetworks per token — huge total capacity, a fraction of the compute per token.

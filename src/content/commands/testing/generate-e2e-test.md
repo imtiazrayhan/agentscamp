@@ -7,7 +7,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Generate E2E Test"
 color: "purple"
 topics: ["review-qa"]
-related: ["write-tests", "flaky-test-hunt", "test-engineer"]
+related: ["command:write-tests", "command:flaky-test-hunt", "agent:test-engineer"]
 featured: false
 summary: "Scaffolds a resilient end-to-end test for a described user flow: detects the repo's E2E framework (Playwright/Cypress) or recommends one, reads the actual routes and UI to ground selectors, then writes a test using role/text/test-id locators, web-first auto-waiting assertions, and API-based setup/teardown — covering the happy path plus one key failure case."
 faq:

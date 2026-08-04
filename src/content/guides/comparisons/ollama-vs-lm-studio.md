@@ -21,7 +21,7 @@ faq:
     a: "Ollama, in most cases. It runs headless as a service, its OpenAI-compatible API is the de facto target every BYO-model tool documents (OpenCode, Cline, Aider, …), and it scripts cleanly into dev environments and CI. LM Studio's server works too — but Ollama is built to be infrastructure first."
   - q: "Are the models different between them?"
     a: "No — both run the same open-weight, GGUF-quantized models (Llama, Qwen, Gemma, Mistral, and the rest). Differences are in catalog UX, default quantizations offered, and how much tuning is exposed. Model quality on your hardware is identical given the same weights and settings."
-related: ["ollama", "lm-studio", "best-local-llm-tools-2026", "vllm-vs-ollama", "quantization", "self-host-vs-api-llm"]
+related: ["tool:ollama", "tool:lm-studio", "guide:best-local-llm-tools-2026", "guide:vllm-vs-ollama", "glossary:quantization", "guide:self-host-vs-api-llm"]
 ---
 
 Ollama vs LM Studio is less a rivalry than a fork in audience: both put open-weight models on your machine via the same llama.cpp-lineage engine and GGUF format — but **Ollama is built to be talked to by code, LM Studio by a human.**

@@ -15,7 +15,7 @@ tags: ["mcp", "lsp", "refactoring", "code-intelligence", "symbols"]
 featured: false
 sameAs:
   - "https://pypi.org/project/serena-agent/"
-related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "refactoring-specialist", "dead-code-finder", "extract-function", "claude-code"]
+related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "agent:refactoring-specialist", "skill:dead-code-finder", "command:extract-function", "tool:claude-code"]
 alternativeTo: ["context7", "github-mcp-server", "claude-code", "aider"]
 summary: "Serena (MIT, ~25k stars) is 'the IDE for your agent': an MCP server backed by language servers giving agents symbol-level tools — find symbol, find references, replace symbol body, rename — across 40+ languages. Precise, token-efficient edits at the symbol level instead of regex surgery, plus a project memory for cross-session knowledge."
 faq:

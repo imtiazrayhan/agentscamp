@@ -8,7 +8,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["architecture"]
-related: ["extract-module", "migration-writer", "contract-test-designer", "dependency-upgrade-planner"]
+related: ["skill:extract-module", "skill:migration-writer", "skill:contract-test-designer", "skill:dependency-upgrade-planner"]
 featured: false
 summary: "A big-bang rewrite ships late and breaks everything at once. This skill plans a strangler-fig migration: find a seam where calls can be routed old-or-new, carve off the smallest slice, run old and new in parallel and verify equivalence before shifting traffic, migrate slice by slice with rollback one flag away, and delete the legacy only once it's provably dead."
 ---

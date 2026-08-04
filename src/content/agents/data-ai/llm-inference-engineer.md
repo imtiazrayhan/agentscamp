@@ -6,7 +6,7 @@ color: "blue"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-04
 topics: ["mlops-ai-infra"]
-related: ["self-host-vs-api-llm", "vllm", "ollama", "lm-studio", "scaffold-vllm-config", "finetuning-engineer"]
+related: ["guide:self-host-vs-api-llm", "tool:vllm", "tool:ollama", "tool:lm-studio", "command:scaffold-vllm-config", "agent:finetuning-engineer"]
 featured: false
 summary: "A subagent that serves self-hosted LLMs — sizing GPUs, configuring serving engines like vLLM (continuous batching, PagedAttention, parallelism), applying quantization with quality checks, and tuning throughput and tail latency against a cost and p95 budget. Reach for it when GPUs sit idle, p95 misses budget, or a model must fit a smaller footprint."
 ---

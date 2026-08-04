@@ -38,7 +38,7 @@ faq:
     a: "Often yes. Large context windows let you stuff more in, but cost, latency, and the 'lost in the middle' effect all grow with context size, and you still can't fit a whole knowledge base. RAG retrieves just the relevant slice, which is usually cheaper, faster, and more accurate than dumping everything in."
   - q: "What's the difference between RAG and fine-tuning?"
     a: "RAG injects knowledge at query time via retrieval; fine-tuning bakes behavior or style into the model's weights via training. RAG is the right tool for changing, factual knowledge you need cited; fine-tuning is for teaching a consistent format, tone, or task. They're complementary, not competitors."
-related: ["hybrid-search-reranking", "choosing-embeddings-2026", "rag-pipeline-engineer", "chunking-strategy-optimizer", "building-an-mcp-server", "ml-engineer"]
+related: ["guide:hybrid-search-reranking", "guide:choosing-embeddings-2026", "agent:rag-pipeline-engineer", "skill:chunking-strategy-optimizer", "guide:building-an-mcp-server", "agent:ml-engineer"]
 ---
 
 Retrieval-augmented generation (RAG) is the most common way to make a language model answer questions about *your* data — private docs, a codebase, support tickets, contracts — instead of only what it absorbed in training. The idea is simple: **retrieve the relevant passages, then ask the model to answer using them.** The engineering is in making retrieval good, because **the answer can only be as good as what you retrieve.**
@@ -93,3 +93,9 @@ Finally, the model gets the question plus the top passages. Instruct it to **ans
 ## How to build it well
 
 The throughline: treat RAG as a measured system. Build a small eval set of real questions with their gold passages, get **retrieval** right against it first, then layer reranking and grounded generation, and re-run the eval as a regression gate. For the end-to-end build, the [rag-pipeline-engineer](/agents/data-ai/rag-pipeline-engineer) agent owns exactly this workflow; for tuning the retrieval half in isolation, the [retrieval-engineer](/agents/data-ai/retrieval-engineer) does.
+
+## Continue exploring
+
+- [data-engineer](/agents/data-ai/data-engineer) — Use this agent to build and maintain data pipelines — ingestion, ELT/ETL, warehouse modeling, orchestration, and data-quality tests.
+- [ml-engineer](/agents/data-ai/ml-engineer) — Use this agent for production ML — pipelines, training, serving, evaluation, and MLOps.
+- [Scaffold RAG Pipeline](/commands/scaffold/scaffold-rag-pipeline) — Scaffold a Retrieval-Augmented Generation pipeline — ingestion (load, chunk, embed, upsert) and retrieval (search, rerank, grounded prompt with citations) — fitted to the…

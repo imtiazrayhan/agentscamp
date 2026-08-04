@@ -4,7 +4,7 @@ description: "The KV cache stores each token's attention keys and values so an L
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["kv-cache", "inference", "attention", "performance"]
-related: ["inference", "prompt-caching", "context-window", "vllm", "speculative-decoding"]
+related: ["glossary:inference", "glossary:prompt-caching", "glossary:context-window", "tool:vllm", "glossary:speculative-decoding"]
 faq:
   - q: "Why does the KV cache matter for serving costs?"
     a: "Because it's the VRAM your context occupies. Every token in flight holds its keys and values in GPU memory, growing linearly with context length and concurrent requests — long-context serving is usually KV-memory-bound before it's compute-bound. Engines like vLLM exist largely to manage this memory well (PagedAttention), and tricks like KV quantization stretch it."

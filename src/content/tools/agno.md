@@ -15,7 +15,7 @@ tags: ["python", "agents", "multi-agent", "memory", "framework"]
 featured: false
 alternativeTo: ["crewai", "langgraph", "autogen", "pydantic-ai", "langchain"]
 summary: "Agno (formerly Phidata) is a Python framework for building multi-agent systems with memory, knowledge, and tools. You compose Agents, Teams, and Workflows over 20+ model providers, and can run them in production with the AgentOS runtime. The core library is open source under Apache-2.0."
-related: ["agent-frameworks-2026", "langgraph-vs-crewai", "multi-agent-orchestration", "agent-memory-architecture", "agentic-rag"]
+related: ["guide:agent-frameworks-2026", "guide:langgraph-vs-crewai", "guide:multi-agent-orchestration", "guide:agent-memory-architecture", "guide:agentic-rag"]
 faq:
   - q: "What is Agno?"
     a: "Agno is an open-source Python framework for building multi-agent systems with memory, knowledge, and tools. It was formerly known as Phidata and was renamed to Agno in early 2025 (its GitHub org moved to agno-agi). You compose Agents, Teams, and Workflows, connect 20+ model providers, and can run them in production with the AgentOS runtime."

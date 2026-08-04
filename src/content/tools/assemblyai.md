@@ -14,7 +14,7 @@ alternativeTo: ["deepgram", "whisper", "cartesia"]
 sameAs:
   - "https://github.com/AssemblyAI"
   - "https://www.linkedin.com/company/assemblyai"
-related: ["best-stt-apis-2026", "realtime-voice-apis", "deepgram", "whisper", "cartesia", "build-a-voice-agent"]
+related: ["guide:best-stt-apis-2026", "guide:realtime-voice-apis", "tool:deepgram", "tool:whisper", "tool:cartesia", "guide:build-a-voice-agent"]
 summary: "AssemblyAI packages speech intelligence as one API: the Universal STT family — topped by Universal-3 Pro (February 2026), a promptable speech model you steer with natural-language context and keyterms — streaming for voice agents, a flat-rate Voice Agent API bundling STT+LLM+TTS over one WebSocket, and understanding layers. Freemium with signup credits, then per-hour usage."
 faq:
   - q: "What's special about Universal-3 Pro?"

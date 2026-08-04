@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["workflow-prompting"]
-related: ["documentation-engineer", "openapi-doc-writer"]
+related: ["agent:documentation-engineer", "skill:openapi-doc-writer"]
 featured: false
 summary: "A skill that generates or refreshes a README grounded in the actual repository: it detects the stack, package manager, scripts, entry points, and directory layout from real manifests, assembles install, usage, scripts, and structure sections with verbatim commands, preserves hand-written prose, and marks unknowns as TODOs instead of inventing them."
 ---

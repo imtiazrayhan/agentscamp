@@ -8,7 +8,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["devops-infra"]
-related: ["dead-code-finder", "review-tests", "scaffold-github-action"]
+related: ["skill:dead-code-finder", "command:review-tests", "command:scaffold-github-action"]
 featured: false
 summary: "Major upgrades break in compounding ways across the versions you skip. This skill establishes the version gap, reads every intermediate migration guide, greps your real API usage to find which breaking changes hit THIS codebase, checks peer-dep and runtime requirements, then sequences codemods one major at a time behind test checkpoints with a rollback path."
 ---

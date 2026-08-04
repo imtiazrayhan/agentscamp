@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "blue"
 date: 2026-06-12
 topics: ["ai-agents-systems"]
-related: ["web-data-for-ai-agents", "agentic-rag", "tavily", "exa", "firecrawl", "jina-reader"]
+related: ["guide:web-data-for-ai-agents", "guide:agentic-rag", "tool:tavily", "tool:exa", "tool:firecrawl", "tool:jina-reader"]
 featured: false
 summary: "A skill that turns a research question into a cited brief: it decomposes the question into search angles, runs them across available search tools, selects sources by authority and independence, fetches full content (not snippets), extracts claims with attribution, cross-checks the load-bearing ones against second sources, and synthesizes."
 ---

@@ -7,7 +7,7 @@ title: "Benchmark Rerankers"
 color: "blue"
 date: 2026-06-03
 topics: ["rag-retrieval"]
-related: ["hybrid-search-reranking", "cohere-rerank", "retrieval-engineer"]
+related: ["guide:hybrid-search-reranking", "tool:cohere-rerank", "agent:retrieval-engineer"]
 featured: false
 summary: "Reranking usually helps RAG — but it adds latency and cost, so prove the lift before you ship it. This command scores first-stage retrieval against reranked retrieval on a labeled query set (recall@k, nDCG@k) and reports whether the reranker earns its place."
 ---

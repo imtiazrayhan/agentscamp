@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "purple"
 date: 2026-06-03
 topics: ["llm-evals"]
-related: ["write-llm-evals", "llm-eval-suite-scaffolder", "deepeval", "prompt-engineer"]
+related: ["guide:write-llm-evals", "skill:llm-eval-suite-scaffolder", "tool:deepeval", "agent:prompt-engineer"]
 featured: false
 summary: "LLM-as-judge is the only practical way to score open-ended output at scale — but a sloppy judge is just confident noise. This skill builds a calibrated, bias-controlled judge: explicit rubric, discrete scale, reference examples, and agreement-checked against human labels before you rely on it."
 ---

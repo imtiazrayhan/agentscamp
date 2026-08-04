@@ -21,7 +21,7 @@ faq:
     a: "Control. Your provider keys and negotiated rates, requests flowing directly from your VPC to providers (no intermediary processing), per-team virtual keys and budgets, self-hosted logging — plus no per-token platform markup at volume. That's why LiteLLM became the default internal gateway pattern at platform-team scale."
   - q: "Do they affect model quality or latency?"
     a: "Quality, no — both pass through to the same provider models. Latency: LiteLLM adds negligible overhead inside your infra; OpenRouter adds a network hop and its routing layer, typically modest and sometimes offset by its provider selection. For latency-critical paths, measure both against direct provider calls."
-related: ["litellm", "openrouter", "calling-any-model-gateways", "llm-gateways-compared", "provider-fallback-wrapper", "llm-cost-latency-engineering"]
+related: ["tool:litellm", "tool:openrouter", "guide:calling-any-model-gateways", "guide:llm-gateways-compared", "skill:provider-fallback-wrapper", "guide:llm-cost-latency-engineering"]
 ---
 
 LiteLLM and OpenRouter solve the same modern annoyance — every provider has its own API shape, keys, and billing — from opposite ends: **run a gateway** or **rent one**.

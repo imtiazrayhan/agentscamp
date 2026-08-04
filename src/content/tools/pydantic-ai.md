@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/pydantic/pydantic-ai"
   - "https://pydantic.dev/docs/ai/overview/"
   - "https://pypi.org/project/pydantic-ai/"
-related: ["agent-frameworks-2026", "langchain", "structured-output", "production-tool-calling", "langgraph", "instructor"]
+related: ["guide:agent-frameworks-2026", "tool:langchain", "glossary:structured-output", "guide:production-tool-calling", "tool:langgraph", "tool:instructor"]
 summary: "Pydantic AI (MIT, ~18k stars, v1 GA September 2025) brings the Pydantic team's type discipline to agents: outputs validated against your models so errors move from runtime to write-time, type-safe dependency injection for tools, the broadest model-agnostic provider list, durable execution via Temporal/DBOS/Prefect/Restate, and MCP/A2A interop."
 faq:
   - q: "What makes Pydantic AI different from LangChain or CrewAI?"

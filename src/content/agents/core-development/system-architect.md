@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "opus"
 color: "purple"
 topics: ["architecture"]
-related: ["api-architect"]
+related: ["agent:api-architect"]
 summary: "A subagent that turns fuzzy requirements into a defensible system design — service boundaries, data flow, storage choices, failure modes, and the scaling story — delivered as design docs and ADRs, not code. Reach for it when designing a new system, evaluating a monolith-to-services split, or running a scalability review before a design ships."
 ---
 

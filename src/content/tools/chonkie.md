@@ -16,7 +16,7 @@ tags: ["chunking", "rag", "python", "open-source"]
 featured: false
 alternativeTo: ["langchain", "llamaindex"]
 summary: "Chonkie is a lightweight open-source library that turns documents into retrieval-ready chunks, with token, sentence, recursive, semantic, and code-aware chunkers behind one small API. Chunking quality sets the ceiling on RAG quality, and Chonkie makes good strategies easy to swap."
-related: ["chunking-strategy-optimizer", "how-rag-works", "rag-pipeline-engineer", "qdrant"]
+related: ["skill:chunking-strategy-optimizer", "guide:how-rag-works", "agent:rag-pipeline-engineer", "tool:qdrant"]
 faq:
   - q: "What is Chonkie?"
     a: "Chonkie is a lightweight open-source chunking library for RAG: it splits documents into the passages you embed and retrieve, with token, sentence, recursive, semantic, and code-aware chunkers behind one small API. It has minimal dependencies and is designed to be fast on large corpora."

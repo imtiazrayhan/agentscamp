@@ -23,7 +23,7 @@ faq:
     a: "You can use the provider's structured-output API directly. Libraries like Instructor, BAML, and the Vercel AI SDK add value on top: define the schema with your language's types, automatic validation, retry-on-failure with the errors fed back, streaming of partial objects, and provider-agnostic code. For anything beyond a one-off, the library ergonomics are worth it."
   - q: "Why does asking the model to 'return JSON' in the prompt keep breaking?"
     a: "Because it's a request, not a guarantee. The model will usually comply, then occasionally wrap the JSON in prose, add a trailing comment, use the wrong type, or omit a field — exactly on the inputs you didn't test. Without a structural guarantee and validation, those rare failures become production incidents. Use structured outputs (or a library that validates and retries) instead."
-related: ["calling-any-model-gateways", "llm-integration-engineer", "llm-output-schema-generator", "instructor", "baml", "production-tool-calling"]
+related: ["guide:calling-any-model-gateways", "agent:llm-integration-engineer", "skill:llm-output-schema-generator", "tool:instructor", "tool:baml", "guide:production-tool-calling"]
 ---
 
 When you need *data* from an LLM — extracted fields, a classification, a filled form — prose is the enemy. You want a typed object your code can rely on. In 2026 there are several mechanisms for that, with genuinely different guarantees, and choosing the wrong one is why so many LLM features break in production on inputs nobody tested.

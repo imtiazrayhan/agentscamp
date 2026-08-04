@@ -22,7 +22,7 @@ faq:
     a: "No, and most serious setups don't: a common pattern is Claude for agentic implementation work, a reasoning tier (any family) for gnarly design questions, and a cheap fast model for mechanical bulk. Multi-provider tools and gateways make mixing trivial; first-party agents (Claude Code, Codex) reward committing to their family."
   - q: "Does the 'best model' even matter versus the tool around it?"
     a: "Less than the discourse suggests. A mid-tier model in a great harness (tight loop, good context management, verification) routinely beats a frontier model used naively. That's why this site spends more pages on harness craft than model picking — the model is one component of an agentic system."
-related: ["claude-code", "codex-cli", "gemini-cli", "antigravity", "choosing-the-right-model", "claude-code-vs-codex-cli", "agent-frameworks-2026"]
+related: ["tool:claude-code", "tool:codex-cli", "tool:gemini-cli", "tool:antigravity", "guide:choosing-the-right-model", "guide:claude-code-vs-codex-cli", "guide:agent-frameworks-2026"]
 ---
 
 The honest version of this comparison starts with a confession: **all three families write excellent code**, the benchmark gaps are narrow and perishable, and anyone declaring a permanent winner is selling something. What *doesn't* shift monthly is each family's posture — what it's optimized for, what's built around it, and how it fails. That's worth comparing.
@@ -46,3 +46,9 @@ The honest version of this comparison starts with a confession: **all three fami
 Three rules survive every release cycle. **Pick the harness first**: you'll live in an agent or editor, not a leaderboard — Claude Code, Codex, Cursor-with-model-choice, or Antigravity each imply (or free) the model decision ([Claude Code vs Codex](/guides/comparisons/claude-code-vs-codex-cli) covers the first-party pair). **Benchmark on your repo**: an afternoon running this month's contenders on three real tasks beats every public eval for *your* codebase. **Measure cost per task, not per token**: stronger models that finish in fewer iterations — with [prompt caching](/glossary/prompt-caching) doing its work — regularly undercut "cheaper" ones on the actual bill.
 
 And hold the meta-lesson loosely tied to any vendor: the model is one component. Context discipline, tool design, and verification — the [harness craft](/guides/concepts/agent-frameworks-2026) — move outcomes more than the logo on the API key.
+
+## Continue exploring
+
+- [C# Pro](/agents/language-specialists/csharp-pro) — Use this agent for modern C#/.NET 8+ — records, pattern matching, nullable reference types, correct async/await, LINQ, Span<T>, and source generators — plus ASP.NET Core and EF…
+- [kotlin-pro](/agents/language-specialists/kotlin-pro) — Use this agent for idiomatic Kotlin — null safety, coroutines and structured concurrency, Flow, sealed classes with exhaustive when, data classes, and extension functions — on…
+- [swift-pro](/agents/language-specialists/swift-pro) — Use this agent for modern Swift 6 — value semantics, optionals done right, async/await and actors, Sendable/data-race safety, and idiomatic SwiftUI.

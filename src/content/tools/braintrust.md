@@ -13,7 +13,7 @@ tags: ["evals", "observability", "prompt-engineering", "platform"]
 featured: false
 alternativeTo: ["langsmith", "langfuse"]
 summary: "Braintrust is a hosted platform that ties together LLM evaluation, a prompt playground, datasets, and production logging in one loop — write evals, iterate on prompts side by side, and watch real traffic, so the dev-and-monitor cycle lives in one place."
-related: ["deepeval", "best-llm-eval-tools-2026", "langsmith"]
+related: ["tool:deepeval", "guide:best-llm-eval-tools-2026", "tool:langsmith"]
 faq:
   - q: "What is Braintrust?"
     a: "Braintrust is a commercial platform that unifies the LLM development loop: evaluation, a prompt playground, datasets, and production logging in one place. You build datasets, run and compare evals across prompt and model versions, then monitor the same metrics on live traffic — closing the loop from production logs back into evaluation."

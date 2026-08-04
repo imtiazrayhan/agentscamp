@@ -4,7 +4,7 @@ description: "Prompt injection is an attack where untrusted content carries inst
 date: 2026-06-11
 topics: ["ai-safety-security"]
 tags: ["security", "prompt-injection", "llm", "attacks"]
-related: ["defending-prompt-injection", "owasp-agentic-top-10", "prompt-injection-auditor", "guardrails", "red-team-llm"]
+related: ["guide:defending-prompt-injection", "guide:owasp-agentic-top-10", "agent:prompt-injection-auditor", "glossary:guardrails", "command:red-team-llm"]
 faq:
   - q: "What's the difference between direct and indirect prompt injection?"
     a: "Direct: the attacker is the user, typing instructions that override the system prompt ('ignore previous instructions…'). Indirect: the attack rides in content the model processes — a web page it fetches, an email it summarizes, a README it reads — so a completely benign user can trigger it. Indirect is the dangerous one for agents, which read untrusted content constantly."

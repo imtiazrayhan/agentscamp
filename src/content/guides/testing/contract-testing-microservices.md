@@ -23,7 +23,7 @@ faq:
     a: "No. They verify the boundary between services. Unit tests still own business logic, component or integration tests own the provider with its database and dependencies, and a small end-to-end suite verifies deployment, networking, identity, and critical journeys."
   - q: "Why should contracts use matchers instead of exact JSON?"
     a: "Exact example matching over-specifies irrelevant values and makes harmless provider changes fail. Match the fields and constraints the consumer uses—types, required keys, enums, and status—while allowing unrelated fields and values to evolve."
-related: ["contract-test-designer", "integration-test-designer", "openapi-doc-writer", "api-architect", "test-engineer", "test-scaffolder", "coverage-gap-finder"]
+related: ["skill:contract-test-designer", "skill:integration-test-designer", "skill:openapi-doc-writer", "agent:api-architect", "agent:test-engineer", "skill:test-scaffolder", "skill:coverage-gap-finder"]
 howtoSteps:
   - name: "Inventory the real interaction"
     text: "Trace the consumer code to identify the exact request, status handling, fields, types, and enum values it depends on."

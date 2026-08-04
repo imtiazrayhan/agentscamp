@@ -9,7 +9,7 @@ color: "green"
 topics: ["coding-languages"]
 tags: ["extension", "completion", "privacy"]
 featured: false
-related: ["github-copilot", "cody", "continue"]
+related: ["tool:github-copilot", "tool:cody", "tool:continue"]
 alternativeTo: ["github-copilot", "cody", "continue", "tabby"]
 summary: "Tabnine is an AI coding assistant built around code privacy and governance: inline completions, in-editor chat, and agentic workflows that deploy as SaaS, in your VPC, on-premises, or fully air-gapped, with zero code retention. It offers 15+ switchable LLMs (Claude, GPT, Gemini, open models) and is paid-only, starting at $39/user/month."
 faq:

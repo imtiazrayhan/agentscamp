@@ -4,7 +4,7 @@ description: "A subagent is a specialist agent a primary agent delegates to — 
 date: 2026-06-11
 topics: ["workflow-prompting"]
 tags: ["subagents", "claude-code", "delegation", "agents"]
-related: ["getting-started-with-agents", "writing-a-custom-agent", "multi-agent-orchestration", "agent-architect", "context-window"]
+related: ["guide:getting-started-with-agents", "guide:writing-a-custom-agent", "guide:multi-agent-orchestration", "agent:agent-architect", "glossary:context-window"]
 faq:
   - q: "Why use a subagent instead of one bigger prompt?"
     a: "Context isolation. The subagent's noisy work — reading forty files, running a test suite — happens in its own window, and only the distilled result returns to the parent. The main conversation stays sharp, the specialist gets a focused system prompt, and a restricted toolset makes it safer than widening the main agent."

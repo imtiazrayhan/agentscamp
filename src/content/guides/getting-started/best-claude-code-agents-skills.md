@@ -21,7 +21,7 @@ faq:
     a: "Fewer than you think. Subagent descriptions are read during delegation routing, so dozens of overlapping agents blur each other. A working set of five to eight focused items — review, debugging, your stack's specialist, your git loop — outperforms a hoard. Add when you feel friction, prune what never fires."
   - q: "Can I customize them?"
     a: "That's the point — they're plain Markdown with a frontmatter header and a system prompt. Edit the description to tune when Claude delegates, restrict tools, pin a model tier, and rewrite the body for house rules. The library entries are starting points engineered to be edited."
-related: ["getting-started-with-agents", "writing-a-custom-agent", "skills-vs-agents-vs-commands", "code-reviewer", "debugger", "conventional-commits", "create-pr", "claude-code-tips"]
+related: ["guide:getting-started-with-agents", "guide:writing-a-custom-agent", "guide:skills-vs-agents-vs-commands", "agent:code-reviewer", "agent:debugger", "skill:conventional-commits", "command:create-pr", "guide:claude-code-tips"]
 ---
 
 The fastest upgrade to a stock Claude Code setup isn't a prompt trick — it's installing a few well-built extensions. Everything below comes from this site's library, is a plain Markdown file, and installs by copy-paste. Here's the starter kit we'd give a new teammate, by workflow.
@@ -49,3 +49,8 @@ The library also extends Claude Code itself: [hook-writer](/skills/workflow/hook
 ## Install once, then make them yours
 
 Mechanics in one breath: agents are files in `~/.claude/agents/`, skills are `~/.claude/skills/<name>/SKILL.md`, commands are `~/.claude/commands/` — use a repo's `.claude/` instead to share with the team, and start a new session to load. ([Full walkthrough](/guides/getting-started/getting-started-with-agents).) Then treat every install as a draft: tighten the `description` so delegation fires when *you'd* want it, restrict `tools` to the job, and rewrite house rules into the body. The library's real product isn't the files — it's working examples of [the craft](/guides/getting-started/writing-a-custom-agent), pre-installed.
+
+## Continue exploring
+
+- [system-architect](/agents/core-development/system-architect) — Use this agent for high-level system design — service boundaries, data flow, scaling, trade-offs.
+- [CLI Tooling Engineer](/agents/developer-tools/cli-tooling-engineer) — Use this agent to design or build a command-line tool — subcommand and flag layout, --help and error UX, exit codes, --json/machine output, config precedence,…

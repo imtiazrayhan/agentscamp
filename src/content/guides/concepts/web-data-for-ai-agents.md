@@ -21,7 +21,7 @@ faq:
     a: "These APIs read the web; browser agents operate it. If the task is information (search, read, extract), data APIs are faster, cheaper, and more reliable than driving Chrome. Browser agents earn their cost when the task is action — logins, forms, clicking through apps. Reach for Browser Use/Stagehand only when reading isn't enough."
   - q: "What about prompt injection from web content?"
     a: "It's the category's standing risk: any fetched page can contain instructions aimed at your model (indirect injection). Defenses are architectural — render content as quoted data in prompts, never grant fetch-adjacent tools write/spend powers without gates, and treat 'the page told me to' as a failure mode you've planned for."
-related: ["exa", "firecrawl", "tavily", "jina-reader", "agentic-rag", "rag", "defending-prompt-injection", "web-research-pipeline"]
+related: ["tool:exa", "tool:firecrawl", "tool:tavily", "tool:jina-reader", "guide:agentic-rag", "glossary:rag", "guide:defending-prompt-injection", "skill:web-research-pipeline"]
 ---
 
 An agent without web access is frozen at its [training cutoff](/glossary/knowledge-cutoff); an agent with *raw* web access drowns in HTML. The web-data layer exists to solve both — and the 2026 field divides cleanly along two verbs: **find** (which pages matter) and **fetch** (turn them into clean model input).

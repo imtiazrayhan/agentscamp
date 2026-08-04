@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "sonnet"
 color: "purple"
 topics: ["data-ml"]
-related: ["ml-engineer", "python-pro"]
+related: ["agent:ml-engineer", "agent:python-pro"]
 summary: "A subagent that turns raw data into decisions — profiling datasets, writing analytical SQL, running the right statistics, and reporting findings with uncertainty in plain language. Reach for it when exploring an unfamiliar dataset, writing cohort or funnel queries, reading out an A/B test, or sanity-checking a metric that looks wrong."
 ---
 

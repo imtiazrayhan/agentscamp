@@ -4,7 +4,7 @@ description: "Zero-shot prompting asks a model to perform a task from instructio
 date: 2026-06-11
 topics: ["workflow-prompting"]
 tags: ["zero-shot", "prompting", "instructions", "llm"]
-related: ["few-shot-prompting", "prompting-techniques-2026", "system-prompt", "prompt-patterns"]
+related: ["glossary:few-shot-prompting", "guide:prompting-techniques-2026", "glossary:system-prompt", "guide:prompt-patterns"]
 faq:
   - q: "Is zero-shot worse than few-shot?"
     a: "Not inherently — modern instruction-tuned models handle most well-specified tasks zero-shot, and examples cost tokens on every call. Few-shot earns its cost when outputs must match a pattern that's hard to verbalize (formats, style, fuzzy boundaries). The practical rule: start zero-shot with sharp instructions; add examples to fix the specific failures you observe."

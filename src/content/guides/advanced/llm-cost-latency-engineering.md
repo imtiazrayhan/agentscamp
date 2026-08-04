@@ -41,7 +41,7 @@ faq:
     a: "No — match the model to the task. The cheapest model that clears your eval bar for a given task is the right one for that task, but a model too weak for the hard cases will cost you in retries, bad outputs, and downstream errors that dwarf the token savings. The robust pattern is right-sizing per task: route the easy, structured, or high-volume requests to a small fast model and reserve the frontier model for the genuinely hard slice, verifying each routing decision against evals rather than assuming."
   - q: "Why measure p95 latency instead of the average?"
     a: "Because users experience the tail, not the mean. An average latency comfortably under target can hide a p99 of several seconds on a meaningful fraction of requests — and those slow requests are the ones that make users abandon. The same logic applies to cost: an average cost-per-request hides the expensive outlier prompts that dominate the bill. Budgeting and enforcing p95/p99 and per-request ceilings targets the requests that actually matter, instead of an average that can look fine while the experience is bad."
-related: ["llm-gateways-compared", "prompt-cache-optimizer", "llm-cost-optimizer", "set-perf-budget", "portkey", "helicone", "calling-any-model-gateways", "choosing-the-right-model"]
+related: ["guide:llm-gateways-compared", "skill:prompt-cache-optimizer", "agent:llm-cost-optimizer", "command:set-perf-budget", "tool:portkey", "tool:helicone", "guide:calling-any-model-gateways", "guide:choosing-the-right-model"]
 ---
 
 LLM cost and tail latency feel like vague, ever-growing problems, but they almost never are: they're **concentrated**. A handful of prompts, a couple of routes, and one or two model choices usually account for most of the bill and most of the slow requests. So the discipline is the same as any performance work — measure and attribute first, then cut where it pays, and prove you didn't break quality doing it. This is the playbook.
@@ -83,3 +83,8 @@ Every cut — a smaller model, a shorter prompt, an aggressive cache TTL — is 
 ## Putting it together
 
 Measure and attribute → cache the repeats → right-size per task → trim tokens → fix perceived latency → set and enforce budgets → re-verify quality. The [llm-cost-optimizer](/agents/data-ai/llm-cost-optimizer) agent runs this loop end-to-end. The single biggest structural decision is *where* these levers live: doing them per-app is fine at small scale, but a **gateway** centralizes caching, routing, and budgets across all your traffic — compare the options in [LLM Gateways Compared](/guides/advanced/llm-gateways-compared), and see [Calling Any Model](/guides/concepts/calling-any-model-gateways) for the unified-access layer underneath.
+
+## Continue exploring
+
+- [Production Model Routing: Cut Cost Without Hiding Regressions](/guides/concepts/production-model-routing) — Design an LLM model router with capability gates, difficulty signals, cascades, fallbacks, per-route evals, shadow traffic, budgets, and safe rollout.
+- [Add Caching](/commands/perf/add-caching) — Add a caching layer to one expensive function or endpoint correctly — confirm it's cacheable, design the cache key/TTL/layer/invalidation, handle stampedes, wrap the call in…

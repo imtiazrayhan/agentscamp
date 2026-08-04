@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
 topics: ["mlops-ai-infra"]
-related: ["unsloth", "finetuning-engineer", "finetune-dataset-builder", "finetune-dataset-prep"]
+related: ["tool:unsloth", "agent:finetuning-engineer", "skill:finetune-dataset-builder", "guide:finetune-dataset-prep"]
 featured: false
 summary: "Executes a QLoRA fine-tune from a prepared dataset: it sets a sane 4-bit + LoRA config (rank/alpha/target modules, LR, epochs), trains memory-efficiently on a single GPU, watches validation loss for overfitting, saves the adapter, and runs a quick eval against the held-out split — the training run, done reproducibly."
 ---

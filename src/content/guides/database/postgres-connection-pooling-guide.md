@@ -23,7 +23,7 @@ faq:
     a: "They usually need some multiplexing layer because instance count can grow far beyond a traditional service fleet. PgBouncer, a managed database proxy, or a provider's serverless driver lets many client connections share a bounded number of real Postgres backends."
   - q: "What breaks with PgBouncer transaction pooling?"
     a: "Features that assume the same server connection persists across transactions can break, including session-level SET state, temporary tables, advisory locks, LISTEN/NOTIFY, and some prepared-statement configurations. Use compatible driver settings or a direct/session-pooled path for those workloads."
-related: ["connection-pool-tuner", "postgres-index-strategist", "query-plan-analyzer", "postgres-indexing-at-scale", "zero-downtime-postgres-migrations", "database-architect", "deadlock-diagnoser"]
+related: ["skill:connection-pool-tuner", "skill:postgres-index-strategist", "skill:query-plan-analyzer", "guide:postgres-indexing-at-scale", "guide:zero-downtime-postgres-migrations", "agent:database-architect", "skill:deadlock-diagnoser"]
 howtoSteps:
   - name: "Inventory the connection budget"
     text: "Read max_connections, subtract reserved and operational slots, and enumerate every application, worker, migration, monitoring, and administrative connection source."
@@ -184,3 +184,7 @@ Repeat the test with maximum application instances and deploy overlap represente
 > Raising `max_connections` is not free capacity. Each backend consumes memory and increases possible database concurrency. If the workload is already CPU- or lock-bound, a higher ceiling delays the failure while making the eventual overload deeper.
 
 The [Connection Pool Tuner](/skills/database/connection-pool-tuner) turns these measurements into concrete per-instance settings; pair it with [Postgres Indexing at Scale](/guides/database/postgres-indexing-at-scale) when pool pressure is a symptom of slow queries rather than connection lifecycle.
+
+## Continue exploring
+
+- [Database Architect](/agents/core-development/database-architect) — Use this agent to design data models and storage strategy from access patterns — schema design, normalization vs deliberate denormalization, relational vs document vs key-value…

@@ -16,7 +16,7 @@ tags: ["prompt-optimization", "framework", "open-source", "python", "stanford"]
 featured: false
 alternativeTo: ["langchain", "baml", "pydantic-ai"]
 summary: "DSPy (from Stanford NLP) lets you build LLM pipelines as Python code rather than brittle prompt strings. You declare each step as a typed signature, compose modules like ChainOfThought and ReAct, then run an optimizer (BootstrapFewShot, MIPROv2, GEPA) that searches instructions and few-shot demonstrations against your metric and data. Change models and you recompile, not rewrite."
-related: ["dspy-prompt-optimization", "prompting-techniques-2026", "prompt-optimizer"]
+related: ["guide:dspy-prompt-optimization", "guide:prompting-techniques-2026", "skill:prompt-optimizer"]
 faq:
   - q: "What is DSPy?"
     a: "DSPy is a framework from Stanford NLP for programming language models rather than prompting them. You declare each pipeline step as a typed signature, compose modules like ChainOfThought and ReAct, and let an optimizer (BootstrapFewShot, MIPROv2, GEPA) generate and tune the actual prompts — instructions and few-shot examples — against a metric you define."

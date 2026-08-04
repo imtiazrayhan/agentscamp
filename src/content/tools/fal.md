@@ -15,7 +15,7 @@ topics: ["mlops-ai-infra", "multimodal-ai"]
 tags: ["inference", "image", "video", "diffusion", "generative-media"]
 featured: false
 alternativeTo: ["replicate", "modal", "baseten", "together-ai", "fireworks-ai"]
-related: ["deploying-llms-to-production", "self-host-vs-api-llm", "add-image-understanding-to-your-app", "vision-language-models-compared-2026"]
+related: ["guide:deploying-llms-to-production", "guide:self-host-vs-api-llm", "guide:add-image-understanding-to-your-app", "guide:vision-language-models-compared-2026"]
 summary: "fal is a generative-media platform and inference cloud built for running diffusion models — image, video, audio, and 3D — fast. It exposes 1,000+ ready models through a single API with client SDKs, plus custom training and private deployments, billed pay-per-use. Its proprietary Inference Engine targets media generation rather than LLM text serving."
 faq:
   - q: "What is fal?"

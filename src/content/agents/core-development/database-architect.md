@@ -8,7 +8,7 @@ color: "blue"
 tools: "Read, Grep, Glob"
 topics: ["architecture"]
 featured: false
-related: ["api-architect", "postgres-migration-engineer", "sql-pro"]
+related: ["agent:api-architect", "agent:postgres-migration-engineer", "agent:sql-pro"]
 summary: "A subagent that designs database schemas and storage strategy from the read/write access patterns first — relational, document, key-value, wide-column, or graph — producing DDL or document shapes, an indexing and partitioning/sharding plan, the chosen engine with rationale, and an explicit access-pattern-to-design mapping."
 ---
 

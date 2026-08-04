@@ -27,12 +27,12 @@ faq:
   - q: "Why do image-to-image searches score higher than text-to-image?"
     a: "Because of the modality gap: contrastively trained models push all image vectors into one region of the space and all text vectors into another. Cross-modal similarities are systematically lower than within-modal ones. It's expected — set separate score thresholds for text queries versus image queries rather than one global cutoff."
 related:
-  - "how-embeddings-work"
-  - "choosing-embeddings-2026"
-  - "best-vector-database-2026"
-  - "voyage-ai"
-  - "cohere-rerank"
-  - "pinecone"
+  - "guide:how-embeddings-work"
+  - "guide:choosing-embeddings-2026"
+  - "guide:best-vector-database-2026"
+  - "tool:voyage-ai"
+  - "tool:cohere-rerank"
+  - "tool:pinecone"
 ---
 
 A **multimodal embedding model maps images and text into the same vector space**, trained so that a photo and a sentence describing it land close together. Once your images live in that space, search is just nearest-neighbor lookup: type "red running shoes on a beach" and the closest image vectors come back ranked by meaning, not by filename or tags. Feed it an image instead of text, and you get visually similar images. Same index, same math — only the query type changes.

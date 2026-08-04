@@ -4,7 +4,7 @@ description: "An AI agent is an LLM-driven system that pursues a goal in a loop 
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 tags: ["agents", "llm", "tool-use", "autonomy"]
-related: ["agentic-ai", "agent-frameworks-2026", "function-calling", "agent-memory", "what-is-claude-code", "production-tool-calling"]
+related: ["glossary:agentic-ai", "guide:agent-frameworks-2026", "glossary:function-calling", "glossary:agent-memory", "guide:what-is-claude-code", "guide:production-tool-calling"]
 faq:
   - q: "What makes something an agent rather than a chatbot?"
     a: "The loop. A chatbot maps one input to one output. An agent decides on an action, executes it through a tool, reads the result, and decides again — repeating until the goal is met. Tool use, statefulness across steps, and self-correction against observed results are the defining traits."

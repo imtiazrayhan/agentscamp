@@ -21,7 +21,7 @@ faq:
     a: "No for the core path — it's software engineering with new primitives; concepts like embeddings and attention need working intuition, not derivations. A deeper ML background pays off only in the fine-tuning/inference specialization. Strong general engineering (APIs, data, debugging, testing) transfers more than ML coursework."
   - q: "How long does this roadmap take?"
     a: "Building seriously a few hours daily: stages one through four in two to three months gets you shipping credible agent features; stage five (reliability) is where professionals separate and deserves equal time on a real project. The honest accelerator is shipping each stage against a real use case rather than completing tutorials."
-related: ["what-is-claude-code", "how-rag-works", "agent-frameworks-2026", "write-llm-evals", "context-engineering", "agent-engineering", "production-tool-calling", "best-claude-code-agents-skills"]
+related: ["guide:what-is-claude-code", "guide:how-rag-works", "guide:agent-frameworks-2026", "guide:write-llm-evals", "guide:context-engineering", "glossary:agent-engineering", "guide:production-tool-calling", "guide:best-claude-code-agents-skills"]
 ---
 
 "AI engineer" stabilized into a real role with a real skill stack — and most roadmaps for it are bloated with 2022 detours (training models, leaderboard lore) or vendor tours. This one is opinionated: **six stages, in dependency order**, each with the failure that teaches it and the resources here that cover it.

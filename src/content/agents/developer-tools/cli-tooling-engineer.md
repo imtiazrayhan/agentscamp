@@ -7,7 +7,7 @@ tools: "Read, Grep, Glob, Edit, Bash"
 title: "CLI Tooling Engineer"
 date: 2026-06-17
 topics: ["coding-languages"]
-related: ["devops-engineer", "test-engineer", "golang-pro", "rust-pro"]
+related: ["agent:devops-engineer", "agent:test-engineer", "agent:golang-pro", "agent:rust-pro"]
 featured: false
 summary: "A subagent that designs and builds command-line tools that are human-first and script-friendly — subcommand/flag layout, clear --help and actionable errors, correct exit codes, --json output, config precedence (flags > env > file > defaults), pipe and TTY behavior, NO_COLOR, and CLI tests — following POSIX/GNU conventions, with the interface decisions and their rationale."
 ---

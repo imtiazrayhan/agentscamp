@@ -6,7 +6,7 @@ allowed-tools: "Read, Grep, Glob"
 title: "Audit Accessibility"
 color: "purple"
 topics: ["review-qa"]
-related: ["review-pr", "find-bug", "security-scan"]
+related: ["command:review-pr", "command:find-bug", "command:security-scan"]
 featured: false
 summary: "Read-only command that audits a component or page against WCAG: it reads the markup and checks semantic HTML, accessible names, keyboard operability, correct (and non-redundant) ARIA, contrast risks, form labeling, and motion concerns — then reports findings grouped by severity, each with location, user impact, and a concrete fix that prefers native elements over ARIA."
 ---

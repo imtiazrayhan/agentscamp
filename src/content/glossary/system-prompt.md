@@ -4,7 +4,7 @@ description: "The system prompt is the standing instruction layer an LLM receive
 date: 2026-06-11
 topics: ["workflow-prompting"]
 tags: ["prompting", "system-prompt", "llm", "configuration"]
-related: ["prompt-patterns", "prompting-techniques-2026", "writing-a-custom-agent", "claude-md-best-practices", "prompt-injection"]
+related: ["guide:prompt-patterns", "guide:prompting-techniques-2026", "guide:writing-a-custom-agent", "guide:claude-md-best-practices", "glossary:prompt-injection"]
 faq:
   - q: "How is a system prompt different from a user prompt?"
     a: "Role and persistence. The system prompt is set by the developer, applies to the entire conversation, and carries the durable rules: who the model is, what it may do, how it should answer. User prompts are the per-turn requests evaluated under those rules. Models are trained to weight system instructions above conflicting user input — that hierarchy is also what injection attacks try to break."

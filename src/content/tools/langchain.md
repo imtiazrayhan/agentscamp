@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/langchain-ai/langchain"
   - "https://docs.langchain.com"
   - "https://pypi.org/project/langchain/"
-related: ["langchain-vs-llamaindex", "agent-frameworks-2026", "langgraph", "langsmith", "llamaindex", "pydantic-ai"]
+related: ["guide:langchain-vs-llamaindex", "guide:agent-frameworks-2026", "tool:langgraph", "tool:langsmith", "tool:llamaindex", "tool:pydantic-ai"]
 summary: "LangChain 1.0 (October 2025) answered its own bloat discourse by shrinking: the framework now centers on create_agent — a standard tool-calling loop running on the LangGraph runtime — plus middleware hooks and normalized content blocks across providers. Legacy chains moved to langchain-classic. MIT, Python and JS, ~139k stars; LangSmith is the commercial layer."
 faq:
   - q: "Do I still need LangChain in 2026?"

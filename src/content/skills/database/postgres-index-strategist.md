@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
 topics: ["data-ml"]
-related: ["postgres-indexing-at-scale", "profile-postgres-queries", "sql-optimizer", "sql-pro", "pgvector"]
+related: ["guide:postgres-indexing-at-scale", "command:profile-postgres-queries", "skill:sql-optimizer", "agent:sql-pro", "tool:pgvector"]
 featured: false
 summary: "Picks the right Postgres index instead of defaulting to B-Tree on everything: it matches the index type to the query and data shape (B-Tree/GIN/BRIN/partial/covering/expression), flags redundant and unused indexes that only tax writes, and verifies the recommendation against EXPLAIN — because the wrong index type is as wasteful as no index."
 ---

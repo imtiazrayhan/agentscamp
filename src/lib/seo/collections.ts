@@ -118,7 +118,6 @@ export function toolAlternativesCollection(slug: string): Collection | null {
   for (const t of all) {
     if (seen.has(t.slug)) continue;
     const related =
-      t.category === tool.category ||
       t.alternativeTo.includes(slug) ||
       tool.alternativeTo.includes(t.slug);
     if (related) {

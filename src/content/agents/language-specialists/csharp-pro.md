@@ -7,7 +7,7 @@ model: "sonnet"
 color: "purple"
 tools: "Read, Grep, Glob, Edit, Bash"
 topics: ["coding-languages"]
-related: ["api-architect", "sql-pro", "postgres-migration-engineer"]
+related: ["agent:api-architect", "agent:sql-pro", "agent:postgres-migration-engineer"]
 featured: false
 summary: "A subagent for modern C#/.NET 8+ — records and pattern matching, nullable reference types, correct async/await without sync-over-async, LINQ and Span<T>, ASP.NET Core, and EF Core with its query/tracking pitfalls — verified with dotnet build and dotnet test. Reach for it when writing a minimal-API service, killing an EF Core N+1, untangling an async deadlock, or enabling NRTs."
 ---

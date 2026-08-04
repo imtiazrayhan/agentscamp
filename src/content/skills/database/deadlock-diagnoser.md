@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["query-plan-analyzer", "connection-pool-tuner", "migration-writer"]
+related: ["skill:query-plan-analyzer", "skill:connection-pool-tuner", "skill:migration-writer"]
 featured: false
 summary: "A deadlock is never random — it's a cycle the engine already mapped for you. This skill reads the real deadlock report (Postgres log / SQL Server graph), reconstructs who held and wanted which lock, names the inconsistent lock-acquisition order behind it, fixes the order (or shortens the transaction), and adds retry-the-victim so transient contention can't take the app down."
 faq:

@@ -8,7 +8,7 @@ color: "cyan"
 title: "Security Headers Hardener"
 date: 2026-06-17
 topics: ["review-qa"]
-related: ["auth-flow-reviewer", "secret-scanner", "dependency-audit"]
+related: ["skill:auth-flow-reviewer", "skill:secret-scanner", "skill:dependency-audit"]
 featured: false
 summary: "Audits and hardens HTTP security headers for a web app or API: a real Content-Security-Policy (the top XSS mitigation) rolled out Report-Only first, HSTS with care around preload, nosniff, frame-busting, Referrer-Policy, Permissions-Policy, and tightly-scoped CORS. Output: a current→recommended table per header, exact values to apply, and a Report-Only→enforce rollout plan."
 faq:

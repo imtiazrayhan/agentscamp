@@ -6,7 +6,7 @@ model: "sonnet"
 color: "purple"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["devops-infra"]
-related: ["cloud-architect", "devops-engineer", "kubernetes-specialist"]
+related: ["agent:cloud-architect", "agent:devops-engineer", "agent:kubernetes-specialist"]
 summary: "A subagent for Terraform and infrastructure-as-code that treats the plan as the contract — module design, remote state and locking, provider pinning, and line-by-line review of every replace and destroy before apply. Reach for it when reviewing a plan for destroys, designing a reusable module, or resolving state drift after a console change."
 ---
 

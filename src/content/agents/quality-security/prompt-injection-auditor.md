@@ -6,7 +6,7 @@ color: "red"
 tools: "Read, Grep, Glob, Bash"
 date: 2026-06-04
 topics: ["ai-safety-security"]
-related: ["defending-prompt-injection", "owasp-agentic-top-10", "red-team-llm", "llm-guardrails-designer", "security-auditor"]
+related: ["guide:defending-prompt-injection", "guide:owasp-agentic-top-10", "command:red-team-llm", "skill:llm-guardrails-designer", "agent:security-auditor"]
 featured: false
 summary: "Audits an LLM app or agent for prompt-injection exposure: it maps the trust boundaries where untrusted content reaches the model, assesses the blast radius if an injection lands (which tools, credentials, and data are reachable), probes with adversarial inputs, and recommends architectural fixes — because the goal isn't an un-foolable model, it's a system where fooling it buys little."
 ---

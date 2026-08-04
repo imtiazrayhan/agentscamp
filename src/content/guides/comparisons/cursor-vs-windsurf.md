@@ -21,7 +21,7 @@ faq:
     a: "Cursor if your priority is the writing experience — completion quality, inline edits, model choice including Composer — with agents available when you want them. Devin Desktop if you're leaning into supervised agent runs (its Command Center is built for that) or already use Cognition's Devin. Cursor is the safer general-purpose default; Devin Desktop is the more opinionated agent-management bet."
   - q: "Do they support the same models?"
     a: "Both offer frontier-model choice (Anthropic, OpenAI, and others). Cursor additionally fields its in-house Composer models, tuned for fast agentic coding; Devin Local is Cognition's own agent layer over the model selection. Exact lineups shift — check current docs before committing a team."
-related: ["cursor", "windsurf", "cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "claude-code-vs-cursor", "devin", "github-copilot-vs-cursor"]
+related: ["tool:cursor", "tool:windsurf", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "guide:claude-code-vs-cursor", "tool:devin", "guide:github-copilot-vs-cursor"]
 ---
 
 This matchup changed shape in 2026. For two years Cursor and Windsurf were near-twins — AI-first VS Code forks racing on completion quality and agent features. Then they forked philosophically: **Cursor** rebuilt itself agent-first *while staying an editor*; **Windsurf became Devin Desktop** under Cognition, putting an Agent Command Center in front of the IDE. Today you're not choosing between similar editors — you're choosing between an editor with agents and an agent console with an editor.
@@ -48,3 +48,8 @@ This matchup changed shape in 2026. For two years Cursor and Windsurf were near-
 **Pick Devin Desktop** if your workflow is becoming "supervise several agent runs, review their output" — the Command Center is designed for exactly that posture — or if you're already invested in Cognition's Devin cloud agents and want the local/remote continuum.
 
 **Either way, the switching cost is mild**: both are VS Code forks; settings, keybindings, and most extensions carry over, and both speak MCP so your tool integrations are portable. The deeper fork in the road isn't between these two editors — it's whether you want an editor-shaped tool at all, versus a terminal agent like Claude Code ([that comparison](/guides/comparisons/claude-code-vs-cursor), and the [full four-way](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026)).
+
+## Continue exploring
+
+- [Devin](/tools/devin) — Cognition's autonomous AI software engineer that works in its own cloud workspace with an editor, terminal, and browser.
+- [Zed](/tools/zed) — A high-performance, multiplayer code editor with built-in AI assistance.

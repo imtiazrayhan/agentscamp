@@ -6,7 +6,7 @@ color: "blue"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-04
 topics: ["data-ml", "rag-retrieval"]
-related: ["best-vector-database-2026", "embedding-index-tuner", "retrieval-engineer", "pgvector", "qdrant"]
+related: ["guide:best-vector-database-2026", "skill:embedding-index-tuner", "agent:retrieval-engineer", "tool:pgvector", "tool:qdrant"]
 featured: false
 summary: "Specialist in the vector-store layer of retrieval: it picks and configures the database, designs the index (HNSW/IVF + quantization), wires metadata filtering and hybrid search, and builds the ingestion pipeline — every parameter measured against a recall, latency, and cost budget rather than left at defaults."
 ---

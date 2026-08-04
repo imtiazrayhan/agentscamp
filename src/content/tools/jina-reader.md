@@ -16,7 +16,7 @@ alternativeTo: ["firecrawl", "tavily", "exa"]
 sameAs:
   - "https://github.com/jina-ai/reader"
   - "https://r.jina.ai"
-related: ["web-data-for-ai-agents", "firecrawl", "tavily", "exa", "rag"]
+related: ["guide:web-data-for-ai-agents", "tool:firecrawl", "tool:tavily", "tool:exa", "glossary:rag"]
 summary: "Jina Reader is the zero-integration web-content tool: prefix any URL with https://r.jina.ai/ and get clean, LLM-ready markdown — headless-Chrome rendering, PDFs and Office files, images auto-captioned for text-only models. s.jina.ai searches and returns the full content of the top results. Apache-2.0 open-source branch, generous keyed free tier."
 faq:
   - q: "How do I use Jina Reader?"

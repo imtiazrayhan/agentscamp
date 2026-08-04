@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/browserbase/stagehand"
   - "https://docs.stagehand.dev"
   - "https://www.browserbase.com"
-related: ["browser-agents-compared-2026", "browser-use", "skyvern", "how-computer-use-agents-work", "playwright-mcp", "structured-output"]
+related: ["guide:browser-agents-compared-2026", "tool:browser-use", "tool:skyvern", "guide:how-computer-use-agents-work", "tool:playwright-mcp", "glossary:structured-output"]
 summary: "Stagehand (MIT, ~23k stars, by Browserbase) is the engineer's browser-agent SDK: four primitives — act() for natural-language actions that survive redesigns, extract() with Zod-validated schemas, observe() to preview actionable elements, agent() for full autonomy — composable with ordinary code. TypeScript-first, Python too; Browserbase cloud optional."
 faq:
   - q: "How is Stagehand different from Browser Use?"

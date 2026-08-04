@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["coding-languages"]
-related: ["web-performance-budgets", "bundle-analyzer", "react-render-profiler", "cold-start-optimizer"]
+related: ["guide:web-performance-budgets", "skill:bundle-analyzer", "skill:react-render-profiler", "skill:cold-start-optimizer"]
 featured: false
 summary: "A green Lighthouse score with failing field data is the most common Web Vitals trap. This skill anchors on p75 real-user CrUX/RUM data, uses lab tools only to pinpoint the at-fault element/script/shift, and fixes each of LCP, CLS, and INP by its actual cause — then re-measures against the field target."
 ---

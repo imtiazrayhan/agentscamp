@@ -16,7 +16,7 @@ tags: ["gateway", "caching", "observability", "cost-control", "llmops"]
 featured: false
 alternativeTo: ["litellm", "helicone", "openrouter"]
 summary: "Portkey is an AI gateway and LLMOps platform: route to 1,600+ LLMs through one OpenAI-compatible API with simple and semantic caching, automatic retries, fallbacks, and load balancing — plus observability (logs, traces, cost and latency), prompt management, guardrails, virtual keys, and budgets. The fast routing gateway is open source (MIT) and self-hostable; the hosted control plane is freemium."
-related: ["llm-gateways-compared", "helicone", "litellm", "llm-cost-latency-engineering", "llm-cost-optimizer"]
+related: ["guide:llm-gateways-compared", "tool:helicone", "tool:litellm", "guide:llm-cost-latency-engineering", "agent:llm-cost-optimizer"]
 faq:
   - q: "What is Portkey?"
     a: "Portkey is an AI gateway paired with an LLMOps control plane. The gateway puts 1,600+ models across 45+ providers behind one OpenAI-compatible API and adds caching (simple and semantic), automatic retries, fallbacks, and load balancing; the platform layers on observability, prompt management, guardrails, and governance with virtual keys and budgets."

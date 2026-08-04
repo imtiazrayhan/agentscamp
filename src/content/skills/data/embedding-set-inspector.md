@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "purple"
 date: 2026-06-03
 topics: ["rag-retrieval"]
-related: ["choosing-embeddings-2026", "voyage-ai", "chunking-strategy-optimizer", "retrieval-engineer"]
+related: ["guide:choosing-embeddings-2026", "tool:voyage-ai", "skill:chunking-strategy-optimizer", "agent:retrieval-engineer"]
 featured: false
 summary: "When RAG retrieval is bad, the embeddings are often the culprit, not the search. This skill inspects an embedding set for the usual failure modes — unnormalized or wrong-dimension vectors, near-duplicates, degenerate/empty embeddings, and query/document distribution mismatch — and reports what to fix."
 ---

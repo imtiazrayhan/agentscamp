@@ -5,7 +5,7 @@ allowed-tools: "Read, Edit, Bash, Grep"
 title: "Resolve Merge Conflicts"
 color: "purple"
 topics: ["review-qa"]
-related: ["sync-branch", "commit", "fix-failing-test"]
+related: ["command:sync-branch", "command:commit", "command:fix-failing-test"]
 featured: false
 summary: "Resolves the in-progress merge/rebase/cherry-pick conflict in the current repo: detects which operation is paused, lists conflicted files, reads both sides by intent (ours vs theirs via git log/diff) instead of blindly picking a side, edits each file to a correct merged result with every marker removed, then verifies build and tests before git add and continuing — with abort as the escape hatch."
 faq:

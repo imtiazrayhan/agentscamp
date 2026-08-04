@@ -6,7 +6,7 @@ color: "blue"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-04
 topics: ["multimodal-ai", "mlops-ai-infra"]
-related: ["build-a-voice-agent", "pipecat", "deepgram", "elevenlabs", "llm-cost-latency-engineering", "llm-inference-engineer"]
+related: ["guide:build-a-voice-agent", "tool:pipecat", "tool:deepgram", "tool:elevenlabs", "guide:llm-cost-latency-engineering", "agent:llm-inference-engineer"]
 featured: false
 summary: "Builds and tunes real-time voice agents: the streaming STT → LLM → TTS loop, the mouth-to-ear latency budget that decides whether it feels conversational, turn-taking (VAD/endpointing) and barge-in, and per-stage provider choices. Distinct from text-only LLM integration and from model serving — this owns the real-time audio loop."
 ---

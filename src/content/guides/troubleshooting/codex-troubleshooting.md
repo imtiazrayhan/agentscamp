@@ -23,7 +23,7 @@ faq:
     a: "The CLI and desktop app can bundle different Codex versions, and experimental features may reach one surface first. Compare codex --version with the app's bundled binary version and verify whether the feature is enabled for that surface."
   - q: "Where are Codex logs stored?"
     a: "On macOS, app logs are under ~/Library/Logs/com.openai.codex by date. Session transcripts are under $CODEX_HOME/sessions, defaulting to ~/.codex/sessions, and archived sessions are under $CODEX_HOME/archived_sessions. Review files for sensitive information before sharing."
-related: ["openai-codex-guide", "codex-config-toml", "codex-mcp-setup", "codex-agents-md", "codex-subagents", "debugger", "explain-error"]
+related: ["guide:openai-codex-guide", "guide:codex-config-toml", "guide:codex-mcp-setup", "guide:codex-agents-md", "guide:codex-subagents", "agent:debugger", "command:explain-error"]
 ---
 
 **Troubleshoot Codex from the environment inward: target, instructions, configuration, permissions, tools, then session state.** This order catches the common failures quickly and avoids treating every denied command, stale worktree, or missing integration as a model problem.

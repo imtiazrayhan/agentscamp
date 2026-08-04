@@ -13,7 +13,7 @@ tags: ["inference", "open-models", "fine-tuning", "serverless", "gpu"]
 featured: false
 alternativeTo: ["together-ai", "groq", "baseten", "replicate", "openrouter"]
 summary: "Fireworks AI is a production inference platform for open models. It serves 100+ models (text, vision, audio, image, embeddings) over an OpenAI-compatible API — as pay-per-token serverless or dedicated GPU deployments — and adds fine-tuning. Its proprietary FireAttention engine targets low latency and high throughput for open-source architectures."
-related: ["deploying-llms-to-production", "self-host-vs-api-llm", "llm-cost-latency-engineering", "best-local-llm-tools-2026", "choosing-the-right-model"]
+related: ["guide:deploying-llms-to-production", "guide:self-host-vs-api-llm", "guide:llm-cost-latency-engineering", "guide:best-local-llm-tools-2026", "guide:choosing-the-right-model"]
 faq:
   - q: "What is Fireworks AI?"
     a: "Fireworks AI is a production inference platform for open-source models. It hosts 100+ models across text, vision, audio, image, and embeddings and serves them over an OpenAI-compatible (and Anthropic-compatible) API, either as pay-per-token serverless endpoints or as dedicated GPU deployments. It also offers managed fine-tuning. Its proprietary FireAttention engine is built for low latency and high throughput on open-model architectures."
@@ -29,4 +29,4 @@ The platform's differentiator is speed at production scale. Models run on **Fire
 
 Beyond inference, Fireworks offers **managed fine-tuning** — supervised and reinforcement approaches — with fine-tuned models served back on the same inference stack. Production features include function calling, structured JSON output, and batch inference, which makes it a common building block for agentic and RAG systems.
 
-Fireworks is a hosted, closed-source service. It is a direct alternative to other open-model inference providers like [Together AI](/tools/together-ai), [Groq](/tools/groq), [Baseten](/tools/baseten), and [Replicate](/tools/replicate); for choosing between hosting your own model and using an API like this, see [self-host vs. API LLM](/guides/self-host-vs-api-llm).
+Fireworks is a hosted, closed-source service. It is a direct alternative to other open-model inference providers like [Together AI](/tools/together-ai), [Groq](/tools/groq), [Baseten](/tools/baseten), and [Replicate](/tools/replicate); for choosing between hosting your own model and using an API like this, see [self-host vs. API LLM](/guides/mlops/self-host-vs-api-llm).

@@ -31,7 +31,7 @@ faq:
     a: "Treat them like dependencies. A skill's body is instructions Claude will follow and may include scripts it will run, all under your session's permission settings. Read the SKILL.md and any bundled files before installing from an unfamiliar source, and prefer skills that scope their allowed-tools narrowly."
   - q: "How many skills can I install?"
     a: "Practically, as many as stay distinguishable. Each installed skill costs a few dozen tokens of metadata at session start; the failure mode isn't context bloat but overlapping descriptions, which make Claude route tasks to the wrong skill."
-related: ["writing-your-first-skill", "skill-md-reference", "how-to-install-claude-skills", "claude-skills-examples", "best-claude-skills-2026", "skills-vs-agents-vs-commands", "skills-vs-mcp-servers", "claude-skills-on-claude-ai-and-api"]
+related: ["guide:writing-your-first-skill", "guide:skill-md-reference", "guide:how-to-install-claude-skills", "guide:claude-skills-examples", "guide:best-claude-skills-2026", "guide:skills-vs-agents-vs-commands", "guide:skills-vs-mcp-servers", "guide:claude-skills-on-claude-ai-and-api"]
 ---
 
 Claude Skills are the answer to a problem every heavy Claude user hits: you keep re-explaining the same procedure. How your team writes migrations. The exact steps of your release checklist. The way you want commit messages formatted. A **skill** packages that procedure once — as a folder with a `SKILL.md` file — and Claude loads it *by itself* whenever the task calls for it.

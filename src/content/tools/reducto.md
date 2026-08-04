@@ -13,7 +13,7 @@ tags: ["document-parsing", "ocr", "rag", "data-extraction", "pdf"]
 featured: false
 alternativeTo: ["llamaparse", "unstructured", "docling", "marker"]
 summary: "Reducto is a hosted document ingestion API for production RAG and document pipelines. It parses PDFs, images, spreadsheets, and slides into LLM-ready data — combining specialized OCR with vision-language models for accurate tables, figures, and layout — plus Extract, Split, and Edit APIs and bounding-box citations for traceability."
-related: ["how-rag-works", "multimodal-document-extractor", "multimodal-rag-images-pdfs", "chunking-strategy-optimizer"]
+related: ["guide:how-rag-works", "skill:multimodal-document-extractor", "guide:multimodal-rag-images-pdfs", "skill:chunking-strategy-optimizer"]
 faq:
   - q: "What is Reducto?"
     a: "Reducto is a hosted document ingestion platform for AI teams. Its Parse API turns PDFs, images, spreadsheets, and slides into LLM-ready structured data — capturing layout, reading order, tables, and figures — and it adds Extract (schema-based data extraction), Split (separating multi-document files), and Edit APIs. It's aimed at production RAG and document pipelines where accuracy on complex or financial documents matters."
@@ -38,4 +38,4 @@ It is a **closed-source hosted API**, not a library you self-host (though it off
 
 ## Good to know
 
-Reducto is freemium: a free tier with included credits, usage-based Standard and Growth plans, and an Enterprise tier adding VPC/on-prem deployment, custom SLAs, and security commitments (SOC 2, HIPAA, zero data retention, BAAs). It's most useful when document parsing is the accuracy bottleneck in a RAG pipeline — pair it with [how-rag-works](/guides/rag/how-rag-works) for the surrounding retrieval design and a [chunking-strategy-optimizer](/skills/rag/chunking-strategy-optimizer) for tuning the chunks it produces.
+Reducto is freemium: a free tier with included credits, usage-based Standard and Growth plans, and an Enterprise tier adding VPC/on-prem deployment, custom SLAs, and security commitments (SOC 2, HIPAA, zero data retention, BAAs). It's most useful when document parsing is the accuracy bottleneck in a RAG pipeline — pair it with [how RAG works](/guides/concepts/how-rag-works) for the surrounding retrieval design and a [chunking strategy optimizer](/skills/data/chunking-strategy-optimizer) for tuning the chunks it produces.

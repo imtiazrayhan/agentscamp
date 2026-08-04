@@ -6,7 +6,7 @@ color: "blue"
 tools: "Read, Grep, Glob, Edit, Bash"
 date: 2026-06-17
 topics: ["llm-evals", "ai-agents-systems"]
-related: ["llm-evaluation-engineer", "prompt-engineer", "agent-reliability-reviewer", "test-engineer"]
+related: ["agent:llm-evaluation-engineer", "agent:prompt-engineer", "agent:agent-reliability-reviewer", "agent:test-engineer"]
 featured: false
 summary: "Drives LLM feature work with evals like TDD drives code with tests: turn a fuzzy 'make it better' into measurable criteria and a representative eval set (failures included), pick assertion checks vs LLM-as-judge per criterion, set a baseline, then run a tight change → score → keep-or-revert loop and gate CI on regressions. Optimize against numbers, not vibes."
 ---

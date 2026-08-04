@@ -13,7 +13,7 @@ tags: ["vector-database", "search", "serverless", "retrieval", "hybrid-search"]
 featured: false
 alternativeTo: ["pinecone", "qdrant", "weaviate", "lancedb", "pgvector"]
 summary: "turbopuffer is a serverless vector and full-text search database built from first principles on object storage (S3, GCS, Azure Blob). Vectors and BM25 indexes live durably in cheap object storage and are cached on NVMe/RAM only when queried, so storage cost stays low at very large scale while hot data still serves fast. Pricing is usage-based across storage, writes, and queries."
-related: ["best-vector-database-2026", "vector-search-at-scale", "pgvector-vs-pinecone", "how-embeddings-work", "hybrid-search-reranking"]
+related: ["guide:best-vector-database-2026", "guide:vector-search-at-scale", "guide:pgvector-vs-pinecone", "guide:how-embeddings-work", "guide:hybrid-search-reranking"]
 faq:
   - q: "What is turbopuffer?"
     a: "turbopuffer is a serverless vector and full-text search database built from first principles on object storage (S3, GCS, or Azure Blob). Your vectors and BM25 indexes are stored durably and cheaply in object storage, and pulled into an NVMe SSD and RAM cache only when queried — so storage stays inexpensive at very large scale while frequently accessed (warm) data still serves with low latency. It supports vector search, full-text/keyword search, and hybrid search, with namespaces for multi-tenancy."

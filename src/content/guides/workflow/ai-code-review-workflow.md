@@ -23,7 +23,7 @@ faq:
     a: "Treat noise as a config bug. Tune severity thresholds, encode your standards as rules (most tools take plain-English rules; several read CLAUDE.md), and prune comment classes the team consistently rejects. The metric that matters is comment acceptance rate — if it's low, fix the reviewer before blaming the team."
   - q: "Where do humans add value if bots and tests pass?"
     a: "Exactly where green can lie: security that functions correctly, architecture and extensibility, performance under real load, privacy/compliance, and scope — code that does more than asked. Plus the only question no machine owns: is this the right change at all?"
-related: ["best-ai-code-review-tools-2026", "code-reviewer", "review-pr", "testing-ai-generated-code", "multi-agent-orchestration", "claude-code-hooks", "greptile"]
+related: ["guide:best-ai-code-review-tools-2026", "agent:code-reviewer", "command:review-pr", "guide:testing-ai-generated-code", "guide:multi-agent-orchestration", "guide:claude-code-hooks", "tool:greptile"]
 ---
 
 When agents write most of a diff, "get a human to read it" stops being a review strategy — there's too much code and too little human. The teams holding quality steady didn't lower the bar; they **rebuilt review as a stack**, each layer catching what the others structurally can't.
@@ -46,3 +46,13 @@ When agents write most of a diff, "get a human to read it" stops being a review 
 - **Keep one honest metric:** escaped defects (bugs found after merge). If it rises while dashboards stay green, a layer is checking the wrong thing — usually layers 1–2 duplicating each other while security and scope go unwatched.
 
 The destination isn't "AI reviews AI" theater — it's a pipeline where each verifier is placed against the failure mode it actually catches, and human judgment, the scarcest input, is spent only where it's irreplaceable.
+
+## Continue exploring
+
+- [git-github-expert](/agents/developer-tools/git-github-expert) — Use this agent for Git and GitHub workflows — rebases, conflict resolution, history surgery, PRs, and Actions.
+- [Circular Dependency Breaker](/skills/refactor/circular-dependency-breaker) — Detect and break a circular import — map the exact cycle with a real tool, then break the right edge by extracting the shared piece into a leaf module, inverting a layering…
+- [Type Coverage Improver](/skills/refactor/type-coverage-improver) — Raise TypeScript type strictness incrementally — measure the any/implicit-any baseline, enable one strict sub-flag at a time, and fix the fallout per flag instead of all at…
+- [Clean Branches](/commands/git/clean-branches) — Safely prune merged and stale Git branches: drop dead remote-tracking refs, list merged candidates for review, then delete with the safe -d variant.
+- [Refactor](/commands/refactor/refactor) — Refactor the target for readability and structure without changing behavior.
+- [Rename Symbol](/commands/refactor/rename-symbol) — Safely rename a symbol project-wide, distinguishing the real symbol from coincidental substring matches.
+- [Find Bug](/commands/review/find-bug) — Investigate a reported symptom, form hypotheses, and locate the root cause.

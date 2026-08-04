@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-03
 topics: ["llm-evals"]
-related: ["write-llm-evals", "deepeval", "promptfoo", "llm-as-judge-scorer", "run-evals"]
+related: ["guide:write-llm-evals", "tool:deepeval", "tool:promptfoo", "skill:llm-as-judge-scorer", "command:run-evals"]
 featured: false
 summary: "Turns 'we should add evals' into a running suite: it builds a representative dataset (oversampling the hard cases), picks the two or three metrics the feature is actually graded on, records a baseline, and wires the suite into CI so prompt and model changes are scored, not guessed."
 ---

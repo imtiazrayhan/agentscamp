@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "yellow"
 date: 2026-08-04
 topics: ["architecture", "devops-infra"]
-related: ["best-claude-skills-for-release-management", "openapi-doc-writer", "contract-test-designer", "semver-advisor", "changelog-from-prs", "strangler-fig-migrator"]
+related: ["guide:best-claude-skills-for-release-management", "skill:openapi-doc-writer", "skill:contract-test-designer", "skill:semver-advisor", "skill:changelog-from-prs", "skill:strangler-fig-migrator"]
 featured: true
 summary: "Plans API retirement from a verified consumer inventory through replacement parity, announcements, telemetry, migration support, compatibility gates, sunset criteria, shutdown, and cleanup. It treats zero recent traffic as evidence to investigate—not proof that unobserved or infrequent clients do not exist."
 faq:

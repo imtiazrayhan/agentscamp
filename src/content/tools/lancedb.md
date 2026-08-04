@@ -16,7 +16,7 @@ topics: ["rag-retrieval", "data-ml"]
 tags: ["vector-database", "rag", "embedded", "multimodal", "open-source"]
 featured: false
 summary: "LanceDB is an open-source embedded vector database built on the Lance columnar format: it runs in-process with no server, persists to local disk or object storage (S3), and stores vectors alongside raw multimodal data and metadata — bridging laptop prototype to large-scale dataset without changing systems."
-related: ["best-vector-database-2026", "chroma", "vector-search-engineer", "embedding-index-tuner"]
+related: ["guide:best-vector-database-2026", "tool:chroma", "agent:vector-search-engineer", "skill:embedding-index-tuner"]
 faq:
   - q: "What is LanceDB?"
     a: "LanceDB is an open-source, embedded vector database built on Lance, a modern columnar data format optimized for ML. It runs in-process with no server to operate, persists to local disk or directly to object storage like S3, and stores vectors alongside the raw multimodal data and metadata — so the same code that runs a laptop prototype can search a very large dataset without standing up a cluster."

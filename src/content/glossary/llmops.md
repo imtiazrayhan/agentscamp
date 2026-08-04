@@ -4,7 +4,7 @@ description: "LLMOps is the practices and tooling for running LLM apps in produc
 date: 2026-06-17
 topics: ["mlops-ai-infra"]
 tags: ["llmops", "mlops", "observability", "production"]
-related: ["tracing", "llm-as-judge", "eval-dataset", "prompt-caching"]
+related: ["glossary:tracing", "glossary:llm-as-judge", "glossary:eval-dataset", "glossary:prompt-caching"]
 faq:
   - q: "How is LLMOps different from MLOps?"
     a: "MLOps centers on training, deploying, and monitoring models you own — versioning weights, watching data drift, retraining. LLMOps assumes the model is a hosted API you call, so the work shifts to what surrounds it: prompts, retrieval, tool definitions, evals, and cost. The discipline is the same idea (operate it reliably); the surface area moves from model internals to the application around the model."

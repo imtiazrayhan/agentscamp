@@ -4,7 +4,7 @@ description: "Top-k sampling restricts an LLM's next-token choice to the k most 
 date: 2026-06-17
 topics: ["workflow-prompting"]
 tags: ["sampling", "decoding", "top-k", "generation"]
-related: ["temperature", "top-p", "token-streaming"]
+related: ["glossary:temperature", "glossary:top-p", "glossary:token-streaming"]
 faq:
   - q: "How does top-k differ from top-p?"
     a: "Top-k always keeps a fixed number of candidates (the k most probable), regardless of how confident the model is. Top-p (nucleus sampling) keeps a variable number — the smallest set whose probabilities sum to p — so it widens when the model is uncertain and narrows when it's confident. Top-p adapts to the distribution; top-k doesn't, which is why top-p is often preferred."

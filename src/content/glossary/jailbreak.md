@@ -4,7 +4,7 @@ description: "A jailbreak is a prompt crafted to bypass a model's safety trainin
 date: 2026-06-12
 topics: ["ai-safety-security"]
 tags: ["jailbreak", "safety", "security", "attacks"]
-related: ["prompt-injection", "red-teaming", "guardrails", "rlhf", "constitutional-ai"]
+related: ["glossary:prompt-injection", "glossary:red-teaming", "glossary:guardrails", "glossary:rlhf", "glossary:constitutional-ai"]
 faq:
   - q: "How is a jailbreak different from prompt injection?"
     a: "Target. A jailbreak attacks the MODEL's safety training — persuading it past its own refusals (roleplay framings, encodings, many-shot setups). Prompt injection attacks the APPLICATION — smuggling instructions through content so the system does the attacker's bidding regardless of safety policies. Injection works on perfectly-aligned models; jailbreaks are about the alignment itself."

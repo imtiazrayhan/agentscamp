@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["review-qa"]
-related: ["memory-leak-hunter", "react-render-profiler", "load-test-designer", "bundle-analyzer"]
+related: ["skill:memory-leak-hunter", "skill:react-render-profiler", "skill:load-test-designer", "skill:bundle-analyzer"]
 featured: false
 summary: "A flamegraph shows where the CPU actually is — if you read it right. This skill captures a profile under a realistic workload with the right sampling profiler, finds the widest self-time leaves, decides whether that work is unnecessary, redundant, or algorithmically wrong, fixes the biggest contributor, then re-profiles — because the bottleneck always moves after a fix."
 ---

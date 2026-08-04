@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "sonnet"
 color: "yellow"
 topics: ["coding-languages"]
-related: ["data-scientist"]
+related: ["agent:data-scientist", "agent:backend-developer", "skill:type-coverage-improver", "skill:test-scaffolder", "skill:flamegraph-analyzer"]
 summary: "A subagent that turns working-but-rough Python into typed, idiomatic, measurably faster code — stdlib-first refactors, asyncio with bounded concurrency and clean cancellation, packaging via pyproject.toml, and profile-driven performance fixes. Reach for it when refactoring to idiomatic Python, fixing async I/O, or packaging a library or CLI."
 ---
 

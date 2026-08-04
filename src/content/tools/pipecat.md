@@ -16,7 +16,7 @@ tags: ["voice", "real-time", "framework", "open-source", "python"]
 featured: false
 alternativeTo: ["livekit", "vapi"]
 summary: "Pipecat is an open-source Python framework for building real-time voice and multimodal conversational agents. It orchestrates the streaming STT → LLM → TTS loop, the audio transport (WebRTC/WebSocket), and turn-taking into composable pipelines, with integrations across dozens of speech and model providers — so you build the agent's behavior instead of the real-time plumbing."
-related: ["build-a-voice-agent", "voice-agent-engineer", "deepgram", "elevenlabs"]
+related: ["guide:build-a-voice-agent", "agent:voice-agent-engineer", "tool:deepgram", "tool:elevenlabs"]
 faq:
   - q: "What is Pipecat?"
     a: "Pipecat is an open-source Python framework for real-time voice and multimodal conversational AI. It orchestrates the streaming STT → LLM → TTS loop, manages WebRTC/WebSocket audio transports, and handles turn-taking, interruptions, and voice-activity detection as composable pipelines — so you build the agent's behavior rather than the real-time plumbing."

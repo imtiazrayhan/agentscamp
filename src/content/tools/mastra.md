@@ -15,7 +15,7 @@ tags: ["typescript", "agents", "workflows", "rag", "open-source"]
 featured: false
 alternativeTo: ["langgraph", "crewai", "vercel-ai-sdk", "openai-agents-sdk", "langchain"]
 summary: "Mastra is an open-source TypeScript framework for building AI agents, workflows, RAG, and tool-calling, from the team behind Gatsby. It targets JavaScript/TypeScript engineers who want typed agents, graph-based workflows, memory, and observability in one stack instead of dropping to Python."
-related: ["agent-frameworks-2026", "langgraph-vs-crewai", "building-multi-step-workflows", "multi-agent-orchestration", "production-tool-calling"]
+related: ["guide:agent-frameworks-2026", "guide:langgraph-vs-crewai", "guide:building-multi-step-workflows", "guide:multi-agent-orchestration", "guide:production-tool-calling"]
 faq:
   - q: "What is Mastra?"
     a: "Mastra is an open-source TypeScript framework for building AI agents, workflows, RAG, and tool-calling, built by the team behind Gatsby. It bundles typed agents, a graph-based workflow engine, agent memory, model routing across many providers, and built-in observability so JavaScript/TypeScript engineers can build agentic apps without dropping to Python."

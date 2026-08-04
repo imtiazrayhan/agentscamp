@@ -7,7 +7,7 @@ title: "DB Migrate"
 color: "blue"
 date: 2026-06-04
 topics: ["data-ml"]
-related: ["zero-downtime-postgres-migrations", "pgroll", "postgres-migration-engineer", "scaffold-pgvector-schema", "profile-postgres-queries"]
+related: ["guide:zero-downtime-postgres-migrations", "tool:pgroll", "agent:postgres-migration-engineer", "command:scaffold-pgvector-schema", "command:profile-postgres-queries"]
 featured: false
 summary: "A slash command that generates and applies a schema migration safely on a live database: it detects the project's migration tool, classifies the change as additive or breaking, decomposes breaking changes via expand-contract, uses lock-free DDL like CREATE INDEX CONCURRENTLY, writes a reversible down, then applies and verifies."
 ---

@@ -25,7 +25,7 @@ faq:
     a: "The SKILL.md format is portable: the same folder-plus-frontmatter shape works in Claude Code, on claude.ai as a capability, and on the Claude API via the /v1/skills endpoint and code execution. The library's skills are written for Claude Code's tools but the procedure body carries over with light editing."
   - q: "What's the difference between a skill and a subagent?"
     a: "A skill is a procedure loaded into the current conversation — same context, same permissions, just added instructions. A subagent is a separate context window with its own system prompt and tool policy. Encode how-to knowledge as skills; delegate isolated jobs to agents."
-related: ["what-are-claude-skills", "how-to-install-claude-skills", "best-claude-code-agents-skills", "writing-your-first-skill", "conventional-commits", "hook-writer", "secret-scanner", "migration-writer"]
+related: ["guide:what-are-claude-skills", "guide:how-to-install-claude-skills", "guide:best-claude-code-agents-skills", "guide:writing-your-first-skill", "skill:conventional-commits", "skill:hook-writer", "skill:secret-scanner", "skill:migration-writer"]
 ---
 
 This is the skills-only companion to our mixed [starter kit of agents, skills, and commands](/guides/getting-started/best-claude-code-agents-skills). Everything here is a `SKILL.md` from the AgentsCamp library: a procedure that sits dormant until your task matches its description, then loads and runs like a checklist Claude actually follows. New to the format? Start with [What Are Claude Skills?](/guides/skills/what-are-claude-skills)
@@ -95,3 +95,10 @@ The compounding tier — each one makes every future session better:
 ## How to choose from the other sixty
 
 The full library is at [/skills](/skills) — 90+ skills across twelve categories. The selection rule that holds up: install for friction you've felt twice, and check the new skill's description doesn't overlap one you already have. Overlapping descriptions are the main failure mode — Claude routes by description, and two skills claiming the same job means the wrong one fires half the time. When you outgrow the library versions, [edit them](/guides/skills/claude-code-skills-best-practices) — they're plain Markdown, and the frontmatter `description` is the tuning knob.
+
+## Continue exploring
+
+- [Dev Container Designer](/skills/workflow/devcontainer-designer) — Design a reproducible dev environment (Dev Container / Docker) so onboarding is one command and 'works on my machine' dies — by detecting the project's real stack and versions,…
+- [8 Best Claude Skills for Database Work](/guides/skills/best-claude-skills-for-database-work) — Compare Claude skills for safe migrations, data backfills, indexes, query plans, pooling, deadlocks, vector search, and SQL tuning.
+- [7 Best Claude Skills for Documentation](/guides/skills/best-claude-skills-for-documentation) — Use Claude skills to verify code examples and create accurate READMEs, API docs, runbooks, onboarding guides, ADRs, and diagrams.
+- [9 Best Claude Skills for Software Testing](/guides/skills/best-claude-skills-for-testing) — Compare Claude skills for regression, unit, integration, contract, property, mutation, prompt, and test-data workflows.

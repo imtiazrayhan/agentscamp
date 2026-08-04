@@ -7,7 +7,7 @@ date: 2026-05-02
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
-related: ["code-reviewer"]
+related: ["agent:code-reviewer"]
 summary: "Subagents are specialist assistants Claude Code delegates to — each a Markdown file in .claude/agents/ with frontmatter (name, description, optional model/tools) and a system-prompt body, running in its own context window and returning only its result. Delegation is routed by the description field, so writing it well is writing the routing logic."
 keyTakeaways:
   - "A subagent runs in its own context window and returns a clean result — noisy exploration never pollutes your main thread."

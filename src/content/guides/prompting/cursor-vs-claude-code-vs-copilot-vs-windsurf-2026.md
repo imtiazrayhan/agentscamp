@@ -24,7 +24,7 @@ faq:
     a: "Yes. Cognition AI acquired Windsurf in 2025 and rebranded the standalone editor as Devin Desktop in June 2026; the JetBrains plugin keeps the Windsurf name. In the same update, the built-in Cascade agent was replaced by Devin Local (legacy Cascade retired July 1, 2026), and an Agent Command Center became the default surface with the full IDE behind it."
   - q: "Which one is best for large, multi-file changes?"
     a: "Claude Code and the agent modes in Cursor and Windsurf are all built for multi-file work. Claude Code tends to go furthest autonomously in a repo (running commands, iterating against test output, opening PRs), while Cursor and Windsurf keep that work inside a review-as-you-go editor surface."
-related: ["cursor", "claude-code", "github-copilot", "windsurf", "what-is-claude-code", "choosing-the-right-model", "installing-claude-code"]
+related: ["tool:cursor", "tool:claude-code", "tool:github-copilot", "tool:windsurf", "guide:what-is-claude-code", "guide:choosing-the-right-model", "guide:installing-claude-code"]
 ---
 
 If you're choosing an AI coding tool in 2026, the headline features have converged: every serious option now offers inline completion, a chat panel, and an autonomous **agent mode** that edits multiple files and runs commands. So the question is no longer "which one has an agent" — it's **where the tool runs, how much autonomy it takes, how it handles your codebase as context, and how it charges you.** This guide compares the four most widely used: **Cursor**, **Claude Code**, **GitHub Copilot**, and **Windsurf** (now Devin Desktop).

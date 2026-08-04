@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 title: "Integration Test Designer"
 topics: ["review-qa"]
-related: ["contract-test-designer", "test-scaffolder", "mock-data-factory", "coverage-gap-finder"]
+related: ["skill:contract-test-designer", "skill:test-scaffolder", "skill:mock-data-factory", "skill:coverage-gap-finder"]
 featured: false
 summary: "Unit tests mock the database and prove the mock works, not the query. Full E2E is too slow to run. This skill designs integration tests at the right seam: a real slice (handler→service→repo + real DB/queue) against ephemeral infra, with per-test data isolation so tests stay hermetic and fast — asserting observable outcomes, not internal calls."
 ---

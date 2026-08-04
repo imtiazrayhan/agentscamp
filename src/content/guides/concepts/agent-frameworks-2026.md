@@ -24,7 +24,7 @@ faq:
     a: "Not always. If your agent is a single model with a few tools in a simple loop, you can write it directly against a model SDK and skip the abstraction. Reach for a framework when you need multi-agent coordination, durable/resumable state, human-in-the-loop, or built-in tracing — the things that are tedious and error-prone to hand-roll."
   - q: "How is the Claude Agent SDK different from these frameworks?"
     a: "The Claude Agent SDK is Anthropic's first-party toolkit for building agents on Claude, with batteries included (tool use, MCP, subagents) and tight integration with Claude's capabilities. The others are model-agnostic frameworks. If you're committed to Claude and want the smoothest path, the Claude Agent SDK is the natural choice; if you need provider flexibility or a specific orchestration model, pick accordingly."
-related: ["agent-memory-architecture", "production-tool-calling", "langgraph", "crewai", "openai-agents-sdk", "autogen", "claude-agent-sdk", "agent-reliability-reviewer"]
+related: ["guide:agent-memory-architecture", "guide:production-tool-calling", "tool:langgraph", "tool:crewai", "tool:openai-agents-sdk", "tool:autogen", "tool:claude-agent-sdk", "agent:agent-reliability-reviewer"]
 ---
 
 There are more agent frameworks than there are good reasons to choose between them on vibes. The useful way to decide is one axis: **how much control do you need over the agent's control flow?** Everything else — multi-agent model, ecosystem, ergonomics — follows from that.
@@ -70,3 +70,9 @@ Anthropic's first-party toolkit for building agents on Claude, with native tool 
 - **A single model with a few tools** → maybe **no framework** — write the loop directly.
 
 These aren't mutually exclusive. A common trajectory is to prototype high-level (CrewAI/AutoGen), then move the production-critical path to LangGraph once you need control and durability. Whatever you pick, the next two problems are the same everywhere: giving the agent [memory](/guides/concepts/agent-memory-architecture) and making its [tool calling](/guides/concepts/production-tool-calling) robust — and then [making it production-ready](/agents/meta-orchestration/agent-reliability-reviewer).
+
+## Continue exploring
+
+- [eval-driven-developer](/agents/meta-orchestration/eval-driven-developer) — Use this agent to drive AI feature development with evals the way TDD drives code with tests — define success criteria and a representative eval set BEFORE iterating on…
+- [Google ADK](/tools/google-adk) — Google's open-source, code-first framework to build, evaluate, and deploy AI agents.
+- [OpenHands](/tools/openhands) — Open-source autonomous AI software-development agent (formerly OpenDevin) — writes code, runs commands, and browses the web in a sandbox.

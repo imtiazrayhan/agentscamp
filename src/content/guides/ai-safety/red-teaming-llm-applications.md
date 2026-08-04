@@ -23,7 +23,7 @@ faq:
     a: "No general model-only defense eliminates prompt injection. Defend in depth: treat external content as untrusted data, minimize privileges, validate tool arguments and outputs, isolate secrets, require human approval for high-impact actions, and test continuously so a successful manipulation has limited consequences."
   - q: "Should red-team tests run in CI?"
     a: "Stable, reproducible attacks should become regression tests. Run deterministic policy and permission checks on every change, and run slower model-based attack suites on an appropriate schedule or release gate. Keep exploratory campaigns as a separate activity that discovers new cases for the automated suite."
-related: ["red-teaming", "prompt-injection", "jailbreak", "defending-prompt-injection", "owasp-agentic-top-10", "red-team-llm", "prompt-injection-auditor", "llm-guardrails-designer", "promptfoo"]
+related: ["glossary:red-teaming", "glossary:prompt-injection", "glossary:jailbreak", "guide:defending-prompt-injection", "guide:owasp-agentic-top-10", "command:red-team-llm", "agent:prompt-injection-auditor", "skill:llm-guardrails-designer", "tool:promptfoo"]
 howtoSteps:
   - name: "Define scope and authorization"
     text: "Name the target environment, accounts, data, tools, allowed techniques, time window, stop conditions, and owners before sending adversarial inputs."

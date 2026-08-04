@@ -4,7 +4,7 @@ description: "A token is the unit LLMs read and write — a word fragment of rou
 date: 2026-06-11
 topics: ["llm-app-dev"]
 tags: ["tokens", "tokenization", "llm", "pricing"]
-related: ["context-window", "inference", "prompt-caching", "llm-cost-latency-engineering"]
+related: ["glossary:context-window", "glossary:inference", "glossary:prompt-caching", "guide:llm-cost-latency-engineering"]
 faq:
   - q: "How many tokens is a word?"
     a: "In English, roughly 0.75 words per token — about 100 tokens per 75 words. Common words are single tokens; rare words split into pieces; code, non-English text, and unusual formatting often cost more tokens per character. Exact counts come from the model's own tokenizer."

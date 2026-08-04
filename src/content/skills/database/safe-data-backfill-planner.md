@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-08-04
 topics: ["data-ml", "devops-infra"]
-related: ["best-claude-skills-for-database-work", "migration-writer", "postgres-index-strategist", "connection-pool-tuner", "dashboard-designer", "deadlock-diagnoser"]
+related: ["guide:best-claude-skills-for-database-work", "skill:migration-writer", "skill:postgres-index-strategist", "skill:connection-pool-tuner", "skill:dashboard-designer", "skill:deadlock-diagnoser"]
 featured: true
 summary: "Plans a large data backfill as an observable, resumable job rather than one unbounded UPDATE. It chooses a stable cursor, processes committed batches with rate and lock limits, records checkpoints, handles live-write races, verifies counts and sampled values, monitors replicas and application latency, and defines pause, retry, and cleanup behavior."
 faq:

@@ -6,7 +6,7 @@ title: "Find N+1 Queries"
 color: "purple"
 date: 2026-06-17
 topics: ["review-qa"]
-related: ["profile-postgres-queries", "set-perf-budget", "find-bug"]
+related: ["command:profile-postgres-queries", "command:set-perf-budget", "command:find-bug"]
 featured: false
 summary: "A read-only slash command that detects N+1 query patterns: it finds loops/maps that query (or trigger a lazy-load) per iteration and handlers that fan out per-row queries, then reports each finding worst-first with its location, why it is N+1, a before/after sketch, the concrete fix (eager load, join, batch, DataLoader, or one set-based query), and how to confirm it via query logging or EXPLAIN."
 faq:

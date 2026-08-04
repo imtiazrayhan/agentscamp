@@ -23,7 +23,7 @@ faq:
     a: "State it as a hard rule in the task ('make this pass; the test file is read-only'), and enforce mechanically where stakes warrant: a PreToolUse hook or permission rule denying edits to the test path during the task. If the agent believes the test itself is wrong, the instruction is to STOP and say so — that disagreement is exactly what you want surfaced."
   - q: "Does this replace normal code review?"
     a: "It narrows it productively. Green suite = the contract holds, so review stops re-deriving correctness and spends on what tests can't see: security, performance, design, scope creep. Tests buy trust in behavior; review buys trust in everything else."
-related: ["testing-ai-generated-code", "write-tests", "fix-failing-test", "test-scaffolder", "claude-code-hooks", "what-is-claude-code", "spec-driven-development"]
+related: ["guide:testing-ai-generated-code", "command:write-tests", "command:fix-failing-test", "skill:test-scaffolder", "guide:claude-code-hooks", "guide:what-is-claude-code", "guide:spec-driven-development"]
 ---
 
 Test-driven development spent twenty years as the discipline everyone praised and few sustained — the upfront cost kept losing to deadline gravity. Then agents arrived and inverted the economics: **the agentic loop needs a machine-checkable goal, and TDD is a machine for producing exactly those.** The old chore became the highest-trust way to direct an AI.
@@ -53,3 +53,8 @@ An [agent](/guides/getting-started/what-is-claude-code) works by acting, observi
 Honesty clause: TDD presumes you can state the contract first. **Exploration** (you don't know what you want yet — [vibe-code](/guides/prompting/vibe-coding-guide) the spike, then TDD the real build), **UI taste** (the test is your eyes), and **glue with trivial logic** all resist it. The heuristic: if you can finish the sentence "done means…" with something checkable, lead with the test; if you can't, that sentence is the work — go find it first.
 
 For the wider verification stack around this loop — reviewing agent-written tests, the self-grading trap, what tests can't see — continue with [How to Test AI-Generated Code](/guides/testing/testing-ai-generated-code).
+
+## Continue exploring
+
+- [Hunt Flaky Tests](/commands/testing/flaky-test-hunt) — Reproduce a flaky test, find the real source of nondeterminism, and fix the cause.
+- [Generate E2E Test](/commands/testing/generate-e2e-test) — Scaffold a resilient end-to-end test for a user flow grounded in the real UI.

@@ -15,7 +15,7 @@ featured: false
 sameAs:
   - "https://github.com/github/spec-kit"
   - "https://github.github.io/spec-kit/"
-related: ["spec-driven-development", "vibe-coding-guide", "plan-feature", "breakdown-task", "claude-code", "github-copilot"]
+related: ["guide:spec-driven-development", "guide:vibe-coding-guide", "command:plan-feature", "command:breakdown-task", "tool:claude-code", "tool:github-copilot"]
 alternativeTo: ["claude-code", "codex-cli", "aider", "opencode"]
 summary: "Spec Kit (GitHub, MIT, ~111k stars since its September 2025 launch) productized spec-driven development: specify init scaffolds a project, then /speckit.constitution, .specify, .plan, .tasks, and .implement walk your coding agent through the pipeline — each phase emitting a markdown artifact that feeds the next. Works with 30+ agents including Claude Code, Copilot, and Cursor."
 faq:

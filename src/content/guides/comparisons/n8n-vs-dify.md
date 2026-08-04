@@ -21,7 +21,7 @@ faq:
     a: "Source-available, both — with real conditions. n8n's fair-code license permits free internal business use but not selling n8n-as-a-service or embedding it in paid products. Dify's modified Apache-2.0 forbids multi-tenant operation without a commercial license and requires keeping its branding. Internal self-hosting is effectively free on both; building a SaaS on either means licensing conversations."
   - q: "Which is better for a no-code team building AI features?"
     a: "If the features live inside existing processes (summarize tickets, draft replies, route leads), n8n — the team works where the triggers are. If the feature IS the app (a knowledge chatbot, an internal AI tool with users), Dify — the publishing path from canvas to working app with API is what it's for."
-related: ["n8n", "dify", "langchain", "agent-frameworks-2026", "how-rag-works", "langgraph-vs-crewai"]
+related: ["tool:n8n", "tool:dify", "tool:langchain", "guide:agent-frameworks-2026", "guide:how-rag-works", "guide:langgraph-vs-crewai"]
 ---
 
 n8n and Dify both put AI workflows on a visual canvas, which makes them look like rivals. Their DNA disagrees: **n8n is an automation platform that grew AI organs; Dify is an AI platform that grew automation limbs.** Which DNA matches your problem decides this in one question.

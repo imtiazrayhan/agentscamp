@@ -23,7 +23,7 @@ faq:
     a: "A software bill of materials is a machine-readable inventory of components and versions in an artifact. It helps answer whether a product contains an affected dependency during an incident, but it does not prove the build was trusted or the component safe."
   - q: "How do AI coding tools affect supply-chain risk?"
     a: "Agents can add packages, install skills or plugins, run package scripts, and consume untrusted documentation or tool output. Keep the same controls: review new trust roots, constrain permissions and network access, inspect lockfile and script changes, and verify generated artifacts before release."
-related: ["dependency-audit", "license-compliance-checker", "secret-scanner", "dependency-manager", "security-auditor", "are-claude-skills-safe", "govern-mcp-servers", "dependency-upgrade-planner"]
+related: ["skill:dependency-audit", "skill:license-compliance-checker", "skill:secret-scanner", "agent:dependency-manager", "agent:security-auditor", "guide:are-claude-skills-safe", "guide:govern-mcp-servers", "skill:dependency-upgrade-planner"]
 howtoSteps:
   - name: "Map trust roots and critical artifacts"
     text: "Inventory registries, source hosts, CI actions, build images, plugins, signing identities, artifacts, and deploy credentials that can affect a release."

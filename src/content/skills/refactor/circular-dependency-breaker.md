@@ -8,7 +8,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["coding-languages"]
-related: ["extract-module", "dead-code-finder", "type-coverage-improver"]
+related: ["skill:extract-module", "skill:dead-code-finder", "skill:type-coverage-improver"]
 featured: false
 summary: "Cycles cause order-dependent, partially-initialized-module bugs that look random — and the import graph, not the stack trace, is where the real bug lives. This skill maps the exact cycle with a tool, then breaks the right edge: extract the shared piece into a leaf, invert the dependency, merge falsely-split modules, or defer an import — and proves the cycle is gone."
 ---

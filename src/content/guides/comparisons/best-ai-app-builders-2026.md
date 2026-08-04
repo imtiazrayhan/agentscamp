@@ -21,7 +21,7 @@ faq:
     a: "They build apps that run in production; whether they're production-grade depends on what happens next. Generated architecture accumulates debt fast under real requirements — auth edge cases, migrations, performance. The winning pattern treats builder output as a strong first draft: sync to GitHub, add tests, and continue with engineering tools (agentic ones like Claude Code included)."
   - q: "Are they replacing developers?"
     a: "They're replacing the blank page. The idea-to-demo distance collapsed, which moves the developer's value to everything after the demo: correctness, security, data design, maintainability. Teams use these tools to compress iteration zero, not to skip engineering."
-related: ["v0", "lovable", "bolt", "replit-agent", "v0-vs-lovable", "vibe-coding", "claude-code"]
+related: ["tool:v0", "tool:lovable", "tool:bolt", "tool:replit-agent", "guide:v0-vs-lovable", "glossary:vibe-coding", "tool:claude-code"]
 ---
 
 The app-builder wave is [vibe coding](/glossary/vibe-coding) productized: describe software, watch it exist. The four that matter in 2026 aren't interchangeable — they generate **different kinds of artifact**, and choosing well means naming which artifact you're missing.
@@ -48,3 +48,7 @@ The app-builder wave is [vibe coding](/glossary/vibe-coding) productized: descri
 ## How to actually choose
 
 Two questions settle it. **Who's downstream?** A developer integrating output → v0; a non-developer needing the whole thing → Lovable; either, just exploring fast → Bolt; someone who wants hosting handled → Replit. **What happens at month six?** All four hand you the same bill eventually: generated software is a first draft with momentum. Sync to GitHub early, get tests around anything real, and plan the handoff to normal engineering — where agentic tools like [Claude Code](/tools/claude-code) pick up exactly where builders stop. The wave's broader why-and-when is the [vibe coding guide](/glossary/vibe-coding).
+
+## Continue exploring
+
+- [Flowise](/tools/flowise) — Open-source, low-code visual builder for LLM apps and AI agents — drag-and-drop to assemble chains, agents, and RAG; self-host or use Flowise Cloud.

@@ -15,7 +15,7 @@ tags: ["pdf", "markdown", "ocr", "document-conversion", "rag"]
 featured: false
 alternativeTo: ["docling", "unstructured", "llamaparse", "reducto"]
 summary: "Marker is an open-source Python pipeline from Datalab that converts PDFs, images, PPTX, DOCX, XLSX, HTML, and EPUB into clean Markdown, JSON, or HTML. It runs locally on GPU, CPU, or Apple MPS, preserves tables, equations, and code, and can optionally call an LLM for accuracy-critical pages."
-related: ["how-rag-works", "multimodal-rag-images-pdfs", "vlm-ocr-documents", "chunking-strategy-optimizer"]
+related: ["guide:how-rag-works", "guide:multimodal-rag-images-pdfs", "guide:vlm-ocr-documents", "skill:chunking-strategy-optimizer"]
 faq:
   - q: "What is Marker?"
     a: "Marker is an open-source document-conversion pipeline from Datalab. It turns PDFs, images, and Office formats into clean Markdown, JSON, or HTML, preserving tables, equations, forms, and code while stripping headers, footers, and other clutter. It builds on the Surya OCR and layout models and runs on your own hardware."

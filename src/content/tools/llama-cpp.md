@@ -16,7 +16,7 @@ alternativeTo: ["ollama", "vllm", "lm-studio"]
 sameAs:
   - "https://github.com/ggml-org/llama.cpp"
   - "https://github.com/ggml-org"
-related: ["ollama", "lm-studio", "jan", "vllm", "best-local-llm-tools-2026", "quantization", "self-host-vs-api-llm"]
+related: ["tool:ollama", "tool:lm-studio", "tool:jan", "tool:vllm", "guide:best-local-llm-tools-2026", "glossary:quantization", "guide:self-host-vs-api-llm"]
 summary: "llama.cpp (ggml-org, MIT, ~116k stars) is the foundational local-inference engine: plain C/C++ with no dependencies, 1.5–8-bit GGUF quantization, and backends for everything — Apple Metal, CUDA, AMD HIP, Vulkan, SYCL, plain CPU. llama-server exposes an OpenAI-compatible API; llama-cli pulls models straight from Hugging Face. Ollama, LM Studio, and Jan all stand on its shoulders."
 faq:
   - q: "What's the difference between llama.cpp and Ollama?"

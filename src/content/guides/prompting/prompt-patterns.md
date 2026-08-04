@@ -6,7 +6,7 @@ date: 2026-05-20
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
-related: ["prompting-techniques-2026", "context-engineering", "effective-tool-use", "breakdown-task"]
+related: ["guide:prompting-techniques-2026", "guide:context-engineering", "guide:effective-tool-use", "command:breakdown-task"]
 summary: "Five patterns make coding agents reliable: chain big asks into verifiable steps, pin conventions with few-shot examples instead of adjectives, manage context (point precisely, persist durable facts in CLAUDE.md, offload noise to subagents), verify-act-reverify with tools, and demand structured output. They compose — and each fixes a specific failure mode."
 keyTakeaways:
   - "Chaining surfaces intermediate decisions where they're cheap to correct — a mega-prompt buries them inside one response."

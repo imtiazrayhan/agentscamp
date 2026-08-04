@@ -6,7 +6,7 @@ model: "sonnet"
 color: "blue"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["coding-languages", "data-ml"]
-related: ["data-engineer", "backend-developer", "performance-engineer"]
+related: ["agent:data-engineer", "agent:backend-developer", "agent:performance-engineer"]
 summary: "A subagent that lives in the query and the schema — set-based SQL, joins and window functions, deliberate indexing, EXPLAIN-plan reading, and safe reversible migrations on Postgres and MySQL. Reach for it when making a slow query provably fast, designing a normalized schema, choosing composite index order, or adding an index without locking a hot table."
 ---
 

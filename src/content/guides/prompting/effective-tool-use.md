@@ -7,7 +7,7 @@ date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
 featured: false
-related: ["writing-a-custom-agent", "building-an-mcp-server", "prompt-patterns", "claude-code-settings-permissions", "claude-code-hooks"]
+related: ["guide:writing-a-custom-agent", "guide:building-an-mcp-server", "guide:prompt-patterns", "guide:claude-code-settings-permissions", "guide:claude-code-hooks"]
 summary: "An agent's toolset is its job description written in capabilities. Start from zero and grant the minimum; remove Edit/Write so a reviewer physically can't mutate code; pick one sharp tool per capability instead of three overlapping ones; name tools so the model routes correctly; scope MCP servers and credentials to least privilege; and gate the irreversible with hooks, not polite prompts."
 keyTakeaways:
   - "Capability is the real boundary: a tool the agent doesn't have is the only constraint that can't be argued around — enforcement, not persuasion."

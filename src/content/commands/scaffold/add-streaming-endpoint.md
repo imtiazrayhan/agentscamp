@@ -7,7 +7,7 @@ title: "Add a Streaming LLM Endpoint"
 color: "cyan"
 date: 2026-06-03
 topics: ["llm-app-dev"]
-related: ["calling-any-model-gateways", "vercel-ai-sdk", "llm-integration-engineer", "new-component"]
+related: ["guide:calling-any-model-gateways", "tool:vercel-ai-sdk", "agent:llm-integration-engineer", "command:new-component"]
 featured: false
 summary: "Scaffolds an LLM endpoint that streams tokens to the client (SSE / Web Streams) plus the matching client handler, so output appears as it's generated. Handles the streaming response, error/abort cases, and incremental rendering for the project's stack."
 ---

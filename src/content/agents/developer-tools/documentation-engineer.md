@@ -6,7 +6,7 @@ model: "sonnet"
 color: "green"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["workflow-prompting"]
-related: ["openapi-doc-writer", "readme-generator", "adr-writer"]
+related: ["skill:openapi-doc-writer", "skill:readme-generator", "skill:adr-writer"]
 summary: "A subagent that writes and maintains technical docs where every claim is traceable to code — READMEs, how-to guides, API references, and runbooks. Reach for it when updating a stale README after a refactor, documenting a public API from its signatures, writing an on-call runbook, or auditing docs for drift against the current code."
 ---
 

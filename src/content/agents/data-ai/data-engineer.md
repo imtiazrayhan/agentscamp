@@ -6,7 +6,7 @@ model: "sonnet"
 color: "cyan"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["data-ml"]
-related: ["data-scientist", "sql-pro", "ml-engineer"]
+related: ["agent:data-scientist", "agent:sql-pro", "agent:ml-engineer"]
 summary: "A subagent that builds data pipelines that run unattended — ingestion jobs, ELT/ETL transforms, warehouse models with an explicit grain, orchestration DAGs, and blocking data-quality tests, with every load idempotent. Reach for it when building an ingestion job, modeling facts and dimensions, or writing a safe partitioned backfill after a schema change."
 ---
 

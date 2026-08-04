@@ -16,7 +16,7 @@ featured: false
 alternativeTo: ["playwright-mcp"]
 sameAs:
   - "https://www.npmjs.com/package/chrome-devtools-mcp"
-related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "playwright-mcp", "performance-engineer", "accessibility-auditor", "debugger"]
+related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "tool:playwright-mcp", "agent:performance-engineer", "agent:accessibility-auditor", "agent:debugger"]
 summary: "Chrome DevTools MCP (Google's Chrome DevTools team, ~43k stars, v1.x since May 2026) gives agents a real browser with the debugger attached: 49 tools spanning Puppeteer-driven navigation and input, network request analysis, console messages with source-mapped stack traces, screenshots, emulation, and performance trace recording with actionable insights plus CrUX field data."
 faq:
   - q: "How do I add Chrome DevTools MCP to Claude Code?"

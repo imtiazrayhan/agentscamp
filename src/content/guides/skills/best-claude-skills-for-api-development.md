@@ -25,7 +25,7 @@ faq:
     a: "Often yes. OpenAPI documents the broader HTTP surface for clients and tooling. A model-facing tool definition should expose a smaller, task-oriented, safely described operation set with constrained inputs and clear side effects."
   - q: "Can these skills scaffold an MCP server?"
     a: "Yes. mcp-server-scaffolder builds the protocol-facing server structure, while tool-definition-generator helps shape individual model-callable operations. Review credentials, destructive actions, and transport choices before deployment."
-related: ["best-claude-skills-2026", "api-error-contract-designer", "idempotency-designer", "pagination-designer", "openapi-doc-writer", "mcp-server-scaffolder"]
+related: ["guide:best-claude-skills-2026", "skill:api-error-contract-designer", "skill:idempotency-designer", "skill:pagination-designer", "skill:openapi-doc-writer", "skill:mcp-server-scaffolder"]
 ---
 
 The best Claude skills for API development each own one contract clients depend on: error shape, retry semantics, pagination stability, rate-limit feedback, event authenticity, cross-origin policy, schema evolution, or machine-readable documentation. Their value is consistency across endpoints and services.
@@ -99,3 +99,7 @@ npx agentscamp add skills/openapi-doc-writer
 ```
 
 Ask each skill to work from actual routes, schemas, tests, and client behavior. The most polished contract is still wrong if it documents an interface the server does not implement.
+
+## Continue exploring
+
+- [Contract Testing for Microservices: Consumer, Provider, and CI](/guides/testing/contract-testing-microservices) — Catch breaking service changes before deployment with consumer-driven contracts, provider verification, state fixtures, compatibility gates, and schema tests.

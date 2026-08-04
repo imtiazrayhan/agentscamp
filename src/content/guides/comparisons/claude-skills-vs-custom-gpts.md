@@ -28,7 +28,7 @@ faq:
     a: "A Custom GPT — that's the use case it's genuinely built for. The GPT Store gives a packaged assistant (a tutor, a niche helper) distribution to ChatGPT's enormous user base. Skills have no consumer storefront; they're infrastructure, not products."
   - q: "Is there an OpenAI equivalent of skills?"
     a: "Yes, literally: OpenAI Codex supports the Agent Skills open standard — directories with a SKILL.md, loaded from .agents/skills, with the same progressive disclosure. For coding agents, the two ecosystems have converged on Anthropic's format."
-related: ["what-are-claude-skills", "agent-skills-open-standard", "skills-vs-agents-vs-commands", "skills-vs-mcp-servers", "how-to-install-claude-skills", "claude-skills-use-cases"]
+related: ["guide:what-are-claude-skills", "guide:agent-skills-open-standard", "guide:skills-vs-agents-vs-commands", "guide:skills-vs-mcp-servers", "guide:how-to-install-claude-skills", "guide:claude-skills-use-cases"]
 ---
 
 People compare these two because both answer "how do I stop re-explaining the same thing to my AI?" — but they answer it with opposite architectures. **A Custom GPT is a destination: a packaged chatbot you (or the GPT Store's audience) go visit. A Claude Skill is a capability: a procedure your existing agent picks up mid-task, wherever you already work.** Once you see that shape difference, every row of the comparison follows from it.

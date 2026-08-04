@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-08-04
 topics: ["devops-infra", "workflow-prompting"]
-related: ["best-claude-skills-for-devops-sre", "canary-release-planner", "migration-writer", "version-bumper", "runbook-writer", "semver-advisor"]
+related: ["guide:best-claude-skills-for-devops-sre", "skill:canary-release-planner", "skill:migration-writer", "skill:version-bumper", "skill:runbook-writer", "skill:semver-advisor"]
 featured: true
 summary: "Writes an executable release recovery plan: defines objective rollback triggers, inventories application, schema, data, config, cache, queue, and external compatibility, selects rollback versus forward fix, provides verified commands and owners, protects irreversible writes, and specifies health checks and observation windows. Guessed commands and 'redeploy previous' are rejected."
 faq:

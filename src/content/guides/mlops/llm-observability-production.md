@@ -23,7 +23,7 @@ faq:
     a: "Not automatically. Raw payloads are valuable for debugging but may contain personal data, secrets, customer content, or regulated information. Define field-level redaction, sampling, access, encryption, and retention before capture, and allow metadata-only tracing where content storage is inappropriate."
   - q: "What should an LLM dashboard include?"
     a: "At minimum: quality score or task-success proxy, p50 and p95 latency, cost and tokens per successful request, error and fallback rates, and slices by model, route, prompt version, tenant, and task. Agent systems should also show tool failure and step-count distributions."
-related: ["tracing", "llmops", "llm-observability-engineer", "dashboard-designer", "structured-logging-designer", "langfuse", "arize-phoenix", "langsmith", "write-llm-evals"]
+related: ["glossary:tracing", "glossary:llmops", "agent:llm-observability-engineer", "skill:dashboard-designer", "skill:structured-logging-designer", "tool:langfuse", "tool:arize-phoenix", "tool:langsmith", "guide:write-llm-evals"]
 howtoSteps:
   - name: "Define observable outcomes"
     text: "Name the user-visible success, quality, latency, cost, and reliability measures for each important LLM task before choosing a platform."

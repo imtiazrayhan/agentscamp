@@ -7,7 +7,7 @@ allowed-tools: "Read, Grep, Glob, Bash"
 title: "Security Scan"
 color: "purple"
 topics: ["review-qa"]
-related: ["review-pr", "find-bug", "security-auditor"]
+related: ["command:review-pr", "command:find-bug", "agent:security-auditor"]
 featured: false
 summary: "A slash command that audits the current diff or given paths for security vulnerabilities, read-only: it maps untrusted input and traces it to dangerous sinks — injection, missing authorization, hardcoded secrets, SSRF, path traversal, unsafe deserialization, weak validation — and reports findings ranked by severity with fixes and confidence."
 ---

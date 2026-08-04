@@ -16,7 +16,7 @@ alternativeTo: ["e2b", "modal", "daytona"]
 sameAs:
   - "https://github.com/vercel/sandbox"
   - "https://www.npmjs.com/package/@vercel/sandbox"
-related: ["sandboxing-ai-generated-code", "e2b", "modal", "daytona", "vercel-ai-sdk", "v0"]
+related: ["guide:sandboxing-ai-generated-code", "tool:e2b", "tool:modal", "tool:daytona", "tool:vercel-ai-sdk", "tool:v0"]
 summary: "Vercel Sandbox (GA January 2026) runs untrusted and AI-generated code in ephemeral Firecracker microVMs: millisecond startup, Node and Python runtimes with sudo, sandboxes persistent by default via automatic filesystem snapshots, up to 2,000 concurrent on Pro. The SDK and CLI are open-source Apache-2.0; Hobby gets a real free monthly allotment, Pro is usage-billed."
 faq:
   - q: "What is Vercel Sandbox for?"

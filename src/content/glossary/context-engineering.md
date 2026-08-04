@@ -4,7 +4,7 @@ description: "Context engineering is the discipline of curating exactly what ent
 date: 2026-06-17
 topics: ["workflow-prompting"]
 tags: ["context", "prompting", "agents", "retrieval"]
-related: ["context-window", "rag", "llm-token", "extended-thinking"]
+related: ["glossary:context-window", "glossary:rag", "glossary:llm-token", "glossary:extended-thinking"]
 faq:
   - q: "How is context engineering different from prompt engineering?"
     a: "Prompt engineering focuses on wording a single instruction well. Context engineering is broader: it's about deciding everything that goes into the window — instructions, retrieved data, tool outputs, and conversation history — and what to leave out. As applications became multi-step agents, what's in context started to matter more than how the prompt is phrased, so context engineering supersedes prompt engineering for agentic work."

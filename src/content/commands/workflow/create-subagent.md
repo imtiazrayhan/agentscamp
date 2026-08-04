@@ -5,7 +5,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Create Subagent"
 color: "purple"
 topics: ["workflow-prompting", "ai-agents-systems"]
-related: ["create-skill", "create-slash-command", "agent-memory-designer"]
+related: ["command:create-skill", "command:create-slash-command", "skill:agent-memory-designer"]
 featured: false
 date: 2026-06-17
 summary: "A slash command that scaffolds a new Claude Code subagent into .claude/agents/<slug>.md. It narrows $ARGUMENTS to one job, asks one round of clarifying questions if vague, then writes a valid agent file: real-format frontmatter (name, trigger-rich description, model, color, tools allowlist) plus a system prompt with a role, when-to-use boundaries, a numbered workflow, and an output contract."

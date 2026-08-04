@@ -21,7 +21,7 @@ faq:
     a: "LangChain — post-1.0 it IS an agent framework first: create_agent, middleware (human-in-the-loop, redaction), and the LangGraph runtime underneath for durable, controllable execution. LlamaIndex's agents and Workflows are credible, especially document agents over your own corpus, but orchestration depth and ecosystem favor LangChain."
   - q: "Can I use them together?"
     a: "Yes, and it's a standard pattern: LlamaIndex owns the data layer (ingestion, indexing, a query engine) exposed as a tool; LangChain/LangGraph owns the agent calling it. The integration is officially supported in both directions — composition beats forcing either framework outside its depth."
-related: ["langchain", "llamaindex", "langgraph", "agent-frameworks-2026", "how-rag-works", "langgraph-vs-crewai", "graph-rag"]
+related: ["tool:langchain", "tool:llamaindex", "tool:langgraph", "guide:agent-frameworks-2026", "guide:how-rag-works", "guide:langgraph-vs-crewai", "guide:graph-rag"]
 ---
 
 "LangChain vs LlamaIndex" endures because both touch LLM apps everywhere — but it's mostly a **category error**: one framework's center is *orchestrating agents*, the other's is *getting your data to a model well*. Sharpen that and the decision usually makes itself.

@@ -25,7 +25,7 @@ faq:
     a: "The rule probably doesn't match the command's exact shape. Bash rules are prefix matchers with word boundaries — Bash(npm test) doesn't cover npm test -- --watch (use Bash(npm test:*)), and compound commands like a && b need both halves allowed. Run /permissions to inspect active rules and which settings file each comes from."
   - q: "Where are Claude Code's logs and diagnostics?"
     a: "Three built-ins before you go log-spelunking: /doctor diagnoses installation and config health, /status shows version, model, and account, and /usage shows token spend and plan limits. For MCP specifics, claude mcp get <name> prints a server's full config and state."
-related: ["installing-claude-code", "claude-code-mcp-setup", "claude-code-settings-permissions", "claude-code-memory-context", "claude-code-hooks", "claude-code-ci-github-actions", "claude-code-tips", "explain-error"]
+related: ["guide:installing-claude-code", "guide:claude-code-mcp-setup", "guide:claude-code-settings-permissions", "guide:claude-code-memory-context", "guide:claude-code-hooks", "guide:claude-code-ci-github-actions", "guide:claude-code-tips", "command:explain-error"]
 ---
 
 Claude Code problems cluster: install and auth, context limits, MCP connections, permissions, and CI. This guide is organized the way you search when something's broken — symptom first, then the fix. Two commands solve a remarkable share of everything below: **`/doctor`** (installation and config health) and **`/status`** (version, model, account). Run them first.

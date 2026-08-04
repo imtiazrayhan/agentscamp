@@ -7,7 +7,7 @@ color: "purple"
 tools: "Read, Grep, Glob"
 topics: ["workflow-prompting", "architecture"]
 featured: true
-related: ["workflow-orchestrator", "prompt-engineer", "writing-a-custom-agent"]
+related: ["agent:workflow-orchestrator", "agent:prompt-engineer", "guide:writing-a-custom-agent"]
 summary: "A subagent that designs and reviews other Claude Code subagents — scoping the one job, writing the auto-delegation description, picking the minimal toolset and model, and defining the output contract. Reach for it when designing a new agent from a goal, reviewing one for scope creep or prompt bloat, or diagnosing why Claude won't auto-delegate to it."
 ---
 

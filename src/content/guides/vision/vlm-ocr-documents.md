@@ -25,7 +25,7 @@ faq:
     a: "Increasingly, yes. Video understanding works by sampling frames and giving the model temporal context, so it can caption clips, answer questions about what happens, detect events, and search within video. The constraints are practical: more frames mean more tokens, cost, and latency, so you sample at a rate that captures what matters without overwhelming the context window. Qwen3-VL and other modern VLMs explicitly target video and longer temporal reasoning, but for long videos you still design the sampling and chunking deliberately rather than feeding every frame."
   - q: "Should I use an open VLM like Qwen3-VL or a proprietary one?"
     a: "Test both on your actual documents — quality is task-specific. Open-weights models like Qwen3-VL (Apache-2.0) are strong on many OCR and document tasks, and self-hosting them gives you privacy, cost control at high volume, offline operation, and no per-call fee. Proprietary frontier VLMs may still lead on the hardest reasoning or the broadest capability, with zero infrastructure to run. The decision is the same as any self-host-vs-API call: a hard privacy or cost constraint, or an open model that clears your eval bar, points to self-hosting; otherwise an API is faster to ship. Measure accuracy on a representative sample before committing."
-related: ["qwen3-vl", "multimodal-document-extractor", "structured-output-2026", "self-host-vs-api-llm", "llm-inference-engineer"]
+related: ["tool:qwen3-vl", "skill:multimodal-document-extractor", "guide:structured-output-2026", "guide:self-host-vs-api-llm", "agent:llm-inference-engineer"]
 ---
 
 "OCR" used to mean one thing: convert pixels of text into characters. Vision-language models (VLMs) change the job entirely — they read an image *and* understand it, so they can pull the line items out of an invoice, tell you whether a form is signed, read handwriting, interpret a chart, and answer questions about a page. This guide is about when that's the right tool, where it bites you, and how to get output you can trust.
@@ -56,3 +56,7 @@ Video is the same idea extended over time: sample frames, give the model tempora
 ## Open vs. proprietary models
 
 Open-weights VLMs like [Qwen3-VL](/tools/qwen3-vl) (Apache-2.0) are strong on many OCR and document tasks and can be **self-hosted** for privacy, cost control at volume, and offline operation. Proprietary frontier VLMs may lead on the hardest reasoning, with zero infrastructure to run. The choice is the usual one — see [Self-Host vs API](/guides/mlops/self-host-vs-api-llm), and for serving an open model the [llm-inference-engineer](/agents/data-ai/llm-inference-engineer). Whatever you pick, decide it by measured accuracy on *your* documents, not a benchmark.
+
+## Continue exploring
+
+- [Multimodal AI](/glossary/multimodal-ai) — Multimodal AI processes more than one kind of input or output — text, images, audio, video — in a single model, like an LLM that reads screenshots or speaks.

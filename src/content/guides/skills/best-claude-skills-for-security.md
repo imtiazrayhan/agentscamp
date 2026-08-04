@@ -25,7 +25,7 @@ faq:
     a: "No. It maps actual technical data flows and controls against requirements you provide. Legal interpretation, jurisdiction, exemptions, and compliance certification remain with qualified professionals."
   - q: "Which skill should I use for an LLM application?"
     a: "Use llm-guardrails-designer for layered controls, prompt-pii-redactor for sensitive inputs, threat-model-builder for the full architecture, and least-privilege-auditor for agent tools and service credentials."
-related: ["best-claude-skills-for-code-review", "data-retention-auditor", "least-privilege-auditor", "secret-scanner", "threat-model-builder", "llm-guardrails-designer"]
+related: ["guide:best-claude-skills-for-code-review", "skill:data-retention-auditor", "skill:least-privilege-auditor", "skill:secret-scanner", "skill:threat-model-builder", "skill:llm-guardrails-designer"]
 ---
 
 The best Claude security skills split review into specific trust questions. Did a secret escape? Can a dependency be exploited? Does a principal have more access than necessary? Can one identity act as another? Where does sensitive data persist? A single “security audit” prompt usually answers all of these too shallowly.
@@ -97,3 +97,8 @@ npx agentscamp add skills/auth-flow-reviewer
 ```
 
 Require each report to include evidence location, impact, exploit or failure preconditions, confidence, remediation, and verification. A finding without a reproducible path should remain a hypothesis, not become an urgent production change.
+
+## Continue exploring
+
+- [10 Best Claude Skills for Building AI Applications](/guides/skills/best-claude-skills-for-ai-apps) — Compare Claude skills for structured output, fallbacks, evals, hallucinations, routing, token cost, semantic caching, PII, guardrails, and tools.
+- [9 Best Claude Skills for Code Review](/guides/skills/best-claude-skills-for-code-review) — Choose Claude skills for security, correctness, maintainability, and focused pull request review without relying on one vague review prompt.

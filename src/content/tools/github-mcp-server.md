@@ -15,7 +15,7 @@ featured: true
 sameAs:
   - "https://github.com/github/github-mcp-server"
   - "https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/use-the-github-mcp-server"
-related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "git-github-expert", "create-pr", "review-pr", "claude-code-ci-github-actions"]
+related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "agent:git-github-expert", "command:create-pr", "command:review-pr", "guide:claude-code-ci-github-actions"]
 alternativeTo: ["linear-mcp", "notion-mcp", "sentry-mcp"]
 summary: "GitHub's official MCP server gives agents the full GitHub surface — repositories, issues, pull requests, Actions, code and secret scanning, Dependabot, discussions, projects — organized into toolsets you can enable selectively, each with a read-only variant. Use the hosted remote at api.githubcopilot.com/mcp with a PAT or OAuth, or run it locally via Docker."
 faq:

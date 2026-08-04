@@ -7,7 +7,7 @@ allowed-tools: "Bash, Read"
 title: "Git Bisect"
 color: "purple"
 topics: ["review-qa"]
-related: ["find-bug", "fix-failing-test", "explain-error"]
+related: ["command:find-bug", "command:fix-failing-test", "command:explain-error"]
 featured: false
 summary: "A slash command that pins the first bad commit with git bisect: it nails down a fast, deterministic reproduction, sets a known-bad ref (usually HEAD) and a known-good ref, then drives the search — preferably automated via git bisect run with a 0/non-0/125 exit contract — inspects the offending diff to explain the cause, and always runs git bisect reset to restore the tree."
 ---

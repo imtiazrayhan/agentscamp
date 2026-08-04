@@ -16,7 +16,7 @@ featured: false
 sameAs:
   - "https://github.com/supabase/mcp"
   - "https://supabase.com/docs/guides/getting-started/mcp"
-related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "postgres-mcp", "db-migrate", "postgres-migration-engineer", "scaffold-pgvector-schema"]
+related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "tool:postgres-mcp", "command:db-migrate", "agent:postgres-migration-engineer", "command:scaffold-pgvector-schema"]
 alternativeTo: ["postgres-mcp", "pgroll", "github-mcp-server"]
 summary: "Supabase's official MCP server (hosted, Apache-2.0) lets agents work a Supabase project end to end: execute_sql and apply_migration, list tables and extensions, fetch service logs and security/performance advisors, generate TypeScript types, deploy Edge Functions, and manage branches. URL params scope it down — project_ref pins one project, read_only=true disables every mutating tool."
 faq:

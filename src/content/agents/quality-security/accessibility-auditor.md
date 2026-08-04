@@ -7,7 +7,7 @@ color: "green"
 tools: "Read, Grep, Glob, Bash"
 topics: ["review-qa"]
 featured: false
-related: ["code-reviewer", "frontend-developer", "test-engineer"]
+related: ["agent:code-reviewer", "agent:frontend-developer", "agent:test-engineer"]
 summary: "A subagent that audits web UI against WCAG 2.2 AA — semantics, keyboard operability and focus management, ARIA, contrast, forms, and motion — reporting each failure tied to its success criterion with a fix; it audits and recommends, never edits. Reach for it when checking a component for keyboard traps, accessible form errors, or a pre-ship a11y pass."
 ---
 

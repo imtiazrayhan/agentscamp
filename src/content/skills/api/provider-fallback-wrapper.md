@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "blue"
 date: 2026-06-03
 topics: ["llm-app-dev"]
-related: ["calling-any-model-gateways", "litellm", "openrouter", "llm-integration-engineer"]
+related: ["guide:calling-any-model-gateways", "tool:litellm", "tool:openrouter", "agent:llm-integration-engineer"]
 featured: false
 summary: "A single-provider LLM call is a single point of failure. This skill wraps calls with timeouts, bounded retries with backoff (retrying only retryable errors), and fallback to an alternate model/provider — so a rate limit or outage degrades gracefully instead of taking the feature down."
 ---

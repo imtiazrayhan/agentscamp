@@ -4,7 +4,7 @@ description: "ReAct is an agent loop that interleaves reasoning with tool action
 date: 2026-06-17
 topics: ["ai-agents-systems"]
 tags: ["react", "agents", "tool-use", "reasoning"]
-related: ["ai-agent", "function-calling", "chain-of-thought"]
+related: ["glossary:ai-agent", "glossary:function-calling", "glossary:chain-of-thought"]
 faq:
   - q: "Is this related to React.js?"
     a: "No — despite the name, ReAct here stands for Reasoning + Acting and has nothing to do with the React JavaScript UI library. It's a prompting pattern for agents: the model alternates between thinking and taking actions in the world (calling tools, searching, running code)."

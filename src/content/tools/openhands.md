@@ -7,7 +7,7 @@ date: 2026-06-17
 pricing: "open-source"
 category: "agent"
 repo: "https://github.com/All-Hands-AI/OpenHands"
-related: ["swe-agent", "devin", "goose"]
+related: ["tool:swe-agent", "tool:devin", "tool:goose"]
 license: "MIT"
 os: ["Web", "macOS", "Linux", "Windows"]
 sameAs: ["https://github.com/All-Hands-AI/OpenHands", "https://www.openhands.dev"]

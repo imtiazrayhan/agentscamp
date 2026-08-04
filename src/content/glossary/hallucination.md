@@ -4,7 +4,7 @@ description: "A hallucination is fluent, confident output that is factually wron
 date: 2026-06-11
 topics: ["llm-evals"]
 tags: ["hallucination", "reliability", "grounding", "llm"]
-related: ["rag", "write-llm-evals", "llm-as-judge", "structured-output-2026", "how-rag-works"]
+related: ["glossary:rag", "guide:write-llm-evals", "glossary:llm-as-judge", "guide:structured-output-2026", "guide:how-rag-works"]
 faq:
   - q: "Why do LLMs hallucinate?"
     a: "Because they generate the most plausible next token, not verified facts — plausibility and truth usually align on well-represented knowledge and diverge at the edges: niche details, fresh events, exact citations, anything underrepresented in training. The model has no built-in mechanism that distinguishes 'I know this' from 'this sounds right.'"

@@ -7,7 +7,7 @@ date: 2026-05-06
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
-related: ["code-reviewer", "debugger"]
+related: ["agent:code-reviewer", "agent:debugger"]
 summary: "A good custom subagent comes from five decisions: one nameable job (split anything joined by 'and'), a description written as a routing signal with 'Examples —' triggers, a minimum toolset (read-only for reviewers), a model matched to cognitive load (sonnet by default), and a system prompt well under 100 lines that says only what the model couldn't already guess."
 howtoSteps:
   - name: "Pick one job-to-be-done"

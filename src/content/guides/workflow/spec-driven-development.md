@@ -23,7 +23,7 @@ faq:
     a: "GitHub's open-source toolkit (September 2025) that productized the workflow: a CLI plus slash commands — specify, plan, tasks, implement — that work inside Claude Code, Copilot, Cursor, and other agents, with a 'constitution' file carrying project principles into every stage. It standardized the spec → plan → tasks → implement shape most teams now use."
   - q: "Does SDD slow you down?"
     a: "On small or exploratory work, yes — writing a spec for a spike is theater. On substantial features it's usually net-faster: the hour of spec writing replaces the day of corrective prompting and rework, parallelizes across agents, and prevents the architecture drift that costs the most later. The honest rule: spec when the work outlives the session."
-related: ["spec-kit", "vibe-coding-guide", "plan-feature", "breakdown-task", "building-multi-step-workflows", "claude-code-memory-context", "adr-writer"]
+related: ["tool:spec-kit", "guide:vibe-coding-guide", "command:plan-feature", "command:breakdown-task", "guide:building-multi-step-workflows", "guide:claude-code-memory-context", "skill:adr-writer"]
 ---
 
 The second generation of agentic-coding wisdom is converging on something almost embarrassingly traditional: **write down what you want before building it.** Spec-driven development (SDD) is that discipline rebuilt for agents — where the spec isn't bureaucracy, it's the *program you write in English*, and the agent is its compiler.

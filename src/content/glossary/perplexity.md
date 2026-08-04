@@ -4,7 +4,7 @@ description: "Perplexity measures how well a language model predicts a text samp
 date: 2026-06-17
 topics: ["llm-evals"]
 tags: ["perplexity", "evaluation", "metrics", "language-modeling"]
-related: ["inference", "llm-token", "eval-dataset", "write-llm-evals", "distillation"]
+related: ["glossary:inference", "glossary:llm-token", "glossary:eval-dataset", "guide:write-llm-evals", "glossary:distillation"]
 faq:
   - q: "Does lower perplexity mean a better assistant?"
     a: "Not directly. Perplexity only measures how well the model predicts a fixed reference text. A model can have great perplexity on web text and still be unhelpful, untruthful, or bad at your task. Use perplexity for cheap intrinsic checks during training, and task evals for whether the product actually works."

@@ -6,7 +6,7 @@ color: "pink"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-03
 topics: ["llm-evals"]
-related: ["llm-observability-engineer", "write-llm-evals", "llm-eval-suite-scaffolder", "deepeval", "run-evals", "ml-engineer"]
+related: ["agent:llm-observability-engineer", "guide:write-llm-evals", "skill:llm-eval-suite-scaffolder", "tool:deepeval", "command:run-evals", "agent:ml-engineer"]
 featured: false
 summary: "Turns an LLM feature's quality from opinion into a number: builds a representative dataset, picks the metrics it's actually graded on, records a baseline, and wires the suite into CI — so every prompt or model change is measured against a frozen ground truth instead of eyeballed."
 ---

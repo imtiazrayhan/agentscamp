@@ -4,7 +4,7 @@ description: "An eval dataset is the curated set of test cases — inputs with e
 date: 2026-06-12
 topics: ["llm-evals"]
 tags: ["evals", "datasets", "testing", "quality"]
-related: ["write-llm-evals", "llm-as-judge", "synthetic-data", "llm-eval-suite-scaffolder", "best-llm-eval-tools-2026"]
+related: ["guide:write-llm-evals", "glossary:llm-as-judge", "glossary:synthetic-data", "skill:llm-eval-suite-scaffolder", "guide:best-llm-eval-tools-2026"]
 faq:
   - q: "How big does an eval dataset need to be?"
     a: "Smaller than people fear, better-curated than people bother: 50–200 well-chosen cases beat 5,000 random ones. What matters is coverage — typical cases, known edge cases, past failures (every production bug becomes a case), and adversarial inputs — plus stable expected outcomes so scores mean the same thing run to run."

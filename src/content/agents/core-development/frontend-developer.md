@@ -6,7 +6,7 @@ model: "sonnet"
 color: "blue"
 topics: ["coding-languages"]
 featured: true
-related: ["react-specialist", "typescript-pro"]
+related: ["agent:react-specialist", "agent:typescript-pro"]
 summary: "A subagent that turns designs and requirements into accessible, responsive, production-ready UI — semantic markup, type-safe components, and styles that match the existing design system. Reach for it when implementing a Figma design, building reusable components, fixing accessibility issues, or wiring UI to APIs with loading, error, and empty states."
 ---
 

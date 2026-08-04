@@ -15,7 +15,7 @@ sameAs:
   - "https://github.com/cartesia-ai"
   - "https://x.com/cartesia"
   - "https://www.linkedin.com/company/cartesia-ai/"
-related: ["best-tts-apis-2026", "best-stt-apis-2026", "realtime-voice-apis", "elevenlabs", "deepgram", "build-a-voice-agent"]
+related: ["guide:best-tts-apis-2026", "guide:best-stt-apis-2026", "guide:realtime-voice-apis", "tool:elevenlabs", "tool:deepgram", "guide:build-a-voice-agent"]
 summary: "Cartesia builds voice AI on state-space models: Sonic streaming TTS — vendor-claimed sub-100ms model latency, 42 languages, emotion controls — Ink streaming STT with turn detection native to the model, and Line, a code-first platform for deploying voice agents with hosted infra, telephony, and evals. Freemium credits; commercial use starts at the low-cost Pro tier."
 faq:
   - q: "What makes Cartesia different from ElevenLabs?"

@@ -4,7 +4,7 @@ description: "MCP is the open standard for connecting AI models to external tool
 date: 2026-06-11
 topics: ["mcp"]
 tags: ["mcp", "protocol", "tools", "integrations"]
-related: ["claude-code-mcp-setup", "best-mcp-servers-2026", "building-an-mcp-server", "mcp-vs-a2a", "function-calling", "ai-agent"]
+related: ["guide:claude-code-mcp-setup", "guide:best-mcp-servers-2026", "guide:building-an-mcp-server", "guide:mcp-vs-a2a", "glossary:function-calling", "glossary:ai-agent"]
 faq:
   - q: "What does MCP actually standardize?"
     a: "The interface between a model-driven application (the client) and a capability provider (the server): servers expose tools the model can call, resources the app can read, and reusable prompts, over JSON-RPC via stdio or HTTP. Write the integration once and it works in every compliant client — that's the N×M problem it kills."

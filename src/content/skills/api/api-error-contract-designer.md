@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-08-04
 topics: ["architecture", "llm-app-dev"]
-related: ["best-claude-skills-for-api-development", "idempotency-designer", "pagination-designer", "openapi-doc-writer", "contract-test-designer", "api-architect"]
+related: ["guide:best-claude-skills-for-api-development", "skill:idempotency-designer", "skill:pagination-designer", "skill:openapi-doc-writer", "skill:contract-test-designer", "agent:api-architect"]
 featured: false
 summary: "Designs one stable API error envelope with documented HTTP status semantics, immutable machine codes, safe user-facing messages, structured field errors, retry hints, and correlation IDs. It inventories current failure paths, maps them into a compatibility table, updates the implementation and schema, and adds contract tests so clients never need to parse prose."
 faq:

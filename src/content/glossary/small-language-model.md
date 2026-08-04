@@ -4,7 +4,7 @@ description: "A small language model is a compact LLM — roughly 1–15B parame
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
 tags: ["slm", "small-models", "local", "efficiency"]
-related: ["frontier-model", "quantization", "distillation", "best-local-llm-tools-2026", "ollama"]
+related: ["glossary:frontier-model", "glossary:quantization", "glossary:distillation", "guide:best-local-llm-tools-2026", "tool:ollama"]
 faq:
   - q: "What counts as a small language model?"
     a: "No hard line, but common usage centers on roughly 1–15B parameters — models that run on a laptop, phone, or single modest GPU, especially when quantized. The families everyone names: Phi, Gemma, Qwen's small tiers, Llama's compact variants, plus distilled task-specific models."

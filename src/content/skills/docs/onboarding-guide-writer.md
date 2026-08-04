@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["workflow-prompting"]
-related: ["readme-generator", "runbook-writer", "adr-writer"]
+related: ["skill:readme-generator", "skill:runbook-writer", "skill:adr-writer"]
 featured: false
 summary: "A skill that writes a developer onboarding guide grounded in the real repo: a verified golden path from clone to first merged change, a brief architecture orientation, the actual branch/PR/CI conventions, and the gotchas that live in senior engineers' heads — linking to deeper docs instead of duplicating them so it doesn't rot."
 ---

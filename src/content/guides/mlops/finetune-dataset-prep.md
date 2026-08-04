@@ -36,7 +36,7 @@ faq:
     a: "Because without one you can't tell whether the model learned the task or just memorized your data. A held-out eval/validation split — representative of real inputs and guaranteed not to overlap (even as near-duplicates) with training — is the only honest measure of generalization. It's also how you detect overfitting and compare fine-tuned versions. Carve it out before training; deciding the split after you've seen results is how leakage and self-deception creep in."
   - q: "What format should fine-tuning data be in?"
     a: "Whatever matches how you'll call the model at inference, expressed in the trainer's expected schema — most commonly JSONL where each line is a chat-style record (system/user/assistant messages) or an instruction-response pair. The key is consistency: the training format must mirror the production format (same roles, same structure, same tool-call shape), and every record should validate against the schema and fit within the model's context length."
-related: ["finetuning-engineer", "finetune-dataset-builder", "qlora-finetune-runner", "write-llm-evals", "finetune-vs-rag-vs-prompt"]
+related: ["agent:finetuning-engineer", "skill:finetune-dataset-builder", "skill:qlora-finetune-runner", "guide:write-llm-evals", "guide:finetune-vs-rag-vs-prompt"]
 ---
 
 Almost every fine-tuning failure is a dataset failure. The training run is the easy, mechanical part; the model's quality is decided before training starts, by what's in the data. **The dataset is the model** — it learns exactly the distribution, format, and quality you feed it, including the mistakes. So the work is in preparation: the right format, clean and representative examples, careful augmentation, and an honest eval split.

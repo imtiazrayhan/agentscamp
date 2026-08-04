@@ -7,7 +7,7 @@ title: "Scaffold a vLLM Serving Config"
 color: "red"
 date: 2026-06-04
 topics: ["mlops-ai-infra"]
-related: ["vllm", "llm-inference-engineer", "self-host-vs-api-llm", "ollama"]
+related: ["tool:vllm", "agent:llm-inference-engineer", "guide:self-host-vs-api-llm", "tool:ollama"]
 featured: false
 summary: "A slash command that scaffolds a runnable vLLM serving config for a model on a target GPU: it sizes the model against VRAM, picks the highest precision or quantization that fits, sets context length, memory utilization, concurrency, and tensor parallelism, exposes an OpenAI-compatible endpoint, and emits the command plus a curl smoke test."
 ---

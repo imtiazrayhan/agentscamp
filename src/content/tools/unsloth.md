@@ -14,7 +14,7 @@ color: "pink"
 topics: ["mlops-ai-infra"]
 tags: ["fine-tuning", "lora", "qlora", "llm", "open-source"]
 featured: false
-related: ["finetuning-engineer", "qlora-finetune-runner", "finetune-dataset-prep", "vllm"]
+related: ["agent:finetuning-engineer", "skill:qlora-finetune-runner", "guide:finetune-dataset-prep", "tool:vllm"]
 alternativeTo: ["modal", "vllm", "llama-cpp"]
 summary: "Unsloth is an open-source library (Apache-2.0) that makes LoRA/QLoRA fine-tuning of open-weight LLMs roughly 2x faster and far lighter on VRAM via hand-optimized kernels, so fine-tunes run on a single consumer GPU or free Colab. It integrates with Hugging Face TRL/PEFT and supports Llama, Mistral, Qwen, Gemma, Phi, and other popular architectures."
 faq:

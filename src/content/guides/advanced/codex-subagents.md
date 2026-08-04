@@ -23,7 +23,7 @@ faq:
     a: "Yes. Each subagent performs separate model and tool work, so multi-agent workflows generally consume more tokens than a comparable single-agent run. Use parallelism when faster completion, cleaner context, or specialist perspectives justify that cost."
   - q: "Can I create custom Codex agents?"
     a: "Yes. Put TOML agent files under .codex/agents for a project or ~/.codex/agents for personal use. Each file defines a name, description, and developer instructions, and can override settings such as model, reasoning effort, sandbox, MCP servers, and skills."
-related: ["subagent", "multi-agent-orchestration", "building-multi-step-workflows", "codex-config-toml", "openai-codex-guide", "workflow-orchestrator", "context-engineering"]
+related: ["glossary:subagent", "guide:multi-agent-orchestration", "guide:building-multi-step-workflows", "guide:codex-config-toml", "guide:openai-codex-guide", "agent:workflow-orchestrator", "guide:context-engineering"]
 ---
 
 **Codex subagents are separate agent threads that handle bounded parts of a larger task.** The main thread delegates work, subagents operate with their own context and tools, and the main thread collects their results into one response or implementation.

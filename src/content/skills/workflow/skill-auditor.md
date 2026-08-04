@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-07-18
 topics: ["workflow-prompting"]
-related: ["what-are-claude-skills", "claude-code-skills-best-practices", "testing-and-debugging-skills", "create-skill", "plugin-scaffolder", "claude-settings-auditor"]
+related: ["guide:what-are-claude-skills", "guide:claude-code-skills-best-practices", "guide:testing-and-debugging-skills", "command:create-skill", "skill:plugin-scaffolder", "skill:claude-settings-auditor"]
 featured: false
 summary: "Point this skill at a skills directory and it returns a health report: descriptions that overlap enough to misroute, triggers in implementation language that never match a real request, bloated bodies, missing boundaries, and over-broad allowed-tools grants — each finding paired with a concrete rewrite, in severity order."
 ---

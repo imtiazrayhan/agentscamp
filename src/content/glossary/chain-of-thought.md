@@ -4,7 +4,7 @@ description: "Chain-of-thought prompting has a model work through intermediate r
 date: 2026-06-11
 topics: ["workflow-prompting"]
 tags: ["chain-of-thought", "prompting", "reasoning", "llm"]
-related: ["prompting-techniques-2026", "reasoning-model", "few-shot-prompting", "prompt-patterns"]
+related: ["guide:prompting-techniques-2026", "glossary:reasoning-model", "glossary:few-shot-prompting", "guide:prompt-patterns"]
 faq:
   - q: "Does 'think step by step' still help on modern models?"
     a: "Less than it used to, and sometimes not at all. Reasoning models think internally by default, so an explicit CoT instruction is often redundant — and can add latency without accuracy. CoT prompting still earns its keep on non-reasoning models and on tasks where you want the steps visible for auditing."

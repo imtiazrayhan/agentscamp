@@ -7,7 +7,7 @@ title: "Scaffold a pgvector Schema & HNSW Index"
 color: "blue"
 date: 2026-06-04
 topics: ["data-ml", "rag-retrieval"]
-related: ["pgvector", "best-vector-database-2026", "embedding-index-tuner", "vector-search-engineer"]
+related: ["tool:pgvector", "guide:best-vector-database-2026", "skill:embedding-index-tuner", "agent:vector-search-engineer"]
 featured: false
 summary: "Turn 'I need vectors in Postgres' into a correct, migration-managed schema. This command scaffolds a pgvector table, the right vector dimension and distance operator class, an HNSW index, and a filtered similarity query — using the project's existing migration tool, not hand-run DDL."
 ---

@@ -21,7 +21,7 @@ faq:
     a: "Yes. Aider is model-agnostic — pass an Anthropic API key and it drives Claude Opus or Sonnet like any other model. The difference is tuning: Claude Code is built around Anthropic's models and its agentic loop is co-designed with them, while Aider treats every model as a swappable backend."
   - q: "Which has better git integration?"
     a: "Both are git-native, but differently. Aider's signature is a commit per change with an auto-generated message, making every AI edit reviewable and trivially reversible. Claude Code stages, commits, and opens PRs on request — fewer, intentional commits rather than one per edit. Aider's discipline suits cautious review; Claude Code's suits feature-shaped work."
-related: ["aider", "claude-code", "claude-code-vs-codex-cli", "claude-code-vs-opencode", "ai-coding-agents-cli-2026", "opencode"]
+related: ["tool:aider", "tool:claude-code", "guide:claude-code-vs-codex-cli", "guide:claude-code-vs-opencode", "guide:ai-coding-agents-cli-2026", "tool:opencode"]
 ---
 
 Aider vs Claude Code is the open-source-versus-first-party split made concrete in the terminal: **a model-agnostic, git-disciplined pair-programmer** against **a tuned, extensible agent harness**. Both edit your repo from the command line; they disagree on who owns the model and how much agent you want.

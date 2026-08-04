@@ -14,12 +14,22 @@ import {
   loadGlossary,
 } from "../src/lib/content/loaders";
 import { getCategories } from "../src/lib/content/index";
-import { topics, topicBySlug } from "../src/lib/content/registry";
+import {
+  contentTypes,
+  topics,
+  topicBySlug,
+} from "../src/lib/content/registry";
 import { graphFor, siteGraph, collectionGraph } from "../src/lib/seo/jsonld";
 import {
   categoryCollection,
   topicCollection,
+  toolAlternativesCollection,
 } from "../src/lib/seo/collections";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import GithubSlugger from "github-slugger";
+import fs from "node:fs";
+import path from "node:path";
 import type {
   ContentItem,
   ContentTypeId,
@@ -39,6 +49,49 @@ const warn = (m: string) => {
 };
 
 const validTopics = new Set(topics.map((t) => t.slug));
+const contentId = (item: ContentItem) => `${item.type}:${item.slug}`;
+
+interface MarkdownNode {
+  type: string;
+  value?: string;
+  url?: string;
+  children?: MarkdownNode[];
+}
+
+function nodeText(node: MarkdownNode): string {
+  if (node.type === "text" || node.type === "inlineCode") return node.value ?? "";
+  return (node.children ?? []).map(nodeText).join("");
+}
+
+function markdownLinksAndHeadings(body: string) {
+  const tree = unified().use(remarkParse).parse(body) as MarkdownNode;
+  const links: { url: string; text: string }[] = [];
+  const headings = new Set<string>();
+  const slugger = new GithubSlugger();
+  const visit = (node: MarkdownNode) => {
+    if (node.type === "link" && node.url) {
+      links.push({ url: node.url, text: nodeText(node) });
+    }
+    if (node.type === "heading") headings.add(slugger.slug(nodeText(node)));
+    for (const child of node.children ?? []) visit(child);
+  };
+  visit(tree);
+  return { links, headings };
+}
+
+function internalUrl(raw: string, from: string): URL | null {
+  if (/^(mailto:|tel:|data:|javascript:)/i.test(raw) || raw.startsWith("//")) {
+    return null;
+  }
+  const url = new URL(raw, `https://agentscamp.local${from}`);
+  if (
+    url.hostname !== "agentscamp.local" &&
+    url.hostname !== "agentscamp.com"
+  ) {
+    return null;
+  }
+  return url;
+}
 
 /** Recursively collect defined (@type+@id) vs pure-reference (@id only) ids. */
 function walkIds(node: unknown, defined: Set<string>, referenced: Set<string>) {
@@ -82,14 +135,16 @@ function run() {
   }
 
   const all = Object.values(groups).flat();
-  const slugs = new Map<string, string>();
+  const ids = new Map<string, string>();
 
   for (const [type, items] of Object.entries(groups)) {
     const seen = new Set<string>();
     for (const item of items) {
       if (seen.has(item.slug)) err(`duplicate ${type} slug: ${item.slug}`);
       seen.add(item.slug);
-      slugs.set(item.slug, item.href);
+      const id = contentId(item);
+      if (ids.has(id)) err(`duplicate content ID: ${id}`);
+      ids.set(id, item.href);
       if (!item.href || !item.href.startsWith("/"))
         err(`bad href for ${type}/${item.slug}: ${item.href}`);
     }
@@ -154,11 +209,104 @@ function run() {
         warn(`tool/${t.slug}: alternativeTo "${alt}" is not a known tool`);
   }
 
-  // related refs are advisory (warn only)
+  // Related refs are typed and strict: a missing edge is a broken visible link.
   for (const item of all) {
-    for (const ref of item.related)
-      if (!slugs.has(ref))
-        warn(`${item.type}/${item.slug} -> unknown related: ${ref}`);
+    const seen = new Set<string>();
+    for (const ref of item.related) {
+      if (!ids.has(ref)) err(`${contentId(item)} -> unknown related: ${ref}`);
+      if (ref === contentId(item)) err(`${contentId(item)} has a self-related ref`);
+      if (seen.has(ref)) err(`${contentId(item)} repeats related ref: ${ref}`);
+      seen.add(ref);
+    }
+  }
+
+  // --- rendered Markdown link integrity ---
+  const validRoutes = new Set<string>([
+    "/",
+    "/how-to-use",
+    "/topics",
+    "/search",
+    "/llms.txt",
+    "/llms-full.txt",
+    "/feed.xml",
+    "/sitemap.xml",
+  ]);
+  for (const def of Object.values(contentTypes)) validRoutes.add(def.basePath);
+  for (const item of all) validRoutes.add(item.href);
+  for (const type of ["agent", "skill", "guide", "command"] as ContentTypeId[]) {
+    const def = contentTypes[type];
+    for (const category of getCategories(type)) {
+      validRoutes.add(`${def.basePath}/${category.slug}`);
+    }
+  }
+  for (const category of getCategories("tool")) {
+    validRoutes.add(`/tools/category/${category.slug}`);
+  }
+  for (const topic of topics) {
+    if (topicCollection(topic.slug)) validRoutes.add(`/topics/${topic.slug}`);
+  }
+  for (const tool of groups.tool as ToolItem[]) {
+    validRoutes.add(`/tools/pricing/${tool.pricing}`);
+    if (toolAlternativesCollection(tool.slug)) {
+      validRoutes.add(`${tool.href}/alternatives`);
+    }
+  }
+
+  const markdown = new Map(
+    all.map((item) => [item.href, markdownLinksAndHeadings(item.body ?? "")]),
+  );
+  const contentHrefs = new Set(all.map((item) => item.href));
+  const contextualIncoming = new Map(
+    all.map((item) => [item.href, new Set<string>()]),
+  );
+  const oldUrlSnapshot = path.join(process.cwd(), "migration", "old-urls.txt");
+  const redirects = new Set<string>();
+  if (fs.existsSync(oldUrlSnapshot)) {
+    for (const oldUrl of fs.readFileSync(oldUrlSnapshot, "utf8").split("\n")) {
+      const route = oldUrl.trim();
+      if (route && !validRoutes.has(route)) redirects.add(route);
+    }
+  }
+
+  const exportSuffix = /\.(?:md|agent\.md|cursor\.mdc|cline\.md|windsurf\.md|continue\.md)$/;
+  for (const item of all) {
+    for (const link of markdown.get(item.href)?.links ?? []) {
+      let url: URL | null;
+      try {
+        url = internalUrl(link.url, item.href);
+      } catch {
+        err(`${contentId(item)} has malformed link "${link.url}"`);
+        continue;
+      }
+      if (!url) continue;
+      const route = url.pathname.replace(/\/$/, "") || "/";
+      if (redirects.has(route)) {
+        err(`${contentId(item)} links through a redirect: ${link.url}`);
+      } else if (!validRoutes.has(route) && !exportSuffix.test(route)) {
+        err(`${contentId(item)} has broken internal link: ${link.url}`);
+        continue;
+      }
+      if (contentHrefs.has(route) && route !== item.href) {
+        contextualIncoming.get(route)?.add(item.href);
+      }
+      if (url.hash && markdown.has(route)) {
+        let fragment: string;
+        try {
+          fragment = decodeURIComponent(url.hash.slice(1));
+        } catch {
+          err(`${contentId(item)} has malformed fragment: ${link.url}`);
+          continue;
+        }
+        if (!markdown.get(route)?.headings.has(fragment)) {
+          err(`${contentId(item)} has missing heading fragment: ${link.url}`);
+        }
+      }
+    }
+  }
+  for (const item of all) {
+    if (contextualIncoming.get(item.href)?.size === 0) {
+      err(`${contentId(item)} has no contextual inbound link from other content`);
+    }
   }
 
   // --- structured-data closed-graph check (no dangling @id) ---

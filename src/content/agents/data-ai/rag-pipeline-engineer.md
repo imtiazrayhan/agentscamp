@@ -6,7 +6,7 @@ color: "cyan"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-03
 topics: ["rag-retrieval"]
-related: ["retrieval-engineer", "chunking-strategy-optimizer", "how-rag-works", "chonkie", "qdrant", "ml-engineer"]
+related: ["agent:retrieval-engineer", "skill:chunking-strategy-optimizer", "guide:how-rag-works", "tool:chonkie", "tool:qdrant", "agent:ml-engineer"]
 featured: false
 summary: "Builds production RAG pipelines as measured systems, not demos: it owns the whole chain — ingestion, chunking, embeddings, vector store, retrieval, reranking, and grounded generation — and gates every stage on a frozen eval set so 'it works on the demo query' never ships as 'it works.'"
 ---

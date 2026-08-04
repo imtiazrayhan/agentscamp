@@ -8,7 +8,7 @@ color: "cyan"
 title: "SLO Definer"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["slo-error-budget-guide", "structured-logging-designer", "load-test-designer", "rate-limiter-designer"]
+related: ["guide:slo-error-budget-guide", "skill:structured-logging-designer", "skill:load-test-designer", "skill:rate-limiter-designer"]
 featured: false
 summary: "\"Make it reliable\" is not a target you can measure or alert on. This skill turns it into SLIs (good-event ratios at the user boundary), SLOs (a target over a rolling window), an error budget with a written spend policy, and burn-rate alerts that page when the budget is at risk — not when a host metric blips."
 faq:

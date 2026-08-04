@@ -38,7 +38,7 @@ faq:
     a: "Through in-process MCP: define each tool with the tool() helper (name, description, a zod schema in TypeScript, and an async handler), group them with createSdkMcpServer(), and pass it via options.mcpServers. No separate server process — your application functions become agent tools."
   - q: "How is SDK usage billed?"
     a: "Via the API (per token) when authenticated with an API key, or through Bedrock/Vertex on those platforms. On Claude subscription plans, Agent SDK and claude -p usage currently still draws from your normal plan limits — Anthropic announced a separate monthly Agent SDK credit for June 15, 2026 but paused it before it took effect, so verify the current policy."
-related: ["claude-agent-sdk", "claude-code-ci-github-actions", "agent-frameworks-2026", "writing-a-custom-agent", "agent-reliability-reviewer", "openai-agents-sdk", "production-tool-calling", "claude-code"]
+related: ["tool:claude-agent-sdk", "guide:claude-code-ci-github-actions", "guide:agent-frameworks-2026", "guide:writing-a-custom-agent", "agent:agent-reliability-reviewer", "tool:openai-agents-sdk", "guide:production-tool-calling", "tool:claude-code"]
 ---
 
 At some point "Claude Code handles this perfectly in my terminal" wants to become "this runs in my product / pipeline / Slack bot." The **Claude Agent SDK** is that path: the same engine — agent loop, built-in tools, permissions, MCP, subagents, hooks — as a TypeScript/Python library. You stop driving the agent and start shipping it.

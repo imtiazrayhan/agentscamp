@@ -4,7 +4,7 @@ description: "Hybrid search runs keyword (BM25) and semantic (vector) retrieval 
 date: 2026-06-12
 topics: ["rag-retrieval"]
 tags: ["hybrid-search", "bm25", "retrieval", "rag"]
-related: ["hybrid-search-reranking", "semantic-search", "reranking", "rag", "vector-database"]
+related: ["guide:hybrid-search-reranking", "glossary:semantic-search", "glossary:reranking", "glossary:rag", "glossary:vector-database"]
 faq:
   - q: "Why combine keyword and vector search?"
     a: "Their failure modes are complementary. Vector search finds paraphrases ('laptop won't boot' → 'system fails to start') but fuzzes exact tokens; keyword search nails identifiers, error codes, and SKUs but misses rephrasings. Run both and each covers the other's blind spot — the single highest-ROI retrieval upgrade for most corpora."

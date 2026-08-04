@@ -18,7 +18,7 @@ sameAs:
   - "https://github.com/FlowiseAI/Flowise"
   - "https://docs.flowiseai.com"
   - "https://flowiseai.com"
-related: ["n8n-vs-dify", "agent-frameworks-2026", "best-ai-app-builders-2026", "building-multi-step-workflows"]
+related: ["guide:n8n-vs-dify", "guide:agent-frameworks-2026", "guide:best-ai-app-builders-2026", "guide:building-multi-step-workflows"]
 summary: "Flowise is an open-source, low-code platform for building LLM apps and AI agents on a drag-and-drop canvas. You wire nodes into chains, agents, and RAG flows, then self-host the Apache-2.0 core or run Flowise Cloud. Built flows expose an API and embed widget, so prototypes ship as real product surfaces."
 faq:
   - q: "What is Flowise?"

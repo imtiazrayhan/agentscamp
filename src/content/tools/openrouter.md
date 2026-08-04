@@ -13,7 +13,7 @@ tags: ["gateway", "multi-provider", "router", "api"]
 featured: false
 alternativeTo: ["litellm"]
 summary: "OpenRouter is a hosted gateway to hundreds of models across providers behind one OpenAI-compatible API, one API key, and one bill. It handles routing, automatic fallbacks, and provider load-balancing — the zero-infrastructure way to call any model, including some free ones."
-related: ["litellm", "calling-any-model-gateways", "vercel-ai-sdk"]
+related: ["tool:litellm", "guide:calling-any-model-gateways", "tool:vercel-ai-sdk"]
 faq:
   - q: "What is OpenRouter?"
     a: "OpenRouter is a hosted router that puts hundreds of models — from OpenAI, Anthropic, Google, Meta, and many open-weight providers — behind a single OpenAI-compatible API with one key and one bill. Because it sits in front of multiple upstream providers, it can fall back and load-balance across them, so one provider's outage or rate limit doesn't take your app down."

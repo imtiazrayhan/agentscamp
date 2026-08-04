@@ -5,7 +5,7 @@ author: "AgentsCamp"
 color: "green"
 topics: ["data-ml", "rag-retrieval"]
 tags: ["embeddings", "vectors", "semantic-search", "rag", "concepts"]
-related: ["embedding", "cosine-similarity", "vector-database", "choosing-embeddings-2026", "how-rag-works"]
+related: ["glossary:embedding", "glossary:cosine-similarity", "glossary:vector-database", "guide:choosing-embeddings-2026", "guide:how-rag-works"]
 featured: false
 date: 2026-06-17
 summary: "An embedding turns text or images into a vector positioned so that semantic similarity becomes geometric closeness. Search, RAG, clustering, and dedup all reduce to comparing those vectors. The non-negotiable rules: queries and documents must use the same model, vectors should be normalized, and changing models means re-embedding everything."
@@ -121,3 +121,7 @@ Embeddings are the right primitive for "find me things that mean roughly this." 
 3. **Embed documents and store the vectors** (plus metadata and source text) in a vector database; normalize if the model doesn't.
 4. **Embed the query with the same model** and search by cosine similarity / dot product.
 5. **Re-embed when you change models** — rebuild the entire index, since old and new vectors live in incompatible spaces.
+
+## Continue exploring
+
+- [Multimodal Embeddings and Image Search](/guides/vision/multimodal-embeddings-and-image-search) — How multimodal embeddings put images and text in one vector space, and how to build text-to-image and image-to-image search on top of it.

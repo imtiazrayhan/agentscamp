@@ -23,7 +23,7 @@ faq:
     a: "They're orthogonal upgrades. GraphRAG changes WHAT you retrieve over (a knowledge graph); agentic RAG changes HOW retrieval is driven (iteratively, by an agent). Mature systems combine them — an agent that can choose vector search, graph traversal, SQL, or web per sub-question is the full expression of the pattern."
   - q: "What's the catch?"
     a: "Latency and variance. Three to ten retrieval/LLM rounds per question costs seconds and tokens, and agent autonomy introduces loop/early-stop failure modes a pipeline never had. Production deployments cap iterations, log every hop, and eval end-to-end answer quality — not just retrieval metrics."
-related: ["how-rag-works", "graph-rag", "rag-vs-long-context", "hybrid-search-reranking", "rag-pipeline-engineer", "production-tool-calling", "write-llm-evals"]
+related: ["guide:how-rag-works", "guide:graph-rag", "guide:rag-vs-long-context", "guide:hybrid-search-reranking", "agent:rag-pipeline-engineer", "guide:production-tool-calling", "guide:write-llm-evals"]
 ---
 
 Classic [RAG](/glossary/rag) is a pipeline with the intelligence at the end: embed the user's query, fetch top-k, hand it to the model, hope. Its defining weakness is that **the retrieval happens before any thinking does** — one shot, on the user's raw phrasing, with no recourse if the shot misses. Agentic RAG moves the intelligence forward: retrieval becomes a *tool* an [agent](/glossary/ai-agent) wields — repeatedly, judgmentally — rather than a fixed pre-step.

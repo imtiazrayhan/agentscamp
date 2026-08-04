@@ -15,7 +15,7 @@ tags: ["agents", "framework", "multi-agent", "open-source", "python"]
 featured: false
 alternativeTo: ["langgraph", "autogen", "openai-agents-sdk"]
 summary: "CrewAI orchestrates multiple agents as a 'crew' with roles, goals, and tasks — a high-level, fast-to-start abstraction for collaborative multi-agent work. It also offers Flows for event-driven, more deterministic control when you need it. Standalone and independent of LangChain."
-related: ["langgraph", "autogen", "openai-agents-sdk", "agent-frameworks-2026"]
+related: ["tool:langgraph", "tool:autogen", "tool:openai-agents-sdk", "guide:agent-frameworks-2026"]
 faq:
   - q: "What is CrewAI?"
     a: "CrewAI is a Python framework for building multi-agent systems around the metaphor of a crew: agents with a role, a goal, and a backstory working through tasks toward a shared objective, in sequential or hierarchical processes. For tighter, event-driven control it also provides Flows, a more deterministic execution model you can combine with crews."

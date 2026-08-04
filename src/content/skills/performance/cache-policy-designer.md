@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "orange"
 date: 2026-08-04
 topics: ["devops-infra", "architecture"]
-related: ["best-claude-skills-for-performance", "web-vitals-optimizer", "cold-start-optimizer", "load-test-designer", "semantic-cache-designer", "api-architect"]
+related: ["guide:best-claude-skills-for-performance", "skill:web-vitals-optimizer", "skill:cold-start-optimizer", "skill:load-test-designer", "skill:semantic-cache-designer", "agent:api-architect"]
 featured: true
 summary: "Designs cache behavior per object and layer by identifying ownership, variation keys, freshness bounds, invalidation events, privacy constraints, stampede protection, stale-on-failure behavior, and observability. It produces explicit headers or key rules plus correctness tests rather than applying one TTL everywhere."
 faq:

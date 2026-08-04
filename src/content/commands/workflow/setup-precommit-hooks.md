@@ -5,7 +5,7 @@ title: "Setup Pre-commit Hooks"
 color: "purple"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["setup-claude-ci", "scaffold-dockerfile", "claude-code-ci-github-actions", "security-scan"]
+related: ["command:setup-claude-ci", "command:scaffold-dockerfile", "guide:claude-code-ci-github-actions", "command:security-scan"]
 featured: false
 summary: "A slash command that installs fast, staged-only pre-commit hooks: it detects the project's stack and existing hook mechanism (pre-commit framework, Husky + lint-staged, or a native git hook), wires lint/format/typecheck plus a secret scan over staged files, keeps the full test suite in CI, auto-fixes formatting, commits the config, and reports the one-time install command teammates run."
 ---

@@ -23,7 +23,7 @@ faq:
     a: "claude --continue reattaches the most recent session in the current directory; claude --resume (or /resume in-session) opens a picker of past sessions. Sessions are per-directory, so each project — and each git worktree — keeps its own history."
   - q: "How do I make Claude Code think harder on a problem?"
     a: "Include 'ultrathink' in the prompt for maximum reasoning on that turn, or toggle extended thinking for the session (Option+T on macOS, Alt+T elsewhere). Watch the reasoning with Ctrl+O if you want to see the work."
-related: ["installing-claude-code", "what-is-claude-code", "claude-code-memory-context", "claude-code-settings-permissions", "claude-code-hooks", "claude-code-mcp-setup", "parallel-claude-code-worktrees", "prompt-patterns"]
+related: ["guide:installing-claude-code", "guide:what-is-claude-code", "guide:claude-code-memory-context", "guide:claude-code-settings-permissions", "guide:claude-code-hooks", "guide:claude-code-mcp-setup", "guide:parallel-claude-code-worktrees", "guide:prompt-patterns"]
 ---
 
 Claude Code rewards depth: the default chat loop works on day one, but the operators who get 10x from it are using a different toolset — prefixes, modes, session surgery, and a few flags. Here are the 25 tips that pay off most, grouped by what they speed up.
@@ -90,3 +90,9 @@ Claude Code rewards depth: the default chat loop works on day one, but the opera
 
 > [!TIP]
 > Don't adopt 25 habits at once. Take three — `!` for shell, `Esc` to interrupt, `/clear` between tasks — and add the rest as the friction they remove starts to itch. When something breaks instead of merely chafing, the [troubleshooting guide](/guides/troubleshooting/claude-code-troubleshooting) is the companion piece.
+
+## Continue exploring
+
+- [documentation-engineer](/agents/developer-tools/documentation-engineer) — Use this agent to write and maintain technical docs that stay true to the code — READMEs, how-to guides, API references, and runbooks.
+- [Commit](/commands/git/commit) — Stage changes and write a Conventional Commits message describing them.
+- [Git Undo](/commands/git/git-undo) — Safely reverse the last Git operation in the current repo — pick the right tool (restore, reset --soft/--mixed, revert, or reflog recovery) based on what happened and whether…

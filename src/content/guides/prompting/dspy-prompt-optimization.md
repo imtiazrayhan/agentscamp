@@ -38,7 +38,7 @@ faq:
     a: "An optimizer (DSPy calls them teleprompters) takes your program, metric, and training data and searches for the prompt configuration that maximizes the metric. Depending on the optimizer that means bootstrapping few-shot demonstrations from your data (BootstrapFewShot), jointly optimizing instructions and demonstrations with Bayesian search (MIPROv2), or reflectively evolving the instructions using feedback (GEPA). It compiles the result into your program so the next run uses the tuned prompts."
   - q: "When is DSPy overkill?"
     a: "When you have a single simple prompt, no way to measure quality, or a one-off task you won't iterate on. DSPy's value comes from automating repeated optimization against a metric, so if you can't define a metric or won't run the loop more than once, hand-tuning (or the prompt-optimizer skill) is faster. It earns its complexity on multi-step pipelines, tasks with measurable quality, and anything you'll need to re-tune as models change."
-related: ["dspy", "prompting-techniques-2026", "prompt-optimizer", "prompt-engineer", "structured-output-2026"]
+related: ["tool:dspy", "guide:prompting-techniques-2026", "skill:prompt-optimizer", "agent:prompt-engineer", "guide:structured-output-2026"]
 ---
 
 Hand-tuning prompts is the part of LLM work that doesn't scale. You tweak a sentence, eyeball three outputs, decide it's "better," and ship — then a model upgrade silently undoes all of it and you start over. [DSPy](/tools/dspy) (from Stanford NLP) takes a different stance: treat an LLM pipeline as a **program you compile**, where you specify *what* each step does and an optimizer works out *how* to prompt for it against a metric you define.

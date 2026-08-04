@@ -23,7 +23,7 @@ faq:
     a: "Bigger isn't automatically better. Higher dimensions can improve quality but cost more storage and slow search. Many modern models use Matryoshka representation learning, so you can truncate the vector (e.g. 1024 → 256) and trade a little accuracy for big storage and speed savings. Pick the smallest dimension that still hits your retrieval target on your eval set."
   - q: "Can I mix embeddings from different models in one index?"
     a: "No. Vectors from different models live in different spaces and are not comparable — mixing them produces meaningless similarities. If you change embedding models, you must re-embed and re-index your entire corpus. That re-embedding cost is the main lock-in to weigh before choosing."
-related: ["how-rag-works", "voyage-ai", "embedding-set-inspector", "cohere-rerank", "data-scientist"]
+related: ["guide:how-rag-works", "tool:voyage-ai", "skill:embedding-set-inspector", "tool:cohere-rerank", "agent:data-scientist"]
 ---
 
 The embedding model is the lens your whole retrieval system looks through: it decides which passages count as "similar" to a question. Pick well and retrieval is easy; pick badly and no reranker fully recovers. The catch is that the choice carries **lock-in** — switching models later means re-embedding and re-indexing everything — so it's worth a deliberate decision rather than defaulting to whatever the tutorial used.
@@ -74,3 +74,7 @@ Then confirm the choice on your own data before you commit — because re-embedd
 > Match your distance metric to the model (cosine vs. dot product vs. L2) and use the model's asymmetric input types — document for the corpus, query for the question. A mismatch here silently degrades retrieval and is one of the most common embedding bugs.
 
 For where embeddings sit in the broader system, see [How RAG Actually Works](/guides/concepts/how-rag-works); for handing the build to an agent, the [data-scientist](/agents/data-ai/data-scientist) and [rag-pipeline-engineer](/agents/data-ai/rag-pipeline-engineer) can take it from a shortlist to a measured choice.
+
+## Continue exploring
+
+- [Embedding Dimension](/glossary/embedding-dimension) — Embedding dimension is the length of an embedding vector — how many numbers represent each text — trading capacity against storage and search cost.

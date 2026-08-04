@@ -21,7 +21,7 @@ faq:
     a: "For most teams, yes. Langfuse ships datasets, LLM-as-judge evaluators, human annotation queues, and experiment comparison — the standard eval loop. LangSmith's eval UX is arguably more polished and tighter with LangGraph; Langfuse counters with openness and the ability to keep eval data on your infrastructure. Both beat the real enemy: not measuring at all."
   - q: "Which should a team adopt today?"
     a: "Decide on two axes. Stack: deep LangChain/LangGraph → LangSmith; mixed or framework-free → Langfuse. Data: traces can live in vendor SaaS → either; must stay in-house → Langfuse self-hosted. When both axes are neutral, Langfuse's open-source posture makes it the lower-regret default."
-related: ["langfuse", "langsmith", "best-llm-eval-tools-2026", "write-llm-evals", "llm-observability-engineer", "llm-as-judge"]
+related: ["tool:langfuse", "tool:langsmith", "guide:best-llm-eval-tools-2026", "guide:write-llm-evals", "agent:llm-observability-engineer", "glossary:llm-as-judge"]
 ---
 
 Once an LLM feature ships, the questions change: *what did the model actually do, why did this trace cost $4, which prompt version regressed?* Answering them is observability, and **Langfuse vs LangSmith** is the category's defining matchup — first-party ecosystem depth versus open-source neutrality.

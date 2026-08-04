@@ -6,7 +6,7 @@ color: "blue"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-03
 topics: ["rag-retrieval"]
-related: ["rag-pipeline-engineer", "hybrid-search-reranking", "cohere-rerank", "qdrant", "benchmark-rerankers"]
+related: ["agent:rag-pipeline-engineer", "guide:hybrid-search-reranking", "tool:cohere-rerank", "tool:qdrant", "command:benchmark-rerankers"]
 featured: false
 summary: "Specialist in the retrieval half of RAG: it diagnoses and fixes recall and precision with hybrid search, reranking, query transformation, and metadata filtering — every change scored on a labeled query set, because retrieval is where most RAG failures actually live."
 ---

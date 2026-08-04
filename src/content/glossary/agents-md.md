@@ -4,7 +4,7 @@ description: "AGENTS.md is a versioned instruction file that tells coding agents
 date: 2026-08-04
 topics: ["workflow-prompting", "ai-agents-systems"]
 tags: ["agents-md", "codex", "instructions", "coding-agents", "configuration"]
-related: ["codex-agents-md", "openai-codex-guide", "agent-skills", "system-prompt", "context-engineering"]
+related: ["guide:codex-agents-md", "guide:openai-codex-guide", "glossary:agent-skills", "glossary:system-prompt", "glossary:context-engineering"]
 faq:
   - q: "What does AGENTS.md do?"
     a: "It gives coding agents durable repository context before they work: important paths, setup and verification commands, engineering constraints, and definitions of done. Because the file is committed with the code, the team can review and update the instructions like any other project artifact."

@@ -4,7 +4,7 @@ description: "Agent Skills are reusable procedures packaged as folders with a SK
 date: 2026-07-18
 topics: ["ai-agents-systems", "workflow-prompting"]
 tags: ["skills", "skill-md", "claude-code", "agent-skills", "open-standard"]
-related: ["what-are-claude-skills", "skill-md-reference", "writing-your-first-skill", "skills-vs-agents-vs-commands", "context-window", "system-prompt"]
+related: ["guide:what-are-claude-skills", "guide:skill-md-reference", "guide:writing-your-first-skill", "guide:skills-vs-agents-vs-commands", "glossary:context-window", "glossary:system-prompt"]
 faq:
   - q: "What is the difference between Agent Skills and Claude Skills?"
     a: "Same thing, two scopes. 'Claude Skills' is the everyday name for the feature across Claude Code, claude.ai, and the Claude API; 'Agent Skills' is the format's formal name — and since December 2025, an open standard (agentskills.io) that non-Claude tools like GitHub Copilot, Cursor, and Gemini CLI also implement."

@@ -23,7 +23,7 @@ faq:
     a: "Codex combines instruction files from the project root down to the current working directory. The closer file appears later, so its guidance wins when instructions conflict. Within one directory, AGENTS.override.md is selected before AGENTS.md."
   - q: "What should not go in AGENTS.md?"
     a: "Do not put one-off task requirements, secrets, long tutorials, or rules already enforced mechanically by a formatter or CI there. Keep it focused on durable information that helps an agent make or verify changes in this repository."
-related: ["agents-md", "openai-codex-guide", "codex-skills-guide", "context-engineering", "system-prompt", "agent-skills"]
+related: ["glossary:agents-md", "guide:openai-codex-guide", "guide:codex-skills-guide", "guide:context-engineering", "glossary:system-prompt", "glossary:agent-skills"]
 howtoSteps:
   - name: "Inventory the repository"
     text: "Record only the layout, setup commands, checks, and constraints an agent needs to work safely; prefer commands you have actually run."
@@ -136,3 +136,7 @@ If guidance is missing, check the working directory, repository root detection, 
 The best `AGENTS.md` is not comprehensive. It is current, scoped, and operational: the smallest document that lets a new agent enter the repository and do verifiable work without relearning the same lessons.
 
 Official reference: [Custom instructions with AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
+
+## Continue exploring
+
+- [AGENTS.md](/glossary/agents-md) — AGENTS.md is a versioned instruction file that tells coding agents how to work in a repository — including commands, conventions, boundaries, and checks.

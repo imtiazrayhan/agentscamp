@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
 topics: ["data-ml", "rag-retrieval"]
-related: ["best-vector-database-2026", "vector-search-engineer", "pgvector", "qdrant", "embedding-set-inspector"]
+related: ["guide:best-vector-database-2026", "agent:vector-search-engineer", "tool:pgvector", "tool:qdrant", "skill:embedding-set-inspector"]
 featured: false
 summary: "Vector-index defaults are rarely right for your workload. This skill makes index tuning measured: fix a query set and recall target, sweep HNSW parameters (m, ef_construction, ef_search) and quantization modes, and recommend the cheapest, fastest configuration that still clears the recall bar."
 ---

@@ -23,7 +23,7 @@ faq:
     a: "When agents you don't control must work together: a vendor's support agent delegating to your billing agent, cross-team agents inside a large org, or marketplace-style agent ecosystems. If all your 'agents' are subagents inside one application, your framework's orchestration plus MCP for tools is simpler and enough."
   - q: "Who governs MCP and A2A?"
     a: "Both are Linux Foundation projects now. Google donated A2A in June 2025 (the Agent2Agent project, with AWS, Microsoft, Salesforce, SAP, and others); Anthropic donated MCP in December 2025 to the new Agentic AI Foundation, co-founded with Block and OpenAI. Neither protocol is single-vendor-controlled anymore."
-related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "building-an-mcp-server", "deploy-remote-mcp-server", "agent-frameworks-2026", "multi-agent-orchestration", "production-tool-calling"]
+related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "guide:building-an-mcp-server", "guide:deploy-remote-mcp-server", "guide:agent-frameworks-2026", "guide:multi-agent-orchestration", "guide:production-tool-calling"]
 ---
 
 Two protocols keep getting compared as rivals when they standardize **different edges of the same system**. MCP is how an agent reaches its tools and data. [A2A](/glossary/a2a-protocol) is how agents reach each other. The cleanest summary is the official one, from the A2A documentation itself: *"A2A focuses on agents partnering on tasks, whereas MCP focuses on agents using capabilities."*

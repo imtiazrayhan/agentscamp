@@ -5,7 +5,7 @@ date: 2026-06-03
 title: "Commit"
 color: "purple"
 topics: ["workflow-prompting"]
-related: ["conventional-commits"]
+related: ["skill:conventional-commits"]
 summary: "A slash command that creates a well-formed git commit: it inspects status, diffs, and recent log, stages only the files belonging to one logical change, writes a Conventional Commits message with an imperative subject under 72 characters, then commits and verifies — flagging secrets and never pushing unasked."
 ---
 

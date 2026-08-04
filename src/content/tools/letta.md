@@ -16,7 +16,7 @@ alternativeTo: ["mem0", "zep"]
 sameAs:
   - "https://github.com/letta-ai"
   - "https://x.com/letta_ai"
-related: ["mem0-vs-zep-vs-letta", "agent-memory", "mem0", "zep", "claude-code-vs-opencode", "agent-memory-architecture"]
+related: ["guide:mem0-vs-zep-vs-letta", "glossary:agent-memory", "tool:mem0", "tool:zep", "guide:claude-code-vs-opencode", "guide:agent-memory-architecture"]
 summary: "Letta (formerly MemGPT, Apache-2.0, ~23k stars) builds agents that manage their own memory — self-editing memory blocks, conversation search, persistence beyond any context window — exposed as an agents server/API with Python/TS SDKs and a visual Agent Development Environment. Its March 2026 pivot made Letta Code the flagship: a memory-first, model-agnostic coding harness."
 faq:
   - q: "How does Letta's memory differ from Mem0 or Zep?"

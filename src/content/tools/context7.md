@@ -16,7 +16,7 @@ sameAs:
   - "https://github.com/upstash/context7"
   - "https://context7.com/docs"
   - "https://www.npmjs.com/package/@upstash/context7-mcp"
-related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "add-mcp-server", "smithery", "documentation-engineer", "govern-mcp-servers"]
+related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "command:add-mcp-server", "tool:smithery", "agent:documentation-engineer", "guide:govern-mcp-servers"]
 alternativeTo: ["exa", "firecrawl", "jina-reader"]
 summary: "Context7 is the most-adopted MCP server in the ecosystem (~57k GitHub stars): it resolves a library name to its indexed docs and injects current, version-specific documentation and code examples into the model's context at query time. Two tools — resolve-library-id and query-docs — kill the 'trained on last year's API' failure mode. Hosted at mcp.context7.com or local via npx."
 faq:

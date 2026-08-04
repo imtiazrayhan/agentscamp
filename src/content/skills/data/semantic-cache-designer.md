@@ -8,7 +8,7 @@ color: "cyan"
 title: "Semantic Cache Designer"
 date: 2026-06-17
 topics: ["llm-app-dev"]
-related: ["embedding-set-inspector", "prompt-cache-optimizer", "chunking-strategy-optimizer"]
+related: ["skill:embedding-set-inspector", "skill:prompt-cache-optimizer", "skill:chunking-strategy-optimizer"]
 featured: false
 summary: "A semantic cache reuses a past LLM answer when a new query is similar enough — saving tokens and latency on repetitive prompts. The whole design hinges on the similarity threshold and a complete cache key. This skill calibrates the threshold on real query pairs, builds a key that won't leak answers across users or models, and tracks hit quality, not just hit rate."
 ---

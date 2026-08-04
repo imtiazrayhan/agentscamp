@@ -21,7 +21,7 @@ faq:
     a: "No. It leans OpenAI (built on the Responses and Chat Completions APIs) but is provider-agnostic and works with 100+ LLMs. The lean is in defaults and ergonomics, not a hard lock — though the smoothest path is the OpenAI stack."
   - q: "Can I start with the Agents SDK and move to LangGraph later?"
     a: "Yes, and it's a sane path. Prototype the agent or crew in the Agents SDK to discover what the system should do, then re-author the parts needing durability and explicit control as a LangGraph graph. Keep tools and prompts framework-agnostic and the migration is mostly orchestration code."
-related: ["openai-agents-sdk", "langgraph", "agent-frameworks-2026", "multi-agent-orchestration", "langgraph-vs-crewai", "pydantic-ai"]
+related: ["tool:openai-agents-sdk", "tool:langgraph", "guide:agent-frameworks-2026", "guide:multi-agent-orchestration", "guide:langgraph-vs-crewai", "tool:pydantic-ai"]
 ---
 
 OpenAI Agents SDK vs LangGraph is the same engineering fork as ever, drawn through agents: **minimal abstraction or explicit control**. Both ship real, multi-step [AI agents](/glossary/ai-agent) to production. They disagree on how much machinery you should write — and therefore own — before the first one runs.

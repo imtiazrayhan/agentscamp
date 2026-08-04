@@ -16,7 +16,7 @@ tags: ["observability", "tracing", "evals", "prompt-management", "open-source"]
 featured: false
 alternativeTo: ["langsmith", "arize-phoenix", "braintrust"]
 summary: "Langfuse is an open-source LLM engineering platform combining tracing, evaluations, prompt management, and cost/latency metrics. Self-host it or use the managed cloud; it's framework-agnostic and a popular open alternative to LangSmith."
-related: ["arize-phoenix", "langsmith", "best-llm-eval-tools-2026", "llm-observability-engineer"]
+related: ["tool:arize-phoenix", "tool:langsmith", "guide:best-llm-eval-tools-2026", "agent:llm-observability-engineer"]
 faq:
   - q: "What is Langfuse?"
     a: "Langfuse is an open-source LLM engineering platform that brings tracing, evaluation, prompt management, and metrics together. It captures nested traces of LLM calls, tool calls, and agent steps with cost and latency per span, lets you score runs manually, with LLM-as-judge, or via user feedback, and versions prompts you can deploy without redeploying your app."

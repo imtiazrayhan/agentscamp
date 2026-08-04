@@ -8,7 +8,7 @@ color: "cyan"
 title: "Auth Flow Reviewer"
 date: 2026-06-17
 topics: ["review-qa"]
-related: ["secret-scanner", "dependency-audit"]
+related: ["skill:secret-scanner", "skill:dependency-audit"]
 featured: false
 summary: "Read-only review of auth code: session/token model, cookie flags, CSRF, token expiry/rotation, password-reset and email-verification flows, and OAuth redirect_uri/state. Its sharpest focus is authorization — confirming every protected route enforces an object-level check, since the common real bug is a logged-in user reaching another user's data. Output: findings by severity, each with a fix."
 faq:

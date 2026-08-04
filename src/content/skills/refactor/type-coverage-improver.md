@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 title: "Type Coverage Improver"
 topics: ["coding-languages"]
-related: ["dead-code-finder", "extract-module", "trace-data-flow"]
+related: ["skill:dead-code-finder", "skill:extract-module", "command:trace-data-flow"]
 featured: false
 summary: "Flipping `strict: true` on a loose codebase floods you with hundreds of errors at once and tempts blanket `any`-casts that defeat the point. This skill makes the climb incremental: count the explicit/implicit `any` baseline, enable strict sub-flags one at a time (highest-traffic files first), and fix the fallout flag-by-flag while the typecheck stays green throughout."
 ---

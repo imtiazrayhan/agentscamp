@@ -25,7 +25,7 @@ faq:
     a: "Use bundle-analyzer when download and parse cost is high. Use react-render-profiler when an already-loaded interface performs unnecessary or expensive renders. Many applications need both."
   - q: "Why audit localization before translating?"
     a: "Translation cannot fix concatenated messages, hard-coded date formats, clipped layouts, Unicode bugs, or broken right-to-left behavior. Localization-readiness-auditor finds those structural blockers first."
-related: ["best-claude-skills-for-performance", "accessibility-regression-auditor", "localization-readiness-auditor", "web-vitals-optimizer", "react-render-profiler", "bundle-analyzer"]
+related: ["guide:best-claude-skills-for-performance", "skill:accessibility-regression-auditor", "skill:localization-readiness-auditor", "skill:web-vitals-optimizer", "skill:react-render-profiler", "skill:bundle-analyzer"]
 ---
 
 The best Claude skills for frontend development protect the experience that exists after code compiles: keyboard navigation, stable layout, responsive interaction, efficient loading, regional correctness, safe browser policy, realistic tests, and coherent caching.
@@ -89,3 +89,9 @@ npx agentscamp add skills/test-scaffolder
 ```
 
 For every UI change, define the critical journey and its states before invoking specialists. That shared scope lets accessibility, performance, localization, and test evidence describe the same user experience.
+
+## Continue exploring
+
+- [New Component](/commands/scaffold/new-component) — Scaffold a new UI component matching the project conventions.
+- [Web Performance Budgets: Turn Speed Into a Release Gate](/guides/performance/web-performance-budgets) — Define and enforce web performance budgets for Core Web Vitals, JavaScript, images, fonts, third parties, and critical journeys in CI and production.
+- [9 Best Claude Skills for Performance Engineering](/guides/skills/best-claude-skills-for-performance) — Compare Claude skills for caching, Web Vitals, bundles, React renders, load tests, cold starts, CPU profiles, memory leaks, and prompt caches.

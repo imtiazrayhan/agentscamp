@@ -23,7 +23,7 @@ faq:
     a: "Tool choice is semantic matching against names and descriptions — overlapping or vague ones make the model guess. Make each tool's purpose disjoint and explicit ('use for X; NOT for Y'), name with verb-object precision, and when two tools genuinely overlap, remove one. If it ignores tools entirely and answers from memory, instruct verification-first behavior explicitly."
   - q: "How do I debug a long agent run that went sideways?"
     a: "Find the divergence point, not the crash point: walk the trace to the first step where an assumption went wrong — everything after is usually faithful execution of that mistake. Then fix the class (the tool output, the missing constraint, the ambiguous instruction) and rerun from a checkpoint before the divergence rather than patching downstream symptoms."
-related: ["agent-reliability-reviewer", "production-tool-calling", "agent-engineering", "claude-code-troubleshooting", "write-llm-evals", "multi-agent-orchestration", "effective-tool-use"]
+related: ["agent:agent-reliability-reviewer", "guide:production-tool-calling", "glossary:agent-engineering", "guide:claude-code-troubleshooting", "guide:write-llm-evals", "guide:multi-agent-orchestration", "guide:effective-tool-use"]
 ---
 
 Agent failures look chaotic — forty turns of confident wrongness — but they're systematic underneath. A handful of failure modes account for nearly everything, each with a recognizable **signature in the trace** and a fix at the *class* level. Debugging agents is mostly learning to read those signatures. (This page covers agents you're *building*; for Claude Code product issues, see [its troubleshooting guide](/guides/troubleshooting/claude-code-troubleshooting).)

@@ -10,7 +10,7 @@ color: "yellow"
 topics: ["coding-languages", "workflow-prompting"]
 tags: ["web", "generation", "in-browser"]
 featured: false
-related: ["v0", "lovable", "replit-agent"]
+related: ["tool:v0", "tool:lovable", "tool:replit-agent"]
 alternativeTo: ["lovable", "v0", "replit-agent", "cursor"]
 summary: "Bolt (bolt.new) is StackBlitz's AI app builder that turns a prompt into a running full-stack web app. The dev environment — Node.js runtime, terminal, dev server, and preview — runs in a WebContainer in your browser tab, so the agent can run the app, read errors, and fix them in the loop. Freemium, metered by tokens, with deploys to a live URL from chat."
 faq:

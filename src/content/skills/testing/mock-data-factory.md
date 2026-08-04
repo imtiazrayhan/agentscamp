@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["review-qa"]
-related: ["test-scaffolder", "test-engineer"]
+related: ["skill:test-scaffolder", "agent:test-engineer"]
 featured: false
 summary: "A skill that generates a typed mock-data factory for a type, interface, or schema: it reads the definition, infers believable values from field names and types (email, UUID, recent ISO date), matches the project's existing fixture conventions and faker library, and emits a build() returning a complete valid object with per-field overrides."
 ---

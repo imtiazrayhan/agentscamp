@@ -43,7 +43,7 @@ faq:
     a: "That is a body problem, not a description problem. The instructions are unclear or missing a boundary. Add concrete numbered steps, point to a canonical example so the model copies the right shape, and state explicitly where the work ends. Verify by comparing the output against a run with the skill disabled in a fresh session."
   - q: "Do I have to restart Claude Code to pick up skill edits while debugging?"
     a: "Usually no. Claude Code watches skill directories, so adding, editing, or removing a SKILL.md under a watched skills folder takes effect within the current session. The one case that needs a restart is creating a top-level skills directory that did not exist when the session started, so it can begin being watched. Note that an already-invoked skill's content stays in context as written — re-invoke it to pick up edits mid-task."
-related: ["what-are-claude-skills", "skill-auditor", "writing-your-first-skill", "claude-code-skills-best-practices", "skills-vs-agents-vs-commands", "packaging-and-sharing-skills"]
+related: ["guide:what-are-claude-skills", "skill:skill-auditor", "guide:writing-your-first-skill", "guide:claude-code-skills-best-practices", "guide:skills-vs-agents-vs-commands", "guide:packaging-and-sharing-skills"]
 ---
 
 A skill that fires is not a skill that works. Seeing Claude pick up your skill tells you the routing matched — it says nothing about whether the skill did what you meant. So test two things, separately: **does it trigger on the prompts it should (and stay quiet on the ones it shouldn't), and is the output correct when it does.** Most failures collapse into a handful of causes, and almost all of them live in one of two places — the `description` (which controls firing) or the body (which controls behavior).
@@ -116,3 +116,7 @@ Don't shotgun fixes. Change **one thing** — the description, or a single body 
 A practical detail while you iterate: editing a `SKILL.md` is picked up live within the session, so you don't restart between attempts. But an already-invoked skill's content stays in context exactly as it was rendered — Claude doesn't re-read the file mid-task — so after an edit, re-invoke the skill (or start a fresh session) to load the new version. Loop until both sets are green: it fires on everything it should, ignores everything it shouldn't, and the output holds up against the disabled-baseline run.
 
 Once it survives that loop, it's ready to share — see [Packaging and Sharing Skills](/guides/skills/packaging-and-sharing-skills). And if testing keeps surfacing the same friction, the problem might be the format itself: [Skills vs Agents vs Commands](/guides/skills/skills-vs-agents-vs-commands) covers when a skill is the wrong tool for the job.
+
+## Continue exploring
+
+- [Claude Skills Not Working? Fixes for Every Failure Mode](/guides/troubleshooting/claude-skills-not-working) — Skill missing from the / menu, never auto-triggering, firing too often, or breaking mid-run — the symptom-by-symptom fix list for Claude skills.

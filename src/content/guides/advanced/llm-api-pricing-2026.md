@@ -23,7 +23,7 @@ faq:
     a: "On Anthropic, no — Fable 5, Opus 4.8, and Sonnet 5 include the full 1M window at standard per-token pricing (a 900k-token request bills at the same rate as a 9k one). Google tiers instead: Gemini 3.1 Pro charges roughly double per token beyond 200K context. Either way you pay for the tokens you send — big windows make big bills possible, not free."
   - q: "Why do you only cite vendor pricing pages?"
     a: "Because third-party price aggregators drift stale within weeks and propagate each other's errors. Every figure on this page was fetched from the provider's own pricing or docs page on the date stamped above; anything we couldn't verify that way is omitted rather than guessed."
-related: ["llm-cost-latency-engineering", "llm-context-windows-compared", "prompt-caching", "batch-inference", "claude-vs-gpt-vs-gemini-coding", "calling-any-model-gateways", "litellm-vs-openrouter"]
+related: ["guide:llm-cost-latency-engineering", "guide:llm-context-windows-compared", "glossary:prompt-caching", "glossary:batch-inference", "guide:claude-vs-gpt-vs-gemini-coding", "guide:calling-any-model-gateways", "guide:litellm-vs-openrouter"]
 ---
 
 All prices are **USD per million [tokens](/glossary/llm-token), standard tier**, read directly from vendor pricing pages on **July 1, 2026**. Prices change; this page is maintained on a refresh cadence (the `Updated` date above is the source of truth), and numbers we couldn't verify on a vendor page are omitted, not estimated.
@@ -91,3 +91,7 @@ Hosted open-weights now sit squarely inside the proprietary mid-tier price band 
 ## Reading the table like an engineer
 
 Three structural facts matter more than any single cell. **Output dominates**: at 3–6x input everywhere — and with [reasoning](/glossary/reasoning-model) thinking-tokens billed as output — verbose responses and deep deliberation drive bills more than prompt size. **The discount stack is enormous**: [prompt-cache](/glossary/prompt-caching) reads at ~0.1x input plus [batch](/glossary/batch-inference) at 50% compose to ~95% off for cacheable offline work — engineering for the stack beats switching vendors. **Tiers beat brands**: every vendor offers frontier/workhorse/budget rungs; [matching the tier to the task](/guides/getting-started/choosing-the-right-model) and measuring **cost per completed task** (not per token) is where the money actually is — the full playbook is [LLM Cost and Latency Engineering](/guides/advanced/llm-cost-latency-engineering).
+
+## Continue exploring
+
+- [LLM Context Windows Compared (2026)](/guides/advanced/llm-context-windows-compared) — Context windows and max output tokens across Claude, GPT, Gemini, DeepSeek, and Grok — the million-token era, what it costs, and what fits in practice.

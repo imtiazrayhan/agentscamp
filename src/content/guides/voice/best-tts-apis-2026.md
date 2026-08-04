@@ -21,7 +21,7 @@ faq:
     a: "For agents, it IS the product: humans notice pauses past a few hundred milliseconds, and TTS time-to-first-audio stacks on top of STT and LLM time in every turn. A voice that's 10% more expressive but 200ms slower makes a worse agent. For narration and content, latency is irrelevant — flip the priorities."
   - q: "Should I just use my voice platform's bundled TTS?"
     a: "Often yes to start: LiveKit Inference, Vapi, and similar platforms make providers swappable, and the bundle simplifies billing and latency budgets. Keep the abstraction thin so you can A/B the specialists — voice quality is a taste decision your users feel, and it's worth one bake-off."
-related: ["elevenlabs", "cartesia", "deepgram", "best-stt-apis-2026", "realtime-voice-apis", "build-a-voice-agent"]
+related: ["tool:elevenlabs", "tool:cartesia", "tool:deepgram", "guide:best-stt-apis-2026", "guide:realtime-voice-apis", "guide:build-a-voice-agent"]
 ---
 
 TTS quietly became two markets. **Produced audio** — narration, content, dubbing — where expressiveness and voice variety win. **Live conversation** — voice agents — where the only metric users feel is *how fast the voice starts*. The 2026 shortlist sorts cleanly along that line.

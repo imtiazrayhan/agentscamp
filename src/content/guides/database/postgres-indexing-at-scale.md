@@ -23,7 +23,7 @@ faq:
     a: "B-Tree is the general-purpose default: equality, range, ordering, and uniqueness on scalar columns. GIN is for columns containing multiple searchable values (jsonb, arrays, full-text, trigrams) — it indexes the elements inside each value. BRIN is a compact, lossy index for very large tables physically ordered by the indexed column, trading precision for a tiny footprint and cheap maintenance. Rule of thumb: B-Tree unless the column is multi-value (GIN) or the table is huge and naturally ordered (BRIN)."
   - q: "Can you have too many indexes in Postgres?"
     a: "Yes, and it's a common, invisible performance drain. Every index must be updated on every INSERT, UPDATE, and DELETE that touches its columns, so each extra index slows writes and consumes storage and maintenance (VACUUM, bloat). Redundant indexes (one whose leading columns another already covers) and unused indexes (idx_scan = 0 in pg_stat_user_indexes) add cost for no benefit. Audit periodically and drop indexes that aren't earning their keep — fewer, well-chosen indexes beat a pile of speculative ones."
-related: ["zero-downtime-postgres-migrations", "postgres-index-strategist", "profile-postgres-queries", "sql-optimizer", "pgvector"]
+related: ["guide:zero-downtime-postgres-migrations", "skill:postgres-index-strategist", "command:profile-postgres-queries", "skill:sql-optimizer", "tool:pgvector"]
 ---
 
 Indexing is where Postgres performance is won or lost, and it's usually misunderstood in two directions at once: teams reach for B-Tree on everything (missing the cases where GIN or BRIN is dramatically better), and they add indexes far more eagerly than they remove them (paying a write tax for reads that never happen). Getting it right means matching the index type to the *query and the data shape*, and treating every index as a cost you have to justify.
@@ -78,3 +78,7 @@ Speculative "might need it" indexes are pure cost until proven otherwise. The di
 Match the index to the shape of the query and the data: **B-Tree** for scalar equality/range/sort, **GIN** for multi-value columns (jsonb, arrays, full-text, trigram), **BRIN** for huge naturally-ordered tables, plus **partial/covering/expression** indexes to trim cost and enable index-only scans. Then treat indexes as a budget — every one taxes writes — and periodically prune the unused and redundant. 
 
 To pick the right index for a specific query, the [postgres-index-strategist](/skills/database/postgres-index-strategist) skill recommends and verifies it against the plan; to find *which* queries (and missing indexes) to target first, profile the workload with [Profile Postgres Queries](/commands/perf/profile-postgres-queries). And note this is all about *scalar/text* indexing — for similarity search over embeddings stored in Postgres, the index is HNSW/IVFFlat via [pgvector](/tools/pgvector), a different tool for a different job.
+
+## Continue exploring
+
+- [Postgres Connection Pooling: Sizing, Timeouts, and Serverless](/guides/database/postgres-connection-pooling-guide) — Size Postgres connection pools across application instances, configure lifecycle timeouts, diagnose saturation, and choose PgBouncer or a managed pooler.

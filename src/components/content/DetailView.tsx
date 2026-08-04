@@ -6,14 +6,22 @@ import { InstallActions } from "./InstallActions";
 import { FaqSection } from "./FaqSection";
 import { Toc } from "./Toc";
 import { extractToc } from "@/lib/toc";
-import { contentTypes } from "@/lib/content/registry";
+import { contentTypes, topicBySlug } from "@/lib/content/registry";
 import { getColorClasses, cn } from "@/lib/utils";
 import { titleCaseLabel, formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
 import type { ContentItem, GuideItem } from "@/lib/content/types";
 
-function Meta({ item }: { item: ContentItem }) {
+function Meta({
+  item,
+  toolCategoryHref,
+  toolPricingHref,
+}: {
+  item: ContentItem;
+  toolCategoryHref?: string;
+  toolPricingHref?: string;
+}) {
   const chips: React.ReactNode[] = [];
   if (item.type === "agent") {
     chips.push(
@@ -46,12 +54,28 @@ function Meta({ item }: { item: ContentItem }) {
     if (item.author) chips.push(<Badge key="a" variant="outline">{item.author}</Badge>);
   } else if (item.type === "tool") {
     chips.push(
-      <Badge key="p" variant="primary" className="capitalize">
-        {item.pricing.replace("-", " ")}
-      </Badge>,
-      <Badge key="c" variant="outline" className="capitalize">
-        {item.category}
-      </Badge>,
+      toolPricingHref ? (
+        <Link key="p" href={toolPricingHref}>
+          <Badge variant="primary" className="capitalize">
+            {item.pricing.replace("-", " ")}
+          </Badge>
+        </Link>
+      ) : (
+        <Badge key="p" variant="primary" className="capitalize">
+          {item.pricing.replace("-", " ")}
+        </Badge>
+      ),
+      toolCategoryHref ? (
+        <Link key="c" href={toolCategoryHref}>
+          <Badge variant="outline" className="capitalize">
+            {item.category}
+          </Badge>
+        </Link>
+      ) : (
+        <Badge key="c" variant="outline" className="capitalize">
+          {item.category}
+        </Badge>
+      ),
     );
   } else if (item.type === "command") {
     chips.push(
@@ -104,9 +128,15 @@ function KeyTakeaways({ items }: { items: string[] }) {
 export function DetailView({
   item,
   related,
+  toolCategoryHref,
+  toolPricingHref,
+  toolAlternativesHref,
 }: {
   item: ContentItem;
   related: ContentItem[];
+  toolCategoryHref?: string;
+  toolPricingHref?: string;
+  toolAlternativesHref?: string;
 }) {
   const def = contentTypes[item.type];
   const accent = getColorClasses(item.type);
@@ -161,13 +191,34 @@ export function DetailView({
         </p>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
-          <Meta item={item} />
+          <Meta
+            item={item}
+            toolCategoryHref={toolCategoryHref}
+            toolPricingHref={toolPricingHref}
+          />
           {updated && (
             <span className="font-mono text-xs text-muted-foreground">
               Updated {formatDate(updated)}
             </span>
           )}
         </div>
+
+        {item.topics.length > 0 && (
+          <nav className="mt-3" aria-label="Topics">
+            <ul className="flex flex-wrap gap-1.5">
+              {item.topics.map((topic) => (
+                <li key={topic}>
+                  <Link
+                    href={`/topics/${topic}`}
+                    className="inline-flex rounded-full border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-xs font-medium text-primary transition-colors hover:bg-primary/10"
+                  >
+                    {topicBySlug.get(topic)?.label ?? titleCaseLabel(topic)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
 
         {item.tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1.5">
@@ -184,6 +235,14 @@ export function DetailView({
 
         <div className="mt-6">
           <InstallActions item={item} />
+          {toolAlternativesHref && (
+            <Link
+              href={toolAlternativesHref}
+              className="mt-3 inline-flex text-sm font-medium text-primary hover:underline"
+            >
+              Compare {item.title} alternatives
+            </Link>
+          )}
         </div>
       </header>
 

@@ -6,7 +6,7 @@ allowed-tools: "Read, Grep, Glob, Edit, Bash"
 title: "Optimize Imports"
 color: "purple"
 topics: ["review-qa"]
-related: ["extract-function", "rename-symbol", "refactor"]
+related: ["command:extract-function", "command:rename-symbol", "command:refactor"]
 featured: false
 summary: "A slash command that cleans up imports without changing behavior: it prefers the project's configured import tool (eslint plugin, ruff, goimports, isort) and runs that, or otherwise removes genuinely-unused imports and groups the rest per convention — carefully preserving side-effect-only, type-only, and dynamically-referenced imports — then verifies with the build, linter, and tests."
 ---

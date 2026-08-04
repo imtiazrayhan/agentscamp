@@ -36,7 +36,7 @@ faq:
     a: "Your project CLAUDE.md is re-read from disk, .claude/rules/ files persist, and auto-memory is untouched. What gets summarized is the conversation — so instructions given only in chat can fade. If it must survive, it belongs in a file, not just a message."
   - q: "How do I add something to Claude Code's memory quickly?"
     a: "Start a message with # — e.g. '# always use pnpm in this repo' — and Claude Code saves it to memory. Run /memory to browse and edit everything that's stored: CLAUDE.md files, rules, and the auto-memory folder."
-related: ["claude-md-best-practices", "context-engineering", "claude-code-settings-permissions", "claude-code-hooks", "claude-code-tips", "parallel-claude-code-worktrees", "claude-code"]
+related: ["guide:claude-md-best-practices", "guide:context-engineering", "guide:claude-code-settings-permissions", "guide:claude-code-hooks", "guide:claude-code-tips", "guide:parallel-claude-code-worktrees", "tool:claude-code"]
 ---
 
 Claude Code has two resources that get conflated: **context** — what the model can see right now, a finite per-session window — and **memory** — what persists when the session ends. Long sessions degrade when context fills with noise; new sessions start dumb when nothing was persisted. This guide is the map of both systems and the commands that move things between them. (For *what to write* in a CLAUDE.md, see [CLAUDE.md Best Practices](/guides/configuration/claude-md-best-practices) — this guide covers the machinery around it.)
@@ -94,3 +94,7 @@ The habits that follow from the machinery:
 6. **Big windows are budget, not license.** 1M-token modes exist on recent models, but a focused window still beats a full one — see [Context Engineering](/guides/prompting/context-engineering) for the why.
 
 The mental model that makes all of this click: **context is RAM, files are disk.** CLAUDE.md, rules, and memory are what you've chosen to load at boot; `/compact` is swap; `#` and `/memory` are how you write things to disk before the power cycles.
+
+## Continue exploring
+
+- [25 Claude Code Tips, Shortcuts, and Power Features](/guides/getting-started/claude-code-tips) — The 25 highest-leverage Claude Code tips — keyboard shortcuts, bash and memory prefixes, session commands, model tricks, and power features most people miss.

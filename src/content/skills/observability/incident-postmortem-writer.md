@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-08-04
 topics: ["devops-infra", "review-qa"]
-related: ["best-claude-skills-for-devops-sre", "runbook-writer", "slo-definer", "distributed-tracing-instrumenter", "alerting-rules-tuner", "incident-responder"]
+related: ["guide:best-claude-skills-for-devops-sre", "skill:runbook-writer", "skill:slo-definer", "skill:distributed-tracing-instrumenter", "skill:alerting-rules-tuner", "agent:incident-responder"]
 featured: true
 summary: "Builds a blameless postmortem from evidence: normalizes the timeline, quantifies customer and SLO impact, distinguishes trigger from contributing conditions, evaluates detection and mitigation, and writes corrective actions with owner, priority, due date, and verification. Unknowns remain labeled instead of becoming a confident single-root-cause story."
 faq:

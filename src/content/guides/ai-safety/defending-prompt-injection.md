@@ -23,7 +23,7 @@ faq:
     a: "No — not with today's models. Because the model can't reliably separate instructions from data, there is no input filter or system prompt that fully stops injection, and attackers continually find new phrasings. The realistic goal is not prevention but containment: assume an injection can succeed and design so that when it does, it can't cause meaningful harm — through least privilege, human approval for high-impact actions, output validation, and keeping secrets out of the model's reach. Treat any claim of a complete fix with suspicion."
   - q: "How do I protect an LLM application against prompt injection?"
     a: "Defend in depth. (1) Treat all external, retrieved, user, and tool content as untrusted data, never as trusted instructions. (2) Apply least privilege — give the model the minimum tools and permissions, and require human approval for high-impact or irreversible actions. (3) Add input and output guardrails/scanners to catch known injection patterns and validate outputs. (4) Keep secrets and credentials out of the context the model can leak. (5) Sandbox tool execution and validate tool results. (6) Red-team continuously, since defenses erode as attacks evolve. No single layer suffices; the combination limits the blast radius."
-related: ["owasp-agentic-top-10", "prompt-injection-auditor", "llm-guardrails-designer", "promptfoo", "llm-guard", "nemo-guardrails", "red-team-llm", "production-tool-calling"]
+related: ["guide:owasp-agentic-top-10", "agent:prompt-injection-auditor", "skill:llm-guardrails-designer", "tool:promptfoo", "tool:llm-guard", "tool:nemo-guardrails", "command:red-team-llm", "guide:production-tool-calling"]
 ---
 
 Prompt injection is the defining security problem of LLM applications, and the uncomfortable truth up front is this: **you cannot fully solve it at the model layer.** A language model processes its entire context — your system prompt, the user's message, a retrieved document, a tool's output — as one undifferentiated stream of tokens. It has no reliable notion of "these instructions are trusted and those are just data." So any text that *looks* like an instruction can become one. That's the whole vulnerability, and it's why the defense isn't a filter you bolt on — it's an architecture that assumes injection will sometimes succeed and ensures it doesn't matter much when it does.
@@ -81,3 +81,7 @@ Defenses rot as attacks evolve, so make red-teaming continuous, not a one-time a
 ## Putting it together
 
 Accept that prompt injection can't be eliminated, then make it **not matter**: least privilege, human approval for high-impact actions, strict trust boundaries on all external content, input/output guardrails, secrets kept out of context, sandboxed tools — and continuous red-teaming. The goal isn't a model that can't be fooled; it's a system where fooling the model buys an attacker almost nothing. For the broader agentic threat landscape this sits inside, see [Securing AI Agents: The OWASP Agentic Top 10 in Practice](/guides/ai-safety/owasp-agentic-top-10).
+
+## Continue exploring
+
+- [Red-Teaming LLM Applications: From Attack Cases to Regression Tests](/guides/ai-safety/red-teaming-llm-applications) — Red-team an LLM application across prompts, RAG, tools, agents, and data boundaries — scope assets, generate attacks, score impact, fix, and retest in CI.

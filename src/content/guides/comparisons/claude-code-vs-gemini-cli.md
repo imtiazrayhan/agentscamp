@@ -22,7 +22,7 @@ faq:
     a: "Claude Code, in most cases. Its permission rules, hooks, subagents, and skills let you encode team policy and reusable workflows, and as first-party Anthropic tooling it's a stable target to build on. Gemini CLI is excellent for solo open-source hacking, but the 2026 Antigravity transition makes it a moving target for individual users right now."
   - q: "Which has the bigger free tier, Claude Code or Gemini CLI?"
     a: "Historically Gemini CLI — its personal-account free tier offered up to ~1,000 requests/day on Gemini models, with no equivalent free agent loop in Claude Code (which runs through paid Pro/Max plans or an API key). But that free access is exactly what the June 18, 2026 cutover removed for individuals, so the advantage is gone — Gemini's free agent loop now lives in Antigravity CLI."
-related: ["claude-code", "gemini-cli", "claude-code-vs-codex-cli", "claude-code-vs-opencode", "ai-coding-agents-cli-2026", "claude-code-mcp-setup"]
+related: ["tool:claude-code", "tool:gemini-cli", "guide:claude-code-vs-codex-cli", "guide:claude-code-vs-opencode", "guide:ai-coding-agents-cli-2026", "guide:claude-code-mcp-setup"]
 ---
 
 Claude Code and Gemini CLI both put an agent in your terminal, but they sit on opposite sides of an old trade: **first-party stability and depth versus open-source reach and a free tier**. As of mid-2026 that trade comes with a wrinkle — Google has folded Gemini CLI's consumer service into a different tool.

@@ -16,7 +16,7 @@ tags: ["vector-database", "rag", "rust", "open-source"]
 featured: false
 alternativeTo: ["pinecone", "weaviate", "milvus", "chroma", "pgvector"]
 summary: "Qdrant is an open-source, Rust-based vector database for storing embeddings and running fast similarity search with rich payload filtering, hybrid (dense + sparse) search, and on-disk quantization — the retrieval store behind many production RAG systems."
-related: ["hybrid-search-reranking", "rag-pipeline-engineer", "cohere-rerank", "voyage-ai", "chonkie"]
+related: ["guide:hybrid-search-reranking", "agent:rag-pipeline-engineer", "tool:cohere-rerank", "tool:voyage-ai", "tool:chonkie"]
 faq:
   - q: "What is Qdrant?"
     a: "Qdrant is an open-source vector database written in Rust for storing embeddings and retrieving the nearest matches to a query vector. It pairs low-latency similarity search with structured payload filtering, hybrid dense + sparse search, and quantization options — and scales from a single Docker container to a distributed, sharded cluster."

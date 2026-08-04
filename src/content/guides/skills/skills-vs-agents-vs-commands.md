@@ -5,7 +5,7 @@ author: "AgentsCamp"
 date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
-related: ["what-are-claude-skills", "writing-a-custom-agent", "writing-your-first-skill", "getting-started-with-agents", "claude-code-plugins"]
+related: ["guide:what-are-claude-skills", "guide:writing-a-custom-agent", "guide:writing-your-first-skill", "guide:getting-started-with-agents", "guide:claude-code-plugins"]
 featured: false
 summary: "Two mechanisms, three patterns: a subagent is a delegate Claude routes to (own context window, own tools); a skill is on-demand knowledge loaded into the main context when the task matches; a slash command is just a skill with disable-model-invocation: true, so you pull the trigger. Decide on two axes — who invokes it, and whether the work needs an isolated context."
 keyTakeaways:
@@ -162,3 +162,7 @@ That's a **slash command** — i.e. a skill with `disable-model-invocation: true
 Map the request to the question it answers. *Who pulls the trigger* — you (command) or Claude (agent/skill)? *Does it need its own context window* — yes (agent) or no (skill/command)? *Is it knowledge that shapes the work, or a worker that goes off and does the work* — skill or agent?
 
 The three compose well. A slash command can lay out a sequence that delegates a noisy step to a subagent and leans on a skill for house conventions along the way. Start with the one that fixes your most repeated friction — usually a slash command for a workflow you retype, or a subagent for a task that keeps drowning your context — then layer the others as your setup matures.
+
+## Continue exploring
+
+- [Create Slash Command](/commands/workflow/create-slash-command) — Scaffold a new Claude Code slash command into .claude/commands/ — a valid Markdown file with frontmatter, a least-privilege allowed-tools allowlist, and a $ARGUMENTS-driven…

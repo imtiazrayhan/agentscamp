@@ -15,7 +15,7 @@ tags: ["observability", "tracing", "evals", "open-source", "opentelemetry"]
 featured: false
 alternativeTo: ["langfuse", "langsmith"]
 summary: "Arize Phoenix is an open-source LLM tracing and evaluation tool built on OpenTelemetry/OpenInference. Run it locally in a notebook or self-host it to capture traces, run evals (including LLM-as-judge), and debug RAG and agent runs without sending data to a vendor."
-related: ["langfuse", "langsmith", "best-llm-eval-tools-2026", "llm-observability-engineer"]
+related: ["tool:langfuse", "tool:langsmith", "guide:best-llm-eval-tools-2026", "agent:llm-observability-engineer"]
 faq:
   - q: "What is Arize Phoenix?"
     a: "Arize Phoenix is an open-source observability and evaluation tool for LLM applications, built on OpenTelemetry and the OpenInference tracing standard. It captures the full trace of a run, runs evals (including LLM-as-judge) for relevance, hallucination, and RAG quality, and lets you debug RAG and agent runs by inspecting the span tree behind an answer."

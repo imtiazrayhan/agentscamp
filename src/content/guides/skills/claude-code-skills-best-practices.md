@@ -26,7 +26,7 @@ faq:
     a: "When the capability is a live connection to an external system — a database, a SaaS API, a ticketing tool — that needs real-time data, auth, and structured tool calls. Skills are know-how loaded into context; MCP servers are integrations that expose tools and resources. If you find yourself describing API endpoints and credentials in a SKILL.md, you wanted a server."
   - q: "Does allowed-tools sandbox a skill?"
     a: "No. allowed-tools pre-approves listed tools so Claude can use them without a permission prompt while the skill is active — it removes friction, it doesn't restrict. Every other tool stays callable under your normal permission settings. To actually keep a tool out of a skill's reach, use disallowed-tools, and for a hard block across everything, add deny rules in your permission settings."
-related: ["what-are-claude-skills", "claude-skills-examples", "writing-your-first-skill", "skills-vs-agents-vs-commands", "writing-a-custom-agent", "claude-md-best-practices", "skills-vs-mcp-servers", "testing-and-debugging-skills"]
+related: ["guide:what-are-claude-skills", "guide:claude-skills-examples", "guide:writing-your-first-skill", "guide:skills-vs-agents-vs-commands", "guide:writing-a-custom-agent", "guide:claude-md-best-practices", "guide:skills-vs-mcp-servers", "guide:testing-and-debugging-skills"]
 ---
 
 You can write a skill that works in five minutes. Writing one that fires when it should, stays quiet when it shouldn't, does exactly one thing, and still works six months from now is a different discipline. The mechanics are easy; the reliability is the craft. This guide is about the craft — the handful of patterns that separate a skill you trust from one you keep re-explaining or quietly disabling.
@@ -137,3 +137,7 @@ Watch for both failure directions: prompts that *should* trigger the skill but d
 The order of operations when a skill misbehaves is almost always the same. Doesn't fire? The description. Fires on the wrong tasks? The description. Fires but does too much or drifts? The body is too long or the scope too wide — split it and trim it. Gets a deterministic step wrong? Move that step into a script. Wants to reach for the wrong tool, or stops where it shouldn't? Scope `allowed-tools` and write the boundary.
 
 A reliable skill is small: a sharp trigger-first description, one job, a lean body, scripts for the deterministic parts, the minimum tools, and an explicit "never." Build it that way and it earns a permanent spot in your toolkit instead of becoming the next thing you disable. For where skills sit alongside agents and commands, see [Skills vs Agents vs Commands](/guides/skills/skills-vs-agents-vs-commands).
+
+## Continue exploring
+
+- [Explain Code](/commands/docs/explain-code) — Explain what the given code does, in clear prose with a short summary.

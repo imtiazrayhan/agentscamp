@@ -21,7 +21,7 @@ faq:
     a: "The cleanest series is SDK downloads: at donation (December 2025) the project cited 97M monthly across SDKs; by July 2026 the npm TypeScript SDK alone runs ~156M/month (vs 38.5M in December) and PyPI's mcp package ~271M/month — combined core-SDK volume roughly 4x in six months, measured directly from registry APIs."
   - q: "Who controls MCP now?"
     a: "The Agentic AI Foundation under the Linux Foundation, since December 9, 2025 — co-founded by Anthropic (donating MCP), Block (goose), and OpenAI (AGENTS.md), with AWS, Bloomberg, Cloudflare, Google, and Microsoft completing the founding eight, plus 41 gold/silver members at launch (Cisco to Hugging Face), a roster since grown past 180. Anthropic stated maintainers and governance processes carried over unchanged."
-related: ["model-context-protocol", "best-mcp-servers-2026", "mcp-vs-a2a", "claude-code-mcp-setup", "govern-mcp-servers", "ai-coding-statistics-2026", "smithery"]
+related: ["glossary:model-context-protocol", "guide:best-mcp-servers-2026", "guide:mcp-vs-a2a", "guide:claude-code-mcp-setup", "guide:govern-mcp-servers", "guide:ai-coding-statistics-2026", "tool:smithery"]
 ---
 
 MCP went from Anthropic side-project (November 2024) to Linux Foundation standard (December 2025) to — by mid-2026 — infrastructure whose download counts resemble a major package ecosystem. The numbers below are **pulled live from registries and primary announcements, dated July 1, 2026**, and refreshed on a cadence; circulating figures we couldn't trace are omitted.

@@ -8,7 +8,7 @@ color: "cyan"
 title: "Dev Container Designer"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["github-actions-optimizer", "devops-engineer", "scaffold-dockerfile"]
+related: ["skill:github-actions-optimizer", "agent:devops-engineer", "command:scaffold-dockerfile"]
 featured: false
 summary: "A README with 14 setup steps is a drift generator: everyone lands on a slightly different machine. This skill detects the project's actual stack and pinned versions, then authors a devcontainer.json (plus Dockerfile/compose) that reproduces it exactly — services wired, dependencies cached, secrets injected not baked — so the whole stack comes up with one 'Reopen in Container'."
 ---

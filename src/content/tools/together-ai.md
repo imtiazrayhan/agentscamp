@@ -16,7 +16,7 @@ tags: ["inference", "fine-tuning", "open-models", "gpu", "openai-compatible"]
 featured: false
 alternativeTo: ["fireworks-ai", "groq", "replicate", "baseten", "openrouter"]
 summary: "Together AI is a hosted cloud for open-source models: serverless inference across a broad catalog (Llama, DeepSeek, Qwen, and more) behind an OpenAI-compatible API, plus fine-tuning and dedicated GPU endpoints and clusters. It's the managed way to run open-weight models without operating your own inference stack."
-related: ["deploying-llms-to-production", "self-host-vs-api-llm", "best-local-llm-tools-2026", "finetune-vs-rag-vs-prompt", "choosing-the-right-model"]
+related: ["guide:deploying-llms-to-production", "guide:self-host-vs-api-llm", "guide:best-local-llm-tools-2026", "guide:finetune-vs-rag-vs-prompt", "guide:choosing-the-right-model"]
 faq:
   - q: "What is Together AI?"
     a: "Together AI is a hosted cloud platform for open-source models. It offers serverless inference over a large catalog of open-weight models — Llama, DeepSeek, Qwen, and many others — behind an OpenAI-compatible API, plus fine-tuning (LoRA and full) and dedicated GPU endpoints and clusters for teams that need reserved capacity."
@@ -52,4 +52,4 @@ Because the API is OpenAI-compatible, it slots into the same gateways and framew
 
 ## Good to know
 
-The platform is proprietary SaaS; the official Python SDK is open source under Apache-2.0. Pricing is freemium — free credits to start, then per-token serverless rates, per-GPU-hour dedicated and cluster pricing, and a batch discount for asynchronous jobs. Exact rates and the model catalog change over time, so confirm current details on the official pricing page before committing. Compare with [Fine-tune vs. RAG vs. Prompt](/guides/concepts/finetune-vs-rag-vs-prompt) when deciding whether fine-tuning is even the right lever.
+The platform is proprietary SaaS; the official Python SDK is open source under Apache-2.0. Pricing is freemium — free credits to start, then per-token serverless rates, per-GPU-hour dedicated and cluster pricing, and a batch discount for asynchronous jobs. Exact rates and the model catalog change over time, so confirm current details on the official pricing page before committing. Compare with [Fine-tune vs. RAG vs. Prompt](/guides/mlops/finetune-vs-rag-vs-prompt) when deciding whether fine-tuning is even the right lever.

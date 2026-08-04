@@ -15,7 +15,7 @@ sameAs:
   - "https://github.com/Codium-ai"
   - "https://x.com/QodoAI"
   - "https://www.linkedin.com/company/qodoai"
-related: ["coderabbit", "greptile", "best-ai-code-review-tools-2026", "review-pr", "code-reviewer", "test-engineer"]
+related: ["tool:coderabbit", "tool:greptile", "guide:best-ai-code-review-tools-2026", "command:review-pr", "agent:code-reviewer", "agent:test-engineer"]
 summary: "Qodo (formerly CodiumAI) is the quality-first AI code platform: Qodo 2.0 (February 2026) brought multi-agent PR review enforcing your rules and standards, alongside IDE plugins, the Qodo Command CLI, the Aware codebase-context engine, and the open-source Cover test-generation tool. Freemium with a real free tier; broadest git-platform coverage in the category."
 faq:
   - q: "What is Qodo Merge, and is PR-Agent the free version?"

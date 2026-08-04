@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
 topics: ["workflow-prompting"]
-related: ["prompting-techniques-2026", "dspy-prompt-optimization", "prompt-engineer", "dspy", "prompt-patterns"]
+related: ["guide:prompting-techniques-2026", "guide:dspy-prompt-optimization", "agent:prompt-engineer", "tool:dspy", "guide:prompt-patterns"]
 featured: false
 summary: "Hand this skill a prompt and it returns a better one. It identifies the failure mode (vague instructions, format drift, missing examples, no output contract, weak reasoning on hard cases), applies the technique that fixes that specific mode, and explains every change so the edit is a decision rather than a guess — then tells you exactly what to measure to confirm the improvement held."
 ---

@@ -6,7 +6,7 @@ model: "sonnet"
 color: "cyan"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["coding-languages"]
-related: ["mobile-developer", "java-pro", "backend-developer"]
+related: ["agent:mobile-developer", "agent:java-pro", "agent:backend-developer"]
 summary: "A subagent for idiomatic Kotlin — null safety without !!, coroutines scoped to a lifecycle, cold Flows for streams, sealed hierarchies with exhaustive when, immutable data classes, and judicious scope/extension functions. Reach for it when fixing a GlobalScope coroutine leak, converting callbacks to Flow, or closing !! null-safety holes."
 ---
 

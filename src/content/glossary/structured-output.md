@@ -4,7 +4,7 @@ description: "Structured output makes an LLM return data in a guaranteed shape â
 date: 2026-06-11
 topics: ["llm-app-dev"]
 tags: ["structured-output", "json", "schemas", "llm"]
-related: ["structured-output-2026", "function-calling", "llm-output-schema-generator", "instructor", "baml"]
+related: ["guide:structured-output-2026", "glossary:function-calling", "skill:llm-output-schema-generator", "tool:instructor", "tool:baml"]
 faq:
   - q: "What's the difference between JSON mode and structured outputs?"
     a: "JSON mode guarantees syntactically valid JSON â€” but any JSON: fields can be missing, renamed, or mistyped. Structured outputs (schema-constrained generation) guarantee conformance to your specific schema, enforced during decoding. If code consumes the result, schema enforcement is the one you want."

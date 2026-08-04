@@ -16,7 +16,7 @@ sameAs:
   - "https://docs.browserbase.com"
   - "https://github.com/browserbase"
   - "https://github.com/browserbase/stagehand"
-related: ["browser-agents-compared-2026", "how-computer-use-agents-work", "web-data-for-ai-agents", "sandboxing-ai-generated-code"]
+related: ["guide:browser-agents-compared-2026", "guide:how-computer-use-agents-work", "guide:web-data-for-ai-agents", "guide:sandboxing-ai-generated-code"]
 summary: "Browserbase is managed headless-browser infrastructure for AI agents and web automation: serverless cloud browsers with stealth, proxies, CAPTCHA handling, and live session view. You drive them with Playwright, Puppeteer, or Browserbase's open-source Stagehand framework. It's proprietary SaaS with a free tier and paid plans; confirm current tiers on the official site."
 faq:
   - q: "What is Browserbase?"

@@ -23,7 +23,7 @@ faq:
     a: "Excessive agency (LLM06 in the OWASP LLM Top 10) is when an agent has more capability, permission, or autonomy than its task requires — too many tools, overly broad credentials, or the ability to take high-impact actions without oversight. It's the root risk multiplier: every other compromise (injection, poisoned memory, a manipulated goal) does more damage when the agent it hijacks can do more. The mitigation is least privilege — minimal tools, narrowly scoped permissions, and human approval gates on consequential actions."
   - q: "How do I secure an AI agent in production?"
     a: "Apply four cross-cutting controls. Least privilege: give the agent the minimum tools, permissions, and autonomy for its task. Human-in-the-loop: require approval for high-impact or irreversible actions. Observability: log and trace every action, tool call, and memory write so the system is auditable and non-repudiable. Guardrails: validate inputs (against injection and poisoning) and outputs (against policy, leakage, and unsafe actions). Then map the specific agentic threats — memory poisoning, tool misuse, cascading failures, rogue agents — to your architecture and close the gaps."
-related: ["defending-prompt-injection", "prompt-injection-auditor", "agent-reliability-reviewer", "human-in-the-loop-gate", "llm-guardrails-designer", "nemo-guardrails"]
+related: ["guide:defending-prompt-injection", "agent:prompt-injection-auditor", "agent:agent-reliability-reviewer", "skill:human-in-the-loop-gate", "skill:llm-guardrails-designer", "tool:nemo-guardrails"]
 ---
 
 The OWASP Top 10 for LLM Applications is the right starting point for LLM security — but it largely treats the LLM as something that *produces text*. An **agent** is different: it produces *actions*. It calls tools, writes to memory, plans across many steps, and sometimes works alongside other agents. That autonomy is exactly what makes agents useful and exactly what widens the attack surface. OWASP's **Agentic Security Initiative** (part of the GenAI Security Project) catalogs the threats that emerge once the model can act — and this guide walks the key ones with practical mitigations.
@@ -89,3 +89,7 @@ Notice the mitigations rhyme. Four cross-cutting controls address the bulk of th
 ## Putting it together
 
 Secure an agent by first **reducing what it can do** (least privilege), then layering human approval on high-impact actions, full audit on every action, and guardrails on every input and output — and finally walking the agentic threat list against your specific architecture (memory, tools, goals, multi-agent links) to find the gaps. The [agent-reliability-reviewer](/agents/meta-orchestration/agent-reliability-reviewer) hardens the reliability side of this, and the [prompt-injection-auditor](/agents/quality-security/prompt-injection-auditor) audits the injection-and-blast-radius side.
+
+## Continue exploring
+
+- [Agentic AI](/glossary/agentic-ai) — Agentic AI is the class of AI systems that act toward goals — planning, calling tools, and iterating on results — rather than only generating content.

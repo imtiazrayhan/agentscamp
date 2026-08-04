@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "green"
 date: 2026-06-12
 topics: ["rag-retrieval"]
-related: ["graph-rag", "agentic-rag", "how-rag-works", "rag-pipeline-engineer", "vector-database", "zep"]
+related: ["guide:graph-rag", "guide:agentic-rag", "guide:how-rag-works", "agent:rag-pipeline-engineer", "glossary:vector-database", "tool:zep"]
 featured: false
 summary: "A skill that builds GraphRAG as an experiment, not a leap of faith: it collects the queries vector RAG fails, confirms they're connection- or global-shaped, scopes the smallest ontology that serves them, scaffolds the pipeline on a corpus slice, and reports lift against the vector baseline with honest cost accounting — including the re-indexing bill."
 ---

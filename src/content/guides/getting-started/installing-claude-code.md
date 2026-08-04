@@ -7,7 +7,7 @@ date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
 featured: false
-related: ["what-is-claude-code", "getting-started-with-agents"]
+related: ["guide:what-is-claude-code", "guide:getting-started-with-agents"]
 summary: "Install Claude Code with the zero-dependency native installer (one curl command on macOS/Linux/WSL, a PowerShell one-liner on Windows) or via npm with Node 18+. Authenticate once with your Claude.ai or Console account, start it inside a real repository, and run /init to scaffold the CLAUDE.md that makes every later session better."
 howtoSteps:
   - name: "Install the CLI"

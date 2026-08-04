@@ -23,7 +23,7 @@ faq:
     a: "Use the CLI when the terminal is your center of gravity, the IDE extension when you want editor context, the desktop app for interactive planning and multiple workstreams, and cloud tasks when work should continue in a hosted environment. The same repository can use more than one surface."
   - q: "How do I get better results from Codex?"
     a: "State the goal, point to relevant files or errors, name constraints, and define done with observable checks. Add stable build commands and conventions to AGENTS.md, and ask Codex to run tests and review the final diff before it stops."
-related: ["codex-cli", "claude-code-vs-codex-cli", "codex-agents-md", "codex-config-toml", "codex-skills-guide", "codex-mcp-setup", "codex-subagents", "codex-automations", "codex-troubleshooting", "agents-md", "agent-skills"]
+related: ["tool:codex-cli", "guide:claude-code-vs-codex-cli", "guide:codex-agents-md", "guide:codex-config-toml", "guide:codex-skills-guide", "guide:codex-mcp-setup", "guide:codex-subagents", "guide:codex-automations", "guide:codex-troubleshooting", "glossary:agents-md", "glossary:agent-skills"]
 ---
 
 **OpenAI Codex is a software-development agent: it can inspect a repository, plan a change, edit files, run commands, test the result, and review its own diff.** The useful mental model is not “a chatbot that writes code snippets,” but a teammate operating inside a bounded development environment.
@@ -105,3 +105,9 @@ Start with tasks whose results are easy to inspect: add a focused test, explain 
 The goal is not maximum autonomy. It is a system where you can state an outcome, let the agent work inside a clear boundary, and decide whether to accept the result from evidence rather than optimism.
 
 Official references: [Codex best practices](https://learn.chatgpt.com/guides/best-practices), [Codex CLI](https://learn.chatgpt.com/docs/codex/cli), and [agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security).
+
+## Continue exploring
+
+- [backend-developer](/agents/core-development/backend-developer) — Use this agent to build server-side features — endpoints, business logic, data access, background jobs.
+- [frontend-developer](/agents/core-development/frontend-developer) — Use this agent to build UI — responsive layouts, components, accessibility, and design-system work.
+- [mobile-developer](/agents/core-development/mobile-developer) — Use this agent to build cross-platform mobile apps with React Native + Expo — screens, navigation, native modules, and shipping via EAS.

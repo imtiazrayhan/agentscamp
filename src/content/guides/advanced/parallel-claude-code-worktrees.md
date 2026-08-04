@@ -36,7 +36,7 @@ faq:
     a: "Sessions are per-directory, so --continue and /resume in a worktree resume that worktree's own history. Auto-memory is the opposite: it's keyed to the repo, so all worktrees of a project share one memory. CLAUDE.md is just a file — it travels with each checkout."
   - q: "How do worktrees get cleaned up?"
     a: "On exit, a worktree with no changes, no untracked files, and no new commits is removed automatically (branch included). If there's work in it, Claude Code asks whether to keep or delete it. Headless (-p) runs never auto-clean — remove those yourself with git worktree remove."
-related: ["claude-code-tips", "claude-code-memory-context", "multi-agent-orchestration", "building-multi-step-workflows", "workflow-orchestrator", "claude-code", "branch-rebaser"]
+related: ["guide:claude-code-tips", "guide:claude-code-memory-context", "guide:multi-agent-orchestration", "guide:building-multi-step-workflows", "agent:workflow-orchestrator", "tool:claude-code", "skill:branch-rebaser"]
 ---
 
 The first time you run two Claude Code sessions in one checkout, you learn why you shouldn't: both agents edit the same working tree, and one agent's refactor lands in the other's diff. The fix is the rule all parallel-agent workflows share — **one session per working tree** — and git worktrees are how you get cheap extra working trees over one repository. Claude Code has the whole pattern built in.

@@ -6,7 +6,7 @@ argument-hint: "[file or function]"
 title: "Refactor"
 color: "purple"
 topics: ["review-qa"]
-related: ["refactoring-specialist"]
+related: ["agent:refactoring-specialist"]
 summary: "A slash command that refactors a file or function for readability and structure without changing behavior: it establishes a passing test baseline, targets concrete issues like vague names, duplication, deep nesting, and dead code, applies small verifiable steps re-running tests after each, and reports what changed and why."
 ---
 

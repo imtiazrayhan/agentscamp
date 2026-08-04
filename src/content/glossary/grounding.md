@@ -4,7 +4,7 @@ description: "Grounding ties a model's output to verifiable sources — retrieve
 date: 2026-06-12
 topics: ["rag-retrieval"]
 tags: ["grounding", "rag", "reliability", "citations"]
-related: ["rag", "hallucination", "how-rag-works", "structured-output"]
+related: ["glossary:rag", "glossary:hallucination", "guide:how-rag-works", "glossary:structured-output"]
 faq:
   - q: "How do you ground an LLM's answers?"
     a: "Supply the evidence and constrain to it: retrieve relevant sources (RAG) or tool results into the prompt, instruct the model to answer only from that material with 'not in the context' as an allowed response, and require citations so every claim traces to a source. Grounding is architecture plus instructions — not instructions alone."

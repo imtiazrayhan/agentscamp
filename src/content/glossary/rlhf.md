@@ -4,7 +4,7 @@ description: "RLHF trains a model against human preferences: people rank outputs
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
 tags: ["rlhf", "alignment", "training", "post-training"]
-related: ["dpo", "constitutional-ai", "fine-tuning", "reasoning-model"]
+related: ["glossary:dpo", "glossary:constitutional-ai", "glossary:fine-tuning", "glossary:reasoning-model"]
 faq:
   - q: "What does RLHF actually change about a model?"
     a: "It shapes behavior, not knowledge: after pretraining (next-token prediction over the internet) and instruction tuning, RLHF optimizes the model toward responses humans prefer — helpful, honest, harmless, well-formatted. It's the stage that turned raw text predictors into usable assistants; ChatGPT's 2022 breakthrough was substantially an RLHF story."

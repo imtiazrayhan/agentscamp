@@ -7,7 +7,7 @@ color: "orange"
 tools: "Read, Grep, Glob, Bash"
 title: "Incident Responder"
 topics: ["devops-infra"]
-related: ["sre-engineer", "devops-engineer", "cloud-architect"]
+related: ["agent:sre-engineer", "agent:devops-engineer", "agent:cloud-architect"]
 featured: false
 summary: "A subagent that runs a live incident like a calm on-call engineer — triage and assign severity, stop the bleeding before root-causing (roll back, fail over, shed load), correlate the outage to recent changes, and draft status updates and the blameless postmortem. Reach for it when an alert fired, when you're deciding rollback vs. forward-fix, or when writing up an outage."
 ---

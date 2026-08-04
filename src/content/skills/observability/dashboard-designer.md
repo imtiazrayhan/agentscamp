@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["slo-definer", "alerting-rules-tuner", "distributed-tracing-instrumenter", "runbook-writer"]
+related: ["skill:slo-definer", "skill:alerting-rules-tuner", "skill:distributed-tracing-instrumenter", "skill:runbook-writer"]
 featured: false
 summary: "Most dashboards are metric dumps that hide the signal an on-call engineer needs at 3am. This skill designs one ranked by user impact — RED/USE method, user-facing SLO signals on top, cause metrics as drill-down below, latency as percentiles, deploys annotated — so a glance answers: healthy, or where's the fire?"
 faq:

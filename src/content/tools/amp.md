@@ -9,7 +9,7 @@ category: "agent"
 color: "purple"
 topics: ["workflow-prompting"]
 tags: ["agent", "sourcegraph"]
-related: ["cody", "claude-code", "devin"]
+related: ["tool:cody", "tool:claude-code", "tool:devin"]
 featured: false
 alternativeTo: ["claude-code", "codex-cli", "cody", "cursor", "devin"]
 summary: "Amp is Sourcegraph's agentic coding tool: a CLI plus extensions for VS Code, Cursor, Windsurf, JetBrains, Neovim, and Zed that runs frontier models to read, edit, and run commands across a repository. Subagents parallelize independent sub-tasks, the Oracle adds a second-opinion reasoning model, and threads can be shared with a workspace."

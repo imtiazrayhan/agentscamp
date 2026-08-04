@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-08-04
 topics: ["architecture", "devops-infra"]
-related: ["best-claude-skills-for-code-review", "circular-dependency-breaker", "extract-module", "github-actions-optimizer", "dependency-upgrade-planner", "system-architect"]
+related: ["guide:best-claude-skills-for-code-review", "skill:circular-dependency-breaker", "skill:extract-module", "skill:github-actions-optimizer", "skill:dependency-upgrade-planner", "agent:system-architect"]
 featured: true
 summary: "Audits workspace packages as an architecture graph: discovers declared and source-level dependencies, checks allowed layer direction and public entry points, finds cycles and deep imports, evaluates ownership and affected-build accuracy, and proposes a staged boundary repair with automated lint or graph rules. It reports evidence without performing a risky repository-wide rewrite."
 faq:

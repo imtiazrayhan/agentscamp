@@ -23,7 +23,7 @@ faq:
     a: "User-level configuration lives in ~/.codex/config.toml. Trusted repositories can add project-scoped settings in .codex/config.toml. The desktop app, CLI, and IDE extension on the same host share these configuration layers."
   - q: "Is it safe to connect Codex to an MCP server?"
     a: "Treat an MCP server like any integration with data and permissions: verify who operates it, limit credentials and exposed tools, require approval for writes or side effects, and avoid putting secrets directly in checked-in configuration."
-related: ["model-context-protocol", "claude-code-mcp-setup", "building-an-mcp-server", "codex-skills-guide", "codex-agents-md", "openai-codex-guide", "mcp-server-scaffolder"]
+related: ["glossary:model-context-protocol", "guide:claude-code-mcp-setup", "guide:building-an-mcp-server", "guide:codex-skills-guide", "guide:codex-agents-md", "guide:openai-codex-guide", "skill:mcp-server-scaffolder"]
 howtoSteps:
   - name: "Choose the scope"
     text: "Decide whether the server belongs in user configuration for every project or in a trusted project's .codex/config.toml for repository-specific use."
@@ -130,3 +130,7 @@ Test one harmless read operation before enabling writes. That separates transpor
 Start with one integration that removes a repeated manual loop: current library docs, a design source, issue context, or error traces. Pair it with a focused skill only if the organization needs a consistent multi-step method around those tools. Add more servers after you can explain the data, actions, credentials, and approval policy of the ones already installed.
 
 Official reference: [Model Context Protocol in Codex](https://learn.chatgpt.com/docs/extend/mcp).
+
+## Continue exploring
+
+- [Codex Troubleshooting: A Layer-by-Layer Recovery Guide](/guides/troubleshooting/codex-troubleshooting) — Troubleshoot OpenAI Codex when files, commands, configuration, worktrees, MCP, or app features misbehave — with a fast isolation and recovery sequence.

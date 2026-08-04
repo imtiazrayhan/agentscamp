@@ -21,7 +21,7 @@ faq:
     a: "Small, stable, whole-document jobs: contracts, a paper, a modest codebase, a knowledge pack under a few hundred pages — where cross-references matter and chunking would sever them. Cache the corpus prefix, query freely. The moment the corpus outgrows the window, churns, or needs per-user permissions, you're back to retrieval."
   - q: "Did long context at least change how RAG should be built?"
     a: "Yes, materially: retrieval precision pressure dropped. With room for 50–100 candidate chunks, you can recall generously and let the model read — fewer answers lost to an over-aggressive top-5 cutoff, less obsessive chunk tuning. Reranking still pays (ordering matters for attention), but the pipeline got more forgiving."
-related: ["rag", "context-window", "how-rag-works", "prompt-caching", "context-engineering", "agentic-rag", "graph-rag"]
+related: ["glossary:rag", "glossary:context-window", "guide:how-rag-works", "glossary:prompt-caching", "guide:context-engineering", "guide:agentic-rag", "guide:graph-rag"]
 ---
 
 Every context-window leap re-asks the question: with a million [tokens](/glossary/llm-token), why run a retrieval pipeline at all — just put everything in the prompt. It deserves a straight answer, because it's *half right*: long context genuinely ended RAG's reign at the small end. At corpus scale, four walls still stand.

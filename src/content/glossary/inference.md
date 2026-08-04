@@ -4,7 +4,7 @@ description: "Inference is running a trained model to produce output — for LLM
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["inference", "serving", "latency", "llm"]
-related: ["llm-cost-latency-engineering", "kv-cache", "quantization", "speculative-decoding", "vllm", "self-host-vs-api-llm"]
+related: ["guide:llm-cost-latency-engineering", "glossary:kv-cache", "glossary:quantization", "glossary:speculative-decoding", "tool:vllm", "guide:self-host-vs-api-llm"]
 faq:
   - q: "Why is LLM inference expensive?"
     a: "Generation is sequential: each output token requires a full forward pass over billions of weights, and you can't produce token N+1 before token N. Reading the prompt parallelizes well; writing the answer doesn't. That asymmetry is why output tokens cost more than input tokens and why long answers dominate latency."

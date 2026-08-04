@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["architecture"]
-related: ["adr-writer", "system-architect", "api-architect"]
+related: ["skill:adr-writer", "agent:system-architect", "agent:api-architect"]
 featured: false
 summary: "A skill that draws architecture diagrams from what the code actually does, not an aspirational design. It picks the one view that answers the question — container, sequence, ER, or state — traces the real entry points and calls, and emits paste-ready Mermaid that renders in GitHub, with a note on what each diagram does and does not show."
 ---

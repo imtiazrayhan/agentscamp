@@ -6,7 +6,7 @@ date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]
 featured: false
-related: ["prompt-patterns", "choosing-the-right-model", "claude-md-best-practices", "claude-code-memory-context"]
+related: ["guide:prompt-patterns", "guide:choosing-the-right-model", "guide:claude-md-best-practices", "guide:claude-code-memory-context"]
 summary: "Context engineering treats the window as a budget: load the 2–4 files the task touches, not the repo; keep durable facts in CLAUDE.md and ephemeral ones in the prompt; scope asks so discovery stays cheap; /clear at task boundaries and /compact mid-task; and push noisy investigations into subagents that return only the verdict. Signal-to-noise beats raw token count."
 keyTakeaways:
   - "The window is a budget, not a backpack: a focused 8K-token context routinely outperforms a 120K one that contains the same answer somewhere inside it."

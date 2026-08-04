@@ -6,11 +6,11 @@ color: "green"
 topics: ["multimodal-ai", "rag-retrieval"]
 tags: ["multimodal-rag", "pdf", "vlm", "ocr", "embeddings", "retrieval"]
 related:
-  - "vlm-ocr-documents"
-  - "how-rag-works"
-  - "chunking-strategy-optimizer"
-  - "multimodal-document-extractor"
-  - "vision-language-model"
+  - "guide:vlm-ocr-documents"
+  - "guide:how-rag-works"
+  - "skill:chunking-strategy-optimizer"
+  - "skill:multimodal-document-extractor"
+  - "glossary:vision-language-model"
 featured: false
 date: 2026-06-17
 summary: "Text-only PDF extraction silently drops tables, figures, and layout. Two approaches fix this: parse to clean markdown with a layout/OCR model then run normal text RAG, or embed page images with vision embeddings and retrieve regions. Parse-then-text is cheaper and more debuggable; embed-the-image wins on dense visuals you can't reliably transcribe."

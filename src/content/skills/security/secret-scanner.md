@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 topics: ["review-qa"]
 featured: true
-related: ["security-auditor", "dependency-audit"]
+related: ["agent:security-auditor", "skill:dependency-audit"]
 summary: "A skill that scans a repo, diff, or history for committed secrets — provider key prefixes, private keys, .env files, connection strings, and high-entropy values — then triages real leaks from fixtures and placeholders. For each true positive it prescribes rotating the credential first, then scrubbing history, since a pushed secret is compromised."
 ---
 

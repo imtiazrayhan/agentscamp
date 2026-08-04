@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "purple"
 date: 2026-06-11
 topics: ["workflow-prompting"]
-related: ["claude-code-plugins", "writing-your-first-skill", "writing-a-custom-agent", "hook-writer", "claude-code-mcp-setup"]
+related: ["guide:claude-code-plugins", "guide:writing-your-first-skill", "guide:writing-a-custom-agent", "skill:hook-writer", "guide:claude-code-mcp-setup"]
 featured: false
 summary: "Describe the plugin — or point at an existing .claude/ directory worth packaging — and this skill scaffolds the whole thing: correct layout (manifest in .claude-plugin/, components at the root), a working sample of each component, portable path variables, validation via claude plugin validate, and the marketplace.json that makes it installable with /plugin install."
 ---

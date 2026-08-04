@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
 topics: ["multimodal-ai", "data-ml"]
-related: ["vlm-ocr-documents", "qwen3-vl", "structured-output-2026", "llm-output-schema-generator", "llm-evaluation-engineer"]
+related: ["guide:vlm-ocr-documents", "tool:qwen3-vl", "guide:structured-output-2026", "skill:llm-output-schema-generator", "agent:llm-evaluation-engineer"]
 featured: false
 summary: "Turn documents and images into structured data with a vision-language model: define the schema, have the VLM read the page (layout, tables, handwriting) and fill it, then verify the values that matter against the source. Handles the messy, varied documents that defeat template OCR — invoices, forms, receipts, IDs — with faithfulness checks so a hallucinated total or ID is caught, not shipped."
 ---

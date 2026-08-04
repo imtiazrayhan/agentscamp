@@ -21,7 +21,7 @@ faq:
     a: "No — it's a different philosophy. CrewAI's role/task/crew model is genuinely productive for collaboration-shaped problems (research + write + review pipelines), independent of LangChain, with its own flows for deterministic orchestration. The features differ less than the posture: CrewAI optimizes time-to-working-system, LangGraph optimizes control-per-component."
   - q: "Can I start with CrewAI and move to LangGraph later?"
     a: "Yes, and it's a sane path: prototype the multi-agent design in CrewAI to learn what the system should do, then rebuild the parts needing hard guarantees as an explicit LangGraph graph. Keep tools and prompts framework-agnostic and the rewrite is mostly orchestration code."
-related: ["langgraph", "crewai", "agent-frameworks-2026", "multi-agent-orchestration", "agent-reliability-reviewer", "openai-agents-sdk"]
+related: ["tool:langgraph", "tool:crewai", "guide:agent-frameworks-2026", "guide:multi-agent-orchestration", "agent:agent-reliability-reviewer", "tool:openai-agents-sdk"]
 ---
 
 LangGraph vs CrewAI is the agent-framework version of an old engineering choice: **explicit control or productive abstraction**. Both build real multi-agent systems; they differ on what they make easy and what they make possible.
@@ -55,3 +55,7 @@ LangGraph vs CrewAI is the agent-framework version of an old engineering choice:
 Ask where your pain will live. If it's **"this must not silently fail"** — long-running runs, money-adjacent actions, audits — LangGraph's explicitness is the point: every transition is yours, every state inspectable, every run resumable. If it's **"we need to validate this multi-agent idea this sprint,"** CrewAI's velocity is the point — and many systems never need more than it offers.
 
 Two honest caveats from the field: LangGraph projects can over-engineer simple agents into ceremony (a plain tool-loop needs no graph), and CrewAI projects can hit the abstraction ceiling mid-production (the workaround code outgrowing the framework). Size the tool to the system — and weigh the rest of the field, including the OpenAI Agents SDK's minimalism and the Claude Agent SDK's harness-first approach, in [the 2026 framework guide](/guides/concepts/agent-frameworks-2026).
+
+## Continue exploring
+
+- [Mastra](/tools/mastra) — An open-source TypeScript framework for building AI agents, workflows, RAG, and tool-calling, with memory, model routing, and built-in observability.

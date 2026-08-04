@@ -10,7 +10,7 @@ color: "purple"
 topics: ["coding-languages"]
 tags: ["extension", "assistant", "codebase-context"]
 featured: false
-related: ["amp", "continue", "tabnine"]
+related: ["tool:amp", "tool:continue", "tool:tabnine"]
 alternativeTo: ["continue", "tabnine", "github-copilot", "amp"]
 summary: "Cody is Sourcegraph's AI coding assistant for the IDE, grounded in codebase-wide context: it uses Sourcegraph's Search API to fetch relevant definitions, references, and files — across many repos on Enterprise — so answers and edits reference how your code actually works. Now Enterprise-only; the Free and Pro tiers were discontinued in 2025."
 faq:

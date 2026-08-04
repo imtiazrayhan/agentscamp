@@ -7,7 +7,7 @@ allowed-tools: "Read, Grep, Glob"
 title: "Estimate Effort"
 color: "purple"
 topics: ["workflow-prompting", "architecture"]
-related: ["plan-feature", "breakdown-task", "trace-data-flow"]
+related: ["command:plan-feature", "command:breakdown-task", "command:trace-data-flow"]
 featured: false
 summary: "A read-only slash command that estimates effort for a task by grounding it in the actual codebase: it pins down scope and explicit non-scope, decomposes the work into independently-shippable subtasks, sizes each as a T-shirt with a rough range, sums to a total, then surfaces the risks, unknowns, dependencies, and assumptions that move the number — plus the first slice to ship to de-risk it."
 faq:

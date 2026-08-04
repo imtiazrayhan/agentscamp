@@ -6,7 +6,7 @@ model: "sonnet"
 color: "red"
 topics: ["review-qa"]
 featured: true
-related: ["test-engineer", "performance-engineer"]
+related: ["agent:test-engineer", "agent:performance-engineer"]
 summary: "A subagent that finds the root cause of a defect scientifically — reproducing the failure first, forming one falsifiable hypothesis at a time, testing it cheaply, then applying the minimal fix and proving the failing case now passes. Reach for it when a test fails or flakes, a stack trace needs root-causing, or a bug only appears in CI or production."
 ---
 

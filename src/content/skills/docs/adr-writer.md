@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["architecture"]
-related: ["system-architect", "documentation-engineer"]
+related: ["agent:system-architect", "agent:documentation-engineer"]
 featured: false
 summary: "A skill that writes a Nygard-format Architecture Decision Record — Status, Context, Decision, Consequences, plus Considered Alternatives — for a decision the user describes: it locates and numbers the ADR log, mines the repo for the real constraints, names honest negative consequences, and flags anything filled from assumption."
 ---

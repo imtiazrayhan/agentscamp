@@ -4,7 +4,7 @@ description: "Constitutional AI trains models against written principles — the
 date: 2026-06-12
 topics: ["ai-safety-security"]
 tags: ["constitutional-ai", "alignment", "anthropic", "safety"]
-related: ["rlhf", "dpo", "guardrails", "jailbreak", "frontier-model"]
+related: ["glossary:rlhf", "glossary:dpo", "glossary:guardrails", "glossary:jailbreak", "glossary:frontier-model"]
 faq:
   - q: "How does Constitutional AI work?"
     a: "Two phases, both anchored to an explicit list of principles. First, the model generates responses, critiques them against the constitution, and revises — producing self-improved training data. Second, preference optimization uses AI feedback (which response better follows the principles?) instead of armies of human raters — RLAIF. The constitution makes the values inspectable text rather than implicit rater behavior."

@@ -17,7 +17,7 @@ tags: ["agents", "coding", "droids", "cli", "automation"]
 featured: false
 alternativeTo: ["devin", "claude-code", "codex-cli", "cursor", "amp"]
 summary: "Factory is an agent-native software development platform. Its autonomous coding agents, called Droids, plan, write, test, and ship code across the terminal (Droid CLI), IDE, and web, pulling in organizational context from GitHub, Jira, Slack, and your codebase. It targets individual developers and enterprise engineering teams."
-related: ["ai-coding-agents-cli-2026", "claude-code-vs-codex-cli", "best-ai-app-builders-2026", "ai-coding-statistics-2026"]
+related: ["guide:ai-coding-agents-cli-2026", "guide:claude-code-vs-codex-cli", "guide:best-ai-app-builders-2026", "guide:ai-coding-statistics-2026"]
 faq:
   - q: "What is Factory?"
     a: "Factory is an agent-native software development platform. Its autonomous coding agents are called Droids: you describe a task in natural language and a Droid plans, writes, tests, and ships code, turning a prompt into a pull request. Droids run in the terminal via the Droid CLI, inside IDEs like VS Code and JetBrains, and on the web, and they pull context from your codebase and tools such as GitHub, Jira, and Slack."

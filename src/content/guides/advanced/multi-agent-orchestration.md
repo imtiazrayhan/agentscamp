@@ -5,7 +5,7 @@ author: "AgentsCamp"
 date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting", "architecture"]
-related: ["workflow-orchestrator", "building-multi-step-workflows", "agent-architect", "parallel-claude-code-worktrees"]
+related: ["agent:workflow-orchestrator", "guide:building-multi-step-workflows", "agent:agent-architect", "guide:parallel-claude-code-worktrees"]
 featured: false
 summary: "Multi-agent orchestration buys one thing: a clean, purpose-built context per agent. Four shapes arrange the hand-offs — fan-out for independent slices, pipeline for ordered stages with narrowing between them, orchestrator-worker for dynamic decomposition, and verify/critic for adversarial checking in a fresh window. Default to a single thread; promote only when a pattern clearly fits."
 keyTakeaways:
@@ -188,3 +188,10 @@ The result is more trustworthy than one agent reviewing everything, for reasons 
 ## Putting it together
 
 Pick the shape from the work, not the other way round. Independent slices fan out; ordered stages pipeline; dynamic, repeated decomposition wants an orchestrator-worker; anything you need to trust gets a verify/critic pass. Underneath all four, the lever is the same — give each agent a clean context and a narrow job, pass constraints in explicitly, persist what you can't afford to lose, and verify before you believe. Start with one agent. Add the next only when a pattern here obviously fits, and the coordination clearly pays for itself.
+
+## Continue exploring
+
+- [Create Subagent](/commands/workflow/create-subagent) — Scaffold a Claude Code subagent with a routing-ready description, scoped tools, and a focused system prompt.
+- [agent-architect](/agents/meta-orchestration/agent-architect) — Use this agent to design a new Claude Code subagent or review an existing one — scoping, description, toolset, model, and output contract.
+- [Estimate Effort](/commands/plan/estimate-effort) — Produce a grounded effort and complexity estimate for a task by exploring the codebase read-only.
+- [Write Design Doc](/commands/plan/write-design-doc) — Explore the codebase and write a decision-oriented design doc / RFC for a feature or system change.

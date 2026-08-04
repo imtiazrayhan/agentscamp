@@ -8,7 +8,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["devops-infra"]
-related: ["sre-engineer", "performance-engineer", "set-perf-budget"]
+related: ["agent:sre-engineer", "agent:performance-engineer", "command:set-perf-budget"]
 featured: false
 summary: "Most load tests hammer one URL in a tight loop and report a flattering average — they prove nothing. This skill designs a defensible test: a realistic workload model, a deliberately chosen test type (load/stress/soak/spike), SLO-tied thresholds set before running, and an interpretation by percentiles and saturation rather than means."
 ---

@@ -23,7 +23,7 @@ faq:
     a: "A registry is a catalog of MCP servers you can discover, evaluate, and install from. The official MCP Registry provides a standard, open catalog with provenance, and platforms like Smithery offer curated registries plus hosting and one-command installation. Registries solve the discovery and trust problem — finding servers that exist, seeing who published them, and pinning a specific version — rather than copy-pasting setup from a README of unknown origin."
   - q: "Are third-party MCP servers safe to use?"
     a: "Not by default — treat every third-party MCP server as supply-chain risk. A server runs code and is handed credentials and tool access, so a malicious or compromised one can exfiltrate data or take harmful actions. Vet provenance (who publishes it, is it open and audited), pin a specific version rather than tracking latest, scope any credentials to least privilege, run it isolated where possible, and require explicit approval before a server is added to a shared project."
-related: ["building-an-mcp-server", "deploy-remote-mcp-server", "mcp-server-engineer", "smithery", "mcp-inspector", "add-mcp-server"]
+related: ["guide:building-an-mcp-server", "guide:deploy-remote-mcp-server", "agent:mcp-server-engineer", "tool:smithery", "tool:mcp-inspector", "command:add-mcp-server"]
 ---
 
 The pitch for MCP is decoupling: [write a server once](/guides/advanced/building-an-mcp-server) and any client can use it. That pitch works beautifully for the first server, and the fifth. By the twentieth — internal servers, vendor servers, community servers, each exposing a handful of tools — the very thing that made MCP easy becomes the thing you have to manage. Connecting servers is solved. **Governing** them is the actual job: which servers exist and can you trust them, how many tools is too many, and who is allowed to plug what into your agents.
@@ -86,3 +86,7 @@ A connected MCP server runs code and is trusted with credentials and tool access
 At one server, you connect. At twenty, you **govern**: a registry for discovery and provenance, a gateway for central auth, allow-listing, audit, and tool filtering, and a discipline of curating the tool list down to what each task needs. Do that and MCP's "plug in everywhere" stays an asset instead of becoming an unbounded, unaudited attack surface.
 
 To build and harden the servers themselves, see the [mcp-server-engineer](/agents/developer-tools/mcp-server-engineer); to deploy one remotely and at scale, [Deploying a Remote MCP Server](/guides/mcp/deploy-remote-mcp-server); and to add one to a project the safe way, the [Add MCP Server](/commands/workflow/add-mcp-server) command.
+
+## Continue exploring
+
+- [MCP Ecosystem Statistics 2026](/guides/mcp/mcp-ecosystem-statistics) — The Model Context Protocol by the numbers — SDK downloads, server counts across registries, governance facts, and growth since the Linux Foundation donation.

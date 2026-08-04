@@ -15,7 +15,7 @@ topics: ["mlops-ai-infra", "llm-app-dev"]
 tags: ["inference", "open-models", "gpu", "image-generation", "api"]
 featured: false
 alternativeTo: ["baseten", "modal", "together-ai", "fireworks-ai"]
-related: ["deploying-llms-to-production", "self-host-vs-api-llm", "cold-start-optimizer", "multimodal-rag-images-pdfs"]
+related: ["guide:deploying-llms-to-production", "guide:self-host-vs-api-llm", "skill:cold-start-optimizer", "guide:multimodal-rag-images-pdfs"]
 summary: "Replicate is a hosted platform for running open machine-learning models — LLMs, image, video, audio, and more — behind a single API, billed per second of compute with scale-to-zero when idle. Thousands of community models run with one line of code, and you can package and deploy your own using Cog, its open-source container tool. Replicate joined Cloudflare in 2025."
 faq:
   - q: "What is Replicate?"

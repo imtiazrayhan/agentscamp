@@ -7,7 +7,7 @@ allowed-tools: "Read, Grep, Glob, Bash"
 title: "Explain Error"
 color: "purple"
 topics: ["review-qa"]
-related: ["debugger", "explain-code", "fix-failing-test"]
+related: ["agent:debugger", "command:explain-code", "command:fix-failing-test"]
 summary: "A slash command that diagnoses an error message, stack trace, or failing log output against the codebase: it locates the first in-repo frame, identifies the root cause one level beneath the message, confirms it with read-only checks, and reports a specific fix — or ranked candidates — without changing any files."
 ---
 

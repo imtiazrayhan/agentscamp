@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "blue"
 date: 2026-08-04
 topics: ["review-qa", "coding-languages"]
-related: ["best-claude-skills-for-frontend-development", "web-vitals-optimizer", "regression-test-writer", "integration-test-designer", "react-render-profiler", "frontend-developer"]
+related: ["guide:best-claude-skills-for-frontend-development", "skill:web-vitals-optimizer", "skill:regression-test-writer", "skill:integration-test-designer", "skill:react-render-profiler", "agent:frontend-developer"]
 featured: true
 summary: "Audits changed interfaces through layered evidence: automated rules, native semantics, accessible names, keyboard order, focus transitions, status announcements, contrast, reflow, reduced motion, and representative assistive-technology behavior. It prioritizes user-blocking regressions and supplies a reproducible check for each finding."
 faq:

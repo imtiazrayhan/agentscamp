@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["architecture"]
-related: ["rate-limiter-designer", "auth-flow-reviewer", "trace-data-flow"]
+related: ["skill:rate-limiter-designer", "skill:auth-flow-reviewer", "command:trace-data-flow"]
 featured: false
 summary: "Most webhook handlers are written as if delivery were trusted, exactly-once, and ordered — it is none of those. This skill scaffolds a handler in the only safe shape: verify the HMAC signature on the raw body, dedupe on the provider's event id, persist the raw event, return 2xx fast, and do the real work asynchronously."
 faq:

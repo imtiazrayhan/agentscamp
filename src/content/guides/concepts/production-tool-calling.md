@@ -38,7 +38,7 @@ faq:
     a: "Almost always because the tool definitions are weak, not because the model is dumb. Vague descriptions, free-string arguments that should be enums, and required fields marked optional all invite mistakes. Tighten the schemas: write descriptions for the model (what it does and when to use it), constrain arguments with types and enums, and keep the tool set small so tools aren't confusable."
   - q: "How do I make tool calls safe in production?"
     a: "Validate arguments before executing; feed errors back as observations; bound retries and distinguish retryable from non-retryable failures; make side-effecting tools idempotent so a retry can't double-charge or duplicate; and gate irreversible actions (payments, deletes, deploys, sends) behind human approval enforced at the tool layer. Then add step/budget caps so the loop always terminates."
-related: ["agent-frameworks-2026", "agent-tool-integration-engineer", "tool-definition-generator", "agent-reliability-reviewer", "effective-tool-use"]
+related: ["guide:agent-frameworks-2026", "agent:agent-tool-integration-engineer", "skill:tool-definition-generator", "agent:agent-reliability-reviewer", "guide:effective-tool-use"]
 ---
 
 An agent is a language model in a loop with tools. The model can't do anything in the world by itself — it can only emit text, including a structured request to call a tool. Everything an agent *does* — search, query a database, send an email, run code — happens because your code executed a tool call and handed the result back. Getting that loop right is most of what makes an agent reliable.
@@ -74,3 +74,8 @@ The loop is simple; the reliability is in the engineering around it:
 - **Safe parallelism.** Run independent calls concurrently for latency, but keep dependent or state-mutating calls ordered.
 
 Most agent frameworks ([the comparison](/guides/concepts/agent-frameworks-2026)) implement the loop for you — but the schema quality, error handling, idempotency, and gates are still yours to get right. The [agent-tool-integration-engineer](/agents/data-ai/agent-tool-integration-engineer) builds this layer, and the [agent-reliability-reviewer](/agents/meta-orchestration/agent-reliability-reviewer) audits it before you ship.
+
+## Continue exploring
+
+- [Idempotency Keys: Design APIs That Are Safe to Retry](/guides/api/idempotency-keys-api-design) — Design idempotent API mutations with client keys, atomic claims, response replay, payload fingerprints, in-flight handling, TTLs, and downstream safety.
+- [The AI Engineer Roadmap for 2026](/guides/getting-started/ai-engineer-roadmap-2026) — A staged path from API calls to production agents — the skills that matter in 2026, what to skip, and the guides and tools for each stage, in order.

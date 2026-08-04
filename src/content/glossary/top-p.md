@@ -4,7 +4,7 @@ description: "Top-p sampling restricts an LLM's next-token choices to the smalle
 date: 2026-06-11
 topics: ["llm-app-dev"]
 tags: ["top-p", "sampling", "llm", "parameters"]
-related: ["temperature", "llm-token", "structured-output"]
+related: ["glossary:temperature", "glossary:llm-token", "glossary:structured-output"]
 faq:
   - q: "What's the difference between top-p and temperature?"
     a: "Temperature reshapes the whole probability distribution (how bold the model is across all options); top-p truncates it (which options are even on the table — the smallest set summing to probability p). Temperature changes relative weights; top-p removes the tail. Standard advice: adjust one and leave the other at its default."

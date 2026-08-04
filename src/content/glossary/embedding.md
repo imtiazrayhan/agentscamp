@@ -4,7 +4,7 @@ description: "An embedding is a vector of numbers representing text's meaning, p
 date: 2026-06-11
 topics: ["rag-retrieval"]
 tags: ["embeddings", "vectors", "semantic-search", "rag"]
-related: ["choosing-embeddings-2026", "vector-database", "semantic-search", "rag", "embedding-set-inspector", "voyage-ai"]
+related: ["guide:choosing-embeddings-2026", "glossary:vector-database", "glossary:semantic-search", "glossary:rag", "skill:embedding-set-inspector", "tool:voyage-ai"]
 faq:
   - q: "What is an embedding in simple terms?"
     a: "A list of numbers (often 256–3,072 of them) that captures what a text means. An embedding model maps 'How do I reset my password?' and 'I forgot my login credentials' to nearby points, even though they share almost no words — which is what lets search work by meaning instead of keywords."

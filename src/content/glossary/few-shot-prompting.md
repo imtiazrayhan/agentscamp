@@ -4,7 +4,7 @@ description: "Few-shot prompting includes worked examples in the prompt so the m
 date: 2026-06-11
 topics: ["workflow-prompting"]
 tags: ["few-shot", "prompting", "examples", "llm"]
-related: ["prompting-techniques-2026", "zero-shot-prompting", "prompt-patterns", "chain-of-thought", "prompt-optimizer"]
+related: ["guide:prompting-techniques-2026", "glossary:zero-shot-prompting", "guide:prompt-patterns", "glossary:chain-of-thought", "skill:prompt-optimizer"]
 faq:
   - q: "How many examples should a few-shot prompt include?"
     a: "Two to five short, varied ones usually beat both one long example (overfits its specifics) and ten (diminishing returns, token cost, and on long prompts, diluted attention). Cover the boundaries: a typical case, an edge case, and the tricky case the model keeps getting wrong — including a 'when unsure, output X' demonstration."

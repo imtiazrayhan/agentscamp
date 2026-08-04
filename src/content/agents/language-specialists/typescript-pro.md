@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "sonnet"
 color: "blue"
 topics: ["coding-languages"]
-related: ["react-specialist", "frontend-developer"]
+related: ["agent:react-specialist", "agent:frontend-developer"]
 summary: "A subagent that treats the TypeScript type system as a design tool — generics, conditional and mapped types, discriminated unions, and branded types that make illegal states unrepresentable under strict mode. Reach for it when typing a tricky API, fixing cryptic type errors, designing a type-safe library surface, or tightening a codebase off any."
 ---
 

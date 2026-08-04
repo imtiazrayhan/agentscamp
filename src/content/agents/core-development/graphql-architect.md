@@ -6,7 +6,7 @@ model: "sonnet"
 color: "pink"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["architecture"]
-related: ["api-architect", "backend-developer", "system-architect"]
+related: ["agent:api-architect", "agent:backend-developer", "agent:system-architect"]
 summary: "A subagent that designs GraphQL schemas and resolvers that stay queryable, evolvable, and safe — nullability, input and payload types, Relay connections, DataLoader batching, depth/complexity limits. Reach for it when designing a schema from requirements, killing N+1 queries, planning a deprecation or federation split, or hardening a public graph."
 ---
 

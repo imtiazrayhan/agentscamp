@@ -28,7 +28,7 @@ faq:
     a: "Not guaranteed. The standard's portable core is the identity fields and the body; execution controls (allowed-tools, context: fork, model, hooks) are client extensions that other tools may ignore. Unknown fields don't break anything — clients skip them — but don't rely on them for correctness outside Claude Code."
   - q: "Does OpenAI really support Anthropic's skills format?"
     a: "Yes — first-party confirmed. OpenAI Codex's documentation describes skills as directories with a SKILL.md and states they build on the open agent skills standard, loading from .agents/skills tiers with the same progressive-disclosure model."
-related: ["what-are-claude-skills", "skill-md-reference", "how-to-install-claude-skills", "claude-skills-vs-custom-gpts", "packaging-and-sharing-skills", "claude-skills-examples"]
+related: ["guide:what-are-claude-skills", "guide:skill-md-reference", "guide:how-to-install-claude-skills", "guide:claude-skills-vs-custom-gpts", "guide:packaging-and-sharing-skills", "guide:claude-skills-examples"]
 ---
 
 The most consequential thing about Claude Skills isn't a feature — it's that the format escaped. Anthropic shipped skills in October 2025, then published the format as an **open standard** on December 18, 2025 (agentskills.io, spec on GitHub). Seven months later, the official client showcase lists **44 tools** that read SKILL.md, including every major coding agent — and, remarkably, OpenAI's own. A procedure you write once now runs in whatever agent each teammate happens to use.

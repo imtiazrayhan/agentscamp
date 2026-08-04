@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/daytonaio/daytona"
   - "https://www.daytona.io/docs/"
   - "https://app.daytona.io"
-related: ["sandboxing-ai-generated-code", "e2b", "modal", "vercel-sandbox", "computer-use"]
+related: ["guide:sandboxing-ai-generated-code", "tool:e2b", "tool:modal", "tool:vercel-sandbox", "glossary:computer-use"]
 summary: "Daytona pivoted from dev-environment manager to agent infrastructure and found its market: sandboxes that start in under 90ms — isolated computers with dedicated kernel, filesystem, and network, lifecycle primitives, shared volumes, and agent tools — on Linux, Windows, or Android, with GPUs available. AGPL-3.0 self-hostable; cloud is usage-billed with signup credits."
 faq:
   - q: "Is this the same Daytona that managed dev environments?"

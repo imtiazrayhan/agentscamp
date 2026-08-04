@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
 topics: ["mlops-ai-infra"]
-related: ["finetune-dataset-prep", "qlora-finetune-runner", "finetuning-engineer"]
+related: ["guide:finetune-dataset-prep", "skill:qlora-finetune-runner", "agent:finetuning-engineer"]
 featured: false
 summary: "Builds a training-ready fine-tuning dataset from raw examples: normalizes to the trainer's chat/instruction format, deduplicates (including near-duplicates), strips PII, balances, validates schema and token lengths, and carves a leak-free eval split — because the dataset is the model, and most fine-tuning failures are dataset failures."
 ---

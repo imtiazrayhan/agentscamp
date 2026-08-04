@@ -6,7 +6,7 @@ allowed-tools: "Read, Grep, Glob"
 title: "Review Tests"
 color: "purple"
 topics: ["review-qa"]
-related: ["review-pr", "write-tests", "flaky-test-hunt", "fix-failing-test"]
+related: ["command:review-pr", "command:write-tests", "command:flaky-test-hunt", "command:fix-failing-test"]
 featured: false
 summary: "A read-only review of test quality, not pass/fail: reads the tests and the code under test, then flags change-detector tests coupled to implementation, happy-path-only coverage, weak assertions, time/network-dependent flakiness, over-mocking, and line-coverage that misses branches — citing each test, the weakness, and the fix, plus the highest-value missing tests."
 faq:

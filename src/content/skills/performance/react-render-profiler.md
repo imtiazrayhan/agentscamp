@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["coding-languages", "review-qa"]
-related: ["bundle-analyzer", "dead-code-finder", "type-coverage-improver"]
+related: ["skill:bundle-analyzer", "skill:dead-code-finder", "skill:type-coverage-improver"]
 featured: false
 summary: "Slow React UIs are usually re-render problems, and the fix is rarely \"add useMemo everywhere.\" This skill classifies the actual cause, proves it with the Profiler or why-did-you-render before touching code, applies the one targeted fix — colocate state, stabilize identity, split context, memo, or virtualize — and re-measures to confirm the render count dropped."
 ---

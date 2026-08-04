@@ -36,7 +36,7 @@ faq:
     a: "A CLAUDE.md instruction is context the model reads and usually follows — but it can be forgotten, deprioritized, or compacted away in a long session. A hook is code the harness executes every time its event fires, whether or not the model remembers anything. Use instructions for judgment calls and hooks for invariants."
   - q: "Do hooks work with MCP tools?"
     a: "Yes. MCP tools appear with names like mcp__github__create_issue, and hook matchers can target them the same way as built-in tools — so you can gate, log, or post-process MCP tool calls with the same machinery."
-related: ["claude-code-settings-permissions", "hook-writer", "claude-settings-auditor", "claude-code-memory-context", "claude-code-tips", "claude-md-best-practices", "claude-code", "setup-claude-ci"]
+related: ["guide:claude-code-settings-permissions", "skill:hook-writer", "skill:claude-settings-auditor", "guide:claude-code-memory-context", "guide:claude-code-tips", "guide:claude-md-best-practices", "tool:claude-code", "command:setup-claude-ci"]
 ---
 
 Claude Code hooks are user-defined commands that run automatically at specific points in Claude Code's lifecycle — before a tool call, after a file edit, when you submit a prompt, when the session starts or ends. They are the difference between *asking* the agent to follow a rule and *enforcing* it.

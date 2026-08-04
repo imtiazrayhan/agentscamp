@@ -6,7 +6,7 @@ color: "red"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-03
 topics: ["ai-agents-systems"]
-related: ["agent-tool-integration-engineer", "agent-frameworks-2026", "human-in-the-loop-gate", "add-human-approval", "workflow-orchestrator", "agentops"]
+related: ["agent:agent-tool-integration-engineer", "guide:agent-frameworks-2026", "skill:human-in-the-loop-gate", "command:add-human-approval", "agent:workflow-orchestrator", "tool:agentops"]
 featured: false
 summary: "Reviews an agent for the failure modes that demos hide: runaway loops, unbounded cost, swallowed tool errors, missing human gates, no checkpoints, no observability. It reports concrete risks ranked by blast radius with specific fixes — the gap between 'works on my prompt' and 'safe in production.'"
 ---

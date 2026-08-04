@@ -6,7 +6,7 @@ model: "sonnet"
 color: "orange"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["coding-languages"]
-related: ["mobile-developer", "frontend-developer", "performance-engineer"]
+related: ["agent:mobile-developer", "agent:frontend-developer", "agent:performance-engineer"]
 summary: "A subagent for idiomatic Swift 6 — value types over reference types, optionals without force-unwraps, structured concurrency with async/await and actors, and Sendable-clean code under strict concurrency checking, plus idiomatic SwiftUI state and retain-cycle-free closures. Reach for it when fixing a data race, removing force-unwrap crashes, or smoothing a janky SwiftUI view."
 ---
 

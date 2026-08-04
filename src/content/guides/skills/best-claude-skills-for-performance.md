@@ -25,7 +25,7 @@ faq:
     a: "No. Lighthouse is useful diagnostic lab data. Core Web Vitals decisions should anchor on p75 field data from real users, with RUM providing faster verification after a change."
   - q: "Should performance skills optimize code automatically?"
     a: "Only after a baseline and bottleneck are proven. Make one scoped change, preserve behavior, rerun the same workload, and compare latency, throughput, resource use, and cost."
-related: ["best-claude-skills-for-frontend-development", "cache-policy-designer", "web-vitals-optimizer", "load-test-designer", "flamegraph-analyzer", "memory-leak-hunter"]
+related: ["guide:best-claude-skills-for-frontend-development", "skill:cache-policy-designer", "skill:web-vitals-optimizer", "skill:load-test-designer", "skill:flamegraph-analyzer", "skill:memory-leak-hunter"]
 ---
 
 The best Claude performance skill depends on the evidence you have. A browser field metric, JavaScript bundle report, React trace, load-test curve, flamegraph, heap snapshot, and cold-start profile describe different systems. Asking Claude to “make it faster” before choosing the measurement invites speculative edits.
@@ -92,3 +92,7 @@ npx agentscamp add skills/cache-policy-designer
 ```
 
 Every optimization report should state the baseline, workload, bottleneck evidence, exact change, post-change measurement, and tradeoffs. Without a comparable before-and-after result, the change is only a theory.
+
+## Continue exploring
+
+- [9 Best Claude Skills for Frontend Development](/guides/skills/best-claude-skills-for-frontend-development) — Compare Claude skills for accessibility, Web Vitals, React renders, bundles, localization, browser security, test data, tests, and caching.

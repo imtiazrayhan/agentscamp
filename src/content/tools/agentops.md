@@ -14,7 +14,7 @@ tags: ["observability", "agents", "monitoring", "debugging"]
 featured: false
 alternativeTo: ["langfuse", "arize-phoenix"]
 summary: "AgentOps is observability built for agents specifically: session replay of every step, tool call, and LLM call, plus cost, latency, and failure tracking. A few lines of SDK turn an opaque multi-step agent run into a timeline you can debug and a dashboard you can monitor."
-related: ["agent-reliability-reviewer", "langfuse", "arize-phoenix", "agent-frameworks-2026"]
+related: ["agent:agent-reliability-reviewer", "tool:langfuse", "tool:arize-phoenix", "guide:agent-frameworks-2026"]
 faq:
   - q: "What is AgentOps?"
     a: "AgentOps is an observability platform built specifically for AI agents. It turns an opaque multi-step agent run into a session replay — a step-by-step timeline of every LLM call, tool call, and decision — with cost, latency, and errors attached, plus failure analytics across runs."

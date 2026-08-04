@@ -8,7 +8,7 @@ color: "cyan"
 title: "Prompt Regression Tester"
 date: 2026-06-17
 topics: ["llm-evals", "workflow-prompting"]
-related: ["create-skill", "scaffold-rag-pipeline"]
+related: ["command:create-skill", "command:scaffold-rag-pipeline"]
 featured: false
 summary: "Eyeballing two outputs isn't testing a prompt change. This skill builds a real regression harness: a fixed eval set (including the cases that previously broke), checkable assertions per input, an optional LLM-judge for genuinely subjective qualities, and a diff against a committed baseline that flags every regression before you ship the edit."
 faq:

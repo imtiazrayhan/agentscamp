@@ -4,7 +4,7 @@ description: "Vibe coding is building software by describing intent in natural l
 date: 2026-06-11
 topics: ["workflow-prompting"]
 tags: ["vibe-coding", "ai-coding", "agents", "workflow"]
-related: ["what-is-claude-code", "cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "prompt-patterns", "ai-agent", "agentic-ai"]
+related: ["guide:what-is-claude-code", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "guide:prompt-patterns", "glossary:ai-agent", "glossary:agentic-ai"]
 faq:
   - q: "Who coined the term vibe coding?"
     a: "Andrej Karpathy popularized it in early 2025, describing a style of building where you 'fully give in to the vibes' — prompting an AI for code, accepting its output, and steering by running the result rather than reviewing every diff."

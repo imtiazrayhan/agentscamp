@@ -4,7 +4,7 @@ description: "AI red-teaming is adversarial testing — attacking your model or 
 date: 2026-06-12
 topics: ["ai-safety-security"]
 tags: ["red-teaming", "security", "safety", "testing"]
-related: ["red-teaming-llm-applications", "red-team-llm", "jailbreak", "prompt-injection", "defending-prompt-injection", "owasp-agentic-top-10", "guardrails"]
+related: ["guide:red-teaming-llm-applications", "command:red-team-llm", "glossary:jailbreak", "glossary:prompt-injection", "guide:defending-prompt-injection", "guide:owasp-agentic-top-10", "glossary:guardrails"]
 faq:
   - q: "What does red-teaming an LLM app actually involve?"
     a: "Systematically playing the attacker against your own system: jailbreak attempts against its policies, prompt injection through every content channel it reads, data-exfiltration probes, tool-abuse scenarios for agents, and domain-specific misuse. Findings become fixes (guardrails, scoping, gates) and then regression tests, so the same hole can't reopen."

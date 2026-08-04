@@ -23,7 +23,7 @@ faq:
     a: "A cascade calls a cheaper model first, validates the result, and retries with a stronger model when the output is invalid, uncertain, or below a quality threshold. It preserves cheap wins while giving difficult cases an escalation path."
   - q: "How do I know routing did not reduce quality?"
     a: "Evaluate every candidate route on a labeled dataset, then monitor production by route and difficulty slice. Track quality alongside cost, latency, escalation, and fallback rates; shadow the router before it controls traffic and roll thresholds out gradually."
-related: ["model-routing", "model-router-designer", "llm-cost-optimizer", "provider-fallback-wrapper", "llm-cost-latency-engineering", "calling-any-model-gateways", "litellm", "openrouter"]
+related: ["glossary:model-routing", "skill:model-router-designer", "agent:llm-cost-optimizer", "skill:provider-fallback-wrapper", "guide:llm-cost-latency-engineering", "guide:calling-any-model-gateways", "tool:litellm", "tool:openrouter"]
 howtoSteps:
   - name: "Define eligible model pools"
     text: "Filter models by hard requirements such as tools, modality, context length, output format, data policy, and regional availability before optimizing cost."

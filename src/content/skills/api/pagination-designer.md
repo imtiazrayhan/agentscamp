@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["architecture"]
-related: ["rate-limiter-designer", "postgres-index-strategist", "structured-logging-designer"]
+related: ["skill:rate-limiter-designer", "skill:postgres-index-strategist", "skill:structured-logging-designer"]
 featured: false
 summary: "Pagination breaks two quiet ways: OFFSET goes O(n), scanning then discarding every prior row on deep pages; a non-unique sort key without a tiebreaker silently drops or duplicates rows across pages. This skill picks cursor vs offset, designs an opaque cursor on (sort key + tiebreaker), bounds page size, names the required indexes, and defines how filters and sorts compose."
 ---

@@ -8,7 +8,7 @@ color: "cyan"
 title: "CORS Configurator"
 date: 2026-07-01
 topics: ["architecture"]
-related: ["security-headers-hardener", "auth-flow-reviewer", "rate-limiter-designer"]
+related: ["skill:security-headers-hardener", "skill:auth-flow-reviewer", "skill:rate-limiter-designer"]
 featured: false
 summary: "Fixes the case where a browser blocks a cross-origin request even though the API works from curl. It reads the exact CORS console error, works out whether the request is simple or preflighted, answers the OPTIONS preflight, and sets the minimal correct Access-Control-* headers — reflecting an allowlisted origin instead of the wildcard-plus-credentials combo browsers reject."
 faq:

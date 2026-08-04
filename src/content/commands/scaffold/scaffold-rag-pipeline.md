@@ -5,7 +5,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Scaffold RAG Pipeline"
 color: "purple"
 topics: ["rag-retrieval", "llm-app-dev"]
-related: ["add-streaming-endpoint", "agent-memory-designer"]
+related: ["command:add-streaming-endpoint", "skill:agent-memory-designer"]
 featured: false
 date: 2026-06-17
 summary: "Scaffolds a Retrieval-Augmented Generation pipeline fitted to the project's stack: an idempotent ingestion half (load, clean, chunk, embed, upsert) and a retrieval half (embed query, vector search, optional rerank, assemble a grounded prompt with source citations). States the chunking, embedding, vector-store, and top-k choices up front and leaves a slot for evaluation."

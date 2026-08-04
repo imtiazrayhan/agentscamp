@@ -15,7 +15,7 @@ tags: ["terminal", "open-source", "ai-assistant", "developer-tools"]
 featured: false
 alternativeTo: ["warp"]
 summary: "Wave Terminal is an open-source, cross-platform terminal that puts the CLI, inline file previews, a built-in editor, a web browser, and a context-aware AI assistant in one block-based workspace. Wave AI reads terminal output and files and works with cloud or local models via your own keys. Apache-2.0 licensed for macOS, Linux, and Windows."
-related: ["claude-code-tips", "installing-claude-code", "best-local-llm-tools-2026"]
+related: ["guide:claude-code-tips", "guide:installing-claude-code", "guide:best-local-llm-tools-2026"]
 faq:
   - q: "What is Wave Terminal?"
     a: "Wave Terminal is an open-source, cross-platform terminal that goes beyond a plain shell. Each command, file preview, editor, browser tab, or AI chat lives in a draggable block on a tiled workspace, so you can run commands, preview images and markdown, edit remote files, and browse the web without leaving the window. A built-in AI assistant (Wave AI) has access to your terminal output, widgets, and filesystem to help with debugging and command lookup."

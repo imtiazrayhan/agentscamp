@@ -4,7 +4,7 @@ description: "A vector database stores embeddings and answers nearest-neighbor q
 date: 2026-06-11
 topics: ["rag-retrieval"]
 tags: ["vector-database", "embeddings", "rag", "search", "hnsw"]
-related: ["best-vector-database-2026", "embedding", "semantic-search", "rag", "pgvector", "qdrant", "embedding-index-tuner"]
+related: ["guide:best-vector-database-2026", "glossary:embedding", "glossary:semantic-search", "glossary:rag", "tool:pgvector", "tool:qdrant", "skill:embedding-index-tuner"]
 faq:
   - q: "Do I need a dedicated vector database?"
     a: "Not always. pgvector adds vector search to the Postgres you already run, and at small-to-medium scale it's often the pragmatic choice. Dedicated engines (Qdrant, Pinecone, Weaviate, Milvus) earn their place with scale, filtering performance, hybrid search, and operational features — the decision tree is in our vector database guide."

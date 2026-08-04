@@ -25,7 +25,7 @@ faq:
     a: "No. Coverage shows which code executed; mutation testing asks whether the assertions detect controlled faults. Use coverage-gap-finder to locate omissions and mutation-test-runner to assess test strength."
   - q: "Can these skills modify my tests?"
     a: "Writing skills can create or edit test files when granted write access. Planning and analysis skills can remain read-only. Review the allowed-tools field and the proposed scope before invocation."
-related: ["best-claude-skills-2026", "best-claude-skills-for-code-review", "regression-test-writer", "test-scaffolder", "integration-test-designer", "coverage-gap-finder"]
+related: ["guide:best-claude-skills-2026", "guide:best-claude-skills-for-code-review", "skill:regression-test-writer", "skill:test-scaffolder", "skill:integration-test-designer", "skill:coverage-gap-finder"]
 ---
 
 The best Claude testing skill depends on the defect you are trying to prevent. Unit tests protect local behavior, integration tests protect collaboration, contract tests protect compatibility, property tests protect invariants, and mutation tests reveal assertions that do not matter. For LLM features, deterministic expected strings are often the wrong tool entirely.
@@ -95,3 +95,7 @@ npx agentscamp add skills/coverage-gap-finder
 ```
 
 Ask Claude to report the exact command it ran, the pre-fix failure, the post-fix result, and any assumptions about fixtures or environment. That evidence makes generated tests reviewable instead of merely plausible.
+
+## Continue exploring
+
+- [Flaky Test Diagnoser](/skills/testing/flaky-test-diagnoser) — Diagnose a test that passes and fails without relevant code changes by reproducing the instability, classifying its trigger, and isolating the shared state, timing, ordering,…

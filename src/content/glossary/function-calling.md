@@ -4,7 +4,7 @@ description: "Function calling lets an LLM request structured invocations of you
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 tags: ["function-calling", "tool-use", "agents", "api"]
-related: ["production-tool-calling", "ai-agent", "structured-output", "model-context-protocol", "tool-definition-generator", "agent-tool-integration-engineer"]
+related: ["guide:production-tool-calling", "glossary:ai-agent", "glossary:structured-output", "glossary:model-context-protocol", "skill:tool-definition-generator", "agent:agent-tool-integration-engineer"]
 faq:
   - q: "Does the model actually execute the function?"
     a: "No — it only emits a structured request (the function name plus JSON arguments matching your schema). Your application executes the real call and returns the result to the model as an observation. The model proposes; your code disposes — which is also where validation, permissions, and safety checks belong."

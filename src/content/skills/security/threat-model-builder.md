@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["review-qa"]
-related: ["auth-flow-reviewer", "contract-test-designer", "dependency-audit"]
+related: ["skill:auth-flow-reviewer", "skill:contract-test-designer", "skill:dependency-audit"]
 featured: false
 summary: "Security bolted on after design is the expensive kind. This skill makes threat modeling concrete: draw the data flow, mark where data crosses trust boundaries, walk STRIDE at each crossing, and rank threats by likelihood × impact so you mitigate the few that matter and accept the rest in writing."
 faq:

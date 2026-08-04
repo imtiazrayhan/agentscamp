@@ -21,7 +21,7 @@ faq:
     a: "Yes — hybrid search (dense vectors plus BM25-style keyword scoring fused in a single query) is first-class in Weaviate, alongside modules for vectorization, reranking, and generative search. Pinecone supports hybrid retrieval too, but Weaviate's module ecosystem bundles more of the RAG pipeline into the database itself."
   - q: "Can I switch between them later?"
     a: "Mechanically yes — both store vectors plus metadata, and migration is an export/re-upsert job. The sticky parts are operational: Pinecone-specific features (serverless namespaces, integrated inference) and Weaviate's modules and schema don't transfer 1:1. Keep your ingestion pipeline vendor-neutral and switching stays a project, not a rewrite."
-related: ["weaviate", "pinecone", "best-vector-database-2026", "qdrant-vs-pinecone", "vector-database", "hybrid-search"]
+related: ["tool:weaviate", "tool:pinecone", "guide:best-vector-database-2026", "guide:qdrant-vs-pinecone", "glossary:vector-database", "glossary:hybrid-search"]
 ---
 
 Weaviate vs Pinecone is the open-vs-managed question again, this time with [hybrid search](/glossary/hybrid-search) built in on one side. Both are production-proven [vector database](/glossary/vector-database) engines for [RAG](/glossary/rag) retrieval; what you're actually choosing is **who operates it and how much of the pipeline lives inside the database**.

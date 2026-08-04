@@ -6,7 +6,7 @@ allowed-tools: "Read, Write, Glob, Grep, Edit"
 title: "Scaffold CLI Command"
 color: "purple"
 topics: ["coding-languages"]
-related: ["new-component", "scaffold-github-action", "cli-tooling-engineer"]
+related: ["command:new-component", "command:scaffold-github-action", "agent:cli-tooling-engineer"]
 featured: false
 summary: "A slash command that adds a well-formed subcommand to a project's CLI: it detects the existing framework (Commander/oclif, argparse/Click/Typer, Cobra, clap) and entry point, then generates a command wired into the parser with typed argument and flag parsing, a --help description, validation that fails to stderr with a non-zero exit code, and stdout kept for real output."
 ---

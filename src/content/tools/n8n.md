@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/n8n-io/n8n"
   - "https://docs.n8n.io"
   - "https://blog.n8n.io"
-related: ["n8n-vs-dify", "dify", "langchain", "human-in-the-loop", "agent-frameworks-2026"]
+related: ["guide:n8n-vs-dify", "tool:dify", "tool:langchain", "glossary:human-in-the-loop", "guide:agent-frameworks-2026"]
 summary: "n8n (~192k stars) is the automation platform that grew an AI brain: a visual workflow canvas (with code when you want it), 400+ app integrations, and AI agent nodes — built on LangChain — with memory backends, vector-store nodes for RAG, and broad model support. Fair-code licensed: free self-hosting for internal use, EUR-priced cloud billed per execution."
 faq:
   - q: "What makes n8n good for AI workflows specifically?"

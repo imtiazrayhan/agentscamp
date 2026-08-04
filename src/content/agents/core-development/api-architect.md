@@ -6,7 +6,7 @@ model: "opus"
 color: "purple"
 topics: ["architecture"]
 featured: true
-related: ["backend-developer", "system-architect"]
+related: ["agent:backend-developer", "agent:system-architect"]
 summary: "A subagent that designs and reviews HTTP and GraphQL APIs — resource modeling, paradigm choice, pagination, error contracts, idempotency, and versioning — producing OpenAPI 3.1 or SDL specs with rationale. Reach for it when designing a new public or internal API, reviewing a spec, or planning a breaking change and migration strategy."
 ---
 

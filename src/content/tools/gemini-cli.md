@@ -10,7 +10,7 @@ repo: "https://github.com/google-gemini/gemini-cli"
 color: "blue"
 topics: ["coding-languages"]
 tags: ["cli", "agent", "terminal"]
-related: ["claude-code", "codex-cli", "aider", "antigravity", "opencode"]
+related: ["tool:claude-code", "tool:codex-cli", "tool:aider", "tool:antigravity", "tool:opencode"]
 featured: false
 alternativeTo: ["claude-code", "codex-cli", "aider", "opencode", "goose"]
 summary: "Gemini CLI is Google's open-source (Apache-2.0) terminal AI agent driven by Gemini models with a 1M-token context window. It reads and writes files, runs shell commands, fetches URLs, and grounds answers with Google Search, plus MCP support and GEMINI.md context files. Google transitioned it to Antigravity CLI: as of June 18, 2026 the free personal tier no longer serves requests."

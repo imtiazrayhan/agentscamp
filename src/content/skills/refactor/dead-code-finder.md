@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["review-qa"]
-related: ["refactoring-specialist", "refactor"]
+related: ["agent:refactoring-specialist", "command:refactor"]
 featured: false
 summary: "A skill that finds genuinely unused code — unreferenced exports, unreachable files, unused dependencies — and removes it safely: it walks from the real entry points, runs ecosystem tools like knip or vulture, greps the whole repo for dynamic usage before trusting any candidate, then deletes one item at a time, re-running build and tests after each."
 ---

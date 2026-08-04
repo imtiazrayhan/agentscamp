@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "red"
 date: 2026-08-04
 topics: ["devops-infra", "review-qa"]
-related: ["best-claude-skills-for-devops-sre", "structured-logging-designer", "dashboard-designer", "alerting-rules-tuner", "idempotency-designer", "safe-data-backfill-planner"]
+related: ["guide:best-claude-skills-for-devops-sre", "skill:structured-logging-designer", "skill:dashboard-designer", "skill:alerting-rules-tuner", "skill:idempotency-designer", "skill:safe-data-backfill-planner"]
 featured: true
 summary: "Audits asynchronous work end to end: enqueue, delivery, deduplication, processing, external side effects, acknowledgement, retry, dead-letter handling, shutdown, and recovery. It ties each failure mode to observable evidence and distinguishes queue guarantees from the application's required outcome."
 faq:

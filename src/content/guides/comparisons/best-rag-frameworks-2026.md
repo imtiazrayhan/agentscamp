@@ -21,7 +21,7 @@ faq:
     a: "Choose LlamaIndex when retrieval is the core problem — it has the richest indexing and querying primitives and takes retrieval most seriously. Choose LangChain when RAG is one part of a larger application that also needs agents, tools, and orchestration. A common production pattern is LlamaIndex for the retrieval layer and LangChain/LangGraph for orchestration."
   - q: "Where do embeddings and reranking fit in?"
     a: "Every framework here is a thin layer over the same retrieval primitives: a chunker, an embedding model, a vector store, and (usually) a reranker. The framework wires them together, but their quality determines your answers — so invest there first."
-related: ["llamaindex", "langchain", "dspy", "how-rag-works", "langchain-vs-llamaindex", "best-vector-database-2026"]
+related: ["tool:llamaindex", "tool:langchain", "tool:dspy", "guide:how-rag-works", "guide:langchain-vs-llamaindex", "guide:best-vector-database-2026"]
 ---
 
 A RAG framework is the wiring between your documents and your model: it loads and [chunks](/glossary/chunking) data, builds an index, retrieves the right context, and hands it to the LLM. The loading step often leans on a dedicated parsing layer — tools like [Unstructured](/tools/unstructured), [Docling](/tools/docling), and [Marker](/tools/marker) turn messy PDFs, docs, and images into clean text before chunking. You can hand-roll all of that against a [vector database](/glossary/vector-database) and a model SDK — and for a single index it's worth it. Frameworks earn their keep once you need multiple retrieval strategies, reranking, evaluation, and [agentic retrieval](/guides/concepts/agentic-rag). If you're new to the pattern, start with [how RAG works](/guides/concepts/how-rag-works).

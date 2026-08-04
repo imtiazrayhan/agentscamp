@@ -29,7 +29,7 @@ faq:
     a: "Two usual causes: code execution isn't enabled (Settings → Capabilities — skills run inside it), or the ZIP is structured wrong — it must contain the skill folder with SKILL.md inside it. Also remember claude.ai doesn't see Claude Code skills; each surface needs its own upload."
   - q: "Do I need to restart Claude Code after editing a skill?"
     a: "No — skill files are watched, and edits apply in the current session. The single restart case is when the top-level skills directory didn't exist at session start. If an edit seems ignored, verify you edited the copy that's actually loading (project vs personal vs plugin namespace)."
-related: ["what-are-claude-skills", "testing-and-debugging-skills", "skill-md-reference", "how-to-install-claude-skills", "skill-auditor", "claude-code-skills-best-practices"]
+related: ["guide:what-are-claude-skills", "guide:testing-and-debugging-skills", "guide:skill-md-reference", "guide:how-to-install-claude-skills", "skill:skill-auditor", "guide:claude-code-skills-best-practices"]
 ---
 
 Skill failures sort cleanly by symptom, and each symptom has a short check list. Find your symptom below and work it top to bottom. (For the deeper test-and-iterate methodology once things basically work, see [Testing and Debugging Skills](/guides/skills/testing-and-debugging-skills).)

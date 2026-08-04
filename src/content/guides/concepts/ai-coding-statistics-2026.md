@@ -24,7 +24,7 @@ faq:
     a: "By the Pragmatic Engineer survey (906 engineers, early 2026, senior-skewed): Claude Code is both most-used and most-loved (46% 'most loved' vs Cursor's 19% and Copilot's 9%). By raw scale, GitHub Copilot's 20M+ all-time users and 4.7M paid subscribers remain the biggest footprint, and OpenAI's Codex reported 4M+ weekly developers in April 2026. Different metrics crown different tools — usage breadth, paid depth, and developer preference are three different races."
   - q: "Where do these numbers come from?"
     a: "Every statistic on this page carries its source, date, and a quality label — primary (the organization's own announcement or data), survey (named methodology), or reported (credible press citing a primary). Widely-circulated numbers we could not trace to a credible source are deliberately omitted."
-related: ["claude-vs-gpt-vs-gemini-coding", "vibe-coding-guide", "ai-coding-agents-cli-2026", "best-claude-code-agents-skills", "mcp-ecosystem-statistics", "ai-engineer-roadmap-2026", "testing-ai-generated-code"]
+related: ["guide:claude-vs-gpt-vs-gemini-coding", "guide:vibe-coding-guide", "guide:ai-coding-agents-cli-2026", "guide:best-claude-code-agents-skills", "guide:mcp-ecosystem-statistics", "guide:ai-engineer-roadmap-2026", "guide:testing-ai-generated-code"]
 ---
 
 AI-coding statistics are mostly laundered guesses — numbers that trace to an SEO listicle citing another listicle. This page is the opposite: **every figure below is dated, sourced, and labeled** (primary / survey / reported), verified July 1, 2026, and refreshed on a cadence. Numbers we couldn't trace are omitted.
@@ -56,3 +56,8 @@ AI-coding statistics are mostly laundered guesses — numbers that trace to an S
 The honest section. **For:** DORA 2025 found AI adoption *positively associated with delivery throughput* for the first time (a reversal from 2024), and >80% of practitioners perceive productivity gains *(survey)*. **Against:** the METR randomized controlled trial — the only RCT on experienced developers and real tasks — measured them **19% slower** with early-2025 tools, while they believed they were ~20% faster (**July 2025**, *primary*; a **February 2026** follow-up on late-2025 tools found the effect had flipped to a modest speedup, though METR calls it only weak evidence). **Quality:** GitClear's analysis of 211M changed lines found code duplication rising sharply in the AI era (copy/paste up, refactoring down through 2024) *(primary, vendor research — affiliation disclosed)*; DORA still finds AI adoption *negatively* associated with delivery stability.
 
 The synthesis this page stands behind: **adoption is real and enormous; measured productivity is conditional** — on task, skill, and above all on the [verification practices](/guides/workflow/ai-code-review-workflow) that separate speed from [slop](/glossary/ai-slop).
+
+## Continue exploring
+
+- [Augment Code](/tools/augment-code) — AI coding assistant built for large, real-world codebases — a Context Engine that indexes the whole repo, with agents, chat, and completions in IDEs and a CLI.
+- [Trae](/tools/trae) — Trae is an AI-native IDE from ByteDance — a VS Code-style editor with a built-in Builder agent and an autonomous SOLO mode that writes code across a project.

@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/getzep"
   - "https://x.com/zep_ai"
   - "https://arxiv.org/abs/2501.13956"
-related: ["mem0-vs-zep-vs-letta", "agent-memory", "mem0", "letta", "graph-rag", "agent-memory-architecture"]
+related: ["guide:mem0-vs-zep-vs-letta", "glossary:agent-memory", "tool:mem0", "tool:letta", "guide:graph-rag", "guide:agent-memory-architecture"]
 summary: "Zep builds agent memory as temporal knowledge graphs: facts carry validity intervals, so the system tracks when things changed, not just what's true. Zep Cloud claims sub-200ms retrieval at 100M-node scale; Graphiti (~27k stars, Apache-2.0) is the open-source graph engine underneath — hybrid semantic+BM25+traversal retrieval with real-time incremental updates."
 faq:
   - q: "What happened to open-source Zep?"

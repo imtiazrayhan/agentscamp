@@ -4,7 +4,7 @@ description: "A2A is an open protocol that lets AI agents discover each other's 
 date: 2026-06-17
 topics: ["ai-agents-systems"]
 tags: ["a2a", "interoperability", "agents", "protocol"]
-related: ["ai-agent", "agentic-ai", "computer-use"]
+related: ["glossary:ai-agent", "glossary:agentic-ai", "glossary:computer-use"]
 faq:
   - q: "How does A2A relate to MCP?"
     a: "They solve different problems and work together. MCP (Model Context Protocol) connects a single agent to tools, data sources, and APIs. A2A connects agents to each other so they can delegate tasks and collaborate. A typical system uses MCP to give each agent its tools and A2A to let those agents coordinate across vendors."

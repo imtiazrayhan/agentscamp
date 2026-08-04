@@ -38,7 +38,7 @@ faq:
     a: "Treat it like any code with repo write access: pin --allowedTools to the minimum, set --max-turns, run on trusted triggers (not arbitrary fork PRs), and scope the runner's credentials. The action can't approve PRs by design, so a human review gate stays intact. Permission rules and hooks apply in CI exactly as they do locally."
   - q: "Can I use Bedrock or Vertex instead of the Anthropic API in CI?"
     a: "Yes — the action accepts use_bedrock: \"true\" or use_vertex: \"true\", authenticating via GitHub OIDC with an AWS IAM role or GCP Workload Identity Federation instead of a static API key."
-related: ["setup-claude-ci", "claude-agent-sdk-tutorial", "claude-code-settings-permissions", "claude-code-hooks", "claude-code-mcp-setup", "create-pr", "review-pr", "claude-code"]
+related: ["command:setup-claude-ci", "guide:claude-agent-sdk-tutorial", "guide:claude-code-settings-permissions", "guide:claude-code-hooks", "guide:claude-code-mcp-setup", "command:create-pr", "command:review-pr", "tool:claude-code"]
 ---
 
 Everything Claude Code does interactively, it can do unattended: triage an issue, fix a failing test, review a PR, draft release notes on a schedule. The interactive session is one frontend; this guide covers the other two — the **headless CLI** and the **GitHub Action** — and the permission discipline that makes unattended runs safe.
@@ -128,3 +128,10 @@ A CI agent is code with write access to your repo. The discipline:
 > The [Setup Claude CI](/commands/workflow/setup-claude-ci) command scaffolds all of this — workflow file, secret checklist, scoped permissions — from a one-line description of what you want the bot to do.
 
 When a workflow outgrows YAML — multi-step pipelines, custom tools, your own orchestration — the same engine is available as a library: that's the [Claude Agent SDK](/guides/advanced/claude-agent-sdk-tutorial).
+
+## Continue exploring
+
+- [CI/CD Engineer](/agents/infrastructure-devops/ci-cd-engineer) — Use this agent to design, speed up, and harden CI/CD pipelines on any provider (GitHub Actions, GitLab CI, CircleCI, Buildkite).
+- [Git Bisect](/commands/git/git-bisect) — Drive git bisect to find the exact commit that introduced a regression.
+- [Resolve Merge Conflicts](/commands/git/resolve-conflict) — Walk through resolving the in-progress merge, rebase, or cherry-pick conflict in the current repo by understanding both sides, then verify before continuing.
+- [Setup Pre-commit Hooks](/commands/workflow/setup-precommit-hooks) — Set up fast pre-commit hooks that catch problems before they land — detect the repo's existing stack and hook mechanism, run lint/format/typecheck plus a secret scan on staged…

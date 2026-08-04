@@ -4,7 +4,7 @@ description: "MoE is a model architecture where a router activates only a few ex
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["moe", "architecture", "inference", "models"]
-related: ["inference", "quantization", "self-host-vs-api-llm", "reasoning-model"]
+related: ["glossary:inference", "glossary:quantization", "guide:self-host-vs-api-llm", "glossary:reasoning-model"]
 faq:
   - q: "Why are so many frontier models MoE now?"
     a: "Because it decouples capacity from per-token cost. A dense model spends every parameter on every token; an MoE holds far more total parameters but routes each token through only a few experts — frontier-scale knowledge at mid-size compute. Most large open-weight releases of 2024–2026 (Mixtral, DeepSeek's V-series, Qwen MoE variants, gpt-oss) took this shape."

@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/Skyvern-AI/skyvern"
   - "https://app.skyvern.com"
   - "https://www.ycombinator.com/companies/skyvern"
-related: ["browser-agents-compared-2026", "browser-use", "stagehand", "how-computer-use-agents-work", "human-in-the-loop"]
+related: ["guide:browser-agents-compared-2026", "tool:browser-use", "tool:stagehand", "guide:how-computer-use-agents-work", "glossary:human-in-the-loop"]
 summary: "Skyvern (AGPL-3.0, ~22k stars, YC-backed) is the business-workflow take on browser agents: computer vision + LLMs operating websites without site-specific scripts, with native CAPTCHA solving and 2FA support, a workflow builder, and a code-generation mode that writes its own Playwright to cut vision costs. Self-host (Postgres required) or cloud with monthly free credits."
 faq:
   - q: "What makes Skyvern different from Browser Use and Stagehand?"

@@ -5,7 +5,7 @@ author: "AgentsCamp"
 color: "green"
 topics: ["workflow-prompting"]
 tags: ["system-prompt", "prompting", "agents", "llm-app-dev", "output-format"]
-related: ["prompt-patterns", "prompting-techniques-2026", "context-engineering", "structured-output-2026", "effective-tool-use"]
+related: ["guide:prompt-patterns", "guide:prompting-techniques-2026", "guide:context-engineering", "guide:structured-output-2026", "guide:effective-tool-use"]
 featured: false
 date: 2026-06-17
 summary: "The system prompt holds the durable contract: role, standing instructions, output format, constraints, and tool-use policy. Per-request facts belong in the user turn or retrieved context. Put the load-bearing rules first, say what to do (not just what to avoid), give the model an explicit out, and treat the prompt as a versioned, tested artifact."

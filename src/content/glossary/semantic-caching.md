@@ -4,7 +4,7 @@ description: "Semantic caching reuses LLM responses keyed by meaning rather than
 date: 2026-06-17
 topics: ["llm-app-dev"]
 tags: ["caching", "embeddings", "latency", "cost"]
-related: ["embedding", "semantic-search", "prompt-caching"]
+related: ["glossary:embedding", "glossary:semantic-search", "glossary:prompt-caching"]
 faq:
   - q: "How is semantic caching different from prompt caching?"
     a: "They solve different problems. Prompt caching (a provider feature) caches a long prompt prefix so repeated requests reprocess it cheaply — it still calls the model. Semantic caching sits in your application and returns a stored answer with no model call at all when a new query means roughly the same thing as a past one. You can use both: prompt caching to cheapen the calls you make, semantic caching to skip calls entirely."

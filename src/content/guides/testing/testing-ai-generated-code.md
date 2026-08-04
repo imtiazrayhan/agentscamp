@@ -23,7 +23,7 @@ faq:
     a: "The classics: vulnerabilities that function correctly (injection, authz gaps — run security review separately), performance and resource behavior under load, architectural fitness (will anyone be able to extend this?), and silent scope drift — code that does more than asked. Tests verify the contract; humans verify the intent and the blast radius."
   - q: "How do I retrofit confidence onto an already-merged pile of AI code?"
     a: "Characterization first: generate tests that pin CURRENT behavior (the coverage-gap-finder skill targets the valuable untested paths), review those assertions against intent — every mismatch found is a latent bug surfaced — then refactor with the safety net in place. It's archaeology, but it converts 'nobody read this' into 'this is now specified.'"
-related: ["tdd-with-ai-agents", "write-tests", "test-scaffolder", "coverage-gap-finder", "test-engineer", "vibe-coding-guide", "ai-code-review-workflow"]
+related: ["guide:tdd-with-ai-agents", "command:write-tests", "skill:test-scaffolder", "skill:coverage-gap-finder", "agent:test-engineer", "guide:vibe-coding-guide", "guide:ai-code-review-workflow"]
 ---
 
 The uncomfortable math of 2026: AI writes a huge share of new code, and nobody — not even the diligent — reads all of it the old way. That isn't a scandal; it's a redefinition. **Verification, not authorship, is now the engineering**, and tests are its primary instrument. Here's how testing changes when the code under test came from an agent.
@@ -49,3 +49,12 @@ Let agents do what they're excellent at: **breadth.** Edge cases humans skip (em
 Tests verify the contract; they're blind to whole categories an agent can get wrong while staying green: **security that functions** (injection with correct output — run [security review](/commands/review/security-scan) as its own pass), **performance under load**, **architecture** (extensibility, coupling, the month-six bill), and **quiet scope creep** — code that does more than asked. That's the rubric for the human pass in your [review workflow](/guides/workflow/ai-code-review-workflow): skip re-deriving what tests already prove; spend entirely on what they can't see.
 
 The summary discipline fits on a sticky note: **before** — a test defines done; **during** — the agent iterates against it; **after** — read assertions, scan security, judge design. Code volume scaled with AI; this is how confidence scales with it.
+
+## Continue exploring
+
+- [QA Automation Engineer](/agents/quality-security/qa-automation-engineer) — Use this agent for end-to-end and UI test automation — building flake-resistant Playwright/Cypress suites, stabilizing flaky browser tests, structuring page objects and…
+- [Audit Accessibility](/commands/analyze/audit-accessibility) — Audit a component or page for accessibility against WCAG — semantics, names, keyboard, ARIA, contrast, forms, motion.
+- [Trace Data Flow](/commands/analyze/trace-data-flow) — Trace how a value, field, or variable flows through the codebase from source to sink.
+- [Extract Function](/commands/refactor/extract-function) — Extract a code region into a well-named function and update the call site.
+- [Optimize Imports](/commands/refactor/optimize-imports) — Remove unused imports and organize the rest in a file or directory per the project's conventions — preferring the project's own import tool where one is configured — without…
+- [Review Tests](/commands/review/review-tests) — Review the quality of a test suite, not just whether it passes — find weak assertions, missing edge cases, and tests coupled to implementation.

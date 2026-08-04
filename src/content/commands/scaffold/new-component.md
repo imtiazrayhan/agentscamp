@@ -7,7 +7,7 @@ allowed-tools: "Read, Grep, Glob, Write, Edit"
 title: "New Component"
 color: "purple"
 topics: ["coding-languages"]
-related: ["frontend-developer", "react-specialist", "write-tests"]
+related: ["agent:frontend-developer", "agent:react-specialist", "command:write-tests"]
 summary: "A slash command that scaffolds a new UI component matched to the repo's existing conventions: it studies the closest neighbor component for framework, file layout, styling, prop typing, and test/story patterns, generates the component plus only the supporting files neighbors have, then verifies with lint and typecheck and reports."
 ---
 

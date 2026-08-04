@@ -9,7 +9,7 @@ repo: "https://github.com/aaif-goose/goose"
 color: "cyan"
 topics: ["workflow-prompting", "coding-languages"]
 tags: ["agent", "open-source", "mcp"]
-related: ["claude-code", "aider", "codex-cli"]
+related: ["tool:claude-code", "tool:aider", "tool:codex-cli"]
 featured: false
 alternativeTo: ["claude-code", "aider", "codex-cli", "opencode", "amp"]
 summary: "Goose is an open-source (Apache-2.0), general-purpose AI agent that runs entirely on your machine — it executes shell commands, edits files, runs tests, and chains multi-step tasks. MCP-native with 70+ documented extensions and model-agnostic across 15+ providers including local models, it ships as a Rust CLI and a desktop app for macOS, Linux, and Windows."

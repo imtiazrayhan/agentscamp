@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/google-antigravity"
   - "https://en.wikipedia.org/wiki/Google_Antigravity"
   - "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/"
-related: ["gemini-cli", "cursor", "windsurf", "claude-code", "cursor-vs-claude-code-vs-copilot-vs-windsurf-2026"]
+related: ["tool:gemini-cli", "tool:cursor", "tool:windsurf", "tool:claude-code", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026"]
 summary: "Google Antigravity is Google's agentic development platform: an agent-first IDE plus a Manager surface that spawns and oversees multiple agents across editor, terminal, and browser. Launched with Gemini 3 in November 2025 and expanded at I/O 2026 (May 19) with a desktop app, the Antigravity CLI, and an SDK. Free public preview; it succeeded Gemini CLI, whose free service ended June 18, 2026."
 faq:
   - q: "Is Google Antigravity free?"

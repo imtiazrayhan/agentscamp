@@ -8,7 +8,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["devops-infra"]
-related: ["bundle-analyzer", "connection-pool-tuner", "load-test-designer", "memory-leak-hunter"]
+related: ["skill:bundle-analyzer", "skill:connection-pool-tuner", "skill:load-test-designer", "skill:memory-leak-hunter"]
 featured: false
 summary: "A cold start is several costs stacked together — runtime boot, dependency load, framework init, first-connection setup — and the usual fix (provisioned concurrency) just pays to hide a slow init. This skill measures the breakdown by phase, attacks the dominant one with artifact shrinking, lazy-loading, memory right-sizing, and connection reuse, and reports before/after."
 ---

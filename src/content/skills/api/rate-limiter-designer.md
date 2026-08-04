@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["architecture", "devops-infra"]
-related: ["webhook-handler-scaffolder", "auth-flow-reviewer", "provider-fallback-wrapper"]
+related: ["skill:webhook-handler-scaffolder", "skill:auth-flow-reviewer", "skill:provider-fallback-wrapper"]
 featured: false
 summary: "Most rate limiters fail in two ways: they live in process memory (so each replica enforces its own private quota) or they read-then-write without atomicity (so concurrent requests slip past the limit). This skill picks the right algorithm for the traffic shape, a key and limits per tier, cross-instance atomic storage, and standard 429 + RateLimit-* headers — then sketches the handler."
 ---

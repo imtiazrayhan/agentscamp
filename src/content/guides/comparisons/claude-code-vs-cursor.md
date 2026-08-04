@@ -23,7 +23,7 @@ faq:
     a: "Cursor is freemium — a free Hobby tier, then Pro and Teams subscriptions with included usage and on-demand billing beyond it. Claude Code requires a paid Claude plan (Pro/Max) or API usage, so cost scales with how much agentic work you run. Subscription-predictable vs usage-scaling is the durable difference; exact numbers change."
   - q: "Which handles large codebases better?"
     a: "Both are credible. Cursor indexes the repo and pulls context via @-mentions and retrieval; Claude Code searches and reads as it works, agentically, and its CLAUDE.md plus skills system lets you encode repo knowledge it loads on demand. For repo-wide autonomous changes, Claude Code's loop usually goes further; for staying oriented while you edit, Cursor's integration is smoother."
-related: ["claude-code", "cursor", "cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "claude-code-vs-opencode", "what-is-claude-code", "claude-code-tips"]
+related: ["tool:claude-code", "tool:cursor", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "guide:claude-code-vs-opencode", "guide:what-is-claude-code", "guide:claude-code-tips"]
 ---
 
 "Claude Code vs Cursor" is 2026's most-asked tooling question, and it's slightly malformed — they're different species that happen to share a habitat. **Cursor** is an *editor* with AI woven through it; **Claude Code** is an *agent* that lives in your terminal and treats the whole repo as its workspace. The right question is where you want the intelligence to sit: in your keystrokes, or in delegated tasks.

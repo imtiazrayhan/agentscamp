@@ -7,7 +7,7 @@ allowed-tools: "Read, Grep, Glob, Edit"
 title: "Extract Function"
 color: "purple"
 topics: ["review-qa"]
-related: ["refactor", "refactoring-specialist"]
+related: ["command:refactor", "agent:refactoring-specialist"]
 summary: "A slash command that extracts a code region into a single well-named function and replaces the original lines with a call: it pins down the span, works out inputs, outputs, mutations, and tricky early returns or closure captures, matches the file's conventions, then verifies callers, tests, lint, and types — strictly behavior-preserving."
 ---
 

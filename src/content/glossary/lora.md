@@ -4,7 +4,7 @@ description: "LoRA fine-tunes a model by training small low-rank adapter matrice
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["lora", "qlora", "fine-tuning", "peft"]
-related: ["fine-tuning", "quantization", "qlora-finetune-runner", "unsloth", "finetune-dataset-prep"]
+related: ["glossary:fine-tuning", "glossary:quantization", "skill:qlora-finetune-runner", "tool:unsloth", "guide:finetune-dataset-prep"]
 faq:
   - q: "What's the difference between LoRA and QLoRA?"
     a: "QLoRA is LoRA on top of a quantized base model: the frozen weights are loaded in 4-bit precision while the trainable adapters stay higher-precision. That cuts memory enough to fine-tune models in the 7–70B class on a single consumer or prosumer GPU, at a small quality cost that's usually acceptable."

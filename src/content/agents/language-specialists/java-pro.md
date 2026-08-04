@@ -8,7 +8,7 @@ color: "red"
 tools: "Read, Grep, Glob, Edit, Bash"
 topics: ["coding-languages"]
 featured: false
-related: ["golang-pro", "rust-pro", "code-reviewer", "performance-engineer"]
+related: ["agent:golang-pro", "agent:rust-pro", "agent:code-reviewer", "agent:performance-engineer"]
 summary: "A subagent for idiomatic modern Java (17/21+) — records, sealed classes, exhaustive pattern matching, virtual threads and structured concurrency, Streams, and Optional — plus JVM/GC performance and correct concurrency, verified by the project's build and JUnit 5. Reach for it to modernize legacy Java, hunt a GC pause or allocation hotspot, or settle a concurrency question."
 ---
 

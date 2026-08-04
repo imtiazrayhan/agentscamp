@@ -21,7 +21,7 @@ faq:
     a: "For privacy-bound, cost-sensitive, or offline workloads — yes, via faster-whisper or whisper.cpp, with VAD to manage its silence-hallucination habit. You give up streaming-grade latency, diarization, and the understanding layers, and accept a model frozen at the turbo generation. It's the right floor, not the frontier."
   - q: "Which STT should a voice agent use?"
     a: "A streaming model with great time-to-first-token and solid endpointing: Deepgram and AssemblyAI's streaming tiers are the proven picks, with Cartesia Ink the latency-first newcomer whose native turn detection simplifies the pipeline. If you'd rather not assemble at all, the bundles (AssemblyAI's Voice Agent API, LiveKit Inference, Vapi) make STT a dropdown."
-related: ["deepgram", "assemblyai", "whisper", "cartesia", "best-tts-apis-2026", "realtime-voice-apis", "build-a-voice-agent"]
+related: ["tool:deepgram", "tool:assemblyai", "tool:whisper", "tool:cartesia", "guide:best-tts-apis-2026", "guide:realtime-voice-apis", "guide:build-a-voice-agent"]
 ---
 
 Speech-to-text stopped being one product: **realtime streaming** (agents, captions), **batch with understanding** (every call center's analytics), and **self-hosted** (privacy and unit economics) reward different engines. The 2026 field maps cleanly onto those workloads.

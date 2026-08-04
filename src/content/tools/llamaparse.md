@@ -17,7 +17,7 @@ sameAs:
   - "https://docs.cloud.llamaindex.ai/llamaparse"
   - "https://cloud.llamaindex.ai"
 alternativeTo: ["unstructured", "reducto", "docling", "marker"]
-related: ["how-rag-works", "best-rag-frameworks-2026", "multimodal-rag-images-pdfs", "chunking-strategy-optimizer", "multimodal-document-extractor"]
+related: ["guide:how-rag-works", "guide:best-rag-frameworks-2026", "guide:multimodal-rag-images-pdfs", "skill:chunking-strategy-optimizer", "skill:multimodal-document-extractor"]
 summary: "LlamaParse is LlamaIndex's hosted parsing API that converts messy documents — PDFs with tables, charts, figures, and handwriting — into clean, structured Markdown for RAG. It is layout-aware, supports 90+ formats and 100+ languages, offers multiple cost-vs-accuracy modes up to agentic multimodal parsing, and plugs straight into LlamaIndex ingestion."
 faq:
   - q: "What is LlamaParse?"

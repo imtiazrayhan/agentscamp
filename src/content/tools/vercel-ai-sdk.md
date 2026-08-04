@@ -15,7 +15,7 @@ tags: ["typescript", "streaming", "structured-output", "open-source", "react"]
 featured: false
 alternativeTo: ["litellm", "instructor"]
 summary: "The Vercel AI SDK is the de facto TypeScript toolkit for AI apps: one provider-agnostic API for text, structured objects, and tool calls, first-class streaming, and framework UI hooks (React, Svelte, Vue) for building chat and generative interfaces fast."
-related: ["litellm", "openrouter", "structured-output-2026", "calling-any-model-gateways", "add-streaming-endpoint"]
+related: ["tool:litellm", "tool:openrouter", "guide:structured-output-2026", "guide:calling-any-model-gateways", "command:add-streaming-endpoint"]
 faq:
   - q: "What is the Vercel AI SDK?"
     a: "The Vercel AI SDK is an open-source TypeScript toolkit for building AI-powered applications. It provides one provider-agnostic API for generating text, generating structured objects, tool calling, and streaming — generateText, streamText, generateObject — plus React, Svelte, and Vue hooks like useChat for wiring chat and generative UI into your app."

@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "sonnet"
 color: "green"
 topics: ["coding-languages"]
-related: ["api-architect", "system-architect"]
+related: ["agent:api-architect", "agent:system-architect"]
 summary: "A subagent that implements server-side features end to end — REST/GraphQL endpoints, business logic, data access, migrations, and background jobs — matching existing codebase conventions and validating input at the boundary. Reach for it when building or modifying endpoints, queue workers, or third-party service integrations behind a clean interface."
 ---
 

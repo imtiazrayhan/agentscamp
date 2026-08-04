@@ -21,7 +21,7 @@ faq:
     a: "Zep Community Edition was deprecated in April 2025; the company's open-source effort moved to Graphiti, the temporal knowledge-graph engine (Apache-2.0, ~27k stars) that powers Zep Cloud. Self-hosters today run Graphiti plus a graph database — don't start anything new on Zep CE."
   - q: "Can I use these with Claude Code or other existing agents?"
     a: "Mem0 and Zep, yes — they're services any agent calls (both ship MCP-friendly integrations), complementing built-in mechanisms like Claude Code's CLAUDE.md and auto-memory. Letta is different: its memory is a property of Letta agents, so you use it BY using Letta (the API for your own apps, or Letta Code as the coding harness)."
-related: ["mem0", "zep", "letta", "agent-memory", "agent-memory-architecture", "claude-code-memory-context", "graph-rag"]
+related: ["tool:mem0", "tool:zep", "tool:letta", "glossary:agent-memory", "guide:agent-memory-architecture", "guide:claude-code-memory-context", "guide:graph-rag"]
 ---
 
 Agent memory has three credible architectures in 2026, and the vendors map onto them almost too neatly: **a layer you call** (Mem0), **a platform that structures** (Zep), **a runtime that remembers** (Letta). The comparison is really about where you want memory to live.

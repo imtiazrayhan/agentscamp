@@ -21,7 +21,7 @@ faq:
     a: "Different kinds of good. v0's output is idiomatic modern frontend — React, Tailwind, shadcn/ui — frequently merge-ready for codebases on that stack, which is exactly Vercel's intent. Lovable's code is a coherent full-stack app that works; like all generated apps it accumulates structure a team will want to refactor once it grows. For pure UI on the Vercel stack, v0; for application scaffolding, Lovable."
   - q: "What happens after the prototype?"
     a: "The handoff is the real test. Both export/sync code (Lovable via GitHub, v0 as components you copy or pull), and from there it's normal software: review what was generated, add tests, and bring in an agentic tool like Claude Code for the refactors and features the builder UI can't express. Treat builder output as a strong first draft, not a finished system."
-related: ["v0", "lovable", "best-ai-app-builders-2026", "vibe-coding", "bolt", "replit-agent"]
+related: ["tool:v0", "tool:lovable", "guide:best-ai-app-builders-2026", "glossary:vibe-coding", "tool:bolt", "tool:replit-agent"]
 ---
 
 v0 vs Lovable is the app-builder wave's defining matchup, and the comparison resolves fast once you name the outputs: **v0 makes components, Lovable makes apps.**

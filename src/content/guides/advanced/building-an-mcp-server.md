@@ -5,7 +5,7 @@ author: "AgentsCamp"
 date: 2026-06-03
 color: "green"
 topics: ["mcp", "architecture"]
-related: ["building-multi-step-workflows", "claude-agent-sdk", "claude-code-mcp-setup", "deploy-remote-mcp-server", "fastmcp", "mcp-inspector"]
+related: ["guide:building-multi-step-workflows", "tool:claude-agent-sdk", "guide:claude-code-mcp-setup", "guide:deploy-remote-mcp-server", "tool:fastmcp", "tool:mcp-inspector"]
 featured: false
 summary: "An MCP server exposes three primitives — tools (model-called functions), resources (read-only data by URI), and prompts (user-invoked templates) — over JSON-RPC via two transports: stdio for local child processes, Streamable HTTP for remote services that own their auth. Define each tool as name + typed schema + handler, register it with claude mcp add, and verify with /mcp."
 howtoSteps:

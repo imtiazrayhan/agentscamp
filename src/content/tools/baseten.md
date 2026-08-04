@@ -14,7 +14,7 @@ tags: ["inference", "gpu", "deployment", "autoscaling", "truss", "mlops"]
 featured: false
 alternativeTo: ["modal", "replicate", "together-ai", "fireworks-ai"]
 summary: "Baseten runs ML and LLM models in production: package serving logic with the open-source Truss framework, push it, and get an autoscaling GPU endpoint. It handles containerization, multi-region/multi-cloud replicas, scale-to-zero, and per-deployment observability — built for serving your own and open-source models at production scale."
-related: ["deploying-llms-to-production", "self-host-vs-api-llm", "cold-start-optimizer", "llm-cost-latency-engineering"]
+related: ["guide:deploying-llms-to-production", "guide:self-host-vs-api-llm", "skill:cold-start-optimizer", "guide:llm-cost-latency-engineering"]
 faq:
   - q: "What is Baseten?"
     a: "Baseten is an inference platform for deploying ML and LLM models into production on autoscaling GPU infrastructure. You package a model with the open-source Truss framework, run truss push, and Baseten handles containerization, scaling, and a live API endpoint."

@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["architecture"]
-related: ["pagination-designer", "rate-limiter-designer", "idempotency-designer"]
+related: ["skill:pagination-designer", "skill:rate-limiter-designer", "skill:idempotency-designer"]
 featured: false
 summary: "A GraphQL schema is a long-lived contract that evolves in place — no /v2 to escape to. This skill models the graph around domain types and edges (not RPC wrappers of your endpoints), sets nullability so one failing field doesn't blank its parent, standardizes lists with Relay connections, and names per-parent fields that need DataLoader before they N+1."
 ---

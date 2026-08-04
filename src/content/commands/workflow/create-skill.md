@@ -5,7 +5,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Create Skill"
 color: "purple"
 topics: ["workflow-prompting"]
-related: ["create-slash-command", "create-subagent", "agent-memory-designer"]
+related: ["command:create-slash-command", "command:create-subagent", "skill:agent-memory-designer"]
 featured: false
 date: 2026-06-17
 summary: "Scaffolds a new Claude Code skill into .claude/skills/<name>/SKILL.md: it turns your one-line purpose into a kebab-case name, writes valid frontmatter (name, a description that leads with what it does then 'Use when...' triggers, allowed-tools, user-invocable) and a lean body with When to use, numbered Instructions, and an Output section, applying progressive disclosure to keep SKILL.md small."

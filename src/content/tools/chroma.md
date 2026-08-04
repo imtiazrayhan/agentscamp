@@ -16,7 +16,7 @@ topics: ["rag-retrieval", "data-ml"]
 tags: ["vector-database", "rag", "python", "open-source"]
 featured: false
 summary: "Chroma is an open-source, Python-first vector database that runs embedded in your process: pip install, create a collection, add documents, and query — often without wiring an embedding model yourself. The default for prototypes and notebooks, with a client-server mode and Chroma Cloud when you outgrow embedded."
-related: ["best-vector-database-2026", "lancedb", "how-rag-works", "vector-search-engineer"]
+related: ["guide:best-vector-database-2026", "tool:lancedb", "guide:how-rag-works", "agent:vector-search-engineer"]
 faq:
   - q: "What is Chroma?"
     a: "Chroma is an open-source, Python-first vector database that runs in-process by default — no server to start. You pip install chromadb, create a collection, add documents, and query, and it ships a default embedding function so you don't have to wire an embedding provider to get started. That low-friction path is why it's the most common first vector store in prototypes and notebooks."

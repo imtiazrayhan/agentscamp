@@ -15,7 +15,7 @@ sameAs:
   - "https://www.figma.com/blog/introducing-figma-mcp-server/"
   - "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server"
   - "https://github.com/figma/mcp-server-guide"
-related: ["best-mcp-servers-2026", "claude-code-mcp-setup", "claude-code-plugins", "frontend-developer", "react-specialist", "new-component"]
+related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "guide:claude-code-plugins", "agent:frontend-developer", "agent:react-specialist", "command:new-component"]
 alternativeTo: ["lovable", "bolt"]
 summary: "Figma's official MCP server hands agents what a screenshot can't: the structured truth of a design — component hierarchy, auto-layout, variants, design tokens via get_variable_defs, and Code Connect mappings to your real components. The hosted remote (mcp.figma.com) works on all plans and can even write designs back to the canvas; a desktop variant serves your live selection."
 faq:

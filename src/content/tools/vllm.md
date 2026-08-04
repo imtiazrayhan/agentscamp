@@ -14,7 +14,7 @@ color: "red"
 topics: ["mlops-ai-infra"]
 tags: ["llm", "inference", "serving", "gpu", "open-source"]
 featured: false
-related: ["llm-inference-engineer", "self-host-vs-api-llm", "scaffold-vllm-config", "ollama", "lm-studio"]
+related: ["agent:llm-inference-engineer", "guide:self-host-vs-api-llm", "command:scaffold-vllm-config", "tool:ollama", "tool:lm-studio"]
 alternativeTo: ["ollama", "lm-studio", "llama-cpp", "litellm"]
 summary: "vLLM is an open-source inference and serving engine for open-weight LLMs with high throughput on GPUs. PagedAttention manages the KV cache like virtual memory and continuous batching keeps hardware saturated, while an OpenAI-compatible server means existing clients work by swapping the base URL — the default engine for self-hosted production serving."
 faq:

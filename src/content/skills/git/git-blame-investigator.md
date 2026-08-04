@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["review-qa"]
-related: ["dead-code-finder", "conventional-commits", "onboarding-guide-writer"]
+related: ["skill:dead-code-finder", "skill:conventional-commits", "skill:onboarding-guide-writer"]
 featured: false
 summary: "git blame names a person, not a reason. This skill does code archaeology: it finds the real originating commit (past reformatting/rename noise via ignore-revs and the pickaxe), reads the message and diff for intent, traces regressions with log -L and bisect, and returns a verdict on whether the code is safe to change."
 faq:

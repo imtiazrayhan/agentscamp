@@ -4,7 +4,7 @@ description: "Model routing sends each request to the cheapest model that can ha
 date: 2026-06-17
 topics: ["llm-app-dev"]
 tags: ["routing", "cost-optimization", "cascade", "model-selection", "latency"]
-related: ["production-model-routing", "inference", "small-language-model", "model-router-designer", "provider-fallback-wrapper", "calling-any-model-gateways"]
+related: ["guide:production-model-routing", "glossary:inference", "glossary:small-language-model", "skill:model-router-designer", "skill:provider-fallback-wrapper", "guide:calling-any-model-gateways"]
 faq:
   - q: "How does a model router decide where to send a request?"
     a: "The routing signal can be cheap heuristics (task type, input length, keywords), a lightweight classifier trained to predict difficulty, or a confidence-based cascade: try the small model first, validate its answer, and escalate only when the check fails. Heuristics are predictable and free; classifiers and cascades adapt to actual difficulty but add their own latency and need their own evals."

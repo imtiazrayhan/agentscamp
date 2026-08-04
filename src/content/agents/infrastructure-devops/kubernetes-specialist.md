@@ -5,7 +5,7 @@ date: 2025-08-22
 model: "sonnet"
 color: "blue"
 topics: ["devops-infra"]
-related: ["devops-engineer"]
+related: ["agent:devops-engineer"]
 summary: "A subagent that authors minimal Kubernetes manifests and Helm charts and diagnoses cluster problems from events, conditions, and logs — fixing source manifests, never live objects. Reach for it when debugging a CrashLoopBackOff or Pending pod, writing a Deployment, tuning requests, limits, and HPA targets, or chasing Service, DNS, and PVC issues."
 ---
 

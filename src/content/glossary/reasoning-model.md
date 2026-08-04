@@ -4,7 +4,7 @@ description: "A reasoning model is an LLM trained to think before answering — 
 date: 2026-06-11
 topics: ["llm-app-dev"]
 tags: ["reasoning", "thinking", "llm", "models"]
-related: ["chain-of-thought", "choosing-the-right-model", "inference", "llm-cost-latency-engineering"]
+related: ["glossary:chain-of-thought", "guide:choosing-the-right-model", "glossary:inference", "guide:llm-cost-latency-engineering"]
 faq:
   - q: "How is a reasoning model different from a regular LLM?"
     a: "Training and inference budget. A standard model answers directly; a reasoning model first generates thinking tokens — exploring, checking, revising — then answers. It was trained (largely via reinforcement learning) for that deliberation to actually improve outcomes, and the thinking budget can scale with problem difficulty."

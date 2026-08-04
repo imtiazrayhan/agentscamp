@@ -8,7 +8,7 @@ color: "cyan"
 title: "License Compliance Checker"
 date: 2026-07-01
 topics: ["devops-infra"]
-related: ["dependency-audit", "dependency-upgrade-planner", "secret-scanner"]
+related: ["skill:dependency-audit", "skill:dependency-upgrade-planner", "skill:secret-scanner"]
 featured: false
 summary: "Builds a license inventory of the dependency tree and judges each license against how the project ships (SaaS, distributed binary, or library). It flags strong copyleft (GPL/AGPL) conflicting with a proprietary model, weak-copyleft (LGPL/MPL) obligations, missing or unknown licenses, and Apache-2.0 NOTICE requirements, then reports risk tiers with remediation. Not legal advice."
 faq:

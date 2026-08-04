@@ -4,7 +4,7 @@ description: "Quantization shrinks a model by storing weights in lower precision
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["quantization", "inference", "local-llm", "optimization"]
-related: ["inference", "lora", "self-host-vs-api-llm", "ollama", "vllm", "embedding-index-tuner"]
+related: ["glossary:inference", "glossary:lora", "guide:self-host-vs-api-llm", "tool:ollama", "tool:vllm", "skill:embedding-index-tuner"]
 faq:
   - q: "How much quality does quantization cost?"
     a: "Less than intuition suggests, down to a point. 8-bit is near-lossless for most models; well-made 4-bit typically costs a few percent on benchmarks and is the local-inference default; below 4-bit degradation gets noticeable and task-dependent. Bigger models tolerate quantization better — a 4-bit 70B usually beats a full-precision 7B."

@@ -25,7 +25,7 @@ faq:
     a: "Use query-plan-analyzer when you have EXPLAIN or EXPLAIN ANALYZE output and need evidence tied to one execution plan. Use sql-optimizer for broader query rewrites and SQL-level improvements, then validate the result with a plan and representative workload."
   - q: "Why is a backfill not just a migration?"
     a: "A backfill may scan and update millions of live rows over hours or days. It needs batching, restart checkpoints, rate limits, progress metrics, reconciliation, and application compatibility beyond the schema transition itself."
-related: ["best-claude-skills-2026", "safe-data-backfill-planner", "migration-writer", "query-plan-analyzer", "postgres-index-strategist", "deadlock-diagnoser"]
+related: ["guide:best-claude-skills-2026", "skill:safe-data-backfill-planner", "skill:migration-writer", "skill:query-plan-analyzer", "skill:postgres-index-strategist", "skill:deadlock-diagnoser"]
 ---
 
 The best Claude database skills make risky work reviewable before anything touches production. They inspect repository conventions, ask for the actual engine and workload, produce explicit verification queries, and distinguish a reversible file change from a live data operation.

@@ -4,7 +4,7 @@ description: "RAG retrieves relevant documents from your own data and injects th
 date: 2026-06-11
 topics: ["rag-retrieval"]
 tags: ["rag", "retrieval", "llm", "grounding"]
-related: ["how-rag-works", "hybrid-search-reranking", "embedding", "vector-database", "hallucination", "rag-pipeline-engineer"]
+related: ["guide:how-rag-works", "guide:hybrid-search-reranking", "glossary:embedding", "glossary:vector-database", "glossary:hallucination", "agent:rag-pipeline-engineer"]
 faq:
   - q: "What problem does RAG solve?"
     a: "Models only know their training data — nothing about your codebase, your docs, or anything after their cutoff. RAG closes that gap at query time by fetching the relevant slice of your data and putting it in the prompt, which grounds answers in real sources and sharply reduces hallucination on private or fresh information."

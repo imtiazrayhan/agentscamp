@@ -15,7 +15,7 @@ tags: ["agents", "framework", "orchestration", "open-source", "python"]
 featured: false
 alternativeTo: ["crewai", "autogen", "openai-agents-sdk", "claude-agent-sdk"]
 summary: "LangGraph models an agent as an explicit state graph of nodes and edges, trading some abstraction for control. Its built-in persistence (checkpointing), human-in-the-loop interrupts, and streaming make it a common choice for production agents that need to be debuggable and resumable."
-related: ["crewai", "openai-agents-sdk", "autogen", "agent-frameworks-2026", "mem0"]
+related: ["tool:crewai", "tool:openai-agents-sdk", "tool:autogen", "guide:agent-frameworks-2026", "tool:mem0"]
 faq:
   - q: "What is LangGraph?"
     a: "LangGraph is a low-level orchestration library for building agents as explicit state graphs: you define nodes (steps), edges (transitions), and a shared state object, so the agent's control flow becomes something you can see, test, and resume. Built-in checkpointing, human-in-the-loop interrupts, and streaming make runs durable and debuggable. Despite the name, it does not require the rest of LangChain."

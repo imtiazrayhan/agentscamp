@@ -25,7 +25,7 @@ faq:
     a: "No. A skill's metadata (name and description) is always loaded but tiny; its full instructions enter context only when triggered, and bundled files load only when read. An MCP server's tool definitions are injected into context whenever the server is connected, whether or not you use them — so a dozen connected servers can quietly eat your window. Connect servers per task, not permanently."
   - q: "Are skills or MCP servers Claude-only?"
     a: "Neither. MCP is an open standard supported across many clients and assistants, so a server you build works beyond Claude. The Agent Skills format (a SKILL.md with name, description, and instructions) has been adopted as an open standard across multiple coding agents too. Both are portable, not locked to one vendor."
-related: ["what-are-claude-skills", "skills-vs-agents-vs-commands", "writing-your-first-skill", "best-mcp-servers-2026", "building-an-mcp-server", "mcp-vs-a2a", "claude-code-skills-best-practices"]
+related: ["guide:what-are-claude-skills", "guide:skills-vs-agents-vs-commands", "guide:writing-your-first-skill", "guide:best-mcp-servers-2026", "guide:building-an-mcp-server", "guide:mcp-vs-a2a", "guide:claude-code-skills-best-practices"]
 ---
 
 Skills and MCP servers get lumped together as "ways to extend Claude," but they solve fundamentally different problems and the best setups run both. A **skill injects procedure and knowledge** — instructions that load into the model's context when the task matches. An **MCP server exposes capabilities and live data over a protocol** — tools to call, resources to read, prompts to reuse. One changes *how* Claude works; the other changes *what* Claude can do.

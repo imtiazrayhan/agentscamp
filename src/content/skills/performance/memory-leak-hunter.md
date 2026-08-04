@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["review-qa"]
-related: ["connection-pool-tuner", "structured-logging-designer", "add-caching"]
+related: ["skill:connection-pool-tuner", "skill:structured-logging-designer", "command:add-caching"]
 featured: false
 summary: "Memory that grows is not automatically a leak — caches and warmup grow too. This skill confirms a real leak by watching memory across a steady workload, diffs two heap snapshots under load to name the growing object and its retainer, fixes the root that blocks collection (eviction, unsubscribe, clear timers, weak refs), and re-runs to prove a plateau."
 ---

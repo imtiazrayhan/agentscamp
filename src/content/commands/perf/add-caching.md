@@ -6,7 +6,7 @@ title: "Add Caching"
 color: "purple"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["find-n-plus-one", "connection-pool-tuner", "set-perf-budget"]
+related: ["command:find-n-plus-one", "skill:connection-pool-tuner", "command:set-perf-budget"]
 featured: false
 summary: "A slash command that adds caching to one expensive function/endpoint correctly: it confirms the work is cacheable, then designs the cache key (every result-changing input — args, user/tenant, locale, version), a TTL tied to tolerated staleness, the layer (in-process vs Redis), and invalidation (TTL vs explicit bust). It guards stampedes, wraps the call once, and reports it."
 faq:

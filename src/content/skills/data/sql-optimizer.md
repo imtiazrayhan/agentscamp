@@ -7,7 +7,7 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["data-ml"]
-related: ["sql-pro", "performance-engineer"]
+related: ["agent:sql-pro", "agent:performance-engineer"]
 featured: false
 summary: "A skill that diagnoses a slow SQL query from its real execution plan: it captures an EXPLAIN ANALYZE baseline, reads the plan for the actual bottleneck — sequential scan, stale statistics, non-sargable predicate, bad join order, or app-side N+1 — proposes one targeted fix, and re-runs the identical plan to prove the improvement."
 ---

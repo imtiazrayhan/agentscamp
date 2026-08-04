@@ -16,7 +16,7 @@ alternativeTo: ["n8n", "langchain"]
 sameAs:
   - "https://github.com/langgenius/dify"
   - "https://docs.dify.ai"
-related: ["n8n-vs-dify", "n8n", "langchain", "how-rag-works", "agent-frameworks-2026"]
+related: ["guide:n8n-vs-dify", "tool:n8n", "tool:langchain", "guide:how-rag-works", "guide:agent-frameworks-2026"]
 summary: "Dify (~145k stars) is the visual answer to LLM app building: a workflow canvas for chatflows and agents, a built-in RAG pipeline from ingestion to retrieval, agent nodes with 50+ tools, hundreds of models via any provider, a prompt IDE, and LLMOps — self-hosted with one docker compose or cloud freemium. License caveat: it's a modified Apache-2.0 with conditions."
 faq:
   - q: "What do people build with Dify?"

@@ -4,7 +4,7 @@ description: "Agentic AI is the class of AI systems that act toward goals — pl
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 tags: ["agents", "autonomy", "agentic", "llm"]
-related: ["ai-agent", "agent-frameworks-2026", "multi-agent-orchestration", "agent-engineering", "human-in-the-loop", "owasp-agentic-top-10"]
+related: ["glossary:ai-agent", "guide:agent-frameworks-2026", "guide:multi-agent-orchestration", "glossary:agent-engineering", "glossary:human-in-the-loop", "guide:owasp-agentic-top-10"]
 faq:
   - q: "What's the difference between generative AI and agentic AI?"
     a: "Generative AI produces artifacts on request — text, images, code — with the human driving every step. Agentic AI is given an outcome and takes actions to reach it: planning, using tools, reading results, and iterating. Generation is one turn; agency is a loop with consequences in the world."

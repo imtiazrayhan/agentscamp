@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
 topics: ["devops-infra"]
-related: ["version-bumper", "changelog-from-prs", "migration-writer"]
+related: ["skill:version-bumper", "skill:changelog-from-prs", "skill:migration-writer"]
 featured: false
 summary: "A bump is wrong when you call a breaking change a minor — and consumers find out at runtime. This skill diffs the release range against the actual public API surface (exports, CLI flags, config, routes, file formats), classifies every change as breaking / additive / fix, and recommends major/minor/patch with the specific changes that forced it."
 ---

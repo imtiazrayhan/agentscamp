@@ -17,7 +17,7 @@ sameAs:
   - "https://github.com/livekit"
   - "https://docs.livekit.io"
   - "https://x.com/livekit"
-related: ["realtime-voice-apis", "build-a-voice-agent", "pipecat", "vapi", "cartesia", "deepgram"]
+related: ["guide:realtime-voice-apis", "guide:build-a-voice-agent", "tool:pipecat", "tool:vapi", "tool:cartesia", "tool:deepgram"]
 summary: "LiveKit is the open-source realtime stack voice AI standardized on: an Apache-2.0 WebRTC server plus the LiveKit Agents framework (Python/Node) wiring STT→LLM→TTS or speech-to-speech models, with an open multilingual turn-detection model, full telephony (SIP, DTMF, transfers), and LiveKit Cloud as the managed network. Self-host free; cloud freemium with metered minutes."
 faq:
   - q: "What exactly is LiveKit — the server or the agents framework?"

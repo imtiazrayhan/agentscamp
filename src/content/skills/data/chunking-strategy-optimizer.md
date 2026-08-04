@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-03
 topics: ["rag-retrieval"]
-related: ["how-rag-works", "chonkie", "rag-pipeline-engineer", "embedding-set-inspector"]
+related: ["guide:how-rag-works", "tool:chonkie", "agent:rag-pipeline-engineer", "skill:embedding-set-inspector"]
 featured: false
 summary: "Chunking quietly sets the ceiling on RAG quality. This skill turns 'pick a chunk size' from a guess into a measured decision: build a small retrieval eval set, sweep chunk strategies and sizes, score recall@k, and recommend the smallest config that hits the target."
 ---
