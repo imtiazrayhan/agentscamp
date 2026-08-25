@@ -51,6 +51,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  other: {
+    "google-adsense-account": "ca-pub-7682614488237262",
+  },
   // Icons are auto-wired from the app dir: favicon.ico, icon.svg, apple-icon.png.
 };
 
@@ -74,6 +77,11 @@ export default function RootLayout({
             gtag('config', 'G-W4PR0FJLD6');
           `}
         </Script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7682614488237262"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
