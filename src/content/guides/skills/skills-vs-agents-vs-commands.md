@@ -3,6 +3,8 @@ title: "Skills vs Agents vs Commands"
 description: "How Claude Code's two extension mechanisms — subagents and skills — differ across three invocation patterns, with a decision table for choosing the right one."
 author: "AgentsCamp"
 date: 2026-06-03
+updated: 2026-08-25
+depth: cornerstone
 color: "green"
 topics: ["workflow-prompting"]
 related: ["guide:what-are-claude-skills", "guide:writing-a-custom-agent", "guide:writing-your-first-skill", "guide:getting-started-with-agents", "guide:claude-code-plugins"]
@@ -12,8 +14,26 @@ keyTakeaways:
   - "Custom commands merged into skills: .claude/commands/*.md still works as legacy, but .claude/skills/<name>/SKILL.md is canonical, and every skill is invocable as /<name>."
   - "A subagent is a worker with isolation; a skill is knowledge in your main context; a 'slash command' is a skill you trigger by name."
   - "The fastest filter is who pulls the trigger — you (command) or Claude (agent/skill). The second is isolation: only subagents get their own context window by default."
+  - "Isolation has a price: a subagent inherits no conversation history, no files you've already read, and no skills you've already invoked, so anything it needs must be in its prompt or its preloaded skills."
   - "Noisy middle, clean summary → subagent. 'The way we do X here' recipe → skill. A prompt you retype → slash command."
   - "The classic mistake: building a subagent for something you always invoke yourself — the isolation buys nothing and the auto-delegation never fires. You wanted a command."
+  - "They compose rather than compete: a subagent's skills field preloads skill content at startup, so house conventions ride along into the isolated worker."
+sources:
+  - title: "Subagents in Claude Code"
+    url: "https://code.claude.com/docs/en/sub-agents"
+    publisher: "Anthropic"
+  - title: "Extend Claude with skills"
+    url: "https://code.claude.com/docs/en/skills"
+    publisher: "Anthropic"
+  - title: "Claude Code commands reference"
+    url: "https://code.claude.com/docs/en/commands"
+    publisher: "Anthropic"
+  - title: "Agent Skills overview"
+    url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"
+    publisher: "Anthropic"
+  - title: "Agent Skills open standard"
+    url: "https://agentskills.io"
+    publisher: "Agent Skills"
 faq:
   - q: "What's the difference between a skill and a subagent in Claude Code?"
     a: "A subagent is a separate worker: Claude delegates to it based on its description, it runs in its own context window with its own toolset, and only a summary comes back. A skill is knowledge: it loads into the main context when the task matches and shapes how Claude does the work directly. Worker vs. know-how, isolated vs. in-context."
@@ -23,6 +43,10 @@ faq:
     a: "When the work has a noisy middle and a clean summary — running a test suite, sweeping logs, auditing files. The subagent churns through hundreds of lines in its own window and hands back three sentences. If you're really just teaching Claude a procedure and don't need isolation, that's a skill (which can still opt into a forked context with context: fork)."
   - q: "How do I make a skill run only when I type it?"
     a: "Set disable-model-invocation: true in its frontmatter. Without it, Claude may auto-load the skill whenever it judges the task relevant; with it, the skill fires only on its /name. Skills also take arguments — $0 for the first (substitution is 0-indexed), $ARGUMENTS for all — plus an argument-hint, which makes them feel like CLI subcommands for your repo."
+  - q: "Does a subagent see my conversation so far?"
+    a: "No, and this is the most common surprise. A subagent starts with its own system prompt, the delegation message Claude writes for it, the CLAUDE.md hierarchy, and a git status snapshot — but not your conversation history, not the files you've already read, and not skills you've already invoked. That blank slate is exactly what keeps its noise out of your thread, and it's why a vague delegation produces a vague result."
+  - q: "Can a subagent use my skills?"
+    a: "Yes, two ways. It can discover and invoke project, user, and plugin skills through the Skill tool while it runs, or you can name skills in the subagent's skills frontmatter field to inject their full content at startup. Preloading suits conventions the agent should always follow; discovery suits skills it might occasionally need. Skills marked disable-model-invocation: true cannot be preloaded."
 ---
 
 Claude Code really has **two** extension mechanisms, and they get conflated constantly because all three patterns are Markdown-based with YAML frontmatter (a skill is a folder whose `SKILL.md` carries the frontmatter, and can bundle supporting scripts and templates alongside it). But they answer three different questions. A **subagent** answers "who should Claude hand this off to?" A **skill** answers "what does Claude need to know to do this well?" A **skill invoked as a slash command** answers "what do I want to type to kick this off?" Pick the wrong one and you end up fighting the tool — a skill that never loads, an agent that never gets delegated to, a command nobody remembers exists.
@@ -66,6 +90,16 @@ The crucial difference is **who pulls the trigger** and **where the work runs**.
 
 Read the table top to bottom on a single axis at a time. The **invocation** column is the fastest filter: if *you* want to be the one to press the button, it's a command. The **context** column is the next: only subagents get isolation, which is what makes them the right tool when a task would otherwise flood your main window with noise.
 
+## What each one costs you
+
+The decision table says *where* the work runs. The economics say *what that costs*, and the two mechanisms sit at opposite ends.
+
+A skill is close to free until it fires. Anthropic's documentation puts the always-loaded metadata at roughly 100 tokens per installed skill — just the name and description — with the body arriving only when the description matches and bundled files later still. You can install twenty skills and pay for one.
+
+A subagent is the opposite trade. It costs a whole additional context window, plus the round trip of writing a delegation prompt and reading back a summary. What you buy for that is the guarantee that a hundred lines of failing test output never touch your main thread. The trade only pays when the intermediate work is genuinely large relative to the answer — which is the real content of the "noisy middle, clean summary" heuristic.
+
+That framing also explains the two classic mistakes. A subagent for a small, quiet task pays the isolation cost for nothing. A skill for a sprawling investigation saves the cost but floods the window you were trying to protect.
+
 ## When to reach for a subagent
 
 Choose a subagent when the work is a **self-contained job with a noisy middle and a clean summary** — and you want Claude to decide when to run it.
@@ -85,10 +119,18 @@ failure as: file, failing assertion, and most likely cause.
 Do not fix code unless explicitly asked.
 ```
 
-The `description` is the routing signal — it's how Claude decides to delegate, so write it in terms of *when to use this agent* with concrete triggers. Scope `tools` to the minimum the job needs; a read-only reviewer physically cannot edit your code.
+The `description` is the routing signal — it's how Claude decides to delegate, so write it in terms of *when to use this agent* with concrete triggers. Scope `tools` to the minimum the job needs; a read-only reviewer physically cannot edit your code. Only `name` and `description` are required, but the optional fields are where subagents get interesting: `disallowedTools` subtracts from an inherited list, `model` picks a cheaper or stronger model for the job, `maxTurns` caps how long it can churn, and `isolation: worktree` gives a file-mutating agent its own git worktree so parallel workers don't collide.
 
 > [!TIP]
 > If a task would dump a lot of intermediate output you don't care about — build logs, grep sweeps, large file scans — that's the tell for a subagent. The isolation keeps your main context lean for the work that matters.
+
+## What a subagent does and doesn't inherit
+
+The isolation is real in both directions, and this is where expectations usually break. A subagent's starting context contains its own system prompt and environment details, the delegation message Claude writes when handing off, the `CLAUDE.md` hierarchy, a git status snapshot from the parent session's start, any preloaded skills, and a roster of its sibling agents.
+
+It does **not** contain your conversation history, the files you've already read, the skills you've already invoked, or your output style preferences.
+
+That blank slate is the feature — it's precisely why the subagent's noise stays out of your thread — but it has a practical consequence worth internalizing: everything the subagent needs must arrive through its system prompt, its preloaded skills, or the delegation message. "Review the change we just discussed" means nothing to a worker that never saw the discussion. This is the single most common reason a well-written subagent returns a disappointing result.
 
 ## When to reach for a skill
 
@@ -111,10 +153,22 @@ When asked to write a changelog:
 
 A skill differs from a subagent in two ways that decide between them: it runs in your **main context** (no isolation — Claude uses the loaded steps directly), and it's **knowledge, not a worker**. If you don't need a separate context window and you're really just teaching Claude a procedure, it's a skill.
 
-A skill can opt into isolation with `context: fork` in its frontmatter, which executes it in a forked subagent — useful when a skill's work would otherwise flood your main thread. That blurs the line a little, but the default and common case is main-context execution; reach for a full subagent when isolation is the *point*, not an afterthought.
-
 > [!NOTE]
 > Skills can ship more than text — an Agent Skill can bundle scripts and resource files alongside `SKILL.md`. Reach for that when the procedure needs deterministic helpers (a formatter, a generator) rather than instructions alone.
+
+## Scoping a skill to where it belongs
+
+A subagent's tool list is how you constrain what it can touch. A skill's equivalent is `paths`: glob patterns that limit when the skill activates at all. With `paths` set, Claude loads the skill automatically only when working with matching files.
+
+```yaml
+---
+name: api-conventions
+description: House conventions for API handlers — error shapes, validation, status codes. Use when writing or reviewing an endpoint.
+paths: ["src/api/**", "src/handlers/**"]
+---
+```
+
+This is the cleanest fix for the most common skill complaint after "it never fires" — a skill that fires in the wrong half of a monorepo. Rather than contorting the description to exclude territory, name the territory directly.
 
 ## When to reach for a slash command
 
@@ -135,13 +189,59 @@ disable-model-invocation: true
 3. Push the branch and open the PR with `gh pr create`.
 ```
 
-Skills accept arguments (`$0` for the first argument, `$1` for the second, or `$ARGUMENTS` for all arguments as a single string) and an `argument-hint`, which makes them feel like CLI subcommands for your repo. Note the substitution is **0-indexed**: `$0` is the first argument, so a single-argument `argument-hint: [base-branch]` lands in `$0`, not `$1`. The decision between a user-triggered command and an auto-loaded skill comes down to invocation: if you want to *type the name yourself*, set `disable-model-invocation: true`; if you want Claude to *reach for it automatically* when the task fits, leave it off.
-
 > [!NOTE]
 > Add `disable-model-invocation: true` to any skill you only want to run on your explicit trigger — otherwise Claude may auto-invoke it when it judges the task relevant, and the "saved prompt I fire myself" behavior won't hold.
 
+## Passing arguments to a command
+
+Skills accept arguments, which is what makes them feel like CLI subcommands for your repo. There are two styles.
+
+**Indexed** substitution is 0-based: `$0` is the first argument, `$1` the second, and `$ARGUMENTS` expands to the whole argument string as typed. So a single-argument `argument-hint: [base-branch]` lands in `$0`, not `$1`. Values follow shell-style quoting, so `/my-skill "hello world" second` puts `hello world` in `$0` and `second` in `$1`. An index with no matching argument is left in the content untouched rather than blanked.
+
+**Named** arguments are usually clearer for anything with more than one parameter. Declare them in frontmatter and reference them by name:
+
+```yaml
+---
+argument-hint: [issue] [branch]
+arguments: [issue, branch]
+disable-model-invocation: true
+---
+
+Fix issue $issue on branch $branch.
+```
+
+Names map to positions in order, so `$issue` takes the first argument and `$branch` the second. Unlike indexed placeholders, a named argument with nothing passed expands to an empty string. If you need a literal `$` before a digit or a declared name — writing `\$1.00` in prose, say — escape it with a backslash.
+
 > [!TIP]
 > Same procedure, different trigger? You can have both. Encode the steps once as a skill so Claude applies them when relevant, and add a thin slash command that says "run the changelog skill now" for when you want to force it.
+
+## When a skill should borrow a subagent's isolation
+
+The line between the two mechanisms blurs in one deliberate place. A skill can opt into isolation with `context: fork`, which runs it in a forked subagent context rather than your main one — useful when a skill's work would otherwise flood your thread.
+
+Two companion fields tune that. `agent` chooses which subagent type the fork uses, routing the work to a specialist rather than a generic delegate. `background` defaults to `true`; set it to `false` when you want the result inside the turn that invoked the skill instead of arriving later.
+
+The distinction that survives the blur is one of intent. Reach for a full subagent when isolation is *the point* — when Claude should decide to delegate a self-contained job on its own. Reach for `context: fork` when you have a skill whose research happens to be heavier than its answer. If you find yourself setting `context: fork` on most of your skills, that's a signal the work wanted subagents all along.
+
+## Composing all three
+
+These aren't competing choices so much as layers, and the composition points are explicit.
+
+A subagent's `skills` frontmatter field preloads the **full content** of named skills into its context at startup. That's how house conventions ride along into an isolated worker that would otherwise start blind:
+
+```yaml
+---
+name: api-developer
+description: Implement API endpoints following team conventions
+skills:
+  - api-conventions
+  - error-handling-patterns
+---
+```
+
+Preloading suits conventions the agent should *always* follow. Without it, a subagent can still discover and invoke skills through the Skill tool while it runs, which suits skills it *might* need. To stop it invoking skills at all, omit `Skill` from its `tools` or add it to `disallowedTools`. One constraint to know: a skill marked `disable-model-invocation: true` cannot be preloaded, since preloading is a form of model invocation.
+
+Above all three sits packaging. A plugin bundles skills, subagents, commands, and hooks into one installable unit, which is how a team ships a whole working setup rather than a folder of files to copy. See [Claude Code plugins](/guides/configuration/claude-code-plugins) for that layer.
 
 ## Worked examples: "I want to..."
 
@@ -153,6 +253,9 @@ That's a **skill**. It's a reusable procedure that should shape how Claude works
 
 **"I want to type one thing before every PR that summarizes the diff, drafts the description, and opens the PR."**
 That's a **slash command** — i.e. a skill with `disable-model-invocation: true`. *You* are the trigger, it runs in your main context, and it's a fixed prompt you fire repeatedly. `/create-pr [base]` and you're done.
+
+**"I want a specialist that implements endpoints exactly the way our team does."**
+That's a **subagent with preloaded skills**. The implementation work benefits from isolation, and the conventions belong in skills that other tools can also use — so name them in the agent's `skills` field rather than pasting them into its prompt.
 
 > [!WARNING]
 > The classic mistake is building a subagent for something you always invoke yourself. If you're the one deciding when it runs every single time, the isolation buys you nothing and the auto-delegation never fires — you wanted a slash command. Conversely, don't cram a noisy, self-contained investigation into a command; without its own context window it floods your main thread.

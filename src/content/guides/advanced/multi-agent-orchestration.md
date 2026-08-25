@@ -3,6 +3,8 @@ title: "Multi-Agent Orchestration"
 description: "Four patterns for coordinating multiple agents — fan-out, pipeline, orchestrator-worker, and verify/critic — and when each earns its overhead."
 author: "AgentsCamp"
 date: 2026-06-03
+updated: 2026-08-25
+depth: cornerstone
 color: "green"
 topics: ["workflow-prompting", "architecture"]
 related: ["agent:workflow-orchestrator", "guide:building-multi-step-workflows", "agent:agent-architect", "guide:parallel-claude-code-worktrees"]
@@ -14,7 +16,24 @@ keyTakeaways:
   - "A pipeline narrows between stages — stage 3 sees the approved schema, not the research transcript — so gate every boundary or a confident-wrong stage 1 poisons everything after it."
   - "Orchestrator-worker fits dynamic decomposition; strip Edit/Write from the orchestrator so the process owner physically can't do a worker's job."
   - "The critic only works in a clean window: let it inherit the author's context and it inherits the author's blind spots and rubber-stamps."
-  - "Coordination isn't free — every hand-off spends tokens and risks dropping a detail. One sequential thread is the right default."
+  - "Coordination isn't free — Anthropic measures multi-agent systems at roughly 15x the tokens of a chat interaction, so the task has to be worth it."
+  - "Coding parallelizes worse than research: most coding tasks have fewer genuinely independent subtasks, so the default stays one sequential thread."
+sources:
+  - title: "Building effective agents"
+    url: "https://www.anthropic.com/engineering/building-effective-agents"
+    publisher: "Anthropic"
+  - title: "How we built our multi-agent research system"
+    url: "https://www.anthropic.com/engineering/multi-agent-research-system"
+    publisher: "Anthropic"
+  - title: "Subagents in Claude Code"
+    url: "https://code.claude.com/docs/en/sub-agents"
+    publisher: "Anthropic"
+  - title: "Claude Agent SDK overview"
+    url: "https://code.claude.com/docs/en/agent-sdk/overview"
+    publisher: "Anthropic"
+  - title: "Claude Code common workflows"
+    url: "https://code.claude.com/docs/en/common-workflows"
+    publisher: "Anthropic"
 faq:
   - q: "What is multi-agent orchestration?"
     a: "Coordinating several agents — each in its own context window, each returning only a summary — so every stage of a hard task works from a clean, purpose-built context instead of one thread's accumulated noise. The four standard shapes are fan-out, pipeline, orchestrator-worker, and verify/critic."
@@ -24,6 +43,10 @@ faq:
     a: "Because the isolation is load-bearing: an author believes its own output, having rationalized every decision. A critic that sees only the artifact and the requirements has no stake and no inherited blind spots. Give it the author's reasoning and you've built an expensive rubber stamp."
   - q: "Can subagents see each other's work or the main conversation?"
     a: "No — each starts blank and returns only its summary. That's what makes parallelism safe and corroboration meaningful, but it means every constraint ('the DB is Postgres', 'don't touch legacy/') must be written into each task prompt explicitly. Nothing crosses the boundary unless you pass it."
+  - q: "How much more does a multi-agent system cost?"
+    a: "Anthropic's published figures put agents at roughly 4x the tokens of a chat interaction and multi-agent systems at about 15x. That's the bar the work has to clear — which is why breadth-first research, where subagents explore genuinely independent directions, pays off far more often than coding, where fewer subtasks are truly parallelizable."
+  - q: "How many subagents should I use?"
+    a: "Scale it to the query and say so in the orchestrator's prompt. Anthropic's guidance from its research system: a simple fact-finding query needs one agent making 3-10 tool calls; a direct comparison needs 2-4 subagents at 10-15 calls each; genuinely complex research can justify more than 10 with clearly divided responsibilities. Without an explicit rule, orchestrators over-dispatch on trivial queries."
 ---
 
 A single agent on a hard task accumulates everything in one context window: the files it read, the dead ends it explored, the half-formed plan it revised twice. By the time it reaches the part that matters, the signal is buried in its own history. Multi-agent orchestration is the fix — not because two agents are smarter than one, but because each agent gets a **clean, purpose-built context** and hands back only what the next stage needs.
@@ -42,6 +65,12 @@ This isolation is what you're really buying. It gives you three things a single 
 
 > [!NOTE]
 > Isolation cuts both ways. A subagent starts blank — it cannot see a constraint the user mentioned three turns ago. Anything it must know ("the DB is Postgres", "don't touch the `legacy/` folder") has to be written into the task prompt you hand it.
+
+### What a subagent actually starts with
+
+"Starts blank" is worth making precise, because the boundary isn't empty — it's just narrow. A subagent's opening context holds its own system prompt and environment details, the delegation message its caller wrote, the `CLAUDE.md` hierarchy, a git status snapshot from the parent session's start, any skills named in its `skills` field, and a roster of its sibling agents.
+
+It does **not** hold your conversation history, the files the parent already read, or the skills the parent already invoked. So "fix the bug we discussed" is meaningless to a worker that never saw the discussion, and a constraint you established five turns ago is invisible unless you restate it. Most disappointing subagent results trace back to this line rather than to the model.
 
 ## Pattern 1 — Fan-out (parallel, independent)
 
@@ -125,6 +154,46 @@ The isolation is load-bearing. If the critic inherits the author's context, it i
 
 > [!TIP]
 > Make the critic's verdict structured (`ship | fix` plus a bulleted concern list) so the orchestrator can branch on it automatically: ship → proceed, fix → loop back to the author with the concerns attached.
+
+## Writing the task description a worker can actually use
+
+Since nothing crosses the isolation boundary except what you write, the delegation prompt *is* the interface — and it's the highest-leverage thing to get right in any of these patterns. Anthropic's guidance from building its own research system is that each subagent task should carry four things:
+
+1. **An objective** — what done looks like, in one sentence.
+2. **An output format** — the shape you'll consume, so the parent can merge results mechanically rather than re-reading prose.
+3. **Guidance on tools and sources** — which to use and which to leave alone.
+4. **Clear task boundaries** — what's explicitly out of scope.
+
+Skip any of the four and the failure is predictable. No objective produces thorough work on the wrong question. No output format produces three reports in three shapes that a synthesizer then has to reconcile by hand. No boundaries produce a worker that helpfully refactors a neighboring module you never asked it to touch.
+
+The same source recommends embedding **scaling rules** in the orchestrator's own prompt, so it right-sizes the fan-out: a simple fact-finding query wants one agent making three to ten tool calls; a direct comparison wants two to four subagents at ten to fifteen calls each; genuinely complex research can justify more than ten with clearly divided responsibilities. Left unsaid, an orchestrator will happily dispatch five subagents at a question one could have answered.
+
+## Where these four sit in the canonical taxonomy
+
+The four shapes above are the ones that come up most in coding work, but they're a subset of a larger named set. Anthropic's *Building effective agents* catalogs six, and it's worth knowing the two this guide doesn't dwell on:
+
+| Canonical pattern | Relationship to this guide |
+|---|---|
+| Prompt chaining | The pipeline in Pattern 2 |
+| Parallelization (sectioning / voting) | Fan-out in Pattern 1 — sectioning splits the work, voting runs the same task repeatedly for consensus |
+| Orchestrator-workers | Pattern 3, unchanged |
+| Evaluator-optimizer | Pattern 4 closed into a loop: the critic's feedback returns to the author and the cycle repeats |
+| **Routing** | Not covered above — classify the input first, then send it to a specialist path |
+| Autonomous agents | A single agent looping on environmental feedback, not an orchestration shape |
+
+**Routing** deserves a mention on its own because it's cheap and frequently skipped: rather than giving one agent every capability, classify the request first and dispatch to a specialist. It fits when inputs fall into distinct categories that are genuinely better handled separately — and it's the one pattern here that often *reduces* total cost rather than adding to it, since each path can run a smaller model with a tighter prompt.
+
+**Evaluator-optimizer** is the loop form of the critic, and the post is specific about its precondition: it works when you have clear evaluation criteria and when iterative refinement provides measurable value. Without a real criterion, the loop just burns tokens producing variations nobody can rank.
+
+## What multi-agent actually costs
+
+The "coordination isn't free" warning deserves numbers, and Anthropic has published them. Agents typically use about **4x more tokens than chat interactions, and multi-agent systems about 15x more**. That's the bar the work has to clear before the pattern pays.
+
+Sometimes it clears it decisively. In Anthropic's research system, a multi-agent setup with Opus as the lead agent and Sonnet subagents outperformed single-agent Opus by **90.2%** on their research eval, and parallel tool calling cut research time by up to 90% on complex queries.
+
+But the same post is direct about where the economics don't work, and the caveat lands squarely on this guide's audience: *most coding tasks involve fewer truly parallelizable tasks than research*. Research is breadth-first by nature — many independent directions, each explorable without knowing the others' results. Coding is full of dependencies: the schema decides the model, the model decides the handler, and three agents editing adjacent files produce a merge problem rather than a speedup.
+
+So the honest framing is that multi-agent orchestration is a **research-shaped** technique that sometimes fits coding, not a coding technique. When your task genuinely looks like breadth-first exploration — auditing a large codebase across orthogonal dimensions, surveying options, gathering evidence from many files — the 15x buys something real. When it looks like building one feature end to end, it usually doesn't.
 
 ## When multi-agent genuinely helps — and when it doesn't
 

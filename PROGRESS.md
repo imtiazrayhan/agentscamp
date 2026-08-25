@@ -17,19 +17,30 @@
   build and by inspecting the generated HTML.
 
 ## Next
-- Pilot SHIPPED (2026-08-25): `guides/skills/writing-your-first-skill.md` is the
-  first `depth: cornerstone` guide — 1,703 -> 3,007 body words, 5 primary
-  sources, 6 key takeaways, 7 FAQs, 13 headings. Gates were mutation-tested
-  (deliberately broke sources/updated/takeaways, confirmed all three errored,
-  restored). Sources section, "In-depth guide" badge, JSON-LD `citation`, and
-  the .md twin all verified in built output.
-- Next 3 head-term guides to promote: skills-vs-agents-vs-commands (1,225 words),
-  multi-agent-orchestration (1,261), what-are-claude-skills (913). Cornerstone
-  stays scarce by design — it is a tier, not a migration target.
-- After the content wave: mirror sync + CLI republish.
-- Open question for owner: the 2,500-word gate is the weakest of the six
-  (word count != depth). Consider lowering to ~2,000 and raising the source
-  requirement instead, so the gate rewards verification over volume.
+- Cornerstone tier SHIPPED (2026-08-25). Four guides now carry
+  `depth: cornerstone`, each with 5 primary sources:
+
+  | Guide | Words (was) |
+  |---|---|
+  | writing-your-first-skill | 3,007 (1,703) |
+  | skills-vs-agents-vs-commands | 2,992 (1,225) |
+  | multi-agent-orchestration | 2,969 (1,261) |
+  | what-are-claude-skills | 2,146 (913) |
+
+- Gates rebalanced toward verification: 2,000 words (was 2,500) and 5 sources
+  (was 3), on the reasoning that word count is the weakest proxy for depth.
+- Corrections made during research (all against first-party docs):
+  `allowed-tools` is scoped to the invoking turn, not "while active"; the
+  skills library count was stale (90+ -> 110); the "December 2025" open-standard
+  date was unverifiable against agentskills.io and has been dropped.
+- NOTE: the CLI bundles only agents/skills/commands (`build-cli-content.ts`),
+  so a guides-only wave needs NO CLI republish. The roadmap's blanket
+  "republish after each content wave" should be read as "after each
+  installables wave".
+- Remaining: mirror sync + push (outward-facing, awaiting owner go-ahead).
+- Next candidates if the tier expands: skill-md-reference,
+  building-multi-step-workflows, claude-code-skills-best-practices. Keep the
+  tier scarce — it is a head-term tier, not a migration target.
 
 ---
 
