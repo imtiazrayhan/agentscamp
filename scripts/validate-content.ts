@@ -203,10 +203,10 @@ function run() {
     if (sourceUrls.size !== g.sources.length)
       err(`guide/${g.slug}: duplicate source URL`);
     if (g.depth === "cornerstone") {
-      if (g.wordCount < 2500)
-        err(`guide/${g.slug}: cornerstone guide is ${g.wordCount} words (< 2500)`);
-      if (g.sources.length < 3)
-        err(`guide/${g.slug}: cornerstone guide needs at least 3 primary sources`);
+      if (g.wordCount < 2000)
+        err(`guide/${g.slug}: cornerstone guide is ${g.wordCount} words (< 2000)`);
+      if (g.sources.length < 5)
+        err(`guide/${g.slug}: cornerstone guide needs at least 5 primary sources`);
       if (!g.updated)
         err(`guide/${g.slug}: cornerstone guide needs an updated date`);
       if (g.keyTakeaways.length < 4)
