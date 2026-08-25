@@ -15,6 +15,10 @@ export function buildMetadata(item: ContentItem): Metadata {
   const description = item.seoDescription ?? item.description;
   const isArticle = item.type === "guide";
   const author = (item as GuideItem).author ?? site.name;
+  const authorMetadata = {
+    name: author,
+    ...(author === site.name ? { url: "/about" } : {}),
+  };
 
   return {
     title,
@@ -23,7 +27,7 @@ export function buildMetadata(item: ContentItem): Metadata {
       canonical: item.href,
       types: { "text/markdown": `${item.href}.md` },
     },
-    ...(isArticle ? { authors: [{ name: author }] } : {}),
+    ...(isArticle ? { authors: [authorMetadata] } : {}),
     // Next merges Metadata field-by-field but REPLACES object fields wholesale,
     // so we must re-declare the inherited siteName / twitter.card etc. here or
     // they are dropped from every page that uses this helper.

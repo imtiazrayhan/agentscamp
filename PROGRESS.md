@@ -1,3 +1,34 @@
+# SEO/AEO/GEO audit and content-depth pass (2026-08-07) — IN PROGRESS
+
+## Done
+- Inventoried 607 content pages (61 agents, 110 skills, 163 guides, 139 tools,
+  53 commands, 81 glossary entries) and the existing metadata, canonical,
+  JSON-LD, sitemap, RSS, IndexNow, Markdown-twin, and llms.txt infrastructure.
+- Reviewed current first-party guidance from Google Search Central, Bing
+  Webmaster, OpenAI, and Perplexity plus the original KDD 2024 GEO paper.
+- Confirmed the main opportunity is editorial: guides average ~840 body words,
+  no guide reaches 2,500 body words, and only 13/163 guides cite an external
+  source. Technical coverage is already strong.
+- Shipped the provenance layer (2026-08-25): `/about` editorial-standards page,
+  guide `depth` + `sources` frontmatter, a rendered "Sources and further
+  reading" section (also in the .md twin), `citation` /
+  `publishingPrinciples` / `abstract` in JSON-LD, explicit googlebot robots
+  directives, and cornerstone validation gates. Verified via validate + lint +
+  build and by inspecting the generated HTML.
+
+## Next
+- Pilot ONE cornerstone guide end to end before scaling: expand
+  `guides/skills/writing-your-first-skill.md` (1,703 body words, the longest on
+  the site) past 2,500 words with 3+ primary sources, so the six cornerstone
+  gates, the Sources section, and the `citation` JSON-LD all get exercised
+  against real content.
+- Then scale to 4-6 more head-term guides only (skills-vs-agents-vs-commands,
+  what-are-claude-skills, multi-agent-orchestration). Cornerstone stays scarce
+  by design — it is a tier, not a migration target.
+- After the content wave: mirror sync + CLI republish.
+
+---
+
 # Meta description fix: Bing "short description" flags (2026-07-31) — SHIPPED (33ce91d)
 
 Bing Site Scan CSV (12 URLs) was a sample; real scope = every meta description <100 chars.

@@ -42,6 +42,11 @@ const toolList = z.union([z.string(), z.array(z.string())]);
 export const faqEntry = z.object({ q: z.string(), a: z.string() });
 // A single procedural step (HowTo, AEO). Likewise rendered + marked up.
 export const howtoStep = z.object({ name: z.string(), text: z.string() });
+export const sourceEntry = z.object({
+  title: z.string(),
+  url: z.string().url(),
+  publisher: z.string(),
+});
 
 export const osEnum = z.enum([
   "Web",
@@ -118,6 +123,8 @@ export const guideFrontmatter = z
     description: z.string(),
     author: z.string().optional(),
     color: claudeColor.optional(),
+    depth: z.enum(["standard", "cornerstone"]).default("standard"),
+    sources: z.array(sourceEntry).default([]),
     howtoSteps: z.array(howtoStep).default([]), // procedural guides -> HowTo (AEO)
     ...siteFields,
   })

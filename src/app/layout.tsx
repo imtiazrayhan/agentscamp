@@ -40,6 +40,17 @@ export const metadata: Metadata = {
     site: site.twitter,
     creator: site.twitter,
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   // Icons are auto-wired from the app dir: favicon.ico, icon.svg, apple-icon.png.
 };
 

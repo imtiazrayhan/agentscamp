@@ -110,6 +110,8 @@ export function loadGuides(): GuideItem[] {
       description: fm.description as string,
       color: fm.color as GuideItem["color"],
       author: fm.author as string | undefined,
+      depth: fm.depth as GuideItem["depth"],
+      sources: (fm.sources as GuideItem["sources"]) ?? [],
       readingTime: readingTime(doc.body),
       wordCount: wordCount(doc.body),
       howtoSteps: (fm.howtoSteps as HowtoStep[]) ?? [],

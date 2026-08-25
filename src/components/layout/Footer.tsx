@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  Info,
   BookOpen,
   Map as SitemapIcon,
   Rss,
@@ -31,6 +32,13 @@ import type { ComponentType, SVGProps } from "react";
 const pad = (n: number) => String(n).padStart(2, "0");
 
 const resources = [
+  {
+    href: "/about",
+    label: "About & standards",
+    cmd: "man editorial-standards",
+    icon: Info,
+    external: false,
+  },
   {
     href: "/how-to-use",
     label: "How to use",
@@ -246,6 +254,12 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               {site.description}
             </p>
+            <Link
+              href="/about"
+              className="mt-3 inline-flex font-mono text-sm text-primary hover:underline"
+            >
+              Read our editorial standards →
+            </Link>
           </div>
         </div>
 

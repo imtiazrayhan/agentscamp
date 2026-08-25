@@ -52,6 +52,8 @@ function Meta({
       </Badge>,
     );
     if (item.author) chips.push(<Badge key="a" variant="outline">{item.author}</Badge>);
+    if (item.depth === "cornerstone")
+      chips.push(<Badge key="d" variant="primary">In-depth guide</Badge>);
   } else if (item.type === "tool") {
     chips.push(
       toolPricingHref ? (
@@ -119,6 +121,35 @@ function KeyTakeaways({ items }: { items: string[] }) {
       <ul className="ml-4 list-disc space-y-1.5 text-sm text-foreground/90">
         {items.map((t, i) => (
           <li key={i}>{t}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function Sources({ sources }: { sources: GuideItem["sources"] }) {
+  if (!sources.length) return null;
+  return (
+    <section className="mt-10 border-t border-border pt-8" aria-labelledby="sources-heading">
+      <h2 id="sources-heading" className="text-2xl font-semibold tracking-tight">
+        Sources and further reading
+      </h2>
+      <p className="mt-2 text-sm text-muted-foreground">
+        Primary documentation used to verify this guide.
+      </p>
+      <ul className="mt-4 space-y-2 text-sm">
+        {sources.map((source) => (
+          <li key={source.url}>
+            <a
+              href={source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary hover:underline"
+            >
+              {source.title}
+            </a>{" "}
+            <span className="text-muted-foreground">— {source.publisher}</span>
+          </li>
         ))}
       </ul>
     </section>
@@ -262,6 +293,7 @@ export function DetailView({
             <KeyTakeaways items={item.keyTakeaways} />
           )}
           {item.body && <Markdown source={item.body} />}
+          {item.type === "guide" && <Sources sources={item.sources} />}
           <FaqSection faq={item.faq} />
         </div>
         {withToc && (

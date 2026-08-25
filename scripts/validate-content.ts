@@ -199,6 +199,23 @@ function run() {
       if (!s.name.trim() || !s.text.trim())
         err(`guide/${g.slug}: howtoSteps[${i}] has empty name/text`);
     });
+    const sourceUrls = new Set(g.sources.map((source) => source.url));
+    if (sourceUrls.size !== g.sources.length)
+      err(`guide/${g.slug}: duplicate source URL`);
+    if (g.depth === "cornerstone") {
+      if (g.wordCount < 2500)
+        err(`guide/${g.slug}: cornerstone guide is ${g.wordCount} words (< 2500)`);
+      if (g.sources.length < 3)
+        err(`guide/${g.slug}: cornerstone guide needs at least 3 primary sources`);
+      if (!g.updated)
+        err(`guide/${g.slug}: cornerstone guide needs an updated date`);
+      if (g.keyTakeaways.length < 4)
+        err(`guide/${g.slug}: cornerstone guide needs at least 4 key takeaways`);
+      if (g.faq.length < 3)
+        err(`guide/${g.slug}: cornerstone guide needs at least 3 FAQs`);
+      if (markdownLinksAndHeadings(g.body ?? "").headings.size < 8)
+        err(`guide/${g.slug}: cornerstone guide needs at least 8 descriptive headings`);
+    }
   }
 
   // tool-specific: alternativeTo should resolve to a known tool slug

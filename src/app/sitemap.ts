@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const all = getAllContent();
   add("", latestDate(all));
   add("/how-to-use");
+  add("/about");
   add("/topics", latestDate(all));
 
   // Type listing pages.

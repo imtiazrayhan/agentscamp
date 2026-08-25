@@ -81,5 +81,11 @@ export function toMarkdownFile(item: ContentItem): string {
   if (item.summary) parts.push("", item.summary);
   if (item.type === "tool") parts.push("", `Website: ${item.url}`);
   if (item.body) parts.push("", item.body);
+  if (item.type === "guide" && item.sources.length) {
+    parts.push("", "## Sources and further reading", "");
+    for (const sourceItem of item.sources) {
+      parts.push(`- [${sourceItem.title}](${sourceItem.url}) — ${sourceItem.publisher}`);
+    }
+  }
   return parts.join("\n") + source;
 }

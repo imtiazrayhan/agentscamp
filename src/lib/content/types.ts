@@ -52,6 +52,12 @@ export interface HowtoStep {
   text: string;
 }
 
+export interface SourceEntry {
+  title: string;
+  url: string;
+  publisher: string;
+}
+
 export interface BaseContentItem {
   type: ContentTypeId;
   slug: string;
@@ -95,6 +101,8 @@ export interface SkillItem extends BaseContentItem {
 export interface GuideItem extends BaseContentItem {
   type: "guide";
   author?: string;
+  depth: "standard" | "cornerstone";
+  sources: SourceEntry[];
   readingTime: number;
   wordCount: number;
   howtoSteps: HowtoStep[];

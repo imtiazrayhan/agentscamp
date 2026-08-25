@@ -181,6 +181,7 @@ function primaryEntity(item: ContentItem, path: string): Node {
   const common: Node = {
     name: item.title,
     description: item.description,
+    ...(item.summary ? { abstract: item.summary } : {}),
     mainEntityOfPage: { "@id": pageId(path) },
     ...(item.keywords.length ? { keywords: item.keywords.join(", ") } : {}),
   };
@@ -199,6 +200,10 @@ function primaryEntity(item: ContentItem, path: string): Node {
       inLanguage: locale,
       wordCount: g.wordCount,
       articleSection: titleCaseLabel(item.category),
+      ...(g.sources.length
+        ? { citation: g.sources.map((source) => source.url) }
+        : {}),
+      publishingPrinciples: `${site.url}/about#editorial-standards`,
       ...(item.image ? { image: abs(item.image) } : {}),
     };
   }
