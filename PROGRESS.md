@@ -17,15 +17,19 @@
   build and by inspecting the generated HTML.
 
 ## Next
-- Pilot ONE cornerstone guide end to end before scaling: expand
-  `guides/skills/writing-your-first-skill.md` (1,703 body words, the longest on
-  the site) past 2,500 words with 3+ primary sources, so the six cornerstone
-  gates, the Sources section, and the `citation` JSON-LD all get exercised
-  against real content.
-- Then scale to 4-6 more head-term guides only (skills-vs-agents-vs-commands,
-  what-are-claude-skills, multi-agent-orchestration). Cornerstone stays scarce
-  by design — it is a tier, not a migration target.
+- Pilot SHIPPED (2026-08-25): `guides/skills/writing-your-first-skill.md` is the
+  first `depth: cornerstone` guide — 1,703 -> 3,007 body words, 5 primary
+  sources, 6 key takeaways, 7 FAQs, 13 headings. Gates were mutation-tested
+  (deliberately broke sources/updated/takeaways, confirmed all three errored,
+  restored). Sources section, "In-depth guide" badge, JSON-LD `citation`, and
+  the .md twin all verified in built output.
+- Next 3 head-term guides to promote: skills-vs-agents-vs-commands (1,225 words),
+  multi-agent-orchestration (1,261), what-are-claude-skills (913). Cornerstone
+  stays scarce by design — it is a tier, not a migration target.
 - After the content wave: mirror sync + CLI republish.
+- Open question for owner: the 2,500-word gate is the weakest of the six
+  (word count != depth). Consider lowering to ~2,000 and raising the source
+  requirement instead, so the gate rewards verification over volume.
 
 ---
 
