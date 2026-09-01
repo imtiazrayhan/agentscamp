@@ -3,7 +3,7 @@ title: "AI Coding Agents in 2026: The Open-Source & CLI Edition"
 description: "Cursor and Windsurf vs the open-source agents — OpenCode, Cline, Aider, Codex CLI, and more. Who should bring their own model, and when to stay in the terminal."
 author: "AgentsCamp"
 date: 2026-06-03
-updated: 2026-07-01
+updated: 2026-09-01
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 tags: ["comparison", "cli", "open-source", "agents", "byo-model"]
@@ -11,7 +11,7 @@ featured: false
 summary: "The open-source and CLI coding agents trade polish for control: bring your own model (or run one locally), keep your code on your terms, and script the agent into CI. OpenCode is the category's most-starred breakout. Cline and Roo Code live in VS Code; OpenCode, Aider, and Codex CLI live in the terminal. Choose by where you work and how much you value model and data control."
 keyTakeaways:
   - "Open-source agents are bring-your-own-model: you supply API keys or run a local model, so cost and data handling stay yours."
-  - "Cline and Continue are VS Code extensions; OpenCode, Aider, and Codex CLI are terminal-native; Goose runs locally as a CLI/desktop agent."
+  - "Cline is the VS Code extension pick (Continue joined Cursor and its repo is read-only); OpenCode, Aider, and Codex CLI are terminal-native; Goose runs locally as a CLI/desktop agent."
   - "Aider auto-commits each change (git-native); Codex CLI sandboxes execution and leaves committing to you — a real workflow difference."
   - "The trade vs Cursor/Windsurf is polish and tab-completion UX for model freedom, scriptability, and no vendor lock-in."
   - "Almost all of them speak MCP, so your custom tools and data sources are portable across agents."
@@ -46,15 +46,15 @@ The cost is polish: you won't get the same seamless tab-completion and onboardin
 
 - **[Cline](/tools/cline)** — an open-source autonomous agent that runs as a VS Code extension. It plans, edits files, and runs commands with **human-in-the-loop approvals** on every change, is fully **BYO-model** (including local via Ollama/LM Studio), supports **MCP**, and shows edits as diffs. Also available for JetBrains and as a CLI.
 - **[Roo Code](/tools/roo-code)** — a Cline fork built around **customizable modes** (code, architect, ask, debug), each with its own behavior and tools. **Sunset (May 2026):** the maintainers archived the project on May 15, 2026 and now point users to Cline — reach for Cline instead.
-- **[Continue](/tools/continue)** — an open-source assistant for VS Code and JetBrains focused on **composable** autocomplete and chat with deep customization. It leans more "building block you configure" than "hands-off agent," which is exactly what some teams want.
+- **[Continue](/tools/continue)** — an open-source assistant for VS Code and JetBrains focused on **composable** autocomplete and chat with deep customization. It leans more "building block you configure" than "hands-off agent." **Status (mid-2026): joined Cursor.** The continuedev/continue repository is read-only and no longer actively maintained (final release v2.0.0, June 19, 2026), and the team recommends the Continue CLI over the JetBrains plugin — fine to keep running, not a new bet.
 
 ### In your terminal (CLI agents)
 
-- **[OpenCode](/tools/opencode)** — the **most-starred open-source coding agent** (~181k GitHub stars by mid-2026) and the category's breakout. A genuinely polished terminal TUI that's fully **provider-agnostic** — 75+ providers including local models — loads your **language servers** for symbol-level context, runs **parallel sessions**, and can sign in with an existing **GitHub Copilot or ChatGPT subscription** instead of an API key.
-- **[Aider](/tools/aider)** — a terminal pair-programmer that's **git-native**: it edits files on disk and **commits each change** with a descriptive message, so every step is reviewable and `git revert`-able. It builds a repo map for context and is **model-agnostic** — see [Aider vs Claude Code](/guides/comparisons/aider-vs-claude-code) for the head-to-head.
+- **[OpenCode](/tools/opencode)** — the **most-starred open-source coding agent** (~203k GitHub stars as of September 2026) and the category's breakout. A genuinely polished terminal TUI that's fully **provider-agnostic** — 75+ providers including local models — loads your **language servers** for symbol-level context, runs **parallel sessions**, and can sign in with an existing **GitHub Copilot or ChatGPT subscription** instead of an API key.
+- **[Aider](/tools/aider)** — a terminal pair-programmer that's **git-native**: it edits files on disk and **commits each change** with a descriptive message, so every step is reviewable and `git revert`-able. It builds a repo map for context and is **model-agnostic** — see [Aider vs Claude Code](/guides/comparisons/aider-vs-claude-code) for the head-to-head. Development has slowed: the last release (0.86.2) shipped February 12, 2026.
 - **[Codex CLI](/tools/codex-cli)** — OpenAI's open-source, Rust-based terminal agent with a **two-layer security model** (sandbox modes plus approval policies). It defaults to workspace-scoped writes and no network, supports **model switching** and **MCP**, and has a headless `codex exec` for CI. Unlike Aider, it **doesn't auto-commit** — it leaves staging to you.
 - **[Gemini CLI](/tools/gemini-cli)** — Google's open-source terminal agent, long notable for a **generous free tier**, large context windows, and MCP support. **Sunset (June 2026):** as of June 18, 2026 it stopped serving requests for free, AI Pro, and Ultra users, with Google folding the effort into [Antigravity](/tools/antigravity) and its closed-source Antigravity CLI (paid API keys and enterprise Gemini Code Assist licenses keep access, and the repo stays open source).
-- **[Goose](/tools/goose)** — an open-source, extensible agent that runs **locally** (CLI and desktop), BYO-model and MCP-first, aimed at developers who want an on-machine autonomous agent.
+- **[Goose](/tools/goose)** — an open-source, extensible agent that runs **locally** (CLI and desktop), BYO-model and MCP-first, aimed at developers who want an on-machine autonomous agent. Block donated it to the Agentic AI Foundation in April 2026; the repo now lives at `aaif-goose/goose`.
 
 ## How to choose
 
@@ -63,12 +63,12 @@ The cost is polish: you won't get the same seamless tab-completion and onboardin
 - **You live in the terminal and want git as the safety net** → **Aider**. Auto-commits make every step reversible.
 - **You live in the terminal and want sandboxed execution + model switching** → **Codex CLI**. Strong guardrails, headless mode for CI.
 - **You want the lowest cost to start** → a BYO agent pointed at a **local model** via Ollama/LM Studio, or **OpenCode** signed in with a Copilot/ChatGPT plan you already pay for. (Gemini CLI's free tier ended June 18, 2026; its free agent loop moved to Antigravity CLI.)
-- **You want a configurable assistant, not a hands-off agent** → **Continue**.
+- **You want a configurable assistant, not a hands-off agent** → **Continue** — with the caveat that it joined Cursor and its repo is read-only, so it's a keep-running choice rather than a new adoption.
 - **You want a local-first, extensible agent** → **Goose**.
 
 ### When the proprietary editors still win
 
-If you value a frictionless inner loop — best-in-class tab completion, zero configuration, polished multi-file review — **Cursor** and **Windsurf (Devin Desktop)** are still the smoother experience, at the cost of model/data control and a paid plan; Google's free-preview [Antigravity](/tools/antigravity) is the newest proprietary entrant, an agent-first IDE with multi-agent orchestration. And if you want a deeply agentic, programmable workflow but don't want to manage model keys and configuration yourself, [Claude Code](/tools/claude-code) sits between the two worlds: a first-party terminal agent with MCP, subagents, and hooks.
+If you value a frictionless inner loop — best-in-class tab completion, zero configuration, polished multi-file review — **Cursor** and **Windsurf (Devin Desktop)** are still the smoother experience, at the cost of model/data control and a paid plan; Google's [Antigravity](/tools/antigravity) ($0 for individuals) is the newest proprietary entrant, an agent-first IDE with multi-agent orchestration. And if you want a deeply agentic, programmable workflow but don't want to manage model keys and configuration yourself, [Claude Code](/tools/claude-code) sits between the two worlds: a first-party terminal agent with MCP, subagents, and hooks.
 
 > [!TIP]
 > The choice isn't permanent. Because nearly all of these speak **MCP**, the custom tools and data sources you build for one agent move to the next. Invest in your MCP servers and `AGENTS.md`/`CLAUDE.md` context, and switching agents becomes cheap.

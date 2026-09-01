@@ -1,3 +1,45 @@
+# Tier-1 freshness refresh (2026-09-01, unattended) — PR OPEN
+
+Scope: the 8 tier-1 pages (pricing, context windows, coding stats, MCP stats,
+best MCP servers, CLI agents, Claude/GPT/Gemini, big-4 comparison). No August
+run landed, so this covers July 1 → September 1.
+
+## Done
+- 5 primary-source research agents (vendor pricing/docs pages, registry and
+  GitHub APIs, SEC filings, earnings transcripts, vendor changelogs). All 8
+  pages changed; validate + build green; shipped as PR from `freshness/2026-09`.
+- Biggest corrections: Sonnet 5 $2/$10 made permanent (Aug 10); Claude Opus 5
+  (Jul 24) replaces Opus 4.8 (legacy); GPT-5.6 Sol/Terra/Luna (Jul 9, cut
+  twice); OpenAI Priority → Fast mode; OpenAI >272K long-context surcharge
+  (was missing); DeepSeek peak/off-peak pricing (Aug 16, big list increase);
+  Gemini 3.6/3.7 Flash + 3.5 Flash-Lite; Grok 4.5/4.6 + xAI ≥200K tier;
+  hosts (Kimi K3, GLM-5.3, DeepSeek V4 Pro 0813); Mistral Medium 3.5 is
+  open-weights not "premium". Stats: Copilot 50M users (Jul 29), SpaceX–Cursor
+  closed Aug 14 (8-K), Codex 5M weekly (Jun 2) + 25M "active" (exec post),
+  Lovable $500M ARR / $13.3B Series C, Cursor $4B is Forbes not Bloomberg,
+  METR Feb-2026 CIs cross zero. MCP: npm 204M / PyPI 319M / Smithery 11,245 /
+  PulseMCP 21,982 / AAIF 247 (Aug 13) / GitHub MCP 21 toolsets (not 17).
+  Tools: Cursor 3.18 + SpaceX company; Continue joined Cursor (repo
+  read-only — was already true July 1, missed); Devin Desktop's Cascade NOT
+  retired (our FAQ was wrong); Goose → aaif-goose/goose; o-series legacy,
+  dedicated Codex models retired Jul 23; Antigravity no longer "preview".
+- Left untouched + flagged: mcp.so ~23k (site 403s automated checks; kept
+  with July label); SO 2026 / DORA 2026 not yet published (aggregator "2026"
+  numbers are relabeled 2025 — avoided); OpenAI ending Cursor model access
+  Nov 12 (CNBC/Bloomberg headlines only, body 403 — not added); Devin Desktop
+  BYO keys (no current doc — softened to Cursor-only); Grok 4.3 max output.
+- Note: `public/search-index.json` was byte-identical after the build (index
+  fields didn't change), so nothing to stage there.
+
+## Next
+- Owner reviews/merges the PR. Next tier-1 run 2026-10-01; quarterly "2026"
+  sweep is due (last was not run) — consider `/freshness-refresh quarterly`.
+- Watch: Haiku 4.5 retirement floor Oct 15, 2026; Sonnet 4.5 Sep 29 (no
+  deprecation notice yet); GPT-5.6 Sol promo through Nov 21; Gemini 3.6/3.7
+  Flash intro pricing through Dec 31; DeepSeek peak/off-peak windows.
+
+---
+
 # SEO/AEO/GEO audit and content-depth pass (2026-08-07) — IN PROGRESS
 
 ## Done

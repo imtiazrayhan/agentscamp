@@ -2,12 +2,12 @@
 title: "The Best MCP Servers in 2026"
 description: "The MCP servers actually worth connecting in 2026 — Context7, GitHub, Chrome DevTools, Playwright, Serena, Exa, Firecrawl, and official vendor servers."
 author: "AgentsCamp"
-date: 2026-07-01
+date: 2026-09-01
 color: "green"
 topics: ["mcp", "architecture"]
 tags: ["mcp", "comparison", "best-of", "tools", "agents"]
 featured: true
-summary: "With 6,000+ public MCP servers, the shortlist matters more than the catalog. The 2026 picks: Context7 for current library docs, GitHub MCP for the dev loop, Chrome DevTools or Playwright for a real browser, Serena for symbol-level code intelligence, Exa and Firecrawl for web data — plus official vendor servers (Figma, Linear, Notion, Sentry, Supabase, Stripe, Cloudflare) where your stack lives."
+summary: "With 11,000+ public MCP servers, the shortlist matters more than the catalog. The 2026 picks: Context7 for current library docs, GitHub MCP for the dev loop, Chrome DevTools or Playwright for a real browser, Serena for symbol-level code intelligence, Exa and Firecrawl for web data — plus official vendor servers (Figma, Linear, Notion, Sentry, Supabase, Stripe, Cloudflare) where your stack lives."
 keyTakeaways:
   - "Start with three: Context7 (kills hallucinated APIs), GitHub MCP (the dev loop), and a browser server (Chrome DevTools MCP to debug, Playwright MCP to automate). Add vendor servers only where your stack actually lives."
   - "Prefer official hosted remotes with OAuth — Linear, Notion, Sentry, Stripe, Figma, Supabase, Cloudflare all run their own servers now; nothing to install or update."
@@ -26,27 +26,27 @@ faq:
 related: ["guide:claude-code-mcp-setup", "guide:mcp-vs-a2a", "guide:govern-mcp-servers", "tool:context7", "tool:github-mcp-server", "tool:chrome-devtools-mcp", "tool:playwright-mcp", "tool:serena", "tool:exa", "tool:firecrawl", "command:add-mcp-server", "tool:mcp-inspector"]
 ---
 
-The MCP ecosystem spans 6,000+ public servers and landed under the Linux Foundation — which means the catalog is no longer the problem; **the shortlist is.** This is ours: the servers that earn a slot in real 2026 workflows, organized by what they're for, with the honest caveats. (New to the mechanics? [Adding MCP Servers to Claude Code](/guides/mcp/claude-code-mcp-setup) covers transports, scopes, and auth.)
+The MCP ecosystem spans 11,000+ public servers and landed under the Linux Foundation — which means the catalog is no longer the problem; **the shortlist is.** This is ours: the servers that earn a slot in real 2026 workflows, organized by what they're for, with the honest caveats. (New to the mechanics? [Adding MCP Servers to Claude Code](/guides/mcp/claude-code-mcp-setup) covers transports, scopes, and auth.)
 
 ## The default three
 
 If you connect nothing else, connect these:
 
-**[Context7](/tools/context7)** — the most-adopted server in the ecosystem (~58k stars), for one reason: it ends hallucinated APIs. Two tools resolve a library and inject its **current, version-specific docs** into context. Every coding agent benefits, every day.
+**[Context7](/tools/context7)** — the most-adopted server in the ecosystem (~61k stars), for one reason: it ends hallucinated APIs. Two tools resolve a library and inject its **current, version-specific docs** into context. Every coding agent benefits, every day.
 
-**[GitHub MCP Server](/tools/github-mcp-server)** — GitHub's official server makes the development loop agent-native: issues, PRs, Actions runs, and security findings become readable and updatable. Seventeen toolsets, each mountable read-only; free hosted remote.
+**[GitHub MCP Server](/tools/github-mcp-server)** — GitHub's official server makes the development loop agent-native: issues, PRs, Actions runs, and security findings become readable and updatable. Twenty-one toolsets (as of September 2026), each mountable read-only; free hosted remote.
 
-**A real browser** — two strong picks with different jobs. **[Chrome DevTools MCP](/tools/chrome-devtools-mcp)** (Google, ~45k stars) is the *debugger*: console with source maps, network inspection, performance traces with insights. **[Playwright MCP](/tools/playwright-mcp)** (Microsoft, ~35k stars) is the *automator*: cross-browser flows and testing. Frontend-heavy teams run both.
+**A real browser** — two strong picks with different jobs. **[Chrome DevTools MCP](/tools/chrome-devtools-mcp)** (Google, ~50k stars) is the *debugger*: console with source maps, network inspection, performance traces with insights. **[Playwright MCP](/tools/playwright-mcp)** (Microsoft, ~37k stars) is the *automator*: cross-browser flows and testing. Frontend-heavy teams run both.
 
 ## Code intelligence
 
-**[Serena](/tools/serena)** (~26k stars) gives agents what IDEs have and text search doesn't: **symbol-level** retrieval and editing via language servers, across 40+ languages. Find-references, rename, replace-symbol-body — surgical edits on large codebases at a fraction of the token cost.
+**[Serena](/tools/serena)** (~29k stars) gives agents what IDEs have and text search doesn't: **symbol-level** retrieval and editing via language servers, across 40+ languages. Find-references, rename, replace-symbol-body — surgical edits on large codebases at a fraction of the token cost.
 
 **[Sequential Thinking](/tools/sequential-thinking-mcp)** — the reference server that survived 2025's great archiving. A structured-reasoning scaffold (numbered thoughts, revisions, branches); less essential now that frontier models think natively, still useful when you want reasoning externalized as inspectable tool calls.
 
 ## Web data
 
-**[Exa](/tools/exa)** — semantic search built for AI consumers; its hosted server is the most-used search MCP and even works keyless to trial. **[Firecrawl](/tools/firecrawl)** (~143k stars) is the extraction half: any site to clean Markdown, whole-site crawls, schema-validated extraction. Search finds; Firecrawl fetches — agent stacks commonly run both.
+**[Exa](/tools/exa)** — semantic search built for AI consumers; its hosted server is the most-used search MCP and even works keyless to trial. **[Firecrawl](/tools/firecrawl)** (~175k stars) is the extraction half: any site to clean Markdown, whole-site crawls, schema-validated extraction. Search finds; Firecrawl fetches — agent stacks commonly run both.
 
 ## Official vendor servers, by stack
 
