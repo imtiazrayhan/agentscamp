@@ -28,7 +28,8 @@ export function RolePath({
           description="Read these in order — each one assumes the last."
           className="pt-0"
         >
-          <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <ContentGrid cols={2} asChild>
+            <ol>
             {startHere.map((item, i) => (
               <li key={item.href}>
                 <Panel variant="interactive" padding="sm" asChild>
@@ -55,6 +56,7 @@ export function RolePath({
               </li>
             ))}
           </ol>
+        </ContentGrid>
         </Section>
       )}
 

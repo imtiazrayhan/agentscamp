@@ -3,13 +3,15 @@ import type { ContentItem } from "@/lib/content/types";
 import { contentTypes } from "@/lib/content/registry";
 import { getColorClasses, cn } from "@/lib/utils";
 import { sectionHeading } from "@/components/ui/typography";
+import { ContentGrid } from "./ContentGrid";
 
 export function RelatedItems({ items }: { items: ContentItem[] }) {
   if (!items.length) return null;
   return (
     <section className="mt-14">
       <h2 className={cn("mb-4", sectionHeading)}>Related</h2>
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <ContentGrid cols={2} asChild>
+        <ul>
         {items.map((item) => {
           const accent = getColorClasses(item.type);
           const Icon = contentTypes[item.type].icon;
@@ -40,6 +42,7 @@ export function RelatedItems({ items }: { items: ContentItem[] }) {
           );
         })}
       </ul>
+    </ContentGrid>
     </section>
   );
 }

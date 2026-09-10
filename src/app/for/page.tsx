@@ -9,6 +9,7 @@ import { EmptyState } from "@/components/content/EmptyState";
 import { Panel } from "@/components/ui/panel";
 import { PageHeader } from "@/components/content/PageHeader";
 import { Button } from "@/components/ui/button";
+import { ContentGrid } from "@/components/content/ContentGrid";
 
 const DESCRIPTION =
   "Pick your role — developer, founder, marketer, designer, or analyst — for a curated path through the guides, tools, skills, and agents that fit the work you do.";
@@ -57,7 +58,8 @@ export default function Page() {
           }
         />
       ) : (
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <ContentGrid cols={2} asChild>
+          <ul>
           {entries.map((a) => (
             <li key={a.slug}>
               <Panel variant="interactive" asChild>
@@ -82,6 +84,7 @@ export default function Page() {
             </li>
           ))}
         </ul>
+      </ContentGrid>
       )}
     </div>
   );

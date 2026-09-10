@@ -5,6 +5,7 @@ import { ArrowRight, Compass } from "lucide-react";
 import { track } from "@/lib/analytics";
 import { Section } from "@/components/sections/Section";
 import { Panel } from "@/components/ui/panel";
+import { ContentGrid } from "@/components/content/ContentGrid";
 
 export interface RoleEntry {
   slug: string;
@@ -24,7 +25,8 @@ export function RoleStrip({ roles }: { roles: RoleEntry[] }) {
       browseHref="/for"
       browseLabel="All roles"
     >
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ContentGrid asChild>
+        <ul>
         {roles.map((r) => (
           <li key={r.slug}>
             <Panel variant="interactive" padding="sm" asChild>
@@ -73,6 +75,7 @@ export function RoleStrip({ roles }: { roles: RoleEntry[] }) {
           </Panel>
         </li>
       </ul>
+    </ContentGrid>
     </Section>
   );
 }

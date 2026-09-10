@@ -7,6 +7,7 @@ import { hubGraph } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 import { Panel } from "@/components/ui/panel";
 import { PageHeader } from "@/components/content/PageHeader";
+import { ContentGrid } from "@/components/content/ContentGrid";
 
 const DESCRIPTION =
   "Browse AgentsCamp by topic — cross-cutting collections of agents, skills, guides, tools, and commands for building with AI coding agents.";
@@ -45,7 +46,8 @@ export default function Page() {
         title="Topics"
         lead="Cross-cutting collections spanning agents, skills, guides, tools, and commands."
       />
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ContentGrid asChild>
+        <ul>
         {entries.map((t) => (
           <li key={t.slug}>
             <Panel variant="interactive" asChild>
@@ -67,6 +69,7 @@ export default function Page() {
           </li>
         ))}
       </ul>
+    </ContentGrid>
     </div>
   );
 }
