@@ -1,116 +1,56 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { SearchCommandBox } from "@/components/search/SearchCommandBox";
+import { TriageLinks, type TriageLane } from "./TriageLinks";
 
-export interface BootLine {
-  label: string;
-  count: number;
-}
-
-const CMD = "ls ~/agentscamp";
-
-export function Hero({ lines, total }: { lines: BootLine[]; total: number }) {
-  const [typed, setTyped] = useState("");
-  const [revealed, setRevealed] = useState(0);
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    const reduce = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (reduce) {
-      setTyped(CMD);
-      setRevealed(lines.length);
-      setReady(true);
-      return;
-    }
-
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    CMD.split("").forEach((_, i) => {
-      timers.push(setTimeout(() => setTyped(CMD.slice(0, i + 1)), 300 + i * 55));
-    });
-    const afterCmd = 300 + CMD.length * 55 + 280;
-    lines.forEach((_, i) => {
-      timers.push(setTimeout(() => setRevealed(i + 1), afterCmd + i * 240));
-    });
-    timers.push(
-      setTimeout(() => setReady(true), afterCmd + lines.length * 240 + 200),
-    );
-    return () => timers.forEach(clearTimeout);
-  }, [lines]);
-
-  const typing = typed.length < CMD.length;
-
+/**
+ * Server component. The boot animation that used to sit above the <h1> is gone:
+ * it delayed the LCP element behind hydration for ~3.5s and told a marketer this
+ * was a terminal tool. The h1 now paints with the document.
+ *
+ * The headline copy is deliberately unchanged — it is stable in search and the
+ * redesign has no reason to spend that.
+ */
+export function Hero({
+  total,
+  stats,
+  lanes,
+}: {
+  total: number;
+  stats: string;
+  lanes: TriageLane[];
+}) {
   return (
-    <section className="relative overflow-hidden rounded-md border border-border bg-card px-6 py-10 sm:px-10 sm:py-14">
-      <div
-        aria-hidden
-        className="grid-pattern pointer-events-none absolute inset-0"
-      />
-      <div className="relative">
-        {/* boot sequence */}
-        <div className="font-mono text-sm leading-relaxed sm:text-base">
-          <div className="text-muted-foreground">
-            <span className="text-primary text-glow">~/agentscamp</span>
-            <span className="mx-1.5">$</span>
-            <span className="text-foreground">{typed}</span>
-            {typing && <span className="cursor-blink text-primary">▍</span>}
-          </div>
-          <div className="mt-1.5 space-y-0.5">
-            {lines.slice(0, revealed).map((l) => (
-              <div
-                key={l.label}
-                className="flex max-w-xs justify-between text-muted-foreground"
-              >
-                <span>
-                  <span className="text-primary">{">"}</span> loading {l.label}
-                </span>
-                <span className="text-primary">[ {l.count} ok ]</span>
-              </div>
-            ))}
-            {ready && (
-              <div className="text-foreground">
-                <span className="text-primary">{">"}</span> ready{" "}
-                <span className="cursor-blink text-primary">▍</span>
-              </div>
-            )}
-          </div>
-        </div>
+    <section className="py-10 sm:py-16">
+      <h1 className="max-w-3xl text-balance text-4xl font-bold leading-[1.08] tracking-[-0.02em] sm:text-5xl">
+        The field guide to building with AI.
+        <br />
+        <span className="text-primary">Read. Build. Ship.</span>
+      </h1>
 
-        {/* headline — always full contrast (no fade) */}
-        <div className="mt-9">
-          <h1 className="text-balance text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-            The field guide to building with AI.
-            <br />
-            <span className="text-primary text-glow">Read. Build. Ship.</span>
-          </h1>
-          <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
-            In-depth guides, a curated AI tool directory, and a plain-language
-            glossary for anyone working with AI — plus ready-to-use agents,
-            skills, and commands if you build with Claude Code.
-          </p>
+      <p className="mt-5 max-w-2xl text-pretty text-lg text-muted-foreground">
+        In-depth guides, a curated AI tool directory, and a plain-language
+        glossary for anyone working with AI — plus ready-to-use agents, skills,
+        and commands if you build with Claude Code.
+      </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-3">
-            <Button asChild>
-              <Link href="/guides">
-                Browse guides <ArrowRight className="size-4" />
-              </Link>
-            </Button>
-            <Link
-              href="/for"
-              className="font-mono text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              start here: pick your role →
-            </Link>
-          </div>
+      <p className="mt-3 text-sm tabular-nums text-muted-foreground">{stats}</p>
 
-          <SearchCommandBox total={total} className="mt-4" />
-        </div>
-      </div>
+      <SearchCommandBox total={total} className="mt-7" />
+
+      <TriageLinks lanes={lanes} />
+
+      <p className="mt-4 text-sm text-muted-foreground">
+        Or{" "}
+        <Link
+          href="/for"
+          className="inline-flex items-center gap-1 font-medium text-foreground underline underline-offset-4 hover:text-primary"
+        >
+          pick your role
+          <ArrowRight className="size-3.5" />
+        </Link>{" "}
+        for a curated path through the hub.
+      </p>
     </section>
   );
 }
