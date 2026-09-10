@@ -79,7 +79,7 @@ If you want the shortest possible version of this decision: does anyone need to 
 
 ## What the analysis tool actually is
 
-When Claude "analyzes" an upload, it is writing code and executing it in an isolated container, then reading the output back. Anthropic's help center calls the feature code execution and file creation, and says it "is available to all Claude users (Free, Pro, Max, Team, and Enterprise) on the web, Claude Desktop, and Claude Mobile." On Free, Pro, and Max you turn it on in Settings under Capabilities; on Team it is enabled organization-wide by default and owners can disable it. The name for the general pattern is [code execution](/glossary/code-execution), and the product category that has grown around it is the [AI data analyst](/glossary/ai-data-analyst).
+When Claude "analyzes" an upload, it is writing code and executing it in an isolated container, then reading the output back. Anthropic's help center calls the feature code execution and file creation, and says it "is available to all Claude users (Free, Pro, Max, Team, and Enterprise) on the web, Claude Desktop, and Claude Mobile." It is enabled by default on every plan, with the toggle at Settings then Capabilities on Free, Pro, and Max, and at Organization settings then Capabilities on Team and Enterprise, where an owner can disable it. The name for the general pattern is [code execution](/glossary/code-execution), and the product category that has grown around it is the [AI data analyst](/glossary/ai-data-analyst).
 
 Four properties matter to your work:
 

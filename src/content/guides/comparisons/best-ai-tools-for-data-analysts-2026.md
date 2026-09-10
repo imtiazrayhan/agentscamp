@@ -138,7 +138,7 @@ The best AI tools for data analysts in 2026 are the ones that either run code yo
 
 ## Text-to-SQL and semantic layers
 
-**[Vanna](/tools/vanna).** The open-source route, MIT licensed, offered as self-hosted Core, a managed Cloud, and Enterprise. It grounds the model by training on DDL statements, written documentation, and known-correct question-and-SQL pairs, stores them as embeddings, and retrieves the most relevant pieces into the prompt at query time. Note before you commit: the `vanna-ai/vanna` GitHub repository is archived and read-only as of September 2026.
+**[Vanna](/tools/vanna).** The open-source route, MIT licensed, offered as a self-hosted framework, a managed Vanna Cloud, and Enterprise. Version 2.0 grounds the model through agent memory rather than a `train()` call: known-correct question-and-SQL pairs and written documentation are saved to a vector store, and similar past examples are retrieved into the prompt at query time. Note before you commit: the `vanna-ai/vanna` GitHub repository was archived by its owner on March 29, 2026 and is read-only, with the last release, 2.0.2, dated February 2, 2026. The docs and Vanna Cloud are still live, but the open-source code is frozen.
 
 **[PandasAI](/tools/pandasai).** Natural language over dataframes and databases, translating questions into Python and SQL and executing them. Licensing is MIT Expat for the main codebase with separate terms for its enterprise-edition directory, so read the LICENSE before shipping it inside a product.
 

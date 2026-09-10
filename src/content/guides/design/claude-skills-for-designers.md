@@ -133,7 +133,7 @@ Inside a repo, two of these jobs are one keystroke. [/critique-screen](/commands
 
 The [design-systems-librarian](/agents/design/design-systems-librarian) agent is different in kind. It is a subagent with its own instructions and a clean context, built for the question you cannot answer by looking: does this component already exist, which variants are duplicates, and what breaks if this token changes. Ask it before you add anything to the system. The setup for all of this is [Claude Code for Designers](/guides/design/claude-code-for-designers), and the differences between the three shapes are in [Skills vs Agents vs Commands](/guides/skills/skills-vs-agents-vs-commands).
 
-Accessibility is deliberately absent from the five. A serious pass belongs to the [accessibility-auditor](/agents/quality-security/accessibility-auditor) agent and the [/audit-accessibility](/commands/analyze/audit-accessibility) command, which work against WCAG 2.2 AA rather than a reminder buried in a critique. Anthropic's own design plugin makes the same split, shipping `/accessibility` as its own command alongside `/critique`.
+Accessibility is deliberately absent from the five. A serious pass belongs to the [accessibility-auditor](/agents/quality-security/accessibility-auditor) agent and the [/audit-accessibility](/commands/analyze/audit-accessibility) command, which work against WCAG 2.2 AA rather than a reminder buried in a critique. Anthropic's own design plugin makes the same split, shipping `accessibility-review` as its own skill alongside `design-critique`.
 
 ## Making them yours
 

@@ -12,10 +12,10 @@ audience: ["analysts"]
 tags: ["comparison", "text-to-sql", "sql", "analysts", "semantic-layer"]
 featured: false
 keywords: ["best text to sql tools", "text to sql 2026", "vanna vs pandasai", "databricks genie", "natural language to sql"]
-summary: "Text-to-SQL tools differ less in model quality than in how they ground the model: RAG over DDL and known-good queries (Vanna), Python and SQL over dataframes (PandasAI), curated catalog context (Databricks Genie), a governed semantic layer compiled to SQL (ThoughtSpot Spotter), or a notebook that makes you accept every cell (Hex)."
+summary: "Text-to-SQL tools differ less in model quality than in how they ground the model: RAG over saved question-SQL pairs and documentation (Vanna), Python and SQL over dataframes (PandasAI), curated catalog context (Databricks Genie), a governed semantic layer compiled to SQL (ThoughtSpot Spotter), or a notebook that makes you accept every cell (Hex)."
 keyTakeaways:
   - "Grounding beats model choice. Curated example queries and documented columns move accuracy more than swapping the model."
-  - "Vanna is the open-source blueprint: train on DDL, docs, and known-good question-SQL pairs, then retrieve them at query time."
+  - "Vanna is the open-source blueprint: save known-good question-SQL pairs and documentation to agent memory, then retrieve them by similarity at query time."
   - "Databricks tells you to start with five or fewer tables and stay under thirty, which is the honest scope for any of these."
   - "ThoughtSpot compiles a question into search tokens against a governed semantic layer instead of free-form SQL generation."
   - "Public benchmark scores do not transfer: they test curated schemas and unambiguous questions, not your column names."
@@ -33,8 +33,8 @@ faq:
   - q: "Do I need a semantic layer?"
     a: "Not on day one, but you will want one before the tool has more than a handful of users, because the alternative is every question quietly using a different definition of the same metric. A semantic layer is where a metric gets defined once, and it is the difference between an answer and an agreed answer."
 sources:
-  - title: "How to train Vanna"
-    url: "https://try.vanna.ai/docs/train/"
+  - title: "Vanna 2.0 documentation"
+    url: "https://vanna.ai/docs/"
     publisher: "Vanna"
   - title: "vanna-ai/vanna on GitHub"
     url: "https://github.com/vanna-ai/vanna"
@@ -74,7 +74,7 @@ Text-to-SQL tools in 2026 differ far less in model quality than in how they grou
 
 | Tool | How it grounds the model | Deployment | License | Pricing model |
 | --- | --- | --- | --- | --- |
-| [Vanna](/tools/vanna) | RAG over DDL, documentation, and question-SQL pairs | Self-hosted, managed cloud, enterprise | MIT | Open source plus paid cloud tiers |
+| [Vanna](/tools/vanna) | RAG over agent memory: saved question-SQL pairs and documentation | Self-hosted, managed cloud, enterprise | MIT (repo archived) | Open source plus paid cloud tiers |
 | [PandasAI](/tools/pandasai) | Generated Python and SQL over connected data | Python library | MIT Expat, separate EE terms | Open source plus enterprise edition |
 | [Databricks Genie](/tools/databricks-genie) | Catalog metadata, instructions, example SQL, trusted assets | Inside Databricks | Proprietary | Consumption, free for users into 2027 |
 | [ThoughtSpot Spotter](/tools/thoughtspot-spotter) | Search tokens against a governed semantic layer | SaaS and embedded | Proprietary | Per user, credits, or custom |
@@ -83,7 +83,7 @@ Text-to-SQL tools in 2026 differ far less in model quality than in how they grou
 
 ## How each one grounds the model
 
-**Vanna** is the clearest blueprint, which is why it is worth understanding even if you buy something else. You train it on three kinds of material: DDL statements, which give it table names, column names, types, and relationships; written documentation about your business; and known-correct question-and-SQL pairs. Those get embedded into a vector store, and when a new question arrives the most relevant pieces are retrieved into the prompt. Vanna's own guidance is that the question-SQL pairs carry the most signal, because a correct query encodes joins, filters, and business logic that no schema dump contains. One thing to check before adopting: the `vanna-ai/vanna` GitHub repository is archived and read-only as of September 2026, while the project is presented as self-hosted Core, a managed Cloud, and Enterprise.
+**Vanna** is the clearest blueprint, which is why it is worth understanding even if you buy something else. Version 2.0 replaced the old `train()` workflow with agent memory: every successful tool usage is saved to a vector store, and `save_tool_usage()` and `save_text_memory()` let you seed it with known-correct question-and-SQL pairs and written business documentation up front. When a new question arrives, similar past examples are retrieved by semantic similarity into the prompt. The question-SQL pairs carry the most signal, because a correct query encodes joins, filters, and business logic that no schema dump contains. One thing to check before adopting: the `vanna-ai/vanna` GitHub repository was archived by its owner on March 29, 2026 and is read-only, with the last release, 2.0.2, dated February 2, 2026, while the documentation and the commercial Vanna Cloud offering are still live.
 
 **PandasAI** takes the library route. It interprets a natural language query, translates it into Python or SQL depending on the data source, and executes it, which makes it a fit when the data is already a dataframe or a file rather than a warehouse. Grounding comes from the schema of what you connected plus whatever context you pass in code.
 

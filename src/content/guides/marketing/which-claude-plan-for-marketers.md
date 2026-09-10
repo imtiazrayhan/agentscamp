@@ -14,7 +14,7 @@ seoDescription: "Pro, Max 5x, Max 20x, or Team: which Claude plan fits a solo co
 keywords: ["which claude plan", "claude plan for marketers", "claude pro vs max marketing", "claude team plan marketing", "claude cowork plan"]
 summary: "Start on Pro: it includes Claude Code, Cowork, and Claude Design and covers a solo content marketer. Move to Max 5x when scheduled Cowork runs and long Claude Code sessions hit the five-hour limit more than occasionally. Go to Team the day a second person needs the brand project, with Premium seats for the heavy users. Agencies want Team's per-member limits."
 keyTakeaways:
-  - "Every paid plan includes Claude Code, Cowork, and Claude Design; the tiers differ in usage per five-hour session and per week, not in which surfaces open."
+  - "Every paid plan includes Claude Code, Cowork, and Claude Design (still in beta); the tiers differ in usage per five-hour session and per week, not in which surfaces open."
   - "Usage is one pool: Anthropic says activity across claude.ai, Claude Code, and Claude Desktop counts against the same limit, and connectors are token-intensive."
   - "Solo content marketer: Pro. Heavy Cowork or Design use: Max 5x, then 20x if it keeps running out. Two or more people: Team, with Premium seats for heavy users."
   - "Team needs at least two members, applies limits per member, and adds shared Projects with view or edit rights, admin tools, spend controls, and connectors."
@@ -40,7 +40,7 @@ sources:
     publisher: "Anthropic"
 faq:
   - q: "Does the free plan include Cowork or Claude Code?"
-    a: "No. Skills, Projects (up to five), and chat are on Free, but Claude Code, Cowork, and Claude Design need Pro, Max, Team, or Enterprise. A marketer who only wants to draft in chat with a brand Project can stay on Free; anyone who wants a folder or a page worked on needs a paid plan."
+    a: "No. Skills and chat are on Free, and Anthropic's help center lists Projects there too, capped at five, though the pricing page files Projects under the paid plans. Claude Code, Cowork, and Claude Design need Pro, Max, Team, or Enterprise. A marketer who only wants to draft in chat with a brand Project can stay on Free; anyone who wants a folder or a page worked on needs a paid plan."
   - q: "Should a solo marketer start on Pro or Max?"
     a: "Pro. It includes every surface. The difference is how much you get per five-hour session, and Anthropic's own guidance is to move to Max 5x when you consistently hit limits and to Max 20x when 5x is not enough. Scheduled Cowork tasks and connector-heavy sessions are what push a marketer there."
   - q: "Is the Team plan worth it for two marketers?"
@@ -50,7 +50,7 @@ faq:
 related: ["guide:claude-code-for-marketers", "guide:claude-for-marketing-teams", "guide:claude-plans-compared-2026", "guide:choosing-the-right-model", "guide:which-claude-plan-for-founders", "tool:claude", "tool:claude-cowork"]
 ---
 
-The plan question is simpler than the pricing page makes it look, because every paid Claude plan opens the same doors. Pro, Max, and Team all include Claude Code, Cowork, and Claude Design; what changes is how much you can do per five-hour session and per week, and on Team, who administers it. So the decision is a usage forecast plus a sharing question. This guide walks it by situation, names the plan, and points to the page that holds the numbers, which move too often to repeat here.
+The plan question is simpler than the pricing page makes it look, because every paid Claude plan opens the same doors. Pro, Max, and Team all include Claude Code, Cowork, and Claude Design (in beta as of September 2026); what changes is how much you can do per five-hour session and per week, and on Team, who administers it. So the decision is a usage forecast plus a sharing question. This guide walks it by situation, names the plan, and points to the page that holds the numbers, which move too often to repeat here.
 
 ## How limits work
 

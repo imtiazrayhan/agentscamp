@@ -19,7 +19,7 @@ keywords: ["Surfer SEO", "Surfer Content Editor", "content optimization tool", "
 summary: "Surfer is a content optimization platform built around the Content Editor, which scores a draft against guidelines derived from the pages already ranking for a keyword. Around it sit Surfy (AI writing), Content Audit, Topical Map, and an AI Tracker that reports how often ChatGPT, Gemini, and AI Overviews mention your brand. Plans are document-metered."
 faq:
   - q: "What is Surfer?"
-    a: "Surfer is an SEO content platform that now describes itself as an AI Visibility Platform. Its Content Editor gives you a live Content Score and term guidelines while you write, Surfy is the built-in AI writing assistant, Content Audit finds underperforming pages, Topical Map plans clusters, and AI Tracker monitors brand mentions across ChatGPT, Gemini, AI Overviews, and Perplexity."
+    a: "Surfer is an SEO content platform that now describes itself as an AI Visibility Platform. Its Content Editor gives you a live Content Score and term guidelines while you write, Surfy is the built-in AI writing assistant, Content Audit finds underperforming pages, Topical Map plans clusters, and AI Tracker monitors brand mentions across ChatGPT, Gemini, Perplexity, and Google's AI Overviews and AI Mode."
   - q: "How much does Surfer cost?"
     a: "As of September 2026 the pricing page shows yearly billing at Discovery 49 dollars a month (120 documents, 1 seat), Standard 99 (360 documents, 3 seats, integrations), Pro 182 (360 documents, 5 seats, internal linking, MCP), Peace of Mind 299 (unlimited documents, 10 seats, API), and an AI Search Analytics plan at 82 for tracking only. Enterprise starts at 999. Surfer says annual billing saves up to 17 percent versus monthly."
   - q: "Surfer vs Clearscope?"
@@ -28,7 +28,7 @@ faq:
     a: "Yes on Standard and above. The pricing table lists WordPress, Google Docs, Contentful, and Zapier integrations, and Surfer offers a Chrome extension. Pro and Peace of Mind also include an MCP server, and Peace of Mind adds API access."
 ---
 
-Surfer is the content optimization tool most SEO teams have used at some point: paste a keyword, and the Content Editor builds guidelines from the pages already ranking, then scores your draft live as you write. In 2026 the company describes itself as an "AI Visibility Platform" and has added tracking for how ChatGPT, Gemini, AI Overviews, and Perplexity mention your brand, which is the part that matters as search shifts toward answers.
+Surfer is the content optimization tool most SEO teams have used at some point: paste a keyword, and the Content Editor builds guidelines from the pages already ranking, then scores your draft live as you write. In 2026 the company describes itself as an "AI Visibility Platform" and has added tracking for how ChatGPT, Gemini, Perplexity, and Google's AI Overviews and AI Mode mention your brand, which is the part that matters as search shifts toward answers.
 
 For a content team the product is a loop: research the topic, write against the guidelines, publish through an integration, audit what slipped, and now watch whether AI answers cite you. Surfer says it is "100% made and hosted in Europe."
 

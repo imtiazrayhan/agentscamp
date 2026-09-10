@@ -80,7 +80,7 @@ Use [Figma Make](/tools/figma-make) if your team's source of truth is a Figma fi
 
 Figma's help center defines Make as a prompt-to-app tool for turning ideas and existing Figma designs into functional prototypes, web apps, and interactive UI. Figma says Make works with any web framework, with React, Vue, and Svelte verified. The output is an app you can open, click through, and read the code of.
 
-Claude Design covers that ground and keeps going into the artifacts around it: wireframes and mockups for a feature flow, pitch decks, marketing collateral, landing pages, dashboards, forms, and one-pagers, exported as PPTX, PDF, or standalone HTML. It launched from Anthropic Labs on April 17, 2026 and is in beta as of September 2026. If half of what you produce is presentation material rather than interface, that difference decides it. Both belong to the [generative UI](/glossary/generative-ui) category, where the model builds the interface rather than a component you then arrange.
+Claude Design covers that ground and keeps going into the artifacts around it: wireframes and mockups for a feature flow, pitch decks, marketing collateral, landing pages, dashboards, forms, and one-pagers, exported as PPTX, PDF, or standalone HTML. It launched from Anthropic Labs as a research preview on April 17, 2026 and is in beta as of September 2026. If half of what you produce is presentation material rather than interface, that difference decides it. Both belong to the [generative UI](/glossary/generative-ui) category, where the model builds the interface rather than a component you then arrange.
 
 ## Who is allowed to use it
 

@@ -28,7 +28,7 @@ faq:
   - q: "Can I just write in Google Docs or Word with AI?"
     a: "Yes. Gemini drafts and rewrites inside Docs on the paid Google AI plans and on Workspace Business Standard and higher. Microsoft 365 Copilot does the same in Word on the paid add-on. Claude for Word is a Microsoft AppSource add-in on paid Claude plans. Docs-native tools are the right pick when the file is the deliverable and collaborators live in comments."
   - q: "Do any of these tools have a free plan?"
-    a: "Claude, ChatGPT, and Gemini have free tiers. Jasper offers a 7-day free trial on paid, per-seat plans. Copy.ai's pricing page lists per-seat plans with no free tier as of September 2026. Microsoft 365 Copilot in Word requires the paid add-on, though Copilot Chat comes with eligible Microsoft 365 subscriptions. Each tool page carries current plans."
+    a: "Claude, ChatGPT, and Gemini have free tiers. Jasper offers a 7-day free trial on paid, per-seat plans. Copy.ai's pricing page lists paid plans with seats bundled in and no free tier as of September 2026. Microsoft 365 Copilot in Word requires the paid add-on, though Copilot Chat comes with eligible Microsoft 365 subscriptions. Each tool page carries current plans."
 sources:
   - title: "Use Skills in Claude"
     url: "https://support.claude.com/en/articles/12512180-using-skills-in-claude"
@@ -69,8 +69,8 @@ The best AI writing tool in 2026 is whichever one fits the job in front of you, 
 | [ChatGPT](/tools/chatgpt) | Assistant | Freemium | Projects, custom GPTs, memory | Volume and variety in short copy |
 | [Gemini](/tools/gemini) | Assistant | Freemium | Gems | Drafting inside Google Docs |
 | [Microsoft 365 Copilot](/tools/microsoft-copilot) | Assistant | Paid per user | Prompts grounded in tenant data | Drafting inside Word and Outlook |
-| [Jasper](/tools/jasper) | Marketing platform | Paid per seat (trial) | Brand IQ: voices, style guide, audiences | Governed content at team scale |
-| [Copy.ai](/tools/copy-ai) | Marketing platform | Paid per seat | Brand Voice and Infobase | Writing as a step in a GTM workflow |
+| [Jasper](/tools/jasper) | Marketing platform | Paid per seat (trial) | Jasper IQ: voices, style guide, audiences | Governed content at team scale |
+| [Copy.ai](/tools/copy-ai) | Marketing platform | Paid, seats bundled per plan | Brand Voice and Infobase | Writing as a step in a GTM workflow |
 
 ## What each tool is
 
@@ -82,9 +82,9 @@ The best AI writing tool in 2026 is whichever one fits the job in front of you, 
 
 **[Microsoft 365 Copilot](/tools/microsoft-copilot).** Microsoft's assistant inside Word, Excel, PowerPoint, Outlook, and Teams. In Word it drafts, rewrites, and summarizes, and on the paid add-on it is grounded in your tenant's files, mail, and chats. Copilot Chat, the web-grounded tier, comes with eligible Microsoft 365 subscriptions.
 
-**[Jasper](/tools/jasper).** An agent workspace for marketing teams: Canvas for planning and drafting, a Marketing Editor, a Chrome extension, and a library of agents for jobs from SEO to research, all governed by Brand IQ (brand voices, a style guide, visual guidelines, audiences). Per-seat pricing with a 7-day free trial; the Business plan adds unlimited voices, a no-code agent builder, API access, and admin controls, as of September 2026.
+**[Jasper](/tools/jasper).** An agent workspace for marketing teams: Canvas for planning and drafting, a Marketing Editor, a Chrome extension, and a library of agents for jobs from SEO to research, all governed by Jasper IQ (brand voices, a style guide, visual guidelines, audiences). Per-seat pricing with a 7-day free trial; the Business plan adds unlimited voices, a no-code agent builder, API access, and admin controls, as of September 2026.
 
-**[Copy.ai](/tools/copy-ai).** A go-to-market platform where writing is one step in a Workflow: Brand Voice and Infobase keep the output consistent, Agents run targeted tasks, and Tables hold the data the workflow acts on. Acquired by Fullcast in October 2025. Per-seat plans; the pricing page lists no free tier as of September 2026.
+**[Copy.ai](/tools/copy-ai).** A go-to-market platform where writing is one step in a Workflow: Brand Voice and Infobase keep the output consistent, Agents run targeted tasks, and Tables hold the data the workflow acts on. Acquired by Fullcast in October 2025. Paid plans bundling a fixed number of seats rather than per-seat pricing; the page lists no free tier as of September 2026.
 
 ## Verdict by job
 

@@ -16,7 +16,7 @@ alternativeTo: ["surfer"]
 sameAs: ["https://www.clearscope.io/pricing", "https://www.clearscope.io/support"]
 related: ["guide:surfer-vs-clearscope", "guide:seo-content-workflow-with-claude-code", "guide:claude-code-for-marketers", "guide:best-ai-tools-for-marketers-2026", "guide:ai-content-and-search-2026", "tool:surfer", "glossary:generative-engine-optimization", "skill:seo-content-brief-writer"]
 keywords: ["Clearscope", "content optimization", "Clearscope pricing", "AI search visibility", "content grade"]
-summary: "Clearscope is a content optimization platform organized around six jobs: Expand (Prompt Tracking of brand mentions in ChatGPT and Gemini), Discover (Query Discovery), Write (AI drafts), Optimize (term suggestions and a grade), Protect (page monitoring), and Localize. Every plan has unlimited users and projects, no contracts, and a 14-day free trial."
+summary: "Clearscope is a content optimization platform organized around seven jobs: Expand (Prompt Tracking in ChatGPT and Gemini), Discover (Query Discovery), Write (AI drafts), Optimize (terms and a grade), Protect (page monitoring), Localize, and Linking (internal-link suggestions). Every plan has unlimited users and projects, no contracts, and a 14-day free trial."
 faq:
   - q: "What is Clearscope?"
     a: "Clearscope is a content optimization platform used by content and SEO teams. You run a report for a target query, write or paste a draft, and Clearscope grades it against the terms and structure of top-ranking pages. Around that core it offers Query Discovery for research, AI drafting, Prompt Tracking for AI-answer visibility, and Protect for monitoring published pages."
@@ -38,7 +38,7 @@ For a content team, the appeal is predictability. Unlimited users and projects o
 - **Query Discovery.** Enter a topic or a URL and Clearscope surfaces the queries that generate traffic and attention across Google, Gemini, GPT, and Claude, including the "query fan-out" searches AI platforms trigger to build an answer.
 - **Prompt Tracking.** Track specific prompts across ChatGPT and Gemini to see when and how your brand gets mentioned, and where competitors are recommended instead. Every plan includes it.
 - **Write and Localize.** An AI drafting and editing workflow for first passes (20 drafts a month on both self-serve plans) and a Localize product for locally targeted versions.
-- **Protect.** Ongoing monitoring of pages or whole sites so decayed content shows up before the traffic loss does.
+- **Protect and Linking.** Ongoing monitoring of pages or whole sites (Content Inventory) so decayed content shows up before the traffic loss does, plus internal-link suggestions drawn from the same inventory.
 - **Google Docs and WordPress.** The support center documents a Google Docs add-on that scores your document in place and a WordPress plugin that links drafts to reports.
 
 ## In a content team's workflow

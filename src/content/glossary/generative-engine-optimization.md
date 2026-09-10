@@ -12,7 +12,7 @@ faq:
   - q: "Where does the term come from?"
     a: "A November 2023 paper titled 'GEO: Generative Engine Optimization' by Aggarwal, Murahari, and colleagues, which defined the problem, built a benchmark called GEO-bench, and reported that certain content changes raised visibility in generative answers by up to 40 percent. Vendors adopted the acronym soon after."
   - q: "How do I measure GEO?"
-    a: "By tracking prompts. Tools such as Surfer's AI Tracker and Clearscope's Prompt Tracking run a fixed set of questions against ChatGPT, Gemini, Claude, or Google AI Overviews on a schedule and report whether your brand or page is mentioned. Search Console counts AI Overviews traffic inside the Web search type rather than separately."
+    a: "By tracking prompts. Tools such as Surfer's AI Tracker and Clearscope's Prompt Tracking run a fixed set of questions against engines like ChatGPT, Gemini, Perplexity, and Google's AI Overviews on a schedule and report whether your brand or page is mentioned. Search Console counts AI Overviews traffic inside the Web search type and, since August 31, 2026, also in a dedicated Search Generative AI report available to all sites."
 summary: "Generative engine optimization (GEO) is the practice of shaping content so that AI answer engines, such as ChatGPT, Gemini, Perplexity, and Google's AI Overviews, are more likely to cite, quote, or summarize it when they compose an answer."
 ---
 

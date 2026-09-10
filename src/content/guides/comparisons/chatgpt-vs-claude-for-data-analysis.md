@@ -12,12 +12,12 @@ audience: ["analysts"]
 tags: ["comparison", "versus", "claude", "chatgpt", "data", "analysts"]
 featured: false
 keywords: ["chatgpt vs claude data analysis", "claude vs chatgpt for excel", "ai data analysis comparison", "chatgpt code interpreter limits", "claude code execution"]
-summary: "Verdict first: ChatGPT for large files, interactive charts, and exploratory work in a stateful Python session; Claude when the analysis has to be checked, when the deliverable is a spreadsheet, and when the work spans a folder or a repo. Both run code in a sandbox with no live internet, so both beat any assistant that estimates from text."
+summary: "Verdict first: ChatGPT for large files, interactive charts, and exploratory work in a stateful Python session; Claude when the analysis has to be checked, when the deliverable is a spreadsheet, and when the work spans a folder or a repo. Both compute in a sandboxed container rather than estimating from text, and both need the data uploaded or connected first."
 keyTakeaways:
   - "ChatGPT allows far larger uploads: a 512MB hard cap per file against Claude's 30MB for uploads and downloads."
   - "Claude's spreadsheet answers carry cell-level citations you click; that traceability is the strongest reason to prefer it."
   - "ChatGPT returns interactive bar, line, pie, and scatter charts; other chart types come back as static images."
-  - "Both sandboxes are offline by design, so any external data must be uploaded or connected before you ask."
+  - "Neither sandbox browses for you: OpenAI's cannot make external web requests, and Claude's network egress is a plan-level setting, so upload or connect the data first."
   - "Both ship an Excel add-in. Claude for Excel is on paid Claude plans; OpenAI ships ChatGPT for Excel and Google Sheets."
   - "Warehouse access is an MCP question for Claude and a plugin question for ChatGPT, and neither is a native connector."
   - "Verification friction decides this: prefer whichever one shows you the query, the code, or the cell."
@@ -29,7 +29,7 @@ faq:
   - q: "Can either connect directly to my data warehouse?"
     a: "Not natively in chat. Claude reaches external systems through MCP connectors, so a warehouse means running or subscribing to an MCP server for it. ChatGPT reaches them through plugins that bundle connectors. Some analytics vendors now ship an MCP server that both can call, which is the closest thing to a common path today."
   - q: "Do either of them run code with internet access?"
-    a: "Not by default, and that is a feature. OpenAI documents that its analysis environment cannot make external web requests. Anthropic's API code execution container has no internet access, so only pre-installed libraries are available, while in the Claude apps network access for the file-creation sandbox is a plan-level setting that Team and Enterprise owners control."
+    a: "It differs by product. OpenAI documents that its analysis environment cannot make external web requests. Anthropic's API code execution container has internet access completely disabled, so only pre-installed libraries are available. In the Claude apps it is a setting: network egress is enabled by default on Free, Pro, and Max and disabled by default on Team and Enterprise, where an owner chooses between no network, package managers only, package managers plus named domains, or all domains. Neither product goes looking for data you did not give it."
   - q: "Which one should a finance or FP and A team pick?"
     a: "Claude, mostly for the Excel add-in. It answers with cell-level citations, adjusts assumptions while keeping formula relationships intact, and traces errors to their root cause across multi-tab workbooks. Anthropic also states plainly that it is not recommended for audit-critical calculations without verification, which is the right expectation to set with your reviewers."
 sources:
@@ -57,7 +57,7 @@ sources:
 related: ["tool:claude", "tool:chatgpt", "guide:claude-for-data-analysis", "guide:best-ai-tools-for-data-analysts-2026", "guide:claude-for-excel-guide", "guide:check-an-ai-data-analysis", "guide:claude-vs-chatgpt-for-writing", "glossary:code-execution"]
 ---
 
-Use ChatGPT when the file is big, the session is exploratory, and you want an interactive chart in the reply. Use Claude when someone else has to check the work, when the deliverable is a spreadsheet, and when the task spans a folder rather than a chat. Both run real code in a sandbox with no live internet access, which already puts them ahead of any assistant that estimates numbers from text. Everything below is the detail behind that split. Prices live on the [Claude](/tools/claude) and [ChatGPT](/tools/chatgpt) tool pages; nothing here depends on them.
+Use ChatGPT when the file is big, the session is exploratory, and you want an interactive chart in the reply. Use Claude when someone else has to check the work, when the deliverable is a spreadsheet, and when the task spans a folder rather than a chat. Both run real code in a sandboxed container rather than estimating numbers from text, and neither enriches your data from the web on its own, which already puts them ahead of any assistant that answers in prose. Everything below is the detail behind that split. Prices live on the [Claude](/tools/claude) and [ChatGPT](/tools/chatgpt) tool pages; nothing here depends on them.
 
 ## The short answer
 
@@ -72,7 +72,7 @@ Use ChatGPT when the file is big, the session is exploratory, and you want an in
 | | Claude | ChatGPT |
 | --- | --- | --- |
 | Upload ceiling | 30MB per file, uploads and downloads | 512MB hard cap; ~50MB for CSV and spreadsheets |
-| Sandbox | Isolated container; API tool runs Python and bash with no internet | Stateful Python notebook; no external web requests |
+| Sandbox | Isolated container; network egress is a plan setting, and the API tool has no internet at all | Stateful Python notebook; no external web requests |
 | Chart output | Charts and PNG images, plus generated files | Static images, with interactive bar, line, pie, and scatter |
 | Spreadsheet add-in | Claude for Excel on Pro, Max, Team, Enterprise | ChatGPT for Excel and Google Sheets |
 | Citations to the data | Cell-level citations in Excel you can click | The Python it ran, and DataFrames as tables |
@@ -83,7 +83,7 @@ Use ChatGPT when the file is big, the session is exploratory, and you want an in
 
 This is the widest gap. OpenAI's help center documents a hard limit of 512MB per file, with CSVs and spreadsheets effectively capped near 50MB depending on row size, text files capped at 2M tokens, images at 20MB, and rate limits that allow three uploads a day on the free tier against 80 files every three hours otherwise. Anthropic documents a flat maximum of 30MB per file for both uploads and downloads, with the caveat that large PDFs can still be processed inside the computing environment without entering the context window.
 
-The execution model differs too. ChatGPT writes and runs Python in a stateful notebook session, so variables survive between turns and you can iterate without re-uploading, and OpenAI states the environment cannot make external web requests. Claude's file-creation sandbox is an isolated container, with network access a plan-level setting that Team and Enterprise owners control; on the developer platform, the code execution tool runs Python and bash in a container with no internet at all, so only pre-installed libraries are available. Practical translation: neither will quietly enrich your data from the web, and both need the source uploaded or connected first. The category itself is defined in [code execution](/glossary/code-execution).
+The execution model differs too. ChatGPT writes and runs Python in a stateful notebook session, so variables survive between turns and you can iterate without re-uploading, and OpenAI states the environment cannot make external web requests. Claude's file-creation sandbox is an isolated container whose network egress is a setting: on by default for Free, Pro, and Max, off by default for Team and Enterprise, where an owner picks between no network, package managers only, package managers plus named domains, or all domains. On the developer platform, the code execution tool runs Python and bash in a container with internet access completely disabled, so only pre-installed libraries are available. Practical translation: neither will quietly enrich your data from the web, and both need the source uploaded or connected first. The category itself is defined in [code execution](/glossary/code-execution).
 
 ## Spreadsheets
 

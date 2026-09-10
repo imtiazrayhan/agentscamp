@@ -26,7 +26,7 @@ faq:
   - q: "Do marketers still need Jasper or Copy.ai if they have Claude or ChatGPT?"
     a: "Only for the governance layer. Jasper and Copy.ai package brand voices, knowledge bases, and marketing workflows so a team produces consistent output without anyone writing prompts. A general assistant with a brand-voice skill and a Project covers the same ground for a small team; the platforms earn their price when many people need the same guardrails."
   - q: "Surfer or Clearscope?"
-    a: "Both score a draft against the pages that rank for a keyword and both now track how often a brand appears in AI answers. Surfer ships more tooling around the editor (audits, topical maps, AI writing, a WordPress plugin, an MCP server in beta). Clearscope is simpler, prices by report volume with unlimited users, and leans into answer-engine optimization. The full comparison is on this site."
+    a: "Both score a draft against the pages that rank for a keyword and both now track how often a brand appears in AI answers. Surfer ships more tooling around the editor (audits, topical maps, AI writing, a WordPress plugin, an MCP server on Pro and above). Clearscope is simpler, prices by report volume with unlimited users, and leans into answer-engine optimization. The full comparison is on this site."
   - q: "Which of these tools are free?"
     a: "Claude, ChatGPT, Gemini, Perplexity, Gemini Notebook, Gamma, Descript, OpusClip, ElevenLabs, Firecrawl, and Zapier Agents all have a free tier, and Exa gives new accounts free credits. Jasper, Surfer, and Clearscope offer trials on paid plans. Claude Cowork and Claude Design need a paid Claude plan. Microsoft 365 Copilot and Lindy are paid per user. n8n is open-source to self-host. Each tool page carries current plans."
   - q: "How often is this list updated?"
@@ -119,7 +119,7 @@ The best AI tools for marketers in 2026 are the ones that map to a job you run e
 | [Gemini Notebook](/tools/notebooklm) | Assistant | Freemium | Answers grounded only in your own sources |
 | [Microsoft 365 Copilot](/tools/microsoft-copilot) | Assistant | Paid per user | Word, PowerPoint, Outlook, and Teams-centric teams |
 | [Jasper](/tools/jasper) | Writing and content | Paid per seat (trial) | Governed marketing content at team scale |
-| [Copy.ai](/tools/copy-ai) | Writing and content | Paid per seat | Go-to-market workflows across sales and marketing |
+| [Copy.ai](/tools/copy-ai) | Writing and content | Paid, seats bundled per plan | Go-to-market workflows across sales and marketing |
 | [Surfer](/tools/surfer) | SEO | Paid (trial) | Scoring and optimizing drafts, audits, AI visibility |
 | [Clearscope](/tools/clearscope) | SEO | Paid (trial) | Simple content reports with unlimited users |
 | [Firecrawl](/tools/firecrawl) | Research | Freemium (credits) | Turning any site into clean text for an agent |
@@ -153,9 +153,9 @@ The best AI tools for marketers in 2026 are the ones that map to a job you run e
 
 ## Writing and content: the governed layer
 
-**[Jasper](/tools/jasper).** An agent workspace for marketing teams: a Canvas for planning and drafting, a Marketing Editor, and a library of agents for jobs from SEO to research, governed by Brand IQ (brand voice, style guide, visual guidelines). Per-seat pricing with a 7-day free trial, as of September 2026.
+**[Jasper](/tools/jasper).** An agent workspace for marketing teams: a Canvas for planning and drafting, a Marketing Editor, and a library of agents for jobs from SEO to research, governed by Jasper IQ (brand voice, style guide, visual guidelines, audiences, knowledge base). Per-seat pricing with a 7-day free trial, as of September 2026.
 
-**[Copy.ai](/tools/copy-ai).** A go-to-market platform rather than a writing tool: Workflows codify a process, Agents run targeted tasks, and Brand Voice and Infobase keep the output consistent. Acquired by Fullcast in October 2025. Per-seat pricing; the current pricing page lists no free tier, as of September 2026.
+**[Copy.ai](/tools/copy-ai).** A go-to-market platform rather than a writing tool: Workflows codify a process, Agents run targeted tasks, and Brand Voice and Infobase keep the output consistent. Acquired by Fullcast in October 2025. Paid plans that bundle a fixed number of seats rather than charging per seat; the current pricing page lists no free tier, as of September 2026.
 
 **[Claude](/tools/claude).** The same brand governance without a second subscription: a [brand-voice profiler](/skills/marketing/brand-voice-profiler) skill built from your best pieces, a Project per product line, and the document skills for the finished file. [Brand voice with Claude skills](/guides/marketing/brand-voice-with-claude-skills) walks through the setup, and the [brand voice](/glossary/brand-voice) glossary entry explains why a skill beats a paragraph of instructions.
 
@@ -163,7 +163,7 @@ The best AI tools for marketers in 2026 are the ones that map to a job you run e
 
 ## SEO: scoring against what ranks
 
-**[Surfer](/tools/surfer).** A Content Editor with a Content Score, an Outline Builder, Surfy for rewriting inside the editor, Auto-Optimize, Auto Internal Links, a Humanizer, and a plagiarism checker, plus Content Audit, Topical Map, keyword research, and an AI Tracker that reports how ChatGPT, Claude, and Google AI Overviews describe your brand. Integrations with Google Docs, WordPress, Jasper, and Contentful; an MCP server in beta. Paid plans with a 7-day trial of Pro that needs a card and converts unless you cancel, as of September 2026.
+**[Surfer](/tools/surfer).** A Content Editor with a Content Score, an Outline Builder, Surfy for rewriting inside the editor, Auto-Optimize, Auto Internal Links, a Humanizer, and a plagiarism checker, plus Content Audit, Topical Map, keyword research, and an AI Tracker that reports how ChatGPT, Perplexity, Gemini, and Google's AI Overviews and AI Mode describe your brand. Integrations with Google Docs, WordPress, Contentful, and Zapier; an MCP server on Pro and above. Paid plans with a 7-day trial of Pro that needs a card and converts unless you cancel, as of September 2026.
 
 **[Clearscope](/tools/clearscope).** Content Reports with a Content Grade up to A++, term recommendations, readability, a word-count range, and the heading outlines of the top-ranking pages. Content Inventory watches published URLs for decay, Query Discovery finds the questions worth answering, and Prompt Tracking reports where your brand appears in ChatGPT and Gemini answers. Google Docs add-on and WordPress plugin; unlimited users and projects on every plan; 14-day free trial, as of September 2026.
 
@@ -181,11 +181,11 @@ Perplexity and Gemini Notebook, above, cover research by hand. These two are for
 
 ## Decks and visuals
 
-**[Claude Design](/tools/claude-design).** Anthropic's tool for decks, one-pagers, and landing pages that use your design system, with PPTX, PDF, and HTML export. Included with paid Claude plans.
+**[Claude Design](/tools/claude-design).** Anthropic Labs' tool for decks, one-pagers, and landing pages that use your design system, with PPTX, PDF, HTML, and Canva export. In beta, included with paid Claude plans.
 
 **[Gamma](/tools/gamma).** Presentations, documents, and web pages from an outline in minutes, on a credit system with a free tier whose credits do not refresh.
 
-**Verdict:** Claude Design if you are on a paid Claude plan and the deck has to match the product; Gamma if you want the fastest path from outline to something presentable.
+**Verdict:** Claude Design if you are on a paid Claude plan and the deck has to match the product (it is still in beta); Gamma if you want the fastest path from outline to something presentable.
 
 ## Video and audio: the repurposing chain
 

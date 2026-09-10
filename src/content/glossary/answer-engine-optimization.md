@@ -12,7 +12,7 @@ faq:
   - q: "Does AEO require special markup or files?"
     a: "No. Google's guidance is that there are no additional requirements to appear in AI Overviews or AI Mode and no new machine-readable files or markup are needed. Structured data still helps search understand a page, but the core of AEO is writing: a question-shaped heading, a one-paragraph answer directly under it, and facts a system can quote."
   - q: "How do I know if AEO is working?"
-    a: "Track a fixed list of questions. Surfer's AI Tracker and Clearscope's Prompt Tracking report whether your brand appears in answers from ChatGPT, Gemini, Claude, or Google AI Overviews, and Search Console includes AI Overviews traffic in the Web search type. Compare against the same list month to month rather than chasing single answers."
+    a: "Track a fixed list of questions. Surfer's AI Tracker and Clearscope's Prompt Tracking report whether your brand appears in answers from engines such as ChatGPT, Gemini, Perplexity, and Google's AI Overviews, and Search Console includes AI Overviews traffic in the Web search type plus, since August 31, 2026, a dedicated Search Generative AI report. Compare against the same list month to month rather than chasing single answers."
 summary: "Answer engine optimization (AEO) is the practice of structuring content so that a search engine or AI assistant can extract a direct answer from it and present that answer in a featured snippet, an AI Overview, a voice reply, or a chatbot response."
 ---
 

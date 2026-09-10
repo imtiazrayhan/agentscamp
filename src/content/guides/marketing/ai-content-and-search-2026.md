@@ -68,7 +68,7 @@ The foundational statement is the Search Central blog post of February 8, 2023, 
 
 And on whether to use it at all: "If you see AI as an inexpensive, easy way to game search engine rankings, then no."
 
-The "Creating helpful, reliable, people-first content" page (last updated December 10, 2025) turns this into a "Who, How, and Why" test. *Who* created it, with bylines where readers expect them. *How*, including whether "the use of automation, including AI-generation, [is] self-evident to visitors through disclosures or in other ways." And *Why*, "perhaps the most important question": content made "primarily to help people" aligns with what Google rewards; content made "primarily to attract search engine visits" does not.
+The "Creating helpful, reliable, people-first content" page (last updated December 10, 2025) turns this into a "Who, How, and Why" test. *Who* created it, with bylines where readers expect them. *How*, including whether "the use of automation, including AI-generation, [is] self-evident to visitors through disclosures or in other ways." And *Why*, "perhaps the most important question": content created "primarily to help people" aligns with what Google rewards; content made primarily "to attract search engine visits" does not.
 
 ## What Google penalizes
 
@@ -76,7 +76,7 @@ The penalty lives in the spam policies (last updated August 28, 2026), under **s
 
 > "Scaled content abuse is when many pages are generated for the primary purpose of manipulating search rankings and not helping users. This abusive practice is typically focused on creating large amounts of unoriginal content that provides little to no value to users, no matter how it's created."
 
-The first listed example is "using generative AI tools or other similar tools to generate many pages without adding value for users." The others are scraping and synonymizing feeds, stitching content from different pages, creating multiple sites to hide the scale, and pages that "make little or no sense to a reader but contain search keywords." Note the shape: *many* pages, *primary purpose* of ranking, *little value*. One researched article drafted with a model is not the pattern; five hundred thin location pages are, whether a model or a spreadsheet macro made them.
+The first listed example is "using generative AI tools or other similar tools to generate many pages without adding value for users." The others are scraping and synonymizing feeds, stitching content from different pages, creating multiple sites to hide the scale, and "creating many pages where the content makes little or no sense to a reader but contains search keywords." Note the shape: *many* pages, *primary purpose* of ranking, *little value*. One researched article drafted with a model is not the pattern; five hundred thin location pages are, whether a model or a spreadsheet macro made them.
 
 Google's page on using generative AI content (last updated December 10, 2025) adds two notes. Generative AI "can be particularly useful when researching a topic, and to add structure to original content," and sections 4.6.5 and 4.6.6 of the Search Quality Rater Guidelines cover scaled content abuse and main content "created with little to no effort, little to no originality, and little to no added value." It also asks for the same care on metadata a model may have written: title elements, meta descriptions, structured data, and alt text.
 
@@ -84,7 +84,7 @@ Google's page on using generative AI content (last updated December 10, 2025) ad
 
 The ranking rules did not change; the results page did. Google's "AI features and your website" page (last updated December 10, 2025) opens with: "There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary." To be cited, a page "must be indexed and eligible to be shown in Google Search with a snippet," and nothing more. Three details on that page matter:
 
-- **Query fan-out.** Both features "may use a 'query fan-out' technique, issuing multiple related searches across subtopics and data sources," so a page that answers one sub-question well can be cited for a broad query it never targeted.
+- **Query fan-out.** Both features "may use a 'query fan-out' technique — issuing multiple related searches across subtopics and data sources — to develop a response," so a page that answers one sub-question well can be cited for a broad query it never targeted.
 - **AI Overviews often do not trigger.** They "are only shown when our systems determine that it is additive to classic Search, and as such, often don't trigger." AI Mode targets queries "where further exploration, reasoning, or complex comparisons are needed."
 - **Controls are the existing ones.** `nosnippet`, `data-nosnippet`, `max-snippet`, and `noindex` govern what appears; robots.txt for Googlebot controls crawling; Google-Extended covers training and grounding in other Google products.
 
