@@ -5,6 +5,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { site } from "@/lib/site";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { PageHeader } from "@/components/content/PageHeader";
+import { externalLinkProps } from "@/lib/utils";
 
 const title = "About & Editorial Standards";
 const description =
@@ -127,14 +128,18 @@ export default function AboutPage() {
           site and its sibling projects. Guides carry that byline; the
           verification standards above apply to every page regardless of how it
           was drafted. Follow along at{" "}
-          <a href="https://x.com/agentscamp" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://x.com/agentscamp"
+            {...externalLinkProps("https://x.com/agentscamp", { vouch: true })}
+          >
             @agentscamp on X
           </a>{" "}
           or on{" "}
           <a
             href="https://github.com/imtiazrayhan/agentscamp"
-            target="_blank"
-            rel="noopener noreferrer"
+            {...externalLinkProps("https://github.com/imtiazrayhan/agentscamp", {
+              vouch: true,
+            })}
           >
             GitHub
           </a>
@@ -144,7 +149,10 @@ export default function AboutPage() {
         <h2>Contact</h2>
         <p>
           For corrections and editorial questions, contact{" "}
-          <a href="https://x.com/agentscamp" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://x.com/agentscamp"
+            {...externalLinkProps("https://x.com/agentscamp", { vouch: true })}
+          >
             @agentscamp on X
           </a>.
         </p>

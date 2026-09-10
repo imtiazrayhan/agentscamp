@@ -5,7 +5,7 @@ import { getCountsByType, getByAudience } from "@/lib/content";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/container";
 import { site, network } from "@/lib/site";
-import { getColorClasses, cn } from "@/lib/utils";
+import { getColorClasses, cn, externalLinkProps } from "@/lib/utils";
 import type { ComponentType, SVGProps } from "react";
 import type { ContentTypeDef } from "@/lib/content/registry";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -79,19 +79,18 @@ function Column({
 function TextLink({
   href,
   children,
-  external,
+  vouch,
 }: {
   href: string;
   children: React.ReactNode;
-  external?: boolean;
+  /** First-party identity link (our own profile/package) — keeps it dofollow. */
+  vouch?: boolean;
 }) {
   return (
     <li>
       <Link
         href={href}
-        {...(external
-          ? { target: "_blank", rel: "noopener noreferrer" }
-          : {})}
+        {...externalLinkProps(href, { vouch })}
         className="block py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >
         {children}
@@ -124,7 +123,7 @@ export function Footer() {
             <TypeLink def={contentTypes.skill} count={counts.skill} />
             <TypeLink def={contentTypes.command} count={counts.command} />
             <TextLink href="/how-to-use">How to use</TextLink>
-            <TextLink href="https://www.npmjs.com/package/agentscamp" external>
+            <TextLink href="https://www.npmjs.com/package/agentscamp" vouch>
               npm: agentscamp
             </TextLink>
           </Column>
@@ -146,13 +145,10 @@ export function Footer() {
             </p>
             <ul className="mt-3 space-y-0.5">
               <TextLink href="/about">About &amp; editorial standards</TextLink>
-              <TextLink href="https://x.com/agentscamp" external>
+              <TextLink href="https://x.com/agentscamp" vouch>
                 X
               </TextLink>
-              <TextLink
-                href="https://github.com/imtiazrayhan/agentscamp"
-                external
-              >
+              <TextLink href="https://github.com/imtiazrayhan/agentscamp" vouch>
                 GitHub
               </TextLink>
             </ul>
@@ -171,8 +167,7 @@ export function Footer() {
                 <li key={n.id}>
                   <Link
                     href={n.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...externalLinkProps(n.url)}
                     className="group flex items-start gap-2"
                   >
                     <Icon className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
@@ -199,7 +194,6 @@ export function Footer() {
                 <Link
                   href={e.href}
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="transition-colors hover:text-foreground"
                 >
                   {e.label}

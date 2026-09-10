@@ -2,6 +2,7 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import type { Accent, ContentTypeId } from "@/lib/content/types";
 import { contentTypes } from "@/lib/content/registry";
+import { site } from "@/lib/site";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -55,4 +56,32 @@ const ACCENTS: Record<Accent, AccentClasses> = {
 
 export function getColorClasses(type: ContentTypeId): AccentClasses {
   return ACCENTS[contentTypes[type].accent];
+}
+
+const INTERNAL_HOST = new URL(site.url).hostname;
+
+/** Off-site? Handles protocol-relative `//host`; mailto:/tel:/#hash/relative are not links out. */
+export function isExternalHref(href: string): boolean {
+  if (!/^(https?:)?\/\//i.test(href)) return false;
+  try {
+    return new URL(href, site.url).hostname !== INTERNAL_HOST;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Attributes for an anchor whose href may leave the site. Returns {} for internal
+ * hrefs, so call sites can spread unconditionally.
+ *
+ * Default is nofollow — a link we render but do not vouch for (directory listings,
+ * promos, share intents). Pass { vouch: true } for links the site stands behind:
+ * cited primary sources, in-body editorial links, our own identity profiles.
+ */
+export function externalLinkProps(href: string, opts?: { vouch?: boolean }) {
+  if (!isExternalHref(href)) return {};
+  return {
+    target: "_blank" as const,
+    rel: opts?.vouch ? "noopener noreferrer" : "noopener noreferrer nofollow",
+  };
 }

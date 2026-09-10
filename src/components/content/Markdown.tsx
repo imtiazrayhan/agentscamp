@@ -11,7 +11,7 @@ import * as prod from "react/jsx-runtime";
 import type { ComponentProps, ReactNode } from "react";
 import { Pre } from "./Pre";
 import { proseClasses } from "@/components/ui/prose";
-import { cn } from "@/lib/utils";
+import { cn, externalLinkProps } from "@/lib/utils";
 
 /**
  * Server Component markdown renderer. Async unified pipeline (so Shiki can run at
@@ -20,13 +20,11 @@ import { cn } from "@/lib/utils";
  */
 
 function Anchor({ href, children, ...props }: ComponentProps<"a">) {
-  const external = typeof href === "string" && /^https?:\/\//.test(href);
+  // In-body links are editorial — the site vouches for what it cites, so these stay
+  // dofollow. Policy attrs spread LAST so a rel on the hast node can't override them.
+  const ext = typeof href === "string" ? externalLinkProps(href, { vouch: true }) : {};
   return (
-    <a
-      href={href}
-      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      {...props}
-    >
+    <a href={href} {...props} {...ext}>
       {children}
     </a>
   );

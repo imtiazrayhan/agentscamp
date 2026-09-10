@@ -14,6 +14,7 @@ import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
 import { canonicalUrl } from "@/lib/seo/artifact";
 import type { GuideItem, ContentItem } from "@/lib/content/types";
 import { sectionHeading } from "@/components/ui/typography";
+import { externalLinkProps } from "@/lib/utils";
 import { PageHeader } from "./PageHeader";
 
 function Sources({ sources }: { sources: GuideItem["sources"] }) {
@@ -34,8 +35,7 @@ function Sources({ sources }: { sources: GuideItem["sources"] }) {
           <li key={source.url}>
             <a
               href={source.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...externalLinkProps(source.url, { vouch: true })}
               className="font-medium text-primary hover:underline"
             >
               {source.title}

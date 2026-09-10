@@ -2,6 +2,7 @@
 
 import { track } from "@/lib/analytics";
 import { site } from "@/lib/site";
+import { externalLinkProps } from "@/lib/utils";
 import { CopyButton } from "./CopyButton";
 
 const btn =
@@ -29,8 +30,7 @@ export function ShareRow({ url, title }: { url: string; title: string }) {
         <a
           key={l.method}
           href={l.href}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...externalLinkProps(l.href)}
           onClick={() =>
             track("share", { method: l.method, content_type: "guide", item_id: url })
           }

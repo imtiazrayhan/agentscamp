@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { externalLinkProps } from "@/lib/utils";
 import { PromoDismiss } from "./PromoDismiss";
+
+const promoHref = "https://sureprompts.com";
 
 /**
  * Server-rendered so it occupies its final height in the very first paint.
@@ -18,9 +21,8 @@ export function PromoBar() {
         <span>
           Level up your prompts with{" "}
           <Link
-            href="https://sureprompts.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={promoHref}
+            {...externalLinkProps(promoHref)}
             className="font-medium text-foreground underline underline-offset-2"
           >
             SurePrompts

@@ -6,7 +6,7 @@
     "dev": "next dev -p 3001",
     "prebuild": "tsx scripts/validate-content.ts && tsx scripts/build-search-index.ts",
     "build": "next build",
-    "postbuild": "tsx scripts/submit-indexnow.ts",
+    "postbuild": "tsx scripts/check-external-links.ts && tsx scripts/submit-indexnow.ts",
     "start": "next start -p 3001",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",

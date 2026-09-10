@@ -7,6 +7,7 @@ import { buildArtifact, artifactFilename } from "@/lib/seo/artifact";
 import { AGENT_EXPORT_FORMATS } from "@/lib/export/agent-formats";
 import { CopyButton } from "./CopyButton";
 import { Button } from "@/components/ui/button";
+import { externalLinkProps } from "@/lib/utils";
 
 function downloadHref(content: string) {
   return `data:text/markdown;charset=utf-8,${encodeURIComponent(content)}`;
@@ -85,13 +86,13 @@ export function InstallActions({ item }: { item: ContentItem }) {
       <div className="space-y-3">
         <div className="flex flex-wrap gap-2">
           <Button asChild>
-            <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <a href={item.url} {...externalLinkProps(item.url)}>
               Visit website <ExternalLink className="size-4" />
             </a>
           </Button>
           {item.repo && (
             <Button asChild variant="outline">
-              <a href={item.repo} target="_blank" rel="noopener noreferrer">
+              <a href={item.repo} {...externalLinkProps(item.repo)}>
                 <Github className="size-4" /> Source
               </a>
             </Button>
