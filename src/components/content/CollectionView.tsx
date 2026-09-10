@@ -17,6 +17,7 @@ export function CollectionView({
   items,
   crumbs,
   intro,
+  list,
 }: {
   title: string;
   description: string;
@@ -24,6 +25,8 @@ export function CollectionView({
   items: ContentItem[];
   crumbs: Crumb[];
   intro?: React.ReactNode;
+  /** Replaces the default card grid; must render the same `items` in the same order. */
+  list?: React.ReactNode;
 }) {
   return (
     <div>
@@ -50,11 +53,13 @@ export function CollectionView({
         </p>
         {intro}
       </header>
-      <ContentGrid>
-        {items.map((item) => (
-          <ContentCard key={item.href} item={item} />
-        ))}
-      </ContentGrid>
+      {list ?? (
+        <ContentGrid>
+          {items.map((item) => (
+            <ContentCard key={item.href} item={item} />
+          ))}
+        </ContentGrid>
+      )}
     </div>
   );
 }

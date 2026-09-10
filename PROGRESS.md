@@ -1,3 +1,33 @@
+# Alternatives pages deepened, data-only (2026-09-10) — SHIPPED
+
+Assessment: the 133 indexable `/tools/*/alternatives` pages ranked on the
+title match alone — two template sentences, a half-empty table (~43% of
+license and ~47% of platform cells were "—"), and one clamped-description
+card per alternative. Nothing said why a tool was an alternative, and none of
+the 35 comparison guides were linked from the pages whose tools they compare.
+Owner chose data-only deepening: no schema change, no new copy.
+
+## Done (one commit on master)
+- Ranking: direct alternatives (in the tool's own `alternativeTo`) before
+  reverse matches, same category first within each; JSON-LD ItemList follows.
+- Per-alternative detail list replaces the card grid on this route only
+  (`CollectionView` gained an optional `list` slot): full `summary`, pricing,
+  license/platforms when present, profile link.
+- Head-to-head links: a guide qualifies when it carries the `comparison` tag
+  and its `related` names both tools; pairwise guides sort before roundups,
+  then guides whose slug names the alternative. 79 pages get links
+  (246 of 599 entries).
+- "Free and open-source alternatives to X" block only when the page mixes
+  free and paid alternatives (83 pages).
+- Cline page went from ~200 to ~540 main-content words; Claude Code to ~1,170.
+  No FAQPage node (a templated FAQ would be boilerplate).
+
+## Next
+- The 4-week GSC re-check should now also watch CTR and average position on
+  alternatives pages against the 2026-09-07 baseline.
+- Data gap still open: 60 tools lack `license`, 66 lack `os`; a backfill wave
+  would fill the table dashes (verify against primary sources).
+
 # Content-first repositioning + audience foundations (2026-09-09) — SHIPPED
 
 Owner decision: AgentsCamp is a content site first (guides, tool directory,

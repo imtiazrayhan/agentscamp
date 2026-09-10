@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ToolItem } from "@/lib/content/types";
 import { titleCaseLabel } from "@/lib/format";
 
-const pricingLabel = (p: ToolItem["pricing"]) => p.replace("-", " ");
+export const pricingLabel = (p: ToolItem["pricing"]) => p.replace("-", " ");
 
 /**
  * Intro + comparison table for a tool's alternatives page — the site's
@@ -29,8 +29,9 @@ export function AlternativesTable({
         is listed under {titleCaseLabel(tool.category)} (
         <span className="lowercase">{pricingLabel(tool.pricing)}</span>). The{" "}
         {items.length} {items.length === 1 ? "tool" : "tools"} below cover
-        similar jobs — the table compares pricing, license, and platforms so you
-        can shortlist quickly, and each card links to the full profile.
+        similar jobs, closest matches first — the table compares pricing,
+        license, and platforms so you can shortlist quickly, and each entry
+        further down adds a fuller summary and a link to the full profile.
       </p>
       <div className="mt-5 overflow-x-auto rounded-md border border-border">
         <table className="w-full min-w-[640px] text-sm">

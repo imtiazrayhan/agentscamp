@@ -5,6 +5,7 @@ import type { Crumb } from "./jsonld";
 import type {
   ContentItem,
   ContentTypeId,
+  GuideItem,
   ToolItem,
 } from "@/lib/content/types";
 
@@ -127,6 +128,12 @@ export function toolAlternativesCollection(
       seen.add(t.slug);
     }
   }
+  // Direct alternatives (listed in tool.alternativeTo) before reverse matches;
+  // same category first within each. Stable sort keeps loader order for ties.
+  const rank = (t: ToolItem) =>
+    (tool.alternativeTo.includes(t.slug) ? 0 : 2) +
+    (t.category === tool.category ? 0 : 1);
+  alts.sort((a, b) => rank(a) - rank(b));
   return {
     tool,
     title: `${tool.title} Alternatives`,
@@ -140,4 +147,34 @@ export function toolAlternativesCollection(
     ],
     noindex: alts.length < MIN_INDEXABLE,
   };
+}
+
+/**
+ * Comparison guides that cover both the tool and an alternative, keyed by the
+ * alternative's slug, tightest head-to-head first. Kept separate from
+ * toolAlternativesCollection so the sitemap and tool detail pages never load
+ * every guide just to count alternatives.
+ */
+export function comparisonGuidesByAlt(
+  tool: ToolItem,
+  alts: ToolItem[],
+): Map<string, GuideItem[]> {
+  const toolRefs = (g: GuideItem) =>
+    g.related.filter((r) => r.startsWith("tool:")).length;
+  const guides = getContentByType<GuideItem>("guide").filter(
+    (g) =>
+      g.tags.includes("comparison") && g.related.includes(`tool:${tool.slug}`),
+  );
+  const byAlt = new Map<string, GuideItem[]>();
+  for (const alt of alts) {
+    // Fewest tools compared first (pairwise before roundups), then guides
+    // whose slug names this alternative.
+    const rank = (g: GuideItem) =>
+      toolRefs(g) * 2 + (g.slug.includes(alt.slug) ? 0 : 1);
+    const matches = guides
+      .filter((g) => g.related.includes(`tool:${alt.slug}`))
+      .sort((a, b) => rank(a) - rank(b));
+    if (matches.length) byAlt.set(alt.slug, matches);
+  }
+  return byAlt;
 }

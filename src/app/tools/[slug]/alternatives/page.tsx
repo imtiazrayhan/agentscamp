@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { toolParams } from "@/lib/seo/params";
-import { toolAlternativesCollection } from "@/lib/seo/collections";
+import {
+  comparisonGuidesByAlt,
+  toolAlternativesCollection,
+} from "@/lib/seo/collections";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { CollectionView } from "@/components/content/CollectionView";
 import { AlternativesTable } from "@/components/content/AlternativesTable";
+import { AlternativesList } from "@/components/content/AlternativesList";
 
 type Params = Promise<{ slug: string }>;
 
@@ -40,6 +44,13 @@ export default async function Page({ params }: { params: Params }) {
       items={c.items}
       crumbs={c.crumbs}
       intro={<AlternativesTable tool={c.tool} items={c.items} />}
+      list={
+        <AlternativesList
+          tool={c.tool}
+          items={c.items}
+          guides={comparisonGuidesByAlt(c.tool, c.items)}
+        />
+      }
     />
   );
 }
