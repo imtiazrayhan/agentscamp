@@ -11,16 +11,23 @@ import type { ContentTypeId, FaqEntry } from "@/lib/content/types";
  * - intro:          on-page explainer under the H1 — extractable "what is X"
  *                   answer copy for AI answer engines (AEO/GEO).
  * - faq:            visible Q&A that also emits FAQPage JSON-LD (AEO/GEO).
+ * - startHere:      optional pillar guide linked under the intro, so head-term
+ *                   queries that land on the listing are handed to the article.
  */
 export interface ListingSeo {
   seoTitle: string;
   seoDescription: string;
   intro: string;
   faq: FaqEntry[];
+  startHere?: { href: string; label: string };
 }
 
 export const listingSeo: Record<ContentTypeId, ListingSeo> = {
   agent: {
+    startHere: {
+      href: "/guides/getting-started/getting-started-with-agents",
+      label: "Getting Started with Claude Code Agents",
+    },
     seoTitle: "Claude Code Subagents",
     seoDescription:
       "Browse {count} free, copy-paste Claude Code subagents — code review, debugging, testing, architecture, and more. Install in seconds into ~/.claude/agents.",
@@ -50,6 +57,10 @@ export const listingSeo: Record<ContentTypeId, ListingSeo> = {
     ],
   },
   skill: {
+    startHere: {
+      href: "/guides/skills/what-are-claude-skills",
+      label: "What are Claude Skills?",
+    },
     seoTitle: "Claude Code Skills (Agent Skills)",
     seoDescription:
       "Browse {count} free Claude Code Skills — packaged SKILL.md capabilities Claude loads on demand. Copy-paste install into ~/.claude/skills.",

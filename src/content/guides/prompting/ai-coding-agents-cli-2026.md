@@ -1,6 +1,8 @@
 ---
 title: "AI Coding Agents in 2026: The Open-Source & CLI Edition"
 description: "Cursor and Windsurf vs the open-source agents — OpenCode, Cline, Aider, Codex CLI, and more. Who should bring their own model, and when to stay in the terminal."
+seoTitle: "Open-Source & CLI AI Coding Agents 2026: OpenCode, Cline, Aider, Codex"
+seoDescription: "OpenCode, Cline, Aider, Codex CLI, and more open-source or CLI coding agents vs Cursor and Windsurf: who should bring their own model, and when the CLI wins."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
 updated: 2026-07-01

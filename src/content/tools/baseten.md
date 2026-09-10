@@ -2,6 +2,8 @@
 name: "Baseten"
 title: "Baseten"
 description: "Production inference platform for ML and LLM models — autoscaling GPU deployments, scale-to-zero, and packaging via the open-source Truss framework."
+seoTitle: "Baseten: Pricing, Truss Deployments, and Alternatives"
+seoDescription: "Baseten serves ML and LLM models on autoscaling GPUs with scale-to-zero and open-source Truss packaging. Its pricing model, who it fits, and top alternatives."
 url: "https://www.baseten.co"
 date: 2026-06-19
 pricing: "paid"

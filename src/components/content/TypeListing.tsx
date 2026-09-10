@@ -94,6 +94,16 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
           {def.description}
         </p>
         <p className="mt-3 max-w-2xl text-muted-foreground">{seo.intro}</p>
+        {seo.startHere && (
+          <p className="mt-3 font-mono text-sm">
+            <Link
+              href={seo.startHere.href}
+              className="text-primary hover:underline"
+            >
+              new here? start with the guide: {seo.startHere.label} →
+            </Link>
+          </p>
+        )}
         {categoryLinks.length > 1 && (
           <nav className="mt-5" aria-label={`Browse ${def.label} by category`}>
             <h2 className="mb-2 text-sm font-semibold text-foreground">

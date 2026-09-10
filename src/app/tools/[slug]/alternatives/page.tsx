@@ -4,6 +4,7 @@ import { toolParams } from "@/lib/seo/params";
 import { toolAlternativesCollection } from "@/lib/seo/collections";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { CollectionView } from "@/components/content/CollectionView";
+import { AlternativesTable } from "@/components/content/AlternativesTable";
 
 type Params = Promise<{ slug: string }>;
 
@@ -38,6 +39,7 @@ export default async function Page({ params }: { params: Params }) {
       path={`/tools/${slug}/alternatives`}
       items={c.items}
       crumbs={c.crumbs}
+      intro={<AlternativesTable tool={c.tool} items={c.items} />}
     />
   );
 }

@@ -109,7 +109,9 @@ export function toolPricingCollection(pricing: string): Collection | null {
   };
 }
 
-export function toolAlternativesCollection(slug: string): Collection | null {
+export function toolAlternativesCollection(
+  slug: string,
+): (Collection & { tool: ToolItem; items: ToolItem[] }) | null {
   const all = tools();
   const tool = all.find((t) => t.slug === slug);
   if (!tool) return null;
@@ -126,6 +128,7 @@ export function toolAlternativesCollection(slug: string): Collection | null {
     }
   }
   return {
+    tool,
     title: `${tool.title} Alternatives`,
     description: `${alts.length} alternatives to ${tool.title} — free and paid AI coding tools covering similar jobs, with pricing and standout strengths.`,
     items: alts,

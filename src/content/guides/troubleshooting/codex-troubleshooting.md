@@ -1,6 +1,8 @@
 ---
 title: "Codex Troubleshooting: A Layer-by-Layer Recovery Guide"
 description: "Troubleshoot OpenAI Codex when files, commands, configuration, worktrees, MCP, or app features misbehave — with a fast isolation and recovery sequence."
+seoTitle: "Codex Not Working? Fix Files, Config, Sandbox, MCP & Stuck Sessions"
+seoDescription: "Troubleshoot OpenAI Codex layer by layer: wrong files, instruction chain, config precedence, sandbox vs approvals, worktrees, MCP, and stuck-session recovery."
 author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"

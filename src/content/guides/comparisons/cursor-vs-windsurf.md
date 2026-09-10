@@ -1,6 +1,8 @@
 ---
 title: "Cursor vs Windsurf (Devin Desktop) in 2026"
 description: "Cursor vs Windsurf — now Devin Desktop — compared: agent-first editing, Composer vs Devin Local, the Cognition rebrand, and which AI editor fits you."
+seoTitle: "Windsurf vs Devin Desktop vs Cursor (2026): Is Windsurf Now Devin?"
+seoDescription: "Yes — Windsurf became Devin Desktop after Cognition's rebrand. How it compares to Cursor on agent-first editing and Composer vs Devin Local, and which fits you."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
