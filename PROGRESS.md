@@ -1,3 +1,43 @@
+# Content-first repositioning + audience foundations (2026-09-09) — SHIPPED
+
+Owner decision: AgentsCamp is a content site first (guides, tool directory,
+glossary); the npm CLI is a secondary addition. Backed by Search Console
+(2026-06-02 → 2026-09-07): content pages earn ~87% of clicks, installables ~2%,
+and the best-performing format is the programmatic tool "alternatives" page.
+
+## Done (three commits on master)
+- Repositioning: guides lead the type order (nav, footer, bento, palette,
+  llms.txt); the hero and homepage route readers to guides and topics instead
+  of an install command; detail pages show the summary before install actions
+  with the CLI as the last row; `/how-to-use` opens with the guides and ends
+  with an optional `#cli` section; the README leads with the site.
+- Audience foundations: Imtiaz Rayhan byline on all 163 guides (Person JSON-LD
+  → `/about#who-writes-this`), share row on guides (X, LinkedIn, copy link),
+  footer follow links (X, GitHub) + npm link + guides-only `/guides/feed.xml`,
+  publish dates on guide cards, `track()` GA4 helper wired to copy and share.
+  Fixed two latent bugs: RSS autodiscovery only existed on `/` (metadata
+  builders replaced `alternates`), and `formatDate` had no timezone (would
+  have caused hydration mismatches west of UTC once cards showed dates).
+- GSC follow-ups: alternatives pages open with an intro + pricing/license/
+  platform comparison table; agents and skills listings hand off to their
+  pillar guides; query-led `seoTitle`/`seoDescription` on 10 pages ranking
+  7–12 with near-zero CTR (cursor-vs-windsurf, llm-gateways-compared,
+  claude-code-settings-permissions, codex-mcp-setup, llm-api-pricing-2026,
+  sandboxing-ai-generated-code, codex-troubleshooting,
+  ai-coding-agents-cli-2026, baseten, windsurf).
+- Deliberately deferred: newsletter/email capture (owner: bring audience and
+  make them return first).
+
+## Next
+- Push master and the rebuilt mirror (`mirror/` has README + manifest order
+  changes staged locally). No CLI republish needed (no installable changes).
+- Re-check GSC in ~4 weeks: CTR on the 10 rewritten pages, clicks on
+  alternatives pages, and whether `what-are-claude-skills` starts taking the
+  "claude skills" impressions from `/skills`.
+- Candidate next steps: extend the comparison table pattern to tool category
+  pages; a "compare" surface for the versus guides; newsletter once return
+  visits are measurable.
+
 # SEO/AEO/GEO audit and content-depth pass (2026-08-07) — IN PROGRESS
 
 ## Done
