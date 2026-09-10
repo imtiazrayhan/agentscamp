@@ -19,6 +19,7 @@ import { ContentGrid } from "@/components/content/ContentGrid";
 import { ContentCard } from "@/components/content/ContentCard";
 import { CopyButton } from "@/components/content/CopyButton";
 import { getColorClasses, cn } from "@/lib/utils";
+import { Panel } from "@/components/ui/panel";
 
 // The CLI is a secondary path — it lives in the strip at the bottom of the page.
 const CLI_CMD = "npx agentscamp add skills/dependency-audit";
@@ -48,46 +49,42 @@ function BentoTile({
   const accent = getColorClasses(def.id);
   const big = span.includes("row-span-2");
   return (
-    <Link
-      href={def.basePath}
-      className={cn(
-        "group relative flex flex-col rounded-lg border border-border bg-card p-5 transition-colors hover:border-foreground/25",
-        span,
-      )}
-    >
-      <div className="flex items-center justify-between">
-        <span className="inline-flex items-center gap-2">
-          <span
-            className={cn(
-              "inline-flex size-7 items-center justify-center rounded-md",
-              accent.chip,
-            )}
-          >
-            <Icon className="size-4" />
+    <Panel variant="interactive" asChild className={span}>
+      <Link href={def.basePath} className="group relative flex flex-col">
+        <div className="flex items-center justify-between">
+          <span className="inline-flex items-center gap-2">
+            <span
+              className={cn(
+                "inline-flex size-7 items-center justify-center rounded-md",
+                accent.chip,
+              )}
+            >
+              <Icon className="size-4" />
+            </span>
+            <span className="text-sm font-semibold">{def.label}</span>
           </span>
-          <span className="text-sm font-semibold">{def.label}</span>
+          <span className="text-xs tabular-nums text-muted-foreground">
+            {count.toLocaleString()}
+          </span>
+        </div>
+        <p className="mt-3 text-sm text-muted-foreground">{def.tagline}</p>
+        {big && featured.length > 0 && (
+          <ul className="mt-4 space-y-1.5">
+            {featured.map((f) => (
+              <li key={f.href} className="truncate text-sm text-foreground">
+                {f.title}
+              </li>
+            ))}
+          </ul>
+        )}
+        <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-medium text-primary">
+          Browse
+          <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+            →
+          </span>
         </span>
-        <span className="text-xs tabular-nums text-muted-foreground">
-          {count.toLocaleString()}
-        </span>
-      </div>
-      <p className="mt-3 text-sm text-muted-foreground">{def.tagline}</p>
-      {big && featured.length > 0 && (
-        <ul className="mt-4 space-y-1.5 border-t border-border pt-4">
-          {featured.map((f) => (
-            <li key={f.href} className="truncate text-sm text-foreground/80">
-              {f.title}
-            </li>
-          ))}
-        </ul>
-      )}
-      <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-medium text-primary">
-        Browse
-        <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
-          →
-        </span>
-      </span>
-    </Link>
+      </Link>
+    </Panel>
   );
 }
 
@@ -206,33 +203,40 @@ export default function Home() {
       )}
 
       {/* Secondary: the npm CLI, for readers who'd rather install from the terminal. */}
-      <section className="mb-4 mt-10 flex flex-col gap-3 rounded-lg border border-border bg-secondary px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-sm font-semibold">Prefer the terminal?</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            The <code className="font-mono text-foreground">agentscamp</code> npm
-            package installs any agent, skill, or command into Claude Code.{" "}
-            <Link
-              href="/how-to-use#cli"
-              className="font-medium text-primary hover:underline"
-            >
-              How it works →
-            </Link>
-          </p>
-        </div>
-        <div className="inline-flex max-w-full items-center gap-1 self-start rounded-md border border-input bg-background py-1.5 pl-3 pr-1.5">
-          <code className="truncate font-mono text-xs">
-            <span className="select-none text-primary">$ </span>
-            {CLI_CMD}
-          </code>
-          <CopyButton
-            text={CLI_CMD}
-            iconOnly
-            className="shrink-0 border-0 bg-transparent hover:bg-secondary"
-            eventLabel="home_install"
-          />
-        </div>
-      </section>
+      <Panel
+        variant="recessed"
+        asChild
+        className="mb-4 mt-14 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <section>
+          <div>
+            <p className="text-sm font-semibold">Prefer the terminal?</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              The <code className="font-mono text-foreground">agentscamp</code>{" "}
+              npm package installs any agent, skill, or command into Claude
+              Code.{" "}
+              <Link
+                href="/how-to-use#cli"
+                className="font-medium text-primary hover:underline"
+              >
+                How it works →
+              </Link>
+            </p>
+          </div>
+          <div className="inline-flex max-w-full items-center gap-1 self-start rounded-md bg-card py-1.5 pl-3 pr-1.5">
+            <code className="truncate font-mono text-xs">
+              <span className="select-none text-primary">$ </span>
+              {CLI_CMD}
+            </code>
+            <CopyButton
+              text={CLI_CMD}
+              iconOnly
+              className="shrink-0 border-0 bg-transparent hover:bg-secondary"
+              eventLabel="home_install"
+            />
+          </div>
+        </section>
+      </Panel>
     </div>
   );
 }

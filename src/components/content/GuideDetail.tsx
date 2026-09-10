@@ -8,46 +8,11 @@ import { Toc } from "./Toc";
 import { MobileToc } from "./MobileToc";
 import { ArticleMeta } from "./ArticleMeta";
 import { FiledUnder } from "./FiledUnder";
+import { StepsAtAGlance, KeyTakeaways } from "./ArticleBoxes";
 import { extractToc } from "@/lib/toc";
 import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
 import { canonicalUrl } from "@/lib/seo/artifact";
 import type { GuideItem, ContentItem } from "@/lib/content/types";
-
-/** Distilled procedural steps shown for guides that declare `howtoSteps` (AEO render-parity). */
-function StepsAtAGlance({ steps }: { steps: GuideItem["howtoSteps"] }) {
-  if (!steps.length) return null;
-  return (
-    <section className="mb-8 rounded-lg border border-border bg-card p-5">
-      <h2 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-        Steps at a glance
-      </h2>
-      <ol className="ml-4 list-decimal space-y-2 text-sm">
-        {steps.map((s, i) => (
-          <li key={i}>
-            <span className="font-medium text-foreground">{s.name}.</span>{" "}
-            <span className="text-muted-foreground">{s.text}</span>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
-
-function KeyTakeaways({ items }: { items: string[] }) {
-  if (!items.length) return null;
-  return (
-    <section className="mb-8 rounded-lg border border-type-mint/30 bg-type-mint/5 p-5">
-      <h2 className="mb-3 text-xs font-semibold uppercase tracking-wide text-type-mint-ink">
-        Key takeaways
-      </h2>
-      <ul className="ml-4 list-disc space-y-1.5 text-sm text-foreground/90">
-        {items.map((t, i) => (
-          <li key={i}>{t}</li>
-        ))}
-      </ul>
-    </section>
-  );
-}
 
 function Sources({ sources }: { sources: GuideItem["sources"] }) {
   if (!sources.length) return null;

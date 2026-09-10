@@ -12,7 +12,7 @@ export function MobileToc({ items }: { items: TocItem[] }) {
   if (items.length < 2) return null;
 
   return (
-    <details className="mb-8 rounded-lg border border-border bg-card lg:hidden">
+    <details className="mb-6 rounded-lg bg-secondary lg:hidden">
       <summary className="cursor-pointer select-none px-4 py-3 text-sm font-semibold">
         On this page
       </summary>

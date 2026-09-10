@@ -11,6 +11,7 @@ import { titleCaseLabel, formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
 import type { ContentItem } from "@/lib/content/types";
+import { KeyTakeaways } from "./ArticleBoxes";
 
 /**
  * Spec-sheet template for the five non-guide types (agent, skill, command, tool,
@@ -188,18 +189,7 @@ export function ArtifactDetail({
       </header>
 
       <div className="min-w-0 measure">
-        {item.keyTakeaways.length > 0 && (
-          <section className="mb-8 rounded-lg border border-border bg-card p-5">
-            <h2 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Key takeaways
-            </h2>
-            <ul className="ml-4 list-disc space-y-1.5 text-sm text-foreground/90">
-              {item.keyTakeaways.map((t, i) => (
-                <li key={i}>{t}</li>
-              ))}
-            </ul>
-          </section>
-        )}
+        <KeyTakeaways items={item.keyTakeaways} />
 
         {item.body && <Markdown source={item.body} />}
         <FaqSection faq={item.faq} />

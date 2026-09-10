@@ -5,6 +5,7 @@ import type { AudienceGroup } from "@/lib/seo/collections";
 import { Section } from "@/components/sections/Section";
 import { ContentGrid } from "./ContentGrid";
 import { ContentCard } from "./ContentCard";
+import { Panel } from "@/components/ui/panel";
 
 /**
  * Body of a role path (/for/<role>): the numbered "Start here" sequence, then
@@ -29,25 +30,27 @@ export function RolePath({
           <ol className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {startHere.map((item, i) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="group flex h-full gap-4 rounded-md border border-border bg-card p-4 transition-colors hover:border-primary/50"
-                >
-                  <span className="text-2xl font-bold tabular-nums leading-none text-primary">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                      {contentTypes[item.type].singular}
+                <Panel variant="interactive" padding="sm" asChild>
+                  <Link
+                    href={item.href}
+                    className="group flex h-full gap-4"
+                  >
+                    <span className="text-2xl font-bold tabular-nums leading-none text-primary">
+                      {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="mt-1 block font-semibold leading-snug group-hover:text-primary">
-                      {item.title}
+                    <span className="min-w-0">
+                      <span className="block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                        {contentTypes[item.type].singular}
+                      </span>
+                      <span className="mt-1 block font-semibold leading-snug group-hover:text-primary">
+                        {item.title}
+                      </span>
+                      <span className="mt-1.5 line-clamp-2 block text-sm text-muted-foreground">
+                        {item.seoDescription ?? item.description}
+                      </span>
                     </span>
-                    <span className="mt-1.5 line-clamp-2 block text-sm text-muted-foreground">
-                      {item.seoDescription ?? item.description}
-                    </span>
-                  </span>
-                </Link>
+                  </Link>
+                </Panel>
               </li>
             ))}
           </ol>

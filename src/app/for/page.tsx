@@ -6,6 +6,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { hubGraph } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 import { EmptyState } from "@/components/content/EmptyState";
+import { Panel } from "@/components/ui/panel";
 
 const DESCRIPTION =
   "Pick your role — developer, founder, marketer, designer, or analyst — for a curated path through the guides, tools, skills, and agents that fit the work you do.";
@@ -56,23 +57,25 @@ export default function Page() {
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {entries.map((a) => (
             <li key={a.slug}>
-              <Link
-                href={`/for/${a.slug}`}
-                className="group flex h-full items-start justify-between gap-4 rounded-md border border-border bg-card p-5 transition-colors hover:border-primary/50"
-              >
-                <span>
-                  <span className="block font-semibold group-hover:text-primary">
-                    {a.label}
+              <Panel variant="interactive" asChild>
+                <Link
+                  href={`/for/${a.slug}`}
+                  className="group flex h-full items-start justify-between gap-4"
+                >
+                  <span>
+                    <span className="block font-semibold group-hover:text-primary">
+                      {a.label}
+                    </span>
+                    <span className="mt-1 block text-sm text-muted-foreground">
+                      {a.description}
+                    </span>
+                    <span className="mt-2 block text-xs tabular-nums text-muted-foreground">
+                      {a.count} resources
+                    </span>
                   </span>
-                  <span className="mt-1 block text-sm text-muted-foreground">
-                    {a.description}
-                  </span>
-                  <span className="mt-2 block text-xs tabular-nums text-muted-foreground">
-                    {a.count} resources
-                  </span>
-                </span>
-                <ArrowRight className="mt-1 size-4 shrink-0 text-primary transition-transform group-hover:translate-x-0.5" />
-              </Link>
+                  <ArrowRight className="mt-1 size-4 shrink-0 text-primary transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </Panel>
             </li>
           ))}
         </ul>

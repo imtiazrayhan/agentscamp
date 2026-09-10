@@ -5,6 +5,8 @@ import { contentTypes } from "@/lib/content/registry";
 import { getColorClasses, cn } from "@/lib/utils";
 import { formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
+import { Panel } from "@/components/ui/panel";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
 function Footer({ item }: { item: CardItem }) {
   const meta = "text-xs text-muted-foreground";
@@ -78,12 +80,16 @@ export function ContentCard({
   const footer = Footer({ item });
 
   return (
-    <div className="group relative flex flex-col rounded-lg border border-border bg-card p-4 transition-colors hover:border-foreground/25 has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-ring has-[a:focus-visible]:ring-offset-2 has-[a:focus-visible]:ring-offset-background">
+    <Panel
+      variant="interactive"
+      padding="sm"
+      className="group relative flex flex-col has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-ring has-[a:focus-visible]:ring-offset-2 has-[a:focus-visible]:ring-offset-background"
+    >
       {showType && (
-        <div className="mb-2.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        <Eyebrow as="div" className="mb-3 flex items-center gap-1.5">
           <Icon className={cn("size-3.5", accent.text)} />
           {def.singular}
-        </div>
+        </Eyebrow>
       )}
 
       <h3 className="font-semibold leading-snug tracking-tight">
@@ -98,9 +104,7 @@ export function ContentCard({
         {item.description}
       </p>
 
-      {footer && (
-        <div className="mt-3 border-t border-border pt-3">{footer}</div>
-      )}
-    </div>
+      {footer && <div className="mt-4">{footer}</div>}
+    </Panel>
   );
 }

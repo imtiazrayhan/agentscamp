@@ -5,6 +5,7 @@ import { topics, getByTopic } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { hubGraph } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
+import { Panel } from "@/components/ui/panel";
 
 const DESCRIPTION =
   "Browse AgentsCamp by topic — cross-cutting collections of agents, skills, guides, tools, and commands for building with AI coding agents.";
@@ -49,20 +50,22 @@ export default function Page() {
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {entries.map((t) => (
           <li key={t.slug}>
-            <Link
-              href={`/topics/${t.slug}`}
-              className="group flex items-center justify-between rounded-md border border-border bg-card p-5 transition-colors hover:border-primary/50"
-            >
-              <span>
-                <span className="block font-semibold group-hover:text-primary">
-                  {t.label}
+            <Panel variant="interactive" asChild>
+              <Link
+                href={`/topics/${t.slug}`}
+                className="group flex h-full items-center justify-between"
+              >
+                <span>
+                  <span className="block font-semibold group-hover:text-primary">
+                    {t.label}
+                  </span>
+                  <span className="text-xs tabular-nums text-muted-foreground">
+                    {t.count} resources
+                  </span>
                 </span>
-                <span className="text-xs tabular-nums text-muted-foreground">
-                  {t.count} resources
-                </span>
-              </span>
-              <ArrowRight className="size-4 text-primary transition-transform group-hover:translate-x-0.5" />
-            </Link>
+                <ArrowRight className="size-4 text-primary transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </Panel>
           </li>
         ))}
       </ul>

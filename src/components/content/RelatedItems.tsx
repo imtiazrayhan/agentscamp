@@ -16,7 +16,7 @@ export function RelatedItems({ items }: { items: ContentItem[] }) {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="flex items-start gap-3 rounded-lg border border-border p-3 transition-colors hover:bg-secondary"
+                className="flex items-start gap-3 rounded-lg bg-secondary p-4 transition-colors hover:bg-secondary-hover"
               >
                 <span
                   className={cn(
