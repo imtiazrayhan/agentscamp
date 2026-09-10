@@ -207,7 +207,13 @@ export const audiences: AudienceDef[] = [
     label: "Marketers & content teams",
     description:
       "Claude for marketing and content work: brand-voice skills, research workflows, the official marketing plugin, and the AI writing tools worth paying for.",
-    startHere: [],
+    startHere: [
+      "guide:claude-code-for-marketers",
+      "guide:claude-for-marketing-teams",
+      "guide:brand-voice-with-claude-skills",
+      "guide:best-ai-tools-for-marketers-2026",
+      "guide:which-claude-plan-for-marketers",
+    ],
   },
   {
     slug: "designers",

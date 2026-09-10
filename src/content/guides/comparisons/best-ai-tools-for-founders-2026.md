@@ -117,7 +117,7 @@ The best AI tools for founders in 2026 are not the most powerful ones; they are 
 | [Lindy](/tools/lindy) | Agents and automation | Paid per user | Standing routines inside Slack |
 | [n8n](/tools/n8n) | Agents and automation | Open-source plus paid cloud | Workflows you want to see and debug |
 | [Claude Design](/tools/claude-design) | Decks and docs | Paid Claude plans (beta) | On-brand decks, one-pagers, and prototypes |
-| Gamma | Decks and docs | Freemium (credits) | Fast presentations and documents from an outline |
+| [Gamma](/tools/gamma) | Decks and docs | Freemium (credits) | Fast presentations and documents from an outline |
 | [Claude Code](/tools/claude-code) | Building | Paid Claude plans or API | Changing a real app safely from the terminal, IDE, or desktop |
 | [Cursor](/tools/cursor) | Building | Freemium | An AI editor for founders or hires who want to see the code |
 
@@ -169,7 +169,7 @@ The category splits by what comes out, and the [app builders roundup](/guides/co
 
 **[Claude Design](/tools/claude-design).** Anthropic's beta for on-brand decks, one-pagers, landing pages, and prototypes, with import from DOCX, PPTX, and XLSX and export to PPTX, PDF, or HTML. Included with Claude Pro, Max, Team, and Enterprise; off by default for Enterprise until an admin enables it.
 
-**Gamma.** Presentations and documents from an outline in minutes, on a credit system with a free tier.
+**[Gamma](/tools/gamma).** Presentations and documents from an outline in minutes, on a credit system with a free tier.
 
 **Verdict:** Claude Design if you are already on a paid Claude plan and want the deck to match the product; Gamma if you want the fastest path from outline to something presentable.
 
