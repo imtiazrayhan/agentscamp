@@ -12,7 +12,7 @@ import type { SearchRecord } from "@/lib/content/types";
 function Hint({ keys, label }: { keys: string; label: string }) {
   return (
     <span className="flex items-center gap-1.5">
-      <kbd className="rounded border border-border bg-muted px-1 py-0.5 text-[10px] leading-none text-muted-foreground">
+      <kbd className="rounded-md bg-secondary px-1.5 py-0.5 font-mono text-xs leading-none text-muted-foreground">
         {keys}
       </kbd>
       <span>{label}</span>
@@ -58,20 +58,20 @@ export function CommandPalette({
       label="Search AgentsCamp"
       shouldFilter={false}
       overlayClassName="search-overlay-in fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
-      className="search-box-in fixed inset-x-0 top-[12vh] z-50 mx-auto flex max-h-[76vh] w-[92vw] max-w-2xl flex-col overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-2xl shadow-black/40 ring-1 ring-primary/10"
+      className="search-box-in fixed inset-x-0 top-[12vh] z-50 mx-auto flex max-h-[76vh] w-[92vw] max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-popover text-popover-foreground shadow-2xl shadow-black/40 ring-1 ring-primary/10"
     >
       <Dialog.Title className="sr-only">Search AgentsCamp</Dialog.Title>
 
       {/* prompt-styled input row */}
-      <div className="flex items-center gap-2.5 border-b border-border px-4">
+      <div className="flex items-center gap-2 border-b border-border px-4">
         <SearchIcon className="size-[18px] shrink-0 text-muted-foreground" aria-hidden />
         <Command.Input
           value={query}
           onValueChange={setQuery}
           placeholder="Search guides, tools, glossary, agents, skills, commands…"
-          className="h-14 flex-1 bg-transparent text-[15px] text-foreground outline-none placeholder:text-muted-foreground"
+          className="h-14 flex-1 bg-transparent text-base text-foreground outline-none placeholder:text-muted-foreground"
         />
-        <kbd className="hidden rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] leading-none text-muted-foreground sm:inline">
+        <kbd className="hidden rounded-md bg-secondary px-1.5 py-0.5 font-mono text-xs leading-none text-muted-foreground sm:inline">
           esc
         </kbd>
       </div>
@@ -87,11 +87,11 @@ export function CommandPalette({
           <Command.Group
             heading={
               <>
-                <Compass className="size-3.5 text-primary/70" aria-hidden />
+                <Compass className="size-3.5 text-primary" aria-hidden />
                 <span>Start here</span>
               </>
             }
-            className="mb-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:gap-2 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground"
+            className="mb-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:gap-2 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground"
           >
             {roleHits.map((a) => (
               <Command.Item
@@ -100,7 +100,7 @@ export function CommandPalette({
                 onSelect={() => go(`/for/${a.slug}`)}
                 className="group flex cursor-pointer items-center gap-3 rounded-md px-2 py-2 text-sm text-foreground data-[selected=true]:bg-secondary"
               >
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-md border border-border bg-muted text-primary transition-colors group-data-[selected=true]:border-primary/40">
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary-soft text-primary">
                   <Compass className="size-4" aria-hidden />
                 </span>
                 <span className="min-w-0 flex-1">
@@ -131,14 +131,14 @@ export function CommandPalette({
               key={def.id}
               heading={
                 <>
-                  <Icon className="size-3.5 text-primary/70" aria-hidden />
+                  <Icon className="size-3.5 text-primary" aria-hidden />
                   <span>{def.label}</span>
-                  <span className="ml-auto rounded border border-border px-1.5 text-[10px] tabular-nums text-muted-foreground">
+                  <span className="ml-auto rounded-md bg-secondary px-1.5 text-xs tabular-nums text-muted-foreground">
                     {items.length}
                   </span>
                 </>
               }
-              className="mb-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:gap-2 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground"
+              className="mb-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:gap-2 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground"
             >
               {items.map((r: SearchRecord) => (
                 <Command.Item
@@ -147,7 +147,7 @@ export function CommandPalette({
                   onSelect={() => go(r.href)}
                   className="group flex cursor-pointer items-center gap-3 rounded-md px-2 py-2 text-sm text-foreground data-[selected=true]:bg-secondary"
                 >
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-md border border-border bg-muted text-primary transition-colors group-data-[selected=true]:border-primary/40">
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary-soft text-primary">
                     <Icon className="size-4" aria-hidden />
                   </span>
                   <span className="min-w-0 flex-1">
@@ -188,7 +188,7 @@ export function CommandPalette({
       </Command.List>
 
       {/* keyboard-hint footer bar */}
-      <div className="flex items-center justify-between border-t border-border bg-muted/30 px-4 py-2.5 text-[11px] text-muted-foreground">
+      <div className="flex items-center justify-between border-t border-border bg-secondary px-4 py-2.5 text-xs text-muted-foreground">
         <span>
           {query
             ? `${results.length + roleHits.length} result${results.length + roleHits.length === 1 ? "" : "s"}`

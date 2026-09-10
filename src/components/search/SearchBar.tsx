@@ -20,7 +20,7 @@ export function SearchBar({ className }: { className?: string }) {
     >
       <Search className="size-4" />
       <span className="hidden sm:inline">Search</span>
-      <kbd className="ml-auto hidden rounded border border-border bg-muted px-1.5 font-mono text-[11px] sm:inline">
+      <kbd className="ml-auto hidden rounded-md bg-secondary px-1.5 font-mono text-xs sm:inline">
         ⌘K
       </kbd>
     </button>

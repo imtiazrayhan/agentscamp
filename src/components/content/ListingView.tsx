@@ -160,7 +160,7 @@ export function ListingView({
                 setPage(1);
               }}
               aria-label="Sort"
-              className="h-9 rounded-md border border-input bg-background px-2 text-sm text-foreground"
+              className="h-10 rounded-md border border-input bg-card px-2 text-sm text-foreground"
             >
               {sorts.map((s) => (
                 <option key={s} value={s}>

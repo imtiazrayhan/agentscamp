@@ -38,7 +38,7 @@ export function NavMenu({ item }: { item: NavItem }) {
         )}
       >
         {item.label}
-        <ChevronDown className="size-3.5 opacity-60 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" />
+        <ChevronDown className="size-3.5 text-muted-foreground transition-transform group-hover:rotate-180 group-focus-within:rotate-180" />
       </Link>
 
       <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-[opacity,visibility] group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">

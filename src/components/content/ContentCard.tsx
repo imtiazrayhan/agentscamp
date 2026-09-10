@@ -14,7 +14,7 @@ function Footer({ item }: { item: CardItem }) {
     case "agent":
       return (
         <div className="flex items-center gap-2">
-          <Badge variant="primary" className="lowercase">
+          <Badge variant="brand" className="lowercase">
             {item.model}
           </Badge>
           {item.tools && item.tools.length > 0 && (
@@ -45,7 +45,7 @@ function Footer({ item }: { item: CardItem }) {
     case "tool":
       return (
         <div className="flex items-center gap-2">
-          <Badge variant="primary" className="lowercase">
+          <Badge variant="brand" className="lowercase">
             {item.pricing.replace("-", " ")}
           </Badge>
           <span className={`inline-flex items-center gap-1 ${meta}`}>
@@ -57,9 +57,7 @@ function Footer({ item }: { item: CardItem }) {
     case "command":
       return (
         <div className={`inline-flex items-center gap-2 ${meta}`}>
-          <span className="rounded-sm bg-secondary px-1.5 py-0.5 font-mono text-primary">
-            /{item.slug}
-          </span>
+          <Badge variant="code">/{item.slug}</Badge>
           {item.argumentHint && <span>{item.argumentHint}</span>}
         </div>
       );

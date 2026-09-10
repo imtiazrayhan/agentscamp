@@ -2,6 +2,8 @@ import Link from "next/link";
 import { topicBySlug } from "@/lib/content/registry";
 import { titleCaseLabel } from "@/lib/format";
 import type { ContentItem } from "@/lib/content/types";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { Badge } from "@/components/ui/badge";
 
 /**
  * Topics, role paths and tags, moved out of the pre-article header and into the
@@ -13,29 +15,25 @@ export function FiledUnder({ item }: { item: ContentItem }) {
     return null;
 
   return (
-    <section className="mt-10 border-t border-border pt-6">
-      <h2 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+    <section className="mt-10">
+      <Eyebrow as="h2" className="mb-3">
         Filed under
-      </h2>
+      </Eyebrow>
 
       <div className="flex flex-wrap items-center gap-2">
         {item.topics.map((topic) => (
-          <Link
-            key={topic}
-            href={`/topics/${topic}`}
-            className="inline-flex rounded-full border border-border bg-card px-3 py-1 text-sm transition-colors hover:border-foreground/25"
-          >
-            {topicBySlug.get(topic)?.label ?? titleCaseLabel(topic)}
-          </Link>
+          <Badge key={topic} size="md" asChild>
+            <Link href={`/topics/${topic}`} className="hover:text-primary">
+              {topicBySlug.get(topic)?.label ?? titleCaseLabel(topic)}
+            </Link>
+          </Badge>
         ))}
         {item.audience.map((role) => (
-          <Link
-            key={role}
-            href={`/for/${role}`}
-            className="inline-flex rounded-full border border-border bg-secondary px-3 py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            For {titleCaseLabel(role)}
-          </Link>
+          <Badge key={role} size="md" asChild>
+            <Link href={`/for/${role}`} className="hover:text-primary">
+              For {titleCaseLabel(role)}
+            </Link>
+          </Badge>
         ))}
       </div>
 

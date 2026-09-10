@@ -24,7 +24,7 @@ export function RoleStrip({ roles }: { roles: RoleEntry[] }) {
       browseHref="/for"
       browseLabel="All roles"
     >
-      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {roles.map((r) => (
           <li key={r.slug}>
             <Panel variant="interactive" padding="sm" asChild>

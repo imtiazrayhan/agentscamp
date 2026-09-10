@@ -24,7 +24,7 @@ export function SearchCommandBox({
       aria-label={`Search ${total} guides, tools and terms`}
       aria-keyshortcuts="Meta+K Control+K"
       className={cn(
-        "flex h-12 w-full max-w-xl items-center gap-3 rounded-lg border border-input bg-card px-4 text-left text-[15px] text-muted-foreground shadow-sm transition-colors hover:border-foreground/30",
+        "flex h-12 w-full max-w-xl items-center gap-3 rounded-lg border border-input bg-card px-4 text-left text-base text-muted-foreground shadow-sm transition-colors hover:border-border-strong",
         className,
       )}
     >
@@ -32,7 +32,7 @@ export function SearchCommandBox({
       <span className="flex-1 truncate">
         Search {total.toLocaleString()} guides, tools and terms
       </span>
-      <kbd className="hidden shrink-0 rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[11px] sm:inline">
+      <kbd className="hidden shrink-0 rounded-md bg-secondary px-1.5 py-0.5 font-mono text-xs sm:inline">
         ⌘K
       </kbd>
     </button>

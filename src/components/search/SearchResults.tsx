@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { useSearch } from "./useSearch";
 import { contentTypes } from "@/lib/content/registry";
+import { Badge } from "@/components/ui/badge";
 
 /**
  * Client results for the /search page. Reads ?q= (the WebSite SearchAction
@@ -33,7 +34,7 @@ export function SearchResults() {
 
   return (
     <div>
-      <label className="group flex w-full max-w-xl items-center gap-2 rounded-lg border border-input bg-card px-3 py-2.5 text-[15px] focus-within:border-foreground/30">
+      <label className="group flex w-full max-w-xl items-center gap-2 rounded-lg border border-input bg-card px-3 py-2.5 text-base focus-within:border-border-strong">
         <Search className="size-4 shrink-0 text-muted-foreground" aria-hidden />
         <span className="text-primary" aria-hidden>
           $
@@ -65,9 +66,9 @@ export function SearchResults() {
                 href={r.href}
                 className="group flex items-baseline gap-3 py-3"
               >
-                <span className="w-20 shrink-0 rounded-md border border-border bg-muted px-1.5 py-0.5 text-center text-[11px] font-medium text-muted-foreground">
+                <Badge variant="outline" className="w-20 shrink-0 justify-center">
                   {contentTypes[r.type].singular}
-                </span>
+                </Badge>
                 <span>
                   <span className="block font-semibold group-hover:text-primary">
                     {r.title}

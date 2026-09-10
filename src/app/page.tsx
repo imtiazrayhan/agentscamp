@@ -20,6 +20,7 @@ import { ContentCard } from "@/components/content/ContentCard";
 import { CopyButton } from "@/components/content/CopyButton";
 import { getColorClasses, cn } from "@/lib/utils";
 import { Panel } from "@/components/ui/panel";
+import { Badge } from "@/components/ui/badge";
 
 // The CLI is a secondary path — it lives in the strip at the bottom of the page.
 const CLI_CMD = "npx agentscamp add skills/dependency-audit";
@@ -152,7 +153,7 @@ export default function Home() {
         title="Browse by type"
         description="Six kinds of resource, from long-form guides to installable Claude Code artifacts."
       >
-        <div className="grid grid-cols-1 gap-3 sm:auto-rows-[1fr] sm:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:auto-rows-[1fr] sm:grid-cols-4">
           {contentTypeList.map((def) => (
             <BentoTile
               key={def.id}
@@ -173,15 +174,14 @@ export default function Home() {
         <ul className="flex flex-wrap gap-2">
           {topicEntries.map((t) => (
             <li key={t.slug}>
-              <Link
-                href={`/topics/${t.slug}`}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-foreground/25"
-              >
-                {t.label}
-                <span className="text-xs tabular-nums text-muted-foreground">
-                  {t.count}
-                </span>
-              </Link>
+              <Badge size="md" asChild>
+                <Link href={`/topics/${t.slug}`} className="hover:text-primary">
+                  {t.label}
+                  <span className="text-xs tabular-nums text-muted-foreground">
+                    {t.count}
+                  </span>
+                </Link>
+              </Badge>
             </li>
           ))}
         </ul>

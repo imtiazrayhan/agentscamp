@@ -3,6 +3,7 @@ import type { GuideItem, ToolItem } from "@/lib/content/types";
 import { titleCaseLabel } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { pricingLabel } from "./AlternativesTable";
+import { sectionHeading } from "@/components/ui/typography";
 
 /**
  * Ranked per-alternative entries for a tool's alternatives page, built from
@@ -27,7 +28,7 @@ export function AlternativesList({
     <div className="space-y-10">
       {free.length > 0 && free.length < items.length && (
         <section>
-          <h2 className="text-xl font-semibold tracking-tight">
+          <h2 className={sectionHeading}>
             Free and open-source alternatives to {tool.title}
           </h2>
           <ul className="mt-3 flex flex-wrap gap-2">
@@ -35,10 +36,10 @@ export function AlternativesList({
               <li key={t.href}>
                 <Link
                   href={t.href}
-                  className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-1.5 text-sm font-medium transition-colors hover:bg-secondary"
+                  className="inline-flex items-center gap-2 rounded-md border border-input px-3 py-1.5 text-sm font-medium transition-colors hover:bg-secondary"
                 >
                   {t.title}
-                  <Badge variant="primary" className="lowercase">
+                  <Badge variant="brand" className="lowercase">
                     {pricingLabel(t.pricing)}
                   </Badge>
                 </Link>
@@ -48,19 +49,19 @@ export function AlternativesList({
         </section>
       )}
       <section>
-        <h2 className="text-xl font-semibold tracking-tight">
+        <h2 className={sectionHeading}>
           {tool.title} alternatives in detail
         </h2>
         <ol className="mt-2 divide-y divide-border">
           {items.map((t) => (
             <li key={t.href} className="py-5">
-              <h3 className="text-lg font-semibold">
+              <h3 className="text-xl font-semibold tracking-tight">
                 <Link href={t.href} className="hover:underline">
                   {t.title}
                 </Link>
               </h3>
               <div className={`mt-2 flex flex-wrap items-center gap-2 ${meta}`}>
-                <Badge variant="primary" className="lowercase">
+                <Badge variant="brand" className="lowercase">
                   {pricingLabel(t.pricing)}
                 </Badge>
                 {t.license && <span>{t.license}</span>}

@@ -6,6 +6,7 @@ import { Section } from "@/components/sections/Section";
 import { ContentGrid } from "./ContentGrid";
 import { ContentCard } from "./ContentCard";
 import { Panel } from "@/components/ui/panel";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
 /**
  * Body of a role path (/for/<role>): the numbered "Start here" sequence, then
@@ -27,7 +28,7 @@ export function RolePath({
           description="Read these in order — each one assumes the last."
           className="pt-0"
         >
-          <ol className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {startHere.map((item, i) => (
               <li key={item.href}>
                 <Panel variant="interactive" padding="sm" asChild>
@@ -39,9 +40,9 @@ export function RolePath({
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="min-w-0">
-                      <span className="block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                      <Eyebrow as="span" className="block">
                         {contentTypes[item.type].singular}
-                      </span>
+                      </Eyebrow>
                       <span className="mt-1 block font-semibold leading-snug group-hover:text-primary">
                         {item.title}
                       </span>

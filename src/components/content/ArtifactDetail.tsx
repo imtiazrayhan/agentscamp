@@ -33,7 +33,7 @@ function Meta({
   const chips: React.ReactNode[] = [];
   if (item.type === "agent") {
     chips.push(
-      <Badge key="m" variant="primary" className="capitalize">
+      <Badge key="m" variant="brand" className="capitalize">
         {item.model}
       </Badge>,
     );
@@ -56,12 +56,12 @@ function Meta({
     chips.push(
       toolPricingHref ? (
         <Link key="p" href={toolPricingHref}>
-          <Badge variant="primary" className="capitalize">
+          <Badge variant="brand" className="capitalize">
             {item.pricing.replace("-", " ")}
           </Badge>
         </Link>
       ) : (
-        <Badge key="p" variant="primary" className="capitalize">
+        <Badge key="p" variant="brand" className="capitalize">
           {item.pricing.replace("-", " ")}
         </Badge>
       ),
@@ -169,7 +169,7 @@ export function ArtifactDetail({
         </div>
 
         {item.summary && (
-          <p className="mt-6 text-lg leading-relaxed text-foreground/90">
+          <p className="mt-6 text-lg leading-relaxed text-foreground">
             {item.summary}
           </p>
         )}

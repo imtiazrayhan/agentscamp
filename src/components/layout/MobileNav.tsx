@@ -62,7 +62,7 @@ export function MobileNav({ items }: { items: NavItem[] }) {
                     "block text-sm font-semibold",
                     isActive(item.href)
                       ? "text-foreground"
-                      : "text-foreground/90",
+                      : "text-muted-foreground",
                   )}
                 >
                   {item.label}
@@ -85,7 +85,7 @@ export function MobileNav({ items }: { items: NavItem[] }) {
                         >
                           <span>{c.label}</span>
                           {c.count !== undefined && (
-                            <span className="text-xs tabular-nums opacity-70">
+                            <span className="text-xs tabular-nums text-muted-foreground">
                               {c.count.toLocaleString()}
                             </span>
                           )}

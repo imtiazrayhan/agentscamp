@@ -18,7 +18,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <Container className="flex items-center gap-3 py-3">
-        <Link href="/" aria-label="AgentsCamp home" className="text-[15px]">
+        <Link href="/" aria-label="AgentsCamp home" className="text-base">
           <Logo />
         </Link>
 
