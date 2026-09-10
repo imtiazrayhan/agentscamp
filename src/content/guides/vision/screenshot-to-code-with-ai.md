@@ -1,7 +1,7 @@
 ---
 title: "Screenshot-to-Code: Building UIs from Images with AI"
 description: "Turn a screenshot, mockup, or Figma frame into working frontend code with AI vision models — the realistic workflow, the right tools, and the honest pitfalls."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "purple"
 topics: ["multimodal-ai", "coding-languages"]

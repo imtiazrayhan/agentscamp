@@ -1,7 +1,7 @@
 ---
 title: "10 Best Claude Skills for DevOps and SRE"
 description: "Use Claude skills for incidents, rollbacks, SLOs, alerts, dashboards, logs, traces, containers, CI, and safer releases."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["devops-infra", "workflow-prompting"]

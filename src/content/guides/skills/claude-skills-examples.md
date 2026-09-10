@@ -1,7 +1,7 @@
 ---
 title: "Claude Skills Examples: Annotated SKILL.md Files"
 description: "Real SKILL.md examples you can copy — a minimal skill, a scoped-tools skill, a bundled-script skill — with the reasoning behind each line."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "cyan"
 topics: ["workflow-prompting"]

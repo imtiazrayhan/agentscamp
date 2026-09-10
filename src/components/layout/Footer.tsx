@@ -9,6 +9,7 @@ import {
   Search,
   Kanban,
   Sparkles,
+  Package,
 } from "lucide-react";
 import { contentTypeList } from "@/lib/content/registry";
 import { getCountsByType } from "@/lib/content";
@@ -47,6 +48,13 @@ const resources = [
     external: false,
   },
   {
+    href: "https://www.npmjs.com/package/agentscamp",
+    label: "npm: agentscamp",
+    cmd: "npx agentscamp",
+    icon: Package,
+    external: true,
+  },
+  {
     href: "/topics",
     label: "Topics",
     cmd: "ls topics",
@@ -71,6 +79,13 @@ const resources = [
     href: "/feed.xml",
     label: "RSS feed",
     cmd: "curl feed.xml",
+    icon: Rss,
+    external: true,
+  },
+  {
+    href: "/guides/feed.xml",
+    label: "Guides feed",
+    cmd: "curl guides/feed.xml",
     icon: Rss,
     external: true,
   },
@@ -260,6 +275,24 @@ export function Footer() {
             >
               Read our editorial standards →
             </Link>
+            <div className="mt-4 flex gap-4 font-mono text-sm">
+              <a
+                href="https://x.com/agentscamp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                x: @agentscamp ↗
+              </a>
+              <a
+                href="https://github.com/imtiazrayhan/agentscamp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                github ↗
+              </a>
+            </div>
           </div>
         </div>
 

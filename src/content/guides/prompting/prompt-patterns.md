@@ -1,7 +1,7 @@
 ---
 title: "Prompt Patterns for Coding Agents"
 description: "Practical prompting patterns: chaining, few-shot, context management, tool use, and output structuring."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-05-20
 color: "green"
 topics: ["workflow-prompting"]

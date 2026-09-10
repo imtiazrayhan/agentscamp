@@ -123,7 +123,28 @@ export default function AboutPage() {
           <Link href="/agents">agents</Link> for installable artifacts, compare the{" "}
           <Link href="/tools">tool directory</Link>, or read the clean machine-facing{" "}
           <Link href="/llms.txt">llms.txt index</Link>. You can also follow new
-          additions in the <Link href="/feed.xml">RSS feed</Link>.
+          additions in the <Link href="/feed.xml">RSS feed</Link> or the
+          guides-only <Link href="/guides/feed.xml">guides feed</Link>.
+        </p>
+
+        <h2 id="who-writes-this">Who writes this</h2>
+        <p>
+          AgentsCamp is written and maintained by Imtiaz Rayhan, who builds the
+          site and its sibling projects. Guides carry that byline; the
+          verification standards above apply to every page regardless of how it
+          was drafted. Follow along at{" "}
+          <a href="https://x.com/agentscamp" target="_blank" rel="noopener noreferrer">
+            @agentscamp on X
+          </a>{" "}
+          or on{" "}
+          <a
+            href="https://github.com/imtiazrayhan/agentscamp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          .
         </p>
 
         <h2>Contact</h2>

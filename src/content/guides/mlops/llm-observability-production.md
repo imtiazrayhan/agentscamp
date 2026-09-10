@@ -1,7 +1,7 @@
 ---
 title: "LLM Observability in Production: Traces, Evals, Cost, and Feedback"
 description: "Instrument production LLM applications with end-to-end traces, online evals, cost and latency metrics, privacy controls, alerts, and a failure-feedback loop."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["llm-evals", "mlops-ai-infra"]

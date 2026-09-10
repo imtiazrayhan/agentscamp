@@ -1,7 +1,7 @@
 ---
 title: "Codex Skills: Build Reusable Workflows with SKILL.md"
 description: "Create, install, and test Codex skills with SKILL.md — including trigger descriptions, repo and user paths, progressive disclosure, and distribution."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["workflow-prompting", "ai-agents-systems"]

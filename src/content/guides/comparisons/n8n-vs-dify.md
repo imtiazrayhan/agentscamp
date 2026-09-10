@@ -1,7 +1,7 @@
 ---
 title: "n8n vs Dify: Which AI Workflow Platform? (2026)"
 description: "Automation-first vs AI-native: n8n's 400+ integrations and agent nodes vs Dify's LLM-app platform with built-in RAG. Licenses, pricing, and the fit test."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["ai-agents-systems"]

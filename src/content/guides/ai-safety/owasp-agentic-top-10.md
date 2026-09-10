@@ -1,7 +1,7 @@
 ---
 title: "Securing AI Agents: The OWASP Agentic Top 10 in Practice"
 description: "Agents add risks LLM-app security misses — autonomy, tools, memory, multi-agent trust. The key OWASP agentic threats and how to mitigate each in practice."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["ai-safety-security"]

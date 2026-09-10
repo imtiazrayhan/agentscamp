@@ -1,7 +1,7 @@
 ---
 title: "Codex Subagents: Parallel Work Without Losing Control"
 description: "Use Codex subagents for parallel exploration, review, tests, and implementation — including decomposition, custom agents, permissions, and merge discipline."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["ai-agents-systems", "workflow-prompting"]

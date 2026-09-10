@@ -1,7 +1,7 @@
 ---
 title: "v0 vs Lovable: AI App Builders Compared (2026)"
 description: "v0 vs Lovable — Vercel's generative UI tool vs the full-app builder. Component quality vs end-to-end apps, code ownership, and who each serves best."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["coding-languages"]

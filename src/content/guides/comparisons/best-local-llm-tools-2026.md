@@ -1,7 +1,7 @@
 ---
 title: "Best Tools for Running LLMs Locally in 2026"
 description: "The local LLM stack, ranked by job: Ollama for serving tools, LM Studio and Jan for desktop exploration, llama.cpp for control, vLLM when it's real serving."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["mlops-ai-infra"]

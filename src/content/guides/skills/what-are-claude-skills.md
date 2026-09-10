@@ -1,7 +1,7 @@
 ---
 title: "What Are Claude Skills? The Complete Guide"
 description: "Claude Skills explained: what a SKILL.md is, how progressive disclosure keeps skills cheap, where they run, and how to install or write your own."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 updated: 2026-08-25
 depth: cornerstone

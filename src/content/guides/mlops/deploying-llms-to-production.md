@@ -1,7 +1,7 @@
 ---
 title: "Deploying LLMs to Production: A Reliability & Cost Checklist"
 description: "Take an LLM feature from prototype to production: API vs self-host, provider fallback, retries, caching, observability, eval gates, and safe rollout."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 color: "green"
 topics: ["mlops-ai-infra"]
 tags: ["production", "reliability", "serving", "observability", "rollout"]

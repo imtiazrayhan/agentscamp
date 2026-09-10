@@ -1,7 +1,7 @@
 ---
 title: "An AI Code Review Workflow That Actually Catches Bugs"
 description: "Layer the review stack — self-review, AI reviewers, tests, and a human pass focused on what machines miss — into a workflow tuned for AI-written code."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["review-qa"]

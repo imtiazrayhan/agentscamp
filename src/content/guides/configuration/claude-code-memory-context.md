@@ -1,7 +1,7 @@
 ---
 title: "Managing Claude Code Memory & Context: CLAUDE.md, /compact, and Auto-Memory"
 description: "How Claude Code remembers — every CLAUDE.md scope and load order, path-scoped rules, the auto-memory system, and the context commands that keep sessions sharp."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

@@ -2,7 +2,7 @@
 title: "Getting Started with Claude Code Agents"
 description: "What Claude Code subagents are, why they help, and how to add your first one."
 seoDescription: "What Claude Code subagents are, why they help, and how to add your first one — with a working example agent you can copy into .claude/agents today."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-05-02
 color: "green"
 topics: ["workflow-prompting"]

@@ -1,7 +1,7 @@
 ---
 title: "Software Supply Chain Security: Dependencies, Builds, and Releases"
 description: "Secure the software supply chain from dependency selection through release — lockfiles, provenance, least privilege, secret controls, SBOMs, and response."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "red"
 topics: ["ai-safety-security", "devops-infra"]

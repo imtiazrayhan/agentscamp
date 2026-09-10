@@ -1,7 +1,7 @@
 ---
 title: "LLM-as-Judge: Build Evaluators You Can Actually Trust"
 description: "Design and calibrate LLM-as-judge evaluators — rubrics, pointwise and pairwise scoring, bias controls, human agreement, reliability tests, and CI gates."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "purple"
 topics: ["llm-evals", "llm-app-dev"]

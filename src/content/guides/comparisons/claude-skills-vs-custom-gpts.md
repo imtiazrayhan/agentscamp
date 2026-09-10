@@ -1,7 +1,7 @@
 ---
 title: "Claude Skills vs Custom GPTs: Different Answers to Reuse"
 description: "Claude Skills are portable procedures; Custom GPTs are packaged chatbots inside ChatGPT. How they differ on portability, API access, sharing, and where each wins."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "purple"
 topics: ["workflow-prompting", "ai-agents-systems"]

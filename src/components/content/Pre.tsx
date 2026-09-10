@@ -14,6 +14,7 @@ export function Pre({
     <div className="group relative my-4">
       <CopyButton
         iconOnly
+        eventLabel="code_block"
         getText={() => ref.current?.textContent ?? ""}
         className="absolute right-2 top-2 z-10 opacity-100 transition-opacity sm:opacity-0 sm:group-hover:opacity-100 sm:focus-visible:opacity-100"
       />

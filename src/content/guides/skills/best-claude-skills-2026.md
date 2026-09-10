@@ -1,7 +1,7 @@
 ---
 title: "The Best Claude Skills to Install in 2026"
 description: "A skills-only tour of the AgentsCamp library — the Claude Code skills that earn a permanent slot, organized by the job they do."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "green"
 topics: ["workflow-prompting"]

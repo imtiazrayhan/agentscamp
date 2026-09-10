@@ -1,7 +1,7 @@
 ---
 title: "LangGraph vs CrewAI: Agent Frameworks Compared (2026)"
 description: "LangGraph vs CrewAI — explicit state-machine control vs role-based crew abstractions. Which agent framework fits your reliability bar and team."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["ai-agents-systems"]

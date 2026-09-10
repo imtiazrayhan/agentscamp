@@ -1,7 +1,7 @@
 ---
 title: "Contract Testing for Microservices: Consumer, Provider, and CI"
 description: "Catch breaking service changes before deployment with consumer-driven contracts, provider verification, state fixtures, compatibility gates, and schema tests."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "green"
 topics: ["review-qa", "architecture"]

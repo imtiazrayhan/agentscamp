@@ -1,7 +1,7 @@
 ---
 title: "Skills vs MCP Servers: When to Use Which"
 description: "Skills inject procedure into context; MCP servers expose tools and live data over a protocol. A decision framework, the combine pattern, and examples."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "orange"
 topics: ["workflow-prompting", "mcp"]

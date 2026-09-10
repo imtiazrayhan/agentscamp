@@ -1,7 +1,7 @@
 ---
 title: "Claude Code Skills: Best Practices"
 description: "The patterns that make Claude Code skills reliable: trigger-first descriptions, one job per skill, lean bodies, bundled scripts, and scoped tools."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "green"
 topics: ["workflow-prompting"]

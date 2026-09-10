@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Clock, Wrench, ExternalLink } from "lucide-react";
 import type { ContentItem } from "@/lib/content/types";
 import { contentTypes } from "@/lib/content/registry";
+import { formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 
 function Footer({ item }: { item: ContentItem }) {
@@ -34,6 +35,7 @@ function Footer({ item }: { item: ContentItem }) {
         <div className={`inline-flex items-center gap-1.5 ${mono}`}>
           <Clock className="size-3" />
           {item.readingTime}m read
+          {item.date && <span>· {formatDate(item.date)}</span>}
           {item.author && <span>· {item.author}</span>}
         </div>
       );

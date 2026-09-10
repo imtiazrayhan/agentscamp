@@ -1,7 +1,7 @@
 ---
 title: "Why RAG Fails: A Debugging Checklist"
 description: "A diagnostic checklist for broken RAG — localize the failure to ingestion, retrieval, ranking, or generation, and apply the fix that matches, in order."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["rag-retrieval"]

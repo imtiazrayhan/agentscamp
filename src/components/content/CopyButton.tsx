@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
+import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 interface CopyButtonProps {
@@ -12,6 +13,8 @@ interface CopyButtonProps {
   copiedLabel?: string;
   iconOnly?: boolean;
   className?: string;
+  /** GA4 `copy` event label; defaults to the visible label. */
+  eventLabel?: string;
 }
 
 export function CopyButton({
@@ -21,6 +24,7 @@ export function CopyButton({
   copiedLabel = "Copied",
   iconOnly = false,
   className,
+  eventLabel,
 }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
 
@@ -29,6 +33,7 @@ export function CopyButton({
     try {
       await navigator.clipboard.writeText(value);
       setCopied(true);
+      track("copy", { label: eventLabel ?? label });
       toast.success(copiedLabel);
       setTimeout(() => setCopied(false), 1500);
     } catch {

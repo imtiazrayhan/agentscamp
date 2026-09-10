@@ -1,7 +1,7 @@
 ---
 title: "Claude Skills Use Cases: 20 Ideas Worth Building"
 description: "Twenty concrete Claude skills use cases — for engineers, writers, analysts, and ops — with the pattern behind each and links to installable versions."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "pink"
 topics: ["workflow-prompting"]

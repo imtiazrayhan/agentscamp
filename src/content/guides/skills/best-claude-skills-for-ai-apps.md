@@ -1,7 +1,7 @@
 ---
 title: "10 Best Claude Skills for Building AI Applications"
 description: "Compare Claude skills for structured output, fallbacks, evals, hallucinations, routing, token cost, semantic caching, PII, guardrails, and tools."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "purple"
 topics: ["llm-app-dev", "llm-evals"]

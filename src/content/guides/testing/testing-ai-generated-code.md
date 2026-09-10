@@ -1,7 +1,7 @@
 ---
 title: "How to Test AI-Generated Code"
 description: "AI writes the code; tests decide whether to trust it. The verification stack for agent-written changes — contracts, generated tests, and the review that's left."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["review-qa"]

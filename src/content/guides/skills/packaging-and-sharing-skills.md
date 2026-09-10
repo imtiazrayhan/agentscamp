@@ -1,7 +1,7 @@
 ---
 title: "Packaging and Sharing Claude Code Skills"
 description: "Take a skill from your personal ~/.claude folder to a versioned plugin your whole team installs from a marketplace — portably and with governance."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "blue"
 topics: ["workflow-prompting"]

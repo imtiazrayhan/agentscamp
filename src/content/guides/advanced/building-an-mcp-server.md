@@ -1,7 +1,7 @@
 ---
 title: "Building an MCP Server"
 description: "An accurate introduction to the Model Context Protocol: server anatomy, transports, and connecting a tool to Claude Code."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["mcp", "architecture"]

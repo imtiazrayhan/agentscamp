@@ -1,7 +1,7 @@
 ---
 title: "Adding MCP Servers to Claude Code: Local, Remote, and Project-Scoped"
 description: "The complete claude mcp add reference — stdio vs HTTP transports, local/project/user scopes, .mcp.json with env expansion, OAuth via /mcp, and the gotchas."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["mcp", "workflow-prompting"]

@@ -1,7 +1,7 @@
 ---
 title: "vLLM vs Ollama: Local Convenience or Serving Throughput? (2026)"
 description: "vLLM vs Ollama compared — developer-friendly local runtime vs high-throughput production inference engine. Concurrency, hardware, and when to graduate."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["mlops-ai-infra"]

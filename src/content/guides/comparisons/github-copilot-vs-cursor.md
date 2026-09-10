@@ -1,7 +1,7 @@
 ---
 title: "GitHub Copilot vs Cursor: Extension or Editor? (2026)"
 description: "GitHub Copilot vs Cursor compared — stay in your editor with an extension, or switch to an AI-first fork? Completion, agents, enterprise fit, and pricing shape."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]

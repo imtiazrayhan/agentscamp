@@ -1,7 +1,7 @@
 ---
 title: "pgvector vs Pinecone: Do You Need a Vector Database? (2026)"
 description: "pgvector vs Pinecone compared — vector search inside the Postgres you already run vs a dedicated managed service. Scale thresholds, ops, and the honest default."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval"]

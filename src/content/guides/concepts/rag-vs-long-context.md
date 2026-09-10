@@ -1,7 +1,7 @@
 ---
 title: "RAG vs Long Context: Do Million-Token Windows Kill Retrieval?"
 description: "Million-token context windows promised the end of RAG. The honest 2026 answer: long context changed where retrieval starts paying, not whether it does."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval"]

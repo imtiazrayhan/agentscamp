@@ -1,7 +1,7 @@
 ---
 title: "9 Best Claude Skills for Code Review"
 description: "Choose Claude skills for security, correctness, maintainability, and focused pull request review without relying on one vague review prompt."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "purple"
 topics: ["workflow-prompting", "review-qa"]

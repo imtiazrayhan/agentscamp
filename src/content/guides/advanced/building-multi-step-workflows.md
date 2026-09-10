@@ -1,7 +1,7 @@
 ---
 title: "Building Multi-Step Agent Workflows"
 description: "Patterns for building multi-step agent workflows in Claude Code: decompose tasks, fan-out to parallel subagents, verify every step, and orchestrate."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-05-16
 color: "green"
 topics: ["workflow-prompting"]

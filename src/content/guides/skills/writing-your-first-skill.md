@@ -1,7 +1,7 @@
 ---
 title: "Writing Your First Skill"
 description: "A step-by-step guide to packaging a reusable procedure as a Claude Code skill that loads exactly when it's needed."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 updated: 2026-08-25
 depth: cornerstone

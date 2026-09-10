@@ -1,7 +1,7 @@
 ---
 title: "What Is Claude Code?"
 description: "A grounded explanation of Claude Code: an agentic command-line coding tool that reads files, runs commands, and works in a loop toward a goal."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]

@@ -1,7 +1,7 @@
 ---
 title: "How to Build a Voice Agent: The STT → LLM → TTS Pipeline"
 description: "How to build a real-time voice agent: the STT → LLM → TTS pipeline, the latency budget that makes or breaks it, and how to wire each stage."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra", "llm-app-dev"]

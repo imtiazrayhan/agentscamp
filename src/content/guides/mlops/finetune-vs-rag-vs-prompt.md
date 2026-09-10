@@ -1,7 +1,7 @@
 ---
 title: "Fine-Tune vs RAG vs Prompt vs Distill: The 2026 Decision Tree"
 description: "When to reach for prompt engineering, RAG, fine-tuning, or distillation — what each actually changes, where each fails, and how to combine them."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["mlops-ai-infra"]

@@ -1,7 +1,7 @@
 ---
 title: "LLM Cost and Latency Engineering: Caching, Right-Sizing, and p95 Budgets"
 description: "A practical playbook for cutting LLM cost and tail latency — caching, model right-sizing, prompt trimming, and enforced p95 budgets — without losing quality."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["devops-infra"]

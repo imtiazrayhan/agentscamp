@@ -1,7 +1,7 @@
 ---
 title: "Calling Any Model: Unified LLM Gateways & SDKs in 2026"
 description: "Why teams put a unified layer in front of LLM providers — and how LiteLLM, OpenRouter, and the Vercel AI SDK compare for fallback and cost control."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["llm-app-dev"]

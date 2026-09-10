@@ -1,7 +1,7 @@
 ---
 title: "Hybrid Search & Reranking: From Top-50 Recall to Top-5 Precision"
 description: "How production RAG combines dense and sparse search, fuses with RRF, and reranks — turning a wide candidate set into the few passages that actually answer."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["rag-retrieval"]

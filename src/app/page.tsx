@@ -172,6 +172,7 @@ export default function Home() {
             text={CLI_CMD}
             iconOnly
             className="shrink-0 border-0 bg-transparent hover:bg-secondary"
+            eventLabel="home_install"
           />
         </div>
       </section>

@@ -1,7 +1,7 @@
 ---
 title: "Claude Code vs Gemini CLI: Which Terminal Agent (2026)"
 description: "Claude Code vs Gemini CLI: first-party stability and a deep programmable harness vs open-source TypeScript, a big free tier, and the Antigravity cutover."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-17
 updated: 2026-06-20
 color: "green"

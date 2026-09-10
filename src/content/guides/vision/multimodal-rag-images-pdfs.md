@@ -1,7 +1,7 @@
 ---
 title: "Multimodal RAG over PDFs, Scans & Charts: Two Approaches That Actually Work"
 description: "RAG over visual documents — PDFs, scans, charts — where text-only extraction loses tables and layout. Parse-then-text vs embed-the-page-image, with trade-offs."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 color: "green"
 topics: ["multimodal-ai", "rag-retrieval"]
 tags: ["multimodal-rag", "pdf", "vlm", "ocr", "embeddings", "retrieval"]

@@ -1,7 +1,7 @@
 ---
 title: "Running Claude Code in CI: Headless Mode & GitHub Actions"
 description: "Claude Code without the terminal — claude -p flags, JSON and structured output, safe permission scoping, and the official GitHub Action responding to @claude."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

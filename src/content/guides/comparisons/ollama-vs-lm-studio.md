@@ -1,7 +1,7 @@
 ---
 title: "Ollama vs LM Studio: Running LLMs Locally (2026)"
 description: "Ollama vs LM Studio compared — CLI-first server for developers vs polished desktop app for exploring local models. Which local LLM tool fits how you work."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["mlops-ai-infra"]

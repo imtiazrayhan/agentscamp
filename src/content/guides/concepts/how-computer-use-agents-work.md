@@ -1,7 +1,7 @@
 ---
 title: "How Computer-Use Agents Work"
 description: "Inside the perception-action loop that lets AI operate real software — screenshots in, clicks out — plus grounding, reliability, and when to use APIs instead."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["ai-agents-systems"]

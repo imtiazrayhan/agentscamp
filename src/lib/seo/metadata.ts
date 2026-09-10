@@ -23,9 +23,14 @@ export function buildMetadata(item: ContentItem): Metadata {
   return {
     title,
     description,
+    // `alternates` replaces the layout's wholesale, so the RSS autodiscovery
+    // link must be re-declared here or it only exists on `/`.
     alternates: {
       canonical: item.href,
-      types: { "text/markdown": `${item.href}.md` },
+      types: {
+        "text/markdown": `${item.href}.md`,
+        "application/rss+xml": `${site.url}${item.type === "guide" ? "/guides/feed.xml" : "/feed.xml"}`,
+      },
     },
     ...(isArticle ? { authors: [authorMetadata] } : {}),
     // Next merges Metadata field-by-field but REPLACES object fields wholesale,
@@ -63,11 +68,16 @@ export function buildPageMetadata(opts: {
   description: string;
   path: string;
   noindex?: boolean;
+  /** RSS feed advertised for autodiscovery (defaults to the site-wide feed). */
+  feed?: string;
 }): Metadata {
   return {
     title: opts.title,
     description: opts.description,
-    alternates: { canonical: opts.path },
+    alternates: {
+      canonical: opts.path,
+      types: { "application/rss+xml": `${site.url}${opts.feed ?? "/feed.xml"}` },
+    },
     openGraph: {
       title: opts.title,
       description: opts.description,

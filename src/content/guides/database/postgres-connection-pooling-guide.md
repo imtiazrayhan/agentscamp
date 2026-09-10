@@ -1,7 +1,7 @@
 ---
 title: "Postgres Connection Pooling: Sizing, Timeouts, and Serverless"
 description: "Size Postgres connection pools across application instances, configure lifecycle timeouts, diagnose saturation, and choose PgBouncer or a managed pooler."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "blue"
 topics: ["devops-infra", "data-ml"]

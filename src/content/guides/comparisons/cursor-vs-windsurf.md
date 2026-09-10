@@ -1,7 +1,7 @@
 ---
 title: "Cursor vs Windsurf (Devin Desktop) in 2026"
 description: "Cursor vs Windsurf — now Devin Desktop — compared: agent-first editing, Composer vs Devin Local, the Cognition rebrand, and which AI editor fits you."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]

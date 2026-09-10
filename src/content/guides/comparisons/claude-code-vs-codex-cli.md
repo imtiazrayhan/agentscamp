@@ -1,7 +1,7 @@
 ---
 title: "Claude Code vs Codex CLI: Terminal Agents Compared (2026)"
 description: "Claude Code vs OpenAI's Codex CLI — autonomy vs sandboxed control, extensibility vs open source, model ecosystems, and which terminal agent fits your work."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]

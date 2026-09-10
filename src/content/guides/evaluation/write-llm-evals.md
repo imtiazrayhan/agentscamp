@@ -1,7 +1,7 @@
 ---
 title: "Write Evals for an LLM App: From Zero to a CI Gate"
 description: "How to evaluate an LLM feature — build a dataset, choose metrics, set a baseline, score offline, add an LLM judge, and gate CI so quality changes are measured."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["llm-evals"]

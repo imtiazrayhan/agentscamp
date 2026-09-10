@@ -1,7 +1,7 @@
 ---
 title: "Exa vs Tavily: Web Search APIs for AI Agents (2026)"
 description: "Exa vs Tavily compared — neural semantic discovery vs agent-optimized RAG answers, pricing, MCP support, and which web search API fits your stack."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["rag-retrieval"]

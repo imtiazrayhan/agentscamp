@@ -1,7 +1,7 @@
 ---
 title: "Agentic RAG: When Retrieval Needs an Agent in the Loop"
 description: "What agentic RAG is — retrieval as a tool an agent uses iteratively, with query planning, self-correction, and multi-source routing — and when the upgrade pays."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval", "ai-agents-systems"]

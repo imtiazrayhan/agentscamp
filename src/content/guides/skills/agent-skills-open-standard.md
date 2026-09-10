@@ -1,7 +1,7 @@
 ---
 title: "The Agent Skills Standard: One SKILL.md for Every AI Tool"
 description: "Agent Skills became an open standard in December 2025. Which tools read SKILL.md today — Copilot, Cursor, VS Code, Gemini CLI, Codex — and how to write portable skills."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "green"
 topics: ["workflow-prompting", "ai-agents-systems"]

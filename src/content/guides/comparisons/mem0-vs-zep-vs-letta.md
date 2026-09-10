@@ -1,7 +1,7 @@
 ---
 title: "Mem0 vs Zep vs Letta: Agent Memory Compared (2026)"
 description: "Three philosophies of agent memory — Mem0's drop-in layer, Zep's temporal knowledge graphs, Letta's self-managing agents — and which fits your architecture."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["ai-agents-systems"]

@@ -1,7 +1,7 @@
 ---
 title: "LLM Gateways Compared: Portkey vs Helicone vs LiteLLM for Caching & Cost Control"
 description: "How Portkey, Helicone, and LiteLLM compare for caching, cost control, and observability — each one's 2026 status and which fits self-hosted vs. hosted."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["devops-infra"]

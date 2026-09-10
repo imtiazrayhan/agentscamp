@@ -119,6 +119,7 @@ export function InstallActions({ item }: { item: ContentItem }) {
           label={`Copy ${def.singular.toLowerCase()} file`}
           copiedLabel="Copied!"
           className="h-10 px-4"
+          eventLabel={`file:${item.type}`}
         />
         <Button asChild variant="outline">
           <a href={downloadHref(file)} download={filename.replace("/", "-")}>
@@ -148,7 +149,12 @@ export function InstallActions({ item }: { item: ContentItem }) {
         <code className="rounded-md border border-border bg-secondary px-3 py-2 font-mono text-xs text-foreground">
           {cliCommand}
         </code>
-        <CopyButton text={cliCommand} iconOnly className="shrink-0" />
+        <CopyButton
+          text={cliCommand}
+          iconOnly
+          className="shrink-0"
+          eventLabel={`cli:${item.type}`}
+        />
       </div>
     </div>
   );

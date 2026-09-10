@@ -1,7 +1,7 @@
 ---
 title: "Which Agent Framework in 2026? LangGraph vs CrewAI vs AutoGen vs OpenAI Agents SDK vs Claude Agent SDK"
 description: "A decision guide to the major AI agent frameworks — control vs. abstraction, multi-agent models, state and durability, and which fits your project."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["ai-agents-systems"]

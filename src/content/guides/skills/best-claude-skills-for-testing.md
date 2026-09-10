@@ -1,7 +1,7 @@
 ---
 title: "9 Best Claude Skills for Software Testing"
 description: "Compare Claude skills for regression, unit, integration, contract, property, mutation, prompt, and test-data workflows."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "green"
 topics: ["review-qa", "workflow-prompting"]

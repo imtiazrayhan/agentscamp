@@ -1,7 +1,7 @@
 ---
 title: "The Best Claude Code Agents, Skills & Commands to Install First"
 description: "A curated starter kit from the AgentsCamp library — the subagents, skills, and slash commands that pay off immediately, by workflow."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

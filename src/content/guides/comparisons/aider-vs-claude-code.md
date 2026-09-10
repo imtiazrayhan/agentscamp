@@ -1,7 +1,7 @@
 ---
 title: "Aider vs Claude Code: Open-Source vs Anthropic's Agent (2026)"
 description: "Aider vs Claude Code — model-agnostic open-source pair-programmer vs Anthropic's tuned terminal harness. Which terminal coding agent fits your stack."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["ai-agents-systems"]

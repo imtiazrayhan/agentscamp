@@ -1,7 +1,7 @@
 ---
 title: "Best AI App Builders in 2026: v0 vs Lovable vs Bolt vs Replit"
 description: "The prompt-to-app builders compared — v0 for production UI, Lovable for full apps, Bolt for in-browser velocity, Replit for build-and-host in one place."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["coding-languages"]

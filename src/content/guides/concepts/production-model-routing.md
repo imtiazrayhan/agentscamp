@@ -1,7 +1,7 @@
 ---
 title: "Production Model Routing: Cut Cost Without Hiding Regressions"
 description: "Design an LLM model router with capability gates, difficulty signals, cascades, fallbacks, per-route evals, shadow traffic, budgets, and safe rollout."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "green"
 topics: ["llm-app-dev", "mlops-ai-infra"]

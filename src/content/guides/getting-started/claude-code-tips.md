@@ -1,7 +1,7 @@
 ---
 title: "25 Claude Code Tips, Shortcuts, and Power Features"
 description: "The 25 highest-leverage Claude Code tips — keyboard shortcuts, bash and memory prefixes, session commands, model tricks, and power features most people miss."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

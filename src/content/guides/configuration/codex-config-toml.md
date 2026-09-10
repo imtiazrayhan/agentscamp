@@ -1,7 +1,7 @@
 ---
 title: "Codex config.toml: Settings, Precedence, and Safe Defaults"
 description: "Configure OpenAI Codex with config.toml — user and project scopes, precedence, sandbox and approvals, MCP, subagents, profiles, and safe defaults."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["workflow-prompting", "ai-agents-systems"]

@@ -1,7 +1,7 @@
 ---
 title: "Structured Output vs JSON Mode vs Function Calling: Which to Use in 2026"
 description: "The reliable ways to get typed data out of an LLM — what JSON mode, function calling, and native structured outputs each guarantee, and when to use which."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["llm-app-dev"]

@@ -1,7 +1,7 @@
 ---
 title: "How to Install Claude Skills"
 description: "Every way to install Claude skills: manual copy, the agentscamp CLI, GitHub repos, plugins, team distribution, and uploading to claude.ai."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "orange"
 topics: ["workflow-prompting"]

@@ -1,7 +1,7 @@
 ---
 title: "Best Text-to-Speech APIs in 2026"
 description: "The TTS APIs worth building on — ElevenLabs for quality and breadth, Cartesia Sonic for realtime latency — and how to choose for agents vs produced audio."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra"]

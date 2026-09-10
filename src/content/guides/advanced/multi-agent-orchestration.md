@@ -1,7 +1,7 @@
 ---
 title: "Multi-Agent Orchestration"
 description: "Four patterns for coordinating multiple agents — fan-out, pipeline, orchestrator-worker, and verify/critic — and when each earns its overhead."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 updated: 2026-08-25
 depth: cornerstone

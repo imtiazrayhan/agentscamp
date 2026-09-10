@@ -1,7 +1,7 @@
 ---
 title: "Agent Memory Architecture: Short-Term, Long-Term, and When to Use Each"
 description: "How AI agents remember — working memory vs. persistent long-term memory, what to store, how to retrieve it, and how to keep context small."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["ai-agents-systems"]

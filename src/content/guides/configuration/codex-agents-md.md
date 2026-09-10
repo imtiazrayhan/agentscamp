@@ -1,7 +1,7 @@
 ---
 title: "AGENTS.md for Codex: Project Instructions That Actually Work"
 description: "Write an effective AGENTS.md for OpenAI Codex — what belongs in it, how nested overrides work, and how to verify the instructions Codex loaded."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["workflow-prompting", "ai-agents-systems"]

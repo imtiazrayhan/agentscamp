@@ -8,7 +8,10 @@ export const site = {
   /** Square brand mark used for schema.org Organization.logo (served at /icon.svg). */
   logo: "/icon.svg",
   /** Authoritative profiles for schema.org `sameAs` (entity reconciliation / E-E-A-T). */
-  sameAs: ["https://x.com/agentscamp"] as string[],
+  sameAs: [
+    "https://x.com/agentscamp",
+    "https://github.com/imtiazrayhan/agentscamp",
+  ] as string[],
 } as const;
 
 /**

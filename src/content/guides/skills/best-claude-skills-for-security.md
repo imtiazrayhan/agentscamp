@@ -1,7 +1,7 @@
 ---
 title: "10 Best Claude Skills for Security Work"
 description: "Compare Claude skills for secrets, dependencies, permissions, auth, RBAC, threats, headers, PII, data retention, and LLM guardrails."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "red"
 topics: ["ai-safety-security", "review-qa"]

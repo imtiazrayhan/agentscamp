@@ -1,7 +1,7 @@
 ---
 title: "Spec-Driven Development with AI Agents"
 description: "Write the spec, let the agent implement against it — the SDD workflow (spec → plan → tasks → implement), when it beats prompt-and-iterate, and the tooling."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

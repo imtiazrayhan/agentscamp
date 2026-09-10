@@ -1,7 +1,7 @@
 ---
 title: "Data Privacy for LLM Apps: Stop Leaking Sensitive Data"
 description: "Where LLM apps leak PII and secrets — prompts, logs, traces, vector stores, providers — and the controls (redaction, ZDR, tenant isolation) that stop it."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 color: "green"
 topics: ["ai-safety-security"]
 tags: ["privacy", "pii", "security", "rag", "compliance"]

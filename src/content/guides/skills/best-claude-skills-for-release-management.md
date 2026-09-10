@@ -1,7 +1,7 @@
 ---
 title: "9 Best Claude Skills for Release Management"
 description: "Use Claude skills for readiness reviews, canaries, rollbacks, API deprecations, migrations, versioning, changelogs, and release notes."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "green"
 topics: ["devops-infra", "workflow-prompting"]

@@ -1,7 +1,7 @@
 ---
 title: "How Embeddings Work: Vectors, Similarity, and Choosing a Model"
 description: "What an embedding actually is, how similarity is measured, how the models are trained, and the practical rules for using embeddings well in search and RAG."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 color: "green"
 topics: ["data-ml", "rag-retrieval"]
 tags: ["embeddings", "vectors", "semantic-search", "rag", "concepts"]

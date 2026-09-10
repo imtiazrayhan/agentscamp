@@ -1,7 +1,7 @@
 ---
 title: "9 Best Claude Skills for Frontend Development"
 description: "Compare Claude skills for accessibility, Web Vitals, React renders, bundles, localization, browser security, test data, tests, and caching."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["coding-languages", "review-qa"]

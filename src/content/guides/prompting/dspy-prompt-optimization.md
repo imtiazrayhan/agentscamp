@@ -1,7 +1,7 @@
 ---
 title: "Programmatic Prompt Optimization with DSPy: Stop Hand-Tuning Prompts"
 description: "Hand-tuning prompts doesn't scale. DSPy treats prompting as programming — declare tasks as typed signatures and let an optimizer compile the prompts for you."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["workflow-prompting"]

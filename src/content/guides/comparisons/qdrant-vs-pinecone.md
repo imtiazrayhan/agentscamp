@@ -1,7 +1,7 @@
 ---
 title: "Qdrant vs Pinecone: Which Vector Database? (2026)"
 description: "Qdrant vs Pinecone compared — open-source control vs fully managed serverless, filtering and hybrid search, cost shape, and which fits your RAG stack."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval"]

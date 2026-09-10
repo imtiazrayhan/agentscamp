@@ -1,7 +1,7 @@
 ---
 title: "Claude Code vs Cursor: Which AI Coding Tool in 2026?"
 description: "Claude Code vs Cursor compared honestly — terminal agent vs AI-first editor, autonomy vs inline control, pricing models, and when to run both."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]

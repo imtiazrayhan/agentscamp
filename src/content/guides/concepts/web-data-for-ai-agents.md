@@ -1,7 +1,7 @@
 ---
 title: "Getting Web Data into AI Agents: Search & Scraping APIs Compared"
 description: "The agent web-data layer — Exa for semantic search, Firecrawl for extraction at scale, Tavily for all-in-one, Jina Reader for zero-setup — and how they compose."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["ai-agents-systems", "rag-retrieval"]

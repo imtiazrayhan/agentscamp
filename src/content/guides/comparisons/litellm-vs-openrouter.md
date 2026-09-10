@@ -1,7 +1,7 @@
 ---
 title: "LiteLLM vs OpenRouter: One API for Every Model (2026)"
 description: "LiteLLM vs OpenRouter compared — self-hosted gateway library vs hosted model marketplace. Keys, billing, control, and which unified LLM layer fits."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["llm-app-dev"]

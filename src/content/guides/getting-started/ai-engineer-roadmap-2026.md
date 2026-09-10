@@ -1,7 +1,7 @@
 ---
 title: "The AI Engineer Roadmap for 2026"
 description: "A staged path from API calls to production agents — the skills that matter in 2026, what to skip, and the guides and tools for each stage, in order."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["workflow-prompting", "ai-agents-systems"]

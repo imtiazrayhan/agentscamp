@@ -1,7 +1,7 @@
 ---
 title: "Codex Troubleshooting: A Layer-by-Layer Recovery Guide"
 description: "Troubleshoot OpenAI Codex when files, commands, configuration, worktrees, MCP, or app features misbehave — with a fast isolation and recovery sequence."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["workflow-prompting", "review-qa"]

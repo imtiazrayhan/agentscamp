@@ -1,7 +1,7 @@
 ---
 title: "DeepEval vs RAGAS: LLM Evaluation Frameworks Compared (2026)"
 description: "DeepEval vs RAGAS — pytest-style general LLM testing vs RAG-specialized metrics. Which open-source eval framework fits your pipeline, or whether you need both."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["llm-evals"]

@@ -1,7 +1,7 @@
 ---
 title: "MCP Ecosystem Statistics 2026"
 description: "The Model Context Protocol by the numbers — SDK downloads, server counts across registries, governance facts, and growth since the Linux Foundation donation."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-01
 color: "green"
 topics: ["mcp", "architecture"]

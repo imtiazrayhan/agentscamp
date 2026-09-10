@@ -1,7 +1,7 @@
 ---
 title: "Multimodal Embeddings and Image Search"
 description: "How multimodal embeddings put images and text in one vector space, and how to build text-to-image and image-to-image search on top of it."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "cyan"
 topics: ["multimodal-ai", "rag-retrieval"]

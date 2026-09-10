@@ -1,7 +1,7 @@
 ---
 title: "Production Tool & Function Calling: Feed Errors Back as Observations"
 description: "How agents use tools — the call/observe/retry loop, why errors must return to the model, and the schemas, idempotency, and limits that keep it reliable."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["ai-agents-systems"]

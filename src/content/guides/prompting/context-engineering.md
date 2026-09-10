@@ -1,7 +1,7 @@
 ---
 title: "Context Engineering"
 description: "Treating the context window as a finite budget — what to load, what to leave out, and when to reset."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]

@@ -1,7 +1,7 @@
 ---
 title: "Cursor vs Claude Code vs GitHub Copilot vs Windsurf in 2026"
 description: "A practical, opinionated comparison of the four mainstream AI coding tools — form factor, agentic depth, model choice, and who each one is for."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 updated: 2026-07-01
 color: "green"

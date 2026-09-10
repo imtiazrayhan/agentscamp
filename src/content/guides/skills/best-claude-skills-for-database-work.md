@@ -1,7 +1,7 @@
 ---
 title: "8 Best Claude Skills for Database Work"
 description: "Compare Claude skills for safe migrations, data backfills, indexes, query plans, pooling, deadlocks, vector search, and SQL tuning."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "blue"
 topics: ["data-ml", "devops-infra"]

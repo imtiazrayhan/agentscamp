@@ -1,7 +1,7 @@
 ---
 title: "Claude Skills on claude.ai and the API"
 description: "How Agent Skills work beyond Claude Code: uploading to claude.ai, the /v1/skills API with code execution, Managed Agents, and the Agent SDK."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "blue"
 topics: ["llm-app-dev", "ai-agents-systems"]

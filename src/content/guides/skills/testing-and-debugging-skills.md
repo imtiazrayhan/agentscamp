@@ -1,7 +1,7 @@
 ---
 title: "Testing and Debugging Claude Code Skills"
 description: "Verify a Claude Code skill triggers on the right prompts, check its output, and fix the five common failures — from vague triggers to broken paths."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "red"
 topics: ["workflow-prompting", "review-qa"]

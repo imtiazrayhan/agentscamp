@@ -1,7 +1,7 @@
 ---
 title: "Vector Search at Scale: ANN Indexes, Quantization & Sharding"
 description: "How to run vector search over millions to billions of vectors without blowing latency, memory, or cost — index families, quantization, filtering, and sharding."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 color: "green"
 topics: ["rag-retrieval", "data-ml"]
 tags: ["vector-search", "ann", "hnsw", "quantization", "sharding", "rag"]

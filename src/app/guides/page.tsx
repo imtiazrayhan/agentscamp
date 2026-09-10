@@ -10,6 +10,7 @@ export function generateMetadata(): Metadata {
     title: listingSeo.guide.seoTitle,
     description: listingDescription("guide", count),
     path: "/guides",
+    feed: "/guides/feed.xml",
   });
 }
 

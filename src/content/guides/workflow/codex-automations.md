@@ -1,7 +1,7 @@
 ---
 title: "Codex Automations: Schedule Reliable Background Work"
 description: "Schedule Codex tasks for recurring checks and follow-ups — choose chat or standalone runs, local projects or worktrees, skills, permissions, and stopping rules."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["workflow-prompting", "ai-agents-systems"]

@@ -1,7 +1,7 @@
 ---
 title: "9 Best Claude Skills for Performance Engineering"
 description: "Compare Claude skills for caching, Web Vitals, bundles, React renders, load tests, cold starts, CPU profiles, memory leaks, and prompt caches."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["devops-infra", "coding-languages"]

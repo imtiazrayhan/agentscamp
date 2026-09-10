@@ -1,7 +1,7 @@
 ---
 title: "Choosing Embeddings in 2026: OpenAI vs Cohere vs Voyage vs Open-Source"
 description: "A decision guide for picking an embedding model for retrieval — accuracy, dimensions, cost, multilingual and domain fit, self-hosting, and lock-in."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["rag-retrieval", "data-ml"]

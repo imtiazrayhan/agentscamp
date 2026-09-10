@@ -1,7 +1,7 @@
 ---
 title: "Weaviate vs Pinecone: Open-Source vs Managed Vector DB (2026)"
 description: "Weaviate vs Pinecone — BSD-3 open source you self-host vs fully managed serverless. Hybrid search, scaling, cost shape, and which fits your RAG stack."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["rag-retrieval"]

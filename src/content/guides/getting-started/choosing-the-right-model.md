@@ -1,7 +1,7 @@
 ---
 title: "Choosing the Right Model: Haiku vs Sonnet vs Opus"
 description: "How to pick the right Claude model tier — Haiku, Sonnet, or Opus — for any Claude Code agent or task, with a clear decision rubric and per-agent examples."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-05-10
 color: "green"
 topics: ["workflow-prompting"]

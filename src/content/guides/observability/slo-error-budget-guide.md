@@ -1,7 +1,7 @@
 ---
 title: "SLOs and Error Budgets: A Practical Reliability Guide"
 description: "Define user-centered SLIs and SLOs, calculate error budgets, create burn-rate alerts, set release policy, and keep reliability targets meaningful."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["devops-infra", "review-qa"]

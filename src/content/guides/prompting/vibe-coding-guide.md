@@ -1,7 +1,7 @@
 ---
 title: "Vibe Coding in 2026: What It Is, When It Works, When It Bites"
 description: "An honest guide to vibe coding — where prompt-and-accept development genuinely pays, where it accumulates risk, and the guardrails that make it professional."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

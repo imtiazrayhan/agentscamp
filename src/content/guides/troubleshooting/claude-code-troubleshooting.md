@@ -1,7 +1,7 @@
 ---
 title: "Claude Code Troubleshooting: Fixes for the Most Common Problems"
 description: "Fixes for the Claude Code problems people actually hit — install and auth failures, context-limit errors, MCP servers that won't connect, permission loops."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

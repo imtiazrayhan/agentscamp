@@ -3,6 +3,7 @@ import { Markdown } from "./Markdown";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { RelatedItems } from "./RelatedItems";
 import { InstallActions } from "./InstallActions";
+import { ShareRow } from "./ShareRow";
 import { FaqSection } from "./FaqSection";
 import { Toc } from "./Toc";
 import { extractToc } from "@/lib/toc";
@@ -11,6 +12,7 @@ import { getColorClasses, cn } from "@/lib/utils";
 import { titleCaseLabel, formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
+import { canonicalUrl } from "@/lib/seo/artifact";
 import type { ContentItem, GuideItem } from "@/lib/content/types";
 
 function Meta({
@@ -295,6 +297,9 @@ export function DetailView({
           )}
           {item.body && <Markdown source={item.body} />}
           {item.type === "guide" && <Sources sources={item.sources} />}
+          {item.type === "guide" && (
+            <ShareRow url={canonicalUrl(item)} title={item.title} />
+          )}
           <FaqSection faq={item.faq} />
         </div>
         {withToc && (

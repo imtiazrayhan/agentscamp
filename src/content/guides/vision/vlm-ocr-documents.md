@@ -1,7 +1,7 @@
 ---
 title: "Using Vision-Language Models for OCR, Documents, and Video Understanding"
 description: "How to use vision-language models for OCR, documents, and video: how they differ from traditional OCR, their failure modes, and getting reliable output."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra", "data-ml"]

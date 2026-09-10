@@ -1,7 +1,7 @@
 ---
 title: "Designing System Prompts for LLM Apps and Agents"
 description: "How to write system prompts that hold up in production: what belongs there vs. the user turn, structure that survives long context, and format/refusal rules."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 color: "green"
 topics: ["workflow-prompting"]
 tags: ["system-prompt", "prompting", "agents", "llm-app-dev", "output-format"]

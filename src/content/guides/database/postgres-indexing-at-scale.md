@@ -1,7 +1,7 @@
 ---
 title: "Indexing Postgres at Scale: B-Tree vs GIN vs BRIN and the Hidden Cost of Over-Indexing"
 description: "A practical guide to choosing Postgres index types — B-Tree, GIN, BRIN, partial, and covering — and why every index you add taxes every write."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["data-ml"]

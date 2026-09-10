@@ -1,7 +1,7 @@
 ---
 title: "Web Performance Budgets: Turn Speed Into a Release Gate"
 description: "Define and enforce web performance budgets for Core Web Vitals, JavaScript, images, fonts, third parties, and critical journeys in CI and production."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["devops-infra", "review-qa"]

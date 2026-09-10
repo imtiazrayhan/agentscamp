@@ -1,7 +1,7 @@
 ---
 title: "OpenAI Agents SDK vs LangGraph: Minimal vs Controllable (2026)"
 description: "OpenAI Agents SDK's three-primitive minimalism vs LangGraph's explicit graph and durable state — which agent framework matches your reliability bar in 2026."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["ai-agents-systems"]

@@ -1,7 +1,7 @@
 ---
 title: "Why Your Agent Loops: Debugging AI Agents"
 description: "The recurring agent failure modes — loops, premature victory, tool misuse, context poisoning, scope creep — diagnosed by their signatures, with fixes."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["ai-agents-systems"]

@@ -1,7 +1,7 @@
 ---
 title: "LLM API Pricing in 2026: Every Major Model Compared"
 description: "Per-million-token prices for Claude, GPT, Gemini, DeepSeek, Mistral, and Grok — plus caching and batch discounts — verified against vendor pricing pages."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-01
 color: "green"
 topics: ["llm-app-dev", "devops-infra"]

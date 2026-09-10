@@ -1,7 +1,7 @@
 ---
 title: "Best RAG Frameworks in 2026"
 description: "A roundup of the top RAG frameworks in 2026 — LlamaIndex, LangChain, Haystack, and DSPy — and which one fits your retrieval stack."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["rag-retrieval"]

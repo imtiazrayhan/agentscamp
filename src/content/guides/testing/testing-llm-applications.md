@@ -1,7 +1,7 @@
 ---
 title: "Testing LLM Applications: How to Test Non-Deterministic Software"
 description: "How to test software that calls LLMs when outputs are non-deterministic — the testing pyramid, assertion strategies, golden datasets, and CI gating."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 color: "green"
 topics: ["llm-evals", "review-qa"]
 tags: ["testing", "evals", "llm-as-judge", "regression", "ci"]

@@ -1,7 +1,7 @@
 ---
 title: "Best Speech-to-Text APIs in 2026"
 description: "The STT field, honestly ranked — Deepgram and AssemblyAI's hosted duel, Whisper as the open baseline, Cartesia Ink for latency — and how to pick by workload."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra"]

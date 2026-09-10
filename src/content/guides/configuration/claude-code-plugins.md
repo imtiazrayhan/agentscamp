@@ -1,7 +1,7 @@
 ---
 title: "Claude Code Plugins: Install, Use, and Build Your Own"
 description: "How Claude Code plugins work — what they can bundle, the /plugin and marketplace commands, the plugin.json manifest, and building and testing your own."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

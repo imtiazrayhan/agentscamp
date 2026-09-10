@@ -1,7 +1,7 @@
 ---
 title: "Claude Code vs OpenCode: First-Party vs Open Source (2026)"
 description: "Claude Code vs OpenCode — Anthropic's tuned first-party agent vs the most-starred open-source one with 75+ providers. Control vs polish, decided honestly."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]

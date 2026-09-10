@@ -1,7 +1,7 @@
 ---
 title: "Building Agents with the Claude Agent SDK"
 description: "A working tutorial for the Claude Agent SDK in TypeScript and Python — query(), tool permissions, custom in-process MCP tools, subagents, hooks, and auth."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

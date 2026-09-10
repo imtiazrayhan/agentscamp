@@ -1,7 +1,7 @@
 ---
 title: "Red-Teaming LLM Applications: From Attack Cases to Regression Tests"
 description: "Red-team an LLM application across prompts, RAG, tools, agents, and data boundaries — scope assets, generate attacks, score impact, fix, and retest in CI."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "red"
 topics: ["ai-safety-security", "llm-evals"]

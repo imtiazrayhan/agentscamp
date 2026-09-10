@@ -1,7 +1,7 @@
 ---
 title: "TDD with AI Agents: Red-Green as an Agent Loop"
 description: "Test-driven development found its killer app: agents. How write-the-test-first turns AI coding into a verifiable loop, and the workflow that makes it stick."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["review-qa", "workflow-prompting"]

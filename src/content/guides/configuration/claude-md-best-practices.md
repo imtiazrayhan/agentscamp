@@ -1,7 +1,7 @@
 ---
 title: "CLAUDE.md Best Practices"
 description: "How to write a CLAUDE.md that actually helps — what to include, what to leave out, and how to keep it current."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["workflow-prompting"]

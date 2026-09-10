@@ -1,7 +1,7 @@
 ---
 title: "AI Coding Statistics 2026: The Numbers That Are Actually Sourced"
 description: "How much code AI writes, who uses the tools, and what it does to quality — every statistic dated and traced to its primary source, updated on a cadence."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-01
 color: "green"
 topics: ["coding-languages", "ai-agents-systems"]

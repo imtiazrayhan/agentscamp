@@ -1,7 +1,7 @@
 ---
 title: "The SKILL.md Reference: Every Frontmatter Field Explained"
 description: "A complete reference for the SKILL.md format — all frontmatter fields, naming rules, argument substitution, limits, and where skill files live."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "purple"
 topics: ["workflow-prompting"]

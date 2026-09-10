@@ -1,7 +1,7 @@
 ---
 title: "Add Image Understanding to Your App"
 description: "A practical guide to sending images to a vision model and getting reliable, structured results: base64 vs URL, resolution, prompting, cost, and errors."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "blue"
 topics: ["multimodal-ai", "llm-app-dev"]

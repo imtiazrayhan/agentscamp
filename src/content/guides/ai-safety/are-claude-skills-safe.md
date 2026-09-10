@@ -1,7 +1,7 @@
 ---
 title: "Are Claude Skills Safe? A Security Review Checklist"
 description: "Skills are an instruction supply chain: what can go wrong with third-party SKILL.md files, and the review checklist before installing or distributing one."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "red"
 topics: ["ai-safety-security", "workflow-prompting"]

@@ -1,7 +1,7 @@
 ---
 title: "Langfuse vs LangSmith: LLM Observability Compared (2026)"
 description: "Langfuse vs LangSmith — open-source self-hostable observability vs LangChain's first-party platform. Tracing, evals, prompt management, and which to adopt."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["llm-evals"]

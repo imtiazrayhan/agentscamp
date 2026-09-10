@@ -1,7 +1,7 @@
 ---
 title: "Few-Shot vs Chain-of-Thought vs Structured Prompting: What to Use When (2026)"
 description: "When to reach for few-shot examples, chain-of-thought reasoning, or structured/output-constrained prompting — a 2026 decision guide to the core techniques."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["workflow-prompting"]

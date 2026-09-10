@@ -1,7 +1,7 @@
 ---
 title: "OpenAI Codex: A Practical Guide for Developers"
 description: "Learn how OpenAI Codex works across the terminal, IDE, desktop app, and cloud — then set up a safe, repeatable workflow for real repositories."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["workflow-prompting", "ai-agents-systems"]

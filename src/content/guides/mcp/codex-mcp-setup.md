@@ -1,7 +1,7 @@
 ---
 title: "Codex MCP Setup: Connect Tools and Live Context"
 description: "Connect OpenAI Codex to MCP servers through the CLI, desktop app, IDE, or config.toml — with practical scoping, OAuth, and tool-approval guidance."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["mcp", "architecture", "workflow-prompting"]

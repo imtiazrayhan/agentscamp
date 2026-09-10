@@ -1,7 +1,7 @@
 ---
 title: "Idempotency Keys: Design APIs That Are Safe to Retry"
 description: "Design idempotent API mutations with client keys, atomic claims, response replay, payload fingerprints, in-flight handling, TTLs, and downstream safety."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "purple"
 topics: ["architecture", "llm-app-dev"]

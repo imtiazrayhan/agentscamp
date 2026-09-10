@@ -1,7 +1,7 @@
 ---
 title: "Claude Code Settings & Permissions: settings.json Explained"
 description: "Every Claude Code settings file and which one wins, the permission-rule syntax with its Bash matching gotchas, modes, and a safe starter settings.json."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

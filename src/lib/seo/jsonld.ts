@@ -141,7 +141,8 @@ function dateFields(item: ContentItem): Node {
 /** Org author today; Person seam for when real bylines exist (no fabricated credentials). */
 function authorNode(item: ContentItem): Node {
   const author = (item as GuideItem).author;
-  if (author && author !== site.name) return { "@type": "Person", name: author };
+  if (author && author !== site.name)
+    return { "@type": "Person", name: author, url: `${site.url}/about` };
   return { "@id": ORG_ID };
 }
 

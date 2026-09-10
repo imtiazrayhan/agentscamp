@@ -1,7 +1,7 @@
 ---
 title: "Claude's Document Skills: Excel, PowerPoint, Word, and PDF"
 description: "How Anthropic's pre-built document skills let Claude produce real .xlsx, .pptx, .docx, and PDF files — on claude.ai, the API, and in Claude Code."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "yellow"
 topics: ["workflow-prompting", "llm-app-dev"]

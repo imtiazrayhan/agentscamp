@@ -40,10 +40,13 @@ const ACRONYMS: Record<string, string> = {
 export function formatDate(iso: string): string {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
+  // UTC so a yyyy-mm-dd string renders the same day on the server and in
+  // browsers west of UTC (cards are client-rendered — avoids hydration drift).
   return d.toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 

@@ -1,7 +1,7 @@
 ---
 title: "10 Best Claude Skills for API Development"
 description: "Choose Claude skills for error contracts, idempotency, pagination, limits, webhooks, CORS, GraphQL, OpenAPI, tools, and MCP servers."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["architecture", "llm-app-dev"]

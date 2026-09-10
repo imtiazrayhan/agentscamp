@@ -1,7 +1,7 @@
 ---
 title: "Parallel Claude Code Sessions with Git Worktrees"
 description: "Run several Claude Code sessions at once without edits colliding — the built-in claude --worktree flag, .worktreeinclude, subagent isolation, and cleanup."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

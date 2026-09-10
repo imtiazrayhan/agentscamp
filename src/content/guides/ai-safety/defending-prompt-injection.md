@@ -1,7 +1,7 @@
 ---
 title: "Defending Against Prompt Injection: A Practical Guide for LLM Apps"
 description: "Prompt injection can't be solved at the model layer — so you defend in depth: trust boundaries, least privilege, human approval, guardrails, and red-teaming."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["ai-safety-security"]

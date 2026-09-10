@@ -1,7 +1,7 @@
 ---
 title: "Vision-Language Models Compared (2026)"
 description: "Which vision-language model to reach for, by job: Claude, GPT, Gemini, and open models like Qwen3-VL compared on OCR, charts, grounding, video, and cost."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "pink"
 topics: ["multimodal-ai"]

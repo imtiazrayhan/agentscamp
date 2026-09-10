@@ -1,7 +1,7 @@
 ---
 title: "Claude Code Hooks: Automate Formatting, Tests, and Guardrails"
 description: "How Claude Code hooks work — the major hook events, the settings.json configuration shape, exit codes and JSON output, plus three hooks worth copying."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]

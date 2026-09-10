@@ -1,7 +1,7 @@
 ---
 title: "MCP Troubleshooting: Server Won't Connect & Other Fixes"
 description: "Fixes for the MCP problems people actually hit — servers failing to connect, missing tools, OAuth loops, timeouts, truncated output, and Windows quirks."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["mcp"]

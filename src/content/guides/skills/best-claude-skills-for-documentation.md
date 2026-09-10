@@ -1,7 +1,7 @@
 ---
 title: "7 Best Claude Skills for Documentation"
 description: "Use Claude skills to verify code examples and create accurate READMEs, API docs, runbooks, onboarding guides, ADRs, and diagrams."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "yellow"
 topics: ["workflow-prompting", "architecture"]

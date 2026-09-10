@@ -1,7 +1,7 @@
 ---
 title: "LangChain vs LlamaIndex in 2026: Agents or Data?"
 description: "The classic framework confusion resolved — LangChain's agent loop and ecosystem vs LlamaIndex's data-and-documents depth — and when you'd genuinely use both."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["ai-agents-systems", "rag-retrieval"]

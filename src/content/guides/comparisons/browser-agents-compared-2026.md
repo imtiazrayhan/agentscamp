@@ -1,7 +1,7 @@
 ---
 title: "Browser Agents in 2026: Browser Use vs Stagehand vs Skyvern vs Playwright MCP"
 description: "Four ways to give AI a browser — Browser Use, Stagehand, Skyvern, and Playwright MCP compared honestly on control, cost, and reliability for 2026."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["ai-agents-systems"]

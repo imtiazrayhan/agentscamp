@@ -1,7 +1,7 @@
 ---
 title: "LLM Evaluation Metrics Explained: Which One to Use and When"
 description: "A practical map of LLM and RAG evaluation metrics — why BLEU/ROUGE fail open-ended text, how LLM-as-judge and RAG metrics work, and which to pick per task."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["llm-evals"]

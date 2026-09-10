@@ -1,7 +1,7 @@
 ---
 title: "Skills vs Agents vs Commands"
 description: "How Claude Code's two extension mechanisms — subagents and skills — differ across three invocation patterns, with a decision table for choosing the right one."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-03
 updated: 2026-08-25
 depth: cornerstone

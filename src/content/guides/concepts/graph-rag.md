@@ -1,7 +1,7 @@
 ---
 title: "GraphRAG Explained: When Knowledge Graphs Beat Vector Search"
 description: "What GraphRAG is, how graph-based retrieval differs from vector RAG, the query shapes where it wins, and the honest costs before you build one."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval"]

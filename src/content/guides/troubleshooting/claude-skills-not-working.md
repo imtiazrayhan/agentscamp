@@ -1,7 +1,7 @@
 ---
 title: "Claude Skills Not Working? Fixes for Every Failure Mode"
 description: "Skill missing from the / menu, never auto-triggering, firing too often, or breaking mid-run — the symptom-by-symptom fix list for Claude skills."
-author: "AgentsCamp"
+author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "red"
 topics: ["workflow-prompting"]
