@@ -1,3 +1,82 @@
+# Post-role-paths: recover, fix, fortify, deepen (2026-09-10) — SHIPPED
+
+Seven commits. Everything that did not depend on the October Search Console
+checkpoint: the silently broken surfaces, the freshness program, the unfinished
+half of the audience layer, and content depth.
+
+## The recovery that mattered most
+The monthly freshness job never failed in September. It succeeded, opened
+PR #8, and told nobody, because line 27 of the local runner assigned
+`status=$?` and `status` is a read-only special variable in zsh, so the shell
+died after the work was done but before the notification. That PR sat unmerged
+for nine days while tier-1 pages looked 71 days stale. Rebased and merged;
+conflicts resolved by keeping master's byline and publish date and recording
+the refresh as `updated`, per the /about convention.
+
+## Done
+- **Open Graph:** 301 of 1,051 built pages emitted `twitter:card=summary_large_image`
+  with no image, including all five role hubs and all 133 alternatives pages.
+  Next merges file-convention images per segment and `buildPageMetadata` declared
+  an openGraph object with no images key, so nothing was inherited. Collection
+  pages now default to the site card; alternatives pages use their parent tool's
+  own card. Detail pages keep their per-item generators, which was the
+  regression to avoid. Down to one page: Next's internal error boundary.
+- **IndexNow** derives from `sitemap()` itself now, so the two cannot drift.
+  757 URLs became 1,029, which is the sitemap plus the feed. A changed content
+  file also re-pings its category landing.
+- Seven one-item category landings noindexed; sitemap 1,035 to 1,028.
+- **CI exists**: validate, lint, typecheck, build on push and PR, about 3 minutes.
+  Deliberately no gate on search-index.json drift, which regenerates on deploy.
+- **Freshness is real.** `freshness` and `reviewed` frontmatter keys;
+  `src/lib/content/freshness.ts` holds the shared predicates;
+  `npm run freshness` is the tracked queue with `--json` for the local runner
+  and `--check-urls` for renames. Tier 1 is declared (15 pages, not derivable:
+  all 8 money pages have a year in the title and so do 56 other guides);
+  the derived pool is 110 priced tools and year-titled guides, worked
+  stalest-first. The gate lives in validate-content.ts because that is the only
+  thing that runs on every build: a tool cannot quote an undated price, and a
+  tier-1 page 90 days past cadence fails the build, which is how a dead
+  scheduler becomes visible next time.
+- **All 26 undated tool prices re-verified against the vendor and dated.**
+  Real drift found: Flowise archived Aug 13; Amp replaced its entire free-credit
+  model; CodeRabbit renamed and repriced every tier and dropped free private
+  repos; Greptile added a free tier; Lovable moved to credit tiers with
+  expiring rollover; Warp's free tier no longer bundles AI credits; Cartesia's
+  phone and SIP left beta. Where a vendor blocked automated reading (Devin 429,
+  Tabnine 403, Tavily animates its price) the figure was removed rather than
+  re-dated.
+- **Audience layer finished:** role pills on detail pages with matching
+  schema.org audience, role paths reachable from the command palette, shared
+  audience weighted in getRelated, per-role reading orders in llms-full.txt,
+  and 486 engineering items back-tagged onto /for/developers behind a 30-per-
+  type cap so the page stays a curated entry point.
+- **Content depth:** the 5 legacy roundups went from ~534 words to 1,228-1,375
+  with tables, verdicts, how-to-choose steps and primary sources; all 81
+  glossary terms missing a summary have one, restoring 100% coverage; the last
+  16 items with an empty related array now link out. Continue, Ragas and
+  Chonkie were exposed as stale by that pass and corrected.
+
+## Deliberately not done
+- `reviewed` was NOT backfilled from in-prose as-of dates. Of the 74 items with
+  a parseable one, 72 already agree with `updated ?? date`, and the two that
+  differ cite a source's date, so writing them would report those pages as
+  staler than they are.
+- Audience is not a search-index field: it would return 547 flat hits against a
+  limit of 12 with nothing to rank them by.
+- No new URLs, per the owner's call to favour depth until the checkpoint.
+
+## Next
+- The October Search Console checkpoint: per-role query families in
+  docs/content-roadmap-phase3.md, plus the GA4 role_select event.
+- 22 of 29 head-to-head comparison guides are still under 700 words. That is
+  the obvious next depth pass.
+- The glossary has no OpenAPI or REST term, which left one skill without a
+  glossary link.
+- 8 guides still warn on undated dollar figures. They are funding rounds rather
+  than prices, so they warn by design, but dating them would clear the noise.
+
+---
+
 # Role paths Wave 2: designers + analysts + tag pass (2026-09-10) — SHIPPED
 
 The audience program is complete. All five role paths are live, the hub stands
