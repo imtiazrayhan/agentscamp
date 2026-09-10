@@ -233,7 +233,13 @@ export const audiences: AudienceDef[] = [
     label: "Data & analytics teams",
     description:
       "Claude for data analysis: Claude for Excel, text-to-SQL, notebooks with Claude Code, checking AI analyses, and the analytics tools that hold up.",
-    startHere: [],
+    startHere: [
+      "guide:claude-for-data-analysis",
+      "guide:claude-for-excel-guide",
+      "guide:claude-code-for-data-analysts",
+      "guide:best-ai-tools-for-data-analysts-2026",
+      "guide:which-claude-plan-for-data-analysts",
+    ],
   },
 ];
 
