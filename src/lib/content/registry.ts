@@ -220,7 +220,13 @@ export const audiences: AudienceDef[] = [
     label: "Designers",
     description:
       "Claude Design, Figma-to-code with Claude Code, design-system upkeep, and the AI design and image tools that fit a working designer's stack.",
-    startHere: [],
+    startHere: [
+      "guide:claude-design-guide",
+      "guide:claude-code-for-designers",
+      "guide:figma-to-code-with-claude",
+      "guide:best-ai-tools-for-designers-2026",
+      "guide:which-claude-plan-for-designers",
+    ],
   },
   {
     slug: "analysts",
