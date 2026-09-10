@@ -60,8 +60,6 @@ export function buildMetadata(item: ContentItem): Metadata {
       card: "summary_large_image",
       title,
       description,
-      site: site.twitter,
-      creator: site.twitter,
     },
   };
 }
@@ -111,8 +109,6 @@ export function buildPageMetadata(opts: {
       card: "summary_large_image",
       title: opts.title,
       description: opts.description,
-      site: site.twitter,
-      creator: site.twitter,
     },
     ...(opts.noindex ? { robots: { index: false, follow: true } } : {}),
   };

@@ -1,7 +1,6 @@
 "use client";
 
 import { track } from "@/lib/analytics";
-import { site } from "@/lib/site";
 import { externalLinkProps } from "@/lib/utils";
 import { CopyButton } from "./CopyButton";
 
@@ -15,7 +14,7 @@ export function ShareRow({ url, title }: { url: string; title: string }) {
     {
       method: "x",
       label: "Share on X",
-      href: `https://x.com/intent/post?text=${encodeURIComponent(title)}&url=${u}&via=${site.twitter.slice(1)}`,
+      href: `https://x.com/intent/post?text=${encodeURIComponent(title)}&url=${u}`,
     },
     {
       method: "linkedin",

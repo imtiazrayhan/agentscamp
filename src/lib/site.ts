@@ -4,14 +4,14 @@ export const site = {
   tagline: "Your hub for everything AI",
   description:
     "Guides, an AI tool directory, and a plain-language glossary for developers, founders, marketers, designers, and analysts, plus installable Claude Code skills.",
-  twitter: "@agentscamp",
   /** Square brand mark used for schema.org Organization.logo (served at /icon.svg). */
   logo: "/icon.svg",
-  /** Authoritative profiles for schema.org `sameAs` (entity reconciliation / E-E-A-T). */
-  sameAs: [
-    "https://x.com/agentscamp",
-    "https://github.com/imtiazrayhan/agentscamp",
-  ] as string[],
+  /**
+   * Authoritative profiles for schema.org `sameAs` (entity reconciliation / E-E-A-T).
+   * Empty: there is no X profile, and the repo is deliberately not surfaced.
+   * jsonld.ts omits the property entirely when this is empty.
+   */
+  sameAs: [] as string[],
 } as const;
 
 /**

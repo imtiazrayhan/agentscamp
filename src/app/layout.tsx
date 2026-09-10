@@ -40,8 +40,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    site: site.twitter,
-    creator: site.twitter,
   },
   robots: {
     index: true,
