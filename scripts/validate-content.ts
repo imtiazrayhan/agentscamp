@@ -39,6 +39,7 @@ import {
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import GithubSlugger from "github-slugger";
+import { OG_ACCENT_INK, OG_SURFACE } from "../src/lib/palette";
 import fs from "node:fs";
 import path from "node:path";
 import type {
@@ -448,6 +449,55 @@ function run() {
   }
 
   console.log(`  total: ${all.length}`);
+
+  checkPaletteMirror();
+}
+
+/**
+ * src/lib/palette.ts holds literal hex for the OG cards, because Satori has no
+ * CSS variables. This is the only thing stopping it drifting away from
+ * globals.css the way the generator's private accent map did.
+ */
+function checkPaletteMirror() {
+  const css = fs.readFileSync(
+    path.join(process.cwd(), "src/app/globals.css"),
+    "utf8",
+  );
+  const ramp = new Map<string, string>();
+  for (const m of css.matchAll(/^\s*(--[a-z]+-\d{2,3}):\s*(#[0-9a-f]{6});/gim))
+    ramp.set(m[1], m[2].toLowerCase());
+
+  // The .dark aliases the OG cards mirror, as ramp-step names.
+  const expected: Record<string, string> = {
+    background: "--stone-950",
+    card: "--stone-900",
+    border: "--stone-700",
+    foreground: "--stone-200",
+    mutedForeground: "--stone-400",
+    faint: "--stone-500",
+    coral: "--rose-300",
+    turquoise: "--teal-300",
+    mint: "--green-300",
+    amber: "--amber-300",
+    violet: "--violet-300",
+    sky: "--sky-300",
+  };
+  const actual: Record<string, string> = {
+    ...OG_SURFACE,
+    ...OG_ACCENT_INK,
+  };
+
+  for (const [key, step] of Object.entries(expected)) {
+    const want = ramp.get(step);
+    if (!want) {
+      err(`palette: globals.css no longer declares ${step}`);
+      continue;
+    }
+    if (actual[key].toLowerCase() !== want)
+      err(
+        `palette: src/lib/palette.ts ${key}=${actual[key]} but globals.css ${step}=${want}`,
+      );
+  }
 }
 
 console.log("Validating content...");
