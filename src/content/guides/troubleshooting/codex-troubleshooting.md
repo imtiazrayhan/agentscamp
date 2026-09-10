@@ -7,6 +7,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["workflow-prompting", "review-qa"]
+audience: ["developers"]
 tags: ["codex", "troubleshooting", "debugging", "worktrees", "configuration"]
 featured: false
 summary: "Most Codex failures come from one of six layers: target, instructions, configuration, permissions, tools, or session state. Diagnose them in that order. Confirm the actual directory and branch, identify loaded AGENTS.md and config.toml layers, reproduce with a harmless command, inspect tool authentication, then restart or open a focused chat only after preserving useful evidence."

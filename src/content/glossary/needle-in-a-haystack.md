@@ -3,6 +3,7 @@ term: "Needle in a Haystack"
 description: "Needle in a haystack is a long-context eval that hides a fact in filler text and tests whether the model can retrieve it at varying depths and lengths."
 date: 2026-06-17
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["eval", "long-context", "retrieval", "benchmark"]
 related: ["glossary:context-window", "glossary:eval-dataset", "glossary:rag"]
 faq:

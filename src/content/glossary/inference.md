@@ -3,6 +3,7 @@ term: "Inference"
 description: "Inference is running a trained model to produce output — for LLMs, generating tokens one at a time. Its cost and latency define the economics of AI products."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["inference", "serving", "latency", "llm"]
 related: ["guide:llm-cost-latency-engineering", "glossary:kv-cache", "glossary:quantization", "glossary:speculative-decoding", "tool:vllm", "guide:self-host-vs-api-llm"]
 faq:

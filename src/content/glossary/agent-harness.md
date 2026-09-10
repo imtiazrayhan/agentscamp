@@ -3,6 +3,7 @@ term: "Agent Harness"
 description: "An agent harness is the system around the model that makes it an agent — the loop, tools, context management, permissions, and recovery machinery."
 date: 2026-06-12
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["harness", "agents", "infrastructure", "agent-engineering"]
 related: ["glossary:agent-engineering", "glossary:ai-agent", "guide:what-is-claude-code", "guide:claude-agent-sdk-tutorial", "guide:agent-frameworks-2026", "guide:claude-code-vs-opencode"]
 faq:

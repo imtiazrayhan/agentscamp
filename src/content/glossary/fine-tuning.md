@@ -3,6 +3,7 @@ term: "Fine-Tuning"
 description: "Fine-tuning continues training a pretrained model on your own examples, changing its weights to teach durable behavior, format, or domain style."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["fine-tuning", "training", "lora", "mlops"]
 related: ["guide:finetune-vs-rag-vs-prompt", "glossary:lora", "guide:finetune-dataset-prep", "glossary:distillation", "agent:finetuning-engineer", "glossary:rag"]
 faq:

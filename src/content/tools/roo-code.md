@@ -7,6 +7,7 @@ pricing: "open-source"
 category: "extension"
 color: "orange"
 topics: ["coding-languages"]
+audience: ["developers"]
 tags: ["vscode", "open-source"]
 alternativeTo: ["cline", "kilo-code", "continue", "cursor"]
 related: ["tool:cline", "tool:kilo-code", "tool:continue", "guide:ai-coding-agents-cli-2026"]

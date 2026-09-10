@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "blue"
 topics: ["multimodal-ai", "llm-app-dev"]
+audience: ["developers"]
 tags: ["vision", "multimodal", "image-understanding", "structured-output", "prompting"]
 featured: false
 summary: "Send images as base64 or a URL, control resolution to manage cost, and prompt the model to read what's there rather than guess. The reliability move is the same everywhere: constrain output to a schema, verify the fields that matter, and let the model answer UNKNOWN instead of fabricating."

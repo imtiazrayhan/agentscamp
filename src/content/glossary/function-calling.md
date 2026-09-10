@@ -3,6 +3,7 @@ term: "Function Calling (Tool Calling)"
 description: "Function calling lets an LLM request structured invocations of your code: describe tools with schemas, the model emits typed calls, your app executes them."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["function-calling", "tool-use", "agents", "api"]
 related: ["guide:production-tool-calling", "glossary:ai-agent", "glossary:structured-output", "glossary:model-context-protocol", "skill:tool-definition-generator", "agent:agent-tool-integration-engineer"]
 faq:

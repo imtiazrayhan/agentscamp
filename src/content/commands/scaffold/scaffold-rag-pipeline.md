@@ -5,6 +5,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Scaffold RAG Pipeline"
 color: "purple"
 topics: ["rag-retrieval", "llm-app-dev"]
+audience: ["developers"]
 related: ["command:add-streaming-endpoint", "skill:agent-memory-designer"]
 featured: false
 date: 2026-06-17

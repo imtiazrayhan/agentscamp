@@ -10,6 +10,7 @@ repo: "https://github.com/AgentOps-AI/agentops"
 sameAs: ["https://github.com/AgentOps-AI/agentops", "https://docs.agentops.ai"]
 color: "orange"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["observability", "agents", "monitoring", "debugging"]
 featured: false
 alternativeTo: ["langfuse", "arize-phoenix"]

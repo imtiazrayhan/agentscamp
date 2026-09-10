@@ -3,6 +3,7 @@ term: "Quantization"
 description: "Quantization shrinks a model by storing weights in lower precision (8-, 4-, even 2-bit) — cutting memory and speeding inference at a small accuracy cost."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["quantization", "inference", "local-llm", "optimization"]
 related: ["glossary:inference", "glossary:lora", "guide:self-host-vs-api-llm", "tool:ollama", "tool:vllm", "skill:embedding-index-tuner"]
 faq:

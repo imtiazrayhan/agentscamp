@@ -3,6 +3,7 @@ term: "Perplexity"
 description: "Perplexity measures how well a language model predicts a text sample — the exponential of its average per-token negative log-likelihood. Lower is better."
 date: 2026-06-17
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["perplexity", "evaluation", "metrics", "language-modeling"]
 related: ["glossary:inference", "glossary:llm-token", "glossary:eval-dataset", "guide:write-llm-evals", "glossary:distillation"]
 faq:

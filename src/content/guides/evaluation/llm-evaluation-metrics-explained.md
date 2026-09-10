@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["evals", "metrics", "rag", "llm-as-judge", "retrieval"]
 related:
   - "guide:write-llm-evals"

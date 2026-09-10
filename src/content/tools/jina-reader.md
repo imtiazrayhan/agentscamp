@@ -10,6 +10,7 @@ license: "Apache-2.0"
 os: ["Web"]
 color: "yellow"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["web-data", "scraping", "markdown", "api"]
 featured: false
 alternativeTo: ["firecrawl", "tavily", "exa"]

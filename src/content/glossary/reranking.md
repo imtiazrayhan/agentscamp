@@ -3,6 +3,7 @@ term: "Reranking"
 description: "Reranking is a second-pass scoring step: a cross-encoder model re-orders the top results from fast retrieval so the truly relevant few rise to the top."
 date: 2026-06-11
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["reranking", "retrieval", "rag", "search"]
 related: ["guide:hybrid-search-reranking", "glossary:semantic-search", "glossary:rag", "tool:cohere-rerank", "command:benchmark-rerankers", "tool:voyage-ai"]
 faq:

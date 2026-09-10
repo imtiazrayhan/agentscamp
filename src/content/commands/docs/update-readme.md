@@ -7,6 +7,7 @@ allowed-tools: "Read, Grep, Glob, Bash, Edit, Write"
 title: "Update README"
 color: "purple"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 related: ["command:explain-code", "skill:readme-generator", "command:add-docstrings", "agent:documentation-engineer"]
 featured: false
 summary: "A slash command that brings a README back in sync with the code: it inventories every claim (scripts, paths, ports, env vars), ground-truths each against the real repo, then surgically fixes stale entries, adds missing ones, and removes phantom features — preserving structure and touching only lines that drifted."

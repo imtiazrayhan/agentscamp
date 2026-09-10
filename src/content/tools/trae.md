@@ -10,6 +10,7 @@ os: ["macOS", "Windows", "Linux"]
 sameAs: ["https://www.trae.ai", "https://docs.trae.ai"]
 color: "red"
 topics: ["coding-languages", "ai-agents-systems"]
+audience: ["developers"]
 tags: ["ide", "bytedance", "coding", "agent", "editor"]
 featured: false
 alternativeTo: ["cursor", "windsurf", "zed", "void", "kilo-code"]

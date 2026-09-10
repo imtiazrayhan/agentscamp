@@ -5,6 +5,7 @@ date: 2025-08-25
 model: "sonnet"
 color: "cyan"
 topics: ["coding-languages"]
+audience: ["developers"]
 featured: true
 related: ["agent:frontend-developer", "agent:typescript-pro"]
 summary: "A subagent that reasons about React components as state over time — diagnosing re-renders from profiler evidence, deciding where state lives, choosing the client/server boundary, and memoizing only when a measurement justifies it. Reach for it when fixing re-render storms or effect loops, designing component state, or adopting React Server Components."

@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["data-ml", "rag-retrieval"]
+audience: ["developers"]
 tags: ["vector-database", "rag", "embeddings", "comparison", "tools"]
 featured: true
 summary: "There's no single best vector database — choose by where you run (embedded, self-hosted server, or fully managed), whether you already run Postgres, your scale and filtering needs, and cost. pgvector wins when you already have Postgres; Pinecone for zero-ops managed; Qdrant/Weaviate/Milvus for open-source servers at scale; Chroma/LanceDB for embedded prototyping. Validate recall on your own data."

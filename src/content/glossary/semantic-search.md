@@ -3,6 +3,7 @@ term: "Semantic Search"
 description: "Semantic search retrieves results by meaning rather than keyword overlap — embedding queries and documents in one vector space and matching by similarity."
 date: 2026-06-11
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["search", "embeddings", "retrieval", "rag"]
 related: ["guide:hybrid-search-reranking", "glossary:embedding", "glossary:vector-database", "glossary:reranking", "glossary:rag"]
 faq:

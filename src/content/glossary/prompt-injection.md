@@ -3,6 +3,7 @@ term: "Prompt Injection"
 description: "Prompt injection is an attack where untrusted content carries instructions an LLM then follows — overriding its task, leaking data, or triggering tool calls."
 date: 2026-06-11
 topics: ["ai-safety-security"]
+audience: ["developers"]
 tags: ["security", "prompt-injection", "llm", "attacks"]
 related: ["guide:defending-prompt-injection", "guide:owasp-agentic-top-10", "agent:prompt-injection-auditor", "glossary:guardrails", "command:red-team-llm"]
 faq:

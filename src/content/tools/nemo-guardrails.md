@@ -12,6 +12,7 @@ sameAs: ["https://github.com/NVIDIA-NeMo/Guardrails", "https://docs.nvidia.com/n
 os: ["Linux", "macOS", "Windows"]
 color: "green"
 topics: ["ai-safety-security"]
+audience: ["developers"]
 tags: ["guardrails", "safety", "llm", "open-source"]
 featured: false
 related: ["skill:llm-guardrails-designer", "tool:llm-guard", "guide:defending-prompt-injection", "guide:owasp-agentic-top-10"]

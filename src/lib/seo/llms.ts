@@ -6,6 +6,7 @@ import {
 } from "@/lib/content";
 import { site, network } from "@/lib/site";
 import { toMarkdownFile, canonicalUrl } from "./artifact";
+import { audienceCollection } from "./collections";
 
 /**
  * /llms.txt + /llms-full.txt generators (the emerging llmstxt.org convention:
@@ -66,16 +67,33 @@ export function buildLlmsIndex(): string {
 }
 
 export function buildLlmsFull(): string {
-  const header = [
+  const head = [
     `# ${site.name} — Full Content`,
     "",
     `> ${site.description}`,
     "",
     `Generated from ${site.url}. Each section is one page's Markdown twin.`,
     "",
-    "---",
-    "",
-  ].join("\n");
+  ];
+
+  // The reading order per role. The full text below is unordered by design, so
+  // this is the only place the curation itself is expressed. Resolved through
+  // audienceCollection so it cannot drift from the /for/<role> pages.
+  const roleSections: string[] = [];
+  for (const a of audiences) {
+    const c = audienceCollection(a.slug);
+    if (!c?.startHere.length) continue;
+    roleSections.push(`### ${a.label}`, "", a.description, "");
+    c.startHere.forEach((i, n) =>
+      roleSections.push(`${n + 1}. [${i.title}](${canonicalUrl(i)}.md)`),
+    );
+    roleSections.push("");
+  }
+  if (roleSections.length) {
+    head.push("## By role", "", "Where each kind of reader should start.", "", ...roleSections);
+  }
+
+  const header = [...head, "---", ""].join("\n");
 
   const blocks: string[] = [];
   for (const def of contentTypeList) {

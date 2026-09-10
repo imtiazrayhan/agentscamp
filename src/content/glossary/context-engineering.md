@@ -3,6 +3,7 @@ term: "Context Engineering"
 description: "Context engineering is the discipline of curating exactly what enters an LLM's context window so it has the right information and nothing else."
 date: 2026-06-17
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["context", "prompting", "agents", "retrieval"]
 related: ["glossary:context-window", "glossary:rag", "glossary:llm-token", "glossary:extended-thinking"]
 faq:

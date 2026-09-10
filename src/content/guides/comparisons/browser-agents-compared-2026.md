@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["browser-agents", "comparison", "best-of", "automation"]
 featured: true
 summary: "Four postures cover browser automation with AI: Browser Use for autonomous task-in/result-out agents (the category's 98k-star breakout), Stagehand for engineers composing code with AI primitives (act/extract/observe), Skyvern for business workflows replacing RPA (CAPTCHA/2FA included), and Playwright MCP or Chrome DevTools MCP for giving an existing coding agent browser hands."

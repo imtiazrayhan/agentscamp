@@ -12,6 +12,7 @@ sameAs: ["https://github.com/vllm-project/vllm", "https://docs.vllm.ai"]
 os: ["Linux"]
 color: "red"
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["llm", "inference", "serving", "gpu", "open-source"]
 featured: false
 related: ["agent:llm-inference-engineer", "guide:self-host-vs-api-llm", "command:scaffold-vllm-config", "tool:ollama", "tool:lm-studio"]

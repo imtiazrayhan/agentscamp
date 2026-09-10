@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "purple"
 topics: ["llm-evals", "llm-app-dev"]
+audience: ["developers"]
 tags: ["llm-as-judge", "evaluation", "rubrics", "quality", "testing"]
 featured: true
 summary: "LLM-as-judge turns subjective output quality into scalable evaluation, but the judge is another fallible model. Trust comes from an anchored rubric, structured output, blinded and randomized inputs, human-labeled calibration data, agreement measurement, and repeated reliability checks. Use deterministic assertions first and reserve model judgment for criteria that genuinely require semantics."

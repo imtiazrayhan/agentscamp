@@ -3,6 +3,7 @@ term: "Token (LLM)"
 description: "A token is the unit LLMs read and write — a word fragment of roughly 3–4 characters in English. Models are priced, limited, and measured in tokens, not words."
 date: 2026-06-11
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["tokens", "tokenization", "llm", "pricing"]
 related: ["glossary:context-window", "glossary:inference", "glossary:prompt-caching", "guide:llm-cost-latency-engineering"]
 faq:

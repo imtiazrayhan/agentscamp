@@ -11,6 +11,7 @@ license: "MIT"
 sameAs: ["https://github.com/openai/openai-agents-python"]
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["agents", "framework", "openai", "open-source", "python"]
 featured: false
 alternativeTo: ["langgraph", "crewai", "autogen"]

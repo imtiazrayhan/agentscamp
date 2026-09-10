@@ -4,6 +4,7 @@ description: "How to test software that calls LLMs when outputs are non-determin
 author: "Imtiaz Rayhan"
 color: "green"
 topics: ["llm-evals", "review-qa"]
+audience: ["developers"]
 tags: ["testing", "evals", "llm-as-judge", "regression", "ci"]
 related: ["guide:write-llm-evals", "guide:best-llm-eval-tools-2026", "guide:production-tool-calling", "skill:prompt-regression-tester", "skill:agent-trajectory-evaluator"]
 featured: false

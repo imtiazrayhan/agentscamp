@@ -24,6 +24,14 @@ import type {
 const MIN_INDEXABLE = 2;
 
 /**
+ * Most items a role path shows per type. Role pages are curated entry points,
+ * not indexes — every group already links to the full listing. A no-op for the
+ * four hand-curated roles (largest group is 25); it exists so `developers`,
+ * which carries the whole engineering library, stays a readable page.
+ */
+const GROUP_CAP = 30;
+
+/**
  * Templated copy for the category / topic landing pages, so a new category needs
  * ZERO hand-written copy (it just appears). Optional per-collection overrides can
  * be added here later without touching the route files.
@@ -147,6 +155,8 @@ export function topicCollection(slug: string): Collection | null {
 export interface AudienceGroup {
   def: ContentTypeDef;
   items: ContentItem[];
+  /** Total before GROUP_CAP, so the heading count stays honest. */
+  total: number;
 }
 
 /**
@@ -167,17 +177,21 @@ export function audienceCollection(
   const opened = new Set(startHere.map((i) => i.href));
   const rest = getByAudience(slug).filter((i) => !opened.has(i.href));
   const groups: AudienceGroup[] = contentTypeList
-    .map((typeDef) => ({
-      def: typeDef,
-      items: rest
+    .map((typeDef) => {
+      const sorted = rest
         .filter((i) => i.type === typeDef.id)
         .sort(
           (a, b) =>
             Number(b.featured) - Number(a.featured) ||
             (b.date ?? "").localeCompare(a.date ?? "") ||
             a.title.localeCompare(b.title),
-        ),
-    }))
+        );
+      return {
+        def: typeDef,
+        items: sorted.slice(0, GROUP_CAP),
+        total: sorted.length,
+      };
+    })
     .filter((g) => g.items.length > 0);
   const items = [...startHere, ...groups.flatMap((g) => g.items)];
   if (!items.length) return null;

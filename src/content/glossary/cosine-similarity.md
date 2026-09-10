@@ -3,6 +3,7 @@ term: "Cosine Similarity"
 description: "Cosine similarity measures how alike two embeddings are by the angle between them — the standard relevance score behind semantic search and RAG retrieval."
 date: 2026-06-12
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["cosine-similarity", "embeddings", "vectors", "search"]
 related: ["glossary:embedding", "glossary:semantic-search", "glossary:vector-database", "glossary:embedding-dimension", "glossary:reranking"]
 faq:

@@ -7,6 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
 topics: ["ai-safety-security"]
+audience: ["developers"]
 related: ["skill:llm-guardrails-designer", "tool:llm-guard", "guide:defending-prompt-injection", "skill:secret-scanner"]
 featured: false
 summary: "Strips PII and secrets from prompts (and logs/traces) before they leave for an LLM provider: it detects emails, phones, names, IDs, and API keys and masks or tokenizes them — reversibly when the response needs the originals restored — so sensitive data isn't sent to a third party or captured in logs."

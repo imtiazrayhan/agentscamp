@@ -6,6 +6,7 @@ argument-hint: "[file or symbol]"
 title: "Explain Code"
 color: "purple"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 summary: "A slash command that explains what a file, function, class, or line range does in clear prose: it reads the actual source, traces purpose, inputs, outputs, control flow, and dependencies, then reports a short summary, an execution-order walkthrough, an inputs/outputs table, and edge-case gotchas — without modifying code."
 ---
 

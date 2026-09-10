@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["fine-tuning", "rag", "prompt-engineering", "distillation", "mlops"]
 featured: true
 summary: "Four techniques, different problems — so 'which is best' is the wrong question. Prompt engineering changes behavior through instructions (start here). RAG injects changing or private knowledge at query time. Fine-tuning bakes in consistent behavior or format, not fresh facts. Distillation shrinks a working pipeline for cost. They compose; the skill is matching the technique to the gap."

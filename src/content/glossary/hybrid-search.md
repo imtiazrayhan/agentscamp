@@ -3,6 +3,7 @@ term: "Hybrid Search"
 description: "Hybrid search runs keyword (BM25) and semantic (vector) retrieval together and merges the results — catching both exact terms and paraphrases."
 date: 2026-06-12
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["hybrid-search", "bm25", "retrieval", "rag"]
 related: ["guide:hybrid-search-reranking", "glossary:semantic-search", "glossary:reranking", "glossary:rag", "glossary:vector-database"]
 faq:

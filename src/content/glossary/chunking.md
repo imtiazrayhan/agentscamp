@@ -3,6 +3,7 @@ term: "Chunking"
 description: "Chunking splits documents into retrievable pieces before embedding — the RAG design decision that quietly determines retrieval quality."
 date: 2026-06-12
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["chunking", "rag", "ingestion", "retrieval"]
 related: ["glossary:rag", "glossary:embedding", "guide:how-rag-works", "skill:chunking-strategy-optimizer", "tool:chonkie", "guide:rag-debugging-checklist"]
 faq:

@@ -11,6 +11,7 @@ os: ["Web"]
 alternativeTo: ["qdrant", "weaviate", "pgvector"]
 color: "blue"
 topics: ["rag-retrieval", "data-ml"]
+audience: ["developers"]
 tags: ["vector-database", "rag", "managed", "serverless"]
 featured: false
 summary: "Pinecone is a fully managed, serverless vector database: you call an API to upsert and query embeddings and never run a node, tune an index, or page yourself at 3am. It supports metadata filtering, hybrid search, and integrated embedding/reranking — the zero-ops choice when engineering time is the scarce resource."

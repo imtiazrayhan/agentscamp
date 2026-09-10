@@ -6,6 +6,7 @@ color: "orange"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-03
 topics: ["llm-evals"]
+audience: ["developers"]
 related: ["guide:llm-observability-production", "agent:llm-evaluation-engineer", "tool:langfuse", "tool:arize-phoenix", "tool:langsmith", "guide:write-llm-evals"]
 featured: false
 summary: "Instruments LLM apps for production: full tracing of chains/agents, online evals on live traffic, and quality/cost/latency monitoring — so you can debug a bad answer down to the exact retrieval or tool call, and turn real failures into eval cases."

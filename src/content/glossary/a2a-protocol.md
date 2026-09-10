@@ -3,6 +3,7 @@ term: "A2A (Agent2Agent Protocol)"
 description: "A2A is an open protocol that lets AI agents discover each other's capabilities and delegate tasks across vendors, complementing MCP's tool connections."
 date: 2026-06-17
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["a2a", "interoperability", "agents", "protocol"]
 related: ["glossary:ai-agent", "glossary:agentic-ai", "glossary:computer-use"]
 faq:

@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["agents", "tool-calling", "function-calling", "reliability", "concepts"]
 featured: false
 summary: "Tool calling is a loop: the model proposes a call, your code runs it, and the result — success OR error — goes back to the model as an observation it reasons about. The reliability comes from the engineering around that loop: schemas the model can't misuse, errors returned (never swallowed), bounded retries, idempotent side effects, and human gates on irreversible actions."

@@ -141,11 +141,18 @@ export function getRelated(item: ContentItem, limit = 8): ContentItem[] {
     const sharedTags = candidate.item.tags.filter((t) =>
       item.tags.includes(t),
     ).length;
+    // Audience sits at tag weight, well below topics: `developers` covers most
+    // of the library, so at topic weight a generic engineering item would
+    // outrank a genuinely on-topic one everywhere.
+    const sharedAudience = candidate.item.audience.filter((a) =>
+      item.audience.includes(a),
+    ).length;
     return (
       (candidate.direct ? 100 : 0) +
       (candidate.reverse ? 40 : 0) +
       sharedTopics * 10 +
       sharedTags * 3 +
+      sharedAudience * 3 +
       (candidate.item.type !== item.type ? 2 : 0)
     );
   };

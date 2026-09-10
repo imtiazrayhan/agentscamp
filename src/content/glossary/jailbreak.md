@@ -3,6 +3,7 @@ term: "Jailbreak"
 description: "A jailbreak is a prompt crafted to bypass a model's safety training and policies — making it produce output it was trained to refuse."
 date: 2026-06-12
 topics: ["ai-safety-security"]
+audience: ["developers"]
 tags: ["jailbreak", "safety", "security", "attacks"]
 related: ["glossary:prompt-injection", "glossary:red-teaming", "glossary:guardrails", "glossary:rlhf", "glossary:constitutional-ai"]
 faq:

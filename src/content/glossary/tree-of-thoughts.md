@@ -3,6 +3,7 @@ term: "Tree of Thoughts"
 description: "Tree of Thoughts is a prompting method that explores multiple reasoning branches as a search tree, evaluating and backtracking among them."
 date: 2026-06-17
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["prompting", "reasoning", "search", "tree-of-thoughts"]
 related: ["glossary:chain-of-thought", "glossary:reasoning-model", "glossary:test-time-compute"]
 faq:

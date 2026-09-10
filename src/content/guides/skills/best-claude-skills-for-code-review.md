@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "purple"
 topics: ["workflow-prompting", "review-qa"]
+audience: ["developers"]
 tags: ["claude-skills", "code-review", "security", "pull-requests", "quality"]
 featured: true
 seoTitle: "9 Best Claude Skills for Code Review"

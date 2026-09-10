@@ -3,6 +3,7 @@ term: "Top-p (Nucleus Sampling)"
 description: "Top-p sampling restricts an LLM's next-token choices to the smallest set whose probabilities sum to p — cutting the long tail of unlikely tokens adaptively."
 date: 2026-06-11
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["top-p", "sampling", "llm", "parameters"]
 related: ["glossary:temperature", "glossary:llm-token", "glossary:structured-output"]
 faq:

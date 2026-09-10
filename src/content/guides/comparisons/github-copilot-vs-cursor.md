@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
+audience: ["developers"]
 tags: ["comparison", "github-copilot", "cursor", "versus"]
 featured: false
 summary: "The real choice is form factor. Copilot adds AI to the editors you already use — VS Code, JetBrains, Visual Studio, Neovim — with the lowest friction and the enterprise story (GitHub integration, policy, seats). Cursor asks you to switch editors and pays you back with the category's best inline-edit and completion experience plus deeper agent features. Friction vs ceiling."

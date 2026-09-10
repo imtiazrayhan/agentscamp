@@ -8,6 +8,7 @@ color: "cyan"
 title: "Model Router Designer"
 date: 2026-06-17
 topics: ["llm-app-dev"]
+audience: ["developers"]
 related: ["skill:hallucination-evaluator", "skill:integration-test-designer"]
 featured: false
 summary: "Serving every request with your strongest model overpays on the easy majority. This skill designs a router: segment traffic by difficulty, pick the cheapest routing signal that separates it, escalate hard cases via a validation check, and prove with an eval set that cost and latency dropped without quality."

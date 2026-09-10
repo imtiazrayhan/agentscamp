@@ -3,6 +3,7 @@ term: "Batch Inference"
 description: "Batch inference processes many LLM requests asynchronously instead of one-at-a-time interactively — typically at ~50% discount via provider batch APIs."
 date: 2026-06-12
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["batch", "inference", "cost", "throughput"]
 related: ["glossary:inference", "guide:llm-cost-latency-engineering", "glossary:prompt-caching", "glossary:synthetic-data"]
 faq:

@@ -3,6 +3,7 @@ term: "Agent Skills"
 description: "Agent Skills are reusable procedures packaged as folders with a SKILL.md file — loaded by an AI agent on demand when a task matches, now an open standard."
 date: 2026-07-18
 topics: ["ai-agents-systems", "workflow-prompting"]
+audience: ["developers"]
 tags: ["skills", "skill-md", "claude-code", "agent-skills", "open-standard"]
 related: ["guide:what-are-claude-skills", "guide:skill-md-reference", "guide:writing-your-first-skill", "guide:skills-vs-agents-vs-commands", "glossary:context-window", "glossary:system-prompt"]
 faq:

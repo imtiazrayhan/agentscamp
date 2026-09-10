@@ -6,6 +6,7 @@ date: 2026-06-03
 updated: 2026-09-01
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
+audience: ["developers"]
 tags: ["comparison", "ide", "agents", "cursor", "claude-code", "copilot", "windsurf"]
 featured: true
 summary: "Pick by form factor first: GitHub Copilot if you want AI inside the editor you already use, Cursor or Windsurf (now Devin Desktop) if you'll switch to an AI-first VS Code fork, and Claude Code if you want a terminal-native agent that lives in your repo. All four ship an agent mode — the real differences are where they run, how much autonomy they take, and how they price it."

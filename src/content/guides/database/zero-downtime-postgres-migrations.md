@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["data-ml"]
+audience: ["developers"]
 tags: ["postgres", "migrations", "database", "zero-downtime", "devops"]
 featured: true
 summary: "You can't take a breaking schema change to a live database in one step without risking downtime or a broken deploy. The expand-contract pattern decomposes every change into backward-compatible steps — expand the schema, backfill and dual-write, migrate reads, then contract — deployed across releases so old and new application code run side by side the whole time."

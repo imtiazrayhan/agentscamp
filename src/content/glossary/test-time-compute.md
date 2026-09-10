@@ -3,6 +3,7 @@ term: "Test-Time Compute"
 description: "Test-time compute is spending more computation at inference — longer reasoning, sampling, or search — to improve answers without retraining the model."
 date: 2026-06-17
 topics: ["data-ml"]
+audience: ["developers"]
 tags: ["inference", "scaling", "reasoning", "compute"]
 related: ["glossary:reasoning-model", "glossary:chain-of-thought", "glossary:extended-thinking"]
 faq:

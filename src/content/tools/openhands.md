@@ -13,6 +13,7 @@ os: ["Web", "macOS", "Linux", "Windows"]
 sameAs: ["https://github.com/All-Hands-AI/OpenHands", "https://www.openhands.dev"]
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["ai-agent", "coding-agent", "autonomous", "open-source", "sandbox"]
 featured: false
 alternativeTo: ["devin", "swe-agent"]

@@ -3,6 +3,7 @@ term: "KV Cache"
 description: "The KV cache stores each token's attention keys and values so an LLM doesn't recompute the whole context per new token — the memory that makes generation fast."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["kv-cache", "inference", "attention", "performance"]
 related: ["glossary:inference", "glossary:prompt-caching", "glossary:context-window", "tool:vllm", "glossary:speculative-decoding"]
 faq:

@@ -3,6 +3,7 @@ term: "LoRA (Low-Rank Adaptation)"
 description: "LoRA fine-tunes a model by training small low-rank adapter matrices instead of all weights — a fraction of the memory and cost, nearly full-tune quality."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["lora", "qlora", "fine-tuning", "peft"]
 related: ["glossary:fine-tuning", "glossary:quantization", "skill:qlora-finetune-runner", "tool:unsloth", "guide:finetune-dataset-prep"]
 faq:

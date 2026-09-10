@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["ai-agents-systems", "rag-retrieval"]
+audience: ["developers"]
 tags: ["comparison", "langchain", "llamaindex", "frameworks", "versus"]
 featured: false
 summary: "They're complements that compete at the edges. LangChain 1.0 narrowed to the agent loop — create_agent on the LangGraph runtime, middleware, the biggest integration ecosystem. LlamaIndex stayed data-first — ingestion, indexing, query engines, document agents. Agent-shaped problems lean LangChain; document-shaped problems lean LlamaIndex; plenty of stacks use both."

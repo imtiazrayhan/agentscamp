@@ -3,6 +3,7 @@ term: "Agent Memory"
 description: "Agent memory is how an AI agent retains information beyond its context window — working state during a task and persistent knowledge across sessions."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["memory", "agents", "state", "persistence"]
 related: ["guide:agent-memory-architecture", "guide:claude-code-memory-context", "glossary:context-window", "tool:mem0", "glossary:rag"]
 faq:

@@ -3,6 +3,7 @@ term: "Subagent"
 description: "A subagent is a specialist agent a primary agent delegates to — running in its own context window with its own prompt and tools, returning only a summary."
 date: 2026-06-11
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["subagents", "claude-code", "delegation", "agents"]
 related: ["guide:getting-started-with-agents", "guide:writing-a-custom-agent", "guide:multi-agent-orchestration", "agent:agent-architect", "glossary:context-window"]
 faq:

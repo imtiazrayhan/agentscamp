@@ -7,6 +7,7 @@ pricing: "freemium"
 category: "agent"
 color: "blue"
 topics: ["coding-languages", "workflow-prompting"]
+audience: ["developers"]
 tags: ["autonomous", "agent", "cloud"]
 featured: false
 related: ["tool:claude-code", "tool:goose", "tool:amp"]

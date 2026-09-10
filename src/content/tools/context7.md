@@ -10,6 +10,7 @@ license: "MIT"
 os: ["Web", "macOS", "Windows", "Linux"]
 color: "purple"
 topics: ["mcp"]
+audience: ["developers"]
 tags: ["mcp", "documentation", "context", "rag", "upstash"]
 featured: true
 sameAs:

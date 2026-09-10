@@ -11,6 +11,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/Unstructured-IO/unstructured", "https://docs.unstructured.io"]
 color: "cyan"
 topics: ["rag-retrieval", "data-ml"]
+audience: ["developers"]
 tags: ["rag", "document-processing", "etl", "preprocessing", "ocr"]
 featured: false
 alternativeTo: ["llamaparse", "reducto", "docling", "marker"]

@@ -12,6 +12,7 @@ sameAs: ["https://github.com/protectai/llm-guard", "https://protectai.com/llm-gu
 os: ["Linux", "macOS", "Windows"]
 color: "blue"
 topics: ["ai-safety-security"]
+audience: ["developers"]
 tags: ["guardrails", "security", "pii", "prompt-injection", "open-source"]
 featured: false
 related: ["tool:nemo-guardrails", "skill:llm-guardrails-designer", "skill:prompt-pii-redactor", "guide:defending-prompt-injection", "tool:promptfoo"]

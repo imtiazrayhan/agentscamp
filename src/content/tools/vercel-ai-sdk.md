@@ -11,6 +11,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/vercel/ai", "https://ai-sdk.dev/docs"]
 color: "cyan"
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["typescript", "streaming", "structured-output", "open-source", "react"]
 featured: false
 alternativeTo: ["litellm", "instructor"]

@@ -3,6 +3,7 @@ term: "DPO (Direct Preference Optimization)"
 description: "DPO aligns a model to preferences directly from chosen-vs-rejected pairs — no reward model, no RL loop — simpler and more stable than classic RLHF."
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["dpo", "alignment", "training", "post-training"]
 related: ["glossary:rlhf", "glossary:fine-tuning", "glossary:constitutional-ai", "guide:finetune-dataset-prep"]
 faq:

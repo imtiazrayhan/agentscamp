@@ -14,6 +14,7 @@ sameAs:
   - "https://google.github.io/adk-docs/"
 color: "yellow"
 topics: ["ai-agents-systems", "llm-app-dev"]
+audience: ["developers"]
 tags: ["agents", "python", "java", "google", "multi-agent", "open-source"]
 featured: false
 alternativeTo: ["langgraph", "crewai", "openai-agents-sdk", "autogen", "pydantic-ai"]

@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "blue"
 topics: ["devops-infra", "data-ml"]
+audience: ["developers"]
 tags: ["postgres", "connection-pooling", "pgbouncer", "serverless", "database"]
 featured: true
 summary: "A Postgres pool is a concurrency limit, not a cache to maximize. Size the whole fleet against the database's usable connection budget, reserve headroom for deploys and operations, set bounded acquire, idle, and lifetime behavior, and measure pool wait separately from query time. Serverless and large fleets usually need a pooler that multiplexes many clients onto fewer database backends."

@@ -11,6 +11,7 @@ license: "FSL-1.1-Apache-2.0"
 os: ["Web", "macOS", "Windows", "Linux"]
 color: "red"
 topics: ["mcp"]
+audience: ["developers"]
 tags: ["mcp", "sentry", "debugging", "observability", "errors"]
 featured: false
 sameAs:

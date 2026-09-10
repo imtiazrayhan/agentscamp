@@ -13,6 +13,7 @@ sameAs:
   - "https://github.com/TabbyML/tabby"
   - "https://tabby.tabbyml.com/docs/welcome/"
 topics: ["coding-languages"]
+audience: ["developers"]
 tags: ["self-hosted", "code-completion", "open-source", "copilot-alternative", "on-premises"]
 color: "purple"
 date: 2026-06-17

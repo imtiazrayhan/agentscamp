@@ -8,6 +8,7 @@ pricing: "freemium"
 category: "extension"
 color: "cyan"
 topics: ["coding-languages", "ai-agents-systems"]
+audience: ["developers"]
 tags: ["coding", "ide", "context", "agents", "autocomplete"]
 featured: false
 sameAs:

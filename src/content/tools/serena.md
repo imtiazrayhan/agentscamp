@@ -11,6 +11,7 @@ license: "MIT"
 os: ["macOS", "Windows", "Linux"]
 color: "cyan"
 topics: ["mcp"]
+audience: ["developers"]
 tags: ["mcp", "lsp", "refactoring", "code-intelligence", "symbols"]
 featured: false
 sameAs:

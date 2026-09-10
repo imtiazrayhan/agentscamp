@@ -13,6 +13,7 @@ sameAs:
   - "https://github.com/Factory-AI"
 color: "purple"
 topics: ["ai-agents-systems", "coding-languages"]
+audience: ["developers"]
 tags: ["agents", "coding", "droids", "cli", "automation"]
 featured: false
 alternativeTo: ["devin", "claude-code", "codex-cli", "cursor", "amp"]

@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["review-qa"]
+audience: ["developers"]
 tags: ["code-review", "workflow", "ai-review", "quality"]
 featured: false
 summary: "Review is now a stack, not a person: the authoring agent self-reviews against a checklist, an AI reviewer (bot or fresh subagent) sweeps the diff with repo context, tests gate behavior in CI, and the human pass concentrates on intent, security, design, and scope. Each layer catches what the previous can't; the failure mode is layers that all check the same thing."

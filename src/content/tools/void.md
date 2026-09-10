@@ -20,6 +20,7 @@ sameAs:
   - "https://github.com/voideditor"
 topics:
   - coding-languages
+audience: ["developers"]
 tags:
   - ai-editor
   - vscode-fork

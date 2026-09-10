@@ -11,6 +11,7 @@ license: "MIT"
 sameAs: ["https://github.com/crewAIInc/crewAI", "https://docs.crewai.com"]
 color: "red"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["agents", "framework", "multi-agent", "open-source", "python"]
 featured: false
 alternativeTo: ["langgraph", "autogen", "openai-agents-sdk"]

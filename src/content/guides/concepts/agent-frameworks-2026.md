@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["agents", "frameworks", "comparison", "langgraph", "crewai"]
 featured: true
 summary: "Pick an agent framework by how much control you need. LangGraph gives explicit, durable state graphs for production; CrewAI and AutoGen offer fast high-level multi-agent abstractions (roles vs. conversations); the OpenAI Agents SDK is a minimal, standard agent loop; the Claude Agent SDK is the batteries-included path for Claude. Many start high-level and drop to LangGraph when they need control."

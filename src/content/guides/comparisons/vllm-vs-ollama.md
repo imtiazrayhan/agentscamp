@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["comparison", "vllm", "ollama", "inference", "serving", "versus"]
 featured: false
 summary: "They answer different questions. Ollama answers 'how do I run a model on this machine?' — one command, GGUF quantizations, laptop-friendly, perfect for development and single-user loads. vLLM answers 'how do I serve this model to many users per GPU dollar?' — PagedAttention, continuous batching, production throughput on server GPUs. Develop on Ollama; serve real concurrency on vLLM."

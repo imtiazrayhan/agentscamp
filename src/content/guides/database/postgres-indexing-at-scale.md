@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["data-ml"]
+audience: ["developers"]
 tags: ["postgres", "indexing", "database", "performance"]
 featured: false
 summary: "The right Postgres index depends on the query and the data shape: B-Tree for equality and ranges, GIN for multi-value columns (jsonb, arrays, full-text), BRIN for huge naturally-ordered tables. But indexes aren't free — each one is updated on every write, consumes storage, and can bloat. Index for the queries you actually run, then find and drop the ones nothing uses."

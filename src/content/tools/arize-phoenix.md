@@ -11,6 +11,7 @@ repo: "https://github.com/Arize-ai/phoenix"
 sameAs: ["https://github.com/Arize-ai/phoenix", "https://docs.arize.com/phoenix"]
 color: "orange"
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["observability", "tracing", "evals", "open-source", "opentelemetry"]
 featured: false
 alternativeTo: ["langfuse", "langsmith"]

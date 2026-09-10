@@ -11,6 +11,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/mastra-ai/mastra", "https://mastra.ai/docs", "https://x.com/mastra_ai"]
 color: "blue"
 topics: ["ai-agents-systems", "llm-app-dev"]
+audience: ["developers"]
 tags: ["typescript", "agents", "workflows", "rag", "open-source"]
 featured: false
 alternativeTo: ["langgraph", "crewai", "vercel-ai-sdk", "openai-agents-sdk", "langchain"]

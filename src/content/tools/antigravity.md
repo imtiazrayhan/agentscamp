@@ -10,6 +10,7 @@ category: "ide"
 os: ["macOS", "Windows", "Linux"]
 color: "blue"
 topics: ["coding-languages"]
+audience: ["developers"]
 tags: ["ide", "agent", "multi-agent", "google", "browser-automation"]
 featured: false
 alternativeTo: ["gemini-cli", "cursor", "windsurf"]

@@ -8,6 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-08-04
 topics: ["coding-languages", "review-qa"]
+audience: ["developers"]
 related: ["guide:best-claude-skills-for-frontend-development", "skill:accessibility-regression-auditor", "skill:test-scaffolder", "skill:architecture-diagram-generator", "agent:frontend-developer", "agent:mobile-developer"]
 featured: true
 summary: "Audits internationalization foundations before translation: message extraction and context, plural and select rules, locale-aware dates and numbers, Unicode input, text expansion, bidirectional layout, sorting and search, localized assets and metadata, fallback behavior, and pseudolocale coverage. It reports concrete blockers by user journey."

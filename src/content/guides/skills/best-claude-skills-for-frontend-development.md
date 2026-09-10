@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["coding-languages", "review-qa"]
+audience: ["developers"]
 tags: ["claude-skills", "frontend", "accessibility", "react", "web-performance", "localization"]
 featured: true
 seoTitle: "9 Best Claude Skills for Frontend Development"

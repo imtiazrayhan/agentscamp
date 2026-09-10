@@ -3,6 +3,7 @@ term: "Attention Mechanism"
 description: "Attention lets a model weigh how relevant every other token is to each token, building a context-aware representation as a weighted blend of their values."
 date: 2026-06-17
 topics: ["data-ml"]
+audience: ["developers"]
 tags: ["attention", "self-attention", "transformer", "deep-learning", "neural-networks"]
 related: ["glossary:context-window", "glossary:kv-cache", "glossary:llm-token", "glossary:tokenization", "glossary:embedding"]
 faq:

@@ -6,6 +6,7 @@ model: "sonnet"
 color: "orange"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["coding-languages"]
+audience: ["developers"]
 featured: true
 related: ["agent:golang-pro", "agent:performance-engineer", "agent:system-architect"]
 summary: "A subagent for idiomatic Rust — ownership and lifetimes, Result-based error handling, traits and generics, async under tokio, and unsafe fenced with documented invariants — verified under clippy -D warnings. Reach for it when fighting borrow-checker errors, designing a trait API, removing clone()-spam, or making async code compile cleanly with Send bounds."

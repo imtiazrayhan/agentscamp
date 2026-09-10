@@ -5,6 +5,7 @@ model: sonnet
 color: orange
 date: 2026-06-12
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["browser-agents", "automation", "computer-use", "reliability"]
 related: ["guide:browser-agents-compared-2026", "guide:how-computer-use-agents-work", "tool:browser-use", "tool:stagehand", "tool:skyvern", "tool:playwright-mcp"]
 featured: false

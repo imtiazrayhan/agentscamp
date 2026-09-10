@@ -3,6 +3,7 @@ term: "Speculative Decoding"
 description: "Speculative decoding speeds up generation: a small draft model proposes tokens, the large model verifies them in one parallel pass — same output, fewer steps."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["speculative-decoding", "inference", "performance", "serving"]
 related: ["glossary:inference", "glossary:kv-cache", "glossary:quantization", "tool:vllm", "agent:llm-inference-engineer"]
 faq:

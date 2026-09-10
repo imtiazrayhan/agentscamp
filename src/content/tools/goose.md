@@ -8,6 +8,7 @@ category: "agent"
 repo: "https://github.com/aaif-goose/goose"
 color: "cyan"
 topics: ["workflow-prompting", "coding-languages"]
+audience: ["developers"]
 tags: ["agent", "open-source", "mcp"]
 related: ["tool:claude-code", "tool:aider", "tool:codex-cli"]
 featured: false

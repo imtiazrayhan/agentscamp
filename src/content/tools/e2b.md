@@ -10,6 +10,7 @@ license: "Apache-2.0"
 os: ["Web"]
 color: "orange"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["sandbox", "code-execution", "agents", "firecracker"]
 featured: false
 alternativeTo: ["daytona", "modal", "vercel-sandbox"]

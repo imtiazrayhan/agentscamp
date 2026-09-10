@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["listicle", "rag", "frameworks", "llamaindex", "langchain"]
 featured: false
 summary: "Start with LlamaIndex if retrieval is the hard part — it takes indexing and querying most seriously. Use LangChain when RAG is one piece of broader orchestration, Haystack for explicit production pipelines, and DSPy when you want to optimize the pipeline programmatically rather than hand-tune prompts."

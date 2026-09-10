@@ -11,6 +11,7 @@ license: "Apache-2.0"
 os: ["Web"]
 color: "orange"
 topics: ["mcp"]
+audience: ["developers"]
 tags: ["mcp", "cloudflare", "workers", "devops", "infrastructure"]
 featured: false
 sameAs:

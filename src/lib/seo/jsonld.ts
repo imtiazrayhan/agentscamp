@@ -185,6 +185,17 @@ function primaryEntity(item: ContentItem, path: string): Node {
     ...(item.summary ? { abstract: item.summary } : {}),
     mainEntityOfPage: { "@id": pageId(path) },
     ...(item.keywords.length ? { keywords: item.keywords.join(", ") } : {}),
+    // schema.org `audience` is a CreativeWork property, so declaring it here
+    // covers TechArticle, SoftwareApplication, DefinedTerm and SoftwareSourceCode
+    // at once. Same strings as the visible role pills, keeping render parity.
+    ...(item.audience.length
+      ? {
+          audience: item.audience.map((a) => ({
+            "@type": "Audience",
+            audienceType: titleCaseLabel(a),
+          })),
+        }
+      : {}),
   };
 
   if (item.type === "guide") {

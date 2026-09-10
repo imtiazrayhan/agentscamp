@@ -13,6 +13,7 @@ os: ["Linux", "macOS", "Windows"]
 alternativeTo: ["lancedb", "qdrant", "pgvector"]
 color: "orange"
 topics: ["rag-retrieval", "data-ml"]
+audience: ["developers"]
 tags: ["vector-database", "rag", "python", "open-source"]
 featured: false
 summary: "Chroma is an open-source, Python-first vector database that runs embedded in your process: pip install, create a collection, add documents, and query — often without wiring an embedding model yourself. The default for prototypes and notebooks, with a client-server mode and Chroma Cloud when you outgrow embedded."

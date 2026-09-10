@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["memory", "agents", "comparison", "mem0", "zep", "letta"]
 featured: false
 summary: "Pick by where memory should live. Mem0 is the drop-in layer: add/search APIs that extract and persist facts for any agent — easiest adoption. Zep is the structured platform: temporal knowledge graphs (open-source Graphiti underneath) tracking how facts change, built for enterprise context. Letta puts memory inside the agent itself — MemGPT-lineage self-editing memory."

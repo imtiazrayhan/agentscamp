@@ -3,6 +3,7 @@ term: "Human-in-the-Loop (HITL)"
 description: "Human-in-the-loop design inserts human judgment at decisive points in an AI workflow — approving actions, resolving ambiguity, owning the irreversible steps."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["hitl", "agents", "safety", "workflow"]
 related: ["skill:human-in-the-loop-gate", "command:add-human-approval", "glossary:agentic-ai", "guide:claude-code-settings-permissions", "agent:agent-reliability-reviewer"]
 faq:

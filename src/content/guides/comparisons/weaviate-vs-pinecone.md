@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["comparison", "versus", "weaviate", "pinecone", "vector-database"]
 featured: false
 summary: "Operating model decides it. Pinecone is fully managed serverless: zero ops, usage-metered, vector search as a utility. Weaviate is BSD-3 open source with built-in hybrid search and modules — self-host anywhere or use Weaviate Cloud, no lock-in. Teams that want a database to own pick Weaviate; teams that want search without infra pick Pinecone."

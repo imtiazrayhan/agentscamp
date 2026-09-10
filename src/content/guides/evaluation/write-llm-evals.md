@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["evals", "testing", "llm-as-judge", "ci", "concepts"]
 featured: true
 summary: "Evals turn 'this feels better' into a number. The method is the same whatever the feature: build a frozen dataset of real cases, pick the two or three metrics it's graded on, record a baseline, score every change offline, validate any LLM-as-judge against human labels, gate CI on the result, then monitor live traffic. Without a fixed eval set you are shipping on vibes."

@@ -8,6 +8,7 @@ category: "review"
 os: ["Web"]
 color: "green"
 topics: ["review-qa"]
+audience: ["developers"]
 tags: ["code-review", "ai-review", "pull-requests", "ci"]
 featured: false
 alternativeTo: ["coderabbit"]

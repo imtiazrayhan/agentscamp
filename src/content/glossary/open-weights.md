@@ -3,6 +3,7 @@ term: "Open Weights"
 description: "An open-weights model publishes its parameters for anyone to download and run — unlike API-only models — with licenses from permissive to restricted."
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["open-weights", "open-source", "models", "licensing"]
 related: ["guide:self-host-vs-api-llm", "glossary:quantization", "glossary:frontier-model", "tool:llama-cpp", "glossary:fine-tuning"]
 faq:

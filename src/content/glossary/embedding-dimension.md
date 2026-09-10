@@ -3,6 +3,7 @@ term: "Embedding Dimension"
 description: "Embedding dimension is the length of an embedding vector — how many numbers represent each text — trading capacity against storage and search cost."
 date: 2026-06-12
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["embeddings", "dimensions", "vectors", "rag"]
 related: ["glossary:embedding", "glossary:vector-database", "glossary:cosine-similarity", "guide:choosing-embeddings-2026", "glossary:quantization"]
 faq:

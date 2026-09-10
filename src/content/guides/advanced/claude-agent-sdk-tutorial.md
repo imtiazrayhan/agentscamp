@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["claude-agent-sdk", "claude-code", "agents", "sdk", "typescript", "python"]
 featured: true
 summary: "The Claude Agent SDK is Claude Code as a library: npm install @anthropic-ai/claude-agent-sdk or pip install claude-agent-sdk, call query() with a prompt and options, and you get the full agent loop — file tools, command execution, permissions, MCP, subagents, hooks — streaming back as messages. It's the production path from 'Claude Code works for this' to 'this is a product.'"

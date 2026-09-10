@@ -3,6 +3,7 @@ term: "LLM-as-Judge"
 description: "LLM-as-judge uses a language model to score AI outputs against a rubric — evaluating quality at scale where exact-match metrics fail and humans don't scale."
 date: 2026-06-11
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["evals", "llm-as-judge", "evaluation", "quality"]
 related: ["guide:llm-as-judge-guide", "guide:write-llm-evals", "skill:llm-as-judge-scorer", "guide:best-llm-eval-tools-2026", "glossary:hallucination", "agent:llm-evaluation-engineer"]
 faq:

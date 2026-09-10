@@ -8,6 +8,7 @@ pricing: "open-source"
 category: "terminal"
 color: "blue"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["terminal", "agent"]
 featured: false
 related: ["tool:claude-code", "tool:codex-cli", "tool:wave-terminal", "guide:ai-coding-agents-cli-2026"]

@@ -3,6 +3,7 @@ term: "Constitutional AI"
 description: "Constitutional AI trains models against written principles — the model critiques and revises its own outputs by them, reducing reliance on human labels."
 date: 2026-06-12
 topics: ["ai-safety-security"]
+audience: ["developers"]
 tags: ["constitutional-ai", "alignment", "anthropic", "safety"]
 related: ["glossary:rlhf", "glossary:dpo", "glossary:guardrails", "glossary:jailbreak", "glossary:frontier-model"]
 faq:

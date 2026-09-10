@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-05-20
 color: "green"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 featured: true
 related: ["guide:prompting-techniques-2026", "guide:context-engineering", "guide:effective-tool-use", "command:breakdown-task"]
 summary: "Five patterns make coding agents reliable: chain big asks into verifiable steps, pin conventions with few-shot examples instead of adjectives, manage context (point precisely, persist durable facts in CLAUDE.md, offload noise to subagents), verify-act-reverify with tools, and demand structured output. They compose — and each fixes a specific failure mode."

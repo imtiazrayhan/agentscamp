@@ -3,6 +3,7 @@ term: "Tracing (LLM)"
 description: "LLM tracing records every step of a model-driven request — prompts, tool calls, retrievals, tokens, latency — so multi-step behavior is debuggable."
 date: 2026-06-12
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["tracing", "observability", "debugging", "llmops"]
 related: ["guide:llm-observability-production", "guide:langfuse-vs-langsmith", "agent:llm-observability-engineer", "guide:debugging-ai-agents", "guide:write-llm-evals", "guide:llm-cost-latency-engineering"]
 faq:

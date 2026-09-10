@@ -3,6 +3,7 @@ term: "Tokenization"
 description: "Tokenization splits text into tokens — the sub-word units a model reads and writes — and maps each to an integer ID the model processes."
 date: 2026-06-17
 topics: ["data-ml"]
+audience: ["developers"]
 tags: ["tokenization", "tokens", "bpe", "preprocessing", "llm"]
 related: ["glossary:llm-token", "glossary:context-window", "glossary:embedding", "glossary:inference", "guide:llm-api-pricing-2026"]
 faq:

@@ -6,6 +6,7 @@ model: "opus"
 color: "yellow"
 tools: "Read, Grep, Glob"
 topics: ["ai-agents-systems", "workflow-prompting"]
+audience: ["developers"]
 featured: false
 related: ["agent:prompt-engineer", "agent:llm-evaluation-engineer", "skill:agent-memory-designer"]
 summary: "Engineers the context window of LLM agents: what to include vs exclude, retrieval-into-context vs always-on memory, memory-file design (e.g. CLAUDE.md), summarization/compaction as history grows, and token-budget allocation across system prompt, memory, retrieved docs, tool results, and history. Reach for it when an agent forgets, drifts as the chat grows, or wastes tokens."

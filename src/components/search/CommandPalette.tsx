@@ -4,9 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Command } from "cmdk";
 import * as Dialog from "@radix-ui/react-dialog";
-import { CornerDownLeft } from "lucide-react";
+import { Compass, CornerDownLeft } from "lucide-react";
 import { useSearch } from "./useSearch";
-import { contentTypeList } from "@/lib/content/registry";
+import { audiences, contentTypeList } from "@/lib/content/registry";
 import type { SearchRecord } from "@/lib/content/types";
 
 function Hint({ keys, label }: { keys: string; label: string }) {
@@ -41,6 +41,15 @@ export function CommandPalette({
   const byType = contentTypeList
     .map((def) => ({ def, items: results.filter((r) => r.type === def.id) }))
     .filter((g) => g.items.length > 0);
+
+  // Role paths are five registry entries, not indexed records, so they match
+  // instantly — before the search index has even finished loading.
+  const q = query.trim().toLowerCase();
+  const roleHits = q
+    ? audiences.filter(
+        (a) => a.slug.includes(q) || a.label.toLowerCase().includes(q),
+      )
+    : [];
 
   return (
     <Command.Dialog
@@ -80,7 +89,42 @@ export function CommandPalette({
           </div>
         )}
 
-        {query && results.length === 0 && (
+        {roleHits.length > 0 && (
+          <Command.Group
+            heading={
+              <>
+                <Compass className="size-3.5 text-primary/70" aria-hidden />
+                <span>Start here</span>
+              </>
+            }
+            className="mb-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:gap-2 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground"
+          >
+            {roleHits.map((a) => (
+              <Command.Item
+                key={a.slug}
+                value={`/for/${a.slug}`}
+                onSelect={() => go(`/for/${a.slug}`)}
+                className="group flex cursor-pointer items-center gap-3 rounded-md px-2 py-2 text-sm text-foreground data-[selected=true]:bg-secondary"
+              >
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-md border border-border bg-muted text-primary transition-colors group-data-[selected=true]:border-primary/40">
+                  <Compass className="size-4" aria-hidden />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate font-medium">{a.label}</span>
+                  <span className="block truncate text-xs text-muted-foreground">
+                    {a.description}
+                  </span>
+                </span>
+                <CornerDownLeft
+                  className="size-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-data-[selected=true]:opacity-100"
+                  aria-hidden
+                />
+              </Command.Item>
+            ))}
+          </Command.Group>
+        )}
+
+        {query && results.length === 0 && roleHits.length === 0 && (
           <Command.Empty className="px-3 py-12 text-center font-mono text-sm text-muted-foreground">
             <span className="text-primary">{">"}</span> no matches for “{query}”
           </Command.Empty>
@@ -135,7 +179,7 @@ export function CommandPalette({
           <span className="text-primary">$</span>
           <span>
             {query
-              ? `${results.length} result${results.length === 1 ? "" : "s"}`
+              ? `${results.length + roleHits.length} result${results.length + roleHits.length === 1 ? "" : "s"}`
               : "agentscamp/search"}
           </span>
         </span>

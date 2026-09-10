@@ -4,6 +4,7 @@ description: "How to run vector search over millions to billions of vectors with
 author: "Imtiaz Rayhan"
 color: "green"
 topics: ["rag-retrieval", "data-ml"]
+audience: ["developers"]
 tags: ["vector-search", "ann", "hnsw", "quantization", "sharding", "rag"]
 related:
   - "guide:best-vector-database-2026"

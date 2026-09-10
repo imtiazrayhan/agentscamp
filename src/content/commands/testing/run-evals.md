@@ -7,6 +7,7 @@ title: "Run Evals"
 color: "blue"
 date: 2026-06-03
 topics: ["llm-evals"]
+audience: ["developers"]
 related: ["guide:write-llm-evals", "tool:deepeval", "tool:promptfoo", "agent:llm-evaluation-engineer"]
 featured: false
 summary: "Runs the LLM eval suite — not the unit tests — and reports each metric against its threshold and baseline, so a prompt or model change is shipped on numbers, not vibes. Surfaces regressions as a clear pass/fail before merge."

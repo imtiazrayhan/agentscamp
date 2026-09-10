@@ -12,6 +12,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/qdrant/qdrant", "https://qdrant.tech/documentation/"]
 color: "red"
 topics: ["rag-retrieval", "data-ml"]
+audience: ["developers"]
 tags: ["vector-database", "rag", "rust", "open-source"]
 featured: false
 alternativeTo: ["pinecone", "weaviate", "milvus", "chroma", "pgvector"]

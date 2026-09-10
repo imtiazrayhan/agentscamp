@@ -3,6 +3,7 @@ term: "Prompt Template"
 description: "A prompt template is a parameterized prompt — fixed instructions with variable slots — turning prompts from strings into versioned, testable components."
 date: 2026-06-12
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["prompts", "templates", "llmops", "engineering"]
 related: ["glossary:system-prompt", "guide:prompt-patterns", "glossary:few-shot-prompting", "guide:write-llm-evals", "guide:langfuse-vs-langsmith"]
 faq:

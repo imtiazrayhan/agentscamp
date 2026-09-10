@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["local-llm", "best-of", "comparison", "self-hosting"]
 featured: true
 summary: "Four tools cover local LLMs by job, all on the same GGUF/llama.cpp foundation: Ollama is the developer default (headless server, OpenAI-compatible API every tool targets), LM Studio the polished proprietary desktop app, Jan its open-source equivalent (Apache-2.0, local API on :1337, MCP), and llama.cpp the engine itself for maximum control. Past hobby scale, vLLM is the serving answer."

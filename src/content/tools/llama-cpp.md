@@ -10,6 +10,7 @@ license: "MIT"
 os: ["macOS", "Windows", "Linux"]
 color: "yellow"
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["local-llm", "inference", "gguf", "quantization", "cpp"]
 featured: false
 alternativeTo: ["ollama", "vllm", "lm-studio"]

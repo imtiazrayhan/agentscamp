@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["comparison", "ollama", "lm-studio", "local-llm", "versus"]
 featured: false
 summary: "Interface decides it. Ollama is the developer's local-model server: CLI-first, scriptable, an OpenAI-compatible API your code and agents target, open source. LM Studio is the explorer's desktop app: GUI model discovery, chat, parameter tinkering — friendlier for hands-on use, freemium and closed-source, with its own local server when you need one. Build against Ollama; browse with LM Studio."

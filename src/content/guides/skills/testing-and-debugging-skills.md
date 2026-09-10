@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "red"
 topics: ["workflow-prompting", "review-qa"]
+audience: ["developers"]
 tags: ["claude-code", "skills", "debugging", "testing", "troubleshooting"]
 featured: false
 summary: "A skill firing means Claude found it, not that it worked. Test two things separately: does it trigger on the right prompts and skip the wrong ones, and is the output correct when it does. Most failures trace to the description (never fires, over-fires) or the body (does the wrong thing). Debug with fresh sessions and baseline comparison, not the session where you wrote it."

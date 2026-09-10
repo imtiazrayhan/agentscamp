@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["rag", "long-context", "context-window", "retrieval"]
 featured: false
 summary: "Long context raised the bar for needing RAG, not removed it. Stuffing works when the corpus is small, stable, and re-read whole; retrieval wins on cost (you pay per token, every call), latency, freshness, attention quality at depth, and access control. The 2026 pattern is both: retrieve a generous candidate set, let a big window hold it comfortably."

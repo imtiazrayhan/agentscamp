@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["comparison", "litellm", "openrouter", "gateway", "versus"]
 featured: false
 summary: "Same promise — call 100+ models through one OpenAI-format API — opposite architectures. LiteLLM is software you run: an open-source SDK/proxy using your own provider keys, with routing, budgets, and full control inside your infra. OpenRouter is a service you call: one key, one bill, instant access to the whole catalog, marketplace conveniences for a small markup."

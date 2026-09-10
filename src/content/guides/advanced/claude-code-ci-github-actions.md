@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["claude-code", "ci", "github-actions", "headless", "automation"]
 featured: false
 summary: "Claude Code runs headless with claude -p — script it like any CLI, get machine-readable results with --output-format json or --json-schema, and scope it with --allowedTools and --permission-mode. In GitHub Actions, claude /install-github-app wires up anthropics/claude-code-action@v1, which answers @claude mentions or runs prompts on any workflow trigger."

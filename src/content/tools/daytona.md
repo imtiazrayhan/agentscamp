@@ -10,6 +10,7 @@ license: "AGPL-3.0"
 os: ["Web"]
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["sandbox", "code-execution", "agents", "infrastructure"]
 featured: false
 alternativeTo: ["e2b", "modal", "vercel-sandbox"]

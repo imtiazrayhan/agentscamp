@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["comparison", "pgvector", "pinecone", "postgres", "vector-database", "versus"]
 featured: false
 summary: "The default is sneakily simple: if you already run Postgres and your corpus is small-to-mid (roughly up to the single-digit millions of vectors), pgvector is the pragmatic answer — one database, real joins, transactional consistency, no new vendor. Pinecone earns its place when vector search is the product's core at scale, or when zero-ops matters more than consolidation."

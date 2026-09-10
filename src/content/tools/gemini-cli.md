@@ -9,6 +9,7 @@ category: "cli"
 repo: "https://github.com/google-gemini/gemini-cli"
 color: "blue"
 topics: ["coding-languages"]
+audience: ["developers"]
 tags: ["cli", "agent", "terminal"]
 related: ["tool:claude-code", "tool:codex-cli", "tool:aider", "tool:antigravity", "tool:opencode"]
 featured: false

@@ -10,6 +10,7 @@ license: "MIT"
 os: ["macOS", "Windows", "Linux"]
 color: "green"
 topics: ["mlops-ai-infra", "multimodal-ai"]
+audience: ["developers"]
 tags: ["stt", "speech-to-text", "open-source", "local", "transcription"]
 featured: false
 alternativeTo: ["assemblyai", "deepgram"]

@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "green"
 topics: ["review-qa", "workflow-prompting"]
+audience: ["developers"]
 tags: ["claude-skills", "testing", "regression-tests", "quality-assurance", "test-automation"]
 featured: true
 seoTitle: "9 Best Claude Skills for Software Testing"

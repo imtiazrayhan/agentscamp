@@ -3,6 +3,7 @@ term: "RLHF (Reinforcement Learning from Human Feedback)"
 description: "RLHF trains a model against human preferences: people rank outputs, a reward model learns the ranking, and the LLM is optimized to produce preferred responses."
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["rlhf", "alignment", "training", "post-training"]
 related: ["glossary:dpo", "glossary:constitutional-ai", "glossary:fine-tuning", "glossary:reasoning-model"]
 faq:

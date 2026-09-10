@@ -6,6 +6,7 @@ model: "sonnet"
 color: "purple"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 topics: ["coding-languages"]
+audience: ["developers"]
 related: ["agent:backend-developer", "agent:api-architect", "agent:database-architect"]
 summary: "A subagent that turns legacy, stringly-typed PHP into modern, statically-analyzable code — strict_types, typed and readonly properties, enums and match, constructor promotion, PSR-4 autoloading, and prepared-statement data access — verified with PHPStan/Psalm and the test suite. Reach for it when modernizing old PHP, fixing an Eloquent/Doctrine N+1, or hardening SQL against injection."
 ---

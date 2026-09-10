@@ -9,6 +9,7 @@ category: "evaluation"
 sameAs: ["https://www.braintrust.dev/docs"]
 color: "pink"
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["evals", "observability", "prompt-engineering", "platform"]
 featured: false
 alternativeTo: ["langsmith", "langfuse"]

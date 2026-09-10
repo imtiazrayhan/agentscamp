@@ -8,6 +8,7 @@ pricing: "enterprise"
 category: "extension"
 color: "purple"
 topics: ["coding-languages"]
+audience: ["developers"]
 tags: ["extension", "assistant", "codebase-context"]
 featured: false
 related: ["tool:amp", "tool:continue", "tool:tabnine"]

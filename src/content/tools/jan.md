@@ -10,6 +10,7 @@ license: "Apache-2.0"
 os: ["macOS", "Windows", "Linux"]
 color: "cyan"
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["local-llm", "desktop", "privacy", "open-source"]
 featured: false
 alternativeTo: ["lm-studio", "ollama"]

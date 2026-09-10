@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "red"
 topics: ["ai-safety-security", "review-qa"]
+audience: ["developers"]
 tags: ["claude-skills", "security", "privacy", "application-security", "llm-security"]
 featured: true
 seoTitle: "10 Best Claude Skills for Security Work"

@@ -5,6 +5,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Create Subagent"
 color: "purple"
 topics: ["workflow-prompting", "ai-agents-systems"]
+audience: ["developers"]
 related: ["command:create-skill", "command:create-slash-command", "skill:agent-memory-designer"]
 featured: false
 date: 2026-06-17

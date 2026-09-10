@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "green"
 topics: ["llm-app-dev", "mlops-ai-infra"]
+audience: ["developers"]
 tags: ["model-routing", "llm", "cost", "latency", "reliability"]
 featured: true
 summary: "Production model routing sends each request to the cheapest model that can satisfy its requirements, then escalates uncertain or invalid results. A safe router begins with capability gates, uses the cheapest useful difficulty signal, validates outputs, and measures quality, cost, latency, and escalation per route. Shadow evaluation and staged rollout keep savings from masking hard-case failures."

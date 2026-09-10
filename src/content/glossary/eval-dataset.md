@@ -3,6 +3,7 @@ term: "Eval Dataset"
 description: "An eval dataset is the curated set of test cases — inputs with expected outcomes — that an LLM application's quality is measured against."
 date: 2026-06-12
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["evals", "datasets", "testing", "quality"]
 related: ["guide:write-llm-evals", "glossary:llm-as-judge", "glossary:synthetic-data", "skill:llm-eval-suite-scaffolder", "guide:best-llm-eval-tools-2026"]
 faq:

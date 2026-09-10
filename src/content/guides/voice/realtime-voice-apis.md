@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["multimodal-ai", "ai-agents-systems"]
+audience: ["developers"]
 tags: ["voice-agents", "realtime", "comparison", "webrtc"]
 featured: false
 summary: "Three postures cover realtime voice in 2026: build on LiveKit (open WebRTC infra + agents framework + telephony — maximum control), assemble with Pipecat (the OSS pipeline framework for custom STT→LLM→TTS flows), or buy Vapi (assistants live in an afternoon at a per-minute platform fee). Speech-to-speech realtime models slot into all three rather than replacing them."

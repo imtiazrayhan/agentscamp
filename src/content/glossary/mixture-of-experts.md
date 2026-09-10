@@ -3,6 +3,7 @@ term: "Mixture of Experts (MoE)"
 description: "MoE is a model architecture where a router activates only a few expert subnetworks per token — huge total capacity, a fraction of the compute per token."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["moe", "architecture", "inference", "models"]
 related: ["glossary:inference", "glossary:quantization", "guide:self-host-vs-api-llm", "glossary:reasoning-model"]
 faq:

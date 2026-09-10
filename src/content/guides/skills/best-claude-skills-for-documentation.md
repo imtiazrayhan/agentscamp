@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "yellow"
 topics: ["workflow-prompting", "architecture"]
+audience: ["developers"]
 tags: ["claude-skills", "documentation", "readme", "openapi", "runbooks", "adr"]
 featured: true
 seoTitle: "7 Best Claude Skills for Documentation"

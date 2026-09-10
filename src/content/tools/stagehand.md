@@ -10,6 +10,7 @@ license: "MIT"
 os: ["macOS", "Windows", "Linux"]
 color: "blue"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["browser-agents", "automation", "typescript", "browserbase"]
 featured: false
 alternativeTo: ["browser-use", "skyvern", "playwright-mcp"]

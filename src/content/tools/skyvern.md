@@ -10,6 +10,7 @@ license: "AGPL-3.0"
 os: ["macOS", "Windows", "Linux"]
 color: "purple"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["browser-agents", "rpa", "automation", "workflows"]
 featured: false
 alternativeTo: ["browser-use", "stagehand"]

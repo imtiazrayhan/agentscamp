@@ -7,6 +7,7 @@ pricing: "paid"
 category: "extension"
 color: "green"
 topics: ["coding-languages"]
+audience: ["developers"]
 tags: ["extension", "completion", "privacy"]
 featured: false
 related: ["tool:github-copilot", "tool:cody", "tool:continue"]

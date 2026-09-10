@@ -3,6 +3,7 @@ term: "Zero-Shot Prompting"
 description: "Zero-shot prompting asks a model to perform a task from instructions alone, with no examples — the default mode for capable modern LLMs."
 date: 2026-06-11
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["zero-shot", "prompting", "instructions", "llm"]
 related: ["glossary:few-shot-prompting", "guide:prompting-techniques-2026", "glossary:system-prompt", "guide:prompt-patterns"]
 faq:

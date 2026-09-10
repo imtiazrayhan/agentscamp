@@ -10,6 +10,7 @@ license: "MIT"
 os: ["Web", "macOS", "Windows", "Linux"]
 color: "blue"
 topics: ["mcp"]
+audience: ["developers"]
 tags: ["mcp", "github", "git", "ci", "code-review"]
 featured: true
 sameAs:

@@ -10,6 +10,7 @@ license: "MIT"
 os: ["macOS", "Windows", "Linux"]
 color: "orange"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["browser-agents", "automation", "computer-use", "python"]
 featured: false
 alternativeTo: ["stagehand", "skyvern", "playwright-mcp"]

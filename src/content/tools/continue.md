@@ -9,6 +9,7 @@ category: "extension"
 repo: "https://github.com/continuedev/continue"
 color: "blue"
 topics: ["coding-languages"]
+audience: ["developers"]
 tags: ["vscode", "jetbrains", "open-source"]
 alternativeTo: ["cody", "tabnine", "github-copilot", "cline"]
 summary: "Continue is an open-source extension for VS Code and JetBrains that lets you assemble your own AI coding assistant. It supplies the editor integration — chat, tab autocomplete, inline edits, and agent modes — while you pick the model: hosted providers like Anthropic and OpenAI, or local models via Ollama, all in shareable, version-controlled config."

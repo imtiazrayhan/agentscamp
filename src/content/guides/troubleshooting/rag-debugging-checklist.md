@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["rag", "debugging", "troubleshooting", "retrieval"]
 featured: false
 summary: "Debug RAG by localizing, not guessing: for a failing query, check whether the answer exists in the corpus (ingestion), was retrieved in the top-50 (retrieval), ranked into the context (ranking), and was used faithfully (generation). Each stage has distinct fixes, and fixing the wrong stage wastes weeks. The checklist runs the stages in order."

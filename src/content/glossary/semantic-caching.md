@@ -3,6 +3,7 @@ term: "Semantic Caching"
 description: "Semantic caching reuses LLM responses keyed by meaning rather than exact text, matching queries by embedding similarity to cut cost and latency."
 date: 2026-06-17
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["caching", "embeddings", "latency", "cost"]
 related: ["glossary:embedding", "glossary:semantic-search", "glossary:prompt-caching"]
 faq:

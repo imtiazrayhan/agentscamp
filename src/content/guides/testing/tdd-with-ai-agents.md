@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["review-qa", "workflow-prompting"]
+audience: ["developers"]
 tags: ["tdd", "testing", "agents", "workflow"]
 featured: false
 summary: "TDD and agents are a natural fit because the agentic loop needs exactly what TDD provides: a machine-checkable definition of done. The workflow — human (or agent, then human-reviewed) writes the failing test; agent implements until green without touching the test; refactor with the net in place — converts 'did the AI get it right?' from a reading problem into a running problem."

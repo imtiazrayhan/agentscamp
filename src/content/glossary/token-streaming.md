@@ -3,6 +3,7 @@ term: "Token Streaming"
 description: "Token streaming delivers model output incrementally as it's generated — via SSE or websockets — so users see text immediately instead of waiting."
 date: 2026-06-12
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["streaming", "sse", "latency", "ux"]
 related: ["glossary:llm-token", "glossary:inference", "command:add-streaming-endpoint", "glossary:context-window"]
 faq:

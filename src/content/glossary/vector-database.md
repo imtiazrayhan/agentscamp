@@ -3,6 +3,7 @@ term: "Vector Database"
 description: "A vector database stores embeddings and answers nearest-neighbor queries fast — the retrieval layer under RAG and semantic search, using ANN indexes like HNSW."
 date: 2026-06-11
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["vector-database", "embeddings", "rag", "search", "hnsw"]
 related: ["guide:best-vector-database-2026", "glossary:embedding", "glossary:semantic-search", "glossary:rag", "tool:pgvector", "tool:qdrant", "skill:embedding-index-tuner"]
 faq:

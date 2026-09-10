@@ -12,6 +12,7 @@ sameAs: ["https://github.com/xataio/pgroll"]
 os: ["Linux", "macOS", "Windows"]
 color: "blue"
 topics: ["data-ml"]
+audience: ["developers"]
 tags: ["postgres", "migrations", "cli", "zero-downtime", "open-source"]
 featured: false
 related: ["guide:zero-downtime-postgres-migrations", "agent:postgres-migration-engineer", "command:db-migrate", "skill:postgres-index-strategist"]

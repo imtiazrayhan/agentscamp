@@ -10,6 +10,7 @@ license: "MIT"
 os: ["macOS", "Windows", "Linux"]
 color: "pink"
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["rag", "data-framework", "documents", "python", "llm"]
 featured: false
 alternativeTo: ["langchain"]

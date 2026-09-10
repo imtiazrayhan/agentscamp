@@ -7,6 +7,7 @@ title: "Add MCP Server"
 color: "purple"
 date: 2026-06-04
 topics: ["mcp", "architecture"]
+audience: ["developers"]
 related: ["guide:building-an-mcp-server", "guide:govern-mcp-servers", "tool:mcp-inspector", "tool:smithery", "agent:mcp-server-engineer"]
 featured: false
 summary: "A slash command that adds an MCP server to the current project safely: it detects existing MCP config, chooses stdio or Streamable HTTP transport and the right scope (local, project, or user), wires secrets through env vars instead of committed config, produces the exact claude mcp add command, and verifies the server actually connected."

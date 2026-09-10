@@ -3,6 +3,7 @@ term: "Frontier Model"
 description: "A frontier model is one of the most capable AI models available — the leading edge from labs like Anthropic, OpenAI, and Google, defining the state of the art."
 date: 2026-06-12
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["frontier", "models", "llm"]
 related: ["glossary:reasoning-model", "glossary:small-language-model", "glossary:open-weights", "guide:choosing-the-right-model", "guide:claude-vs-gpt-vs-gemini-coding"]
 faq:

@@ -5,6 +5,7 @@ allowed-tools: "Read, Write, Glob, Grep"
 title: "Create Slash Command"
 color: "purple"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 related: ["command:create-subagent", "command:create-skill", "command:plan-feature"]
 featured: false
 date: 2026-06-17

@@ -3,6 +3,7 @@ term: "Extended Thinking"
 description: "Extended thinking is the reasoning tokens a model generates before its final answer, trading latency and cost for higher accuracy on hard problems."
 date: 2026-06-17
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["reasoning", "thinking", "tokens", "accuracy"]
 related: ["glossary:reasoning-model", "glossary:chain-of-thought", "glossary:llm-token", "glossary:test-time-compute", "glossary:context-engineering"]
 faq:

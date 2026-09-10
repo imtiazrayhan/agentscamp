@@ -3,6 +3,7 @@ term: "System Prompt"
 description: "The system prompt is the standing instruction layer an LLM receives before user input — defining its role, rules, tools, and tone for the whole conversation."
 date: 2026-06-11
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["prompting", "system-prompt", "llm", "configuration"]
 related: ["guide:prompt-patterns", "guide:prompting-techniques-2026", "guide:writing-a-custom-agent", "guide:claude-md-best-practices", "glossary:prompt-injection"]
 faq:

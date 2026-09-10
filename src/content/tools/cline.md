@@ -8,6 +8,7 @@ category: "extension"
 repo: "https://github.com/cline/cline"
 color: "green"
 topics: ["coding-languages"]
+audience: ["developers"]
 tags: ["vscode", "open-source"]
 alternativeTo: ["roo-code", "kilo-code", "continue", "cursor", "claude-code"]
 related: ["tool:roo-code", "tool:kilo-code", "tool:continue", "guide:ai-coding-agents-cli-2026"]

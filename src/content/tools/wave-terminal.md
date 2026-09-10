@@ -11,6 +11,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/wavetermdev/waveterm", "https://docs.waveterm.dev"]
 color: "cyan"
 topics: ["devops-infra", "coding-languages"]
+audience: ["developers"]
 tags: ["terminal", "open-source", "ai-assistant", "developer-tools"]
 featured: false
 alternativeTo: ["warp"]

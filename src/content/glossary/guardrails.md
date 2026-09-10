@@ -3,6 +3,7 @@ term: "Guardrails"
 description: "Guardrails are programmatic checks around an LLM — validating inputs and outputs in code — enforcing safety and format rules a prompt alone can't guarantee."
 date: 2026-06-11
 topics: ["ai-safety-security"]
+audience: ["developers"]
 tags: ["guardrails", "safety", "validation", "llm"]
 related: ["skill:llm-guardrails-designer", "guide:defending-prompt-injection", "tool:nemo-guardrails", "tool:llm-guard", "guide:claude-code-hooks", "glossary:structured-output"]
 faq:

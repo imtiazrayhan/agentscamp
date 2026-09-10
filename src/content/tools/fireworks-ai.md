@@ -9,6 +9,7 @@ category: "platform"
 sameAs: ["https://fireworks.ai", "https://docs.fireworks.ai"]
 color: "red"
 topics: ["mlops-ai-infra", "llm-app-dev"]
+audience: ["developers"]
 tags: ["inference", "open-models", "fine-tuning", "serverless", "gpu"]
 featured: false
 alternativeTo: ["together-ai", "groq", "baseten", "replicate", "openrouter"]

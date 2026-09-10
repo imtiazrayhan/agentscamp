@@ -11,6 +11,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/explodinggradients/ragas"]
 color: "green"
 topics: ["llm-evals", "rag-retrieval"]
+audience: ["developers"]
 tags: ["evals", "rag", "retrieval", "open-source", "python"]
 featured: false
 alternativeTo: ["deepeval"]

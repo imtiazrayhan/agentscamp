@@ -3,6 +3,7 @@ term: "Model Routing"
 description: "Model routing sends each request to the cheapest model that can handle it, escalating only hard cases to a stronger model — cutting cost and latency."
 date: 2026-06-17
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["routing", "cost-optimization", "cascade", "model-selection", "latency"]
 related: ["guide:production-model-routing", "glossary:inference", "glossary:small-language-model", "skill:model-router-designer", "skill:provider-fallback-wrapper", "guide:calling-any-model-gateways"]
 faq:

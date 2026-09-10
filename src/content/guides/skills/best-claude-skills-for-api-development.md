@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["architecture", "llm-app-dev"]
+audience: ["developers"]
 tags: ["claude-skills", "api-design", "openapi", "graphql", "webhooks", "mcp"]
 featured: true
 seoTitle: "10 Best Claude Skills for API Development"

@@ -8,6 +8,7 @@ version: "1.0.0"
 color: "pink"
 date: 2026-08-04
 topics: ["ai-safety-security", "architecture"]
+audience: ["developers"]
 related: ["guide:best-claude-skills-for-security", "skill:prompt-pii-redactor", "skill:least-privilege-auditor", "skill:threat-model-builder", "skill:secret-scanner", "skill:structured-logging-designer"]
 featured: true
 summary: "Audits data lifecycle from collection through deletion across databases, object stores, caches, logs, analytics, queues, search indexes, model inputs, exports, backups, and vendors. It maps policy to technical controls, identifies undeletable copies and ambiguous ownership, and produces verification evidence without claiming legal compliance."

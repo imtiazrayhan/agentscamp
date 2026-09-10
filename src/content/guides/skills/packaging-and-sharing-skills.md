@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "blue"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["skills", "plugins", "marketplace", "distribution", "teams"]
 featured: false
 summary: "A personal skill in ~/.claude only helps you. To share it, commit it to a repo's .claude/skills/ for one project, or bundle it into a plugin and list that plugin in a marketplace.json so any team can install it with /plugin install. Keep skills portable with relative paths and ${CLAUDE_PLUGIN_ROOT}, pin versions per release, and review skills before trusting them — they can grant tool access."

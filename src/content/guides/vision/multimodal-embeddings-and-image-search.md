@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-20
 color: "cyan"
 topics: ["multimodal-ai", "rag-retrieval"]
+audience: ["developers"]
 tags: ["multimodal-embeddings", "image-search", "clip", "vector-search", "retrieval"]
 featured: false
 summary: "Multimodal embeddings map images and text into one shared vector space, so a text query can rank images by meaning and an image can find similar images. Pick a model (CLIP/SigLIP lineage, or modern API models like Voyage and Cohere), embed your images at ingest, store vectors in a vector DB, and search by nearest neighbor. Watch for the modality gap and domain shift."

@@ -12,6 +12,7 @@ os: ["Linux", "macOS", "Windows"]
 sameAs: ["https://github.com/stanfordnlp/dspy", "https://dspy.ai"]
 color: "purple"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["prompt-optimization", "framework", "open-source", "python", "stanford"]
 featured: false
 alternativeTo: ["langchain", "baml", "pydantic-ai"]

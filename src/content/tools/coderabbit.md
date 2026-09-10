@@ -8,6 +8,7 @@ pricing: "freemium"
 category: "review"
 color: "orange"
 topics: ["review-qa"]
+audience: ["developers"]
 tags: ["code-review", "pr", "ci"]
 featured: false
 related: ["agent:code-reviewer", "command:review-pr"]

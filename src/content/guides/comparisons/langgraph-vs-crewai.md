@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["comparison", "langgraph", "crewai", "agent-frameworks", "versus"]
 featured: false
 summary: "Abstraction level decides it. LangGraph gives you the low-level graph — explicit nodes, edges, and state, with checkpointing and human-in-the-loop built in — maximum control for production systems. CrewAI gives you the high-level metaphor — agents with roles, tasks, and crews — fastest from idea to working multi-agent demo. Control versus velocity — pick by your reliability bar."

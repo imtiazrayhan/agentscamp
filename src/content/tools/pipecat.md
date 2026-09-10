@@ -12,6 +12,7 @@ os: ["Linux", "macOS", "Windows"]
 sameAs: ["https://github.com/pipecat-ai/pipecat", "https://docs.pipecat.ai"]
 color: "blue"
 topics: ["mlops-ai-infra", "multimodal-ai"]
+audience: ["developers"]
 tags: ["voice", "real-time", "framework", "open-source", "python"]
 featured: false
 alternativeTo: ["livekit", "vapi"]

@@ -5,6 +5,7 @@ date: 2026-06-03
 version: "1.0.0"
 color: "cyan"
 topics: ["architecture"]
+audience: ["developers"]
 summary: "A skill that authors and maintains spec-compliant OpenAPI 3.1 documents for an HTTP API: it inventories routes from the code, models reusable component schemas with $ref, writes each operation with operationId, parameters, request bodies, and error responses, adds validating examples, and lints the spec before finishing."
 ---
 

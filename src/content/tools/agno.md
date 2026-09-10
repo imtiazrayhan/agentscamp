@@ -11,6 +11,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/agno-agi/agno", "https://docs.agno.com", "https://github.com/agno-agi"]
 color: "green"
 topics: ["ai-agents-systems", "llm-app-dev"]
+audience: ["developers"]
 tags: ["python", "agents", "multi-agent", "memory", "framework"]
 featured: false
 alternativeTo: ["crewai", "langgraph", "autogen", "pydantic-ai", "langchain"]

@@ -12,6 +12,7 @@ os: ["Web"]
 sameAs: ["https://github.com/Portkey-AI/gateway", "https://portkey.ai/docs"]
 color: "purple"
 topics: ["devops-infra"]
+audience: ["developers"]
 tags: ["gateway", "caching", "observability", "cost-control", "llmops"]
 featured: false
 alternativeTo: ["litellm", "helicone", "openrouter"]

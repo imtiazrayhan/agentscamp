@@ -4,6 +4,7 @@ description: "RAG over visual documents — PDFs, scans, charts — where text-o
 author: "Imtiaz Rayhan"
 color: "green"
 topics: ["multimodal-ai", "rag-retrieval"]
+audience: ["developers"]
 tags: ["multimodal-rag", "pdf", "vlm", "ocr", "embeddings", "retrieval"]
 related:
   - "guide:vlm-ocr-documents"

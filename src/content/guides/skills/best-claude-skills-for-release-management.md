@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "green"
 topics: ["devops-infra", "workflow-prompting"]
+audience: ["developers"]
 tags: ["claude-skills", "release-management", "deployment", "rollback", "versioning", "changelog"]
 featured: true
 seoTitle: "9 Best Claude Skills for Release Management"

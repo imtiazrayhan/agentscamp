@@ -8,6 +8,7 @@ version: "1.0.0"
 color: "green"
 date: 2026-08-04
 topics: ["devops-infra", "review-qa"]
+audience: ["developers"]
 related: ["guide:best-claude-skills-for-release-management", "skill:canary-release-planner", "skill:rollback-plan-writer", "skill:migration-writer", "skill:changelog-from-prs", "skill:dependency-audit"]
 featured: true
 summary: "Produces an evidence-backed go, conditional-go, or no-go recommendation for one release. It checks changed behavior, required tests, compatibility, migrations, flags, configuration, security, observability, progressive delivery, rollback feasibility, communications, and accountable owners without treating a green CI badge as complete readiness."

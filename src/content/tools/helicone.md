@@ -11,6 +11,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/Helicone/helicone", "https://docs.helicone.ai"]
 color: "pink"
 topics: ["devops-infra"]
+audience: ["developers"]
 tags: ["observability", "gateway", "caching", "cost-control", "open-source"]
 featured: false
 alternativeTo: ["langfuse", "langsmith", "portkey"]

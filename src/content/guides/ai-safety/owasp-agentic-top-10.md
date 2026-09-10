@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["ai-safety-security"]
+audience: ["developers"]
 tags: ["ai-agents", "security", "owasp", "ai-safety", "guardrails"]
 featured: false
 summary: "An agent doesn't just generate text — it acts, with tools, memory, and autonomy, widening the attack surface beyond the OWASP LLM Top 10. OWASP's agentic resources catalog the new threats: memory poisoning, tool misuse, privilege compromise, goal manipulation, cascading failures, and rogue agents. The cross-cutting defenses are least privilege, human oversight, and audit."

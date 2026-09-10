@@ -9,6 +9,7 @@ category: "platform"
 sameAs: ["https://github.com/reductoai", "https://docs.reducto.ai"]
 color: "blue"
 topics: ["rag-retrieval", "data-ml"]
+audience: ["developers"]
 tags: ["document-parsing", "ocr", "rag", "data-extraction", "pdf"]
 featured: false
 alternativeTo: ["llamaparse", "unstructured", "docling", "marker"]

@@ -8,6 +8,7 @@ category: "mcp"
 repo: "https://github.com/microsoft/playwright-mcp"
 color: "green"
 topics: ["mcp", "review-qa"]
+audience: ["developers"]
 tags: ["mcp", "browser", "testing", "automation"]
 featured: false
 related: ["tool:claude-code", "agent:test-engineer"]

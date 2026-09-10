@@ -6,6 +6,7 @@ model: "sonnet"
 color: "yellow"
 tools: "Read, Grep, Glob, Edit, Bash"
 topics: ["devops-infra"]
+audience: ["developers"]
 related: ["agent:security-auditor", "skill:dependency-audit", "agent:devops-engineer"]
 summary: "A subagent that moves project dependencies forward without breaking the build — reading the lockfile as ground truth, batching patch and minor bumps apart from majors, and verifying install, build, and tests after every batch. Reach for it when clearing months of stale packages, taking a major with migration notes, or resolving a peer-dependency conflict."
 ---

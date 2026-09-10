@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "purple"
 topics: ["llm-app-dev", "llm-evals"]
+audience: ["developers"]
 tags: ["claude-skills", "llm-applications", "evals", "structured-output", "guardrails", "ai-agents"]
 featured: true
 seoTitle: "10 Best Claude Skills for Building AI Applications"

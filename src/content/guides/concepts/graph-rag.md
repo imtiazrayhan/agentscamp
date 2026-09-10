@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["graphrag", "knowledge-graph", "rag", "retrieval"]
 featured: true
 summary: "GraphRAG augments retrieval with a knowledge graph: entities and relationships extracted from your corpus, traversed at query time. Vector RAG answers 'find passages like this'; GraphRAG answers 'connect these things' — multi-hop questions, whole-corpus summaries, relationship queries. The cost is real: graph extraction is expensive and quality-critical."

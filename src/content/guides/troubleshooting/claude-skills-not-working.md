@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "red"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["skills", "claude-code", "troubleshooting", "debugging", "skill-md"]
 featured: false
 seoTitle: "Claude Skills Not Working? Fixes for Every Failure"

@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["fine-tuning", "dataset", "synthetic-data", "mlops", "evals"]
 featured: false
 summary: "In fine-tuning, the dataset is the model — quality and coverage matter far more than size. Define the exact input/output format, curate high-quality real examples, clean and deduplicate ruthlessly, augment thin spots with validated synthetic data, and hold out a representative eval split before you train. Most fine-tuning failures are dataset failures, not training failures."

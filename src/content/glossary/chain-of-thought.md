@@ -3,6 +3,7 @@ term: "Chain-of-Thought (CoT)"
 description: "Chain-of-thought prompting has a model work through intermediate reasoning steps before answering — improving accuracy on multi-step problems."
 date: 2026-06-11
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["chain-of-thought", "prompting", "reasoning", "llm"]
 related: ["guide:prompting-techniques-2026", "glossary:reasoning-model", "glossary:few-shot-prompting", "guide:prompt-patterns"]
 faq:

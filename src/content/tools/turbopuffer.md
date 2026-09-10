@@ -9,6 +9,7 @@ category: "platform"
 sameAs: ["https://turbopuffer.com", "https://turbopuffer.com/docs", "https://turbopuffer.com/blog", "https://x.com/turbopuffer"]
 color: "blue"
 topics: ["rag-retrieval", "mlops-ai-infra"]
+audience: ["developers"]
 tags: ["vector-database", "search", "serverless", "retrieval", "hybrid-search"]
 featured: false
 alternativeTo: ["pinecone", "qdrant", "weaviate", "lancedb", "pgvector"]

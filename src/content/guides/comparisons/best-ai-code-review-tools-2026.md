@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["review-qa"]
+audience: ["developers"]
 tags: ["code-review", "best-of", "comparison", "ci"]
 featured: true
 summary: "Three commercial leaders cover most teams: CodeRabbit (the friction-free default with the most generous entry), Greptile (deepest codebase-wide context and learned team standards — the bug-catcher), and Qodo (the platform play: multi-agent review with rules, broadest git support, on-prem). PR-Agent is the open-source self-host pick, and Copilot's built-in review is the GitHub-native baseline."

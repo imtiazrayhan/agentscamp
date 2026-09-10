@@ -3,6 +3,7 @@ term: "Transformer"
 description: "The neural-network architecture (Vaswani et al., 2017) that uses self-attention to process sequences in parallel — the basis of nearly all modern LLMs."
 date: 2026-06-17
 topics: ["data-ml"]
+audience: ["developers"]
 tags: ["transformer", "architecture", "attention", "llm", "deep-learning"]
 related: ["glossary:tokenization", "glossary:inference", "glossary:context-window", "glossary:mixture-of-experts", "glossary:reasoning-model"]
 faq:

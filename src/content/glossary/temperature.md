@@ -3,6 +3,7 @@ term: "Temperature"
 description: "Temperature controls how random an LLM's token choices are: low values make output focused and repeatable, high values make it varied and creative."
 date: 2026-06-11
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["temperature", "sampling", "llm", "parameters"]
 related: ["glossary:top-p", "glossary:structured-output", "glossary:llm-token", "guide:prompting-techniques-2026"]
 faq:

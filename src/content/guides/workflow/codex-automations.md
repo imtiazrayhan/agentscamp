@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["workflow-prompting", "ai-agents-systems"]
+audience: ["developers"]
 tags: ["codex", "automations", "scheduled-tasks", "worktrees", "openai"]
 featured: true
 summary: "Codex scheduled tasks run repeatable work in the background on a cadence or inside an existing chat. Reliable automations begin as manually tested prompts, define what to inspect and when to stay quiet, use skills for reusable method, and run with the narrowest permissions that work. Local Git tasks should prefer isolated worktrees when edits could collide with active development."

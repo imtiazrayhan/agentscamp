@@ -10,6 +10,7 @@ license: "MIT"
 os: ["macOS", "Windows", "Linux"]
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["agents", "framework", "python", "typescript", "llm"]
 featured: false
 alternativeTo: ["llamaindex", "crewai", "openai-agents-sdk"]

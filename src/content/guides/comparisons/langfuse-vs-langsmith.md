@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["comparison", "langfuse", "langsmith", "observability", "versus"]
 featured: false
 summary: "Ecosystem and ownership decide it. LangSmith is the first-party choice for LangChain/LangGraph stacks — deepest integration, polished evals, managed SaaS. Langfuse is the open-source, framework-neutral choice — MIT-licensed core, self-hostable for data control, SDKs and OpenTelemetry reach across any stack. Heavy LangChain shops pick LangSmith; everyone else's default tilts Langfuse."

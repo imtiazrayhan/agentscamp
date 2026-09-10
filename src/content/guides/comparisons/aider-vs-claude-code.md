@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-17
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["comparison", "versus", "aider", "claude-code", "cli-agents"]
 featured: false
 summary: "Openness and model freedom decide it. Aider is the open-source (Apache-2.0), model-agnostic terminal pair-programmer with git-commit-per-change discipline and bring-your-own-API-key cost. Claude Code is Anthropic's tighter, model-tuned harness — subagents, MCP, hooks — on plan-based pricing. Pick Aider for control and any model; Claude Code for agentic depth on Claude."

@@ -54,11 +54,11 @@ export function RolePath({
         </Section>
       )}
 
-      {groups.map(({ def, items }) => (
+      {groups.map(({ def, items, total }) => (
         <Section
           key={def.id}
           title={def.label}
-          count={items.length}
+          count={total}
           description={def.tagline}
           browseHref={def.basePath}
           browseLabel={`All ${def.label.toLowerCase()}`}

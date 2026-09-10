@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["comparison", "deepeval", "ragas", "evals", "versus"]
 featured: false
 summary: "Scope decides it. DeepEval is the general LLM testing framework — pytest-style assertions, a broad metric library (G-Eval judges, safety, agent metrics), CI-native. RAGAS is the RAG specialist — the reference implementation of RAG metrics like faithfulness and context precision. Evaluating a whole LLM app: DeepEval. Diagnosing a RAG pipeline's components: RAGAS. Many teams run both."

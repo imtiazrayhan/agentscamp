@@ -253,6 +253,23 @@ export function DetailView({
           </nav>
         )}
 
+        {item.audience.length > 0 && (
+          <nav className="mt-3" aria-label="Role paths">
+            <ul className="flex flex-wrap gap-1.5">
+              {item.audience.map((role) => (
+                <li key={role}>
+                  <Link
+                    href={`/for/${role}`}
+                    className="inline-flex rounded-full border border-border bg-secondary px-2.5 py-0.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    For {titleCaseLabel(role)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
         {item.tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1.5">
             {item.tags.map((t) => (

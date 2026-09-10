@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["comparison", "qdrant", "pinecone", "vector-database", "versus"]
 featured: false
 summary: "Ownership model decides it. Pinecone is the fully managed, serverless bet: zero ops, predictable scaling, pay for what the service meters. Qdrant is the open-source bet: Rust performance, rich filtering and hybrid search, run it anywhere (or use their cloud) with no lock-in. Teams that want a database to operate pick Qdrant; teams that want vector search as a utility pick Pinecone."

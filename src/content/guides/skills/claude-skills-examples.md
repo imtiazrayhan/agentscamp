@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "cyan"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["skills", "claude-code", "examples", "skill-md", "workflow"]
 featured: false
 seoTitle: "Claude Skills Examples: 5 Annotated SKILL.md Files"

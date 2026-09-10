@@ -12,6 +12,7 @@ sameAs: ["https://github.com/ollama/ollama", "https://ollama.com"]
 os: ["macOS", "Windows", "Linux"]
 color: "cyan"
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["local-llm", "cli", "inference", "open-source"]
 featured: false
 related: ["tool:lm-studio", "guide:self-host-vs-api-llm", "agent:llm-inference-engineer", "tool:vllm"]

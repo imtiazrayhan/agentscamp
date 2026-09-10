@@ -8,6 +8,7 @@ pricing: "freemium"
 category: "platform"
 color: "orange"
 topics: ["ai-agents-systems", "mlops-ai-infra"]
+audience: ["developers"]
 tags: ["browser", "automation", "headless", "agents", "infrastructure"]
 featured: false
 alternativeTo: ["browser-use", "stagehand", "skyvern", "e2b", "playwright-mcp"]

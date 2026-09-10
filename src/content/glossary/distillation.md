@@ -3,6 +3,7 @@ term: "Distillation"
 description: "Distillation trains a smaller model to imitate a larger one — using its outputs as training data to get most of the capability at a fraction of the cost."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["distillation", "training", "small-models", "mlops"]
 related: ["glossary:fine-tuning", "guide:finetune-vs-rag-vs-prompt", "glossary:synthetic-data", "glossary:quantization", "guide:finetune-dataset-prep"]
 faq:

@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "red"
 topics: ["ai-safety-security", "devops-infra"]
+audience: ["developers"]
 tags: ["supply-chain", "dependencies", "ci-cd", "sbom", "security"]
 featured: true
 summary: "Software supply-chain security protects the path from source and dependencies through CI, artifacts, and deployment. A practical program minimizes dependency trust, reviews resolution, isolates builds, limits automation credentials, verifies provenance, inventories shipped components, and prepares fast revocation and rebuild procedures for upstream compromise."

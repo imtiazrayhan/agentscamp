@@ -21,6 +21,7 @@ sameAs:
 topics:
   - ai-agents-systems
   - llm-evals
+audience: ["developers"]
 tags:
   - autonomous-agent
   - swe-bench

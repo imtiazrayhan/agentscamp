@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["workflow-prompting", "ai-agents-systems"]
+audience: ["developers"]
 tags: ["codex", "skills", "skill-md", "openai", "agent-skills"]
 featured: true
 summary: "Codex skills package a repeatable workflow as a directory with SKILL.md plus optional scripts, references, templates, and assets. Codex sees compact metadata first and loads the full instructions only when the user invokes the skill or the task matches its description. Store team skills under .agents/skills, personal skills under ~/.agents/skills, and distribute mature bundles as plugins."

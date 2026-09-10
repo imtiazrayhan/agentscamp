@@ -11,6 +11,7 @@ related: ["tool:cursor", "tool:void", "tool:windsurf"]
 alternativeTo: ["cursor", "void", "windsurf", "antigravity"]
 color: "pink"
 topics: ["coding-languages"]
+audience: ["developers"]
 tags: ["ide", "editor", "rust"]
 summary: "Zed is a high-performance code editor written in Rust with GPU-accelerated rendering, real-time multiplayer collaboration (shared cursors, voice, screen sharing), and integrated AI — inline completions plus an agent panel that connects to Anthropic, OpenAI, or local models through Ollama. Open source and free on macOS, Linux, and Windows."
 faq:

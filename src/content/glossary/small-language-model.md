@@ -3,6 +3,7 @@ term: "SLM (Small Language Model)"
 description: "A small language model is a compact LLM — roughly 1–15B parameters — that runs cheaply or locally, trading peak capability for speed and deployability."
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
+audience: ["developers"]
 tags: ["slm", "small-models", "local", "efficiency"]
 related: ["glossary:frontier-model", "glossary:quantization", "glossary:distillation", "guide:best-local-llm-tools-2026", "tool:ollama"]
 faq:

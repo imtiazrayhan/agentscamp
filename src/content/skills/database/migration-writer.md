@@ -8,6 +8,7 @@ color: "cyan"
 title: "Migration Writer"
 date: 2026-06-17
 topics: ["devops-infra"]
+audience: ["developers"]
 related: ["skill:postgres-index-strategist", "skill:semver-advisor", "skill:version-bumper"]
 featured: false
 summary: "Most schema migrations break prod because they assume a single atomic deploy where old and new code never coexist. This skill writes migrations the expand-contract way: each step is independently deployable, reversible with a real down migration, and free of write-blocking locks — so a live system stays up while the schema changes underneath it."

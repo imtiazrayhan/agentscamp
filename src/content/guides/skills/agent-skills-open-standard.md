@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-07-18
 color: "green"
 topics: ["workflow-prompting", "ai-agents-systems"]
+audience: ["developers"]
 tags: ["agent-skills", "skills", "skill-md", "open-standard", "interoperability"]
 featured: false
 seoTitle: "The Agent Skills Standard: One SKILL.md, Every Tool"

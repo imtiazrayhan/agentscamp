@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["devops-infra", "workflow-prompting"]
+audience: ["developers"]
 tags: ["claude-skills", "devops", "sre", "incident-response", "observability", "ci-cd"]
 featured: true
 seoTitle: "10 Best Claude Skills for DevOps and SRE"

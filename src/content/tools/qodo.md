@@ -8,6 +8,7 @@ category: "review"
 os: ["Web", "macOS", "Windows", "Linux"]
 color: "purple"
 topics: ["review-qa"]
+audience: ["developers"]
 tags: ["code-review", "ai-review", "pull-requests", "testing"]
 featured: false
 alternativeTo: ["coderabbit", "greptile"]

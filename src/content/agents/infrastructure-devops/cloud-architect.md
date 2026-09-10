@@ -6,6 +6,7 @@ model: "sonnet"
 color: "orange"
 tools: "Read, Grep, Glob"
 topics: ["devops-infra", "architecture"]
+audience: ["developers"]
 featured: true
 related: ["agent:terraform-specialist", "agent:sre-engineer", "agent:system-architect"]
 summary: "A subagent that turns a workload's requirements into a specific, defensible cloud design on AWS, GCP, or Azure — compute choice, network boundaries, data stores, least-privilege IAM, and a cost estimate with trade-offs named. Reach for it when choosing serverless vs containers, designing a multi-account network boundary, or picking and pricing a database."

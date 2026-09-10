@@ -10,6 +10,7 @@ license: "Apache-2.0"
 os: ["Web"]
 color: "blue"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["memory", "agents", "knowledge-graph", "graphiti"]
 featured: false
 alternativeTo: ["mem0", "letta"]

@@ -5,6 +5,7 @@ date: 2025-08-22
 model: "opus"
 color: "pink"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 featured: true
 summary: "A subagent that breaks a large, ambiguous request into an ordered plan of small, verifiable steps — building the dependency graph, assigning each step to a specialist subagent, gating progress on verification, and reconciling results. Reach for it when planning a multi-file refactor, orchestrating a migration, or decomposing an epic into shippable steps."
 ---

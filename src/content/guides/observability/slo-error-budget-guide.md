@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["devops-infra", "review-qa"]
+audience: ["developers"]
 tags: ["slo", "sli", "error-budget", "reliability", "observability"]
 featured: true
 summary: "An SLI measures a user's experience, an SLO sets the acceptable good-event ratio over a time window, and the remaining fraction becomes an error budget the team can spend. A useful reliability program defines numerator and denominator precisely, measures at the user boundary, alerts on budget burn instead of noisy infrastructure thresholds, and links budget health to an explicit release policy."

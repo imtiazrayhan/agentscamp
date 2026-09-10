@@ -3,6 +3,7 @@ term: "Red-Teaming (AI)"
 description: "AI red-teaming is adversarial testing — attacking your model or agent with jailbreaks, injections, and misuse scenarios to find failures before users do."
 date: 2026-06-12
 topics: ["ai-safety-security"]
+audience: ["developers"]
 tags: ["red-teaming", "security", "safety", "testing"]
 related: ["guide:red-teaming-llm-applications", "command:red-team-llm", "glossary:jailbreak", "glossary:prompt-injection", "guide:defending-prompt-injection", "guide:owasp-agentic-top-10", "glossary:guardrails"]
 faq:

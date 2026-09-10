@@ -10,6 +10,7 @@ category: "observability"
 sameAs: ["https://docs.smith.langchain.com"]
 color: "blue"
 topics: ["llm-evals"]
+audience: ["developers"]
 tags: ["observability", "tracing", "evals", "monitoring"]
 featured: false
 alternativeTo: ["langfuse", "arize-phoenix", "braintrust"]

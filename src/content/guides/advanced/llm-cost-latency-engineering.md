@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["devops-infra"]
+audience: ["developers"]
 tags: ["cost-optimization", "latency", "caching", "p95", "llmops"]
 featured: false
 summary: "LLM cost and latency are usually concentrated in a few prompts, routes, and model choices — so measure first, then cut where it pays. The levers: prompt caching for stable prefixes, response/semantic caching for repeated queries, per-task model right-sizing, token trimming, streaming for perceived speed, and enforced p95 and cost budgets — always against an eval bar so cheaper never means worse."

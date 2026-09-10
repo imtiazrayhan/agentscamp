@@ -9,6 +9,7 @@ category: "mcp"
 os: ["Web"]
 color: "purple"
 topics: ["mcp"]
+audience: ["developers"]
 tags: ["mcp", "linear", "issues", "project-management", "workflow"]
 featured: false
 sameAs:

@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "blue"
 topics: ["data-ml", "devops-infra"]
+audience: ["developers"]
 tags: ["claude-skills", "databases", "sql", "postgres", "migrations", "performance"]
 featured: true
 seoTitle: "8 Best Claude Skills for Database Work"

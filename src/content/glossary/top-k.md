@@ -3,6 +3,7 @@ term: "Top-k Sampling"
 description: "Top-k sampling restricts an LLM's next-token choice to the k most probable tokens before sampling; lower k is more deterministic, higher k more diverse."
 date: 2026-06-17
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["sampling", "decoding", "top-k", "generation"]
 related: ["glossary:temperature", "glossary:top-p", "glossary:token-streaming"]
 faq:

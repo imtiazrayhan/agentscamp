@@ -12,6 +12,7 @@ sameAs: ["https://github.com/modelcontextprotocol/inspector", "https://modelcont
 os: ["macOS", "Linux", "Windows"]
 color: "blue"
 topics: ["mcp", "architecture"]
+audience: ["developers"]
 tags: ["mcp", "debugging", "developer-tools", "open-source"]
 featured: false
 related: ["guide:building-an-mcp-server", "agent:mcp-server-engineer", "guide:deploy-remote-mcp-server", "tool:fastmcp", "skill:mcp-server-scaffolder", "command:add-mcp-server"]

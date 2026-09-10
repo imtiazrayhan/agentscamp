@@ -10,6 +10,7 @@ repo: "https://github.com/modelcontextprotocol/servers"
 os: ["macOS", "Windows", "Linux"]
 color: "blue"
 topics: ["mcp"]
+audience: ["developers"]
 tags: ["mcp", "reasoning", "planning", "reference-server", "thinking"]
 featured: false
 sameAs:

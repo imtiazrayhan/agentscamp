@@ -10,6 +10,7 @@ sameAs: ["https://developers.deepgram.com"]
 color: "green"
 os: ["Web"]
 topics: ["mlops-ai-infra", "multimodal-ai"]
+audience: ["developers"]
 tags: ["speech-to-text", "text-to-speech", "voice", "stt", "api"]
 featured: false
 alternativeTo: ["elevenlabs"]

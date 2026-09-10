@@ -10,6 +10,7 @@ repo: "https://github.com/groq/groq-python"
 sameAs: ["https://github.com/groq", "https://console.groq.com/docs"]
 color: "orange"
 topics: ["mlops-ai-infra", "llm-app-dev"]
+audience: ["developers"]
 tags: ["inference", "llm-api", "low-latency", "open-models"]
 featured: false
 alternativeTo: ["together-ai", "fireworks-ai", "openrouter", "replicate", "baseten"]

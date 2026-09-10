@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["ai-safety-security"]
+audience: ["developers"]
 tags: ["prompt-injection", "security", "llm", "guardrails", "ai-safety"]
 featured: true
 summary: "Prompt injection works because an LLM can't separate instructions from data — it's all tokens, with no model-layer fix. Defense means limiting blast radius: treat external content as untrusted, give the model least privilege, require human approval for high-impact actions, and layer guardrails. Indirect injection (via retrieved docs and tool output) is the dangerous variant."

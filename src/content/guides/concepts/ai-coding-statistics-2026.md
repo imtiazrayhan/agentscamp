@@ -6,6 +6,7 @@ date: 2026-07-01
 updated: 2026-09-01
 color: "green"
 topics: ["coding-languages", "ai-agents-systems"]
+audience: ["developers"]
 tags: ["statistics", "ai-coding", "data", "adoption", "research"]
 featured: true
 summary: "The sourced numbers, September 2026: Google says 75% of new code is AI-generated; 84% of developers use or plan AI tools (Stack Overflow); GitHub Copilot hit 50M users; Claude Code passed $2.5B run-rate; SpaceX closed its $60B all-stock Cursor acquisition on August 14; and the METR RCT found experienced devs 19% slower. Every figure dated and sourced."

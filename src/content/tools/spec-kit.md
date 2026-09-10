@@ -10,6 +10,7 @@ license: "MIT"
 os: ["macOS", "Windows", "Linux"]
 color: "purple"
 topics: ["workflow-prompting"]
+audience: ["developers"]
 tags: ["spec-driven", "sdd", "workflow", "cli", "github"]
 featured: false
 sameAs:

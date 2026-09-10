@@ -20,6 +20,7 @@ sameAs:
   - "https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code"
 topics:
   - ai-agents-systems
+audience: ["developers"]
 tags:
   - ai-agent
   - vscode-extension

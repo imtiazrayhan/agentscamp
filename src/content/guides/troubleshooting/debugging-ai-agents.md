@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["agents", "debugging", "troubleshooting", "reliability"]
 featured: false
 summary: "Agent failures are systematic, not random. Loops mean the agent can't perceive progress — fix the feedback. Premature 'done' means no verifiable success signal (make completion checkable). Tool misuse means routing-by-description failed (sharpen names and descriptions). Context poisoning means an early wrong fact keeps steering (checkpoint and restart clean). Diagnose by signature; fix the class."

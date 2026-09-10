@@ -12,6 +12,7 @@ repo: "https://github.com/basetenlabs/truss"
 sameAs: ["https://github.com/basetenlabs/truss", "https://docs.baseten.co"]
 color: "purple"
 topics: ["mlops-ai-infra", "llm-app-dev"]
+audience: ["developers"]
 tags: ["inference", "gpu", "deployment", "autoscaling", "truss", "mlops"]
 featured: false
 alternativeTo: ["modal", "replicate", "together-ai", "fireworks-ai"]

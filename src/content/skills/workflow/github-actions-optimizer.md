@@ -8,6 +8,7 @@ color: "cyan"
 title: "GitHub Actions Optimizer"
 date: 2026-06-17
 topics: ["devops-infra"]
+audience: ["developers"]
 related: ["agent:devops-engineer", "agent:git-github-expert", "agent:sre-engineer", "skill:secret-scanner"]
 featured: false
 summary: "A slow, expensive, or unhardened CI pipeline is usually three problems wearing one trench coat. This skill profiles where the minutes go, then ships the highest-leverage fixes first — content-keyed caching, matrix parallelism, run cancellation, path filters — and closes the supply-chain holes: SHA-pinned actions, least-privilege tokens, and no secrets for fork PRs."

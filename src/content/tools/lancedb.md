@@ -13,6 +13,7 @@ os: ["Linux", "macOS", "Windows"]
 alternativeTo: ["chroma", "qdrant", "pgvector"]
 color: "pink"
 topics: ["rag-retrieval", "data-ml"]
+audience: ["developers"]
 tags: ["vector-database", "rag", "embedded", "multimodal", "open-source"]
 featured: false
 summary: "LanceDB is an open-source embedded vector database built on the Lance columnar format: it runs in-process with no server, persists to local disk or object storage (S3), and stores vectors alongside raw multimodal data and metadata — bridging laptop prototype to large-scale dataset without changing systems."

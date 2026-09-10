@@ -8,6 +8,7 @@ category: "voice"
 os: ["Web"]
 color: "purple"
 topics: ["mlops-ai-infra", "multimodal-ai"]
+audience: ["developers"]
 tags: ["tts", "stt", "voice", "realtime", "voice-agents"]
 featured: false
 alternativeTo: ["elevenlabs", "deepgram", "vapi"]

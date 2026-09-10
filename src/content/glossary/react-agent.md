@@ -3,6 +3,7 @@ term: "ReAct (Reasoning + Acting)"
 description: "ReAct is an agent loop that interleaves reasoning with tool actions — Thought, Action, Observation, repeat — so the model plans, calls a tool, and revises."
 date: 2026-06-17
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["react", "agents", "tool-use", "reasoning"]
 related: ["glossary:ai-agent", "glossary:function-calling", "glossary:chain-of-thought"]
 faq:

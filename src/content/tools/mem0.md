@@ -12,6 +12,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/mem0ai/mem0", "https://docs.mem0.ai"]
 color: "purple"
 topics: ["ai-agents-systems", "data-ml"]
+audience: ["developers"]
 tags: ["agents", "memory", "personalization", "vector-store", "open-source"]
 featured: false
 alternativeTo: ["zep", "letta"]

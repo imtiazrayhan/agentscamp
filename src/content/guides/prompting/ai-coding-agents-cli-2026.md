@@ -8,6 +8,7 @@ date: 2026-06-03
 updated: 2026-09-01
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
+audience: ["developers"]
 tags: ["comparison", "cli", "open-source", "agents", "byo-model"]
 featured: false
 summary: "The open-source and CLI coding agents trade polish for control: bring your own model (or run one locally), keep your code on your terms, and script the agent into CI. OpenCode is the category's most-starred breakout. Cline and Roo Code live in VS Code; OpenCode, Aider, and Codex CLI live in the terminal. Choose by where you work and how much you value model and data control."

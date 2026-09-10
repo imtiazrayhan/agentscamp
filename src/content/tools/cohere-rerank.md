@@ -10,6 +10,7 @@ category: "platform"
 sameAs: ["https://docs.cohere.com/docs/rerank-overview"]
 color: "blue"
 topics: ["rag-retrieval"]
+audience: ["developers"]
 tags: ["reranking", "rag", "api", "search"]
 featured: false
 alternativeTo: ["voyage-ai"]

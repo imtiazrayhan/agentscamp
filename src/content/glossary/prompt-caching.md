@@ -3,6 +3,7 @@ term: "Prompt Caching"
 description: "Prompt caching reuses the computed state of a repeated prompt prefix across requests — dramatically cutting cost and time-to-first-token for stable context."
 date: 2026-06-11
 topics: ["llm-app-dev"]
+audience: ["developers"]
 tags: ["prompt-caching", "cost", "latency", "llm"]
 related: ["skill:prompt-cache-optimizer", "guide:llm-cost-latency-engineering", "glossary:kv-cache", "glossary:context-window", "glossary:system-prompt"]
 faq:

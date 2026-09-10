@@ -3,6 +3,7 @@ term: "Agentic AI"
 description: "Agentic AI is the class of AI systems that act toward goals — planning, calling tools, and iterating on results — rather than only generating content."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
+audience: ["developers"]
 tags: ["agents", "autonomy", "agentic", "llm"]
 related: ["glossary:ai-agent", "guide:agent-frameworks-2026", "guide:multi-agent-orchestration", "glossary:agent-engineering", "glossary:human-in-the-loop", "guide:owasp-agentic-top-10"]
 faq:

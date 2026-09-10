@@ -7,6 +7,7 @@ allowed-tools: "Read, Grep, Glob, Edit, Bash"
 title: "Fix Failing Test"
 color: "purple"
 topics: ["review-qa"]
+audience: ["developers"]
 related: ["command:write-tests", "command:find-bug", "agent:debugger"]
 summary: "A slash command that makes a failing test green by fixing the actual root cause: it reproduces the scoped failure, traces from the assertion to the code under test, explicitly decides whether the test or the code is wrong before editing, applies the smallest fix to the correct side, then re-runs the full suite — never weakening assertions."
 ---

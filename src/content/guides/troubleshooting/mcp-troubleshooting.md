@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-12
 color: "green"
 topics: ["mcp"]
+audience: ["developers"]
 tags: ["mcp", "troubleshooting", "debugging", "claude-code"]
 featured: false
 summary: "MCP failures cluster into five: the server process won't start, it starts but times out (MCP_TIMEOUT=60000), it connects but tools are missing (pending approval, permission denies, server config), remote auth fails (finish OAuth via /mcp, check headers), and output gets truncated by design (MAX_MCP_OUTPUT_TOKENS). claude mcp list and MCP Inspector localize almost everything."
