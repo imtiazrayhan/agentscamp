@@ -10,6 +10,7 @@ faq:
     a: "Because they generate the most plausible next token, not verified facts — plausibility and truth usually align on well-represented knowledge and diverge at the edges: niche details, fresh events, exact citations, anything underrepresented in training. The model has no built-in mechanism that distinguishes 'I know this' from 'this sounds right.'"
   - q: "How do you reduce hallucinations in practice?"
     a: "Ground and verify. Grounding supplies the facts at query time (RAG over your data) and instructs the model to answer only from them, with 'say you don't know' as an explicit option. Verification catches what slips through: schema validation for structured claims, retrieval-backed citation checks, and eval suites that measure faithfulness so regressions surface before users do."
+audience: ["founders", "analysts"]
 ---
 
 **A hallucination is model output that reads confident and coherent but is factually wrong or invented — a fabricated API, a nonexistent citation, a wrong number stated smoothly.**

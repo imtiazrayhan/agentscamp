@@ -26,6 +26,7 @@ faq:
     a: "Fair-code, not OSI open source. The Sustainable Use License allows free use and modification for internal business purposes (commercial included) and personal use — but you can't sell n8n hosting or embed it in a paid product without an enterprise/embed license, and .ee.-flagged files in the public repo require enterprise licensing."
   - q: "What changed in n8n 2.0?"
     a: "A security-hardening major (December 2025): Code nodes run in isolated task runners and lose env-var access by default, arbitrary-command nodes ship disabled, plus a Publish-vs-Save deployment model and large performance work. It's breaking for older self-hosted setups — run the migration report before upgrading."
+audience: ["founders"]
 ---
 
 n8n attacks AI from the opposite direction of the AI-native platforms: it was already the automation layer — ~192k stars, 400+ integrations, a decade of workflow muscle — and then gave its workflows a brain. The result is distinctive: **agents with hands**, where the AI node sits between real triggers and real actions.

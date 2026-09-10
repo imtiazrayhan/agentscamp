@@ -10,6 +10,7 @@ faq:
     a: "No. The cutoff is when the training data stops; the release date is when the model ships. Months of training, evaluation, and safety work usually sit between them, so a model released in one quarter often has a cutoff several months earlier — it knows nothing about events in that gap unless you supply them at query time."
   - q: "Can a model answer questions about events after its cutoff?"
     a: "Only if you give it the information. The model has no inherent knowledge past its cutoff, but it has no problem reading facts you put in the prompt. Retrieval (RAG), a web-search or API tool, or simply pasting fresh text into the context all let it reason over recent material it was never trained on."
+audience: ["marketers"]
 ---
 
 **A knowledge cutoff is the date after which a model's training data ends, so the model has no inherent knowledge of any event, product release, or fact that came later.**

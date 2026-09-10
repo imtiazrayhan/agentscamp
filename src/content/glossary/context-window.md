@@ -10,6 +10,7 @@ faq:
     a: "Nothing more fits — so something must go. Applications truncate old turns, summarize them (Claude Code's /compact), or retrieve selectively instead of loading everything (RAG). Quality usually degrades before the hard limit: models weight the start and end of a long window more than the middle, so buried facts get missed."
   - q: "Bigger context windows keep shipping — does context management still matter?"
     a: "Yes. A million-token window changes what's possible (whole codebases, long documents) but not the economics or attention physics: you pay per token processed, latency grows with input size, and signal still competes with noise. A focused window reliably beats a stuffed one — capacity is budget, not license."
+audience: ["analysts"]
 ---
 
 **The context window is the maximum number of [tokens](/glossary/llm-token) a language model can process in one request — everything counts against it: the system prompt, conversation history, retrieved documents, tool results, and the response being generated.**

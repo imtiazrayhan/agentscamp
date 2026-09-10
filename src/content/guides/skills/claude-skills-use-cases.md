@@ -27,6 +27,7 @@ faq:
   - q: "How many of these can I realistically run at once?"
     a: "All of them — skills cost only their name and description until one activates, so twenty installed skills are cheap. The constraint is distinctness: descriptions must not overlap, or tasks get routed to the wrong skill."
 related: ["guide:what-are-claude-skills", "guide:best-claude-skills-2026", "guide:writing-your-first-skill", "guide:claude-document-skills", "guide:claude-skills-examples", "guide:how-to-install-claude-skills"]
+audience: ["marketers"]
 ---
 
 Every good skill starts as a repeated explanation. The twenty use cases below all pass the same test — a procedure with house rules, explained more than twice — grouped by who tends to need them. Where the [library](/skills) already has an installable version, it's linked; the rest are patterns to [write yourself](/guides/skills/writing-your-first-skill) (start from the [annotated examples](/guides/skills/claude-skills-examples)).

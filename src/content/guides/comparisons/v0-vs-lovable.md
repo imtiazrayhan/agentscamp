@@ -22,6 +22,7 @@ faq:
   - q: "What happens after the prototype?"
     a: "The handoff is the real test. Both export/sync code (Lovable via GitHub, v0 as components you copy or pull), and from there it's normal software: review what was generated, add tests, and bring in an agentic tool like Claude Code for the refactors and features the builder UI can't express. Treat builder output as a strong first draft, not a finished system."
 related: ["tool:v0", "tool:lovable", "guide:best-ai-app-builders-2026", "glossary:vibe-coding", "tool:bolt", "tool:replit-agent"]
+audience: ["founders", "designers"]
 ---
 
 v0 vs Lovable is the app-builder wave's defining matchup, and the comparison resolves fast once you name the outputs: **v0 makes components, Lovable makes apps.**

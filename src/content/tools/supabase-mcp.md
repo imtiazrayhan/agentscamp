@@ -26,6 +26,7 @@ faq:
     a: "Grouped feature sets: database (execute_sql, apply_migration, list_tables/extensions/migrations), debugging (get_logs per service, get_advisors for security and performance findings), development (generate_typescript_types, project URL and keys), functions (list/get/deploy_edge_function), docs search, account-level project management, and branching on paid plans."
   - q: "Is it safe to point it at production?"
     a: "Supabase's own docs lead with the warning: don't connect it to production with write access. Use read_only=true (it switches to a read-only Postgres user and disables mutating tools), scope to one project with project_ref, and review tool calls — execute_sql on a prod database is exactly as dangerous as it sounds."
+audience: ["analysts"]
 ---
 
 Supabase MCP gives agents the whole Supabase loop — schema, SQL, logs, advisors, types, Edge Functions — through one official server. The standout design choice is **scoping by URL**: `?project_ref=` pins the server to one project and `&read_only=true` flips it to a read-only Postgres role with every mutating tool disabled, so the safety posture is visible in the config itself.

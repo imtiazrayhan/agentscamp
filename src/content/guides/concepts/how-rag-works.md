@@ -39,6 +39,7 @@ faq:
   - q: "What's the difference between RAG and fine-tuning?"
     a: "RAG injects knowledge at query time via retrieval; fine-tuning bakes behavior or style into the model's weights via training. RAG is the right tool for changing, factual knowledge you need cited; fine-tuning is for teaching a consistent format, tone, or task. They're complementary, not competitors."
 related: ["guide:hybrid-search-reranking", "guide:choosing-embeddings-2026", "agent:rag-pipeline-engineer", "skill:chunking-strategy-optimizer", "guide:building-an-mcp-server", "agent:ml-engineer"]
+audience: ["analysts"]
 ---
 
 Retrieval-augmented generation (RAG) is the most common way to make a language model answer questions about *your* data — private docs, a codebase, support tickets, contracts — instead of only what it absorbed in training. The idea is simple: **retrieve the relevant passages, then ask the model to answer using them.** The engineering is in making retrieval good, because **the answer can only be as good as what you retrieve.**

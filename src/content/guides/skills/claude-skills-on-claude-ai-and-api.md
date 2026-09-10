@@ -30,6 +30,7 @@ faq:
   - q: "Do skills work with the Claude Agent SDK?"
     a: "Yes — the SDK discovers skills from ~/.claude/skills/ and the project's .claude/skills/ via the setting_sources option, and you select them with the skills option ('all' or a list). One difference from Claude Code: the allowed-tools frontmatter field is ignored; tool permissions come from the SDK's own allowedTools."
 related: ["guide:what-are-claude-skills", "guide:skill-md-reference", "guide:how-to-install-claude-skills", "guide:claude-code-skills-best-practices", "guide:skills-vs-mcp-servers", "glossary:agent-skills"]
+audience: ["marketers"]
 ---
 
 Skills started in Claude Code, but the format was designed to travel: the same folder-with-a-SKILL.md now runs on claude.ai, on the Claude API, inside Managed Agents, and in the Agent SDK. What changes per surface is *how skills get there* and *what executes them*. This guide covers each. (New to the format? Start with [What Are Claude Skills?](/guides/skills/what-are-claude-skills))

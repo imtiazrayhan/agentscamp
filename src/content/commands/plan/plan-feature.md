@@ -10,6 +10,7 @@ topics: ["workflow-prompting", "architecture"]
 related: ["command:breakdown-task", "agent:system-architect"]
 featured: false
 summary: "A slash command that explores the codebase read-only and writes an implementation plan for a feature: it restates the request, maps the affected files and patterns with Read/Grep/Glob, then delivers a structured plan covering assumptions, approach, trade-offs, risks, ordered implementation steps, and a test plan."
+audience: ["founders"]
 ---
 
 ## Scope

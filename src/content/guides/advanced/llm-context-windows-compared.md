@@ -22,6 +22,7 @@ faq:
   - q: "Does a bigger window replace RAG?"
     a: "It moved the threshold, not the conclusion. Under a few hundred pages of stable content, stuffing (plus prompt caching) beats building a pipeline. At corpus scale, four walls remain — per-query cost, prefill latency, mid-window attention degradation, and access control — covered honestly in our RAG vs Long Context guide."
 related: ["glossary:context-window", "guide:llm-api-pricing-2026", "guide:rag-vs-long-context", "guide:context-engineering", "glossary:prompt-caching", "guide:claude-code-memory-context"]
+audience: ["analysts"]
 ---
 
 Specs verified against vendor docs on **July 1, 2026** (same methodology as the [pricing table](/guides/advanced/llm-api-pricing-2026): vendor pages only, unverifiable cells omitted). The headline: **the million-token window became the frontier baseline** — and stopped being the interesting number.

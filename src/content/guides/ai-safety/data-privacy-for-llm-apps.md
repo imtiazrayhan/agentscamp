@@ -44,6 +44,7 @@ keywords:
   - "zero data retention"
   - "rag tenant isolation"
   - "gdpr llm app"
+audience: ["founders"]
 ---
 
 **Sensitive data leaks at every hop of an LLM app — prompts, logs, traces, vector stores, and third-party providers — so privacy isn't one setting, it's a control at each hop.** The good news: the leaks are predictable, and a handful of concrete controls close most of them. This guide maps where data escapes and what to do about it, framed for engineers shipping production features rather than lawyers writing policy.

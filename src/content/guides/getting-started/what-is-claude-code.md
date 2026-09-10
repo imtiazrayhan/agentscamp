@@ -25,7 +25,7 @@ faq:
     a: "Tasks with a verifiable signal: making a failing test pass, mechanical multi-file changes like renames and migrations, investigating why something breaks, and scaffolding against an existing pattern. It struggles when success has no check — ambiguous product decisions, or goals only a human eyeballing a UI can judge."
   - q: "Do I need subagents, skills, and MCP servers to start?"
     a: "No. Start with a CLAUDE.md capturing your project's commands and conventions, give Claude Code a real task with a test attached, and add one skill for your most-repeated request. The extension system is there when the basics start paying off — not a prerequisite."
-audience: ["developers"]
+audience: ["developers", "founders", "designers"]
 ---
 
 Most AI coding tools you have used are autocomplete: you type, they predict the next few lines, you accept or reject. Claude Code is a different category. It is an **agentic** command-line tool — you give it a goal in plain language, and it reads your files, runs commands, edits code, checks the result, and keeps going until the goal is met or it needs you. The difference between "suggest the next token" and "achieve this outcome" is the whole point.

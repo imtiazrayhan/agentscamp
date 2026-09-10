@@ -22,6 +22,7 @@ faq:
   - q: "Can I use both Exa and Tavily together?"
     a: "Yes, and it's common. They optimize different stages: use Exa's neural search to discover the most semantically relevant sources, and Tavily (or a fetch/extract step) to pull answer-ready content. Wrap both behind one retrieval interface so your agent doesn't care which provider served a given query."
 related: ["tool:exa", "tool:tavily", "tool:firecrawl", "guide:web-data-for-ai-agents", "guide:agentic-rag", "glossary:semantic-search"]
+audience: ["marketers"]
 ---
 
 Exa vs Tavily is a question about *what the search API hands back*. Both put the live web behind an [AI agent](/glossary/ai-agent), but one is built to **discover the right pages by meaning** and the other to **return answer-ready content for RAG**. The split decides which one drops cleanly into your stack.

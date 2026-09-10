@@ -25,6 +25,7 @@ faq:
     a: "Playwright MCP is the generalist for cross-browser automation and testing flows. Chrome DevTools MCP is Chrome-only but brings the debugger: performance traces with insights, CrUX real-user data, network and console inspection with source maps. For 'why is this page slow/broken', DevTools MCP; for 'automate and test this flow everywhere', Playwright."
   - q: "Is it safe to point at my main browser?"
     a: "Point it at a clean profile. The README's own disclaimer: it exposes all browser content to the MCP client — a logged-in profile means logged-in sessions become agent-readable. Note also that usage-statistics telemetry is on by default (opt out with --no-usage-statistics)."
+audience: ["designers"]
 ---
 
 Chrome DevTools MCP is Google's answer to a blind spot every coding agent has: it can write frontend code but can't *see* it run. This server hands the agent a live Chrome with the DevTools attached — it navigates, clicks, screenshots, reads the console with source-mapped stack traces, inspects network requests, and records performance traces that come back with actionable insights.

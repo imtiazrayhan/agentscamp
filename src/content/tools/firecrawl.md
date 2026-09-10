@@ -27,6 +27,7 @@ faq:
     a: "Two documented options. Local: claude mcp add firecrawl -e FIRECRAWL_API_KEY=your-key -- npx -y firecrawl-mcp. Hosted remote: claude mcp add --transport http firecrawl https://mcp.firecrawl.dev/your-api-key/v2/mcp — note the key is embedded in that URL, so treat the whole URL as a secret."
   - q: "Is Firecrawl open source?"
     a: "The core is AGPL-3.0 and self-hostable (SDKs and some components are MIT, as is the MCP server). The hosted cloud adds proprietary niceties like Fire-Engine. AGPL matters if you modify and operate it as a service — most teams just use the hosted API with its free monthly credits."
+audience: ["marketers"]
 ---
 
 Firecrawl is the ingestion workhorse of the agent stack: give it a URL and get back **clean Markdown**; give it a domain and get back the whole site, crawled and converted. At ~131k GitHub stars it has become the default answer to "how do I get web content into my LLM pipeline without writing a scraper per site."

@@ -20,6 +20,7 @@ faq:
     a: "It's freemium. The free tier gives 5 credits/day capped at 30/month, hosted on lovable.app domains. Pro is $25/mo and Business $50/mo (both 100 monthly credits), adding private projects, custom domains, SSO, and team workspaces; unused monthly credits roll over while subscribed. Credits are consumed per AI message and scale with task complexity."
   - q: "Can I export code from Lovable?"
     a: "Yes. Lovable outputs a standard React + Vite + TypeScript SPA styled with Tailwind and shadcn/ui, and two-way GitHub sync connects a repository so developers can contribute via pull requests or take the code and deploy it anywhere."
+audience: ["founders", "designers"]
 ---
 
 Lovable is a prompt-driven app builder: you describe the app you want in plain language, watch it scaffold in a live preview, then refine and deploy from one place. It is the canonical "vibe coding" tool — you steer with chat, and Lovable writes the actual code behind the preview rather than producing a throwaway mockup.

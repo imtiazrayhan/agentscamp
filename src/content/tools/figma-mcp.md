@@ -25,6 +25,7 @@ faq:
     a: "The preferred path is the official plugin: claude plugin install figma@claude-plugins-official (it bundles the MCP server plus skills). Manual: claude mcp add --transport http figma https://mcp.figma.com/mcp, then authenticate via /mcp. For your live selection in the desktop app, enable the MCP server in Dev Mode and add http://127.0.0.1:3845/mcp."
   - q: "Is the Figma MCP server free?"
     a: "It's free during the beta period, with Figma signaling it will eventually become a usage-based paid feature. The remote server works on all seats and plans; the desktop (Dev Mode) server requires a Dev or Full seat on a paid plan."
+audience: ["designers"]
 ---
 
 Design-to-code used to mean screenshotting a frame and hoping. Figma's official MCP server replaces that with the design's **structured truth**: agents read the component hierarchy, auto-layout rules, variants, and design tokens directly — and on the remote server, can even write designs back to the canvas.

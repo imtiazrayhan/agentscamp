@@ -24,6 +24,7 @@ faq:
   - q: "How do I retrofit confidence onto an already-merged pile of AI code?"
     a: "Characterization first: generate tests that pin CURRENT behavior (the coverage-gap-finder skill targets the valuable untested paths), review those assertions against intent — every mismatch found is a latent bug surfaced — then refactor with the safety net in place. It's archaeology, but it converts 'nobody read this' into 'this is now specified.'"
 related: ["guide:tdd-with-ai-agents", "command:write-tests", "skill:test-scaffolder", "skill:coverage-gap-finder", "agent:test-engineer", "guide:vibe-coding-guide", "guide:ai-code-review-workflow"]
+audience: ["founders"]
 ---
 
 The uncomfortable math of 2026: AI writes a huge share of new code, and nobody — not even the diligent — reads all of it the old way. That isn't a scandal; it's a redefinition. **Verification, not authorship, is now the engineering**, and tests are its primary instrument. Here's how testing changes when the code under test came from an agent.

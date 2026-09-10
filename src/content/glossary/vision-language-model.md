@@ -10,6 +10,7 @@ faq:
     a: "For most document understanding, effectively yes. Classic OCR outputs characters and leaves structure to you; a VLM reads the page like a person — tables, layout, handwriting, checkboxes, the figure the text refers to — and can return structured data directly. Dedicated OCR still wins on raw character accuracy for clean, high-volume scanning at minimal cost."
   - q: "What are VLMs' weak spots?"
     a: "Precise counting and measurement, dense small text at low resolution, exact spatial coordinates, and hallucinated detail when an image is ambiguous — the model fills gaps plausibly, like any LLM. Resolution settings matter more than people expect: token cost scales with image size, and downscaling silently destroys small text."
+audience: ["designers"]
 ---
 
 **A vision-language model (VLM) is a model that takes images alongside text and reasons over both — describing a photo, extracting a table from a scanned invoice, reading a dashboard screenshot, or explaining a chart.**

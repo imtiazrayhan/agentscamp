@@ -10,6 +10,7 @@ faq:
     a: "Production-grade as of 2026: read and reason over images, screenshots, charts, and documents (vision-language); transcribe and generate speech, including realtime voice conversation; understand video at the frames-plus-audio level; and generate images. The developer workhorses are document/screenshot understanding and voice."
   - q: "Is multimodal just OCR plus an LLM?"
     a: "No — that's the pipeline it replaced. A multimodal model attends to the image directly: layout, tables, handwriting, the relationship between a chart's axes and its caption. OCR extracts characters; a VLM understands the page. For documents this collapses brittle multi-stage pipelines into one model call."
+audience: ["designers"]
 ---
 
 **Multimodal AI refers to models that work across more than one modality — accepting or producing combinations of text, images, audio, and video — rather than text alone.**

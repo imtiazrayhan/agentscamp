@@ -16,6 +16,7 @@ faq:
     a: "No. Automation catches many deterministic rule violations but cannot reliably judge logical focus order, meaningful labels, workflow completion, announcement timing, or whether keyboard users can recover from a state change."
   - q: "Does this skill certify WCAG compliance?"
     a: "No. It produces evidence-based findings for the reviewed scope. Formal conformance requires broader page and process coverage, documented methodology, and qualified human testing."
+audience: ["designers"]
 ---
 
 Review the changed user journey, not just the component markup or automated score.

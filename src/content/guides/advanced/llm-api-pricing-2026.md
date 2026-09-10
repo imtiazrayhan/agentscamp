@@ -26,6 +26,7 @@ faq:
   - q: "Why do you only cite vendor pricing pages?"
     a: "Because third-party price aggregators drift stale within weeks and propagate each other's errors. Every figure on this page was fetched from the provider's own pricing or docs page on the date stamped above; anything we couldn't verify that way is omitted rather than guessed."
 related: ["guide:llm-cost-latency-engineering", "guide:llm-context-windows-compared", "glossary:prompt-caching", "glossary:batch-inference", "guide:claude-vs-gpt-vs-gemini-coding", "guide:calling-any-model-gateways", "guide:litellm-vs-openrouter"]
+audience: ["analysts"]
 ---
 
 All prices are **USD per million [tokens](/glossary/llm-token), standard tier**, read directly from vendor pricing pages on **July 1, 2026**. Prices change; this page is maintained on a refresh cadence (the `Updated` date above is the source of truth), and numbers we couldn't verify on a vendor page are omitted, not estimated.

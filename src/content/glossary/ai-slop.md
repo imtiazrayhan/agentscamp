@@ -10,6 +10,7 @@ faq:
     a: "Effort and verification, not origin. Slop is generation without judgment: unreviewed, generic, often subtly wrong, produced because output is cheap. AI-assisted work with real curation — checked facts, edited voice, tested code — isn't slop regardless of how much a model contributed. The term indicts the workflow, not the tool."
   - q: "Is there such a thing as code slop?"
     a: "Yes, and it's the costly kind: plausible, unreviewed AI code accumulating in repos — happy-path logic, duplicated patterns, hallucinated edge-case handling — that compiles today and bills the team at month six. The antidotes are the verification stack: tests as acceptance contracts, layered review, and treating generated code as a draft."
+audience: ["marketers"]
 ---
 
 **AI slop is mass-produced, low-effort AI-generated content shipped without human judgment — fluent enough to fill space, generic enough to be worthless, and voluminous enough to degrade whatever it floods.**

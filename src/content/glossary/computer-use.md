@@ -10,6 +10,7 @@ faq:
     a: "A perception-action loop: the agent receives a screenshot (or accessibility/DOM data), a vision-language model decides the next action — click these coordinates, type this text, scroll — the action executes, and a fresh screenshot comes back as the observation. Reliability comes from grounding (finding the right element) and recovery (noticing a mis-click and correcting)."
   - q: "When is computer use the right tool versus an API?"
     a: "Last resort by design: APIs and structured tools (like browser automation via Playwright MCP) are faster, cheaper, and far more reliable when they exist. Computer use earns its keep where there's no API — legacy desktop software, arbitrary websites, vendor portals — or where the task is inherently visual. If an MCP server covers it, use that first."
+audience: ["designers"]
 ---
 
 **Computer use is the agent capability of operating a computer the way a person does — perceiving the screen visually and acting through mouse and keyboard, with no API required.**

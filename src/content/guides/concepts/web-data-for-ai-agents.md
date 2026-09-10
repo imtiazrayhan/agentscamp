@@ -22,6 +22,7 @@ faq:
   - q: "What about prompt injection from web content?"
     a: "It's the category's standing risk: any fetched page can contain instructions aimed at your model (indirect injection). Defenses are architectural — render content as quoted data in prompts, never grant fetch-adjacent tools write/spend powers without gates, and treat 'the page told me to' as a failure mode you've planned for."
 related: ["tool:exa", "tool:firecrawl", "tool:tavily", "tool:jina-reader", "guide:agentic-rag", "glossary:rag", "guide:defending-prompt-injection", "skill:web-research-pipeline"]
+audience: ["marketers"]
 ---
 
 An agent without web access is frozen at its [training cutoff](/glossary/knowledge-cutoff); an agent with *raw* web access drowns in HTML. The web-data layer exists to solve both — and the 2026 field divides cleanly along two verbs: **find** (which pages matter) and **fetch** (turn them into clean model input).

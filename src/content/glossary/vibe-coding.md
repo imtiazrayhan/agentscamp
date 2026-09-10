@@ -10,6 +10,7 @@ faq:
     a: "Andrej Karpathy popularized it in early 2025, describing a style of building where you 'fully give in to the vibes' — prompting an AI for code, accepting its output, and steering by running the result rather than reviewing every diff."
   - q: "Is vibe coding bad practice?"
     a: "It depends entirely on the stakes. For prototypes, internal tools, and exploration, it's a legitimate speed multiplier. For production systems, unreviewed AI code accumulates risk — security holes, hidden assumptions, unmaintainable structure — so professional workflows keep human review, tests, and permission guardrails in the loop even when the AI writes most of the code."
+audience: ["founders"]
 ---
 
 **Vibe coding is a style of software development where you describe what you want in natural language, let an AI coding agent generate the implementation, and evaluate the result by how it behaves — running it, clicking through it — rather than by reading every line of code.**

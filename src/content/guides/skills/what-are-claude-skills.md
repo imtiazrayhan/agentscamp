@@ -53,7 +53,7 @@ faq:
   - q: "What's the difference between a Claude Skill and an Agent Skill?"
     a: "Nothing structural — they're the same format under two names. 'Agent Skills' is the open standard Anthropic developed and released for the wider ecosystem; 'Claude Skills' is what that format is called inside Anthropic's own products. A skill written for one works in the other, provided you stick to the spec's fields."
 related: ["guide:writing-your-first-skill", "guide:skill-md-reference", "guide:how-to-install-claude-skills", "guide:claude-skills-examples", "guide:best-claude-skills-2026", "guide:skills-vs-agents-vs-commands", "guide:skills-vs-mcp-servers", "guide:claude-skills-on-claude-ai-and-api"]
-audience: ["developers"]
+audience: ["developers", "marketers", "designers", "analysts"]
 ---
 
 Claude Skills are the answer to a problem every heavy Claude user hits: you keep re-explaining the same procedure. How your team writes migrations. The exact steps of your release checklist. The way you want commit messages formatted. A **skill** packages that procedure once — as a folder with a `SKILL.md` file — and Claude loads it *by itself* whenever the task calls for it.

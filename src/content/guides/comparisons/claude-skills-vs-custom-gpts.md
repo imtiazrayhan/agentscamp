@@ -29,6 +29,7 @@ faq:
   - q: "Is there an OpenAI equivalent of skills?"
     a: "Yes, literally: OpenAI Codex supports the Agent Skills open standard — directories with a SKILL.md, loaded from .agents/skills, with the same progressive disclosure. For coding agents, the two ecosystems have converged on Anthropic's format."
 related: ["guide:what-are-claude-skills", "guide:agent-skills-open-standard", "guide:skills-vs-agents-vs-commands", "guide:skills-vs-mcp-servers", "guide:how-to-install-claude-skills", "guide:claude-skills-use-cases"]
+audience: ["founders", "marketers"]
 ---
 
 People compare these two because both answer "how do I stop re-explaining the same thing to my AI?" — but they answer it with opposite architectures. **A Custom GPT is a destination: a packaged chatbot you (or the GPT Store's audience) go visit. A Claude Skill is a capability: a procedure your existing agent picks up mid-task, wherever you already work.** Once you see that shape difference, every row of the comparison follows from it.

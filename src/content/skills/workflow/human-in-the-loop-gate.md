@@ -10,6 +10,7 @@ topics: ["ai-agents-systems"]
 related: ["command:add-human-approval", "agent:agent-reliability-reviewer", "guide:production-tool-calling", "guide:agent-frameworks-2026"]
 featured: false
 summary: "Autonomy is great until an agent does something irreversible. This skill inserts a human-in-the-loop gate: classify which actions are consequential, interrupt the agent before them with the proposed action and its context, and resume (or abort) based on the human's decision — durably, so a restart doesn't lose state."
+audience: ["founders"]
 ---
 
 An agent that can act autonomously will eventually try to do something you'd want to stop — spend money, delete a record, email a customer, force-push to main. A human-in-the-loop (HITL) gate makes consequential actions **require approval** without turning the whole agent into a manual tool. This skill adds that gate cleanly.

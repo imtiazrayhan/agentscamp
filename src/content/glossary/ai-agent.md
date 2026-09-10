@@ -10,6 +10,7 @@ faq:
     a: "The loop. A chatbot maps one input to one output. An agent decides on an action, executes it through a tool, reads the result, and decides again — repeating until the goal is met. Tool use, statefulness across steps, and self-correction against observed results are the defining traits."
   - q: "What are the core components of an AI agent?"
     a: "A model (the reasoning engine), tools (the actions it can take — search, code execution, APIs), an execution loop that feeds tool results back as observations, and usually memory (context within a task, sometimes persistent across tasks) plus guardrails bounding what it may do."
+audience: ["founders"]
 ---
 
 **An AI agent is a system that uses a language model to pursue a goal autonomously: it decides on an action, executes it through a tool, observes the result, and repeats — a loop, not a single answer.**

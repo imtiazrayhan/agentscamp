@@ -24,6 +24,7 @@ faq:
   - q: "Does SDD slow you down?"
     a: "On small or exploratory work, yes — writing a spec for a spike is theater. On substantial features it's usually net-faster: the hour of spec writing replaces the day of corrective prompting and rework, parallelizes across agents, and prevents the architecture drift that costs the most later. The honest rule: spec when the work outlives the session."
 related: ["tool:spec-kit", "guide:vibe-coding-guide", "command:plan-feature", "command:breakdown-task", "guide:building-multi-step-workflows", "guide:claude-code-memory-context", "skill:adr-writer"]
+audience: ["founders"]
 ---
 
 The second generation of agentic-coding wisdom is converging on something almost embarrassingly traditional: **write down what you want before building it.** Spec-driven development (SDD) is that discipline rebuilt for agents — where the spec isn't bureaucracy, it's the *program you write in English*, and the agent is its compiler.

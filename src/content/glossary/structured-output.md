@@ -10,6 +10,7 @@ faq:
     a: "JSON mode guarantees syntactically valid JSON — but any JSON: fields can be missing, renamed, or mistyped. Structured outputs (schema-constrained generation) guarantee conformance to your specific schema, enforced during decoding. If code consumes the result, schema enforcement is the one you want."
   - q: "Do I still need validation with structured outputs?"
     a: "Yes — schema conformance isn't semantic correctness. The shape can be right while the values are wrong (a plausible-but-invented ID, a date outside your range). Validate semantics in code, and keep a retry path that feeds validation errors back to the model; libraries like Instructor package that loop."
+audience: ["analysts"]
 ---
 
 **Structured output is getting typed, machine-consumable data from an LLM — the model's response constrained to match a schema you define, instead of prose your code has to parse and pray over.**

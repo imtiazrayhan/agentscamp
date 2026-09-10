@@ -9,6 +9,7 @@ topics: ["review-qa"]
 related: ["command:review-pr", "command:find-bug", "command:security-scan"]
 featured: false
 summary: "Read-only command that audits a component or page against WCAG: it reads the markup and checks semantic HTML, accessible names, keyboard operability, correct (and non-redundant) ARIA, contrast risks, form labeling, and motion concerns — then reports findings grouped by severity, each with location, user impact, and a concrete fix that prefers native elements over ARIA."
+audience: ["designers"]
 ---
 
 Audit `$ARGUMENTS` for accessibility. Read the markup, reason about how a keyboard and screen-reader user would actually experience it, and report concrete WCAG-grounded problems with fixes. Do not modify any files — the findings are the whole deliverable.

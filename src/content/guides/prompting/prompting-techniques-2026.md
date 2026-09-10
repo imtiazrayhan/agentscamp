@@ -27,6 +27,7 @@ faq:
   - q: "How many few-shot examples should I use?"
     a: "Usually two to five. The goal is to demonstrate the pattern and its boundaries — including the edge cases and the desired \"unknown\"/refusal behavior — not to flood the context. A little variety across examples teaches the limits of the pattern better than one long example, which tends to overfit to its own specifics. More examples cost tokens and latency and can over-anchor the model, so add them only when an eval slice shows the model getting a case wrong that an example would fix."
 related: ["guide:prompt-patterns", "guide:dspy-prompt-optimization", "tool:dspy", "skill:prompt-optimizer", "guide:structured-output-2026", "guide:context-engineering", "agent:prompt-engineer"]
+audience: ["marketers"]
 ---
 
 "Few-shot," "chain-of-thought," and "structured output" get talked about as if you have to choose one. You don't — they fix different problems. Few-shot fixes the *shape* of the answer, chain-of-thought improves the *correctness* of hard reasoning, and structured prompting makes the output *parseable*. The skill is knowing which failure mode you're staring at and reaching for the technique that addresses it — then composing them. This guide is that decision map for 2026.

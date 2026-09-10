@@ -10,6 +10,7 @@ faq:
     a: "Two to five short, varied ones usually beat both one long example (overfits its specifics) and ten (diminishing returns, token cost, and on long prompts, diluted attention). Cover the boundaries: a typical case, an edge case, and the tricky case the model keeps getting wrong — including a 'when unsure, output X' demonstration."
   - q: "When does few-shot beat just writing better instructions?"
     a: "When the requirement is easier to show than say: exact output formats, house style, subtle classification boundaries, conventions like 'how we write API handlers.' Adjectives drift; demonstrations pin. For behavior that's genuinely rule-like ('never include PII'), instructions remain the right tool — most strong prompts use both."
+audience: ["marketers"]
 ---
 
 **Few-shot prompting is teaching a model the task by example: the prompt includes a handful of input→output demonstrations, and the model infers the pattern — format, style, decision boundary — from them.**

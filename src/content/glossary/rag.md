@@ -10,6 +10,7 @@ faq:
     a: "Models only know their training data — nothing about your codebase, your docs, or anything after their cutoff. RAG closes that gap at query time by fetching the relevant slice of your data and putting it in the prompt, which grounds answers in real sources and sharply reduces hallucination on private or fresh information."
   - q: "Is RAG the same as fine-tuning?"
     a: "No. RAG supplies knowledge at query time without changing the model; fine-tuning changes the model's weights to teach behavior or style. Knowledge that changes often belongs in RAG; durable behavior belongs in fine-tuning — and many production systems use both."
+audience: ["analysts"]
 ---
 
 **RAG (retrieval-augmented generation) is the technique of fetching relevant documents from your own data and inserting them into a language model's prompt at query time, so the model answers from retrieved facts instead of training-data memory alone.**

@@ -24,7 +24,7 @@ faq:
   - q: "How do I make Claude Code think harder on a problem?"
     a: "Include 'ultrathink' in the prompt for maximum reasoning on that turn, or toggle extended thinking for the session (Option+T on macOS, Alt+T elsewhere). Watch the reasoning with Ctrl+O if you want to see the work."
 related: ["guide:installing-claude-code", "guide:what-is-claude-code", "guide:claude-code-memory-context", "guide:claude-code-settings-permissions", "guide:claude-code-hooks", "guide:claude-code-mcp-setup", "guide:parallel-claude-code-worktrees", "guide:prompt-patterns"]
-audience: ["developers"]
+audience: ["developers", "founders", "designers"]
 ---
 
 Claude Code rewards depth: the default chat loop works on day one, but the operators who get 10x from it are using a different toolset — prefixes, modes, session surgery, and a few flags. Here are the 25 tips that pay off most, grouped by what they speed up.

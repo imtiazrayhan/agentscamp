@@ -27,6 +27,7 @@ faq:
     a: "The day-to-day Stripe surface: account info and balance; create/list customers, products, prices, coupons; create and finalize invoices; payment links; list payment intents; refunds; list/update/cancel subscriptions; dispute handling; plus search_stripe_documentation and resource search/fetch for grounding answers in current Stripe docs."
   - q: "Is the Stripe MCP server safe to use on a live account?"
     a: "The control is the key: a Restricted API Key scoped to read-only (or to specific resources) caps the blast radius regardless of what the model attempts — tool availability literally follows the key's permissions. Start in test mode, use RAKs in live mode, and put ask rules on money-moving tools."
+audience: ["founders"]
 ---
 
 Stripe MCP puts the payments stack within the agent's reach — both halves of it. The **knowledge half**: `search_stripe_documentation` grounds integration work in current Stripe docs instead of training-data memory. The **operations half**: customers, invoices, payment links, subscriptions, refunds, and disputes become tools, with your API key's permissions as the hard boundary.

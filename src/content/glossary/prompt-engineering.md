@@ -10,6 +10,7 @@ faq:
     a: "Prompt engineering shapes the model's behavior purely through its inputs — instructions, examples, and format — and changes nothing about the model itself. Fine-tuning retrains the model's weights on your data to bake in new behavior. Prompting is fast, cheap, and reversible, so you try it first; fine-tuning is worth the cost only when prompting can't get you there reliably."
   - q: "Is prompt engineering still relevant for agents?"
     a: "Yes, but it's part of a larger discipline. For multi-step agents, what matters most is everything assembled into the context window across turns — retrieved data, tool results, and history — which is called context engineering. Prompt engineering remains the core skill for the static instructions, but context engineering governs the dynamic parts."
+audience: ["marketers"]
 ---
 
 **Prompt engineering is the practice of designing the inputs to a large language model — instructions, context, examples, and output format — to reliably get the response you want, without changing the model's weights.**

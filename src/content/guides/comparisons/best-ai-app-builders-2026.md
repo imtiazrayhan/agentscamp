@@ -22,6 +22,7 @@ faq:
   - q: "Are they replacing developers?"
     a: "They're replacing the blank page. The idea-to-demo distance collapsed, which moves the developer's value to everything after the demo: correctness, security, data design, maintainability. Teams use these tools to compress iteration zero, not to skip engineering."
 related: ["tool:v0", "tool:lovable", "tool:bolt", "tool:replit-agent", "guide:v0-vs-lovable", "glossary:vibe-coding", "tool:claude-code"]
+audience: ["founders", "designers"]
 ---
 
 The app-builder wave is [vibe coding](/glossary/vibe-coding) productized: describe software, watch it exist. The four that matter in 2026 aren't interchangeable — they generate **different kinds of artifact**, and choosing well means naming which artifact you're missing.

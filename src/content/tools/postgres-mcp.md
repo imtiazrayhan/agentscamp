@@ -25,6 +25,7 @@ faq:
     a: "claude mcp add postgres -e DATABASE_URI=\"postgresql://user:pass@localhost:5432/db\" -- uvx postgres-mcp --access-mode=restricted. It's a Python server (uv/pipx/Docker); restricted mode gives read-only, safety-parsed SQL — the right default for anything shared."
   - q: "What makes it 'Pro' versus a basic SQL bridge?"
     a: "Deterministic database smarts alongside the LLM: explain_query can simulate hypothetical indexes (via hypopg) before you create them, analyze_workload_indexes mines pg_stat_statements for what your real workload needs, and analyze_db_health checks buffer cache, connections, vacuum, indexes, sequences, and replication in one call."
+audience: ["analysts"]
 ---
 
 Postgres MCP Pro answers "let the agent talk to the database" without making the DBA wince. It pairs the model with **deterministic, classical optimization tooling** — real EXPLAIN plans, hypothetical-index simulation, workload-driven index analysis — so recommendations come from algorithms, with the LLM doing the orchestration and explanation.

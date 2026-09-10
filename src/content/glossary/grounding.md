@@ -10,6 +10,7 @@ faq:
     a: "Supply the evidence and constrain to it: retrieve relevant sources (RAG) or tool results into the prompt, instruct the model to answer only from that material with 'not in the context' as an allowed response, and require citations so every claim traces to a source. Grounding is architecture plus instructions — not instructions alone."
   - q: "Is grounding the same as RAG?"
     a: "RAG is the most common grounding mechanism, not the definition. Grounding is the property — output anchored to verifiable evidence — achievable via retrieval, tool calls (a database lookup grounds a number), search results, or provided documents. RAG is one way to deliver the evidence."
+audience: ["marketers", "analysts"]
 ---
 
 **Grounding is anchoring a model's output to verifiable evidence — retrieved documents, tool results, supplied sources — so answers come from checkable material rather than the model's training-data memory.**
