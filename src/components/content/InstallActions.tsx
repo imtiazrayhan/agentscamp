@@ -20,12 +20,12 @@ function downloadHref(content: string) {
  */
 function AgentExport({ item }: { item: AgentItem }) {
   return (
-    <details className="group rounded-lg border border-border">
-      <summary className="flex cursor-pointer list-none items-center gap-1.5 px-3 py-2 text-sm font-medium text-foreground [&::-webkit-details-marker]:hidden">
+    <details className="group">
+      <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground [&::-webkit-details-marker]:hidden">
         <ChevronRight className="size-4 text-muted-foreground transition-transform group-open:rotate-90" />
         Export for other tools
       </summary>
-      <ul className="space-y-3 border-t border-border px-3 py-3">
+      <ul className="mt-2 space-y-3 pl-6">
         {AGENT_EXPORT_FORMATS.map((f) => (
           <li
             key={f.id}
@@ -53,7 +53,7 @@ function AgentExport({ item }: { item: AgentItem }) {
               <a
                 href={`${item.href}.${f.routeExt}`}
                 download={f.saveAs(item.slug)}
-                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary"
+                className="inline-flex items-center gap-1.5 rounded-md border border-input bg-card px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary"
               >
                 <Download className="size-3.5" /> Download
               </a>
@@ -116,9 +116,9 @@ export function InstallActions({ item }: { item: ContentItem }) {
       <div className="flex flex-wrap gap-2">
         <CopyButton
           text={file}
+          variant="primary"
           label={`Copy ${def.singular.toLowerCase()} file`}
           copiedLabel="Copied!"
-          className="h-10 px-4"
           eventLabel={`file:${item.type}`}
         />
         <Button asChild variant="outline">
@@ -126,16 +126,18 @@ export function InstallActions({ item }: { item: ContentItem }) {
             <Download className="size-4" /> Download
           </a>
         </Button>
+      </div>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        {def.installPath && (
+          <p className="text-xs text-muted-foreground">
+            Install to{" "}
+            <code className="rounded-md bg-secondary px-1 py-0.5 font-mono">
+              {def.installPath.replace("<slug>", item.slug)}
+            </code>
+          </p>
+        )}
         <MarkdownLink item={item} />
       </div>
-      {def.installPath && (
-        <p className="text-xs text-muted-foreground">
-          Install to{" "}
-          <code className="rounded bg-secondary px-1 py-0.5 font-mono">
-            {def.installPath.replace("<slug>", item.slug)}
-          </code>
-        </p>
-      )}
       {item.type === "agent" && <AgentExport item={item} />}
       {item.type === "skill" && item.multiFile && (
         <p className="text-xs text-muted-foreground">
@@ -146,7 +148,7 @@ export function InstallActions({ item }: { item: ContentItem }) {
       {/* Secondary path: the npm CLI. */}
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-xs text-muted-foreground">or via CLI:</span>
-        <code className="rounded-md border border-border bg-secondary px-3 py-2 font-mono text-xs text-foreground">
+        <code className="rounded-md bg-secondary px-3 py-2 font-mono text-xs text-foreground">
           {cliCommand}
         </code>
         <CopyButton
