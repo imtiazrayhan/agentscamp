@@ -1,6 +1,6 @@
 # agentscamp
 
-> 224 ready-to-use Claude Code agents, skills, and slash commands — installable in one command.
+> 256 ready-to-use Claude Code agents, skills, and slash commands — installable in one command.
 
 [AgentsCamp](https://agentscamp.com) is a curated, format-validated directory of AI coding artifacts. This CLI bundles the full catalog and installs items straight into your `.claude/` directory.
 
@@ -14,7 +14,7 @@ npx agentscamp
 
 ```
 What do you want to install?
-❯ Everything            224 items
+❯ Everything            256 items
   Agents only          58
   Skills only          90
   Commands only        50
@@ -29,9 +29,9 @@ npx agentscamp --all
 ```
 
 ```
-Installing 224 items into ~/.claude …
-✓ 61 agents, 110 skills, 53 commands installed
-224 installed · ~/.claude
+Installing 256 items into ~/.claude …
+✓ 65 agents, 130 skills, 61 commands installed
+256 installed · ~/.claude
 ```
 
 ## Commands
@@ -69,9 +69,9 @@ These are Claude Code's standard locations — agents get delegated to automatic
 
 ## What's inside
 
-- **61 agents** — specialized subagents for development, data/AI, infra, security, and more → [browse agents](https://agentscamp.com/agents)
-- **110 skills** — on-demand capabilities for testing, databases, refactoring, releases → [browse skills](https://agentscamp.com/skills)
-- **53 commands** — reusable slash commands for planning, review, git, scaffolding → [browse commands](https://agentscamp.com/commands)
+- **65 agents** — specialized subagents for development, data/AI, infra, security, and more → [browse agents](https://agentscamp.com/agents)
+- **130 skills** — on-demand capabilities for testing, databases, refactoring, releases → [browse skills](https://agentscamp.com/skills)
+- **61 commands** — reusable slash commands for planning, review, git, scaffolding → [browse commands](https://agentscamp.com/commands)
 
 Every item has a full page with docs, examples, and related picks at [agentscamp.com](https://agentscamp.com).
 

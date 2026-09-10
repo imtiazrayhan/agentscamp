@@ -1,6 +1,6 @@
 # AgentsCamp
 
-> Guides, an AI tool directory, and a glossary for building with AI coding agents — plus ready-to-install Claude Code agents, skills, and slash commands. Read it at [agentscamp.com](https://agentscamp.com).
+> Guides, an AI tool directory, and a glossary for everyone working with AI — developers, founders, marketers, designers, and analysts — plus ready-to-install Claude Code agents, skills, and slash commands. Read it at [agentscamp.com](https://agentscamp.com).
 
 ## What's on the site
 
