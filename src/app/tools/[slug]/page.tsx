@@ -8,7 +8,7 @@ import {
   toolCategoryCollection,
   toolPricingCollection,
 } from "@/lib/seo/collections";
-import { DetailView } from "@/components/content/DetailView";
+import { ArtifactDetail } from "@/components/content/ArtifactDetail";
 
 type Params = Promise<{ slug: string }>;
 
@@ -35,7 +35,7 @@ export default async function Page({ params }: { params: Params }) {
   const pricing = toolPricingCollection(item.pricing);
   const alternatives = toolAlternativesCollection(item.slug);
   return (
-    <DetailView
+    <ArtifactDetail
       item={item}
       related={getRelated(item)}
       toolCategoryHref={

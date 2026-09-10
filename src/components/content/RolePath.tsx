@@ -26,18 +26,18 @@ export function RolePath({
           description="Read these in order — each one assumes the last."
           className="pt-0"
         >
-          <ol className="grid gap-3 sm:grid-cols-2">
+          <ol className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {startHere.map((item, i) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   className="group flex h-full gap-4 rounded-md border border-border bg-card p-4 transition-colors hover:border-primary/50"
                 >
-                  <span className="font-mono text-2xl font-bold tabular-nums leading-none text-primary">
+                  <span className="text-2xl font-bold tabular-nums leading-none text-primary">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="min-w-0">
-                    <span className="block font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                    <span className="block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                       {contentTypes[item.type].singular}
                     </span>
                     <span className="mt-1 block font-semibold leading-snug group-hover:text-primary">
@@ -65,7 +65,7 @@ export function RolePath({
         >
           <ContentGrid>
             {items.map((item) => (
-              <ContentCard key={item.href} item={item} />
+              <ContentCard key={item.href} item={item} showType={false} />
             ))}
           </ContentGrid>
         </Section>

@@ -8,7 +8,7 @@ export function RelatedItems({ items }: { items: ContentItem[] }) {
   return (
     <section className="mt-12 border-t border-border pt-8">
       <h2 className="mb-4 text-lg font-semibold">Related</h2>
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {items.map((item) => {
           const accent = getColorClasses(item.type);
           const Icon = contentTypes[item.type].icon;

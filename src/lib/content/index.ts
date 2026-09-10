@@ -1,5 +1,4 @@
 import { loaders, loadAllByType } from "./loaders";
-import { contentTypes } from "./registry";
 import { flatTypes } from "./paths";
 import type {
   ContentItem,
@@ -189,7 +188,6 @@ export function buildSearchRecords(): SearchRecord[] {
     type: i.type,
     title: i.title,
     description: i.description,
-    accent: contentTypes[i.type].accent,
     href: i.href,
     tags: i.tags,
     topics: i.topics,

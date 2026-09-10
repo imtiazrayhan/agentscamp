@@ -17,7 +17,7 @@ export function AlternativesTable({
   items: ToolItem[];
 }) {
   if (items.length === 0) return null;
-  const th = "px-3 py-2 text-left font-mono text-xs uppercase tracking-wider text-muted-foreground";
+  const th = "px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground";
   const td = "px-3 py-2 align-top";
   return (
     <div className="mt-6">

@@ -57,7 +57,7 @@ export default function Page() {
                 <span className="block font-semibold group-hover:text-primary">
                   {t.label}
                 </span>
-                <span className="font-mono text-xs text-muted-foreground">
+                <span className="text-xs tabular-nums text-muted-foreground">
                   {t.count} resources
                 </span>
               </span>

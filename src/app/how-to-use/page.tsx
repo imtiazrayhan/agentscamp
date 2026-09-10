@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { proseClasses } from "@/components/ui/prose";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { faqPageGraph } from "@/lib/seo/jsonld";
@@ -51,7 +53,7 @@ export default function Page() {
           __html: JSON.stringify(faqPageGraph("/how-to-use", faq)),
         }}
       />
-      <article className="prose prose-neutral max-w-3xl dark:prose-invert">
+      <article className={cn(proseClasses, "measure")}>
         <h1>How to use AgentsCamp</h1>
         <p>
           AgentsCamp is a reading-first hub. Start with the guides, use the tool

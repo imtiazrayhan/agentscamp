@@ -27,7 +27,9 @@ export function Toc({ items }: { items: TocItem[] }) {
 
   return (
     <nav aria-label="On this page" className="text-sm">
-      <p className="mb-2 font-semibold">On this page</p>
+      <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        On this page
+      </p>
       <ul className="space-y-1.5 border-l border-border">
         {items.map((i) => (
           <li key={i.id} style={{ paddingLeft: i.depth === 3 ? 16 : 0 }}>

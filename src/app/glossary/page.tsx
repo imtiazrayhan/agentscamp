@@ -44,7 +44,7 @@ export default function Page() {
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           AI Glossary
         </h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
+        <p className="mt-3 max-w-[68ch] text-pretty text-lg text-muted-foreground">
           {items.length} AI and LLM-engineering terms, defined precisely —
           answer first, with the deeper guide linked.
         </p>
@@ -55,7 +55,7 @@ export default function Page() {
           <a
             key={l}
             href={`#${l}`}
-            className="rounded-sm border border-border bg-card px-2 py-0.5 font-mono text-xs text-muted-foreground transition-colors hover:border-primary/60 hover:text-primary"
+            className="inline-flex size-7 items-center justify-center rounded-md border border-border bg-card text-xs font-semibold text-muted-foreground transition-colors hover:border-foreground/25 hover:text-foreground"
           >
             {l}
           </a>
@@ -65,7 +65,7 @@ export default function Page() {
       <div className="space-y-10">
         {letters.map((l) => (
           <section key={l} id={l} aria-label={`Terms starting with ${l}`}>
-            <h2 className="mb-4 border-b border-border pb-2 font-mono text-sm text-primary">
+            <h2 className="mb-4 border-b border-border pb-2 text-sm font-semibold text-type-sky-ink">
               {l}
             </h2>
             <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">

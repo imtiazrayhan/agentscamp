@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getItem, getRelated } from "@/lib/content";
 import { categorizedParams } from "@/lib/seo/params";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { DetailView } from "@/components/content/DetailView";
+import { ArtifactDetail } from "@/components/content/ArtifactDetail";
 
 type Params = Promise<{ category: string; slug: string }>;
 
@@ -25,5 +25,5 @@ export default async function Page({ params }: { params: Params }) {
   const { category, slug } = await params;
   const item = getItem("agent", category, slug);
   if (!item) notFound();
-  return <DetailView item={item} related={getRelated(item)} />;
+  return <ArtifactDetail item={item} related={getRelated(item)} />;
 }

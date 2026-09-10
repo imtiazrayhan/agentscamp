@@ -28,6 +28,9 @@ export function CollectionView({
   /** Replaces the default card grid; must render the same `items` in the same order. */
   list?: React.ReactNode;
 }) {
+  // Category/pricing pages are single-type; topics and role paths are mixed.
+  const mixedTypes = new Set(items.map((i) => i.type)).size > 1;
+
   return (
     <div>
       <script
@@ -56,7 +59,7 @@ export function CollectionView({
       {list ?? (
         <ContentGrid>
           {items.map((item) => (
-            <ContentCard key={item.href} item={item} />
+            <ContentCard key={item.href} item={item} showType={mixedTypes} />
           ))}
         </ContentGrid>
       )}

@@ -70,7 +70,7 @@ function MarkdownLink({ item }: { item: ContentItem }) {
   return (
     <a
       href={`${item.href}.md`}
-      className="inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground hover:text-foreground"
+      className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
     >
       <FileText className="size-3.5" /> View as Markdown
     </a>

@@ -12,7 +12,7 @@ import { SearchResults } from "@/components/search/SearchResults";
 export const metadata: Metadata = buildPageMetadata({
   title: "Search",
   description:
-    "Search every agent, skill, guide, tool, and command on AgentsCamp.",
+    "Search every guide, tool, glossary term, agent, skill, and command on AgentsCamp.",
   path: "/search",
   noindex: true,
 });
@@ -24,7 +24,8 @@ export default function Page() {
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Search</h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          Search every agent, skill, guide, tool, and command on AgentsCamp.
+          Search every guide, tool, glossary term, agent, skill, and command on
+          AgentsCamp.
         </p>
       </header>
       <Suspense fallback={null}>

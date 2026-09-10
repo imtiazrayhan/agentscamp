@@ -23,8 +23,8 @@ export function ShareRow({ url, title }: { url: string; title: string }) {
     },
   ];
   return (
-    <div className="mt-8 flex flex-wrap items-center gap-2 border-t border-border pt-6">
-      <span className="font-mono text-xs text-muted-foreground">share</span>
+    <div className="flex flex-wrap items-center gap-2">
+      <span className="text-sm text-muted-foreground">Share</span>
       {links.map((l) => (
         <a
           key={l.method}

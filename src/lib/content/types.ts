@@ -152,7 +152,6 @@ export interface SearchRecord {
   type: ContentTypeId;
   title: string;
   description: string;
-  accent: Accent;
   href: string;
   tags: string[];
   topics: string[];

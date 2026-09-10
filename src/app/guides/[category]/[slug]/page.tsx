@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getItem, getRelated } from "@/lib/content";
 import { categorizedParams } from "@/lib/seo/params";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { DetailView } from "@/components/content/DetailView";
+import { GuideDetail } from "@/components/content/GuideDetail";
 
 type Params = Promise<{ category: string; slug: string }>;
 
@@ -24,6 +24,6 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: Params }) {
   const { category, slug } = await params;
   const item = getItem("guide", category, slug);
-  if (!item) notFound();
-  return <DetailView item={item} related={getRelated(item)} />;
+  if (!item || item.type !== "guide") notFound();
+  return <GuideDetail item={item} related={getRelated(item)} />;
 }

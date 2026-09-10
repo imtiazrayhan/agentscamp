@@ -22,7 +22,7 @@ export function AlternativesList({
   const free = items.filter(
     (t) => t.pricing === "free" || t.pricing === "open-source",
   );
-  const meta = "font-mono text-xs text-muted-foreground";
+  const meta = "text-xs text-muted-foreground";
   return (
     <div className="space-y-10">
       {free.length > 0 && free.length < items.length && (

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { proseClasses } from "@/components/ui/prose";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { site } from "@/lib/site";
@@ -35,7 +37,7 @@ export default function AboutPage() {
       />
 
       <header className="mb-10">
-        <p className="font-mono text-sm uppercase tracking-wide text-primary">
+        <p className="text-sm font-semibold uppercase tracking-wide text-primary">
           About AgentsCamp
         </p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -51,7 +53,7 @@ export default function AboutPage() {
         </p>
       </header>
 
-      <div className="prose prose-neutral max-w-none dark:prose-invert prose-a:text-primary prose-a:font-medium">
+      <div className={cn(proseClasses, "measure")}>
         <h2 id="editorial-standards">Editorial standards</h2>
         <p>
           Every page should help a reader complete a real job or make a better

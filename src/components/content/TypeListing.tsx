@@ -6,7 +6,8 @@ import { collectionGraph } from "@/lib/seo/jsonld";
 import { listingSeo } from "@/lib/seo/listing";
 import { titleCaseLabel } from "@/lib/format";
 import { Breadcrumbs } from "./Breadcrumbs";
-import { ListingView } from "./ListingView";
+import { ListingView, type SortKey } from "./ListingView";
+import { toCard } from "@/lib/content/card";
 import { FaqSection } from "./FaqSection";
 import type { ContentTypeId, ToolItem } from "@/lib/content/types";
 
@@ -14,24 +15,51 @@ import type { ContentTypeId, ToolItem } from "@/lib/content/types";
 // matching MIN_INDEXABLE in lib/seo/collections.
 const MIN_LINKABLE = 2;
 
+// Every listing paginates at the same size: a multiple of both grid widths
+// (sm:2, lg:3), and it stops /tools shipping all 180 cards at once.
+const PAGE_SIZE = 24;
+
+/**
+ * Guides are a feed, so they lead with the newest. The catalog types were
+ * previously rendered in `fs.readdirSync` order — effectively arbitrary — so
+ * they default to A–Z, which a returning visitor can predict.
+ */
+const SORTS: Record<ContentTypeId, { options: SortKey[]; default: SortKey }> = {
+  guide: { options: ["newest", "title", "reading-time"], default: "newest" },
+  tool: { options: ["title", "newest"], default: "title" },
+  agent: { options: ["title", "newest"], default: "title" },
+  skill: { options: ["title", "newest"], default: "title" },
+  command: { options: ["title", "newest"], default: "title" },
+  glossary: { options: ["title"], default: "title" },
+};
+
+function sortForListing<T extends { title: string; date?: string; updated?: string }>(
+  items: T[],
+  sort: SortKey,
+): T[] {
+  if (sort === "title") {
+    return [...items].sort((a, b) => a.title.localeCompare(b.title));
+  }
+  return [...items].sort(
+    (a, b) =>
+      (b.updated ?? b.date ?? "").localeCompare(a.updated ?? a.date ?? "") ||
+      a.title.localeCompare(b.title),
+  );
+}
+
 export function TypeListing({ type }: { type: ContentTypeId }) {
   const def = contentTypes[type];
   const seo = listingSeo[type];
   const accent = getColorClasses(type);
   const Icon = def.icon;
-  const all = getContentByType(type);
-  // strip body for client payload
-  let items = all.map(({ body: _body, ...rest }) => rest);
-
-  // Guides display newest-first, paginated; other listings keep loader order.
-  const paginated = type === "guide";
-  if (paginated) {
-    items = [...items].sort(
-      (a, b) =>
-        (b.date ?? "").localeCompare(a.date ?? "") ||
-        a.title.localeCompare(b.title),
-    );
-  }
+  const sortConfig = SORTS[type];
+  // Sort ONCE, then feed the same order to both collectionGraph and the grid —
+  // the ItemList positions previously described the raw loader order while the
+  // page rendered something else.
+  const all = sortForListing(getContentByType(type), sortConfig.default);
+  // Project to the card DTO: these cross into a client component, so anything
+  // left on them (faq, sources, howtoSteps, summary…) ships to every visitor.
+  const items = all.map(toCard);
 
   // Real <a> links to indexable category landing pages — internal-linking /
   // crawl depth the client-side filter toggles can't provide.
@@ -79,45 +107,56 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
       />
       <Breadcrumbs items={crumbs} />
       <header className="mb-8">
-        <div className="mb-3 flex items-center gap-3">
+        <div className="mb-3 flex items-center gap-2.5">
           <span
             className={cn(
-              "inline-flex size-11 items-center justify-center rounded-xl",
+              "inline-flex size-8 items-center justify-center rounded-md",
               accent.chip,
             )}
           >
-            <Icon className="size-6" />
+            <Icon className="size-4" />
           </span>
-          <h1 className="text-3xl font-bold tracking-tight">{def.label}</h1>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            {def.label}
+          </h1>
         </div>
-        <p className="max-w-2xl text-lg text-muted-foreground">
+        <p className="max-w-[68ch] text-pretty text-lg text-muted-foreground">
           {def.description}
         </p>
-        <p className="mt-3 max-w-2xl text-muted-foreground">{seo.intro}</p>
+        {/* Answer-engine explainer copy — kept, but set apart so the header
+            stops reading as two stacked grey paragraphs. */}
+        <p className="mt-4 max-w-[68ch] border-l-2 border-border pl-4 text-[15px] leading-relaxed text-muted-foreground">
+          {seo.intro}
+        </p>
         {seo.startHere && (
-          <p className="mt-3 font-mono text-sm">
+          <p className="mt-4 text-sm">
+            New here? Start with{" "}
             <Link
               href={seo.startHere.href}
-              className="text-primary hover:underline"
+              className="font-medium text-primary hover:underline"
             >
-              new here? start with the guide: {seo.startHere.label} →
+              {seo.startHere.label}
             </Link>
           </p>
         )}
         {categoryLinks.length > 1 && (
           <nav className="mt-5" aria-label={`Browse ${def.label} by category`}>
-            <h2 className="mb-2 text-sm font-semibold text-foreground">
+            <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               Browse by category
             </h2>
-            <ul className="flex flex-wrap gap-2">
+            <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
               {categoryLinks.map((c) => (
                 <li key={c.href}>
                   <Link
                     href={c.href}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-sm text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
+                    className="inline-flex items-baseline gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {c.label}
-                    <span className="text-xs opacity-60">{c.count}</span>
+                    <span className="underline-offset-4 hover:underline">
+                      {c.label}
+                    </span>
+                    <span className="text-xs tabular-nums opacity-60">
+                      {c.count}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -126,18 +165,22 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
         )}
         {pricingLinks.length > 1 && (
           <nav className="mt-4" aria-label="Browse Tools by pricing">
-            <h2 className="mb-2 text-sm font-semibold text-foreground">
+            <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               Browse by pricing
             </h2>
-            <ul className="flex flex-wrap gap-2">
+            <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
               {pricingLinks.map((pricing) => (
                 <li key={pricing.href}>
                   <Link
                     href={pricing.href}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-sm text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
+                    className="inline-flex items-baseline gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {pricing.label}
-                    <span className="text-xs opacity-60">{pricing.count}</span>
+                    <span className="underline-offset-4 hover:underline">
+                      {pricing.label}
+                    </span>
+                    <span className="text-xs tabular-nums opacity-60">
+                      {pricing.count}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -145,7 +188,12 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
           </nav>
         )}
       </header>
-      <ListingView items={items} pageSize={paginated ? 9 : undefined} />
+      <ListingView
+        items={items}
+        pageSize={PAGE_SIZE}
+        sorts={sortConfig.options}
+        defaultSort={sortConfig.default}
+      />
       <FaqSection faq={seo.faq} />
     </div>
   );

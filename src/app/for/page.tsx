@@ -67,7 +67,7 @@ export default function Page() {
                   <span className="mt-1 block text-sm text-muted-foreground">
                     {a.description}
                   </span>
-                  <span className="mt-2 block font-mono text-xs text-muted-foreground">
+                  <span className="mt-2 block text-xs tabular-nums text-muted-foreground">
                     {a.count} resources
                   </span>
                 </span>
