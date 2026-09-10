@@ -1,6 +1,7 @@
 ---
 term: "Extended Thinking"
 description: "Extended thinking is the reasoning tokens a model generates before its final answer, trading latency and cost for higher accuracy on hard problems."
+summary: "Extended thinking is a model generating internal reasoning tokens before it commits to an answer, spending computation to do better on math, planning, and hard coding. It is chain-of-thought made native to the model rather than prompted, usually capped by a thinking budget. It is not free quality: on simple tasks it adds delay and cost for no gain."
 date: 2026-06-17
 topics: ["workflow-prompting"]
 audience: ["developers"]

@@ -1,6 +1,7 @@
 ---
 term: "Few-Shot Prompting"
 description: "Few-shot prompting includes worked examples in the prompt so the model learns the task's pattern from demonstrations instead of instructions alone."
+summary: "Few-shot prompting teaches the task by showing it: a handful of input and output demonstrations in the prompt, from which the model infers the format, style, and decision boundary. It works through in-context learning, with no weight updates. Its sweet spot is anything easier to show than to describe, and the craft is selecting short, varied examples."
 date: 2026-06-11
 topics: ["workflow-prompting"]
 tags: ["few-shot", "prompting", "examples", "llm"]

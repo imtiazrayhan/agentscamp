@@ -1,6 +1,7 @@
 ---
 term: "Agent Harness"
 description: "An agent harness is the system around the model that makes it an agent — the loop, tools, context management, permissions, and recovery machinery."
+summary: "An agent harness is the machinery wrapped around a model that turns it into a working agent: the execution loop, tool definitions, context assembly, permissions, and error recovery. It matters because model quality and agent quality are separate axes. The same model in two different harnesses behaves like two different agents."
 date: 2026-06-12
 topics: ["ai-agents-systems"]
 audience: ["developers"]

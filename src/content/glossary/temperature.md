@@ -1,6 +1,7 @@
 ---
 term: "Temperature"
 description: "Temperature controls how random an LLM's token choices are: low values make output focused and repeatable, high values make it varied and creative."
+summary: "Temperature divides the model's logits before sampling, sharpening the distribution near zero so it almost always picks the most probable token and flattening it higher so output varies. Use near-zero for extraction, classification, and code a parser consumes, and higher only when variety is the point."
 date: 2026-06-11
 topics: ["llm-app-dev"]
 audience: ["developers"]

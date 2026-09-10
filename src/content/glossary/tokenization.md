@@ -1,6 +1,7 @@
 ---
 term: "Tokenization"
 description: "Tokenization splits text into tokens — the sub-word units a model reads and writes — and maps each to an integer ID the model processes."
+summary: "A tokenizer breaks text into sub-word units from a fixed vocabulary, usually with byte-pair encoding, and maps each to an integer ID; those IDs are what the model embeds and predicts. One token averages about three-quarters of an English word, and each model family has its own incomparable tokenizer."
 date: 2026-06-17
 topics: ["data-ml"]
 audience: ["developers"]

@@ -1,6 +1,7 @@
 ---
 term: "Transformer"
 description: "The neural-network architecture (Vaswani et al., 2017) that uses self-attention to process sequences in parallel — the basis of nearly all modern LLMs."
+summary: "The Transformer dropped the recurrence of earlier sequence models: self-attention lets every token weigh every other token at once, which parallelizes cleanly on GPUs and made training on enormous datasets practical. It stacks attention and feed-forward blocks, and scaling that 2017 design produced modern LLMs."
 date: 2026-06-17
 topics: ["data-ml"]
 audience: ["developers"]

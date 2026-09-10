@@ -1,6 +1,7 @@
 ---
 term: "Agentic AI"
 description: "Agentic AI is the class of AI systems that act toward goals — planning, calling tools, and iterating on results — rather than only generating content."
+summary: "Agentic AI names systems that act rather than only generate: given a goal, they plan, call tools, observe outcomes, and iterate. The boundary is real, not marketing. A generative system's output is read by a person; an agentic system's output is an action whose result feeds the next decision, which is why permissions and human gates come with it."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 audience: ["developers"]

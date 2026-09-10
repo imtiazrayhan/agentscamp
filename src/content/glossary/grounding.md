@@ -1,6 +1,7 @@
 ---
 term: "Grounding"
 description: "Grounding ties a model's output to verifiable sources — retrieved documents, tool results, citations — instead of training-data memory."
+summary: "Grounding anchors a model's output to evidence you supply, such as retrieved documents or tool results, instead of training-data memory. It is the direct countermeasure to hallucination: a free-running model produces the most plausible continuation, a grounded one the most supported. Citations make an ungrounded claim detectable rather than smooth."
 date: 2026-06-12
 topics: ["rag-retrieval"]
 tags: ["grounding", "rag", "reliability", "citations"]

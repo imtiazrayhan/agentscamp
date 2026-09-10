@@ -1,6 +1,7 @@
 ---
 term: "Prompt Template"
 description: "A prompt template is a parameterized prompt — fixed instructions with variable slots — turning prompts from strings into versioned, testable components."
+summary: "A prompt template is a prompt with variable slots, which turns prompting from string-building into an artifact you can version, review in a pull request, and run evals against. It also makes the boundary between instructions and data explicit, the first structural defense against prompt injection."
 date: 2026-06-12
 topics: ["workflow-prompting"]
 audience: ["developers"]

@@ -1,6 +1,7 @@
 ---
 term: "Cosine Similarity"
 description: "Cosine similarity measures how alike two embeddings are by the angle between them — the standard relevance score behind semantic search and RAG retrieval."
+summary: "Cosine similarity scores how alike two embeddings are by the angle between them, ignoring magnitude, matching how embedding spaces encode meaning directionally. Two field notes save real debugging time: scores are not portable between models, so thresholds must be recalibrated, and similarity is not relevance, which is why pipelines add a reranker."
 date: 2026-06-12
 topics: ["rag-retrieval"]
 audience: ["developers"]

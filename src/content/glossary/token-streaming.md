@@ -1,6 +1,7 @@
 ---
 term: "Token Streaming"
 description: "Token streaming delivers model output incrementally as it's generated — via SSE or websockets — so users see text immediately instead of waiting."
+summary: "Token streaming sends a response token by token over Server-Sent Events or websockets as it is generated. It does not make generation faster; it shifts the felt metric from total response time to time-to-first-token. The edges take care: structured output arrives in fragments and a stream can fail mid-response."
 date: 2026-06-12
 topics: ["llm-app-dev"]
 audience: ["developers"]

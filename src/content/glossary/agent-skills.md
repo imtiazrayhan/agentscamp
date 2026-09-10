@@ -1,6 +1,7 @@
 ---
 term: "Agent Skills"
 description: "Agent Skills are reusable procedures packaged as folders with a SKILL.md file — loaded by an AI agent on demand when a task matches, now an open standard."
+summary: "Agent Skills package a procedure as a folder containing a SKILL.md file: YAML frontmatter saying when the skill applies, plus Markdown instructions the agent follows once it loads. Progressive disclosure is the point, since only names and descriptions load at session start, which makes the description the routing signal and most of the craft."
 date: 2026-07-18
 topics: ["ai-agents-systems", "workflow-prompting"]
 audience: ["developers"]

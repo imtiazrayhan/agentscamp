@@ -1,6 +1,7 @@
 ---
 term: "Chain-of-Thought (CoT)"
 description: "Chain-of-thought prompting has a model work through intermediate reasoning steps before answering — improving accuracy on multi-step problems."
+summary: "Chain-of-thought prompting has a model write intermediate reasoning steps before its answer. It works because each token it writes becomes context for the next, giving the model scratch space. Its 2026 status is nuanced: reasoning models generate thinking tokens natively, so the instruction is often redundant cost, though it still helps on weaker tiers."
 date: 2026-06-11
 topics: ["workflow-prompting"]
 audience: ["developers"]

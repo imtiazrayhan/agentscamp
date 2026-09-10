@@ -1,6 +1,7 @@
 ---
 term: "Multimodal AI"
 description: "Multimodal AI processes more than one kind of input or output — text, images, audio, video — in a single model, like an LLM that reads screenshots or speaks."
+summary: "Multimodal AI means one model accepts or produces more than text, working across images, audio, and video. The 2026 baseline is frontier models that read screenshots and documents natively, speech models that hold realtime conversation, and commodity image generation. The recurring constraint is token cost."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["multimodal", "vision", "audio", "models"]

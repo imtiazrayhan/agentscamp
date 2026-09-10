@@ -1,6 +1,7 @@
 ---
 term: "MCP (Model Context Protocol)"
 description: "MCP is the open standard for connecting AI models to external tools and data: write one server, and any MCP client — Claude Code, IDEs, agents — can use it."
+summary: "MCP replaces bespoke per-app integrations with a client-server protocol: a server exposes tools, resources, and prompts over JSON-RPC via stdio or HTTP, and any compliant client, from Claude Code to IDEs to custom agents, can discover and use them. You write the integration once instead of once per application."
 date: 2026-06-11
 topics: ["mcp"]
 audience: ["developers"]

@@ -1,6 +1,7 @@
 ---
 term: "Embedding"
 description: "An embedding is a vector of numbers representing text's meaning, placed so similar texts land close together — the foundation of semantic search and RAG."
+summary: "An embedding is a vector of numbers placing text in a space arranged by meaning, so similar things land close together and finding documents about a topic becomes geometry. Two truths dominate: the model choice is sticky, since switching means re-embedding everything, and the vectors live in a vector database whose index sets the speed-recall trade."
 date: 2026-06-11
 topics: ["rag-retrieval"]
 tags: ["embeddings", "vectors", "semantic-search", "rag"]

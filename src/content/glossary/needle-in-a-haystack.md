@@ -1,6 +1,7 @@
 ---
 term: "Needle in a Haystack"
 description: "Needle in a haystack is a long-context eval that hides a fact in filler text and tests whether the model can retrieve it at varying depths and lengths."
+summary: "A needle-in-a-haystack test plants one fact inside a large body of filler and sweeps two dimensions, the needle's depth and the total input length, producing a grid of where retrieval holds and where it breaks. It turns a long-context claim into a measured number, but it only tests recall of an exact string."
 date: 2026-06-17
 topics: ["llm-evals"]
 audience: ["developers"]

@@ -1,6 +1,7 @@
 ---
 term: "Inference"
 description: "Inference is running a trained model to produce output — for LLMs, generating tokens one at a time. Its cost and latency define the economics of AI products."
+summary: "Inference is running a trained model rather than training it, which for an LLM means generating output tokens one at a time. It has two phases with different physics: prefill processes the prompt in parallel and sets time-to-first-token, then decode generates autoregressively, bound by memory bandwidth. Its cost and latency shape every product decision."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 audience: ["developers"]

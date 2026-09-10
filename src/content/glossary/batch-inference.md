@@ -1,6 +1,7 @@
 ---
 term: "Batch Inference"
 description: "Batch inference processes many LLM requests asynchronously instead of one-at-a-time interactively — typically at ~50% discount via provider batch APIs."
+summary: "Batch inference submits many LLM requests as one asynchronous job and collects the results later, typically at about half the interactive price. Anything with no human waiting qualifies: classification backfills, synthetic data, bulk summarization, evaluation runs, re-embedding. Same model, same outputs, half the bill, and it stacks with prompt caching."
 date: 2026-06-12
 topics: ["llm-app-dev"]
 audience: ["developers"]

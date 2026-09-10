@@ -1,6 +1,7 @@
 ---
 term: "Hybrid Search"
 description: "Hybrid search runs keyword (BM25) and semantic (vector) retrieval together and merges the results — catching both exact terms and paraphrases."
+summary: "Hybrid search runs keyword retrieval and vector retrieval together and merges the results, usually with reciprocal rank fusion. Neither half suffices alone: vectors have a blind spot for exact strings such as error codes and function names, while keyword search cannot bridge vocabulary mismatch. Most vector databases now ship it, so what is left is tuning."
 date: 2026-06-12
 topics: ["rag-retrieval"]
 audience: ["developers"]

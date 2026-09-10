@@ -1,6 +1,7 @@
 ---
 term: "AI Slop"
 description: "AI slop is low-effort, mass-produced AI-generated content — fluent, generic, and unchecked — flooding feeds, search results, and codebases."
+summary: "AI slop is mass-produced AI-generated content shipped without human judgment, fluent enough to fill space and generic enough to be worthless. Its defining feature is not that AI was involved but that the verification step is missing, which is why unreviewed agent output piling up in a repository is the same failure mode with compounding interest."
 date: 2026-06-12
 topics: ["workflow-prompting"]
 tags: ["ai-slop", "content-quality", "culture"]

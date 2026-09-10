@@ -1,6 +1,7 @@
 ---
 term: "VLM (Vision-Language Model)"
 description: "A VLM jointly understands images and text — reading documents, screenshots, charts, and photos and reasoning about them in language."
+summary: "In a vision-language model a vision encoder turns an image into tokens the language model attends to natively, so its reasoning applies directly to a page or screenshot, tables and handwriting included. That collapsed OCR plus layout analysis plus parsing into one call, and resolution sets both accuracy and cost."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 tags: ["vlm", "vision", "multimodal", "ocr"]

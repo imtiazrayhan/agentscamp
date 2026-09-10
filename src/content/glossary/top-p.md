@@ -1,6 +1,7 @@
 ---
 term: "Top-p (Nucleus Sampling)"
 description: "Top-p sampling restricts an LLM's next-token choices to the smallest set whose probabilities sum to p — cutting the long tail of unlikely tokens adaptively."
+summary: "Top-p keeps the smallest set of next tokens whose probabilities sum to p, so at 0.9 sampling happens only among tokens covering the top 90 percent of the mass. Its advantage over a fixed top-k is adaptivity: the nucleus is tiny when the model is confident and widens when many continuations are plausible."
 date: 2026-06-11
 topics: ["llm-app-dev"]
 audience: ["developers"]

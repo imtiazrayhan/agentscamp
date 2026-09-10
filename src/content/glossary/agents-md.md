@@ -1,6 +1,7 @@
 ---
 term: "AGENTS.md"
 description: "AGENTS.md is a versioned instruction file that tells coding agents how to work in a repository — including commands, conventions, boundaries, and checks."
+summary: "AGENTS.md is a Markdown file checked into a repository that tells coding agents how to work there: build and test commands, conventions, safety boundaries, and what counts as a finished change. Unlike a prompt it is durable and versioned; unlike a skill it is always-on. Useful entries are concrete and observable, not requests to follow best practices."
 date: 2026-08-04
 topics: ["workflow-prompting", "ai-agents-systems"]
 audience: ["developers"]

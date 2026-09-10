@@ -1,6 +1,7 @@
 ---
 term: "RAG (Retrieval-Augmented Generation)"
 description: "RAG retrieves relevant documents from your own data and injects them into an LLM's prompt at query time, grounding answers in facts the model wasn't trained on."
+summary: "RAG has two halves. Offline, documents are chunked, embedded, and stored in a vector database; online, the question is embedded the same way, the closest chunks are retrieved and often reranked, and those go into the prompt. Its quality ceiling is retrieval, not the model: a missed chunk is still a wrong answer."
 date: 2026-06-11
 topics: ["rag-retrieval"]
 tags: ["rag", "retrieval", "llm", "grounding"]

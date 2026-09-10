@@ -1,6 +1,7 @@
 ---
 term: "Reranking"
 description: "Reranking is a second-pass scoring step: a cross-encoder model re-orders the top results from fast retrieval so the truly relevant few rise to the top."
+summary: "Reranking is the precision stage of a two-pass retrieval: a fast first pass scores query and document separately across millions of candidates, then a cross-encoder reads the query and each candidate together and re-orders them. Retrieve fifty cheaply, rerank to five precisely, and prompt with just those."
 date: 2026-06-11
 topics: ["rag-retrieval"]
 audience: ["developers"]

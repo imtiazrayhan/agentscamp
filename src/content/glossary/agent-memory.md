@@ -1,6 +1,7 @@
 ---
 term: "Agent Memory"
 description: "Agent memory is how an AI agent retains information beyond its context window — working state during a task and persistent knowledge across sessions."
+summary: "Agent memory is how an agent knows things its context window no longer holds. Short-term memory is the window itself, managed by compaction; long-term memory is storage outside the model, retrieved on demand, largely a retrieval problem. Remember too little and the agent relearns your project every session; too much and stale facts poison fresh work."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 audience: ["developers"]

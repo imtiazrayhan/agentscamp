@@ -1,6 +1,7 @@
 ---
 term: "KV Cache"
 description: "The KV cache stores each token's attention keys and values so an LLM doesn't recompute the whole context per new token — the memory that makes generation fast."
+summary: "The KV cache stores the attention keys and values for every token already processed, so each new token attends over cached history instead of reprocessing the whole context. It trades quadratic waste for memory that grows with context length and batch size, which is why long-context serving exhausts VRAM before compute."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 audience: ["developers"]

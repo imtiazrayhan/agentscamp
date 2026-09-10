@@ -5,11 +5,13 @@ description: "A lightweight, fast chunking library for RAG with many splitting s
 seoDescription: "Chonkie is a lightweight, fast chunking library for RAG — token, sentence, semantic, and code splitting strategies behind one simple API."
 url: "https://chonkie.ai"
 date: 2026-06-03
+updated: 2026-09-10
+reviewed: 2026-09-10
 pricing: "open-source"
 category: "sdk"
-repo: "https://github.com/chonkie-inc/chonkie"
+repo: "https://github.com/feyninc/chonkie"
 license: "MIT"
-sameAs: ["https://github.com/chonkie-inc/chonkie", "https://docs.chonkie.ai"]
+sameAs: ["https://github.com/feyninc/chonkie", "https://docs.chonkie.ai"]
 color: "green"
 topics: ["rag-retrieval"]
 audience: ["developers"]

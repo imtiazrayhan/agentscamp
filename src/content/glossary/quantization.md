@@ -1,6 +1,7 @@
 ---
 term: "Quantization"
 description: "Quantization shrinks a model by storing weights in lower precision (8-, 4-, even 2-bit) — cutting memory and speeding inference at a small accuracy cost."
+summary: "Quantization maps a model's weights onto a coarser numeric grid, 8-bit or 4-bit instead of 16-bit floats, shrinking it about fourfold at 4-bit and cutting the memory bandwidth per token that bottlenecks inference. Eight-bit is near-lossless and good 4-bit usually costs only a few percent on benchmarks."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 audience: ["developers"]

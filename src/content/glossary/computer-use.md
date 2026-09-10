@@ -1,6 +1,7 @@
 ---
 term: "Computer Use"
 description: "Computer use is an AI agent operating software through its real interface — reading the screen, moving the cursor, clicking, and typing like a person would."
+summary: "Computer use is an agent operating software the way a person does, reading the screen as an image and acting through mouse and keyboard with no API required. It generalizes tool use to interfaces never built for machines, but every step is a model call over a screenshot, so it is slower, costlier, and less reliable than an API or DOM-level automation."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 tags: ["computer-use", "browser-agents", "automation", "agents"]

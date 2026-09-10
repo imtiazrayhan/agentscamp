@@ -1,6 +1,7 @@
 ---
 term: "Human-in-the-Loop (HITL)"
 description: "Human-in-the-loop design inserts human judgment at decisive points in an AI workflow — approving actions, resolving ambiguity, owning the irreversible steps."
+summary: "Human-in-the-loop design places human judgment at chosen points inside an automated workflow: the agent executes, but designated decisions wait for a person. The question is not whether to trust an agent but which steps need a signature, namely the irreversible, the ambiguous, and the consequential. Blanket approval prompts are the anti-pattern."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 audience: ["developers"]

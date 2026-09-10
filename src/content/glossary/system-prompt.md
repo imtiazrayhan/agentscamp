@@ -1,6 +1,7 @@
 ---
 term: "System Prompt"
 description: "The system prompt is the standing instruction layer an LLM receives before user input — defining its role, rules, tools, and tone for the whole conversation."
+summary: "A system prompt is the standing instruction layer the developer sets before any user input, and chat-trained models weight it above conflicting user messages. That makes it the home for invariants: role, hard constraints, output format, tool-use policy. The hierarchy is soft, which is what injection attacks target."
 date: 2026-06-11
 topics: ["workflow-prompting"]
 audience: ["developers"]

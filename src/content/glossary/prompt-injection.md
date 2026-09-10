@@ -1,6 +1,7 @@
 ---
 term: "Prompt Injection"
 description: "Prompt injection is an attack where untrusted content carries instructions an LLM then follows — overriding its task, leaking data, or triggering tool calls."
+summary: "Prompt injection works because a model's context mixes trusted instructions and untrusted data in the same medium, with no hard boundary between them. Direct injection comes from a hostile user; the sharper threat is indirect, where instructions hide in a page, document, or tool output the system reads."
 date: 2026-06-11
 topics: ["ai-safety-security"]
 audience: ["developers"]

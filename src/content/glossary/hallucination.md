@@ -1,6 +1,7 @@
 ---
 term: "Hallucination"
 description: "A hallucination is fluent, confident output that is factually wrong or fabricated — plausible text unsupported by any source, the signature LLM failure mode."
+summary: "A hallucination is output that reads confident and coherent but is factually wrong or invented: a fabricated API, a nonexistent citation, a wrong number stated smoothly. It is a property of how generation works rather than a bug to patch: the model produces the most plausible continuation, and plausibility tracks truth only where training data was dense."
 date: 2026-06-11
 topics: ["llm-evals"]
 tags: ["hallucination", "reliability", "grounding", "llm"]

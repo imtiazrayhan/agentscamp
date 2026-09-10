@@ -1,6 +1,7 @@
 ---
 term: "Function Calling (Tool Calling)"
 description: "Function calling lets an LLM request structured invocations of your code: describe tools with schemas, the model emits typed calls, your app executes them."
+summary: "Function calling lets a model act: you declare functions with JSON-schema parameters, the model responds with a structured call with typed arguments, and your app executes it and feeds the result back. The model never runs anything itself, so quality lives in the schemas. The production rule is to return errors as observations the model can retry on."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 audience: ["developers"]

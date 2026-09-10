@@ -1,6 +1,7 @@
 ---
 term: "Chunking"
 description: "Chunking splits documents into retrievable pieces before embedding — the RAG design decision that quietly determines retrieval quality."
+summary: "Chunking splits documents into the pieces that get embedded, indexed, and retrieved, and it quietly sets the ceiling on RAG quality, because retrieval returns chunks and each one must stand alone as evidence. Split mid-thought and the answer sits in your corpus but in no retrievable unit; merge too much and the embedding averages across topics."
 date: 2026-06-12
 topics: ["rag-retrieval"]
 audience: ["developers"]

@@ -1,6 +1,7 @@
 ---
 term: "Semantic Caching"
 description: "Semantic caching reuses LLM responses keyed by meaning rather than exact text, matching queries by embedding similarity to cut cost and latency."
+summary: "Semantic caching embeds an incoming query, finds the nearest past query, and returns its stored answer when similarity clears a threshold, skipping the model call entirely rather than making it cheaper. The threshold is the whole risk: too loose and near-but-different queries collide, serving a wrong answer."
 date: 2026-06-17
 topics: ["llm-app-dev"]
 audience: ["developers"]

@@ -1,6 +1,7 @@
 ---
 term: "Semantic Search"
 description: "Semantic search retrieves results by meaning rather than keyword overlap — embedding queries and documents in one vector space and matching by similarity."
+summary: "Semantic search embeds your corpus offline and the query at runtime, then returns nearest neighbors in that shared vector space, so users never have to guess a document's vocabulary. The flip side is exact tokens like error codes and SKUs, which is why mature systems add keyword search and a reranker."
 date: 2026-06-11
 topics: ["rag-retrieval"]
 audience: ["developers"]

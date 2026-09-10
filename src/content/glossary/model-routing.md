@@ -1,6 +1,7 @@
 ---
 term: "Model Routing"
 description: "Model routing sends each request to the cheapest model that can handle it, escalating only hard cases to a stronger model — cutting cost and latency."
+summary: "Model routing picks a destination per request from a signal: task type, input length, a difficulty classifier, or a cascade that escalates when a cheap first attempt fails a check. It pays because most production traffic is easy. Route too aggressively and you silently downgrade the cases that needed the strong model."
 date: 2026-06-17
 topics: ["llm-app-dev"]
 audience: ["developers"]

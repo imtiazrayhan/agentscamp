@@ -1,6 +1,7 @@
 ---
 term: "Tracing (LLM)"
 description: "LLM tracing records every step of a model-driven request — prompts, tool calls, retrievals, tokens, latency — so multi-step behavior is debuggable."
+summary: "An LLM trace records a whole request as nested spans: every prompt and response, each tool call with its arguments and result, retrieval steps, token counts, cost, and latency. Agent bugs hide mid-run, so without a trace you see only that the answer was wrong; with one you see which step went wrong and why."
 date: 2026-06-12
 topics: ["llm-evals"]
 audience: ["developers"]

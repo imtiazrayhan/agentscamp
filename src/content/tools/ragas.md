@@ -4,11 +4,13 @@ title: "RAGAS"
 description: "An open-source framework for evaluating retrieval-augmented generation with reference-free RAG metrics."
 url: "https://docs.ragas.io"
 date: 2026-06-03
+updated: 2026-09-10
+reviewed: 2026-09-10
 pricing: "open-source"
 category: "evaluation"
-repo: "https://github.com/explodinggradients/ragas"
+repo: "https://github.com/vibrantlabsai/ragas"
 license: "Apache-2.0"
-sameAs: ["https://github.com/explodinggradients/ragas"]
+sameAs: ["https://github.com/vibrantlabsai/ragas"]
 color: "green"
 topics: ["llm-evals", "rag-retrieval"]
 audience: ["developers"]

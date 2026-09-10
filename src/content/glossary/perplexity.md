@@ -1,6 +1,7 @@
 ---
 term: "Perplexity"
 description: "Perplexity measures how well a language model predicts a text sample — the exponential of its average per-token negative log-likelihood. Lower is better."
+summary: "Perplexity is the exponential of a model's average per-token negative log-likelihood on held-out text, so it reads as an average branching factor: a perplexity of 10 means the model is effectively choosing among ten options per step, and lower is better. It scores prediction of a reference text, not task quality."
 date: 2026-06-17
 topics: ["llm-evals"]
 audience: ["developers"]

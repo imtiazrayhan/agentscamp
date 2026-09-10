@@ -1,6 +1,7 @@
 ---
 term: "Mixture of Experts (MoE)"
 description: "MoE is a model architecture where a router activates only a few expert subnetworks per token — huge total capacity, a fraction of the compute per token."
+summary: "MoE splits a transformer's feed-forward layers into expert subnetworks and lets a router send each token through only a few, so a model quotes two numbers: total parameters, which must fit in memory, and active parameters, which set per-token cost. An MoE you cannot fit is capability you do not have."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 audience: ["developers"]

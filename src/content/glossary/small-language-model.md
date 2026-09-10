@@ -1,6 +1,7 @@
 ---
 term: "SLM (Small Language Model)"
 description: "A small language model is a compact LLM — roughly 1–15B parameters — that runs cheaply or locally, trading peak capability for speed and deployability."
+summary: "A small language model is a deliberately compact LLM, commonly single-digit billions of parameters, that runs on a laptop, a phone, or one modest GPU once quantized. On narrow work such as classification, extraction, and routing it often matches frontier output for a fraction of the cost and latency."
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
 audience: ["developers"]

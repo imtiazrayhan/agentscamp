@@ -1,6 +1,7 @@
 ---
 term: "Context Engineering"
 description: "Context engineering is the discipline of curating exactly what enters an LLM's context window so it has the right information and nothing else."
+summary: "Context engineering is deciding what actually enters an LLM's context window each turn: instructions, retrieved data, tool results, and prior history, plus what to summarize or drop. It matters because context is a budget, not a free pile. Every token costs latency and money, attention dilutes over long inputs, and a focused window beats a stuffed one."
 date: 2026-06-17
 topics: ["workflow-prompting"]
 audience: ["developers"]

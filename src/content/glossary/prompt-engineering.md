@@ -1,6 +1,7 @@
 ---
 term: "Prompt Engineering"
 description: "Prompt engineering is the practice of designing an LLM's inputs — instructions, context, examples, and format — to reliably get the output you want."
+summary: "Prompt engineering shapes a model's behavior entirely through its inputs, leaving the weights untouched: clear instructions, durable rules in a system prompt, few-shot examples, an explicit output format, and permission to say it does not know. It is empirical, so you test against real examples rather than theorize."
 date: 2026-06-17
 topics: ["workflow-prompting"]
 tags: ["prompting", "llm", "instructions", "few-shot"]

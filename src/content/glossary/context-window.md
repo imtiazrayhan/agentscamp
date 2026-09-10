@@ -1,6 +1,7 @@
 ---
 term: "Context Window"
 description: "The context window is the maximum text — measured in tokens — an LLM can consider at once: prompt, conversation, documents, and its own output combined."
+summary: "The context window is the token budget for a single request, and everything counts against it: system prompt, conversation history, retrieved documents, tool results, and the response being generated. It stays a budget at any size, because cost scales with tokens, latency grows with input length, and attention dilutes in the middle."
 date: 2026-06-11
 topics: ["llm-app-dev"]
 tags: ["context", "tokens", "llm", "limits"]

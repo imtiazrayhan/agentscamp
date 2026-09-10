@@ -1,6 +1,7 @@
 ---
 term: "Vibe Coding"
 description: "Vibe coding is building software by describing intent in natural language and letting an AI agent write the code, judging results by behavior."
+summary: "Vibe coding means describing what you want in natural language, letting an AI coding agent write the implementation, and judging the result by running it rather than reading every line. Andrej Karpathy popularized the term in early 2025. Whether it is acceptable depends entirely on the stakes of the code."
 date: 2026-06-11
 topics: ["workflow-prompting"]
 tags: ["vibe-coding", "ai-coding", "agents", "workflow"]

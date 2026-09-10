@@ -1,6 +1,7 @@
 ---
 term: "Distillation"
 description: "Distillation trains a smaller model to imitate a larger one — using its outputs as training data to get most of the capability at a fraction of the cost."
+summary: "Distillation trains a small student model on a large teacher model's outputs, transferring most of its capability on one task at a fraction of the cost. Run the frontier model over representative inputs, curate the best results, then fine-tune the small model on them. Breadth does not transfer: the student learns your task, not general intelligence."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 audience: ["developers"]

@@ -1,6 +1,7 @@
 ---
 term: "Constitutional AI"
 description: "Constitutional AI trains models against written principles — the model critiques and revises its own outputs by them, reducing reliance on human labels."
+summary: "Constitutional AI trains a model against an explicit written set of principles: the model critiques and revises its own outputs by them, then is optimized on AI feedback about which responses follow them. It answers two RLHF problems: human preference labels are expensive, and rater-encoded values are invisible where a constitution is text anyone can read."
 date: 2026-06-12
 topics: ["ai-safety-security"]
 audience: ["developers"]

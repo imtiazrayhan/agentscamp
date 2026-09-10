@@ -1,6 +1,7 @@
 ---
 term: "Jailbreak"
 description: "A jailbreak is a prompt crafted to bypass a model's safety training and policies — making it produce output it was trained to refuse."
+summary: "A jailbreak is an input crafted to make a model bypass its own safety training through roleplay framing, encoding tricks, many-shot normalization, or gradual escalation, rather than by exploiting the application around it. It is a continuous arms race, not a solved checkbox. Its sibling threat, prompt injection, hijacks your app's instructions instead."
 date: 2026-06-12
 topics: ["ai-safety-security"]
 audience: ["developers"]

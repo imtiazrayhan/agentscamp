@@ -1,6 +1,7 @@
 ---
 term: "Zero-Shot Prompting"
 description: "Zero-shot prompting asks a model to perform a task from instructions alone, with no examples — the default mode for capable modern LLMs."
+summary: "Zero-shot prompting gives a model the task description and no demonstrations, and it works because instruction tuning trained models to follow natural-language descriptions. That makes it the sensible starting point: cheapest in tokens, with no examples to curate. Escalate only against observed failures."
 date: 2026-06-11
 topics: ["workflow-prompting"]
 audience: ["developers"]

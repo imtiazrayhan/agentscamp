@@ -1,6 +1,7 @@
 ---
 term: "Open Weights"
 description: "An open-weights model publishes its parameters for anyone to download and run — unlike API-only models — with licenses from permissive to restricted."
+summary: "An open-weights model publishes its trained parameters, so you can download it, run it on your own hardware, fine-tune it, and quantize it. That is not the same as open source: weights-available is not recipe-available, and licenses range from Apache-2.0 to custom terms with scale or use restrictions."
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
 audience: ["developers"]

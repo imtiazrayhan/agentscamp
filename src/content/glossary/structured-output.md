@@ -1,6 +1,7 @@
 ---
 term: "Structured Output"
 description: "Structured output makes an LLM return data in a guaranteed shape — JSON matching your schema — so code can consume model responses without parsing prose."
+summary: "Structured output constrains a model's response to a schema you define, so code can consume it directly instead of parsing prose. Providers offer escalating guarantees: JSON mode promises valid JSON of any shape, while schema-constrained decoding forces conformance. Conformance is not correctness, so still validate."
 date: 2026-06-11
 topics: ["llm-app-dev"]
 tags: ["structured-output", "json", "schemas", "llm"]

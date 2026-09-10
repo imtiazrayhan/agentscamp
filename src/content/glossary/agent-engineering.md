@@ -1,6 +1,7 @@
 ---
 term: "Agent Engineering"
 description: "Agent engineering is the discipline of building reliable AI agents — designing the tools, context, guardrails, evals, and recovery paths around the model."
+summary: "Agent engineering is the discipline of building everything around the model that decides whether an agent actually works: tool design, context curation, permissions, guardrails, evals that measure task completion, and observability over runs spanning dozens of steps. It succeeded prompt engineering as the unit of work, and is now a job title."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 audience: ["developers"]

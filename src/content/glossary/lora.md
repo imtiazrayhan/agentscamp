@@ -1,6 +1,7 @@
 ---
 term: "LoRA (Low-Rank Adaptation)"
 description: "LoRA fine-tunes a model by training small low-rank adapter matrices instead of all weights — a fraction of the memory and cost, nearly full-tune quality."
+summary: "LoRA freezes a model's weights and trains only small low-rank matrices injected alongside them, typically well under 1% of parameters, because the change a fine-tune needs is itself low-rank. The result is a megabyte-scale adapter, not a full model copy, so one base model serves many tasks by swapping adapters."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
 audience: ["developers"]

@@ -1,6 +1,7 @@
 ---
 term: "LLMOps"
 description: "LLMOps is the practices and tooling for running LLM apps in production: prompt versioning, evals, tracing, cost and latency monitoring, and guardrails."
+summary: "LLMOps is the practice of running LLM applications in production: versioned prompts, eval datasets, tracing every call, and monitoring cost and latency. It differs from MLOps because the model is a hosted API, so the parts that break are the prompts, retrieval context, and tool definitions around it. An LLM app can silently regress with no code change."
 date: 2026-06-17
 topics: ["mlops-ai-infra"]
 audience: ["developers"]

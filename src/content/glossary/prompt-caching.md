@@ -1,6 +1,7 @@
 ---
 term: "Prompt Caching"
 description: "Prompt caching reuses the computed state of a repeated prompt prefix across requests — dramatically cutting cost and time-to-first-token for stable context."
+summary: "Prompt caching stores the model's computed internal state for the stable beginning of your prompt, so a repeat request pays full price only for what is new, at a steep discount and a much lower time-to-first-token. It is prefix-based and byte-exact, so the work is ordering: stable content first, the user turn last."
 date: 2026-06-11
 topics: ["llm-app-dev"]
 audience: ["developers"]

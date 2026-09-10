@@ -1,6 +1,7 @@
 ---
 term: "Subagent"
 description: "A subagent is a specialist agent a primary agent delegates to — running in its own context window with its own prompt and tools, returning only a summary."
+summary: "A subagent runs in its own context window with its own system prompt and a usually restricted toolset, then returns a clean summary to its parent. That buys isolation, so noisy work does not fill your conversation; specialization, since a focused prompt beats a generalist; and safety from a narrow toolset."
 date: 2026-06-11
 topics: ["workflow-prompting"]
 audience: ["developers"]

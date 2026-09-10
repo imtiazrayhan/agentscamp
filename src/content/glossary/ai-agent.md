@@ -1,6 +1,7 @@
 ---
 term: "AI Agent"
 description: "An AI agent is an LLM-driven system that pursues a goal in a loop — calling tools, observing results, iterating — instead of returning one answer."
+summary: "An AI agent is a system that uses a language model to pursue a goal in a loop: decide an action, run it through a tool, observe the result, repeat. That loop is the whole distinction from a single LLM call, and it is why agent quality depends on tool design, memory, and termination conditions as much as on raw model intelligence."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
 tags: ["agents", "llm", "tool-use", "autonomy"]
