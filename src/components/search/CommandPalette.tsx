@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Command } from "cmdk";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Compass, CornerDownLeft } from "lucide-react";
+import { Compass, CornerDownLeft, Search as SearchIcon } from "lucide-react";
 import { useSearch } from "./useSearch";
 import { audiences, contentTypeList } from "@/lib/content/registry";
 import type { SearchRecord } from "@/lib/content/types";
@@ -64,14 +64,12 @@ export function CommandPalette({
 
       {/* prompt-styled input row */}
       <div className="flex items-center gap-2.5 border-b border-border px-4">
-        <span className="font-mono text-sm text-primary text-glow" aria-hidden>
-          $
-        </span>
+        <SearchIcon className="size-[18px] shrink-0 text-muted-foreground" aria-hidden />
         <Command.Input
           value={query}
           onValueChange={setQuery}
-          placeholder="search agents, skills, guides, tools, commands…"
-          className="h-14 flex-1 bg-transparent font-mono text-sm text-foreground outline-none placeholder:text-muted-foreground"
+          placeholder="Search guides, tools, glossary, agents, skills, commands…"
+          className="h-14 flex-1 bg-transparent text-[15px] text-foreground outline-none placeholder:text-muted-foreground"
         />
         <kbd className="hidden rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] leading-none text-muted-foreground sm:inline">
           esc
@@ -80,12 +78,8 @@ export function CommandPalette({
 
       <Command.List className="min-h-0 flex-1 overflow-y-auto p-2">
         {!query && (
-          <div className="px-3 py-12 text-center font-mono text-sm text-muted-foreground">
-            <span className="text-primary">{">"}</span>{" "}
-            {ready ? "type to search the hub" : "building search index"}
-            <span className="cursor-blink ml-0.5 text-primary" aria-hidden>
-              ▍
-            </span>
+          <div className="px-3 py-12 text-center text-sm text-muted-foreground">
+            {ready ? "Start typing to search the hub" : "Building search index…"}
           </div>
         )}
 
@@ -97,7 +91,7 @@ export function CommandPalette({
                 <span>Start here</span>
               </>
             }
-            className="mb-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:gap-2 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground"
+            className="mb-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:gap-2 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground"
           >
             {roleHits.map((a) => (
               <Command.Item
@@ -125,7 +119,7 @@ export function CommandPalette({
         )}
 
         {query && results.length === 0 && roleHits.length === 0 && (
-          <Command.Empty className="px-3 py-12 text-center font-mono text-sm text-muted-foreground">
+          <Command.Empty className="px-3 py-12 text-center text-sm text-muted-foreground">
             <span className="text-primary">{">"}</span> no matches for “{query}”
           </Command.Empty>
         )}
@@ -144,7 +138,7 @@ export function CommandPalette({
                   </span>
                 </>
               }
-              className="mb-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:gap-2 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:font-mono [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground"
+              className="mb-1 [&_[cmdk-group-heading]]:flex [&_[cmdk-group-heading]]:items-center [&_[cmdk-group-heading]]:gap-2 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-[11px] [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:tracking-wider [&_[cmdk-group-heading]]:text-muted-foreground"
             >
               {items.map((r: SearchRecord) => (
                 <Command.Item
@@ -171,17 +165,34 @@ export function CommandPalette({
             </Command.Group>
           );
         })}
+        {query && (
+          <Command.Item
+            key="see-all"
+            value="__see_all__"
+            onSelect={() => {
+              onOpenChange(false);
+              router.push(`/search?q=${encodeURIComponent(query)}`);
+            }}
+            className="group flex cursor-pointer items-center gap-2 rounded-md px-3 py-2.5 text-sm text-muted-foreground data-[selected=true]:bg-secondary data-[selected=true]:text-foreground"
+          >
+            <SearchIcon className="size-4 shrink-0" aria-hidden />
+            <span className="truncate">
+              See all results for &ldquo;{query}&rdquo;
+            </span>
+            <CornerDownLeft
+              className="ml-auto size-3.5 shrink-0 opacity-0 transition-opacity group-data-[selected=true]:opacity-100"
+              aria-hidden
+            />
+          </Command.Item>
+        )}
       </Command.List>
 
       {/* keyboard-hint footer bar */}
-      <div className="flex items-center justify-between border-t border-border bg-muted/30 px-4 py-2.5 font-mono text-[11px] text-muted-foreground">
-        <span className="flex items-center gap-1.5">
-          <span className="text-primary">$</span>
-          <span>
-            {query
-              ? `${results.length + roleHits.length} result${results.length + roleHits.length === 1 ? "" : "s"}`
-              : "agentscamp/search"}
-          </span>
+      <div className="flex items-center justify-between border-t border-border bg-muted/30 px-4 py-2.5 text-[11px] text-muted-foreground">
+        <span>
+          {query
+            ? `${results.length + roleHits.length} result${results.length + roleHits.length === 1 ? "" : "s"}`
+            : "Search AgentsCamp"}
         </span>
         <span className="hidden items-center gap-3 sm:flex">
           <Hint keys="↑↓" label="navigate" />

@@ -7,15 +7,19 @@ import { siteGraph } from "@/lib/seo/jsonld";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { PromoBar } from "@/components/layout/PromoBar";
+import { Container } from "@/components/ui/container";
 import { SearchProvider } from "@/components/search/SearchProvider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+// Mono is code-only after the editorial redesign, so most routes render zero
+// mono glyphs — don't make every page pay for the preload.
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -86,7 +90,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TooltipProvider delayDuration={200}>
             <SearchProvider>
               <a
@@ -95,10 +99,20 @@ export default function RootLayout({
               >
                 Skip to content
               </a>
+              {/* Applies the dismissal before first paint — same technique as
+                  next-themes uses for the theme class, so there is no flash
+                  and no layout shift either way. */}
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `try{if(localStorage.getItem('promo-dismissed-v1')==='1')document.documentElement.dataset.promo='off'}catch(e){}`,
+                }}
+              />
               <PromoBar />
               <Nav />
-              <main id="main" tabIndex={-1} className="mx-auto min-h-[60vh] max-w-6xl px-4 py-8 focus:outline-none">
-                {children}
+              <main id="main" tabIndex={-1} className="focus:outline-none">
+                <Container className="min-h-[60vh] py-10 sm:py-12">
+                  {children}
+                </Container>
               </main>
               <Footer />
               <Toaster richColors position="bottom-right" />

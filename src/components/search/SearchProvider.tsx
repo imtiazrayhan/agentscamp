@@ -6,8 +6,9 @@ import { CommandPalette } from "./CommandPalette";
 /**
  * Owns the single global command-palette instance and its open state, plus the
  * site-wide ⌘K / Ctrl-K shortcut. Any client component can trigger the palette
- * via `useCommandPalette()` — that's the only search entry point (there is no
- * dedicated /search page). Mounted once in the root layout.
+ * via `useCommandPalette()`. Mounted once in the root layout. The palette also
+ * offers a "see all results" row into /search?q=, which backs the schema.org
+ * SearchAction.
  */
 const PaletteContext = createContext<{ open: () => void } | null>(null);
 

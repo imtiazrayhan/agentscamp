@@ -1,32 +1,35 @@
 import Link from "next/link";
-import { contentTypeList } from "@/lib/content/registry";
+import { getCountsByType, getByAudience, audiences } from "@/lib/content";
 import { Logo } from "@/components/brand/Logo";
+import { Container } from "@/components/ui/container";
 import { SearchBar } from "@/components/search/SearchBar";
 import { ThemeToggle } from "./ThemeToggle";
 import { MobileNav } from "./MobileNav";
 import { NavLinks } from "./NavLinks";
+import { buildNav } from "./nav-items";
 
 export function Nav() {
-  const links = [
-    { label: "Start here", href: "/for", lgOnly: true },
-    ...contentTypeList.map((d) => ({ label: d.label, href: d.basePath })),
-  ];
+  const counts = getCountsByType();
+  const roleCounts = Object.fromEntries(
+    audiences.map((a) => [a.slug, getByAudience(a.slug).length]),
+  );
+  const items = buildNav(counts, roleCounts);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
+      <Container className="flex items-center gap-3 py-3">
         <Link href="/" aria-label="AgentsCamp home" className="text-[15px]">
-          <Logo blink />
+          <Logo />
         </Link>
 
-        <NavLinks links={links} />
+        <NavLinks items={items} />
 
         <div className="ml-auto flex items-center gap-2">
           <SearchBar />
           <ThemeToggle />
-          <MobileNav links={links} />
+          <MobileNav items={items} />
         </div>
-      </div>
+      </Container>
     </header>
   );
 }

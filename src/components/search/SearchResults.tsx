@@ -33,7 +33,7 @@ export function SearchResults() {
 
   return (
     <div>
-      <label className="group flex w-full max-w-xl items-center gap-2 rounded-md border border-border bg-background px-3 py-2.5 font-mono text-sm focus-within:border-primary/60">
+      <label className="group flex w-full max-w-xl items-center gap-2 rounded-lg border border-input bg-card px-3 py-2.5 text-[15px] focus-within:border-foreground/30">
         <Search className="size-4 shrink-0 text-muted-foreground" aria-hidden />
         <span className="text-primary" aria-hidden>
           $
@@ -51,10 +51,10 @@ export function SearchResults() {
 
       <div className="mt-6">
         {!ready && q && (
-          <p className="font-mono text-sm text-muted-foreground">loading index…</p>
+          <p className="text-sm text-muted-foreground">Loading index…</p>
         )}
         {ready && q && results.length === 0 && (
-          <p className="font-mono text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             no results for &ldquo;{q}&rdquo;
           </p>
         )}
@@ -65,7 +65,7 @@ export function SearchResults() {
                 href={r.href}
                 className="group flex items-baseline gap-3 py-3"
               >
-                <span className="w-20 shrink-0 rounded-sm border border-border bg-muted px-1.5 py-0.5 text-center font-mono text-[11px] text-muted-foreground">
+                <span className="w-20 shrink-0 rounded-md border border-border bg-muted px-1.5 py-0.5 text-center text-[11px] font-medium text-muted-foreground">
                   {contentTypes[r.type].singular}
                 </span>
                 <span>

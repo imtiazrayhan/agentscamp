@@ -4,21 +4,16 @@ import { cn } from "@/lib/utils";
  * Brand mark: a terminal prompt chevron `>` landing on the phosphor block cursor
  * `▍` — i.e. `>▍`, a literal command line. The block cursor is the heart of the
  * AgentsCamp identity (also the typing cursor in the Hero). `currentColor` lets
- * callers set the hue (use `text-primary`); the cursor can blink via the shared
- * `cursor-blink` keyframes for the live-terminal feel.
+ * callers set the hue (use `text-primary`). The cursor is static: a perpetually
+ * blinking mark in a sticky header is a distraction on every page, and the
+ * geometry alone carries the identity.
  *
  * The viewBox is cropped tight to the glyph so the mark optically matches
  * adjacent text when sized with `h-[1em]`. Pure geometry — no fonts, no chip —
  * so it sits inline anywhere. The chip/tile treatment lives in the favicon
  * (`src/app/icon.svg`) and the standalone lockup (`public/logo.svg`).
  */
-export function LogoMark({
-  className,
-  blink = false,
-}: {
-  className?: string;
-  blink?: boolean;
-}) {
+export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
       viewBox="4 6 22 20"
@@ -40,7 +35,6 @@ export function LogoMark({
         height="15"
         rx="0.5"
         fill="currentColor"
-        className={blink ? "cursor-blink" : undefined}
       />
     </svg>
   );
@@ -50,11 +44,9 @@ export function LogoMark({
 export function Logo({
   className,
   markClassName,
-  blink = false,
 }: {
   className?: string;
   markClassName?: string;
-  blink?: boolean;
 }) {
   return (
     <span
@@ -63,10 +55,7 @@ export function Logo({
         className,
       )}
     >
-      <LogoMark
-        className={cn("h-[1.05em] w-auto text-primary", markClassName)}
-        blink={blink}
-      />
+      <LogoMark className={cn("h-[1.05em] w-auto text-primary", markClassName)} />
       <span>agentscamp</span>
     </span>
   );

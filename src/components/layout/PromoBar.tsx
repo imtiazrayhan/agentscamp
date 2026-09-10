@@ -1,45 +1,33 @@
-"use client";
+import Link from "next/link";
+import { PromoDismiss } from "./PromoDismiss";
 
-import { useEffect, useState } from "react";
-import { X } from "lucide-react";
-
-const KEY = "promo-dismissed-v1";
-
+/**
+ * Server-rendered so it occupies its final height in the very first paint.
+ *
+ * Previously this was a client component whose `show` state started false and
+ * was set in an effect, so the bar was absent on first paint and then popped in,
+ * pushing the whole document down — an unbounded layout shift on every route.
+ * Dismissal is now applied before paint by the inline script in layout.tsx,
+ * which stamps `data-promo="off"` on <html>; the CSS rule in globals.css hides
+ * the bar with no shift.
+ */
 export function PromoBar() {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    setShow(localStorage.getItem(KEY) !== "1");
-  }, []);
-
-  if (!show) return null;
-
   return (
-    <div className="relative bg-primary text-primary-foreground">
-      <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-10 py-2 text-center text-sm">
+    <div className="promo-bar relative border-b border-border bg-secondary">
+      <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-10 py-2 text-center text-sm text-muted-foreground">
         <span>
-          ✨ Level up your prompts with{" "}
-          <a
+          Level up your prompts with{" "}
+          <Link
             href="https://sureprompts.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold underline underline-offset-2"
+            className="font-medium text-foreground underline underline-offset-2"
           >
             SurePrompts
-          </a>{" "}
+          </Link>{" "}
           — curated prompts for every workflow.
         </span>
-        <button
-          type="button"
-          onClick={() => {
-            localStorage.setItem(KEY, "1");
-            setShow(false);
-          }}
-          aria-label="Dismiss announcement"
-          className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-1 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-        >
-          <X className="size-4" />
-        </button>
+        <PromoDismiss />
       </div>
     </div>
   );

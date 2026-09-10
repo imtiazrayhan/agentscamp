@@ -5,8 +5,9 @@ import { useCommandPalette } from "./SearchProvider";
 import { cn } from "@/lib/utils";
 
 /**
- * The prominent terminal-styled `$ search N resources` box used in the Hero and
- * Footer. It opens the global ⌘K command palette (no dedicated search page).
+ * The homepage's primary call to action — a real-looking search field that opens
+ * the global ⌘K palette. Search is the fastest way into 748 items, so it leads
+ * the hero rather than a generic "browse" button.
  */
 export function SearchCommandBox({
   total,
@@ -20,21 +21,18 @@ export function SearchCommandBox({
     <button
       type="button"
       onClick={open}
-      aria-label={`Search ${total} resources`}
+      aria-label={`Search ${total} guides, tools and terms`}
       aria-keyshortcuts="Meta+K Control+K"
       className={cn(
-        "group flex w-full max-w-md items-center gap-2 rounded-md border border-border bg-background px-3 py-2.5 font-mono text-sm text-muted-foreground transition-colors hover:border-primary/60",
+        "flex h-12 w-full max-w-xl items-center gap-3 rounded-lg border border-input bg-card px-4 text-left text-[15px] text-muted-foreground shadow-sm transition-colors hover:border-foreground/30",
         className,
       )}
     >
-      <Search className="size-4 shrink-0" aria-hidden />
-      <span className="text-primary" aria-hidden>
-        $
+      <Search className="size-[18px] shrink-0" aria-hidden />
+      <span className="flex-1 truncate">
+        Search {total.toLocaleString()} guides, tools and terms
       </span>
-      <span className="flex-1 text-left">
-        search <span className="text-foreground">{total}</span> resources
-      </span>
-      <kbd className="hidden rounded-sm border border-border bg-muted px-1.5 text-[11px] sm:inline">
+      <kbd className="hidden shrink-0 rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[11px] sm:inline">
         ⌘K
       </kbd>
     </button>

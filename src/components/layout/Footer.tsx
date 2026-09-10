@@ -1,95 +1,22 @@
 import Link from "next/link";
-import {
-  Info,
-  BookOpen,
-  Map as SitemapIcon,
-  Rss,
-  Hash,
-  FileText,
-  Search,
-  Kanban,
-  Sparkles,
-  Package,
-} from "lucide-react";
-import { contentTypeList } from "@/lib/content/registry";
-import { getCountsByType } from "@/lib/content";
+import { Search, Kanban, Sparkles } from "lucide-react";
+import { contentTypes, audiences } from "@/lib/content/registry";
+import { getCountsByType, getByAudience } from "@/lib/content";
 import { Logo } from "@/components/brand/Logo";
-import { SearchCommandBox } from "@/components/search/SearchCommandBox";
+import { Container } from "@/components/ui/container";
 import { site, network } from "@/lib/site";
+import { getColorClasses, cn } from "@/lib/utils";
 import type { ComponentType, SVGProps } from "react";
+import type { ContentTypeDef } from "@/lib/content/registry";
 
 /**
- * Site footer, styled as the tail of a terminal session. A prompt header with
- * a live `[ NN ok ]` status chip, a hero-matched `$ search` command box, the
- * content types rendered as a directory listing (label + route + tagline +
- * live count), a `man`/`cat`-flavored resources block, and a closing prompt
- * sign-off with the signature blinking cursor.
+ * Editorial sitemap footer. Plain SERVER component — no "use client", no hooks.
+ * Counts come from the sync getCountsByType(); columns are driven from the
+ * registry (never hardcoded). Copyright year is static per codebase convention.
  *
- * Plain SERVER component — no "use client", no hooks. Counts come from the sync
- * getCountsByType(); the content nav is driven entirely from contentTypeList
- * (never hardcoded). Copyright year is static per codebase convention.
+ * The search box that used to live here is gone: the nav search is sticky on
+ * every page, so a second one 300 lines down was redundant chrome.
  */
-
-const pad = (n: number) => String(n).padStart(2, "0");
-
-const resources = [
-  {
-    href: "/about",
-    label: "About & standards",
-    cmd: "man editorial-standards",
-    icon: Info,
-    external: false,
-  },
-  {
-    href: "/how-to-use",
-    label: "How to use",
-    cmd: "man how-to-use",
-    icon: BookOpen,
-    external: false,
-  },
-  {
-    href: "https://www.npmjs.com/package/agentscamp",
-    label: "npm: agentscamp",
-    cmd: "npx agentscamp",
-    icon: Package,
-    external: true,
-  },
-  {
-    href: "/topics",
-    label: "Topics",
-    cmd: "ls topics",
-    icon: Hash,
-    external: false,
-  },
-  {
-    href: "/llms.txt",
-    label: "llms.txt",
-    cmd: "cat llms.txt",
-    icon: FileText,
-    external: true,
-  },
-  {
-    href: "/sitemap.xml",
-    label: "Sitemap",
-    cmd: "cat sitemap.xml",
-    icon: SitemapIcon,
-    external: true,
-  },
-  {
-    href: "/feed.xml",
-    label: "RSS feed",
-    cmd: "curl feed.xml",
-    icon: Rss,
-    external: true,
-  },
-  {
-    href: "/guides/feed.xml",
-    label: "Guides feed",
-    cmd: "curl guides/feed.xml",
-    icon: Rss,
-    external: true,
-  },
-] as const;
 
 /** Icon per network sibling, keyed by its `id` in the site registry. */
 const networkIcons: Record<
@@ -101,214 +28,186 @@ const networkIcons: Record<
   sureprompts: Sparkles,
 };
 
+const endpoints = [
+  { href: "/llms.txt", label: "llms.txt" },
+  { href: "/sitemap.xml", label: "Sitemap" },
+  { href: "/feed.xml", label: "RSS" },
+  { href: "/guides/feed.xml", label: "Guides feed" },
+];
+
+function TypeLink({ def, count }: { def: ContentTypeDef; count: number }) {
+  const accent = getColorClasses(def.id);
+  const Icon = def.icon;
+  return (
+    <li>
+      <Link
+        href={def.basePath}
+        className="group flex items-baseline justify-between gap-3 py-1"
+      >
+        <span className="flex items-baseline gap-2">
+          <Icon className={cn("size-3.5 shrink-0 translate-y-0.5", accent.text)} />
+          <span className="text-sm text-muted-foreground transition-colors group-hover:text-foreground">
+            {def.label}
+          </span>
+        </span>
+        <span className="text-xs tabular-nums text-muted-foreground/70">
+          {count.toLocaleString()}
+        </span>
+      </Link>
+    </li>
+  );
+}
+
+function Column({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-foreground">
+        {title}
+      </h3>
+      <ul className="space-y-0.5">{children}</ul>
+    </div>
+  );
+}
+
+function TextLink({
+  href,
+  children,
+  external,
+}: {
+  href: string;
+  children: React.ReactNode;
+  external?: boolean;
+}) {
+  return (
+    <li>
+      <Link
+        href={href}
+        {...(external
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+        className="block py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        {children}
+      </Link>
+    </li>
+  );
+}
+
 export function Footer() {
   const counts = getCountsByType();
-  const total = Object.values(counts).reduce((sum, n) => sum + n, 0);
+  const roles = audiences
+    .map((a) => ({ ...a, count: getByAudience(a.slug).length }))
+    .filter((a) => a.count > 0);
 
   return (
-    <footer className="relative mt-24 overflow-hidden border-t border-border bg-card/40">
-      {/* faint terminal grid — decorative only */}
-      <div
-        aria-hidden
-        className="grid-pattern pointer-events-none absolute inset-0"
-      />
-
-      <div className="relative mx-auto max-w-6xl px-4 py-12">
+    <footer className="mt-24 border-t border-border bg-card/40">
+      <Container className="py-12">
         <h2 className="sr-only">Site footer — browse AgentsCamp</h2>
 
-        {/* ── prompt header: brand + path + live status chip ──────────── */}
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm">
-          <Link
-            href="/"
-            aria-label={`${site.name} home`}
-            className="inline-flex items-center rounded-sm text-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            <Logo className="text-base" markClassName="text-glow" blink />
-          </Link>
-          <span className="text-muted-foreground">~/agentscamp</span>
-          <span
-            className="ml-auto inline-flex items-center rounded-sm border border-primary/40 bg-primary/10 px-2 py-0.5 text-xs tabular-nums text-primary"
-            aria-label={`${total} resources in the hub`}
-          >
-            [ {pad(total)} ok ]
-          </span>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-4">
+          <Column title="Read">
+            <TypeLink def={contentTypes.guide} count={counts.guide} />
+            <TypeLink def={contentTypes.tool} count={counts.tool} />
+            <TypeLink def={contentTypes.glossary} count={counts.glossary} />
+            <TextLink href="/topics">Topics</TextLink>
+          </Column>
+
+          <Column title="For Claude Code">
+            <TypeLink def={contentTypes.agent} count={counts.agent} />
+            <TypeLink def={contentTypes.skill} count={counts.skill} />
+            <TypeLink def={contentTypes.command} count={counts.command} />
+            <TextLink href="/how-to-use">How to use</TextLink>
+            <TextLink href="https://www.npmjs.com/package/agentscamp" external>
+              npm: agentscamp
+            </TextLink>
+          </Column>
+
+          <Column title="Start here">
+            {roles.map((r) => (
+              <TextLink key={r.slug} href={`/for/${r.slug}`}>
+                {r.label}
+              </TextLink>
+            ))}
+          </Column>
+
+          <div>
+            <Link href="/" aria-label="AgentsCamp home" className="text-[15px]">
+              <Logo />
+            </Link>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
+              {site.description}
+            </p>
+            <ul className="mt-3 space-y-0.5">
+              <TextLink href="/about">About &amp; editorial standards</TextLink>
+              <TextLink href="https://x.com/agentscamp" external>
+                X
+              </TextLink>
+              <TextLink
+                href="https://github.com/imtiazrayhan/agentscamp"
+                external
+              >
+                GitHub
+              </TextLink>
+            </ul>
+          </div>
         </div>
 
-        {/* ── primary action: a hero-matched search command box ───────── */}
-        <SearchCommandBox total={total} className="mt-6" />
-
-        {/* ── content types as a directory listing ────────────────────── */}
-        <nav aria-label="Browse the hub" className="mt-10">
-          <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-            {"// browse the hub"}
+        {/* sibling products in the same network */}
+        <div className="mt-12 border-t border-border pt-8">
+          <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-foreground">
+            Our projects
           </h3>
-          <ul className="mt-4 grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3">
-            {contentTypeList.map((def) => {
-              const Icon = def.icon;
-              const count = counts[def.id] ?? 0;
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {network.map((n) => {
+              const Icon = networkIcons[n.id];
               return (
-                <li key={def.id}>
+                <li key={n.id}>
                   <Link
-                    href={def.basePath}
-                    className="group flex items-center gap-3 rounded-sm border border-transparent px-3 py-2.5 transition-colors hover:border-border hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    href={n.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-2.5"
                   >
-                    <Icon
-                      className="size-4 shrink-0 text-primary"
-                      aria-hidden
-                    />
-                    <span className="flex min-w-0 flex-col">
-                      <span className="flex items-baseline gap-2">
-                        <span className="font-mono text-sm text-foreground transition-colors group-hover:text-primary">
-                          {def.label}
-                        </span>
-                        <span className="font-mono text-xs text-muted-foreground">
-                          {def.basePath}
-                        </span>
+                    <Icon className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+                    <span>
+                      <span className="block text-sm font-medium transition-colors group-hover:text-primary">
+                        {n.name}
                       </span>
-                      <span className="truncate text-xs text-muted-foreground">
-                        {def.tagline}
+                      <span className="block text-xs text-muted-foreground">
+                        {n.tagline}
                       </span>
-                    </span>
-                    <span className="ml-auto shrink-0 font-mono text-xs tabular-nums text-muted-foreground transition-colors group-hover:text-foreground">
-                      {pad(count)}
                     </span>
                   </Link>
                 </li>
               );
             })}
           </ul>
-        </nav>
-
-        {/* ── resources + projects + about ────────────────────────────── */}
-        <div className="mt-10 grid gap-8 border-t border-border pt-8 md:grid-cols-3">
-          <nav aria-label="Resources">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-              {"// resources"}
-            </h3>
-            <ul className="mt-4 space-y-1">
-              {resources.map((r) => {
-                const Icon = r.icon;
-                const inner = (
-                  <>
-                    <Icon
-                      className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
-                      aria-hidden
-                    />
-                    <span className="flex min-w-0 flex-col">
-                      <span className="font-mono text-sm text-foreground transition-colors group-hover:text-primary">
-                        {r.label}
-                      </span>
-                      <span className="truncate font-mono text-xs text-muted-foreground">
-                        <span className="text-primary">$</span> {r.cmd}
-                      </span>
-                    </span>
-                  </>
-                );
-                const cls =
-                  "group -mx-2 flex items-start gap-3 rounded-sm px-2 py-1.5 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
-                return (
-                  <li key={r.href}>
-                    {r.external ? (
-                      <a
-                        href={r.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cls}
-                      >
-                        {inner}
-                      </a>
-                    ) : (
-                      <Link href={r.href} className={cls}>
-                        {inner}
-                      </Link>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-
-          <nav aria-label="Our other projects">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-              {"// our projects"}
-            </h3>
-            <ul className="mt-4 space-y-1">
-              {network.map((p) => {
-                const Icon = networkIcons[p.id];
-                return (
-                  <li key={p.id}>
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group -mx-2 flex items-start gap-3 rounded-sm px-2 py-1.5 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                    >
-                      <Icon
-                        className="mt-0.5 size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
-                        aria-hidden
-                      />
-                      <span className="flex min-w-0 flex-col">
-                        <span className="font-mono text-sm text-foreground transition-colors group-hover:text-primary">
-                          {p.name}
-                        </span>
-                        <span className="truncate text-xs text-muted-foreground">
-                          {p.tagline}
-                        </span>
-                      </span>
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-
-          <div>
-            <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-              {"// about"}
-            </h3>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              {site.description}
-            </p>
-            <Link
-              href="/about"
-              className="mt-3 inline-flex font-mono text-sm text-primary hover:underline"
-            >
-              Read our editorial standards →
-            </Link>
-            <div className="mt-4 flex gap-4 font-mono text-sm">
-              <a
-                href="https://x.com/agentscamp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors hover:text-foreground"
-              >
-                x: @agentscamp ↗
-              </a>
-              <a
-                href="https://github.com/imtiazrayhan/agentscamp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors hover:text-foreground"
-              >
-                github ↗
-              </a>
-            </div>
-          </div>
         </div>
 
-        {/* ── sign-off prompt + copyright ─────────────────────────────── */}
-        <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6 font-mono text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p className="inline-flex items-center gap-2">
-            <span className="text-muted-foreground">~/agentscamp</span>
-            <span className="text-primary text-glow">$</span>
-            <span className="text-foreground">{site.tagline.toLowerCase()}</span>
-            <span className="cursor-blink text-primary" aria-hidden>
-              ▍
-            </span>
-          </p>
-          <p>© 2026 {site.name}. all rights reserved.</p>
+        <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 AgentsCamp. All rights reserved.</p>
+          <ul className="flex flex-wrap gap-4">
+            {endpoints.map((e) => (
+              <li key={e.href}>
+                <Link
+                  href={e.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-foreground"
+                >
+                  {e.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }
