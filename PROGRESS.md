@@ -1,3 +1,54 @@
+# Role paths Wave 1: foundation + founders + marketers (2026-09-10) — SHIPPED
+
+79 new items across three commits, taking the hub from 607 to 686. Every role
+hub renders from `audience` frontmatter plus a registered start-here sequence.
+
+## Done (three commits on master)
+- **Foundation (16):** tool pages for the products every non-dev role compares
+  (claude.ai, Claude Cowork, Claude Design, Claude for Excel, Claude in Chrome,
+  ChatGPT, Gemini, Perplexity, Gemini Notebook, Microsoft 365 Copilot); guides
+  claude-cowork-guide, claude-knowledge-work-plugins, claude-plans-compared-2026
+  (the ONLY page that states consumer plan prices, tier-1 monthly, as-of dated);
+  glossary claude-cowork, claude-plugins, ai-connectors.
+- **Founders (30):** cornerstone pillar claude-code-for-non-developers plus six
+  guides, a tools roundup and two versus guides; tools base44, emergent, rork,
+  softr, glide, bubble, zapier-agents, lindy; skills/commands/agents under a new
+  `product` category; four glossary terms. Lovable, Bolt, v0 and Replit Agent
+  moved from `platform` to the new `app-builder` tool category.
+- **Marketers (33):** cornerstone pillar claude-code-for-marketers plus seven
+  guides, two roundups and two versus guides; tools jasper, copy-ai, surfer,
+  clearscope, hubspot-breeze, gamma, descript, opus-clip; five skills, two
+  commands and a content-editor agent under `marketing`; five glossary terms
+  (GEO, AEO, AI Overviews, llms.txt, brand voice).
+- Category landing copy added for every new guide/skill/command/agent category
+  and for the assistant, app-builder, automation, design, marketing and
+  analytics tool categories (the old template assumed an AI-coding stack).
+- An adversarial fact-check pass reconciled cross-file conflicts: plugin count
+  (launched with 11 on Jan 30 2026, 17 today), Cowork platforms and plan gating,
+  Claude Design research-preview vs beta, Claude in Chrome availability (an
+  unverifiable attack-rate stat was replaced with the GA post's figures),
+  the NotebookLM to Gemini Notebook rename, Rork's Swift/Kotlin switch, Fable
+  availability per plan, Projects on Free (help center vs pricing page both
+  cited), Base44 GitHub tier, and Glide credit counts.
+
+## Method that worked
+Parallel authors each write into a scratchpad directory against a shared
+authoring spec (frontmatter caps, link allowlist, inbound-link rule, "no figure
+from memory"), then a lint script checks lengths and schema before anything is
+copied into the repo, then one reviewer agent fact-checks the integrated set.
+Spec and scripts live in the session scratchpad; the route index generated from
+src/content is what keeps cross-batch links from 404ing.
+
+## Next
+- Wave 2a designers (32) and 2b analysts (32), then the cross-role tag pass.
+- After Wave 2: rebuild the mirror, bump the CLI (new installables in product,
+  marketing, design and analytics categories) and republish.
+- The marketers fact-check ran as mechanical consistency checks only (the
+  reviewer agent hit a rate limit); a full adversarial pass over the marketing
+  cluster is still worth running.
+
+---
+
 # Role paths: audience taxonomy + /for/<role> (2026-09-10) — WAVE 0 SHIPPED
 
 Owner direction: position the hub so every role — developers, founders,
