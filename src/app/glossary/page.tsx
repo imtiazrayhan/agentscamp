@@ -4,6 +4,7 @@ import { getContentByType } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { glossaryHubGraph } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
 const DESCRIPTION =
   "Plain-language definitions of the AI and LLM-engineering terms that matter — RAG, MCP, agents, fine-tuning, guardrails, and more — each linked to the deeper guide.";
@@ -55,7 +56,7 @@ export default function Page() {
           <a
             key={l}
             href={`#${l}`}
-            className="inline-flex size-7 items-center justify-center rounded-md border border-border bg-card text-xs font-semibold text-muted-foreground transition-colors hover:border-foreground/25 hover:text-foreground"
+            className="inline-flex size-7 items-center justify-center rounded-md border border-border bg-card text-xs font-semibold text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground"
           >
             {l}
           </a>
@@ -65,9 +66,9 @@ export default function Page() {
       <div className="space-y-10">
         {letters.map((l) => (
           <section key={l} id={l} aria-label={`Terms starting with ${l}`}>
-            <h2 className="mb-4 border-b border-border pb-2 text-sm font-semibold text-type-sky-ink">
+            <Eyebrow as="h2" className="mb-4">
               {l}
-            </h2>
+            </Eyebrow>
             <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
               {(groups.get(l) ?? []).map((item) => (
                 <li key={item.slug}>

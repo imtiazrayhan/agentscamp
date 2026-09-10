@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ToolItem } from "@/lib/content/types";
 import { titleCaseLabel } from "@/lib/format";
+import { label } from "@/components/ui/typography";
 
 export const pricingLabel = (p: ToolItem["pricing"]) => p.replace("-", " ");
 
@@ -17,7 +18,7 @@ export function AlternativesTable({
   items: ToolItem[];
 }) {
   if (items.length === 0) return null;
-  const th = "px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground";
+  const th = `px-3 py-2 text-left ${label}`;
   const td = "px-3 py-2 align-top";
   return (
     <div className="mt-6">
@@ -35,7 +36,7 @@ export function AlternativesTable({
       </p>
       <div className="mt-5 overflow-x-auto rounded-md border border-border">
         <table className="w-full min-w-[640px] text-sm">
-          <thead className="border-b border-border bg-secondary/50">
+          <thead className="bg-secondary">
             <tr>
               <th className={th}>Tool</th>
               <th className={th}>Pricing</th>

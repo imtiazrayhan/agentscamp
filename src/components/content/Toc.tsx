@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { TocItem } from "@/lib/toc";
 import { cn } from "@/lib/utils";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
 export function Toc({ items }: { items: TocItem[] }) {
   const [active, setActive] = useState<string>("");
@@ -27,9 +28,9 @@ export function Toc({ items }: { items: TocItem[] }) {
 
   return (
     <nav aria-label="On this page" className="text-sm">
-      <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+      <Eyebrow className="mb-3">
         On this page
-      </p>
+      </Eyebrow>
       <ul className="space-y-1.5 border-l border-border">
         {items.map((i) => (
           <li key={i.id} style={{ paddingLeft: i.depth === 3 ? 16 : 0 }}>

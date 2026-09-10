@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { site } from "@/lib/site";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
 const title = "About & Editorial Standards";
 const description =
@@ -37,9 +38,9 @@ export default function AboutPage() {
       />
 
       <header className="mb-10">
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+        <Eyebrow className="text-primary">
           About AgentsCamp
-        </p>
+        </Eyebrow>
         <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           Useful AI resources, with the work shown
         </h1>

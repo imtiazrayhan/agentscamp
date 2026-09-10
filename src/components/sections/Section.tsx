@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { sectionHeading } from "@/components/ui/typography";
 
 interface SectionProps {
   title: string;
@@ -22,13 +23,13 @@ export function Section({
   className,
 }: SectionProps) {
   return (
-    <section className={cn("py-10", className)}>
+    <section className={cn("py-7", className)}>
       <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 className="flex items-center gap-2 text-2xl font-bold tracking-tight">
+          <h2 className={cn("flex items-center gap-2", sectionHeading)}>
             {title}
             {count !== undefined && (
-              <span className="text-base font-normal text-muted-foreground">
+              <span className="text-sm font-normal text-muted-foreground">
                 {count}
               </span>
             )}
