@@ -1,16 +1,22 @@
 # AgentsCamp
 
-> Ready-to-use Claude Code agents, skills, and slash commands — browse at [agentscamp.com](https://agentscamp.com), install in one command.
+> Guides, an AI tool directory, and a glossary for building with AI coding agents — plus ready-to-install Claude Code agents, skills, and slash commands. Read it at [agentscamp.com](https://agentscamp.com).
 
-```bash
-npx agentscamp          # pick what to install, or --all for everything
-```
+## What's on the site
+
+- **Guides** — tutorials and deep-dives, from first principles to advanced workflows → [agentscamp.com/guides](https://agentscamp.com/guides)
+- **Tools** — a curated directory of AI coding tools, editors, agents, and MCP servers, with pricing and alternatives → [agentscamp.com/tools](https://agentscamp.com/tools)
+- **Glossary** — AI and LLM-engineering terms, defined precisely → [agentscamp.com/glossary](https://agentscamp.com/glossary)
+- **Topics** — cross-cutting collections across every content type → [agentscamp.com/topics](https://agentscamp.com/topics)
+- **Agents, skills, and commands** — installable Claude Code artifacts in the real on-disk format. Every page has copy/download actions and the exact install path → [/agents](https://agentscamp.com/agents) · [/skills](https://agentscamp.com/skills) · [/commands](https://agentscamp.com/commands)
+
+Every page has a clean Markdown twin at the same URL plus `.md`; the whole hub is machine-readable at [/llms.txt](https://agentscamp.com/llms.txt) and [/llms-full.txt](https://agentscamp.com/llms-full.txt). Follow new additions via [/feed.xml](https://agentscamp.com/feed.xml) or the guides-only [/guides/feed.xml](https://agentscamp.com/guides/feed.xml).
+
+## npm CLI (optional)
 
 [![npm](https://img.shields.io/npm/v/agentscamp)](https://www.npmjs.com/package/agentscamp)
 
-## The `agentscamp` CLI
-
-The npm package bundles the full AgentsCamp catalog — 198 curated, format-validated items — and installs them straight into Claude Code's standard locations. Zero runtime dependencies, no network calls; everything works offline.
+If you'd rather install from the terminal, the `agentscamp` npm package bundles the full catalog of agents, skills, and commands and installs them straight into Claude Code's standard locations. Zero runtime dependencies, no network calls; everything works offline.
 
 ```bash
 npx agentscamp                       # interactive picker: everything, a type, or hand-pick
@@ -33,14 +39,6 @@ Bulk installs (`--all`, `install`, the picker) default to `~/.claude/` so items 
 | `-f, --force`  | Overwrite existing files (re-running without it is a safe no-op) |
 
 Full CLI docs: [`cli/README.md`](cli/README.md) · npm: [npmjs.com/package/agentscamp](https://www.npmjs.com/package/agentscamp)
-
-## What's in the catalog
-
-- **58 agents** — specialized subagents for development, data/AI, infra, security, and more → [agentscamp.com/agents](https://agentscamp.com/agents)
-- **90 skills** — on-demand capabilities for testing, databases, refactoring, releases → [agentscamp.com/skills](https://agentscamp.com/skills)
-- **50 commands** — reusable slash commands for planning, review, git, scaffolding → [agentscamp.com/commands](https://agentscamp.com/commands)
-
-The site adds guides, a tool directory, and an AI glossary. Every page has a clean Markdown twin at the same URL plus `.md`, and the whole catalog is machine-readable at [/llms.txt](https://agentscamp.com/llms.txt).
 
 ## Repository layout
 

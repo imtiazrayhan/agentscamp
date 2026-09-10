@@ -1,16 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { SearchCommandBox } from "@/components/search/SearchCommandBox";
-import { CopyButton } from "@/components/content/CopyButton";
 
 export interface BootLine {
   label: string;
   count: number;
 }
 
-const CMD = "npx agentscamp";
-const INSTALL_CMD = "npx agentscamp add agents/code-reviewer";
+const CMD = "ls ~/agentscamp";
+const START_HERE = {
+  href: "/guides/getting-started/what-is-claude-code",
+  label: "What is Claude Code?",
+};
 
 export function Hero({ lines, total }: { lines: BootLine[]; total: number }) {
   const [typed, setTyped] = useState("");
@@ -83,37 +88,28 @@ export function Hero({ lines, total }: { lines: BootLine[]; total: number }) {
         {/* headline — always full contrast (no fade) */}
         <div className="mt-9">
           <h1 className="text-balance text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-            Stop wiring up AI by hand.
+            The field guide to building with AI.
             <br />
-            <span className="text-primary text-glow">Copy. Paste. Ship.</span>
+            <span className="text-primary text-glow">Read. Build. Ship.</span>
           </h1>
           <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
-            A curated hub of agents, skills, guides, tools &amp; commands for
-            building with AI coding agents — format-validated and installable
-            in one command.
+            In-depth guides, a curated AI tool directory, and a plain-language
+            glossary for building with AI coding agents — plus ready-to-use
+            agents, skills, and commands for Claude Code.
           </p>
 
-          {/* npm package promo — a real, copyable one-command install */}
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <div className="inline-flex max-w-full items-center gap-1 rounded-md border border-primary/40 bg-secondary py-1.5 pl-3 pr-1.5">
-              <code className="truncate font-mono text-xs sm:text-sm">
-                <span className="select-none text-primary">$ </span>
-                {INSTALL_CMD}
-              </code>
-              <CopyButton
-                text={INSTALL_CMD}
-                iconOnly
-                className="shrink-0 border-0 bg-transparent hover:bg-background"
-              />
-            </div>
-            <a
-              href="https://www.npmjs.com/package/agentscamp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
+            <Button asChild>
+              <Link href="/guides">
+                Browse guides <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+            <Link
+              href={START_HERE.href}
+              className="font-mono text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              npm: agentscamp ↗
-            </a>
+              start here: {START_HERE.label} →
+            </Link>
           </div>
 
           <SearchCommandBox total={total} className="mt-4" />

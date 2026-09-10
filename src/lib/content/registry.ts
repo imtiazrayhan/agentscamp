@@ -115,13 +115,15 @@ export const contentTypes: Record<ContentTypeId, ContentTypeDef> = {
   },
 };
 
+// Content-first order: editorial types lead, installables follow. Drives nav,
+// footer, homepage bento, palette groups, and llms.txt sections.
 export const contentTypeList: ContentTypeDef[] = [
-  contentTypes.agent,
-  contentTypes.skill,
   contentTypes.guide,
   contentTypes.tool,
-  contentTypes.command,
   contentTypes.glossary,
+  contentTypes.agent,
+  contentTypes.skill,
+  contentTypes.command,
 ];
 
 // Shared cross-type taxonomy. A topic should ship as a pill only once >=2 items

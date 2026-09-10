@@ -4,7 +4,9 @@ import {
   getCountsByType,
   getFeatured,
   getNewest,
+  getByTopic,
   contentTypeList,
+  topics,
 } from "@/lib/content";
 import type { ContentTypeId, ContentItem } from "@/lib/content/types";
 import type { ContentTypeDef } from "@/lib/content/registry";
@@ -15,17 +17,16 @@ import { ContentCard } from "@/components/content/ContentCard";
 import { CopyButton } from "@/components/content/CopyButton";
 import { cn } from "@/lib/utils";
 
-// A skill here (the hero features an agent) so the two commands together show
-// the CLI installs more than one kind of artifact.
-const GETTING_STARTED_CMD = "npx agentscamp add skills/dependency-audit";
+// The CLI is a secondary path — it lives in the strip at the bottom of the page.
+const CLI_CMD = "npx agentscamp add skills/dependency-audit";
 
-// 4-col bento; spans sum (with the col-span-2 CTA tile) to full rows.
+// 4-col bento in contentTypeList order; spans sum to full rows (4+1+1+2+2+2).
 const SPANS: Record<ContentTypeId, string> = {
-  agent: "sm:col-span-2 sm:row-span-2",
-  skill: "sm:col-span-1",
-  guide: "sm:col-span-1",
+  guide: "sm:col-span-2 sm:row-span-2",
   tool: "sm:col-span-1",
   glossary: "sm:col-span-1",
+  agent: "sm:col-span-2",
+  skill: "sm:col-span-2",
   command: "sm:col-span-2",
 };
 
@@ -81,7 +82,10 @@ function BentoTile({
 export default function Home() {
   const counts = getCountsByType();
   const total = Object.values(counts).reduce((a, b) => a + b, 0);
-  const newest = getNewest(6);
+  const latestGuides = getNewest(6, "guide");
+  const topicEntries = topics
+    .map((t) => ({ ...t, count: getByTopic(t.slug).length }))
+    .filter((t) => t.count > 0);
 
   const bootLines = contentTypeList.map((d) => ({
     label: d.label.toLowerCase(),
@@ -91,6 +95,21 @@ export default function Home() {
   return (
     <div className="space-y-10">
       <Hero lines={bootLines} total={total} />
+
+      {latestGuides.length > 0 && (
+        <Section
+          title="Latest guides"
+          description="New tutorials and deep-dives"
+          browseHref="/guides"
+          browseLabel="All guides"
+        >
+          <ContentGrid>
+            {latestGuides.map((item) => (
+              <ContentCard key={item.href} item={item} />
+            ))}
+          </ContentGrid>
+        </Section>
+      )}
 
       <section className="grid grid-cols-1 gap-3 sm:auto-rows-[1fr] sm:grid-cols-4">
         {contentTypeList.map((def) => (
@@ -102,49 +121,60 @@ export default function Home() {
             span={SPANS[def.id]}
           />
         ))}
-
-        {/* CTA tile completes the bento — promotes the CLI */}
-        <div className="flex flex-col rounded-md border border-border bg-secondary p-5 sm:col-span-2">
-          <div className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-            // getting started
-          </div>
-          <div className="mt-3">
-            <p className="text-lg font-semibold">Install in one command</p>
-            <p className="text-sm text-muted-foreground">
-              The <code className="font-mono text-foreground">agentscamp</code>{" "}
-              CLI drops any agent, skill, or command straight into Claude Code.
-            </p>
-          </div>
-          <div className="mt-4 inline-flex max-w-full items-center gap-1 self-start rounded-md border border-primary/40 bg-background py-1.5 pl-3 pr-1.5">
-            <code className="truncate font-mono text-xs">
-              <span className="select-none text-primary">$ </span>
-              {GETTING_STARTED_CMD}
-            </code>
-            <CopyButton
-              text={GETTING_STARTED_CMD}
-              iconOnly
-              className="shrink-0 border-0 bg-transparent hover:bg-secondary"
-            />
-          </div>
-          <Link
-            href="/how-to-use"
-            className="group/cta mt-auto inline-flex items-center gap-1 self-start pt-5 font-mono text-sm text-primary"
-          >
-            how it works
-            <ArrowRight className="size-3.5 transition-transform group-hover/cta:translate-x-0.5" />
-          </Link>
-        </div>
       </section>
 
-      {newest.length > 0 && (
-        <Section title="New & Featured" description="Fresh across the hub">
-          <ContentGrid>
-            {newest.map((item) => (
-              <ContentCard key={item.href} item={item} />
-            ))}
-          </ContentGrid>
-        </Section>
-      )}
+      <Section
+        title="Browse by topic"
+        browseHref="/topics"
+        browseLabel="All topics"
+      >
+        <ul className="flex flex-wrap gap-2">
+          {topicEntries.map((t) => (
+            <li key={t.slug}>
+              <Link
+                href={`/topics/${t.slug}`}
+                className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-sm font-medium text-primary hover:bg-primary/10"
+              >
+                {t.label}
+                <span className="font-mono text-xs text-muted-foreground">
+                  {t.count}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      {/* Secondary: the npm CLI, for readers who'd rather install from the terminal. */}
+      <section className="flex flex-col gap-3 rounded-md border border-border bg-secondary px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+            // also available as a CLI
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Prefer the terminal? The{" "}
+            <code className="font-mono text-foreground">agentscamp</code> npm
+            package installs any agent, skill, or command into Claude Code.{" "}
+            <Link
+              href="/how-to-use#cli"
+              className="font-mono text-primary hover:underline"
+            >
+              how it works →
+            </Link>
+          </p>
+        </div>
+        <div className="inline-flex max-w-full items-center gap-1 self-start rounded-md border border-border bg-background py-1.5 pl-3 pr-1.5">
+          <code className="truncate font-mono text-xs">
+            <span className="select-none text-primary">$ </span>
+            {CLI_CMD}
+          </code>
+          <CopyButton
+            text={CLI_CMD}
+            iconOnly
+            className="shrink-0 border-0 bg-transparent hover:bg-secondary"
+          />
+        </div>
+      </section>
     </div>
   );
 }

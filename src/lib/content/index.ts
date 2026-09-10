@@ -56,9 +56,10 @@ export function getFeatured(type?: ContentTypeId, limit = 6): ContentItem[] {
   return (featured.length ? featured : pool).slice(0, limit);
 }
 
-/** Newest items across all types (by date, falling back to undefined-last). */
-export function getNewest(limit = 8): ContentItem[] {
-  return [...getAllContent()]
+/** Newest items (optionally within one type) by date, undefined-last. */
+export function getNewest(limit = 8, type?: ContentTypeId): ContentItem[] {
+  const pool = type ? getContentByType(type) : getAllContent();
+  return [...pool]
     .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""))
     .slice(0, limit);
 }

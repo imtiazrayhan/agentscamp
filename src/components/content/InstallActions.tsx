@@ -113,12 +113,6 @@ export function InstallActions({ item }: { item: ContentItem }) {
 
   return (
     <div className="space-y-3">
-      <div className="flex flex-wrap items-center gap-2">
-        <code className="rounded-md border border-border bg-secondary px-3 py-2 font-mono text-xs text-foreground">
-          {cliCommand}
-        </code>
-        <CopyButton text={cliCommand} label="Copy" copiedLabel="Copied!" />
-      </div>
       <div className="flex flex-wrap gap-2">
         <CopyButton
           text={file}
@@ -148,6 +142,14 @@ export function InstallActions({ item }: { item: ContentItem }) {
           the full bundle.
         </p>
       )}
+      {/* Secondary path: the npm CLI. */}
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-xs text-muted-foreground">or via CLI:</span>
+        <code className="rounded-md border border-border bg-secondary px-3 py-2 font-mono text-xs text-foreground">
+          {cliCommand}
+        </code>
+        <CopyButton text={cliCommand} iconOnly className="shrink-0" />
+      </div>
     </div>
   );
 }

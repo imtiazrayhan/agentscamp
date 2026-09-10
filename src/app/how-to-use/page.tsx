@@ -7,22 +7,18 @@ import { FaqSection } from "@/components/content/FaqSection";
 export const metadata: Metadata = buildPageMetadata({
   title: "How to use",
   description:
-    "How to install and use AI agents, skills, and slash commands from AgentsCamp — plus machine-readable Markdown for LLMs and agents.",
+    "How to use AgentsCamp: start with the guides, tool directory, and glossary, then copy, download, or install agents, skills, and slash commands into Claude Code.",
   path: "/how-to-use",
 });
 
 const faq = [
   {
     q: "Are AgentsCamp agents and skills free to use?",
-    a: "Yes. Everything on AgentsCamp is free to copy, download, and install. Agents, skills, and commands are plain Markdown files you drop into your .claude directory.",
+    a: "Yes. Everything on AgentsCamp is free to read, copy, download, and install. Agents, skills, and commands are plain Markdown files you drop into your .claude directory.",
   },
   {
-    q: "How do I install a Claude Code agent?",
-    a: "Run npx agentscamp add agents/<name> to install one into your project's .claude/agents/ directory (add -g for ~/.claude/agents/), or run npx agentscamp to pick from the full catalog interactively. You can also copy the agent's Markdown file there manually. Claude Code delegates to it automatically based on its description, or you can invoke it explicitly.",
-  },
-  {
-    q: "Can I install AgentsCamp content from the command line?",
-    a: "Yes. The agentscamp npm package bundles the full catalog. Run npx agentscamp to pick what to install interactively, npx agentscamp --all to install everything into ~/.claude, or npx agentscamp add <type>/<name> to install specific items into your project. npx agentscamp list and search explore the catalog offline.",
+    q: "Where should I start on AgentsCamp?",
+    a: "Start with the guides — What Is Claude Code? and Installing Claude Code if you're new, or browse by topic. Use the tools directory to compare products and the glossary to decode terms. Agents, skills, and commands are ready when you want something to install.",
   },
   {
     q: "What is the difference between an agent, a skill, and a slash command?",
@@ -35,6 +31,14 @@ const faq = [
   {
     q: "Does AgentsCamp offer machine-readable content for LLMs and agents?",
     a: "Yes. Every page has a clean Markdown version at the same URL with a .md suffix, and the entire catalog is available at /llms.txt (an index) and /llms-full.txt (every page concatenated).",
+  },
+  {
+    q: "How do I install a Claude Code agent?",
+    a: "Copy or download the agent's Markdown file from its page into .claude/agents/ (project) or ~/.claude/agents/ (personal). Claude Code delegates to it automatically based on its description, or you can invoke it explicitly. If you prefer the terminal, npx agentscamp add agents/<name> does the same (add -g for ~/.claude).",
+  },
+  {
+    q: "Can I install AgentsCamp content from the command line?",
+    a: "Yes. The agentscamp npm package bundles the full catalog. Run npx agentscamp to pick what to install interactively, npx agentscamp --all to install everything into ~/.claude, or npx agentscamp add <type>/<name> to install specific items into your project. npx agentscamp list and search explore the catalog offline.",
   },
 ];
 
@@ -50,12 +54,93 @@ export default function Page() {
       <article className="prose prose-neutral max-w-3xl dark:prose-invert">
         <h1>How to use AgentsCamp</h1>
         <p>
-          Everything here is copy-paste ready. Each agent, skill, and command
-          page has install actions — copy the file or download it, then drop it
-          into the right folder. Or skip the copying entirely and use the CLI.
+          AgentsCamp is a reading-first hub. Start with the guides, use the tool
+          directory to compare options, and the glossary to decode terms. When
+          you&apos;re ready to act, every agent, skill, and command page has copy
+          and download actions in Claude Code&apos;s real file format — and an
+          optional CLI if you&apos;d rather install from the terminal.
         </p>
 
-        <h2>Quick install with the CLI</h2>
+        <h2>Start with the guides</h2>
+        <p>
+          Guides are tutorials and deep-dives, each opening with a summary, steps
+          at a glance, and key takeaways. If you&apos;re new, read{" "}
+          <Link href="/guides/getting-started/what-is-claude-code">
+            What Is Claude Code?
+          </Link>
+          , then{" "}
+          <Link href="/guides/getting-started/installing-claude-code">
+            Installing Claude Code
+          </Link>{" "}
+          and{" "}
+          <Link href="/guides/getting-started/getting-started-with-agents">
+            Getting Started with Claude Code Agents
+          </Link>
+          . From there, <Link href="/guides">browse all guides</Link> or explore{" "}
+          <Link href="/topics">by topic</Link>.
+        </p>
+
+        <h2>Tools</h2>
+        <p>
+          The tools directory points you to editors, CLIs, extensions, and SDKs
+          for AI-assisted development. Each entry links to the official site and
+          source where available.
+        </p>
+
+        <h2>Glossary</h2>
+        <p>
+          The <Link href="/glossary">glossary</Link> gives plain-language,
+          answer-first definitions of the AI and LLM-engineering terms you&apos;ll
+          meet across the hub. Each term links to the deeper guide when you want
+          more than the definition.
+        </p>
+
+        <h2>Agents</h2>
+        <p>
+          Claude Code subagents are Markdown files with frontmatter. Copy or
+          download the file from its page, then save it to your project at{" "}
+          <code>.claude/agents/&lt;name&gt;.md</code> (committed to version
+          control) or personally at <code>~/.claude/agents/&lt;name&gt;.md</code>{" "}
+          (available across all your projects). Claude delegates to it
+          automatically based on its <code>description</code>, or you can invoke
+          it explicitly.
+        </p>
+
+        <h2>Skills</h2>
+        <p>
+          Copy or download the skill from its page, then save it to{" "}
+          <code>.claude/skills/&lt;name&gt;/SKILL.md</code> (project, committed to
+          version control) or <code>~/.claude/skills/&lt;name&gt;/SKILL.md</code>{" "}
+          (personal, available across all your projects). Skills load on demand
+          (progressive disclosure) so they only consume context when relevant.
+          Multi-file skills bundle additional resources alongside the SKILL.md.
+        </p>
+
+        <h2>Slash commands</h2>
+        <p>
+          Copy or download the command from its page, save it to{" "}
+          <code>.claude/commands/&lt;name&gt;.md</code>, and invoke it with{" "}
+          <code>/&lt;name&gt;</code>. Commands can take arguments via{" "}
+          <code>$ARGUMENTS</code>.
+        </p>
+
+        <h2>For AI agents &amp; LLMs</h2>
+        <p>
+          AgentsCamp is built to be read by machines as well as people. Every page
+          has a clean Markdown twin at the same URL plus a <code>.md</code> suffix
+          — for example, <code>/agents/&lt;category&gt;/&lt;slug&gt;.md</code>. For
+          the whole catalog, fetch{" "}
+          <a href="/llms.txt">
+            <code>/llms.txt</code>
+          </a>{" "}
+          (a linked index) or{" "}
+          <a href="/llms-full.txt">
+            <code>/llms-full.txt</code>
+          </a>{" "}
+          (every page concatenated as Markdown).
+        </p>
+
+        <h2 id="cli">Optional: install with the CLI</h2>
         <p>
           The <code>agentscamp</code> npm package bundles the full catalog, so
           you can install anything in one command with npx — nothing to set up.
@@ -79,65 +164,6 @@ npx agentscamp search "code review"`}
           <code>--project</code> anywhere to override. Every agent, skill, and
           command page on this site also shows its exact <code>add</code>{" "}
           command.
-        </p>
-
-        <h2>Agents</h2>
-        <p>
-          Claude Code subagents are Markdown files with frontmatter. Save an agent
-          to your project at <code>.claude/agents/&lt;name&gt;.md</code> (committed
-          to version control) or personally at{" "}
-          <code>~/.claude/agents/&lt;name&gt;.md</code> (available across all your
-          projects). Claude delegates to it automatically based on its{" "}
-          <code>description</code>, or you can invoke it explicitly.
-        </p>
-
-        <h2>Skills</h2>
-        <p>
-          Skills live at <code>.claude/skills/&lt;name&gt;/SKILL.md</code>{" "}
-          (project, committed to version control) or{" "}
-          <code>~/.claude/skills/&lt;name&gt;/SKILL.md</code> (personal, available
-          across all your projects). They load on demand (progressive disclosure)
-          so they only consume context when relevant. Multi-file skills bundle
-          additional resources alongside the SKILL.md.
-        </p>
-
-        <h2>Slash commands</h2>
-        <p>
-          Save a command to <code>.claude/commands/&lt;name&gt;.md</code> and
-          invoke it with <code>/&lt;name&gt;</code>. Commands can take arguments
-          via <code>$ARGUMENTS</code>.
-        </p>
-
-        <h2>Tools</h2>
-        <p>
-          The tools directory points you to editors, CLIs, extensions, and SDKs
-          for AI-assisted development. Each entry links to the official site and
-          source where available.
-        </p>
-
-        <h2>Guides</h2>
-        <p>
-          Guides are tutorials and deep-dives. Start with{" "}
-          <Link href="/guides/getting-started/getting-started-with-agents">
-            Getting Started with Claude Code Agents
-          </Link>
-          .
-        </p>
-
-        <h2>For AI agents &amp; LLMs</h2>
-        <p>
-          AgentsCamp is built to be read by machines as well as people. Every page
-          has a clean Markdown twin at the same URL plus a <code>.md</code> suffix
-          — for example, <code>/agents/&lt;category&gt;/&lt;slug&gt;.md</code>. For
-          the whole catalog, fetch{" "}
-          <a href="/llms.txt">
-            <code>/llms.txt</code>
-          </a>{" "}
-          (a linked index) or{" "}
-          <a href="/llms-full.txt">
-            <code>/llms-full.txt</code>
-          </a>{" "}
-          (every page concatenated as Markdown).
         </p>
       </article>
 

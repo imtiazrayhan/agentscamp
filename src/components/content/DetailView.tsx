@@ -264,6 +264,12 @@ export function DetailView({
           </div>
         )}
 
+        {item.summary && (
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/90">
+            {item.summary}
+          </p>
+        )}
+
         <div className="mt-6">
           <InstallActions item={item} />
           {toolAlternativesHref && (
@@ -283,11 +289,6 @@ export function DetailView({
         )}
       >
         <div className="min-w-0">
-          {item.summary && (
-            <p className="mb-6 text-lg leading-relaxed text-foreground/90">
-              {item.summary}
-            </p>
-          )}
           {item.type === "guide" && <StepsAtAGlance steps={item.howtoSteps} />}
           {item.keyTakeaways.length > 0 && (
             <KeyTakeaways items={item.keyTakeaways} />
