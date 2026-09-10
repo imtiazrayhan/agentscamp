@@ -4,7 +4,7 @@ description: "Replit's AI agent that builds, runs, and deploys full-stack apps f
 date: 2026-06-03
 url: "https://replit.com"
 pricing: "freemium"
-category: "platform"
+category: "app-builder"
 color: "orange"
 topics: ["coding-languages"]
 tags: ["cloud-ide", "agent"]

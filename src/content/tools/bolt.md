@@ -5,7 +5,7 @@ date: 2026-06-03
 url: "https://bolt.new"
 repo: "https://github.com/stackblitz/bolt.new"
 pricing: "freemium"
-category: "platform"
+category: "app-builder"
 color: "yellow"
 topics: ["coding-languages", "workflow-prompting"]
 tags: ["web", "generation", "in-browser"]

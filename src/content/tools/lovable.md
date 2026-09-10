@@ -5,7 +5,7 @@ seoDescription: "Lovable is an AI app builder that turns natural-language prompt
 date: 2026-06-03
 url: "https://lovable.dev"
 pricing: "freemium"
-category: "platform"
+category: "app-builder"
 color: "pink"
 topics: ["coding-languages"]
 tags: ["web", "generation", "no-code"]

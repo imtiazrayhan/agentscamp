@@ -194,7 +194,13 @@ export const audiences: AudienceDef[] = [
     label: "Founders & non-technical builders",
     description:
       "Build and run a product without an engineering team: Claude Code in plain language, AI app builders, automation, and which Claude plan to pay for.",
-    startHere: [],
+    startHere: [
+      "guide:claude-code-for-non-developers",
+      "guide:claude-for-founders",
+      "guide:build-an-mvp-with-claude-code",
+      "guide:best-ai-tools-for-founders-2026",
+      "guide:which-claude-plan-for-founders",
+    ],
   },
   {
     slug: "marketers",
