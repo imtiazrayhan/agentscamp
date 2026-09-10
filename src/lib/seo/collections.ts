@@ -31,6 +31,38 @@ const MIN_INDEXABLE = 2;
 
 const CATEGORY_OVERRIDES: Record<string, string> = {
   // `${type}/${category}`: "custom intro description"
+  "guide/founders":
+    "Guides for founders and non-technical builders: Claude Code in plain language, AI app builders, automating operations, and choosing a Claude plan.",
+  "guide/marketing":
+    "Guides for marketers and content teams: Claude for marketing work, brand-voice skills, research workflows, and the AI tools worth paying for.",
+  "guide/design":
+    "Guides for designers: Claude Design, Figma-to-code with Claude Code, design-system upkeep, and the AI design tools that fit a working stack.",
+  "guide/analytics":
+    "Guides for data and analytics teams: Claude for Excel, text-to-SQL, notebooks with Claude Code, and checking an AI analysis before trusting it.",
+  "skill/product":
+    "Skills for founders and product people — PRDs, scope cuts, interview synthesis, competitor teardowns — that run on claude.ai, Claude Code, and Cowork.",
+  "skill/marketing":
+    "Skills for marketers — brand voice, briefs, repurposing, landing pages, email sequences — that run on claude.ai, Claude Code, and Cowork.",
+  "skill/design":
+    "Skills for designers — briefs, critiques, tokens, component specs, UX copy — that run on claude.ai, Claude Code, and Cowork.",
+  "skill/analytics":
+    "Skills for analysts — dataset first looks, chart choice, analysis memos, SQL explanations, spreadsheet audits — that run on claude.ai, Claude Code, and Cowork.",
+  "command/product":
+    "Slash commands for product work in Claude Code: draft a PRD, cut an MVP scope.",
+  "command/marketing":
+    "Slash commands for marketing work in Claude Code: repurpose content, check a draft against your brand voice.",
+  "command/design":
+    "Slash commands for design work in Claude Code: critique a screen, extract design tokens.",
+  "command/analytics":
+    "Slash commands for analytics work in Claude Code: profile a dataset, define a metric.",
+  "agent/product":
+    "Subagents for founders: a technical co-founder that reviews AI-built apps for the risks that bite non-technical owners.",
+  "agent/marketing":
+    "Subagents for marketers: an editor that fixes voice and flags every unsourced claim.",
+  "agent/design":
+    "Subagents for designers: a design-systems librarian that keeps tokens, components, and Figma in sync.",
+  "agent/analytics":
+    "Subagents for analysts: a reviewer that checks an analysis for methodological errors before it ships.",
 };
 
 const TOPIC_OVERRIDES: Record<string, string> = {
@@ -41,6 +73,18 @@ const TOPIC_OVERRIDES: Record<string, string> = {
 // own intro; the default template below assumes an AI-coding stack.
 const TOOL_CATEGORY_OVERRIDES: Record<string, (n: number) => string> = {
   // category: (count) => "custom intro description"
+  assistant: (n) =>
+    `${n} general-purpose AI assistants compared for everyday work — plans, what each unlocks, and which fits founders, marketers, designers, and analysts.`,
+  "app-builder": (n) =>
+    `${n} AI app builders that turn a prompt into a working app — who each one suits, how it's priced, and when to hand the code to Claude Code.`,
+  automation: (n) =>
+    `${n} AI automation and agent platforms for running operations without engineers — triggers, approvals, pricing models, and where each fits.`,
+  design: (n) =>
+    `${n} AI design tools for prototypes, decks, images, and design systems — what each makes, how it's priced, and where it fits a designer's stack.`,
+  marketing: (n) =>
+    `${n} AI marketing and content tools — writing, SEO, decks, video — compared on what each does, how it's priced, and where it fits a content workflow.`,
+  analytics: (n) =>
+    `${n} AI analytics tools — notebooks, text-to-SQL, chat-first analysis — compared on what each does, how it's priced, and where it fits an analyst's stack.`,
 };
 
 export interface Collection {
