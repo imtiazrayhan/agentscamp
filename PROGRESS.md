@@ -1,3 +1,85 @@
+# Full UI redesign against the Refactoring UI principles (2026-09-10) — SHIPPED
+
+Twelve commits. The colour rebuild four commits earlier had done the hard part
+correctly and then stopped: the token layer ended at colour, so everything
+above it was hand-rolled — 26 card-shell strings, 6 h1 recipes, 11 h2 strings,
+5 pill shapes, 4 button shapes, 4 reading measures. Audited against all ten
+Refactoring UI skills; nine failed.
+
+## What the audit actually found (with numbers, since most of it read as design)
+- **Opacity as a palette.** `--primary` had one shade and derived every state
+  with /90, /10, /30, /50; the six accents had two and used /5, /10, /30. Two
+  measured AA failures fell straight out of it: the footer counts at
+  `text-muted-foreground/70` = **3.52:1**, the category counts at `opacity-60`
+  = **2.83:1**. A tint also composites differently over a card than over the
+  page, so one token rendered as two colours.
+- **Elevation was dead.** `--card` over `--background` measured **1.04:1**, so
+  the hairline carried all of it and every surface read as a box.
+- **No focus indicator on any `<Button>`.** The base class set
+  `focus-visible:outline-none` and no variant added a ring, so it suppressed the
+  global `:focus-visible` outline. WCAG 2.4.7, on pagination and install.
+- **The primary action rendered as tertiary.** On every agent/skill/command page
+  the copy-file control was 12px muted text beside a real outline Button,
+  because CopyButton had one hard-coded recipe and InstallActions faked a height
+  with `className="h-10 px-4"`.
+- **15+ hairlines on one guide page.** ContentCard's internal divider alone
+  repeated ~24x per listing.
+- **Four spacings for one relationship** in the article foot: mt-12/pt-8,
+  mt-10/pt-8, mt-10/pt-6, mt-8/pt-6.
+- Three dead-end empty states; `/search` stranded people on a lowercase
+  `no results for "q"`.
+
+## Done
+- **Palette is two layers.** Eight full 50–950 ramps in `:root`, absolute and
+  never redefined in `.dark`; ~40 semantic aliases that point at ramp steps and
+  are the only thing components touch or dark mode remaps. The old values were
+  already sampled from these same Tailwind ramps two steps at a time, so no hue
+  changed. 84 foreground/surface pairs verified in both themes.
+- Page moves to stone-100 so white can lift (1.04 → **1.09:1**), and
+  `--secondary` becomes a real recessed ground at **1.26:1** below the card —
+  which is what made the border removal viable. Deleted `--accent`,
+  `--destructive`, `--success` (byte-identical to `--primary`) and two radii.
+- **New primitives:** `Panel` (26 surfaces), `Eyebrow` + `typography.ts` (two
+  heading styles, replacing 11 h2 strings), `PageHeader` (6 h1 + 6 lead
+  recipes), extended `Badge` (5 pill shapes), `ContentGrid` with `cols`.
+  Deleted `card.tsx`, `skeleton.tsx`, `tooltip.tsx` — all with zero importers —
+  and the Radix tooltip dep.
+- **Rhythm is a clean doubling:** 16 within a group, 32 between groups, 64
+  between regions. NOTE: the first rhythm commit used mt-10/mt-14/py-7/gap-14,
+  none of which are on the scale it claimed; the gates caught it afterwards.
+- **OG cards** finally left the terminal theme, and `src/lib/palette.ts` is now
+  the single source for the literal hex Satori needs.
+  `scripts/validate-content.ts` parses globals.css and fails the build if the
+  two drift — verified by breaking a value on purpose (exits 1, names both
+  sides).
+- **`scripts/check-design-system.sh`** — eleven grep gates, every allowance
+  numbered with its reason.
+
+## Verification
+typecheck + lint + build green; `npm run validate` green at 748 items.
+**Link graph identical: 6,654 unique hrefs across 1,051 pages, before and
+after, zero non-asset diffs** — the constraint that matters on an
+organic-search site. Screenshotted in a real browser in both themes: home,
+guides, a guide, an agent detail, the search empty state, the 404.
+
+## Lessons
+- Writing the gates found four things the pass had missed, two of them my own
+  rhythm contradicting the scale I had just documented. Gates before the
+  victory lap.
+- A stale `next-server` from 00:17 was holding port 3001, so the first
+  screenshot run rendered a CSS-less page against old HTML. Check what owns the
+  port before believing a screenshot.
+
+## Not done (deliberate)
+- `/glossary` still does not use ContentCard. ~100 terms exist to be scanned
+  for one word; card padding would roughly triple the page height. Its real
+  inconsistencies were fixed instead.
+- The `>|` prompt-cursor logo and mono wordmark stay. Terminal-era, but a brand
+  decision rather than a UI-system one.
+- Nothing pushed. Deploy, then mirror:build, are the owner's call.
+
+---
+
 # Post-role-paths: recover, fix, fortify, deepen (2026-09-10) — SHIPPED
 
 Seven commits. Everything that did not depend on the October Search Console
