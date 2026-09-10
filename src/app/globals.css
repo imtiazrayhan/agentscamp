@@ -4,66 +4,107 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ---------------------------------------------------------------------------
-   Dark-first, developer/terminal aesthetic. Restrained: neutral surfaces +
-   a single accent (coral). Sharp corners, monospace chrome.
+   Editorial content hub. Warm-neutral surfaces, a single green brand accent for
+   actions, and six per-type accents (matching the OG social cards) so readers
+   can tell a guide from a tool at a glance. Monospace is for code only.
 --------------------------------------------------------------------------- */
 
 :root {
-  --radius: 0.25rem;
+  --radius: 0.5rem;
 
-  /* light (toggle) */
-  --background: #ffffff;
-  --foreground: #18181b;
+  /* surfaces — card sits above background, so elevation reads without shadows */
+  --background: #fafaf9;
+  --foreground: #1c1917;
   --card: #ffffff;
-  --card-foreground: #18181b;
+  --card-foreground: #1c1917;
   --popover: #ffffff;
-  --popover-foreground: #18181b;
-  --primary: #15803d; /* green-700, AA on white */
-  --primary-foreground: #ffffff;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #27272a;
-  --muted: #f4f4f5;
-  --muted-foreground: #52525b;
-  --accent: #f4f4f5;
-  --accent-foreground: #18181b;
-  --destructive: #dc2626;
-  --destructive-foreground: #ffffff;
-  --border: #e4e4e7;
-  --input: #e4e4e7;
-  --ring: #15803d;
-  --secondary-text: #52525b;
+  --popover-foreground: #1c1917;
+  --secondary: #f5f5f4;
+  --secondary-foreground: #292524;
+  --muted: #f5f5f4;
+  --muted-foreground: #57534e;
+  --accent: #f5f5f4;
+  --accent-foreground: #1c1917;
+  --border: #e7e5e4;
+  /* --border is a decorative hairline; --input is a real control boundary (3:1, WCAG 1.4.11) */
+  --input: #8f8b87;
 
-  /* single brand accent (+ ink text shade) */
-  --coral: #22c55e;
-  --coral-ink: #15803d;
-  --success: #15803d;
+  /* brand action colour */
+  --primary: #047857;
+  --primary-foreground: #ffffff;
+
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --success: #047857;
+
+  /* neutral focus ring (never the brand hue — it must read on any surface) */
+  --ring: #57534e;
+
+  /* per-type accents: bright = borders/fills, ink = AA-contrast text */
+  --type-coral: #e11d48;
+  --type-coral-ink: #be123c;
+  --type-turquoise: #14b8a6;
+  --type-turquoise-ink: #0f766e;
+  --type-mint: #22c55e;
+  --type-mint-ink: #15803d;
+  --type-amber: #f59e0b;
+  --type-amber-ink: #b45309;
+  --type-violet: #8b5cf6;
+  --type-violet-ink: #6d28d9;
+  --type-sky: #0ea5e9;
+  --type-sky-ink: #0369a1;
+
+  /* callout hues (GitHub-style alerts) */
+  --note: #1d4ed8;
+  --tip: #047857;
+  --important: #7e22ce;
+  --warning: #b45309;
+  --caution: #b91c1c;
 }
 
 .dark {
-  --background: #0a0a0b;
-  --foreground: #e6e6e9;
-  --card: #111114;
-  --card-foreground: #e6e6e9;
-  --popover: #111114;
-  --popover-foreground: #e6e6e9;
-  --primary: #4ade80; /* phosphor green on dark */
-  --primary-foreground: #052e16;
-  --secondary: #1a1a1e;
-  --secondary-foreground: #e6e6e9;
-  --muted: #16161a;
-  --muted-foreground: #9a9aa3;
-  --accent: #1a1a1e;
-  --accent-foreground: #e6e6e9;
-  --destructive: #f87171;
-  --destructive-foreground: #0a0a0b;
-  --border: #26262b;
-  --input: #26262b;
-  --ring: #4ade80;
-  --secondary-text: #9a9aa3;
+  --background: #0c0a09;
+  --foreground: #e7e5e4;
+  --card: #1c1917;
+  --card-foreground: #e7e5e4;
+  --popover: #1c1917;
+  --popover-foreground: #e7e5e4;
+  --secondary: #292524;
+  --secondary-foreground: #e7e5e4;
+  --muted: #1c1917;
+  --muted-foreground: #a8a29e;
+  --accent: #292524;
+  --accent-foreground: #e7e5e4;
+  --border: #292524;
+  --input: #78716c;
 
-  --coral: #4ade80;
-  --coral-ink: #86efac;
-  --success: #4ade80;
+  --primary: #34d399;
+  --primary-foreground: #022c22;
+
+  --destructive: #f87171;
+  --destructive-foreground: #0c0a09;
+  --success: #34d399;
+
+  --ring: #a8a29e;
+
+  --type-coral: #fb7185;
+  --type-coral-ink: #fda4af;
+  --type-turquoise: #2dd4bf;
+  --type-turquoise-ink: #5eead4;
+  --type-mint: #4ade80;
+  --type-mint-ink: #86efac;
+  --type-amber: #fbbf24;
+  --type-amber-ink: #fcd34d;
+  --type-violet: #a78bfa;
+  --type-violet-ink: #c4b5fd;
+  --type-sky: #38bdf8;
+  --type-sky-ink: #7dd3fc;
+
+  --note: #60a5fa;
+  --tip: #34d399;
+  --important: #c084fc;
+  --warning: #fbbf24;
+  --caution: #f87171;
 }
 
 @theme inline {
@@ -86,24 +127,31 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-
-  --color-coral: var(--coral);
-  --color-coral-ink: var(--coral-ink);
   --color-success: var(--success);
 
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
-  --radius-xl: calc(var(--radius) + 6px);
+  --color-type-coral: var(--type-coral);
+  --color-type-coral-ink: var(--type-coral-ink);
+  --color-type-turquoise: var(--type-turquoise);
+  --color-type-turquoise-ink: var(--type-turquoise-ink);
+  --color-type-mint: var(--type-mint);
+  --color-type-mint-ink: var(--type-mint-ink);
+  --color-type-amber: var(--type-amber);
+  --color-type-amber-ink: var(--type-amber-ink);
+  --color-type-violet: var(--type-violet);
+  --color-type-violet-ink: var(--type-violet-ink);
+  --color-type-sky: var(--type-sky);
+  --color-type-sky-ink: var(--type-sky-ink);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @layer base {
-  html {
-    font-size: 17px;
-  }
   * {
     border-color: var(--border);
   }
@@ -114,56 +162,37 @@
       "Segoe UI", sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   :focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
-}
-
-.text-secondary {
-  color: var(--secondary-text);
-}
-
-/* phosphor glow for accent text on dark */
-.text-glow {
-  text-shadow: 0 0 14px color-mix(in srgb, currentColor 45%, transparent);
-}
-
-/* faint terminal grid background */
-.grid-pattern {
-  background-image: linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 44px 44px;
-  -webkit-mask-image: radial-gradient(
-    ellipse 80% 60% at 50% 0%,
-    #000 40%,
-    transparent 100%
-  );
-  mask-image: radial-gradient(
-    ellipse 80% 60% at 50% 0%,
-    #000 40%,
-    transparent 100%
-  );
-}
-
-.dot-pattern {
-  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
-  background-size: 18px 18px;
-}
-
-@keyframes blink {
-  0%,
-  49% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
+  /* Long-form reading: never let a heading strand at the foot of a screen. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
   }
 }
-.cursor-blink {
-  animation: blink 1.1s step-end infinite;
+
+/* Root stays at the browser default so a reader's own font-size setting is
+   honoured. Long-form article bodies get their reading size here instead. */
+.prose {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+/* The reading measure — one token for every long-form column. ~72 characters
+   per line at the article's 17px size. */
+.measure {
+  max-width: 41rem;
+}
+
+/* Set before paint by the inline script in layout.tsx, so a dismissed promo bar
+   never renders and never shifts the page. */
+[data-promo="off"] .promo-bar {
+  display: none;
 }
 
 /* command palette entrance — no tailwindcss-animate dep; the reduced-motion
@@ -193,6 +222,42 @@
   animation: search-box-in 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* side sheet (mobile nav) — hand-rolled so we don't pull in tailwindcss-animate
+   for two keyframes; the reduced-motion block below neutralizes them. */
+@keyframes sheet-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sheet-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes sheet-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+[data-sheet-overlay][data-state="open"] {
+  animation: sheet-overlay-in 150ms ease-out;
+}
+[data-sheet="right"][data-state="open"] {
+  animation: sheet-in-right 220ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+[data-sheet="left"][data-state="open"] {
+  animation: sheet-in-left 220ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
 /* Shiki dual-theme: rehype-pretty-code emits per-token --shiki-light/--shiki-dark
    CSS variables on the spans (no .shiki class), so apply them by theme here. */
 [data-rehype-pretty-code-figure] code,
@@ -209,6 +274,7 @@
 [data-highlighted-line] {
   background: var(--secondary);
 }
+
 .prose .heading-anchor {
   text-decoration: none;
   color: inherit;
@@ -243,34 +309,34 @@
   margin-bottom: 0.35rem;
 }
 .markdown-alert-note {
-  border-left-color: #3b82f6;
+  border-left-color: var(--note);
 }
 .markdown-alert-note .markdown-alert-title {
-  color: #60a5fa;
+  color: var(--note);
 }
 .markdown-alert-tip {
-  border-left-color: var(--primary);
+  border-left-color: var(--tip);
 }
 .markdown-alert-tip .markdown-alert-title {
-  color: var(--primary);
+  color: var(--tip);
 }
 .markdown-alert-important {
-  border-left-color: #a855f7;
+  border-left-color: var(--important);
 }
 .markdown-alert-important .markdown-alert-title {
-  color: #c084fc;
+  color: var(--important);
 }
 .markdown-alert-warning {
-  border-left-color: #f59e0b;
+  border-left-color: var(--warning);
 }
 .markdown-alert-warning .markdown-alert-title {
-  color: #fbbf24;
+  color: var(--warning);
 }
 .markdown-alert-caution {
-  border-left-color: #ef4444;
+  border-left-color: var(--caution);
 }
 .markdown-alert-caution .markdown-alert-title {
-  color: #f87171;
+  color: var(--caution);
 }
 
 @media (prefers-reduced-motion: reduce) {

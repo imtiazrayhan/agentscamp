@@ -10,6 +10,7 @@ import rehypeReact from "rehype-react";
 import * as prod from "react/jsx-runtime";
 import type { ComponentProps, ReactNode } from "react";
 import { Pre } from "./Pre";
+import { proseClasses } from "@/components/ui/prose";
 import { cn } from "@/lib/utils";
 
 /**
@@ -28,6 +29,17 @@ function Anchor({ href, children, ...props }: ComponentProps<"a">) {
     >
       {children}
     </a>
+  );
+}
+
+/** Wide tables scroll inside the column rather than widening the reading measure. */
+function Table({ children, ...props }: ComponentProps<"table">) {
+  return (
+    <div className="my-6 overflow-x-auto">
+      <table {...props} className="my-0">
+        {children}
+      </table>
+    </div>
   );
 }
 
@@ -52,6 +64,7 @@ const processor = unified()
     components: {
       a: Anchor,
       pre: Pre as unknown as (props: ComponentProps<"pre">) => ReactNode,
+      table: Table,
     },
   } as Parameters<typeof rehypeReact>[0]);
 
@@ -65,12 +78,7 @@ export async function Markdown({
   const file = await processor.process(source);
   return (
     <div
-      className={cn(
-        "prose prose-neutral max-w-none dark:prose-invert",
-        "prose-headings:scroll-mt-24 prose-pre:p-0 prose-pre:bg-transparent prose-pre:border-0",
-        "prose-a:text-primary prose-a:font-medium prose-code:before:content-none prose-code:after:content-none",
-        className,
-      )}
+      className={cn(proseClasses, className)}
     >
       {file.result as ReactNode}
     </div>
