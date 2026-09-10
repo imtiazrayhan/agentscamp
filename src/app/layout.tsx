@@ -108,7 +108,7 @@ export default function RootLayout({
             <PromoBar />
             <Nav />
             <main id="main" tabIndex={-1} className="focus:outline-none">
-              <Container className="min-h-[60vh] py-10 sm:py-12">
+              <Container className="min-h-[60vh] py-8 sm:py-12">
                 {children}
               </Container>
             </main>

@@ -14,7 +14,7 @@ import { PromoDismiss } from "./PromoDismiss";
 export function PromoBar() {
   return (
     <div className="promo-bar relative bg-secondary">
-      <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-10 py-2 text-center text-sm text-muted-foreground">
+      <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-12 py-2 text-center text-sm text-muted-foreground">
         <span>
           Level up your prompts with{" "}
           <Link

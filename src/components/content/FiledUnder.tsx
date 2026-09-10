@@ -15,7 +15,7 @@ export function FiledUnder({ item }: { item: ContentItem }) {
     return null;
 
   return (
-    <section className="mt-10">
+    <section className="mt-8">
       <Eyebrow as="h2" className="mb-3">
         Filed under
       </Eyebrow>

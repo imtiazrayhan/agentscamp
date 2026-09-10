@@ -123,7 +123,7 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
           </p>
         )}
         {categoryLinks.length > 1 && (
-          <nav className="mt-5" aria-label={`Browse ${def.label} by category`}>
+          <nav className="mt-6" aria-label={`Browse ${def.label} by category`}>
             <Eyebrow as="h2" className="mb-3">
               Browse by category
             </Eyebrow>

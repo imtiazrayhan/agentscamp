@@ -28,7 +28,7 @@ export function SearchCommandBox({
       aria-label={`Search ${total} guides, tools and terms`}
       aria-keyshortcuts="Meta+K Control+K"
       className={cn(
-        "flex h-14 w-full max-w-2xl items-center gap-3 rounded-lg border border-input bg-card px-5 text-left text-lg text-muted-foreground shadow-raised transition-colors hover:border-border-strong",
+        "flex h-14 w-full max-w-2xl items-center gap-3 rounded-lg border border-input bg-card px-6 text-left text-lg text-muted-foreground shadow-raised transition-colors hover:border-border-strong",
         className,
       )}
     >

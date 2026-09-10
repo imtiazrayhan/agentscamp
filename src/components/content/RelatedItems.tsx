@@ -8,7 +8,7 @@ import { ContentGrid } from "./ContentGrid";
 export function RelatedItems({ items }: { items: ContentItem[] }) {
   if (!items.length) return null;
   return (
-    <section className="mt-14">
+    <section className="mt-16">
       <h2 className={cn("mb-4", sectionHeading)}>Related</h2>
       <ContentGrid cols={2} asChild>
         <ul>

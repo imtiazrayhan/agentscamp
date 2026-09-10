@@ -54,7 +54,7 @@ export function AlternativesList({
         </h2>
         <ol className="mt-2 divide-y divide-border">
           {items.map((t) => (
-            <li key={t.href} className="py-5">
+            <li key={t.href} className="py-6">
               <h3 className="text-xl font-semibold tracking-tight">
                 <Link href={t.href} className="hover:underline">
                   {t.title}

@@ -18,8 +18,8 @@ export function FaqSection({
 }) {
   if (!faq.length) return null;
   return (
-    <section className="mt-10">
-      <h2 className={cn("mb-5", sectionHeading)}>{heading}</h2>
+    <section className="mt-8">
+      <h2 className={cn("mb-6", sectionHeading)}>{heading}</h2>
       <dl className="space-y-5">
         {faq.map((f, i) => (
           <div key={i}>

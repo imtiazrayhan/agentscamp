@@ -58,7 +58,7 @@ export function CommandPalette({
       label="Search AgentsCamp"
       shouldFilter={false}
       overlayClassName="search-overlay-in fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
-      className="search-box-in fixed inset-x-0 top-[12vh] z-50 mx-auto flex max-h-[76vh] w-[92vw] max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-popover text-popover-foreground shadow-2xl shadow-black/40 ring-1 ring-primary/10"
+      className="search-box-in fixed inset-x-0 top-[12vh] z-50 mx-auto flex max-h-[76vh] w-[92vw] max-w-2xl flex-col overflow-hidden rounded-lg border border-border bg-popover text-popover-foreground shadow-modal"
     >
       <Dialog.Title className="sr-only">Search AgentsCamp</Dialog.Title>
 
@@ -119,7 +119,7 @@ export function CommandPalette({
         )}
 
         {query && results.length === 0 && roleHits.length === 0 && (
-          <Command.Empty className="px-3 py-10 text-center">
+          <Command.Empty className="px-3 py-12 text-center">
             <p className="font-semibold">No matches for “{query}”</p>
             <p className="mt-1.5 text-sm text-muted-foreground">
               Try a shorter word, or open the full search.
@@ -127,7 +127,7 @@ export function CommandPalette({
             <Command.Item
               value={`search-all-${query}`}
               onSelect={() => go(`/search?q=${encodeURIComponent(query)}`)}
-              className="mt-5 inline-flex cursor-pointer items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover data-[selected=true]:bg-primary-hover"
+              className="mt-6 inline-flex cursor-pointer items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover data-[selected=true]:bg-primary-hover"
             >
               Search everything
               <CornerDownLeft className="size-3.5" aria-hidden />

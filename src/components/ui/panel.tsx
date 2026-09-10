@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 /**
  * The one surface. Before this there were 26 hand-rolled
  * `rounded-* border border-border bg-card p-*` strings across the app, drifting
- * on radius (md/lg/xl), padding (3/4/5/6) and hover colour
+ * on radius (md/lg/xl), padding (3/4/5/6, none of which agreed) and hover colour
  * (foreground/25 vs primary/50) along no product boundary at all.
  *
  * The variants encode the elevation rule the palette sets up:
@@ -28,13 +28,13 @@ const panelVariants = cva("rounded-lg", {
       recessed: "bg-secondary",
       quiet: "border border-dashed border-border",
     },
-    // Two steps, and the rule is which kind of thing it is: md for a
-    // standalone content surface, sm for one item among many in a list or
-    // grid. Call sites do not get to pick a third.
+    // Two steps, both on the spacing scale, and the rule is which kind of
+    // thing it is: md for a standalone content surface, sm for one item among
+    // many in a list or grid. Call sites do not get to pick a third.
     padding: {
       none: "",
       sm: "p-4",
-      md: "p-5",
+      md: "p-6",
     },
   },
   defaultVariants: { variant: "raised", padding: "md" },

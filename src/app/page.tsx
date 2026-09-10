@@ -78,7 +78,7 @@ function BentoTile({
             ))}
           </ul>
         )}
-        <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-medium text-primary">
+        <span className="mt-auto inline-flex items-center gap-1 pt-6 text-sm font-medium text-primary">
           Browse
           <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
             →
@@ -206,7 +206,7 @@ export default function Home() {
       <Panel
         variant="recessed"
         asChild
-        className="mb-4 mt-14 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+        className="mb-4 mt-16 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
       >
         <section>
           <div>

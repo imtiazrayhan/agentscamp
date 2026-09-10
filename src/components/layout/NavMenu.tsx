@@ -42,7 +42,7 @@ export function NavMenu({ item }: { item: NavItem }) {
       </Link>
 
       <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-[opacity,visibility] group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-        <ul className="w-72 rounded-lg border border-border bg-popover p-1.5 shadow-lg">
+        <ul className="w-72 rounded-lg border border-border bg-popover p-1.5 shadow-overlay">
           {item.children?.map((c) => (
             <li key={c.href}>
               <Link

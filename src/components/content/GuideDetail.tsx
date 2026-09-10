@@ -20,7 +20,7 @@ function Sources({ sources }: { sources: GuideItem["sources"] }) {
   if (!sources.length) return null;
   return (
     <section
-      className="mt-10"
+      className="mt-8"
       aria-labelledby="sources-heading"
     >
       <h2 id="sources-heading" className={sectionHeading}>
@@ -93,7 +93,7 @@ export function GuideDetail({
       <div
         className={
           withToc
-            ? "lg:grid lg:grid-cols-[minmax(0,41rem)_15rem] lg:gap-14"
+            ? "lg:grid lg:grid-cols-[minmax(0,41rem)_15rem] lg:gap-12"
             : undefined
         }
       >
@@ -113,7 +113,7 @@ export function GuideDetail({
 
           {item.body && <Markdown source={item.body} />}
 
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
             <ShareRow url={canonicalUrl(item)} title={item.title} />
             <InstallActions item={item} />
           </div>

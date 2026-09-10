@@ -24,14 +24,14 @@ export function Hero({
   lanes: TriageLane[];
 }) {
   return (
-    <section className="pt-10 pb-7">
+    <section className="pt-12 pb-8">
       <h1 className="max-w-3xl text-4xl font-bold leading-[1.08] tracking-[-0.02em] sm:text-5xl">
         The field guide to building with AI.
         <br />
         <span className="text-primary">Read. Build. Ship.</span>
       </h1>
 
-      <p className="measure mt-5 text-pretty text-lg text-muted-foreground">
+      <p className="measure mt-6 text-pretty text-lg text-muted-foreground">
         In-depth guides, a curated AI tool directory, and a plain-language
         glossary for anyone working with AI — plus ready-to-use agents, skills,
         and commands if you build with Claude Code.
@@ -39,7 +39,7 @@ export function Hero({
 
       {/* Search IS the product on a 748-item reference site, so it ranks second
           and is the only element here carrying elevation. */}
-      <SearchCommandBox total={total} className="mt-7" />
+      <SearchCommandBox total={total} className="mt-8" />
 
       <TriageLinks lanes={lanes} />
 

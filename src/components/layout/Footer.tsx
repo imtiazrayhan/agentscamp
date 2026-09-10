@@ -191,7 +191,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 AgentsCamp. All rights reserved.</p>
           <ul className="flex flex-wrap gap-4">
             {endpoints.map((e) => (

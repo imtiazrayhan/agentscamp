@@ -34,7 +34,7 @@ export function AlternativesTable({
         license, and platforms so you can shortlist quickly, and each entry
         further down adds a fuller summary and a link to the full profile.
       </p>
-      <div className="mt-5 overflow-x-auto rounded-md border border-border">
+      <div className="mt-6 overflow-x-auto rounded-md border border-border">
         <table className="w-full min-w-[640px] text-sm">
           <thead className="bg-secondary">
             <tr>

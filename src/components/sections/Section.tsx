@@ -23,7 +23,7 @@ export function Section({
   className,
 }: SectionProps) {
   return (
-    <section className={cn("py-7", className)}>
+    <section className={cn("py-8", className)}>
       <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
           <h2 className={cn("flex items-center gap-2", sectionHeading)}>

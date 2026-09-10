@@ -24,7 +24,7 @@ const SheetContent = React.forwardRef<
       ref={ref}
       data-sheet={side}
       className={cn(
-        "fixed inset-y-0 z-50 flex h-full w-3/4 max-w-sm flex-col gap-4 border-border bg-background p-6 shadow-lg",
+        "fixed inset-y-0 z-50 flex h-full w-3/4 max-w-sm flex-col gap-4 border-border bg-background p-6 shadow-modal",
         side === "right" ? "right-0 border-l" : "left-0 border-r",
         className,
       )}

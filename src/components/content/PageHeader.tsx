@@ -32,7 +32,7 @@ export function PageHeader({
   children?: React.ReactNode;
 }) {
   return (
-    <header className={cn("mb-10", className)}>
+    <header className={cn("mb-8", className)}>
       {eyebrow && <div className="mb-3">{eyebrow}</div>}
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h1>
       {lead && (
