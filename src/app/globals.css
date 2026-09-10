@@ -7,104 +7,257 @@
    Editorial content hub. Warm-neutral surfaces, a single green brand accent for
    actions, and six per-type accents (matching the OG social cards) so readers
    can tell a guide from a tool at a glance. Monospace is for code only.
+
+   The palette is two layers and the distinction is load-bearing:
+
+     Layer 1  the ramps below. Absolute values, no theme knowledge, defined
+              once and NEVER redefined in .dark. Components must not use them.
+     Layer 2  the semantic aliases. They point at ramp steps, they are the only
+              thing components reference, and they are the only thing .dark
+              remaps — which is what makes a full palette cost one set of
+              values instead of two.
+
+   Corollary, and the rule this file exists to enforce: a lighter or dimmer
+   version of a colour is a ramp step, never an opacity. Alpha is legal only
+   for translucency over content you cannot predict — the scrims and the
+   backdrop-blurred nav. Deriving shades with /10 and /70 is what put four
+   pieces of text below AA contrast before this rewrite.
 --------------------------------------------------------------------------- */
+
+/* --- Layer 1: the ramps -------------------------------------------------- */
+
+:root {
+  --stone-50: #fafaf9;
+  --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-300: #d6d3d1;
+  --stone-400: #a8a29e;
+  --stone-500: #78716c;
+  --stone-600: #57534e;
+  --stone-700: #44403c;
+  --stone-800: #292524;
+  --stone-900: #1c1917;
+  --stone-950: #0c0a09;
+
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-200: #a7f3d0;
+  --emerald-300: #6ee7b7;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --emerald-900: #064e3b;
+  --emerald-950: #022c22;
+
+  --rose-50: #fff1f2;
+  --rose-100: #ffe4e6;
+  --rose-200: #fecdd3;
+  --rose-300: #fda4af;
+  --rose-400: #fb7185;
+  --rose-500: #f43f5e;
+  --rose-600: #e11d48;
+  --rose-700: #be123c;
+  --rose-800: #9f1239;
+  --rose-900: #881337;
+  --rose-950: #4c0519;
+
+  --teal-50: #f0fdfa;
+  --teal-100: #ccfbf1;
+  --teal-200: #99f6e4;
+  --teal-300: #5eead4;
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --teal-700: #0f766e;
+  --teal-800: #115e59;
+  --teal-900: #134e4a;
+  --teal-950: #042f2e;
+
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-300: #86efac;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
+  --green-950: #052e16;
+
+  --amber-50: #fffbeb;
+  --amber-100: #fef3c7;
+  --amber-200: #fde68a;
+  --amber-300: #fcd34d;
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+  --amber-700: #b45309;
+  --amber-800: #92400e;
+  --amber-900: #78350f;
+  --amber-950: #451a03;
+
+  --violet-50: #f5f3ff;
+  --violet-100: #ede9fe;
+  --violet-200: #ddd6fe;
+  --violet-300: #c4b5fd;
+  --violet-400: #a78bfa;
+  --violet-500: #8b5cf6;
+  --violet-600: #7c3aed;
+  --violet-700: #6d28d9;
+  --violet-800: #5b21b6;
+  --violet-900: #4c1d95;
+  --violet-950: #2e1065;
+
+  --sky-50: #f0f9ff;
+  --sky-100: #e0f2fe;
+  --sky-200: #bae6fd;
+  --sky-300: #7dd3fc;
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
+  --sky-600: #0284c7;
+  --sky-700: #0369a1;
+  --sky-800: #075985;
+  --sky-900: #0c4a6e;
+  --sky-950: #082f49;
+}
+
+/* --- Layer 2: the semantic aliases --------------------------------------- */
 
 :root {
   --radius: 0.5rem;
 
-  /* surfaces — card sits above background, so elevation reads without shadows */
-  --background: #fafaf9;
-  --foreground: #1c1917;
+  /* Three surface levels, and they mean different things:
+       --background  the page
+       --card        a surface ABOVE the page (white + a hairline)
+       --secondary   a block RECESSED into it (code, callouts, takeaways)
+     The page sits on stone-100 rather than stone-50 specifically so white has
+     somewhere to lift to: the card/page step goes 1.04:1 -> 1.09:1. That is
+     still slight, and deliberately so — staying on the ramp is worth more than
+     the extra tenth an off-ramp value would buy. The real work is done by
+     --secondary at 1.26:1 below the card, which is why every box that loses
+     its border in this pass becomes recessed rather than raised. */
+  --background: var(--stone-100);
+  --foreground: var(--stone-900);
   --card: #ffffff;
-  --card-foreground: #1c1917;
+  --card-foreground: var(--stone-900);
   --popover: #ffffff;
-  --popover-foreground: #1c1917;
-  --secondary: #f5f5f4;
-  --secondary-foreground: #292524;
-  --muted: #f5f5f4;
-  --muted-foreground: #57534e;
-  --accent: #f5f5f4;
-  --accent-foreground: #1c1917;
-  --border: #e7e5e4;
-  /* --border is a decorative hairline; --input is a real control boundary (3:1, WCAG 1.4.11) */
-  --input: #8f8b87;
+  --popover-foreground: var(--stone-900);
+  --secondary: var(--stone-200);
+  --secondary-foreground: var(--stone-800);
+  --secondary-hover: var(--stone-300);
+  --muted: var(--stone-200);
+  --muted-foreground: var(--stone-600);
 
-  /* brand action colour */
-  --primary: #047857;
+  /* --border is a decorative hairline, --border-strong the hover/emphasis
+     rule, --input a real control boundary (WCAG 1.4.11 wants 3:1 and this
+     clears 4.4:1 against both the card and the page). */
+  --border: var(--stone-300);
+  --border-strong: var(--stone-400);
+  --input: var(--stone-500);
+
+  /* brand action colour — four shades, one job each */
+  --primary: var(--emerald-700);
+  --primary-hover: var(--emerald-800);
+  --primary-soft: var(--emerald-50);
   --primary-foreground: #ffffff;
 
-  --destructive: #b91c1c;
-  --destructive-foreground: #ffffff;
-  --success: #047857;
-
   /* neutral focus ring (never the brand hue — it must read on any surface) */
-  --ring: #57534e;
+  --ring: var(--stone-600);
 
-  /* per-type accents: bright = borders/fills, ink = AA-contrast text */
-  --type-coral: #e11d48;
-  --type-coral-ink: #be123c;
-  --type-turquoise: #14b8a6;
-  --type-turquoise-ink: #0f766e;
-  --type-mint: #22c55e;
-  --type-mint-ink: #15803d;
-  --type-amber: #f59e0b;
-  --type-amber-ink: #b45309;
-  --type-violet: #8b5cf6;
-  --type-violet-ink: #6d28d9;
-  --type-sky: #0ea5e9;
-  --type-sky-ink: #0369a1;
+  /* per-type accents: base = rules/fills, soft = tint background,
+     ink = AA text on --card, on --background and on its own -soft */
+  --type-coral: var(--rose-600);
+  --type-coral-soft: var(--rose-50);
+  --type-coral-ink: var(--rose-700);
+  --type-turquoise: var(--teal-500);
+  --type-turquoise-soft: var(--teal-50);
+  --type-turquoise-ink: var(--teal-700);
+  --type-mint: var(--green-500);
+  --type-mint-soft: var(--green-50);
+  --type-mint-ink: var(--green-700);
+  --type-amber: var(--amber-500);
+  --type-amber-soft: var(--amber-50);
+  --type-amber-ink: var(--amber-700);
+  --type-violet: var(--violet-500);
+  --type-violet-soft: var(--violet-50);
+  --type-violet-ink: var(--violet-700);
+  --type-sky: var(--sky-500);
+  --type-sky-soft: var(--sky-50);
+  --type-sky-ink: var(--sky-700);
 
-  /* callout hues (GitHub-style alerts) */
-  --note: #1d4ed8;
-  --tip: #047857;
-  --important: #7e22ce;
-  --warning: #b45309;
-  --caution: #b91c1c;
+  /* GitHub-style callouts reuse the accent inks — one palette, not two. They
+     stay out of @theme inline on purpose: only .markdown-alert-* reads them,
+     so exposing them would emit ten unused utility families. */
+  --note: var(--type-sky-ink);
+  --note-soft: var(--type-sky-soft);
+  --tip: var(--type-mint-ink);
+  --tip-soft: var(--type-mint-soft);
+  --important: var(--type-violet-ink);
+  --important-soft: var(--type-violet-soft);
+  --warning: var(--type-amber-ink);
+  --warning-soft: var(--type-amber-soft);
+  --caution: var(--type-coral-ink);
+  --caution-soft: var(--type-coral-soft);
+
+  /* Elevation — three levels, named for the job. Static surfaces get none:
+     the card/page step above is their elevation. */
+  --elevation-raised: 0 1px 2px 0 rgb(28 25 23 / 0.06),
+    0 1px 3px 0 rgb(28 25 23 / 0.08);
+  --elevation-overlay: 0 4px 12px -2px rgb(28 25 23 / 0.1),
+    0 2px 6px -3px rgb(28 25 23 / 0.08);
+  --elevation-modal: 0 16px 48px -12px rgb(28 25 23 / 0.24);
 }
 
 .dark {
-  --background: #0c0a09;
-  --foreground: #e7e5e4;
-  --card: #1c1917;
-  --card-foreground: #e7e5e4;
-  --popover: #1c1917;
-  --popover-foreground: #e7e5e4;
-  --secondary: #292524;
-  --secondary-foreground: #e7e5e4;
-  --muted: #1c1917;
-  --muted-foreground: #a8a29e;
-  --accent: #292524;
-  --accent-foreground: #e7e5e4;
-  --border: #292524;
-  --input: #78716c;
+  --background: var(--stone-950);
+  --foreground: var(--stone-200);
+  --card: var(--stone-900);
+  --card-foreground: var(--stone-200);
+  --popover: var(--stone-900);
+  --popover-foreground: var(--stone-200);
+  --secondary: var(--stone-800);
+  --secondary-foreground: var(--stone-200);
+  --secondary-hover: var(--stone-700);
+  --muted: var(--stone-800);
+  --muted-foreground: var(--stone-400);
 
-  --primary: #34d399;
-  --primary-foreground: #022c22;
+  --border: var(--stone-700);
+  --border-strong: var(--stone-600);
+  --input: var(--stone-500);
 
-  --destructive: #f87171;
-  --destructive-foreground: #0c0a09;
-  --success: #34d399;
+  --primary: var(--emerald-400);
+  --primary-hover: var(--emerald-300);
+  --primary-soft: var(--emerald-950);
+  --primary-foreground: var(--emerald-950);
 
-  --ring: #a8a29e;
+  --ring: var(--stone-400);
 
-  --type-coral: #fb7185;
-  --type-coral-ink: #fda4af;
-  --type-turquoise: #2dd4bf;
-  --type-turquoise-ink: #5eead4;
-  --type-mint: #4ade80;
-  --type-mint-ink: #86efac;
-  --type-amber: #fbbf24;
-  --type-amber-ink: #fcd34d;
-  --type-violet: #a78bfa;
-  --type-violet-ink: #c4b5fd;
-  --type-sky: #38bdf8;
-  --type-sky-ink: #7dd3fc;
+  --type-coral: var(--rose-400);
+  --type-coral-soft: var(--rose-950);
+  --type-coral-ink: var(--rose-300);
+  --type-turquoise: var(--teal-400);
+  --type-turquoise-soft: var(--teal-950);
+  --type-turquoise-ink: var(--teal-300);
+  --type-mint: var(--green-400);
+  --type-mint-soft: var(--green-950);
+  --type-mint-ink: var(--green-300);
+  --type-amber: var(--amber-400);
+  --type-amber-soft: var(--amber-950);
+  --type-amber-ink: var(--amber-300);
+  --type-violet: var(--violet-400);
+  --type-violet-soft: var(--violet-950);
+  --type-violet-ink: var(--violet-300);
+  --type-sky: var(--sky-400);
+  --type-sky-soft: var(--sky-950);
+  --type-sky-ink: var(--sky-300);
 
-  --note: #60a5fa;
-  --tip: #34d399;
-  --important: #c084fc;
-  --warning: #fbbf24;
-  --caution: #f87171;
+  --elevation-raised: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --elevation-overlay: 0 4px 12px -2px rgb(0 0 0 / 0.55),
+    0 2px 6px -3px rgb(0 0 0 / 0.45);
+  --elevation-modal: 0 16px 48px -12px rgb(0 0 0 / 0.7);
 }
 
 @theme inline {
@@ -115,37 +268,46 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-hover: var(--secondary-hover);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-success: var(--success);
 
   --color-type-coral: var(--type-coral);
+  --color-type-coral-soft: var(--type-coral-soft);
   --color-type-coral-ink: var(--type-coral-ink);
   --color-type-turquoise: var(--type-turquoise);
+  --color-type-turquoise-soft: var(--type-turquoise-soft);
   --color-type-turquoise-ink: var(--type-turquoise-ink);
   --color-type-mint: var(--type-mint);
+  --color-type-mint-soft: var(--type-mint-soft);
   --color-type-mint-ink: var(--type-mint-ink);
   --color-type-amber: var(--type-amber);
+  --color-type-amber-soft: var(--type-amber-soft);
   --color-type-amber-ink: var(--type-amber-ink);
   --color-type-violet: var(--type-violet);
+  --color-type-violet-soft: var(--type-violet-soft);
   --color-type-violet-ink: var(--type-violet-ink);
   --color-type-sky: var(--type-sky);
+  --color-type-sky-soft: var(--type-sky-soft);
   --color-type-sky-ink: var(--type-sky-ink);
 
-  --radius-sm: calc(var(--radius) - 4px);
+  --shadow-raised: var(--elevation-raised);
+  --shadow-overlay: var(--elevation-overlay);
+  --shadow-modal: var(--elevation-modal);
+
+  /* Two radii, and the rule is one sentence: chips and controls are md,
+     surfaces are lg, and only genuinely circular things are full. */
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -168,7 +330,8 @@
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
-  /* Long-form reading: never let a heading strand at the foot of a screen. */
+  /* Long-form reading: never let a heading strand at the foot of a screen.
+     This is why no component carries a `text-balance` utility. */
   h1,
   h2,
   h3 {
@@ -177,14 +340,15 @@
 }
 
 /* Root stays at the browser default so a reader's own font-size setting is
-   honoured. Long-form article bodies get their reading size here instead. */
+   honoured. Long-form article bodies get their reading size here instead —
+   18px, the same step as every standfirst on the site. */
 .prose {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.75;
 }
 
-/* The reading measure — one token for every long-form column. ~72 characters
-   per line at the article's 17px size. */
+/* The reading measure — one token for every long-form column. ~73 characters
+   per line at the article's 18px size. */
 .measure {
   max-width: 41rem;
 }
@@ -271,8 +435,10 @@
 [data-rehype-pretty-code-figure] code {
   display: grid;
 }
+/* The block itself is --secondary now, so a highlighted line has to step
+   again rather than match it. */
 [data-highlighted-line] {
-  background: var(--secondary);
+  background: var(--secondary-hover);
 }
 
 .prose .heading-anchor {
@@ -284,7 +450,9 @@
   text-decoration-color: var(--border);
 }
 
-/* GitHub-style alert callouts (remark-github-blockquote-alert) */
+/* GitHub-style alert callouts (remark-github-blockquote-alert). Each hue gets
+   its own tinted ground: on the shared --secondary the tip and warning titles
+   measured 4.03:1 and 4.04:1, i.e. below AA. */
 .markdown-alert {
   border-left: 3px solid var(--border);
   background: var(--secondary);
@@ -310,30 +478,35 @@
 }
 .markdown-alert-note {
   border-left-color: var(--note);
+  background: var(--note-soft);
 }
 .markdown-alert-note .markdown-alert-title {
   color: var(--note);
 }
 .markdown-alert-tip {
   border-left-color: var(--tip);
+  background: var(--tip-soft);
 }
 .markdown-alert-tip .markdown-alert-title {
   color: var(--tip);
 }
 .markdown-alert-important {
   border-left-color: var(--important);
+  background: var(--important-soft);
 }
 .markdown-alert-important .markdown-alert-title {
   color: var(--important);
 }
 .markdown-alert-warning {
   border-left-color: var(--warning);
+  background: var(--warning-soft);
 }
 .markdown-alert-warning .markdown-alert-title {
   color: var(--warning);
 }
 .markdown-alert-caution {
   border-left-color: var(--caution);
+  background: var(--caution-soft);
 }
 .markdown-alert-caution .markdown-alert-title {
   color: var(--caution);

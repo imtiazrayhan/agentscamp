@@ -47,13 +47,13 @@ export function CopyButton({
       onClick={onCopy}
       aria-label={copied ? copiedLabel : label}
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+        "inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary",
         className,
       )}
     >
       <span aria-live="polite" className="contents">
         {copied ? (
-          <Check className="size-3.5 text-success" />
+          <Check className="size-3.5 text-primary" />
         ) : (
           <Copy className="size-3.5" />
         )}
