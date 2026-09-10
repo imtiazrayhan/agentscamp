@@ -5,6 +5,7 @@ seoTitle: "Best AI Tools for Marketers in 2026 (Writing, SEO, Video, Agents)"
 seoDescription: "22 AI tools marketers use in 2026, sorted into assistants, writing, SEO, research, decks, video, and automation, with pricing model, best-for, and verdicts."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]

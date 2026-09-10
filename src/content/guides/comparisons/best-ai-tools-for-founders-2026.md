@@ -5,6 +5,7 @@ seoTitle: "Best AI Tools for Founders in 2026 (Assistants, Builders, Agents)"
 seoDescription: "23 AI tools founders use in 2026, sorted into assistants, app builders, agents, decks and docs, and building, with pricing model, best-for, and a verdict each."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]

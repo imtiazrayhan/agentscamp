@@ -3,6 +3,7 @@ title: "Claude vs GPT vs Gemini for Coding in 2026"
 description: "The three frontier model families compared for real coding work — agentic depth, ecosystem fit, context, and cost shape — plus how to actually choose."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+freshness: "tier1"
 updated: 2026-09-01
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]

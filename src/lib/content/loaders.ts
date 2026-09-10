@@ -53,6 +53,8 @@ const base = (doc: RawDoc, fm: Record<string, unknown>) => ({
   related: (fm.related as string[]) ?? [],
   date: isoDate(fm.date),
   updated: isoDate(fm.updated),
+  freshness: fm.freshness as "tier1" | "exempt" | undefined,
+  reviewed: isoDate(fm.reviewed),
   seoTitle: fm.seoTitle as string | undefined,
   seoDescription: fm.seoDescription as string | undefined,
   keywords: (fm.keywords as string[]) ?? [],

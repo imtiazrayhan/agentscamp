@@ -5,6 +5,7 @@ seoTitle: "Open-Source & CLI AI Coding Agents 2026: OpenCode, Cline, Aider, Code
 seoDescription: "OpenCode, Cline, Aider, Codex CLI, and more open-source or CLI coding agents vs Cursor and Windsurf: who should bring their own model, and when the CLI wins."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
+freshness: "tier1"
 updated: 2026-09-01
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]

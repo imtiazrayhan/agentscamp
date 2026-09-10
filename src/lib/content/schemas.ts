@@ -82,6 +82,20 @@ const siteFields = {
     .default([]),
   date: z.coerce.date().optional(),
   updated: z.coerce.date().optional(),
+  /**
+   * Refresh tier. Only the non-derivable values exist: `tier1` promotes a page
+   * to the monthly money-page run, `exempt` demotes a derived hit that carries
+   * nothing perishable. Tier 2 and the tool tier are computed in
+   * `src/lib/content/freshness.ts` and must never be written to disk.
+   */
+  freshness: z.enum(["tier1", "exempt"]).optional(),
+  /**
+   * Last verification pass. Deliberately separate from `updated`, which feeds
+   * sitemap lastModified, JSON-LD dateModified, and a public promise on /about
+   * that a changed date means a real editorial change — so a re-verification
+   * that changed nothing must not touch it.
+   */
+  reviewed: z.coerce.date().optional(),
 
   // --- SEO/AEO/GEO additions (optional escape hatches; templates cover the rest) ---
   seoTitle: z.string().max(70).optional(), // override the <title> (template still appends brand)

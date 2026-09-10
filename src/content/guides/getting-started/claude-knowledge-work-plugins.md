@@ -5,6 +5,7 @@ seoTitle: "Anthropic Knowledge-Work Plugins: Every Role Plugin Explained"
 seoDescription: "Every Anthropic knowledge-work plugin for Claude Cowork and Claude Code cataloged: skills and connectors per role, exact install commands, and how to fork one."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]

@@ -22,6 +22,15 @@ import {
 } from "../src/lib/content/registry";
 import { graphFor, siteGraph, collectionGraph } from "../src/lib/seo/jsonld";
 import {
+  prose,
+  tierOf,
+  daysOverdue,
+  PRICE,
+  AS_OF,
+  VAGUE_AS_OF,
+  MATURITY,
+} from "../src/lib/content/freshness";
+import {
   categoryCollection,
   topicCollection,
   audienceCollection,
@@ -51,6 +60,9 @@ const warn = (m: string) => {
 };
 
 const validTopics = new Set(topics.map((t) => t.slug));
+const TODAY = new Date().toISOString().slice(0, 10);
+/** Content authored on or after this date must date every price it quotes. */
+const GATE_DATE = "2026-09-10";
 const contentId = (item: ContentItem) => `${item.type}:${item.slug}`;
 
 interface MarkdownNode {
@@ -176,6 +188,46 @@ function run() {
 
     // dates are required (backfilled for existing; author-supplied for new)
     if (!item.date) err(`${id}: missing a resolvable date`);
+    if (item.date && item.date > TODAY) err(`${id}: date is in the future`);
+    if (item.updated) {
+      if (item.updated > TODAY) err(`${id}: updated is in the future`);
+      if (item.date && item.updated < item.date)
+        err(`${id}: updated (${item.updated}) precedes date (${item.date})`);
+      if (item.date && item.updated === item.date)
+        warn(`${id}: updated equals date (no revision recorded)`);
+    }
+    if (item.reviewed) {
+      if (item.reviewed > TODAY) err(`${id}: reviewed is in the future`);
+      if (item.updated && item.reviewed < item.updated)
+        warn(`${id}: reviewed predates updated (edited without re-verifying)`);
+    }
+
+    // Perishable-claim hygiene. A price with no as-of date is the failure mode
+    // the house rule exists to prevent, so new content can never carry one;
+    // legacy offenders warn until the backfill batch clears them, after which
+    // the GATE_DATE ternary below can go.
+    if (item.type === "tool" || item.type === "guide") {
+      const text = prose(item);
+      if (PRICE.test(text) && !AS_OF.test(text)) {
+        // Guides quote funding and valuations, which are dated events rather
+        // than perishable prices, so they never escalate past a warning.
+        const isNew = item.type === "tool" && (item.date ?? "") >= GATE_DATE;
+        (isNew ? err : warn)(`${id}: dollar figure with no as-of date`);
+      } else if (VAGUE_AS_OF.test(text)) {
+        warn(`${id}: as-of date has no month`);
+      }
+      if (MATURITY.test(text) && !AS_OF.test(text))
+        warn(`${id}: undated beta/preview claim`);
+    }
+
+    // The scheduled refresh runner is local-only by owner rule, so this is the
+    // one place a silently dead scheduler becomes visible: it fails the build.
+    const overdue = daysOverdue(item, new Date(TODAY));
+    if (tierOf(item) === "tier1" && overdue > 0) {
+      const msg = `${id}: tier-1 page is ${overdue} day(s) past its refresh cadence`;
+      if (overdue >= 90) err(msg);
+      else if (overdue >= 45) warn(msg);
+    }
 
     // topics must be part of the shared taxonomy
     for (const t of item.topics)
@@ -209,8 +261,12 @@ function run() {
         err(`guide/${g.slug}: cornerstone guide is ${g.wordCount} words (< 2000)`);
       if (g.sources.length < 5)
         err(`guide/${g.slug}: cornerstone guide needs at least 5 primary sources`);
-      if (!g.updated)
-        err(`guide/${g.slug}: cornerstone guide needs an updated date`);
+      // `reviewed` counts: a brand-new cornerstone should record that it was
+      // verified at publication, not fake a revision it never had.
+      if (!g.updated && !g.reviewed)
+        err(
+          `guide/${g.slug}: cornerstone guide needs an updated or reviewed date`,
+        );
       if (g.keyTakeaways.length < 4)
         err(`guide/${g.slug}: cornerstone guide needs at least 4 key takeaways`);
       if (g.faq.length < 3)

@@ -5,6 +5,7 @@ seoTitle: "Claude Free vs Pro vs Max vs Team (2026): Which Plan Unlocks What"
 seoDescription: "Claude plans compared as of September 2026: Free, Pro, Max, Team, and Enterprise prices, plus which plan unlocks Claude Code, Cowork, Design, Excel, and Chrome."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]

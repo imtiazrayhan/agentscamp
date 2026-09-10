@@ -5,6 +5,7 @@ seoTitle: "Best AI Tools for Data Analysts in 2026 (15 Picks)"
 seoDescription: "15 AI tools for data analysts in 2026: assistants with code execution, spreadsheet add-ins, notebooks, text-to-SQL, and terminal agents, with a verdict each."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "data-ml"]

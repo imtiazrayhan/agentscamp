@@ -11,6 +11,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate-content.ts",
+    "freshness": "tsx scripts/freshness-report.ts",
     "indexnow": "tsx scripts/submit-indexnow.ts",
     "cli:content": "tsx scripts/build-cli-content.ts",
     "cli:build": "tsx scripts/build-cli-content.ts && npm --prefix cli run build",

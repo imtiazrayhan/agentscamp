@@ -5,6 +5,7 @@ seoTitle: "Best AI Tools for Designers in 2026 (Prototypes, Images, Code)"
 seoDescription: "16 AI tools for designers in 2026: prototyping, websites, image generation, decks, design-to-code, and design systems, with a pricing model and verdict each."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "multimodal-ai"]

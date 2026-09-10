@@ -5,6 +5,7 @@ seoTitle: "What Is Claude Cowork? The Non-Developer's Guide (2026)"
 seoDescription: "Claude Cowork explained for non-developers: what it does with your files and apps, how it differs from chat and Claude Code, plans, platforms, and safety."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "ai-agents-systems"]

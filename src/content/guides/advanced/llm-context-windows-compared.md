@@ -3,6 +3,7 @@ title: "LLM Context Windows Compared (2026)"
 description: "Context windows and max output tokens across Claude, GPT, Gemini, DeepSeek, and Grok — the million-token era, what it costs, and what fits in practice."
 author: "Imtiaz Rayhan"
 date: 2026-07-01
+freshness: "tier1"
 updated: 2026-09-01
 color: "green"
 topics: ["llm-app-dev"]

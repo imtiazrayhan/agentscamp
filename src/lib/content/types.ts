@@ -72,6 +72,10 @@ export interface BaseContentItem {
   related: string[];
   date?: string;
   updated?: string;
+  /** Refresh tier override; see src/lib/content/freshness.ts. */
+  freshness?: "tier1" | "exempt";
+  /** Last verification pass (not an editorial change — that is `updated`). */
+  reviewed?: string;
   href: string;
   body?: string;
   // SEO/AEO/GEO (optional; defaulted arrays so they are always present)
