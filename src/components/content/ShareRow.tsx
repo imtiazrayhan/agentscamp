@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 import { CopyButton } from "./CopyButton";
 
 const btn =
-  "inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary";
 
 /** Share links for a guide — text labels only, no third-party scripts. */
 export function ShareRow({ url, title }: { url: string; title: string }) {
