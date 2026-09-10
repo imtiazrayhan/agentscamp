@@ -1,3 +1,54 @@
+# Role paths Wave 2: designers + analysts + tag pass (2026-09-10) — SHIPPED
+
+The audience program is complete. All five role paths are live, the hub stands
+at 748 items, and the mirror and CLI bundle are in sync.
+
+## Done (four commits on master)
+- **Designers (31):** cornerstone pillar on Claude Design plus guides on Claude
+  Code for designers, Figma-to-code through the Figma MCP server, Anthropic's
+  design plugin, design-system upkeep, skills and plan choice; a tools roundup,
+  an image-generator roundup, and Claude Design versus Figma Make. Tools
+  figma-make, framer-ai, canva, midjourney, recraft, ideogram, relume, stitch.
+  Five skills, two commands, a design-systems-librarian agent, five glossary
+  terms. Uizard was deliberately skipped: no site activity since 2024.
+- **Analysts (31):** cornerstone pillar mapping the four Claude surfaces, plus
+  Claude for Excel, Claude Code against notebooks and warehouses, a read-only
+  Postgres text-to-SQL setup, the data plugin, how to check an AI analysis,
+  skills and plan choice; two roundups and a ChatGPT comparison. Tools julius,
+  hex, databricks-genie, thoughtspot-spotter, deepnote, pandasai, vanna. Five
+  skills, two commands, an analysis-reviewer agent, five glossary terms.
+- **Tag pass:** 91 audience tags added to existing guides, tools, glossary
+  terms, skills, commands and agents. Role paths now carry 61 items for
+  developers, 71 founders, 72 marketers, 52 designers, 54 analysts.
+- **Two adversarial fact-check passes** over all four clusters. Real errors
+  caught: Surfer's AI tracker does not cover Claude; Copy.ai bundles seats per
+  plan; Google's dedicated AI-search reports reached all sites Aug 31 2026, so
+  the "aggregate only" line was stale; three Google quotes were not verbatim;
+  Vanna's OSS repo was archived Mar 29 2026 and 2.0 replaced train() with agent
+  memory; Databricks Genie and peers are consumption-billed; Claude's code
+  sandbox has network on by default for Free/Pro/Max; Recraft's free tier grants
+  no commercial use. Both plugin pillars had cited stale READMEs (the design
+  folder has 7 skills, the data folder 10, neither has a commands directory).
+- Mirror rebuilt and pushed (748 items / 256 installable). CLI bundle
+  regenerated and verified; cli/README counts updated to 65/130/61.
+
+## Blocked (owner action)
+- **`agentscamp@0.8.0` is staged but NOT published.** Run `cd cli && npm publish`
+  and complete the npm 2FA one-time password. The version bump, README counts and
+  bundle are already committed; prepublishOnly regenerates and verifies.
+
+## Next
+- GSC checkpoint in 4 to 6 weeks: watch the per-role query families listed in
+  docs/content-roadmap-phase3.md, plus the GA4 role_select event.
+- Two vendor claims could not be machine-verified because the pages block
+  automated reading (Midjourney's revenue threshold for asset ownership, Canva's
+  output terms). Both are attributed to the vendor terms URL rather than stated
+  flatly; a manual browser read would harden them.
+- The tools freshness tier (open since June) matters more now: 180 tool pages
+  carry pricing, and the new consumer-plan page is tier-1 monthly.
+
+---
+
 # Role paths Wave 1: foundation + founders + marketers (2026-09-10) — SHIPPED
 
 79 new items across three commits, taking the hub from 607 to 686. Every role
