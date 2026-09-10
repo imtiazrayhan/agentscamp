@@ -2,13 +2,14 @@ import Link from "next/link";
 import type { ContentItem } from "@/lib/content/types";
 import { contentTypes } from "@/lib/content/registry";
 import { getColorClasses, cn } from "@/lib/utils";
+import { sectionHeading } from "@/components/ui/typography";
 
 export function RelatedItems({ items }: { items: ContentItem[] }) {
   if (!items.length) return null;
   return (
-    <section className="mt-12 border-t border-border pt-8">
-      <h2 className="mb-4 text-lg font-semibold">Related</h2>
-      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+    <section className="mt-14">
+      <h2 className={cn("mb-4", sectionHeading)}>Related</h2>
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {items.map((item) => {
           const accent = getColorClasses(item.type);
           const Icon = contentTypes[item.type].icon;

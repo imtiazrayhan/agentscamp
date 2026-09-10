@@ -16,7 +16,7 @@ export function MobileToc({ items }: { items: TocItem[] }) {
       <summary className="cursor-pointer select-none px-4 py-3 text-sm font-semibold">
         On this page
       </summary>
-      <ol className="border-t border-border px-4 py-3 text-sm">
+      <ol className="px-4 pb-3 text-sm">
         {items.map((i) => (
           <li key={i.id} style={{ paddingLeft: i.depth === 3 ? 12 : 0 }}>
             <a

@@ -1,4 +1,6 @@
 import type { FaqEntry } from "@/lib/content/types";
+import { sectionHeading } from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 
 /**
  * Visible Q&A. Pairs with the FAQPage JSON-LD (graphFor / faqPageGraph) — the
@@ -16,8 +18,8 @@ export function FaqSection({
 }) {
   if (!faq.length) return null;
   return (
-    <section className="mt-12 border-t border-border pt-8">
-      <h2 className="mb-5 text-xl font-bold tracking-tight">{heading}</h2>
+    <section className="mt-10">
+      <h2 className={cn("mb-5", sectionHeading)}>{heading}</h2>
       <dl className="space-y-5">
         {faq.map((f, i) => (
           <div key={i}>

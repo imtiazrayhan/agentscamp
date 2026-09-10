@@ -10,6 +10,7 @@ import { ListingView, type SortKey } from "./ListingView";
 import { toCard } from "@/lib/content/card";
 import { FaqSection } from "./FaqSection";
 import type { ContentTypeId, ToolItem } from "@/lib/content/types";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
 // Category facets become indexable (and so worth crawl-linking) at >=2 items,
 // matching MIN_INDEXABLE in lib/seo/collections.
@@ -107,7 +108,7 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
       />
       <Breadcrumbs items={crumbs} />
       <header className="mb-8">
-        <div className="mb-3 flex items-center gap-2.5">
+        <div className="mb-3 flex items-center gap-2">
           <span
             className={cn(
               "inline-flex size-8 items-center justify-center rounded-md",
@@ -125,7 +126,7 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
         </p>
         {/* Answer-engine explainer copy — kept, but set apart so the header
             stops reading as two stacked grey paragraphs. */}
-        <p className="mt-4 max-w-[68ch] border-l-2 border-border pl-4 text-[15px] leading-relaxed text-muted-foreground">
+        <p className="measure mt-4 text-base leading-relaxed text-muted-foreground">
           {seo.intro}
         </p>
         {seo.startHere && (
@@ -141,9 +142,9 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
         )}
         {categoryLinks.length > 1 && (
           <nav className="mt-5" aria-label={`Browse ${def.label} by category`}>
-            <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            <Eyebrow as="h2" className="mb-3">
               Browse by category
-            </h2>
+            </Eyebrow>
             <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
               {categoryLinks.map((c) => (
                 <li key={c.href}>
@@ -154,7 +155,7 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
                     <span className="underline-offset-4 hover:underline">
                       {c.label}
                     </span>
-                    <span className="text-xs tabular-nums opacity-60">
+                    <span className="text-xs tabular-nums text-muted-foreground">
                       {c.count}
                     </span>
                   </Link>
@@ -165,9 +166,9 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
         )}
         {pricingLinks.length > 1 && (
           <nav className="mt-4" aria-label="Browse Tools by pricing">
-            <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            <Eyebrow as="h2" className="mb-3">
               Browse by pricing
-            </h2>
+            </Eyebrow>
             <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
               {pricingLinks.map((pricing) => (
                 <li key={pricing.href}>
@@ -178,7 +179,7 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
                     <span className="underline-offset-4 hover:underline">
                       {pricing.label}
                     </span>
-                    <span className="text-xs tabular-nums opacity-60">
+                    <span className="text-xs tabular-nums text-muted-foreground">
                       {pricing.count}
                     </span>
                   </Link>

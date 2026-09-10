@@ -13,15 +13,16 @@ import { extractToc } from "@/lib/toc";
 import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
 import { canonicalUrl } from "@/lib/seo/artifact";
 import type { GuideItem, ContentItem } from "@/lib/content/types";
+import { sectionHeading } from "@/components/ui/typography";
 
 function Sources({ sources }: { sources: GuideItem["sources"] }) {
   if (!sources.length) return null;
   return (
     <section
-      className="mt-10 border-t border-border pt-8"
+      className="mt-10"
       aria-labelledby="sources-heading"
     >
-      <h2 id="sources-heading" className="text-xl font-bold tracking-tight">
+      <h2 id="sources-heading" className={sectionHeading}>
         Sources and further reading
       </h2>
       <p className="mt-2 text-sm text-muted-foreground">
@@ -102,7 +103,7 @@ export function GuideDetail({
           <MobileToc items={toc} />
 
           {item.summary && (
-            <p className="mb-8 text-lg leading-relaxed text-foreground/90">
+            <p className="mb-8 text-lg leading-relaxed text-foreground">
               {item.summary}
             </p>
           )}
@@ -114,7 +115,7 @@ export function GuideDetail({
 
           {item.body && <Markdown source={item.body} />}
 
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
             <ShareRow url={canonicalUrl(item)} title={item.title} />
             <InstallActions item={item} />
           </div>

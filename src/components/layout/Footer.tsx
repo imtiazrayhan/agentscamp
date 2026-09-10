@@ -8,6 +8,7 @@ import { site, network } from "@/lib/site";
 import { getColorClasses, cn } from "@/lib/utils";
 import type { ComponentType, SVGProps } from "react";
 import type { ContentTypeDef } from "@/lib/content/registry";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
 /**
  * Editorial sitemap footer. Plain SERVER component — no "use client", no hooks.
@@ -50,7 +51,7 @@ function TypeLink({ def, count }: { def: ContentTypeDef; count: number }) {
             {def.label}
           </span>
         </span>
-        <span className="text-xs tabular-nums text-muted-foreground/70">
+        <span className="text-xs tabular-nums text-muted-foreground">
           {count.toLocaleString()}
         </span>
       </Link>
@@ -67,9 +68,9 @@ function Column({
 }) {
   return (
     <div>
-      <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-foreground">
+      <Eyebrow as="h3" className="mb-3 text-foreground">
         {title}
-      </h3>
+      </Eyebrow>
       <ul className="space-y-0.5">{children}</ul>
     </div>
   );
@@ -106,7 +107,7 @@ export function Footer() {
     .filter((a) => a.count > 0);
 
   return (
-    <footer className="mt-24 border-t border-border bg-card/40">
+    <footer className="mt-24 border-t border-border">
       <Container className="py-12">
         <h2 className="sr-only">Site footer — browse AgentsCamp</h2>
 
@@ -137,7 +138,7 @@ export function Footer() {
           </Column>
 
           <div>
-            <Link href="/" aria-label="AgentsCamp home" className="text-[15px]">
+            <Link href="/" aria-label="AgentsCamp home" className="text-base">
               <Logo />
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -159,11 +160,11 @@ export function Footer() {
         </div>
 
         {/* sibling products in the same network */}
-        <div className="mt-12 border-t border-border pt-8">
-          <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-foreground">
+        <div className="mt-12">
+          <Eyebrow as="h3" className="mb-3 text-foreground">
             Our projects
-          </h3>
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          </Eyebrow>
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {network.map((n) => {
               const Icon = networkIcons[n.id];
               return (
@@ -172,7 +173,7 @@ export function Footer() {
                     href={n.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-start gap-2.5"
+                    className="group flex items-start gap-2"
                   >
                     <Icon className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
                     <span>
@@ -190,7 +191,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 AgentsCamp. All rights reserved.</p>
           <ul className="flex flex-wrap gap-4">
             {endpoints.map((e) => (
