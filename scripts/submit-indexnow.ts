@@ -29,7 +29,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { getAllContent, contentTypeList } from "../src/lib/content/index";
+import sitemap from "../src/app/sitemap";
 import { site } from "../src/lib/site";
 
 const ENDPOINT = "https://api.indexnow.org/indexnow";
@@ -67,16 +67,16 @@ function resolveKey(): string {
   );
 }
 
-/** Every live path, mirroring src/app/sitemap.ts so the two never drift. */
+/**
+ * Every live path, derived from THE sitemap so the two cannot drift. An earlier
+ * hand-maintained copy silently omitted /for, every topic and category landing,
+ * and all the tool alternatives pages.
+ */
 function allLivePaths(): string[] {
-  const staticPaths = [
-    "",
-    "/how-to-use",
-    "/feed.xml",
-    ...contentTypeList.map((d) => d.basePath),
-  ];
-  const contentPaths = getAllContent().map((i) => i.href);
-  return [...staticPaths, ...contentPaths];
+  // sitemap() emits `${site.url}${path}`, so the home page slices to "".
+  const paths = sitemap().map((e) => e.url.slice(site.url.length));
+  // Submittable but deliberately not in the sitemap (not an HTML page).
+  return [...paths, "/feed.xml"];
 }
 
 function gitRefExists(ref: string): boolean {
@@ -125,7 +125,10 @@ function changedPaths(files: string[], live: Set<string>): Set<string> {
       if (live.has(urlPath)) {
         out.add(urlPath);
         contentChanged = true;
-        affectedListings.add(`/${rel.split("/")[0]}`); // e.g. /agents
+        // Both the type listing and the category landing render this item.
+        const parts = rel.split("/");
+        affectedListings.add(`/${parts[0]}`); // e.g. /agents
+        if (parts.length === 3) affectedListings.add(`/${parts[0]}/${parts[1]}`);
       }
     } else if (file in STATIC_FILE_ROUTES) {
       out.add(STATIC_FILE_ROUTES[file]);

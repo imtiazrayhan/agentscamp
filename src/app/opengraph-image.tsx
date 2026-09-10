@@ -74,8 +74,8 @@ export default function OpengraphImage() {
         <div
           style={{ fontSize: 29, color: "#9a9aa3", marginTop: 26, maxWidth: 900 }}
         >
-          Curated agents, skills, guides, tools & commands for building with AI
-          coding agents.
+          Guides, an AI tool directory & a plain-language glossary — plus
+          agents, skills & commands for Claude Code.
         </div>
         <div
           style={{
@@ -88,7 +88,7 @@ export default function OpengraphImage() {
           }}
         >
           <span style={{ color: "#4ade80", fontWeight: 700 }}>&gt;</span>
-          <span>agents · skills · guides · tools · commands</span>
+          <span>developers · founders · marketers · designers · analysts</span>
         </div>
       </div>
     ),

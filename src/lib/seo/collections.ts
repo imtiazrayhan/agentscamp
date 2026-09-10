@@ -118,6 +118,7 @@ export function categoryCollection(
       { label: def.label, href: def.basePath },
       { label },
     ],
+    noindex: items.length < MIN_INDEXABLE,
   };
 }
 

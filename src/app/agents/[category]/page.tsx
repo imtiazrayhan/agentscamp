@@ -23,6 +23,7 @@ export async function generateMetadata({
     title: c.title,
     description: c.description,
     path: `/agents/${category}`,
+    noindex: c.noindex,
   });
 }
 

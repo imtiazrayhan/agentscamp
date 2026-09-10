@@ -10,7 +10,10 @@ import {
   topics,
   audiences,
 } from "@/lib/content";
-import { toolAlternativesCollection } from "@/lib/seo/collections";
+import {
+  categoryCollection,
+  toolAlternativesCollection,
+} from "@/lib/seo/collections";
 import { site } from "@/lib/site";
 
 /**
@@ -42,10 +45,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const def of contentTypeList) {
     if (def.id === "tool" || def.id === "glossary") continue;
     for (const c of getCategories(def.id)) {
-      const items = getContentByType(def.id).filter(
-        (i) => i.category === c.slug,
-      );
-      add(`${def.basePath}/${c.slug}`, latestDate(items));
+      // The indexability threshold lives in categoryCollection, not here.
+      const col = categoryCollection(def.id, c.slug);
+      if (!col || col.noindex) continue;
+      add(`${def.basePath}/${c.slug}`, latestDate(col.items));
     }
   }
 

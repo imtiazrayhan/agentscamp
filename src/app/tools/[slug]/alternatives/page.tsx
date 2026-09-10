@@ -29,6 +29,8 @@ export async function generateMetadata({
     description: c.description,
     path: `/tools/${slug}/alternatives`,
     noindex: c.noindex,
+    // The parent tool's own accented card; this route has no colocated generator.
+    image: `${c.tool.href}/opengraph-image`,
   });
 }
 

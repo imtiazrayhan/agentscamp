@@ -3,7 +3,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://agentscamp.com",
   tagline: "Your hub for everything AI",
   description:
-    "A curated hub for everything AI — agents, skills, guides, tools, and commands for building with AI coding agents.",
+    "Guides, an AI tool directory, and a plain-language glossary for developers, founders, marketers, designers, and analysts, plus installable Claude Code skills.",
   twitter: "@agentscamp",
   /** Square brand mark used for schema.org Organization.logo (served at /icon.svg). */
   logo: "/icon.svg",

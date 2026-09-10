@@ -9,6 +9,10 @@ import { site } from "@/lib/site";
  * OG/article tags. It deliberately does NOT set `keywords` (the HTML meta tag is
  * inert and a spam signal) and does NOT set OG images: the colocated
  * `opengraph-image.tsx` per route auto-injects og:image + twitter:image.
+ *
+ * NEVER add an `openGraph.images` key here. Next merges file-convention OG
+ * images per segment and skips them the moment the segment's own metadata
+ * declares `images` — doing so would silently kill all 7 per-item generators.
  */
 export function buildMetadata(item: ContentItem): Metadata {
   const title = item.seoTitle ?? item.title;
@@ -62,6 +66,18 @@ export function buildMetadata(item: ContentItem): Metadata {
   };
 }
 
+/**
+ * The site-wide OG card (src/app/opengraph-image.tsx). Collection pages have no
+ * colocated generator, so without this they emit `twitter:card=summary_large_image`
+ * with no image at all.
+ */
+const siteOgImage = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: `${site.name} — ${site.tagline}`,
+};
+
 /** Generic Metadata for collection / landing pages (listings, categories, topics, facets). */
 export function buildPageMetadata(opts: {
   title: string;
@@ -70,6 +86,11 @@ export function buildPageMetadata(opts: {
   noindex?: boolean;
   /** RSS feed advertised for autodiscovery (defaults to the site-wide feed). */
   feed?: string;
+  /**
+   * Override the share card. Pass this ONLY on routes with no colocated
+   * `opengraph-image.tsx` — declaring `images` makes Next skip that generator.
+   */
+  image?: string;
 }): Metadata {
   return {
     title: opts.title,
@@ -84,6 +105,7 @@ export function buildPageMetadata(opts: {
       url: opts.path,
       siteName: site.name,
       type: "website",
+      images: [opts.image ? { url: opts.image, width: 1200, height: 630 } : siteOgImage],
     },
     twitter: {
       card: "summary_large_image",

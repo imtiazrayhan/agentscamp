@@ -9,6 +9,7 @@
     "postbuild": "tsx scripts/submit-indexnow.ts",
     "start": "next start -p 3001",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate-content.ts",
     "indexnow": "tsx scripts/submit-indexnow.ts",
     "cli:content": "tsx scripts/build-cli-content.ts",
