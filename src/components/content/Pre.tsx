@@ -21,7 +21,7 @@ export function Pre({
       <pre
         ref={ref}
         className={cn(
-          "overflow-x-auto rounded-lg bg-secondary p-4 text-sm leading-relaxed",
+          "overflow-x-auto rounded-lg bg-card p-4 text-sm leading-relaxed",
           className,
         )}
         {...props}

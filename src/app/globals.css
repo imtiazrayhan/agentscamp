@@ -435,10 +435,10 @@
 [data-rehype-pretty-code-figure] code {
   display: grid;
 }
-/* The block itself is --secondary now, so a highlighted line has to step
-   again rather than match it. */
+/* The block sits on --card, so a highlighted line steps to the recessed
+   ground to mark itself out. */
 [data-highlighted-line] {
-  background: var(--secondary-hover);
+  background: var(--secondary);
 }
 
 .prose .heading-anchor {

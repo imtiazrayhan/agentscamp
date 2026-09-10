@@ -54,7 +54,10 @@ const processor = unified()
     properties: { className: ["heading-anchor"] },
   })
   .use(rehypePrettyCode, {
-    theme: { light: "github-light", dark: "github-dark" },
+    theme: {
+      light: "github-light-high-contrast",
+      dark: "github-dark-high-contrast",
+    },
     keepBackground: false,
   })
   .use(rehypeReact, {
@@ -77,9 +80,7 @@ export async function Markdown({
 }) {
   const file = await processor.process(source);
   return (
-    <div
-      className={cn(proseClasses, className)}
-    >
+    <div className={cn(proseClasses, className)}>
       {file.result as ReactNode}
     </div>
   );

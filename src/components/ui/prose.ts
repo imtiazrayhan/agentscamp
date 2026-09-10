@@ -17,7 +17,16 @@ export const proseClasses = [
   "prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-2xl prose-h2:font-bold",
   "prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-h3:font-semibold",
   "prose-h4:mt-6 prose-h4:mb-2 prose-h4:text-base prose-h4:font-semibold",
-  "prose-pre:p-0 prose-pre:bg-transparent prose-pre:border-0",
+  // prose-stone sets --tw-prose-pre-code to a LIGHT grey because it expects a
+  // DARK pre background. Stripping that background — as this line used to,
+  // with bg-transparent — left light text on a light page: any <pre> written
+  // directly in JSX rendered at roughly 1.1:1 and was effectively invisible.
+  // Markdown blocks never showed it because rehype-pretty-code paints every
+  // token, so only the hand-written ones were affected.
+  // Styling pre correctly here fixes the class of bug rather than the instance;
+  // Pre.tsx matches these values for the copy-enabled markdown blocks.
+  "prose-pre:rounded-lg prose-pre:border-0 prose-pre:bg-card",
+  "prose-pre:p-4 prose-pre:text-sm prose-pre:text-foreground",
   "prose-a:text-primary prose-a:font-medium prose-a:underline-offset-2",
   "prose-code:before:content-none prose-code:after:content-none",
   "prose-blockquote:border-l-primary prose-blockquote:not-italic",
