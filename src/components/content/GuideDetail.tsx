@@ -14,6 +14,7 @@ import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
 import { canonicalUrl } from "@/lib/seo/artifact";
 import type { GuideItem, ContentItem } from "@/lib/content/types";
 import { sectionHeading } from "@/components/ui/typography";
+import { PageHeader } from "./PageHeader";
 
 function Sources({ sources }: { sources: GuideItem["sources"] }) {
   if (!sources.length) return null;
@@ -76,21 +77,18 @@ export function GuideDetail({
 
       {/* No type/category kicker here — the breadcrumb directly above already
           reads Home > Guides > Getting Started > Title. */}
-      <header className="mb-8 measure">
-        <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
-          {item.title}
-        </h1>
-        <p className="mt-3 text-pretty text-lg text-muted-foreground">
-          {item.description}
-        </p>
-
+      <PageHeader
+        className="measure"
+        title={item.title}
+        lead={item.description}
+      >
         <ArticleMeta
           author={item.author}
           updated={updated}
           readingTime={item.readingTime}
           cornerstone={item.depth === "cornerstone"}
         />
-      </header>
+      </PageHeader>
 
       <div
         className={

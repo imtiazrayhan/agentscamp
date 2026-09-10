@@ -119,8 +119,19 @@ export function CommandPalette({
         )}
 
         {query && results.length === 0 && roleHits.length === 0 && (
-          <Command.Empty className="px-3 py-12 text-center text-sm text-muted-foreground">
-            <span className="text-primary">{">"}</span> no matches for “{query}”
+          <Command.Empty className="px-3 py-10 text-center">
+            <p className="font-semibold">No matches for “{query}”</p>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+              Try a shorter word, or open the full search.
+            </p>
+            <Command.Item
+              value={`search-all-${query}`}
+              onSelect={() => go(`/search?q=${encodeURIComponent(query)}`)}
+              className="mt-5 inline-flex cursor-pointer items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover data-[selected=true]:bg-primary-hover"
+            >
+              Search everything
+              <CornerDownLeft className="size-3.5" aria-hidden />
+            </Command.Item>
           </Command.Empty>
         )}
 

@@ -68,7 +68,7 @@ export function AlternativesList({
                 {t.os.length > 0 && <span>{t.os.join(", ")}</span>}
                 <span>{titleCaseLabel(t.category)}</span>
               </div>
-              <p className="mt-3 max-w-2xl text-muted-foreground">
+              <p className="measure mt-3 text-muted-foreground">
                 {t.summary ?? t.description}
               </p>
               {guides.get(t.slug)?.map((g) => (

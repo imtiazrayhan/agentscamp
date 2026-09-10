@@ -22,7 +22,7 @@ export function AlternativesTable({
   const td = "px-3 py-2 align-top";
   return (
     <div className="mt-6">
-      <p className="max-w-2xl text-muted-foreground">
+      <p className="measure text-muted-foreground">
         Looking for a {tool.title} alternative?{" "}
         <Link href={tool.href} className="font-medium text-foreground hover:underline">
           {tool.title}

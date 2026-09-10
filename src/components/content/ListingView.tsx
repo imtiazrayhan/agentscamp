@@ -8,6 +8,8 @@ import { ContentGrid } from "./ContentGrid";
 import { EmptyState } from "./EmptyState";
 import { Input } from "@/components/ui/input";
 import { Pagination } from "./Pagination";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export type SortKey = "newest" | "title" | "reading-time";
 
@@ -199,8 +201,25 @@ export function ListingView({
         </>
       ) : (
         <EmptyState
-          title="No matches"
-          description="Try a different search term, or browse by category above."
+          title={`No matches for \u201C${query}\u201D`}
+          description={`Nothing in this list matches that filter. Clear it to see all ${items.length}, or search the whole site.`}
+          action={
+            <>
+              <Button
+                onClick={() => {
+                  setQuery("");
+                  setPage(1);
+                }}
+              >
+                Clear filter
+              </Button>
+              <Button asChild variant="outline">
+                <Link href={`/search?q=${encodeURIComponent(query)}`}>
+                  Search everything
+                </Link>
+              </Button>
+            </>
+          }
         />
       )}
     </div>

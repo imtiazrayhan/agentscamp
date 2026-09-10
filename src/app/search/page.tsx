@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 import { SearchResults } from "@/components/search/SearchResults";
+import { PageHeader } from "@/components/content/PageHeader";
 
 /**
  * URL-addressable search (?q=…) — the target of the WebSite SearchAction in
@@ -21,13 +22,10 @@ export default function Page() {
   return (
     <div>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Search" }]} />
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Search</h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          Search every guide, tool, glossary term, agent, skill, and command on
-          AgentsCamp.
-        </p>
-      </header>
+      <PageHeader
+        title="Search"
+        lead="Search every guide, tool, glossary term, agent, skill, and command on AgentsCamp."
+      />
       <Suspense fallback={null}>
         <SearchResults />
       </Suspense>

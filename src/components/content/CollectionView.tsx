@@ -4,6 +4,7 @@ import { Breadcrumbs } from "./Breadcrumbs";
 import { collectionGraph, type Crumb } from "@/lib/seo/jsonld";
 import { latestDate } from "@/lib/content";
 import type { ContentItem } from "@/lib/content/types";
+import { PageHeader } from "./PageHeader";
 
 /**
  * Server-rendered collection page (category / topic / facet landings). Emits the
@@ -49,13 +50,9 @@ export function CollectionView({
         }}
       />
       <Breadcrumbs items={crumbs} />
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          {description}
-        </p>
+      <PageHeader title={title} lead={description}>
         {intro}
-      </header>
+      </PageHeader>
       {list ?? (
         <ContentGrid>
           {items.map((item) => (

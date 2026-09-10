@@ -6,12 +6,12 @@ import { InstallActions } from "./InstallActions";
 import { FaqSection } from "./FaqSection";
 import { FiledUnder } from "./FiledUnder";
 import { contentTypes } from "@/lib/content/registry";
-import { getColorClasses, cn } from "@/lib/utils";
 import { titleCaseLabel, formatDate } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
 import type { ContentItem } from "@/lib/content/types";
 import { KeyTakeaways } from "./ArticleBoxes";
+import { PageHeader } from "./PageHeader";
 
 /**
  * Spec-sheet template for the five non-guide types (agent, skill, command, tool,
@@ -107,8 +107,6 @@ export function ArtifactDetail({
   toolAlternativesHref?: string;
 }) {
   const def = contentTypes[item.type];
-  const accent = getColorClasses(item.type);
-  const Icon = def.icon;
   const categoryHref =
     item.type === "tool"
       ? `/tools/category/${item.category}`
@@ -123,16 +121,9 @@ export function ArtifactDetail({
       />
       <Breadcrumbs items={breadcrumbsFor(item)} />
 
-      <header className="mb-8 measure">
-        <div className="mb-3 flex items-center gap-2">
-          <span
-            className={cn(
-              "inline-flex size-8 items-center justify-center rounded-md",
-              accent.chip,
-            )}
-          >
-            <Icon className="size-4" />
-          </span>
+      <PageHeader
+        className="measure"
+        eyebrow={
           <span className="text-sm text-muted-foreground">
             <Link href={def.basePath} className="hover:text-foreground">
               {def.singular}
@@ -146,15 +137,10 @@ export function ArtifactDetail({
               </>
             )}
           </span>
-        </div>
-
-        <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
-          {item.title}
-        </h1>
-        <p className="mt-3 text-pretty text-lg text-muted-foreground">
-          {item.description}
-        </p>
-
+        }
+        title={item.title}
+        lead={item.description}
+      >
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <Meta
             item={item}
@@ -186,7 +172,7 @@ export function ArtifactDetail({
             </Link>
           )}
         </div>
-      </header>
+      </PageHeader>
 
       <div className="min-w-0 measure">
         <KeyTakeaways items={item.keyTakeaways} />

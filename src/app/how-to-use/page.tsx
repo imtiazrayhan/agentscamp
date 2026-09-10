@@ -5,6 +5,8 @@ import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { faqPageGraph } from "@/lib/seo/jsonld";
 import { FaqSection } from "@/components/content/FaqSection";
+import { PageHeader } from "@/components/content/PageHeader";
+import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "How to use",
@@ -53,8 +55,15 @@ export default function Page() {
           __html: JSON.stringify(faqPageGraph("/how-to-use", faq)),
         }}
       />
+      <Breadcrumbs
+        items={[{ label: "Home", href: "/" }, { label: "How to use" }]}
+      />
+      <PageHeader
+        className="measure"
+        title="How to use AgentsCamp"
+        lead="A reading-first hub: start with the guides, use the tool directory to compare options, and the glossary to decode terms."
+      />
       <article className={cn(proseClasses, "measure")}>
-        <h1>How to use AgentsCamp</h1>
         <p>
           AgentsCamp is a reading-first hub. Start with the guides, use the tool
           directory to compare options, and the glossary to decode terms. When
@@ -171,7 +180,7 @@ npx agentscamp search "code review"`}
         </p>
       </article>
 
-      <div className="mx-auto max-w-3xl">
+      <div className="measure">
         <FaqSection faq={faq} />
       </div>
     </>

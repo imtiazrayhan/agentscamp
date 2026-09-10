@@ -5,6 +5,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { glossaryHubGraph } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { PageHeader } from "@/components/content/PageHeader";
 
 const DESCRIPTION =
   "Plain-language definitions of the AI and LLM-engineering terms that matter — RAG, MCP, agents, fine-tuning, guardrails, and more — each linked to the deeper guide.";
@@ -41,15 +42,10 @@ export default function Page() {
       <Breadcrumbs
         items={[{ label: "Home", href: "/" }, { label: "Glossary" }]}
       />
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          AI Glossary
-        </h1>
-        <p className="mt-3 max-w-[68ch] text-pretty text-lg text-muted-foreground">
-          {items.length} AI and LLM-engineering terms, defined precisely —
-          answer first, with the deeper guide linked.
-        </p>
-      </header>
+      <PageHeader
+        title="AI Glossary"
+        lead={`${items.length} AI and LLM-engineering terms, defined precisely — answer first, with the deeper guide linked.`}
+      />
 
       <nav aria-label="Jump to letter" className="mb-8 flex flex-wrap gap-2">
         {letters.map((l) => (

@@ -7,6 +7,8 @@ import { hubGraph } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 import { EmptyState } from "@/components/content/EmptyState";
 import { Panel } from "@/components/ui/panel";
+import { PageHeader } from "@/components/content/PageHeader";
+import { Button } from "@/components/ui/button";
 
 const DESCRIPTION =
   "Pick your role — developer, founder, marketer, designer, or analyst — for a curated path through the guides, tools, skills, and agents that fit the work you do.";
@@ -43,16 +45,17 @@ export default function Page() {
       <Breadcrumbs
         items={[{ label: "Home", href: "/" }, { label: "Start here" }]}
       />
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Start here
-        </h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          {DESCRIPTION}
-        </p>
-      </header>
+      <PageHeader title="Start here" lead={DESCRIPTION} />
       {entries.length === 0 ? (
-        <EmptyState description="Role paths are being curated." />
+        <EmptyState
+          title="Role paths are on the way"
+          description="We are curating a reading order for each role. The topic index covers the same ground in the meantime."
+          action={
+            <Button asChild variant="outline">
+              <Link href="/topics">Browse by topic</Link>
+            </Button>
+          }
+        />
       ) : (
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {entries.map((a) => (

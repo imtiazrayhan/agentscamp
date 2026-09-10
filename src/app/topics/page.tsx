@@ -6,6 +6,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { hubGraph } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 import { Panel } from "@/components/ui/panel";
+import { PageHeader } from "@/components/content/PageHeader";
 
 const DESCRIPTION =
   "Browse AgentsCamp by topic — cross-cutting collections of agents, skills, guides, tools, and commands for building with AI coding agents.";
@@ -40,13 +41,10 @@ export default function Page() {
         }}
       />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Topics" }]} />
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Topics</h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-          Cross-cutting collections spanning agents, skills, guides, tools, and
-          commands.
-        </p>
-      </header>
+      <PageHeader
+        title="Topics"
+        lead="Cross-cutting collections spanning agents, skills, guides, tools, and commands."
+      />
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {entries.map((t) => (
           <li key={t.slug}>

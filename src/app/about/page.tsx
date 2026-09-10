@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { proseClasses } from "@/components/ui/prose";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { site } from "@/lib/site";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { PageHeader } from "@/components/content/PageHeader";
 
 const title = "About & Editorial Standards";
 const description =
@@ -31,30 +31,19 @@ const jsonLd = {
 
 export default function AboutPage() {
   return (
-    <article className="mx-auto max-w-3xl">
+    <article className="mx-auto measure">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <header className="mb-10">
-        <Eyebrow className="text-primary">
-          About AgentsCamp
-        </Eyebrow>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-          Useful AI resources, with the work shown
-        </h1>
-        <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-          AgentsCamp is a curated, public library for people working with AI —
-          developers building with coding agents first, and increasingly the
-          founders, marketers, designers, and analysts putting the same tools to
-          work. We publish practical guides and a collection of agents, skills,
-          commands, tools, and definitions that readers can inspect before
-          adopting.
-        </p>
-      </header>
+      <PageHeader
+        eyebrow={<Eyebrow className="text-primary">About AgentsCamp</Eyebrow>}
+        title="Useful AI resources, with the work shown"
+        lead="AgentsCamp is a curated, public library for people working with AI — developers building with coding agents first, and increasingly the founders, marketers, designers, and analysts putting the same tools to work. We publish practical guides and a collection of agents, skills, commands, tools, and definitions that readers can inspect before adopting."
+      />
 
-      <div className={cn(proseClasses, "measure")}>
+      <div className={proseClasses}>
         <h2 id="editorial-standards">Editorial standards</h2>
         <p>
           Every page should help a reader complete a real job or make a better

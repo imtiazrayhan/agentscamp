@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getContentByType, latestDate } from "@/lib/content";
 import { contentTypes } from "@/lib/content/registry";
-import { getColorClasses, cn } from "@/lib/utils";
 import { collectionGraph } from "@/lib/seo/jsonld";
 import { listingSeo } from "@/lib/seo/listing";
 import { titleCaseLabel } from "@/lib/format";
@@ -11,6 +10,7 @@ import { toCard } from "@/lib/content/card";
 import { FaqSection } from "./FaqSection";
 import type { ContentTypeId, ToolItem } from "@/lib/content/types";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { PageHeader } from "./PageHeader";
 
 // Category facets become indexable (and so worth crawl-linking) at >=2 items,
 // matching MIN_INDEXABLE in lib/seo/collections.
@@ -51,8 +51,6 @@ function sortForListing<T extends { title: string; date?: string; updated?: stri
 export function TypeListing({ type }: { type: ContentTypeId }) {
   const def = contentTypes[type];
   const seo = listingSeo[type];
-  const accent = getColorClasses(type);
-  const Icon = def.icon;
   const sortConfig = SORTS[type];
   // Sort ONCE, then feed the same order to both collectionGraph and the grid —
   // the ItemList positions previously described the raw loader order while the
@@ -107,23 +105,7 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
       />
       <Breadcrumbs items={crumbs} />
-      <header className="mb-8">
-        <div className="mb-3 flex items-center gap-2">
-          <span
-            className={cn(
-              "inline-flex size-8 items-center justify-center rounded-md",
-              accent.chip,
-            )}
-          >
-            <Icon className="size-4" />
-          </span>
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            {def.label}
-          </h1>
-        </div>
-        <p className="max-w-[68ch] text-pretty text-lg text-muted-foreground">
-          {def.description}
-        </p>
+      <PageHeader title={def.label} lead={def.description}>
         {/* Answer-engine explainer copy — kept, but set apart so the header
             stops reading as two stacked grey paragraphs. */}
         <p className="measure mt-4 text-base leading-relaxed text-muted-foreground">
@@ -188,7 +170,7 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
             </ul>
           </nav>
         )}
-      </header>
+      </PageHeader>
       <ListingView
         items={items}
         pageSize={PAGE_SIZE}

@@ -6,7 +6,11 @@ import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { useSearch } from "./useSearch";
 import { contentTypes } from "@/lib/content/registry";
-import { Badge } from "@/components/ui/badge";
+import { ContentGrid } from "@/components/content/ContentGrid";
+import { EmptyState } from "@/components/content/EmptyState";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { Panel } from "@/components/ui/panel";
+import { Button } from "@/components/ui/button";
 
 /**
  * Client results for the /search page. Reads ?q= (the WebSite SearchAction
@@ -34,53 +38,65 @@ export function SearchResults() {
 
   return (
     <div>
-      <label className="group flex w-full max-w-xl items-center gap-2 rounded-lg border border-input bg-card px-3 py-2.5 text-base focus-within:border-border-strong">
-        <Search className="size-4 shrink-0 text-muted-foreground" aria-hidden />
-        <span className="text-primary" aria-hidden>
-          $
-        </span>
+      {/* The `$` prompt glyph that used to sit inside this field went with the
+          terminal theme; it read as stray content beside a real search input. */}
+      <label className="group flex h-12 w-full max-w-2xl items-center gap-3 rounded-lg border border-input bg-card px-4 text-base shadow-raised focus-within:border-border-strong">
+        <Search className="size-5 shrink-0 text-primary" aria-hidden />
         <input
           type="search"
           value={q}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="search agents, skills, guides, tools, commands…"
+          placeholder="Search guides, tools, glossary, agents, skills, commands…"
           aria-label="Search AgentsCamp"
           autoFocus
           className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground"
         />
       </label>
 
-      <div className="mt-6">
+      <div className="mt-8">
         {!ready && q && (
           <p className="text-sm text-muted-foreground">Loading index…</p>
         )}
         {ready && q && results.length === 0 && (
-          <p className="text-sm text-muted-foreground">
-            no results for &ldquo;{q}&rdquo;
-          </p>
+          <EmptyState
+            title={`No results for \u201C${q}\u201D`}
+            description="Try fewer or more general words. Every guide, tool, glossary term, agent, skill and command is indexed."
+            action={
+              <>
+                <Button asChild>
+                  <Link href="/guides">Browse the guides</Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link href="/topics">Browse by topic</Link>
+                </Button>
+              </>
+            }
+          />
         )}
-        <ul className="divide-y divide-border">
-          {results.map((r) => (
-            <li key={r.href}>
-              <Link
-                href={r.href}
-                className="group flex items-baseline gap-3 py-3"
-              >
-                <Badge variant="outline" className="w-20 shrink-0 justify-center">
-                  {contentTypes[r.type].singular}
-                </Badge>
-                <span>
-                  <span className="block font-semibold group-hover:text-primary">
+        {/* Every other listing on the site is a card grid; this was the only
+            divide-y list, another survivor of the terminal theme. */}
+        <ContentGrid>
+          {results.map((r) => {
+            const def = contentTypes[r.type];
+            const Icon = def.icon;
+            return (
+              <Panel key={r.href} variant="interactive" padding="sm" asChild>
+                <Link href={r.href} className="group flex flex-col">
+                  <Eyebrow as="div" className="mb-3 flex items-center gap-1.5">
+                    <Icon className="size-3.5" />
+                    {def.singular}
+                  </Eyebrow>
+                  <span className="font-semibold leading-snug tracking-tight group-hover:text-primary">
                     {r.title}
                   </span>
-                  <span className="mt-0.5 line-clamp-2 block text-sm text-muted-foreground">
+                  <span className="mt-1 line-clamp-2 text-sm text-muted-foreground">
                     {r.description}
                   </span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                </Link>
+              </Panel>
+            );
+          })}
+        </ContentGrid>
       </div>
     </div>
   );
