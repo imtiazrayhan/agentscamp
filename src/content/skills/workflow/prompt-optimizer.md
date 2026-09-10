@@ -10,7 +10,7 @@ topics: ["workflow-prompting"]
 related: ["guide:prompting-techniques-2026", "guide:dspy-prompt-optimization", "agent:prompt-engineer", "tool:dspy", "guide:prompt-patterns"]
 featured: false
 summary: "Hand this skill a prompt and it returns a better one. It identifies the failure mode (vague instructions, format drift, missing examples, no output contract, weak reasoning on hard cases), applies the technique that fixes that specific mode, and explains every change so the edit is a decision rather than a guess — then tells you exactly what to measure to confirm the improvement held."
-audience: ["marketers"]
+audience: ["ai-engineers", "marketers"]
 ---
 
 Give this skill an underperforming prompt and it returns an optimized one — with the reasoning. It works the way a good prompt engineer does on a single prompt: figure out *which* failure mode you're hitting, apply the *one* technique that addresses it, and say what to measure so the change is verified rather than assumed. It optimizes the prompt in front of it; it does not invent requirements you didn't state.

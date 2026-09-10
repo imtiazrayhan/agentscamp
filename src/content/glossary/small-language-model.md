@@ -4,7 +4,7 @@ description: "A small language model is a compact LLM — roughly 1–15B parame
 summary: "A small language model is a deliberately compact LLM, commonly single-digit billions of parameters, that runs on a laptop, a phone, or one modest GPU once quantized. On narrow work such as classification, extraction, and routing it often matches frontier output for a fraction of the cost and latency."
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["slm", "small-models", "local", "efficiency"]
 related: ["glossary:frontier-model", "glossary:quantization", "glossary:distillation", "guide:best-local-llm-tools-2026", "tool:ollama"]
 faq:

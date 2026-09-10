@@ -4,7 +4,7 @@ description: "Semantic search retrieves results by meaning rather than keyword o
 summary: "Semantic search embeds your corpus offline and the query at runtime, then returns nearest neighbors in that shared vector space, so users never have to guess a document's vocabulary. The flip side is exact tokens like error codes and SKUs, which is why mature systems add keyword search and a reranker."
 date: 2026-06-11
 topics: ["rag-retrieval"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["search", "embeddings", "retrieval", "rag"]
 related: ["guide:hybrid-search-reranking", "glossary:embedding", "glossary:vector-database", "glossary:reranking", "glossary:rag"]
 faq:

@@ -4,7 +4,7 @@ description: "Fine-tuning continues training a pretrained model on your own exam
 summary: "Fine-tuning continues a pretrained model's training on your own examples so the behavior lives in the weights instead of being re-explained in every prompt, with LoRA and QLoRA putting that within reach of one GPU. The decision comes before training: behavior gaps fine-tune well, knowledge gaps belong in RAG, and one-off instructions belong in the prompt."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["fine-tuning", "training", "lora", "mlops"]
 related: ["guide:finetune-vs-rag-vs-prompt", "glossary:lora", "guide:finetune-dataset-prep", "glossary:distillation", "agent:finetuning-engineer", "glossary:rag"]
 faq:

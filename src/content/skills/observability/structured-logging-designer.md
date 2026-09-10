@@ -8,7 +8,7 @@ color: "cyan"
 title: "Structured Logging Designer"
 date: 2026-06-17
 topics: ["devops-infra"]
-audience: ["developers"]
+audience: ["developers", "devops"]
 related: ["agent:sre-engineer", "skill:dashboard-designer", "skill:incident-postmortem-writer", "guide:best-claude-skills-for-devops-sre", "glossary:tracing"]
 featured: false
 summary: "String logs like \"user 42 failed\" are unsearchable and useless across services. This skill designs a structured logging strategy — a stable JSON field schema, a correlation ID threaded through every line of a request, a disciplined level policy, and redaction at the boundary — then rewrites representative log statements to match."

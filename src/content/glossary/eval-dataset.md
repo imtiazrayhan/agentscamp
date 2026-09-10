@@ -4,7 +4,7 @@ description: "An eval dataset is the curated set of test cases — inputs with e
 summary: "An eval dataset is the fixed, curated set of test cases an LLM feature is scored against, each an input plus an expected outcome or rubric. It is the LLM era's test suite, except outcomes are usually judged rather than exact-matched, so a vague case produces a meaningless score. Mine real traffic, promote every production failure into it, and version it."
 date: 2026-06-12
 topics: ["llm-evals"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["evals", "datasets", "testing", "quality"]
 related: ["guide:write-llm-evals", "glossary:llm-as-judge", "glossary:synthetic-data", "skill:llm-eval-suite-scaffolder", "guide:best-llm-eval-tools-2026"]
 faq:

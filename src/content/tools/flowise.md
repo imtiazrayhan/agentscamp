@@ -13,7 +13,7 @@ license: "Apache-2.0 (Community Edition; /enterprise dir is commercial)"
 os: ["Web"]
 color: "green"
 topics: ["ai-agents-systems", "llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["low-code", "visual", "agents", "rag", "workflow"]
 featured: false
 alternativeTo: ["dify", "n8n", "langchain", "langgraph"]

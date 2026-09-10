@@ -4,7 +4,7 @@ description: "Needle in a haystack is a long-context eval that hides a fact in f
 summary: "A needle-in-a-haystack test plants one fact inside a large body of filler and sweeps two dimensions, the needle's depth and the total input length, producing a grid of where retrieval holds and where it breaks. It turns a long-context claim into a measured number, but it only tests recall of an exact string."
 date: 2026-06-17
 topics: ["llm-evals"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["eval", "long-context", "retrieval", "benchmark"]
 related: ["glossary:context-window", "glossary:eval-dataset", "glossary:rag"]
 faq:

@@ -35,7 +35,7 @@ faq:
     a: "It matches your request against every agent's description field — that one line is effectively the routing rule. Descriptions that state both the what and the when ('runs the test suite and explains failures; use proactively after code changes') get delegated to reliably. You can always invoke one explicitly by asking in plain language."
   - q: "Why isn't my subagent being picked up?"
     a: "The usual suspects: the file isn't actually in .claude/agents/, the frontmatter isn't valid YAML between two --- lines, the name isn't unique, or the session predates the file — start a new session so it loads. Malformed frontmatter is the most common cause."
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 ---
 
 If you have used Claude Code for a while, you have probably noticed your main conversation getting crowded. You are reviewing code, writing tests, and debugging a deploy all in the same thread, and the context fills with details that have nothing to do with the task in front of you. Subagents are the fix. They let you hand off well-scoped jobs to a separate Claude instance that runs in its own context window and reports back a clean result.

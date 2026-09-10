@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["mcp", "architecture"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["mcp", "a2a", "protocols", "agents", "interoperability"]
 featured: false
 summary: "MCP and A2A standardize different edges of an agent system: MCP connects an agent to its tools and data, A2A connects agents to each other via Agent Cards, stateful Tasks, Messages, and Artifacts. Officially complementary, not competing — and both now live under Linux Foundation governance: A2A since June 2025, MCP in the Agentic AI Foundation since December 2025."

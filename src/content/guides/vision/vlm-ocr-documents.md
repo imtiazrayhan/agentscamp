@@ -26,7 +26,7 @@ faq:
   - q: "Should I use an open VLM like Qwen3-VL or a proprietary one?"
     a: "Test both on your actual documents — quality is task-specific. Open-weights models like Qwen3-VL (Apache-2.0) are strong on many OCR and document tasks, and self-hosting them gives you privacy, cost control at high volume, offline operation, and no per-call fee. Proprietary frontier VLMs may still lead on the hardest reasoning or the broadest capability, with zero infrastructure to run. The decision is the same as any self-host-vs-API call: a hard privacy or cost constraint, or an open model that clears your eval bar, points to self-hosting; otherwise an API is faster to ship. Measure accuracy on a representative sample before committing."
 related: ["tool:qwen3-vl", "skill:multimodal-document-extractor", "guide:structured-output-2026", "guide:self-host-vs-api-llm", "agent:llm-inference-engineer"]
-audience: ["analysts"]
+audience: ["ai-engineers", "analysts"]
 ---
 
 "OCR" used to mean one thing: convert pixels of text into characters. Vision-language models (VLMs) change the job entirely — they read an image *and* understand it, so they can pull the line items out of an invoice, tell you whether a form is signed, read handwriting, interpret a chart, and answer questions about a page. This guide is about when that's the right tool, where it bites you, and how to get output you can trust.

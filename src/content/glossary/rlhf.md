@@ -4,7 +4,7 @@ description: "RLHF trains a model against human preferences: people rank outputs
 summary: "RLHF shapes behavior rather than knowledge: humans rank candidate outputs, a reward model learns those rankings, and the LLM is optimized by reinforcement learning to score highly against it. It is what turned text predictors into assistants, and it rewards what raters prefer, which is where sycophancy comes from."
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["rlhf", "alignment", "training", "post-training"]
 related: ["glossary:dpo", "glossary:constitutional-ai", "glossary:fine-tuning", "glossary:reasoning-model"]
 faq:

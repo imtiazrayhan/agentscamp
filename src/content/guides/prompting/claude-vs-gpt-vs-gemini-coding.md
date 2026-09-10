@@ -7,7 +7,7 @@ freshness: "tier1"
 updated: 2026-09-01
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["claude", "gpt", "gemini", "models", "comparison"]
 featured: true
 summary: "All three families write excellent code; they differ in posture. Claude leads on agentic coding — long autonomous sessions, careful diffs, and the Claude Code harness built around it. GPT pairs frontier reasoning with the broadest ecosystem (Codex, ubiquitous APIs). Gemini brings context scale and Google's platform reach. Pick by harness and workflow, not leaderboard deltas."

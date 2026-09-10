@@ -8,7 +8,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-08-04
 topics: ["ai-safety-security", "devops-infra"]
-audience: ["developers"]
+audience: ["developers", "devops", "security"]
 related: ["guide:best-claude-skills-for-code-review", "skill:rbac-designer", "skill:auth-flow-reviewer", "skill:secret-scanner", "skill:threat-model-builder", "agent:prompt-injection-auditor"]
 featured: true
 summary: "Audits every principal, credential, role, CI token, database user, agent tool, and MCP integration against the actions it actually needs. It separates required, unused, and unverified privileges; identifies wildcard and cross-environment blast radius; then produces staged removals with tests, observability, rollback, and ownership rather than blindly tightening production access."

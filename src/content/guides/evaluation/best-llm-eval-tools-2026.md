@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["llm-evals"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["evals", "comparison", "rag", "observability", "tools"]
 featured: true
 summary: "Two families of eval tools: code-first frameworks you run in CI (DeepEval, promptfoo, RAGAS) and eval-plus-observability platforms that trace production (LangSmith, Langfuse, Phoenix, Braintrust). Pick a framework for the offline gate and a platform for production — many teams use one of each. The open-source options win on cost and data control."

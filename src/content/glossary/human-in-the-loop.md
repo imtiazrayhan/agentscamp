@@ -4,7 +4,7 @@ description: "Human-in-the-loop design inserts human judgment at decisive points
 summary: "Human-in-the-loop design places human judgment at chosen points inside an automated workflow: the agent executes, but designated decisions wait for a person. The question is not whether to trust an agent but which steps need a signature, namely the irreversible, the ambiguous, and the consequential. Blanket approval prompts are the anti-pattern."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
-audience: ["developers"]
+audience: ["developers", "security"]
 tags: ["hitl", "agents", "safety", "workflow"]
 related: ["skill:human-in-the-loop-gate", "command:add-human-approval", "glossary:agentic-ai", "guide:claude-code-settings-permissions", "agent:agent-reliability-reviewer"]
 faq:

@@ -10,7 +10,7 @@ repo: "https://github.com/BoundaryML/baml"
 sameAs: ["https://github.com/BoundaryML/baml", "https://docs.boundaryml.com"]
 color: "green"
 topics: ["llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["structured-output", "type-safe", "dsl", "open-source"]
 featured: false
 alternativeTo: ["instructor"]

@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "cyan"
 topics: ["ai-agents-systems", "workflow-prompting"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["codex", "subagents", "multi-agent", "parallel", "custom-agents"]
 featured: true
 summary: "Codex subagents move bounded work into separate agent threads and return distilled results to the main conversation. They help when tasks are independent or generate noisy context, such as exploration, test analysis, and multi-angle review. Good orchestration assigns one outcome per agent, limits concurrent writes, preserves a single integration owner, and accounts for higher token use."

@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["stt", "speech-to-text", "voice", "best-of", "comparison"]
 featured: false
 summary: "Four answers cover STT in 2026: Deepgram (streaming-first enterprise workhorse), AssemblyAI (promptable Universal-3 Pro plus the understanding stack — summaries, sentiment, PII), Whisper (the open-weights baseline for self-hosting via faster-whisper/whisper.cpp), and Cartesia Ink (the latency newcomer with model-native turn detection). Pick by workload."

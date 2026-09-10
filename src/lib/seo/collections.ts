@@ -196,7 +196,7 @@ export function audienceCollection(
   const items = [...startHere, ...groups.flatMap((g) => g.items)];
   if (!items.length) return null;
   return {
-    title: `AI for ${def.label}`,
+    title: def.title ?? `AI for ${def.label}`,
     description: def.description,
     items,
     startHere,

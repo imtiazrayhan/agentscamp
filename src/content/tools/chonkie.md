@@ -14,7 +14,7 @@ license: "MIT"
 sameAs: ["https://github.com/feyninc/chonkie", "https://docs.chonkie.ai"]
 color: "green"
 topics: ["rag-retrieval"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["chunking", "rag", "python", "open-source"]
 featured: false
 alternativeTo: ["langchain", "llamaindex"]

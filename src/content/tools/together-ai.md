@@ -12,7 +12,7 @@ sameAs:
   - "https://docs.together.ai"
 color: "blue"
 topics: ["mlops-ai-infra", "llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["inference", "fine-tuning", "open-models", "gpu", "openai-compatible"]
 featured: false
 alternativeTo: ["fireworks-ai", "groq", "replicate", "baseten", "openrouter"]

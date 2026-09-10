@@ -12,7 +12,7 @@ license: "Apache-2.0"
 os: ["Web", "macOS", "Windows", "Linux"]
 color: "cyan"
 topics: ["mlops-ai-infra", "multimodal-ai"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["webrtc", "voice-agents", "realtime", "open-source", "telephony"]
 featured: false
 alternativeTo: ["pipecat", "vapi"]

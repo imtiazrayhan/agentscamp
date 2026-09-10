@@ -4,7 +4,7 @@ description: "Prompt injection is an attack where untrusted content carries inst
 summary: "Prompt injection works because a model's context mixes trusted instructions and untrusted data in the same medium, with no hard boundary between them. Direct injection comes from a hostile user; the sharper threat is indirect, where instructions hide in a page, document, or tool output the system reads."
 date: 2026-06-11
 topics: ["ai-safety-security"]
-audience: ["developers"]
+audience: ["developers", "security"]
 tags: ["security", "prompt-injection", "llm", "attacks"]
 related: ["guide:defending-prompt-injection", "guide:owasp-agentic-top-10", "agent:prompt-injection-auditor", "glossary:guardrails", "command:red-team-llm"]
 faq:

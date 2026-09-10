@@ -12,7 +12,7 @@ license: "MIT"
 sameAs: ["https://github.com/langfuse/langfuse", "https://langfuse.com/docs"]
 color: "cyan"
 topics: ["llm-evals"]
-audience: ["developers"]
+audience: ["ai-engineers", "devops"]
 tags: ["observability", "tracing", "evals", "prompt-management", "open-source"]
 featured: false
 alternativeTo: ["langsmith", "arize-phoenix", "braintrust"]

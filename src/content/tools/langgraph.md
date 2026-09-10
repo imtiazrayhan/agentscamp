@@ -11,7 +11,7 @@ license: "MIT"
 sameAs: ["https://github.com/langchain-ai/langgraph", "https://langchain-ai.github.io/langgraph/"]
 color: "blue"
 topics: ["ai-agents-systems"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["agents", "framework", "orchestration", "open-source", "python"]
 featured: false
 alternativeTo: ["crewai", "autogen", "openai-agents-sdk", "claude-agent-sdk"]

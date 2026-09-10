@@ -4,7 +4,7 @@ description: "Batch inference processes many LLM requests asynchronously instead
 summary: "Batch inference submits many LLM requests as one asynchronous job and collects the results later, typically at about half the interactive price. Anything with no human waiting qualifies: classification backfills, synthetic data, bulk summarization, evaluation runs, re-embedding. Same model, same outputs, half the bill, and it stacks with prompt caching."
 date: 2026-06-12
 topics: ["llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["batch", "inference", "cost", "throughput"]
 related: ["glossary:inference", "guide:llm-cost-latency-engineering", "glossary:prompt-caching", "glossary:synthetic-data"]
 faq:

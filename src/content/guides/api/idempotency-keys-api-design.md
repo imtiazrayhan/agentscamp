@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "purple"
 topics: ["architecture", "llm-app-dev"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["api", "idempotency", "retries", "payments", "distributed-systems"]
 featured: true
 summary: "An idempotency key makes one logical mutation return the same outcome across retries. The safe design uses a client-generated key scoped to the caller and operation, claims it atomically before side effects, stores the response for replay, rejects key reuse with a different payload, handles concurrent in-flight requests, and carries the same operation identity into downstream services."

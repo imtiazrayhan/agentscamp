@@ -26,7 +26,7 @@ faq:
   - q: "How do I install an MCP server in Claude Code?"
     a: "Hosted remote: claude mcp add --transport http <name> <url>, then authenticate via /mcp (OAuth). Local: claude mcp add <name> --env KEY=value -- npx -y <package>. Scopes: --scope project commits it to .mcp.json for your team; the full walkthrough is in our Claude Code MCP setup guide."
 related: ["guide:claude-code-mcp-setup", "guide:mcp-vs-a2a", "guide:govern-mcp-servers", "tool:context7", "tool:github-mcp-server", "tool:chrome-devtools-mcp", "tool:playwright-mcp", "tool:serena", "tool:exa", "tool:firecrawl", "command:add-mcp-server", "tool:mcp-inspector"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 ---
 
 The MCP ecosystem spans 11,000+ public servers and landed under the Linux Foundation — which means the catalog is no longer the problem; **the shortlist is.** This is ours: the servers that earn a slot in real 2026 workflows, organized by what they're for, with the honest caveats. (New to the mechanics? [Adding MCP Servers to Claude Code](/guides/mcp/claude-code-mcp-setup) covers transports, scopes, and auth.)

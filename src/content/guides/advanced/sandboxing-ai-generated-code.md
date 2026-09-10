@@ -7,7 +7,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["ai-agents-systems", "ai-safety-security"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers", "devops", "security"]
 tags: ["sandboxing", "code-execution", "agents", "comparison", "security"]
 featured: true
 summary: "Agent-written code needs somewhere safe to run, and four platforms own the category: E2B (the code-interpreter specialist with open Apache-2.0 infra and desktop VMs), Daytona (sub-90ms startup, multi-OS, AGPL self-host), Modal (sandboxes inside a full serverless GPU platform), and Vercel Sandbox (Firecracker microVMs native to the Vercel ecosystem)."

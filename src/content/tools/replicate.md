@@ -24,7 +24,7 @@ faq:
     a: "Pay-per-use, not a flat subscription. Most models are billed by the second of compute they actually run, scaling to zero when idle, while some (e.g. certain image models) are billed per output. New accounts run a curated set of models free for a limited number of runs, then move to prepaid credit. There is no charge for time a model spends idle."
   - q: "What is Cog and how do I deploy a custom model?"
     a: "Cog is Replicate's open-source (Apache-2.0) tool for packaging an ML model into a standard, production-ready container — it generates the inference API and handles CUDA/dependency setup from a single config file. You define your model with Cog, push it to Replicate, and it becomes a deployable API endpoint with autoscaling, the same as any community model."
-audience: ["designers"]
+audience: ["ai-engineers", "designers"]
 ---
 
 Replicate is a hosted platform for **running and deploying open machine-learning models through an API**. Instead of provisioning GPUs, building containers, and writing inference servers, you call a model — Stable Diffusion-style image generators, video and audio models, open LLMs, and thousands of other community-contributed models — with a single line of code and get results back. The platform handles the GPUs, scaling, and queuing.

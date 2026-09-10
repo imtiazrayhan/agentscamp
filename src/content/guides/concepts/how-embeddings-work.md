@@ -34,7 +34,7 @@ howtoSteps:
     text: "At query time, embed the user's query with the identical model and version, then search the index by cosine similarity / dot product."
   - name: "Re-embed when you change models"
     text: "If you swap embedding models, rebuild the entire index — old and new vectors live in incompatible spaces and cannot be compared."
-audience: ["analysts"]
+audience: ["ai-engineers", "analysts"]
 ---
 
 **An embedding turns a piece of text (or an image) into a vector — a list of numbers — positioned so that things with similar meaning land close together in that space.** That single property is what powers semantic search, [RAG](/guides/concepts/how-rag-works), clustering, dedup, and recommendations: instead of matching exact words, you compare geometry.

@@ -4,7 +4,7 @@ description: "A vector database stores embeddings and answers nearest-neighbor q
 summary: "A vector database answers one question fast enough for production: which stored vectors are closest to this one? Exact search is hopeless at a hundred million vectors, so these systems use approximate nearest-neighbor indexes, dominated by HNSW, plus metadata filtering, hybrid search, and quantization."
 date: 2026-06-11
 topics: ["rag-retrieval"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["vector-database", "embeddings", "rag", "search", "hnsw"]
 related: ["guide:best-vector-database-2026", "glossary:embedding", "glossary:semantic-search", "glossary:rag", "tool:pgvector", "tool:qdrant", "skill:embedding-index-tuner"]
 faq:

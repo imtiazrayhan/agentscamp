@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-05-16
 color: "green"
 topics: ["workflow-prompting"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 related: ["agent:workflow-orchestrator", "guide:multi-agent-orchestration", "command:breakdown-task", "command:plan-feature", "guide:parallel-claude-code-worktrees"]
 summary: "Big tasks become reliable through four habits: decompose into independently verifiable steps (plan first), fan out genuinely independent work to parallel subagents and do the fan-in deliberately, verify with mechanical checks plus a fresh-eyes reviewer, and persist critical state to a file because summaries drop detail. Add an orchestrator only when the coordination pattern repeats."
 keyTakeaways:

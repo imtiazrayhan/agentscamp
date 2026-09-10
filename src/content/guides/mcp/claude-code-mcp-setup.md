@@ -39,7 +39,7 @@ faq:
   - q: "Why isn't my MCP server connecting?"
     a: "Run claude mcp list to see status. The usual causes: the launch command isn't on PATH (test it standalone first), a required env var is missing (--env KEY=value), a slow server tripping the startup timeout (raise it with MCP_TIMEOUT=60000 claude), or a project-scoped server still pending approval — check /mcp."
 related: ["guide:best-mcp-servers-2026", "guide:building-an-mcp-server", "guide:deploy-remote-mcp-server", "guide:govern-mcp-servers", "command:add-mcp-server", "tool:mcp-inspector", "guide:claude-code-troubleshooting", "guide:claude-code-settings-permissions", "tool:context7", "tool:github-mcp-server"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 ---
 
 MCP servers are how [Claude Code](/tools/claude-code) reaches beyond your filesystem — into GitHub, your database, your issue tracker, a headless browser, your docs. The protocol is open, the ecosystem is in the thousands of servers, and wiring one up is a single command. The decisions that actually matter are the **transport**, the **scope**, and **how much you trust the thing** — this guide covers all three. (When a server is added but won't connect, the [MCP troubleshooting guide](/guides/troubleshooting/mcp-troubleshooting) walks the fixes.)

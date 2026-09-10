@@ -4,7 +4,7 @@ description: "Chain-of-thought prompting has a model work through intermediate r
 summary: "Chain-of-thought prompting has a model write intermediate reasoning steps before its answer. It works because each token it writes becomes context for the next, giving the model scratch space. Its 2026 status is nuanced: reasoning models generate thinking tokens natively, so the instruction is often redundant cost, though it still helps on weaker tiers."
 date: 2026-06-11
 topics: ["workflow-prompting"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["chain-of-thought", "prompting", "reasoning", "llm"]
 related: ["guide:prompting-techniques-2026", "glossary:reasoning-model", "glossary:few-shot-prompting", "guide:prompt-patterns"]
 faq:

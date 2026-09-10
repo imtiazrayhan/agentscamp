@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { ContentGrid } from "@/components/content/ContentGrid";
 
 const DESCRIPTION =
-  "Pick your role — developer, founder, marketer, designer, or analyst — for a curated path through the guides, tools, skills, and agents that fit the work you do.";
+  "Pick your role — developer, AI engineer, DevOps, security, founder, marketer, designer, or analyst — for a curated path through the guides, tools, skills, and agents that fit the work you do.";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Start here",

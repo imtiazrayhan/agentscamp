@@ -12,7 +12,7 @@ sameAs: ["https://github.com/PrefectHQ/fastmcp", "https://gofastmcp.com"]
 os: ["Linux", "macOS", "Windows"]
 color: "green"
 topics: ["mcp", "architecture"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["mcp", "python", "sdk", "open-source"]
 featured: false
 related: ["guide:building-an-mcp-server", "agent:mcp-server-engineer", "tool:mcp-inspector", "guide:deploy-remote-mcp-server", "skill:mcp-server-scaffolder"]

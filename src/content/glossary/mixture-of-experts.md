@@ -4,7 +4,7 @@ description: "MoE is a model architecture where a router activates only a few ex
 summary: "MoE splits a transformer's feed-forward layers into expert subnetworks and lets a router send each token through only a few, so a model quotes two numbers: total parameters, which must fit in memory, and active parameters, which set per-token cost. An MoE you cannot fit is capability you do not have."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["moe", "architecture", "inference", "models"]
 related: ["glossary:inference", "glossary:quantization", "guide:self-host-vs-api-llm", "glossary:reasoning-model"]
 faq:

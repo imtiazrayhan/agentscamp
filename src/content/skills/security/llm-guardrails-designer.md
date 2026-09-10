@@ -7,7 +7,7 @@ version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
 topics: ["ai-safety-security"]
-audience: ["developers"]
+audience: ["developers", "security"]
 related: ["guide:defending-prompt-injection", "tool:nemo-guardrails", "tool:llm-guard", "skill:prompt-pii-redactor", "agent:prompt-injection-auditor"]
 featured: false
 summary: "Designs the input/output guardrail layer for an LLM app: it decides what to validate (injection, PII, secrets, policy, schema, leakage), places each check as an input or output rail, implements it with a library like NeMo Guardrails or LLM Guard, and fails closed — defense in depth around the model, not a clever system prompt."

@@ -11,7 +11,7 @@ license: "Apache-2.0"
 os: ["Web"]
 color: "cyan"
 topics: ["ai-agents-systems", "mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers", "devops"]
 tags: ["serverless", "gpu", "sandbox", "inference", "python"]
 featured: false
 alternativeTo: ["e2b", "daytona", "vercel-sandbox"]

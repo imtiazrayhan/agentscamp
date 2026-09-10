@@ -7,7 +7,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["devops-infra"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["gateway", "caching", "cost-control", "observability", "comparison"]
 featured: false
 summary: "An LLM gateway centralizes caching, fallback, cost tracking, and budgets across your model traffic. Portkey is a gateway-plus-LLMOps platform; LiteLLM is an open-source library or self-hosted proxy; Helicone is observability-first with a one-line proxy, but is now in maintenance mode after its 2026 Mintlify acquisition. Pick by what you'll operate and the control plane you need."

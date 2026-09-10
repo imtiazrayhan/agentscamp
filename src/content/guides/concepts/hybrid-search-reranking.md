@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["rag-retrieval"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["rag", "hybrid-search", "reranking", "retrieval", "bm25"]
 featured: false
 summary: "Production retrieval rarely relies on vector search alone. The winning pattern is hybrid search — fuse dense (semantic) and sparse (keyword/BM25) results, usually with Reciprocal Rank Fusion — to get high recall, then rerank the wide candidate set with a cross-encoder down to the precise few passages you put in the prompt."

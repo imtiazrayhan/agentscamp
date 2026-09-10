@@ -22,7 +22,7 @@ faq:
   - q: "Should I just use my voice platform's bundled TTS?"
     a: "Often yes to start: LiveKit Inference, Vapi, and similar platforms make providers swappable, and the bundle simplifies billing and latency budgets. Keep the abstraction thin so you can A/B the specialists — voice quality is a taste decision your users feel, and it's worth one bake-off."
 related: ["tool:elevenlabs", "tool:cartesia", "tool:deepgram", "guide:best-stt-apis-2026", "guide:realtime-voice-apis", "guide:build-a-voice-agent"]
-audience: ["marketers"]
+audience: ["ai-engineers", "marketers"]
 ---
 
 TTS quietly became two markets. **Produced audio** — narration, content, dubbing — where expressiveness and voice variety win. **Live conversation** — voice agents — where the only metric users feel is *how fast the voice starts*. The 2026 shortlist sorts cleanly along that line.

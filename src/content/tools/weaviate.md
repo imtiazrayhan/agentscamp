@@ -13,7 +13,7 @@ os: ["Linux", "macOS", "Windows"]
 alternativeTo: ["qdrant", "milvus", "pinecone"]
 color: "green"
 topics: ["rag-retrieval", "data-ml"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["vector-database", "rag", "hybrid-search", "open-source"]
 featured: false
 summary: "Weaviate is an open-source, Go-based vector database with first-class hybrid search, a module system that can vectorize your data for you, and GraphQL/REST/gRPC APIs. Batteries-included is the pitch: it can embed, store, filter, and hybrid-search out of the box, self-hosted or as a managed cloud."

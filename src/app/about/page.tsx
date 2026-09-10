@@ -40,7 +40,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow={<Eyebrow className="text-primary">About AgentsCamp</Eyebrow>}
         title="Useful AI resources, with the work shown"
-        lead="AgentsCamp is a curated, public library for people working with AI — developers building with coding agents first, and increasingly the founders, marketers, designers, and analysts putting the same tools to work. We publish practical guides and a collection of agents, skills, commands, tools, and definitions that readers can inspect before adopting."
+        lead="AgentsCamp is a curated, public library for people working with AI — developers building with coding agents first, then AI, DevOps, and security engineers, and increasingly the founders, marketers, designers, and analysts putting the same tools to work. We publish practical guides and a collection of agents, skills, commands, tools, and definitions that readers can inspect before adopting."
       />
 
       <div className={proseClasses}>

@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["mcp", "architecture"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["mcp", "deployment", "scaling", "architecture", "oauth"]
 featured: true
 summary: "A local stdio MCP server serves one user; to serve many, deploy it as a remote HTTP service over the Streamable HTTP transport. Design it stateless so any replica can handle any request, put OAuth 2.1 in front, and scale it horizontally behind a load balancer like any API — the protocol is easy; auth and state are where remote servers are won or lost."

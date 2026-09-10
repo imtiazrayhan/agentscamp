@@ -4,7 +4,7 @@ description: "Prompt caching reuses the computed state of a repeated prompt pref
 summary: "Prompt caching stores the model's computed internal state for the stable beginning of your prompt, so a repeat request pays full price only for what is new, at a steep discount and a much lower time-to-first-token. It is prefix-based and byte-exact, so the work is ordering: stable content first, the user turn last."
 date: 2026-06-11
 topics: ["llm-app-dev"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["prompt-caching", "cost", "latency", "llm"]
 related: ["skill:prompt-cache-optimizer", "guide:llm-cost-latency-engineering", "glossary:kv-cache", "glossary:context-window", "glossary:system-prompt"]
 faq:

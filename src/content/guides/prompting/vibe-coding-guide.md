@@ -24,7 +24,7 @@ faq:
   - q: "Did vibe coding replace programming jobs?"
     a: "It replaced the blank page and the boilerplate. What it amplified is everything around the code: specifying intent precisely, designing verification, reviewing consequential changes, owning architecture. Surveys through 2025–26 show AI writing roughly half of new code — under engineers whose job tilted toward direction and judgment."
 related: ["glossary:vibe-coding", "guide:what-is-claude-code", "guide:spec-driven-development", "guide:best-ai-app-builders-2026", "guide:prompt-patterns", "guide:claude-code-settings-permissions", "guide:testing-ai-generated-code"]
-audience: ["founders"]
+audience: ["ai-engineers", "founders"]
 ---
 
 [Vibe coding](/glossary/vibe-coding) got named as a joke and stuck as a fact: by 2026, describing intent and accepting AI-written code is how an enormous share of software begins. The discourse split into cheerleading and doom; both miss the useful question. Vibe coding isn't good or bad — **it's a risk posture**, and the craft is matching it to stakes.

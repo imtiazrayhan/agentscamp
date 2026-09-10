@@ -10,7 +10,7 @@ license: "Dify Open Source License (Apache-2.0 + conditions)"
 os: ["Web"]
 color: "blue"
 topics: ["ai-agents-systems", "llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["workflows", "low-code", "agents", "rag", "platform"]
 featured: false
 alternativeTo: ["n8n", "langchain"]

@@ -7,7 +7,7 @@ updated: 2026-08-25
 depth: cornerstone
 color: "green"
 topics: ["workflow-prompting", "architecture"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 related: ["agent:workflow-orchestrator", "guide:building-multi-step-workflows", "agent:agent-architect", "guide:parallel-claude-code-worktrees"]
 featured: false
 summary: "Multi-agent orchestration buys one thing: a clean, purpose-built context per agent. Four shapes arrange the hand-offs — fan-out for independent slices, pipeline for ordered stages with narrowing between them, orchestrator-worker for dynamic decomposition, and verify/critic for adversarial checking in a fresh window. Default to a single thread; promote only when a pattern clearly fits."

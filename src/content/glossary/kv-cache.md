@@ -4,7 +4,7 @@ description: "The KV cache stores each token's attention keys and values so an L
 summary: "The KV cache stores the attention keys and values for every token already processed, so each new token attends over cached history instead of reprocessing the whole context. It trades quadratic waste for memory that grows with context length and batch size, which is why long-context serving exhausts VRAM before compute."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["kv-cache", "inference", "attention", "performance"]
 related: ["glossary:inference", "glossary:prompt-caching", "glossary:context-window", "tool:vllm", "glossary:speculative-decoding"]
 faq:

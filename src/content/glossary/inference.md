@@ -4,7 +4,7 @@ description: "Inference is running a trained model to produce output — for LLM
 summary: "Inference is running a trained model rather than training it, which for an LLM means generating output tokens one at a time. It has two phases with different physics: prefill processes the prompt in parallel and sets time-to-first-token, then decode generates autoregressively, bound by memory bandwidth. Its cost and latency shape every product decision."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["inference", "serving", "latency", "llm"]
 related: ["guide:llm-cost-latency-engineering", "glossary:kv-cache", "glossary:quantization", "glossary:speculative-decoding", "tool:vllm", "guide:self-host-vs-api-llm"]
 faq:

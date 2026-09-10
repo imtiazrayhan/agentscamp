@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["devops-infra", "review-qa"]
-audience: ["developers"]
+audience: ["developers", "devops"]
 tags: ["web-performance", "performance-budget", "core-web-vitals", "frontend", "ci"]
 featured: true
 summary: "A web performance budget converts 'keep the site fast' into measurable release constraints. Set user-facing experience targets and resource ceilings by page class, measure both controlled lab runs and real-user field data, assign component budgets for JavaScript, images, fonts, and third parties, then fail or review changes that consume more than the agreed allowance."

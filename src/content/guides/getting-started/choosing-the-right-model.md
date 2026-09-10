@@ -21,7 +21,7 @@ faq:
     a: "When the problem is hard in a way that shows up as reasoning failures on Sonnet, or when the blast radius of a subtle mistake is large: designing a public API, auditing auth, planning a database migration, untangling concurrency bugs that span services. If you can't articulate why a task needs Opus, it belongs on Sonnet."
   - q: "Can skills and slash commands set a model too?"
     a: "Yes, but with different semantics: a skill or slash command's model field is a per-turn override that reverts to the session model on your next prompt, while a subagent's model pins the tier for every invocation of that agent."
-audience: ["developers", "founders", "analysts"]
+audience: ["developers", "ai-engineers", "founders", "analysts"]
 related: ["guide:llm-api-pricing-2026", "guide:llm-context-windows-compared", "guide:writing-a-custom-agent", "agent:llm-cost-optimizer", "glossary:model-routing", "glossary:context-window"]
 ---
 

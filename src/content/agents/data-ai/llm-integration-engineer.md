@@ -6,7 +6,7 @@ color: "blue"
 tools: "Read, Grep, Glob, Edit, Write, Bash"
 date: 2026-06-03
 topics: ["llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 related: ["skill:llm-output-schema-generator", "skill:provider-fallback-wrapper", "guide:structured-output-2026", "guide:calling-any-model-gateways", "agent:prompt-engineer", "agent:ml-engineer"]
 featured: false
 summary: "Owns the app-side plumbing that turns a model call into a dependable feature: typed/validated output, streaming, multi-provider fallback and retries, caching, and cost/latency budgets — the engineering between 'it works in a notebook' and 'it holds up in production', distinct from prompt craft and model training."

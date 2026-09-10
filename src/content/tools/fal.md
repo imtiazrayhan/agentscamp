@@ -24,7 +24,7 @@ faq:
     a: "fal is pay-per-use with no monthly subscription. For its Model APIs you are billed per output (for example, per generated image), with each model's price and billing unit shown on its gallery page and at fal.ai/pricing. It uses prepaid credits, and you are not charged for queue wait time or server errors. Hourly GPU and dedicated-cluster options exist for heavier or enterprise use. Confirm current rates on the official pricing page."
   - q: "How does fal compare to Replicate?"
     a: "Both run open models behind a single API with pay-per-use billing, but their centers of gravity differ. fal concentrates on generative media — diffusion-based image, video, audio, and 3D — and leans on its proprietary Inference Engine for speed, whereas Replicate spans a broader catalog including open LLMs and ships Cog for packaging custom models. Pick fal when fast media generation is the priority."
-audience: ["designers"]
+audience: ["ai-engineers", "designers"]
 ---
 
 fal is a **generative-media platform and inference cloud** for running diffusion and other media models fast. Instead of provisioning GPUs and building inference servers, you call a model — image generators like FLUX, video models, audio and text-to-speech, or 3D — through a single API and get results back. The platform hosts 1,000+ ready-to-run models in its gallery, with client SDKs for JavaScript, Python, and Swift.

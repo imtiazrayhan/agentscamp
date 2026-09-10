@@ -23,7 +23,7 @@ faq:
     a: "Yes. Docling is fully open source under the MIT license and free to self-host. It was started by IBM Research's AI for knowledge team in Zurich and is now hosted as an LF AI & Data Foundation project. There is no paid tier — you install and run it yourself, on your own hardware."
   - q: "How do I use Docling?"
     a: "Install the `docling` package from PyPI (`pip install docling`) and convert a file with the `DocumentConverter` API, exporting the result to Markdown or JSON. Because it runs locally your documents stay in your environment, and it offers ready-made integrations with LangChain, LlamaIndex, Crew AI, and Haystack, plus an optional MCP server."
-audience: ["analysts"]
+audience: ["ai-engineers", "analysts"]
 ---
 
 Docling is an **open-source Python library for document parsing**, built to get real-world documents ready for generative AI. It converts PDFs, DOCX, PPTX, XLSX, HTML, EPUB, and images into a unified `DoclingDocument` and exports clean **Markdown** or **lossless JSON**, making messy source files usable as context for RAG and other LLM pipelines.

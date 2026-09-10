@@ -4,7 +4,7 @@ description: "DPO aligns a model to preferences directly from chosen-vs-rejected
 summary: "DPO aligns a model from preference pairs, chosen versus rejected, through a supervised-style loss with no reward model and no reinforcement-learning loop. It works because the RLHF objective has a closed-form solution optimizable directly on preference data. Simplicity trades some ceiling, so DPO owns open-weights post-training rather than the frontier."
 date: 2026-06-12
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["dpo", "alignment", "training", "post-training"]
 related: ["glossary:rlhf", "glossary:fine-tuning", "glossary:constitutional-ai", "guide:finetune-dataset-prep"]
 faq:

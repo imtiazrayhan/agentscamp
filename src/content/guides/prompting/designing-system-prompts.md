@@ -4,7 +4,7 @@ description: "How to write system prompts that hold up in production: what belon
 author: "Imtiaz Rayhan"
 color: "green"
 topics: ["workflow-prompting"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["system-prompt", "prompting", "agents", "llm-app-dev", "output-format"]
 related: ["guide:prompt-patterns", "guide:prompting-techniques-2026", "guide:context-engineering", "guide:structured-output-2026", "guide:effective-tool-use"]
 featured: false

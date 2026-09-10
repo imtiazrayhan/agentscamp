@@ -4,7 +4,7 @@ description: "Function calling lets an LLM request structured invocations of you
 summary: "Function calling lets a model act: you declare functions with JSON-schema parameters, the model responds with a structured call with typed arguments, and your app executes it and feeds the result back. The model never runs anything itself, so quality lives in the schemas. The production rule is to return errors as observations the model can retry on."
 date: 2026-06-11
 topics: ["ai-agents-systems"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["function-calling", "tool-use", "agents", "api"]
 related: ["guide:production-tool-calling", "glossary:ai-agent", "glossary:structured-output", "glossary:model-context-protocol", "skill:tool-definition-generator", "agent:agent-tool-integration-engineer"]
 faq:

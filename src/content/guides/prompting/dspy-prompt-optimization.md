@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["workflow-prompting"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["dspy", "prompt-optimization", "few-shot", "evals", "framework"]
 featured: false
 summary: "DSPy reframes prompting as programming: declare the task as a typed signature, compose modules, define a metric, and let an optimizer (BootstrapFewShot, MIPROv2, GEPA) search instructions and few-shot demonstrations against your data. The payoff is a prompt tuned to your metric that survives a model swap — you recompile instead of rewriting by hand."

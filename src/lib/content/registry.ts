@@ -172,6 +172,8 @@ export interface AudienceDef {
   label: string;
   /** ≤160 chars — doubles as the meta description and the card copy. */
   description: string;
+  /** Overrides the derived "AI for <label>" page title where that reads badly. */
+  title?: string;
   startHere: string[];
 }
 
@@ -187,6 +189,46 @@ export const audiences: AudienceDef[] = [
       "guide:claude-md-best-practices",
       "guide:what-are-claude-skills",
       "guide:claude-code-hooks",
+    ],
+  },
+  {
+    slug: "ai-engineers",
+    label: "AI engineers",
+    description:
+      "Building with LLMs, not just coding with them: RAG, evals, agents, inference, and the SDKs, skills, and subagents that get AI features to production.",
+    title: "AI engineering",
+    startHere: [
+      "guide:ai-engineer-roadmap-2026",
+      "guide:getting-started-with-agents",
+      "guide:how-rag-works",
+      "guide:write-llm-evals",
+      "guide:deploying-llms-to-production",
+    ],
+  },
+  {
+    slug: "devops",
+    label: "DevOps & platform engineers",
+    description:
+      "Claude Code in CI, sandboxed agents, SLOs and incident response — the infrastructure agents, skills, and commands that keep AI-assisted delivery boring.",
+    startHere: [
+      "guide:claude-code-ci-github-actions",
+      "guide:sandboxing-ai-generated-code",
+      "guide:slo-error-budget-guide",
+      "skill:github-actions-optimizer",
+      "agent:sre-engineer",
+    ],
+  },
+  {
+    slug: "security",
+    label: "Security & AI safety",
+    description:
+      "Prompt injection, the agentic OWASP top 10, red-teaming, and the auditing skills and agents that make AI-assisted and AI-powered work safe to ship.",
+    startHere: [
+      "guide:defending-prompt-injection",
+      "guide:owasp-agentic-top-10",
+      "guide:sandboxing-ai-generated-code",
+      "guide:red-teaming-llm-applications",
+      "guide:data-privacy-for-llm-apps",
     ],
   },
   {

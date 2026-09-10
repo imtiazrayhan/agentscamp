@@ -10,7 +10,7 @@ category: "voice"
 os: ["Web"]
 color: "orange"
 topics: ["mlops-ai-infra", "multimodal-ai"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["voice-agents", "telephony", "platform", "api"]
 featured: false
 alternativeTo: ["livekit", "pipecat", "cartesia"]

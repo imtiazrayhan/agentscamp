@@ -9,7 +9,7 @@ category: "platform"
 sameAs: ["https://openrouter.ai/docs"]
 color: "orange"
 topics: ["llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["gateway", "multi-provider", "router", "api"]
 featured: false
 alternativeTo: ["litellm"]

@@ -10,7 +10,7 @@ category: "platform"
 sameAs: ["https://docs.voyageai.com"]
 color: "purple"
 topics: ["rag-retrieval", "data-ml"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["embeddings", "reranking", "rag", "api"]
 featured: false
 alternativeTo: ["cohere-rerank"]

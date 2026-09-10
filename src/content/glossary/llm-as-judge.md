@@ -4,7 +4,7 @@ description: "LLM-as-judge uses a language model to score AI outputs against a r
 summary: "LLM-as-judge uses a model with a rubric to score another model's output, for quality too subjective for string matching and too voluminous for human review. It turns a fuzzy question into a number you can gate releases on. The non-negotiable step is calibration against human labels: an uncalibrated judge is a random number generator with confidence."
 date: 2026-06-11
 topics: ["llm-evals"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["evals", "llm-as-judge", "evaluation", "quality"]
 related: ["guide:llm-as-judge-guide", "guide:write-llm-evals", "skill:llm-as-judge-scorer", "guide:best-llm-eval-tools-2026", "glossary:hallucination", "agent:llm-evaluation-engineer"]
 faq:

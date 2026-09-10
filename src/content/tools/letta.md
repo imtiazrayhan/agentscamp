@@ -12,7 +12,7 @@ license: "Apache-2.0"
 os: ["Web", "macOS", "Windows", "Linux"]
 color: "pink"
 topics: ["ai-agents-systems"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["memory", "agents", "memgpt", "stateful", "coding-agents"]
 featured: false
 alternativeTo: ["mem0", "zep"]

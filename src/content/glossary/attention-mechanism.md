@@ -4,7 +4,7 @@ description: "Attention lets a model weigh how relevant every other token is to 
 summary: "Attention computes, for each token, how relevant every other token is, then rebuilds that token as a weighted blend of the others, so meaning comes from context rather than position. Each token emits a query, exposes a key, and offers a value, and real models run several heads in parallel. The cost is quadratic in sequence length."
 date: 2026-06-17
 topics: ["data-ml"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["attention", "self-attention", "transformer", "deep-learning", "neural-networks"]
 related: ["glossary:context-window", "glossary:kv-cache", "glossary:llm-token", "glossary:tokenization", "glossary:embedding"]
 faq:

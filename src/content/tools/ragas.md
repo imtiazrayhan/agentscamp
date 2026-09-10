@@ -13,7 +13,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/vibrantlabsai/ragas"]
 color: "green"
 topics: ["llm-evals", "rag-retrieval"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["evals", "rag", "retrieval", "open-source", "python"]
 featured: false
 alternativeTo: ["deepeval"]

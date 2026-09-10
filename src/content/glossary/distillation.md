@@ -4,7 +4,7 @@ description: "Distillation trains a smaller model to imitate a larger one — us
 summary: "Distillation trains a small student model on a large teacher model's outputs, transferring most of its capability on one task at a fraction of the cost. Run the frontier model over representative inputs, curate the best results, then fine-tune the small model on them. Breadth does not transfer: the student learns your task, not general intelligence."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["distillation", "training", "small-models", "mlops"]
 related: ["glossary:fine-tuning", "guide:finetune-vs-rag-vs-prompt", "glossary:synthetic-data", "glossary:quantization", "guide:finetune-dataset-prep"]
 faq:

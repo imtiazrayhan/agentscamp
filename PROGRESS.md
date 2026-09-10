@@ -1,3 +1,56 @@
+# Engineering sub-paths: /for/ai-engineers, /for/devops, /for/security (2026-09-10) — SHIPPED
+
+One commit, no new content. `/for/developers` carried **547 of 748 items (73%)**
+because `scripts/backfill-audience.ts` had tagged every untagged file
+`["developers"]` — one indexable audience hub standing in for four distinct
+reader personas. Split into three sub-paths that already had the material.
+
+## What went where
+- **`ai-engineers` carves** — those items leave `developers`, because a general
+  Claude Code user is not the reader for `chunking-strategy-optimizer` or
+  `voyage-ai`: `guides/{concepts,evaluation,mlops,vision,voice}`,
+  `agents/data-ai`, `skills/data`, every `sdk`/`platform`/`evaluation`/`voice`/
+  `observability` tool page, and 29 deep-ML glossary terms. Overlaid (kept on
+  both paths): `guides/{advanced,mcp,prompting,api}`, coding-agent tools, and
+  28 general AI terms a working developer still gets asked about.
+- **`devops` and `security` overlay only** — cross-cutting concerns a working
+  developer still wants on their own path, so nothing was taken from them.
+
+Counts after: developers 386 · ai-engineers 258 · devops 52 · security 32.
+Founders 71 · marketers 72 · designers 52 · analysts 54 unchanged.
+
+## Notes
+- **Adding a role is a registry edit.** Appending an `AudienceDef` to
+  `audiences` propagated to nav, footer, `/for`, the homepage strip, sitemap,
+  llms.txt, the command palette, static params and the zod enum with no other
+  code. The mirror generator and the npm CLI have no audience concept and
+  needed nothing; the search index deliberately does not index `audience`, so
+  it is byte-identical.
+- **`devops` is the first role whose `startHere` is not all guides.** Only two
+  guides live in `observability`/`performance`, so it opens
+  `skill:github-actions-optimizer` and `agent:sre-engineer`. The type always
+  allowed it; nothing had used it.
+- **`AudienceDef` gained an optional `title`.** The derived `AI for ${label}`
+  read as "AI for AI engineers"; that page is now titled "AI engineering".
+  Every other role still derives its title.
+- `scripts/tag-audience.ts` applied the 320 frontmatter edits — same textual
+  single-line rewrite as `backfill-audience.ts` so gray-matter never
+  re-serialises, `--dry-run` first, idempotent (a second run changes nothing).
+  A carve never strips a tag an overlay in the same run just granted, which is
+  what keeps `sandboxing-ai-generated-code` on all four engineering paths.
+- Copy that hardcoded "five" fixed in `RoleStrip`, `/for`, `/how-to-use`,
+  `/about`. The homepage filler card stays — 8 roles + filler is a clean 3x3.
+- `npm run validate` 0 errors (25 pre-existing freshness warnings), build green,
+  lint clean, all eight `/for/*` routes prerender.
+
+## Next
+Sales & revenue is the next full role wave (~30 items against the Phase-3 ship
+gate) — the first of the five remaining Anthropic knowledge-work plugin roles
+we do not cover. Deferred: engineering leaders (best byline fit, needs ~20 new
+items), QA (overlaps developers), customer support, finance.
+
+---
+
 # Full UI redesign against the Refactoring UI principles (2026-09-10) — SHIPPED
 
 Twelve commits. The colour rebuild four commits earlier had done the hard part

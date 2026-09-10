@@ -4,7 +4,7 @@ description: "FlashAttention is an IO-aware, exact attention algorithm that runs
 summary: "FlashAttention computes exactly the same attention as the standard formulation but far faster and with much less memory, by tiling the work to stay in fast on-chip GPU SRAM and never materializing the full attention matrix. The bottleneck it removes is memory traffic, not math. Because the result is exact rather than approximate, it costs no model quality."
 date: 2026-06-17
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["flash-attention", "gpu", "attention", "inference", "kernels"]
 related: ["glossary:context-window", "glossary:inference", "glossary:kv-cache", "glossary:speculative-decoding", "glossary:batch-inference"]
 faq:

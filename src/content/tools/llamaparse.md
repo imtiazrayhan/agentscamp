@@ -26,7 +26,7 @@ faq:
     a: "It is freemium. New accounts get a monthly free credit allowance (enough for thousands of pages), after which parsing is metered in credits. Cost per page depends on the mode you pick — fast text extraction is cheapest, while agentic multimodal parsing costs more per page but handles the hardest layouts."
   - q: "How is LlamaParse different from plain PDF text extraction?"
     a: "Naive extractors flatten complex layouts — they scramble multi-column text and turn tables into unaligned token soup. LlamaParse is layout-aware and offers multimodal modes that screenshot each page and reconstruct its structure with a vision model, so embedded tables, charts, and figures survive as usable Markdown instead of garbage."
-audience: ["analysts"]
+audience: ["ai-engineers", "analysts"]
 ---
 
 LlamaParse is the document-ingestion service from **LlamaIndex**, built to solve the unglamorous but decisive first step of RAG: getting clean, structured text out of messy source files. It is a **hosted API** (part of LlamaCloud) — you send a PDF, PowerPoint, Word doc, spreadsheet, or image and get back **LLM-ready Markdown** that preserves headings, reading order, and (crucially) tables.

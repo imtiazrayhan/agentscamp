@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["ai-agents-systems"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["agents", "memory", "context", "concepts"]
 featured: false
 summary: "Agent memory comes in two layers: short-term working memory (the context window for the current task) and long-term memory (facts persisted across sessions and retrieved when relevant). The skill is deciding what's worth remembering, storing it as distilled facts rather than raw transcripts, and retrieving only what the current turn needs — so the agent feels continuous without bloating context."

@@ -7,7 +7,7 @@ freshness: "tier1"
 updated: 2026-09-01
 color: "green"
 topics: ["mcp", "architecture"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["mcp", "statistics", "ecosystem", "data"]
 featured: false
 summary: "MCP's growth since the December 2025 Linux Foundation donation, measured against live registries: SDK downloads roughly 5x'd in nine months (npm SDK 38.5M→204M monthly; PyPI's mcp adds 319M), registries list 11,000–23,000 servers depending on curation bar, and the AAIF has grown from 49 founding-day members to 247. Every count dated and sourced."

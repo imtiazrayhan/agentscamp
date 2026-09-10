@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["rag-retrieval", "ai-agents-systems"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["agentic-rag", "rag", "agents", "retrieval"]
 featured: false
 summary: "Classic RAG is a fixed pipeline: retrieve once, generate once. Agentic RAG hands retrieval to an agent as a tool: it decomposes the question, searches iteratively, evaluates what came back, reformulates, routes across sources, and stops when it has enough. The upgrade pays on complex questions over messy corpora — at the price of latency, cost, and a new need for evals."

@@ -4,7 +4,7 @@ description: "Test-time compute is spending more computation at inference — lo
 summary: "Test-time compute is a scaling axis separate from training: the weights stay fixed and the model is given more room to work when it answers, through longer reasoning, sampling many candidates, or search. It is tunable per query, so you buy accuracy on demand, but returns diminish and every token costs."
 date: 2026-06-17
 topics: ["data-ml"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["inference", "scaling", "reasoning", "compute"]
 related: ["glossary:reasoning-model", "glossary:chain-of-thought", "glossary:extended-thinking"]
 faq:

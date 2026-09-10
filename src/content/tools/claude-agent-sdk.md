@@ -8,7 +8,7 @@ pricing: "free"
 category: "sdk"
 color: "purple"
 topics: ["workflow-prompting"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 related: ["guide:claude-agent-sdk-tutorial", "tool:claude-code", "agent:agent-tool-integration-engineer", "guide:effective-tool-use", "glossary:agent-harness"]
 tags: ["sdk", "anthropic"]
 alternativeTo: ["openai-agents-sdk", "langgraph", "crewai", "autogen", "pydantic-ai"]

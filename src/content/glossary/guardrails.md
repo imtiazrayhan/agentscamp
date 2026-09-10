@@ -4,7 +4,7 @@ description: "Guardrails are programmatic checks around an LLM — validating in
 summary: "Guardrails are deterministic code wrapped around a model that validates what goes in and what comes out, which is the difference between asking for a rule and enforcing it. Everything inside the model is probabilistic, and rails sit outside that uncertainty. They layer at three chokepoints: input, output, and tool execution."
 date: 2026-06-11
 topics: ["ai-safety-security"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers", "security"]
 tags: ["guardrails", "safety", "validation", "llm"]
 related: ["skill:llm-guardrails-designer", "guide:defending-prompt-injection", "tool:nemo-guardrails", "tool:llm-guard", "guide:claude-code-hooks", "glossary:structured-output"]
 faq:

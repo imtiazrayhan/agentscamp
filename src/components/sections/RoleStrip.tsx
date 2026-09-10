@@ -21,7 +21,7 @@ export function RoleStrip({ roles }: { roles: RoleEntry[] }) {
   return (
     <Section
       title="Start where you are"
-      description="Five curated paths through the hub — each opens with what to read first."
+      description="Eight curated paths through the hub — each opens with what to read first."
       browseHref="/for"
       browseLabel="All roles"
     >

@@ -8,7 +8,7 @@ category: "voice"
 os: ["Web"]
 color: "blue"
 topics: ["mlops-ai-infra", "multimodal-ai"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["stt", "speech-to-text", "voice", "api", "transcription"]
 featured: false
 alternativeTo: ["deepgram", "whisper", "cartesia"]

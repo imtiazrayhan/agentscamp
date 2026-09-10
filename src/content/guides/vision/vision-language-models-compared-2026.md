@@ -27,7 +27,7 @@ faq:
   - q: "Which VLM handles video best?"
     a: "Google's Gemini line is the most video-native of the proprietary options and handles long clips with its large context window. OpenAI's recent unified model also takes video end-to-end. Among open models, Qwen3-VL explicitly targets video and longer temporal reasoning. For any of them, video understanding works by sampling frames plus temporal context, so cost and latency scale with how many frames you feed — design the sampling rate deliberately rather than dumping every frame."
 related: ["tool:qwen3-vl", "guide:vlm-ocr-documents", "guide:multimodal-rag-images-pdfs", "guide:choosing-the-right-model", "skill:multimodal-document-extractor", "guide:add-image-understanding-to-your-app"]
-audience: ["designers"]
+audience: ["ai-engineers", "designers"]
 ---
 
 "Which VLM should I use?" has no single answer in 2026, and anyone who gives you one is selling something. The honest answer is **it flips per job**. The frontier models — Anthropic's Claude vision, OpenAI's GPT vision, Google's Gemini — are all excellent generalists, and the best open models (Qwen3-VL, Llama 4 vision, Pixtral, InternVL) have closed most of the gap. So the decision isn't "who's smartest"; it's "who wins on the axis I actually care about." This guide compares them on the axes that decide real choices, with a clear *use X when* verdict for each.

@@ -4,7 +4,7 @@ description: "LLM tracing records every step of a model-driven request — promp
 summary: "An LLM trace records a whole request as nested spans: every prompt and response, each tool call with its arguments and result, retrieval steps, token counts, cost, and latency. Agent bugs hide mid-run, so without a trace you see only that the answer was wrong; with one you see which step went wrong and why."
 date: 2026-06-12
 topics: ["llm-evals"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers", "devops"]
 tags: ["tracing", "observability", "debugging", "llmops"]
 related: ["guide:llm-observability-production", "guide:langfuse-vs-langsmith", "agent:llm-observability-engineer", "guide:debugging-ai-agents", "guide:write-llm-evals", "guide:llm-cost-latency-engineering"]
 faq:

@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra", "llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["voice", "speech-to-text", "text-to-speech", "real-time", "agents"]
 featured: false
 summary: "A voice agent is a real-time loop: speech-to-text transcribes the user, an LLM picks the reply, and text-to-speech speaks it back. What separates a usable agent from a frustrating one is the latency budget — every stage adds delay, and the round trip must feel conversational. This guide covers the pipeline, the providers per stage, turn-taking, and engineering the latency."

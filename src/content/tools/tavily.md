@@ -12,7 +12,7 @@ license: "MIT"
 os: ["Web"]
 color: "blue"
 topics: ["ai-agents-systems"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["search", "web-data", "api", "agents", "mcp"]
 featured: false
 alternativeTo: ["exa", "firecrawl"]

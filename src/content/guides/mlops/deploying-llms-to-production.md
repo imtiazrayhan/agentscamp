@@ -4,7 +4,7 @@ description: "Take an LLM feature from prototype to production: API vs self-host
 author: "Imtiaz Rayhan"
 color: "green"
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["production", "reliability", "serving", "observability", "rollout"]
 related:
   - "guide:self-host-vs-api-llm"

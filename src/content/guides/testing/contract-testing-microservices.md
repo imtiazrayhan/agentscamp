@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "green"
 topics: ["review-qa", "architecture"]
-audience: ["developers"]
+audience: ["developers", "devops"]
 tags: ["contract-testing", "microservices", "api", "testing", "ci"]
 featured: true
 summary: "Contract tests verify that a provider still satisfies the requests and response fields its consumers depend on. Consumers publish minimal interaction contracts; providers replay them against the real implementation in CI; a compatibility gate prevents either side from deploying an incompatible version. They complement schema, unit, integration, and end-to-end tests."

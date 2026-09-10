@@ -12,7 +12,7 @@ sameAs: ["https://github.com/unslothai/unsloth", "https://unsloth.ai/docs"]
 os: ["Linux", "Windows"]
 color: "pink"
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["fine-tuning", "lora", "qlora", "llm", "open-source"]
 featured: false
 related: ["agent:finetuning-engineer", "skill:qlora-finetune-runner", "guide:finetune-dataset-prep", "tool:vllm"]

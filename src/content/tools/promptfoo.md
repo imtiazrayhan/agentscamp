@@ -12,7 +12,7 @@ license: "MIT"
 sameAs: ["https://github.com/promptfoo/promptfoo", "https://www.promptfoo.dev/docs"]
 color: "red"
 topics: ["llm-evals", "ai-safety-security"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["evals", "testing", "red-teaming", "security", "open-source", "cli"]
 featured: false
 alternativeTo: ["deepeval"]

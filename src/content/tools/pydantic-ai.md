@@ -10,7 +10,7 @@ license: "MIT"
 os: ["macOS", "Windows", "Linux"]
 color: "red"
 topics: ["ai-agents-systems"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["agents", "framework", "python", "type-safety", "pydantic"]
 featured: false
 alternativeTo: ["langchain", "crewai", "openai-agents-sdk"]

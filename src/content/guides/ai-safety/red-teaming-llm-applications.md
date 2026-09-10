@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "red"
 topics: ["ai-safety-security", "llm-evals"]
-audience: ["developers"]
+audience: ["developers", "security"]
 tags: ["red-teaming", "prompt-injection", "jailbreaks", "agent-security", "testing"]
 featured: true
 summary: "LLM red-teaming is structured adversarial testing of the complete application, not only the base model. A useful campaign maps assets, trust boundaries, tools, data, and high-impact actions; tests direct and indirect attacks; scores exploitability and impact; and converts confirmed failures into regression cases. The objective is to limit blast radius when a model is manipulated."

@@ -11,7 +11,7 @@ license: "MIT"
 sameAs: ["https://github.com/567-labs/instructor"]
 color: "purple"
 topics: ["llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["structured-output", "pydantic", "validation", "open-source", "python"]
 featured: false
 alternativeTo: ["baml", "vercel-ai-sdk"]

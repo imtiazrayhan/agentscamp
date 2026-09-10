@@ -11,7 +11,7 @@ license: "Apache-2.0"
 sameAs: ["https://github.com/confident-ai/deepeval", "https://docs.confident-ai.com"]
 color: "purple"
 topics: ["llm-evals"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["evals", "testing", "rag", "open-source", "python"]
 featured: false
 alternativeTo: ["ragas", "promptfoo"]

@@ -13,7 +13,7 @@ os: ["Linux", "macOS", "Windows"]
 alternativeTo: ["qdrant", "weaviate", "pinecone"]
 color: "cyan"
 topics: ["rag-retrieval", "data-ml"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["vector-database", "rag", "scale", "open-source"]
 featured: false
 summary: "Milvus is an open-source vector database engineered for scale — a distributed architecture that separates storage and compute and a broad set of index types (HNSW, IVF, DiskANN, GPU) for billion-vector search. Milvus Lite runs embedded for prototyping; Zilliz Cloud is the managed option."

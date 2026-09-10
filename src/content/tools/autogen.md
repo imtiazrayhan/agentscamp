@@ -11,7 +11,7 @@ license: "MIT"
 sameAs: ["https://github.com/microsoft/autogen", "https://github.com/ag2ai/ag2"]
 color: "cyan"
 topics: ["ai-agents-systems"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["agents", "framework", "multi-agent", "open-source", "microsoft"]
 featured: false
 alternativeTo: ["langgraph", "crewai", "openai-agents-sdk"]

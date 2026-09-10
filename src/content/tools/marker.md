@@ -11,7 +11,7 @@ license: "GPL-3.0"
 sameAs: ["https://github.com/datalab-to/marker", "https://documentation.datalab.to"]
 color: "orange"
 topics: ["rag-retrieval", "data-ml"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["pdf", "markdown", "ocr", "document-conversion", "rag"]
 featured: false
 alternativeTo: ["docling", "unstructured", "llamaparse", "reducto"]

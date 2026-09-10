@@ -11,7 +11,7 @@ license: "MIT"
 sameAs: ["https://github.com/BerriAI/litellm", "https://docs.litellm.ai"]
 color: "blue"
 topics: ["llm-app-dev", "devops-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["gateway", "proxy", "multi-provider", "open-source", "python"]
 featured: false
 alternativeTo: ["openrouter", "vercel-ai-sdk", "portkey"]

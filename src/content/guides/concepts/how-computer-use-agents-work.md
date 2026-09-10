@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["ai-agents-systems"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["computer-use", "browser-agents", "automation", "agents"]
 featured: false
 summary: "A computer-use agent runs a perception-action loop: capture the screen (pixels, or DOM/accessibility data), have a vision-language model decide one primitive action — click, type, scroll — execute it, and observe the new state. Reliability hinges on grounding and recovery. It's the automation of last resort: slower and costlier than any API, irreplaceable where no API exists."

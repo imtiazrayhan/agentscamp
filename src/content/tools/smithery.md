@@ -10,7 +10,7 @@ sameAs: ["https://smithery.ai/docs", "https://github.com/smithery-ai"]
 os: ["Web"]
 color: "purple"
 topics: ["mcp", "architecture"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["mcp", "registry", "hosting", "platform"]
 featured: false
 related: ["guide:govern-mcp-servers", "guide:building-an-mcp-server", "agent:mcp-server-engineer", "command:add-mcp-server", "tool:mcp-inspector"]

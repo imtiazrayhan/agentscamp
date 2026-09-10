@@ -29,7 +29,7 @@ faq:
   - q: "How should a team govern skills?"
     a: "Three practices: skills enter the repo only via PR review (a SKILL.md diff is a behavior diff); plugins are pinned to versions so an upstream change can't silently alter behavior; and org-wide distribution goes through enterprise managed settings rather than each engineer's personal folder."
 related: ["guide:what-are-claude-skills", "guide:skill-md-reference", "guide:how-to-install-claude-skills", "skill:claude-settings-auditor", "guide:packaging-and-sharing-skills", "guide:claude-code-settings-permissions"]
-audience: ["marketers"]
+audience: ["security", "marketers"]
 ---
 
 Skills are the most benign-looking thing you can install — a Markdown file — and that's exactly why they deserve a real threat model. A SKILL.md is instructions an agent will follow and code it may execute, running with your session's permissions, triggered automatically when a task matches. That's an **instruction supply chain**, and it deserves the same posture as a package registry. Here's what can actually go wrong, and the five-minute review that covers it.

@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["structured-output", "json-mode", "function-calling", "concepts"]
 featured: true
 summary: "For data (not prose) from an LLM, don't prompt-and-parse. Use native structured outputs (a JSON Schema the model is constrained to follow) for data you consume, and function/tool calling when the model should invoke an action. JSON mode only guarantees valid JSON syntax, not your shape. Libraries like Instructor, BAML, and the AI SDK wrap these with validation and auto-retry."

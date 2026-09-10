@@ -4,7 +4,7 @@ description: "Quantization shrinks a model by storing weights in lower precision
 summary: "Quantization maps a model's weights onto a coarser numeric grid, 8-bit or 4-bit instead of 16-bit floats, shrinking it about fourfold at 4-bit and cutting the memory bandwidth per token that bottlenecks inference. Eight-bit is near-lossless and good 4-bit usually costs only a few percent on benchmarks."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["quantization", "inference", "local-llm", "optimization"]
 related: ["glossary:inference", "glossary:lora", "guide:self-host-vs-api-llm", "tool:ollama", "tool:vllm", "skill:embedding-index-tuner"]
 faq:

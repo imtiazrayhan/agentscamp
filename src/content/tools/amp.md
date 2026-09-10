@@ -10,7 +10,7 @@ pricing: "freemium"
 category: "agent"
 color: "purple"
 topics: ["workflow-prompting"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["agent", "sourcegraph"]
 related: ["tool:cody", "tool:claude-code", "tool:devin"]
 featured: false

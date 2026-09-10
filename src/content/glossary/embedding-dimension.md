@@ -4,7 +4,7 @@ description: "Embedding dimension is the length of an embedding vector — how m
 summary: "Embedding dimension is how many numbers each vector holds, 384, 768, 1536, 3072, trading how much meaning a vector carries against what it costs to store and search. The economics are multiplicative: dimension times corpus size times bytes per float is your index's memory. Dimension is fixed per index, so changing it means re-embedding everything."
 date: 2026-06-12
 topics: ["rag-retrieval"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["embeddings", "dimensions", "vectors", "rag"]
 related: ["glossary:embedding", "glossary:vector-database", "glossary:cosine-similarity", "guide:choosing-embeddings-2026", "glossary:quantization"]
 faq:

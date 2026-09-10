@@ -22,7 +22,7 @@ faq:
   - q: "How long does this roadmap take?"
     a: "Building seriously a few hours daily: stages one through four in two to three months gets you shipping credible agent features; stage five (reliability) is where professionals separate and deserves equal time on a real project. The honest accelerator is shipping each stage against a real use case rather than completing tutorials."
 related: ["guide:what-is-claude-code", "guide:how-rag-works", "guide:agent-frameworks-2026", "guide:write-llm-evals", "guide:context-engineering", "glossary:agent-engineering", "guide:production-tool-calling", "guide:best-claude-code-agents-skills"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 ---
 
 "AI engineer" stabilized into a real role with a real skill stack — and most roadmaps for it are bloated with 2022 detours (training models, leaderboard lore) or vendor tours. This one is opinionated: **six stages, in dependency order**, each with the failure that teaches it and the resources here that cover it.

@@ -4,7 +4,7 @@ description: "Model routing sends each request to the cheapest model that can ha
 summary: "Model routing picks a destination per request from a signal: task type, input length, a difficulty classifier, or a cascade that escalates when a cheap first attempt fails a check. It pays because most production traffic is easy. Route too aggressively and you silently downgrade the cases that needed the strong model."
 date: 2026-06-17
 topics: ["llm-app-dev"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers"]
 tags: ["routing", "cost-optimization", "cascade", "model-selection", "latency"]
 related: ["guide:production-model-routing", "glossary:inference", "glossary:small-language-model", "skill:model-router-designer", "skill:provider-fallback-wrapper", "guide:calling-any-model-gateways"]
 faq:

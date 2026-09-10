@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-04
 color: "green"
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["self-hosting", "llm", "inference", "cost", "mlops"]
 featured: false
 summary: "Hosted APIs win on time-to-market, frontier quality, and spiky or low volume — you pay per token and run nothing. Self-hosting pays off when you can keep GPUs busy at high steady volume, when privacy/compliance or offline operation is mandatory, or when an open model is good enough. The crossover is about GPU utilization and total cost of ownership, not the per-token sticker price."

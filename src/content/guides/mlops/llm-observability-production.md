@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-08-04
 color: "orange"
 topics: ["llm-evals", "mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["llm-observability", "tracing", "online-evals", "monitoring", "llmops"]
 featured: true
 summary: "LLM observability connects each user outcome to the retrieval, model, tool, and parser steps that produced it. Production coverage needs end-to-end traces, stable version metadata, cost and latency per span, sampled online quality evaluation, privacy-aware payload capture, and alerts tied to user impact. The loop closes when real failures become reproducible offline eval cases."

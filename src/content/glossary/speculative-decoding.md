@@ -4,7 +4,7 @@ description: "Speculative decoding speeds up generation: a small draft model pro
 summary: "Speculative decoding attacks the sequential bottleneck of generation: a small draft model proposes a run of tokens and the large model verifies them all in one parallel pass, accepting the correct prefix and fixing the first mistake. The output distribution is provably identical to the large model alone."
 date: 2026-06-11
 topics: ["mlops-ai-infra"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["speculative-decoding", "inference", "performance", "serving"]
 related: ["glossary:inference", "glossary:kv-cache", "glossary:quantization", "tool:vllm", "agent:llm-inference-engineer"]
 faq:

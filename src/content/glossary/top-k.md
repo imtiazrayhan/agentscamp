@@ -4,7 +4,7 @@ description: "Top-k sampling restricts an LLM's next-token choice to the k most 
 summary: "Top-k keeps only the k highest-probability next tokens, renormalizes, and samples from that set, so improbable tokens are excluded before any randomness applies. A small k is safer and more deterministic; a large one admits variety. A fixed k ignores how confident the model is, which is why many prefer top-p."
 date: 2026-06-17
 topics: ["workflow-prompting"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["sampling", "decoding", "top-k", "generation"]
 related: ["glossary:temperature", "glossary:top-p", "glossary:token-streaming"]
 faq:

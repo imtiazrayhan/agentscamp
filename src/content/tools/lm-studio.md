@@ -24,7 +24,7 @@ faq:
     a: "Both run open-weight models locally; they differ in interface. LM Studio is a GUI app for browsing models, chatting, and tuning parameters visually, while Ollama is CLI-first and suited to scripting and automation. Pick by preference — both expose a local OpenAI-compatible API."
   - q: "How do I use LM Studio with my app?"
     a: "Download a model in the GUI, open Local Server, and click Start. Then point any OpenAI client at http://localhost:1234/v1 — existing OpenAI-format code works unchanged against the local model."
-audience: ["analysts"]
+audience: ["ai-engineers", "analysts"]
 ---
 
 LM Studio is a desktop application for running open-weight LLMs locally through a **graphical interface**. Where a CLI tool asks you to know the model name and flags, LM Studio lets you browse and download models, chat with them in a built-in UI, and tune parameters with sliders — then, when you're ready to build, flip on a **local server** that exposes an OpenAI-compatible API. It's the most approachable on-ramp to local models for people who'd rather not live in the terminal.

@@ -13,7 +13,7 @@ os: ["Linux", "macOS", "Windows"]
 alternativeTo: ["pinecone", "qdrant"]
 color: "blue"
 topics: ["data-ml", "rag-retrieval"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["vector-database", "postgres", "rag", "open-source"]
 featured: false
 summary: "pgvector turns Postgres into a vector database: it adds a vector column type, distance operators, and HNSW/IVFFlat indexes so you can run similarity search next to your relational data, with full SQL filtering and transactions — no separate vector store to operate."

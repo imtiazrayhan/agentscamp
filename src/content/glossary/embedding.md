@@ -11,7 +11,7 @@ faq:
     a: "A list of numbers (often 256–3,072 of them) that captures what a text means. An embedding model maps 'How do I reset my password?' and 'I forgot my login credentials' to nearby points, even though they share almost no words — which is what lets search work by meaning instead of keywords."
   - q: "Do embeddings from different models mix?"
     a: "No. Each embedding model defines its own vector space — vectors from one model are meaningless next to vectors from another, and even versions of the same model differ. Switching embedding models means re-embedding the whole corpus, which is why the choice deserves real evaluation up front."
-audience: ["analysts"]
+audience: ["ai-engineers", "analysts"]
 ---
 
 **An embedding is a numeric vector representing a piece of text (or image, or code) in a high-dimensional space arranged by meaning — texts that say similar things get vectors that sit close together.**

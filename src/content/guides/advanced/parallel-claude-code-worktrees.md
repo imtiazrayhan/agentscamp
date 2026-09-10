@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-11
 color: "green"
 topics: ["workflow-prompting"]
-audience: ["developers"]
+audience: ["developers", "ai-engineers", "devops"]
 tags: ["claude-code", "git", "worktrees", "parallel", "workflow"]
 featured: false
 summary: "Claude Code has worktrees built in: claude --worktree <name> starts the session in an isolated checkout under .claude/worktrees/, so two or three agents can work the same repo simultaneously without touching each other's files. Copy gitignored files like .env in via .worktreeinclude, isolate subagents the same way, and let Claude clean up unchanged worktrees automatically when you exit."

@@ -5,7 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-03
 color: "green"
 topics: ["llm-app-dev"]
-audience: ["developers"]
+audience: ["ai-engineers"]
 tags: ["gateway", "multi-provider", "litellm", "openrouter", "comparison"]
 featured: false
 summary: "Don't hardwire one provider's SDK. A unified layer lets you switch models with a config change and adds fallback and cost control. Pick by form: the Vercel AI SDK for TypeScript app code, LiteLLM as a library or self-hosted proxy when you want to own the gateway, and OpenRouter as a hosted router with zero infrastructure. They compose — an SDK in the app, a gateway behind it."
