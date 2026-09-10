@@ -20,6 +20,7 @@ faq:
   - q: "How do I install Claude Code?"
     a: "Install it globally with npm install -g @anthropic-ai/claude-code, then run claude from your project root. A CLAUDE.md file lets you encode build commands, architecture notes, and conventions so each session starts with shared context."
 audience: ["developers"]
+related: ["guide:what-is-claude-code", "guide:installing-claude-code", "guide:claude-code-tips", "tool:claude-agent-sdk", "glossary:agent-harness", "glossary:subagent"]
 ---
 
 Claude Code is Anthropic's official agentic coding tool. It runs in your terminal, integrates with IDEs like VS Code and JetBrains, and is also available on the web. Rather than acting as an autocomplete, it operates as an agent: it reads your codebase, plans changes, edits files, runs commands, and iterates against test or build feedback.

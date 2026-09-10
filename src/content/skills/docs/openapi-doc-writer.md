@@ -6,6 +6,7 @@ version: "1.0.0"
 color: "cyan"
 topics: ["architecture"]
 audience: ["developers"]
+related: ["agent:api-architect", "skill:graphql-schema-designer", "skill:pagination-designer", "guide:idempotency-keys-api-design", "command:update-readme"]
 summary: "A skill that authors and maintains spec-compliant OpenAPI 3.1 documents for an HTTP API: it inventories routes from the code, models reusable component schemas with $ref, writes each operation with operationId, parameters, request bodies, and error responses, adds validating examples, and lints the spec before finishing."
 ---
 

@@ -6,6 +6,7 @@ model: "haiku"
 color: "orange"
 topics: ["workflow-prompting"]
 audience: ["developers"]
+related: ["skill:conventional-commits", "skill:pr-description", "command:resolve-conflict", "guide:claude-code-ci-github-actions", "guide:ai-code-review-workflow", "glossary:subagent"]
 summary: "A subagent that handles Git and GitHub operations deliberately — conflict resolution, interactive rebases, history surgery, reflog recovery, PRs via the gh CLI, and Actions workflow fixes — always creating backup refs and stating the undo. Reach for it when untangling a messy merge, rewriting history safely, or recovering lost commits and branches."
 ---
 

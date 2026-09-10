@@ -19,6 +19,7 @@ faq:
   - q: "How do I install GitHub Copilot?"
     a: "For the terminal, install the Copilot CLI with npm install -g @github/copilot (or brew install copilot-cli) and start an interactive session with copilot. In the editor, Copilot supports VS Code, Visual Studio, JetBrains IDEs, Neovim, and the GitHub web UI."
 audience: ["developers"]
+related: ["tool:cursor", "tool:claude-code", "tool:windsurf", "guide:ai-code-review-workflow", "glossary:vibe-coding"]
 ---
 
 GitHub Copilot is an AI coding assistant that integrates directly into the editor to suggest code as you type. Built on large language models trained on public code, it offers inline completions, a chat interface, and an autonomous agent mode that can plan and apply multi-file changes. It is aimed at individual developers, teams, and enterprises who want AI assistance without leaving their existing tooling.

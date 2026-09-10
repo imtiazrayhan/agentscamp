@@ -9,6 +9,7 @@ repo: "https://github.com/Aider-AI/aider"
 color: "purple"
 topics: ["coding-languages"]
 audience: ["developers"]
+related: ["guide:aider-vs-claude-code", "tool:claude-code", "tool:cline", "guide:testing-ai-generated-code", "glossary:vibe-coding"]
 tags: ["cli", "open-source"]
 alternativeTo: ["codex-cli", "claude-code", "gemini-cli", "cline", "continue"]
 summary: "Aider is an open-source (Apache-2.0) command-line tool for AI pair programming. Run it inside a Git repository, describe a change in plain language, and it edits files on disk and commits each step with a descriptive message. Model-agnostic: bring your own API key for Claude, GPT, and others; a repo map gives the model context in large codebases."

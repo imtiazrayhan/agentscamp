@@ -6,6 +6,7 @@ model: "opus"
 color: "pink"
 topics: ["workflow-prompting"]
 audience: ["developers"]
+related: ["guide:writing-a-custom-agent", "guide:choosing-the-right-model", "command:plan-feature", "skill:human-in-the-loop-gate", "agent:context-engineer", "glossary:subagent"]
 featured: true
 summary: "A subagent that breaks a large, ambiguous request into an ordered plan of small, verifiable steps — building the dependency graph, assigning each step to a specialist subagent, gating progress on verification, and reconciling results. Reach for it when planning a multi-file refactor, orchestrating a migration, or decomposing an epic into shippable steps."
 ---

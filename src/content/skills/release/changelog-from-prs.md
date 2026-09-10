@@ -6,6 +6,7 @@ version: "1.0.0"
 color: "cyan"
 topics: ["workflow-prompting"]
 audience: ["developers"]
+related: ["skill:conventional-commits", "skill:rollback-plan-writer", "agent:git-github-expert", "command:create-pr", "guide:best-claude-skills-for-release-management"]
 summary: "A skill that drafts a release changelog from the pull requests merged since the last tag: it collects PRs via the GitHub CLI, classifies each into Keep a Changelog sections using labels and title prefixes, rewrites titles into reader-facing notes with PR numbers, leads with breaking changes, and suggests the version bump — publishing nothing."
 ---
 

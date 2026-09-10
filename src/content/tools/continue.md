@@ -12,6 +12,7 @@ repo: "https://github.com/continuedev/continue"
 color: "blue"
 topics: ["coding-languages"]
 audience: ["developers"]
+related: ["tool:cursor", "tool:cline", "tool:github-copilot", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "guide:best-local-llm-tools-2026"]
 tags: ["vscode", "jetbrains", "open-source"]
 alternativeTo: ["cody", "tabnine", "github-copilot", "cline"]
 summary: "Continue was acquired by Cursor, and as of September 2026 continue.dev is a farewell page rather than a product site. The Apache-2.0 codebase remains public: an extension for VS Code and JetBrains that supplied chat, tab autocomplete, inline edits, and agent modes while you brought your own model, hosted or local via Ollama."

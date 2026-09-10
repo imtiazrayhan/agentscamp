@@ -20,6 +20,7 @@ faq:
   - q: "Cursor vs VS Code?"
     a: "Cursor is a separate application built on the VS Code codebase, not an extension — it runs alongside (not inside) a standard VS Code install. Existing extensions, themes, keybindings, and settings carry over, so the learning curve is mostly the AI features layered on top."
 audience: ["developers"]
+related: ["tool:claude-code", "tool:windsurf", "tool:continue", "guide:vibe-coding-guide", "guide:testing-ai-generated-code", "glossary:vibe-coding"]
 ---
 
 Cursor is a code editor forked from VS Code that puts AI assistance at the center of the editing experience. Because it is built on the VS Code codebase, existing extensions, themes, keybindings, and settings carry over, so the learning curve is mostly about the AI features layered on top.
