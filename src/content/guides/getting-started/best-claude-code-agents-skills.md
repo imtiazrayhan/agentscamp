@@ -22,6 +22,7 @@ faq:
   - q: "Can I customize them?"
     a: "That's the point — they're plain Markdown with a frontmatter header and a system prompt. Edit the description to tune when Claude delegates, restrict tools, pin a model tier, and rewrite the body for house rules. The library entries are starting points engineered to be edited."
 related: ["guide:getting-started-with-agents", "guide:writing-a-custom-agent", "guide:skills-vs-agents-vs-commands", "agent:code-reviewer", "agent:debugger", "skill:conventional-commits", "command:create-pr", "guide:claude-code-tips"]
+audience: ["developers"]
 ---
 
 The fastest upgrade to a stock Claude Code setup isn't a prompt trick — it's installing a few well-built extensions. Everything below comes from this site's library, is a plain Markdown file, and installs by copy-paste. Here's the starter kit we'd give a new teammate, by workflow.

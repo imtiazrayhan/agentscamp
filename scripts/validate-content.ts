@@ -18,11 +18,13 @@ import {
   contentTypes,
   topics,
   topicBySlug,
+  audiences,
 } from "../src/lib/content/registry";
 import { graphFor, siteGraph, collectionGraph } from "../src/lib/seo/jsonld";
 import {
   categoryCollection,
   topicCollection,
+  audienceCollection,
   toolAlternativesCollection,
 } from "../src/lib/seo/collections";
 import { unified } from "unified";
@@ -237,11 +239,27 @@ function run() {
     }
   }
 
+  // Role paths: every startHere ref must exist, be unique, and carry the tag
+  // (otherwise the opening sequence and the tagged set disagree).
+  const byId = new Map(all.map((item) => [contentId(item), item]));
+  for (const a of audiences) {
+    const seen = new Set<string>();
+    for (const ref of a.startHere) {
+      const target = byId.get(ref);
+      if (!target) err(`for/${a.slug}: unknown startHere ref ${ref}`);
+      else if (!target.audience.includes(a.slug))
+        err(`for/${a.slug}: startHere ${ref} is not tagged audience: ${a.slug}`);
+      if (seen.has(ref)) err(`for/${a.slug}: repeats startHere ref ${ref}`);
+      seen.add(ref);
+    }
+  }
+
   // --- rendered Markdown link integrity ---
   const validRoutes = new Set<string>([
     "/",
     "/how-to-use",
     "/topics",
+    "/for",
     "/search",
     "/llms.txt",
     "/llms-full.txt",
@@ -261,6 +279,9 @@ function run() {
   }
   for (const topic of topics) {
     if (topicCollection(topic.slug)) validRoutes.add(`/topics/${topic.slug}`);
+  }
+  for (const a of audiences) {
+    if (audienceCollection(a.slug)) validRoutes.add(`/for/${a.slug}`);
   }
   for (const tool of groups.tool as ToolItem[]) {
     validRoutes.add(`/tools/pricing/${tool.pricing}`);
@@ -365,6 +386,10 @@ function run() {
       const col = topicCollection(t.slug);
       if (!col) warn(`topic "${t.slug}" has no content yet (no landing page)`);
     }
+  }
+  for (const a of audiences) {
+    if (!audienceCollection(a.slug))
+      warn(`audience "${a.slug}" has no content yet (no /for/${a.slug} page)`);
   }
 
   console.log(`  total: ${all.length}`);

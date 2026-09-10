@@ -24,6 +24,7 @@ faq:
   - q: "Do they support the same models?"
     a: "Both offer frontier-model choice (Anthropic, OpenAI, and others). Cursor additionally fields its in-house Composer models, tuned for fast agentic coding; Devin Local is Cognition's own agent layer over the model selection. Exact lineups shift — check current docs before committing a team."
 related: ["tool:cursor", "tool:windsurf", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "guide:claude-code-vs-cursor", "tool:devin", "guide:github-copilot-vs-cursor"]
+audience: ["developers"]
 ---
 
 This matchup changed shape in 2026. For two years Cursor and Windsurf were near-twins — AI-first VS Code forks racing on completion quality and agent features. Then they forked philosophically: **Cursor** rebuilt itself agent-first *while staying an editor*; **Windsurf became Devin Desktop** under Cognition, putting an Agent Command Center in front of the IDE. Today you're not choosing between similar editors — you're choosing between an editor with agents and an agent console with an editor.

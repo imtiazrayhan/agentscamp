@@ -1,5 +1,16 @@
-import { getContentByType, getByTopic } from "@/lib/content";
-import { contentTypes, topicBySlug } from "@/lib/content/registry";
+import {
+  getAllContent,
+  getContentByType,
+  getByTopic,
+  getByAudience,
+} from "@/lib/content";
+import {
+  contentTypes,
+  contentTypeList,
+  topicBySlug,
+  audienceBySlug,
+  type ContentTypeDef,
+} from "@/lib/content/registry";
 import { titleCaseLabel } from "@/lib/format";
 import type { Crumb } from "./jsonld";
 import type {
@@ -24,6 +35,12 @@ const CATEGORY_OVERRIDES: Record<string, string> = {
 
 const TOPIC_OVERRIDES: Record<string, string> = {
   // `${topicSlug}`: "custom intro description"
+};
+
+// Tool categories outside the developer stack (role-path expansion) get their
+// own intro; the default template below assumes an AI-coding stack.
+const TOOL_CATEGORY_OVERRIDES: Record<string, (n: number) => string> = {
+  // category: (count) => "custom intro description"
 };
 
 export interface Collection {
@@ -80,6 +97,59 @@ export function topicCollection(slug: string): Collection | null {
   };
 }
 
+// --- audience paths (/for/<role>) ---
+
+export interface AudienceGroup {
+  def: ContentTypeDef;
+  items: ContentItem[];
+}
+
+/**
+ * A role path is curated, not exhaustive: the registry's `startHere` sequence
+ * opens the page, then every other item tagged `audience: [role]` follows,
+ * grouped by type in contentTypeList order (featured first, then newest).
+ * `items` is the flattened page order so JSON-LD and the visible page agree.
+ */
+export function audienceCollection(
+  slug: string,
+): (Collection & { startHere: ContentItem[]; groups: AudienceGroup[] }) | null {
+  const def = audienceBySlug.get(slug);
+  if (!def) return null;
+  const byId = new Map(getAllContent().map((i) => [`${i.type}:${i.slug}`, i]));
+  const startHere = def.startHere
+    .map((id) => byId.get(id))
+    .filter((i): i is ContentItem => Boolean(i));
+  const opened = new Set(startHere.map((i) => i.href));
+  const rest = getByAudience(slug).filter((i) => !opened.has(i.href));
+  const groups: AudienceGroup[] = contentTypeList
+    .map((typeDef) => ({
+      def: typeDef,
+      items: rest
+        .filter((i) => i.type === typeDef.id)
+        .sort(
+          (a, b) =>
+            Number(b.featured) - Number(a.featured) ||
+            (b.date ?? "").localeCompare(a.date ?? "") ||
+            a.title.localeCompare(b.title),
+        ),
+    }))
+    .filter((g) => g.items.length > 0);
+  const items = [...startHere, ...groups.flatMap((g) => g.items)];
+  if (!items.length) return null;
+  return {
+    title: `AI for ${def.label}`,
+    description: def.description,
+    items,
+    startHere,
+    groups,
+    crumbs: [
+      { label: "Home", href: "/" },
+      { label: "Start here", href: "/for" },
+      { label: def.label },
+    ],
+  };
+}
+
 // --- tool facets ---
 
 const toolsCrumb: Crumb = { label: "Tools", href: "/tools" };
@@ -90,7 +160,9 @@ export function toolCategoryCollection(category: string): Collection | null {
   const label = titleCaseLabel(category);
   return {
     title: `${label} Tools`,
-    description: `${items.length} curated ${label.toLowerCase()} tools for AI coding — compare what each one does, how it's priced, and where it fits in an AI-assisted development stack.`,
+    description:
+      TOOL_CATEGORY_OVERRIDES[category]?.(items.length) ??
+      `${items.length} curated ${label.toLowerCase()} tools for AI coding — compare what each one does, how it's priced, and where it fits in an AI-assisted development stack.`,
     items,
     crumbs: [{ label: "Home", href: "/" }, toolsCrumb, { label }],
     noindex: items.length < MIN_INDEXABLE,

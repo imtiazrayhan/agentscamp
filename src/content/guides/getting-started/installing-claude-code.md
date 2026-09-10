@@ -31,6 +31,7 @@ faq:
     a: "The native install updates itself in the background; force one immediately with claude update. On the npm path, run npm install -g @anthropic-ai/claude-code@latest — avoid npm update -g, which can silently leave you on a stale version."
   - q: "Why can't Claude Code see my files?"
     a: "You launched it from the wrong directory. Claude Code treats the directory it starts in as the project — quit, cd into the actual repo root, and start again. It only sees the tree below its working directory."
+audience: ["developers"]
 ---
 
 Claude Code is a command-line agent: you run it from a terminal inside a project, and it reads files, runs commands, and edits code in place while you watch. Getting it installed and authenticated takes a couple of minutes, but the difference between a frustrating first session and a productive one is mostly about *where* you start it and *what context* you give it on the way in. This guide covers the install, the first run, and the one file — `CLAUDE.md` — that makes every later session better.

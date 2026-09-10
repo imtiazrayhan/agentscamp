@@ -22,6 +22,7 @@ faq:
     a: "Install it with npm install -g @openai/codex — it also ships via Homebrew or a one-line shell installer — then run it in a repo, e.g. codex 'Add a retry with backoff to the API client and a test for it'. The same binary works on macOS, Linux, and Windows (natively or via WSL)."
   - q: "Codex CLI vs Aider?"
     a: "One concrete difference: unlike Aider, Codex does not auto-commit each change. It edits the working tree and leaves staging and committing to you, so review the diff before committing."
+audience: ["developers"]
 ---
 
 Codex CLI is OpenAI's open-source coding agent that runs entirely in your terminal. You point it at a repository, describe a task in plain language, and it reads files, edits them on disk, and runs shell commands to get the job done — all inside an OS-level sandbox that defaults to no network access and write permissions scoped to your workspace. It is written in Rust and ships as a binary installable via npm, Homebrew, or a one-line shell installer.

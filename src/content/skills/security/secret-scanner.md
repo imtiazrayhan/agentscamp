@@ -10,6 +10,7 @@ topics: ["review-qa"]
 featured: true
 related: ["agent:security-auditor", "skill:dependency-audit"]
 summary: "A skill that scans a repo, diff, or history for committed secrets — provider key prefixes, private keys, .env files, connection strings, and high-entropy values — then triages real leaks from fixtures and placeholders. For each true positive it prescribes rotating the credential first, then scrubbing history, since a pushed secret is compromised."
+audience: ["developers"]
 ---
 
 Find credentials that should never be in version control — provider API keys, OAuth tokens, private keys, database URLs, and `.env` files — across a whole repo or a single diff. The skill greps for known key shapes, flags high-entropy strings, then triages each hit: real leak vs. example/test fixture vs. placeholder. For confirmed leaks it tells you the only safe remediation — **rotate the credential and scrub history** — because a secret that reached `git` is already compromised the moment it was pushed.

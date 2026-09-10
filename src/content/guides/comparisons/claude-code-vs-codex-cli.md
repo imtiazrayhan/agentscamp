@@ -22,6 +22,7 @@ faq:
   - q: "Can I switch models in each?"
     a: "Codex CLI switches among OpenAI models (/model, reasoning-effort control). Claude Code switches among Anthropic tiers (/model, opusplan). Neither is multi-provider — that's OpenCode's lane. In practice the choice tracks whose models you already bet on."
 related: ["tool:claude-code", "tool:codex-cli", "guide:claude-code-vs-opencode", "guide:claude-code-vs-cursor", "guide:ai-coding-agents-cli-2026", "guide:claude-code-settings-permissions"]
+audience: ["developers"]
 ---
 
 The two first-party terminal agents — Anthropic's **Claude Code** and OpenAI's **Codex CLI** — look interchangeable from a distance: run a command in a repo, describe a task, review the diff. Up close they encode different philosophies about what makes an agent trustworthy: Claude Code bets on *programmable governance*, Codex CLI bets on *contained execution*.

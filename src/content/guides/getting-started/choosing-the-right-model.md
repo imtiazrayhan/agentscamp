@@ -21,6 +21,7 @@ faq:
     a: "When the problem is hard in a way that shows up as reasoning failures on Sonnet, or when the blast radius of a subtle mistake is large: designing a public API, auditing auth, planning a database migration, untangling concurrency bugs that span services. If you can't articulate why a task needs Opus, it belongs on Sonnet."
   - q: "Can skills and slash commands set a model too?"
     a: "Yes, but with different semantics: a skill or slash command's model field is a per-turn override that reverts to the session model on your next prompt, while a subagent's model pins the tier for every invocation of that agent."
+audience: ["developers"]
 ---
 
 A Claude Code subagent can set a model in its frontmatter — and that one line decides how fast, how cheap, and how smart the agent is. (It's optional: omit it and the agent inherits the main session's model.) Pick wrong and you either burn budget on trivial work or starve a hard problem of reasoning. This guide gives you a clear decision rubric and concrete per-agent examples so you can match each task to the right tier.

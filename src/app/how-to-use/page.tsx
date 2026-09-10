@@ -18,7 +18,7 @@ const faq = [
   },
   {
     q: "Where should I start on AgentsCamp?",
-    a: "Start with the guides — What Is Claude Code? and Installing Claude Code if you're new, or browse by topic. Use the tools directory to compare products and the glossary to decode terms. Agents, skills, and commands are ready when you want something to install.",
+    a: "Pick your role on the Start here page — developer, founder, marketer, designer, or analyst — for a short reading order followed by the tools, skills, and agents curated for that work. Developers new to coding agents begin with What Is Claude Code? and Installing Claude Code. Use the tools directory to compare products and the glossary to decode terms.",
   },
   {
     q: "What is the difference between an agent, a skill, and a slash command?",
@@ -77,7 +77,9 @@ export default function Page() {
             Getting Started with Claude Code Agents
           </Link>
           . From there, <Link href="/guides">browse all guides</Link> or explore{" "}
-          <Link href="/topics">by topic</Link>.
+          <Link href="/topics">by topic</Link>. Not a developer? The{" "}
+          <Link href="/for">Start here</Link> page has a curated path for
+          founders, marketers, designers, and analysts.
         </p>
 
         <h2>Tools</h2>

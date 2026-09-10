@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { audiences } from "./registry";
 
 /**
  * Zod schemas are the SINGLE SOURCE OF TRUTH for all content frontmatter.
@@ -61,8 +62,12 @@ export const osEnum = z.enum([
 // defaulted so all existing files keep validating; new SEO/AEO/GEO keys are
 // ignored by Claude Code when an artifact is installed (and stripped from the
 // copy-paste artifact by buildArtifact), so files stay installable.
+const audienceSlugs = audiences.map((a) => a.slug) as [string, ...string[]];
+
 const siteFields = {
   topics: z.array(z.string()).default([]),
+  // Role paths (/for/<role>); an unknown slug fails at load time.
+  audience: z.array(z.enum(audienceSlugs)).default([]),
   tags: z.array(z.string()).default([]),
   featured: z.boolean().default(false),
   // Typed IDs avoid cross-type slug collisions (for example a guide and a

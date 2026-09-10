@@ -82,6 +82,11 @@ export function getByTopic(topic: string): ContentItem[] {
   return getAllContent().filter((i) => i.topics.includes(topic));
 }
 
+/** All content curated onto a role path (/for/<role>) via frontmatter `audience`. */
+export function getByAudience(role: string): ContentItem[] {
+  return getAllContent().filter((i) => i.audience.includes(role));
+}
+
 /** Most recent ISO date across a set of items (for landing-page lastmod). */
 export function latestDate(items: ContentItem[]): string | undefined {
   let max: string | undefined;
@@ -184,4 +189,4 @@ export function buildSearchRecords(): SearchRecord[] {
   }));
 }
 
-export { contentTypes, contentTypeList, topics } from "./registry";
+export { contentTypes, contentTypeList, topics, audiences } from "./registry";

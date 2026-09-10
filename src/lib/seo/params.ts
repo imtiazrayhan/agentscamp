@@ -2,7 +2,9 @@ import {
   getContentByType,
   getCategories,
   getByTopic,
+  getByAudience,
   topics,
+  audiences,
 } from "@/lib/content";
 import type { ContentTypeId, ToolItem } from "@/lib/content/types";
 
@@ -40,6 +42,13 @@ export function topicParams() {
   return topics
     .filter((t) => getByTopic(t.slug).length > 0)
     .map((t) => ({ slug: t.slug }));
+}
+
+/** {role} for the audience paths (/for/<role>); a role renders only once it has items. */
+export function audienceParams() {
+  return audiences
+    .filter((a) => getByAudience(a.slug).length > 0)
+    .map((a) => ({ role: a.slug }));
 }
 
 /** {category} for the tool category facet. */

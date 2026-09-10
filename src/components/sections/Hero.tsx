@@ -12,10 +12,6 @@ export interface BootLine {
 }
 
 const CMD = "ls ~/agentscamp";
-const START_HERE = {
-  href: "/guides/getting-started/what-is-claude-code",
-  label: "What is Claude Code?",
-};
 
 export function Hero({ lines, total }: { lines: BootLine[]; total: number }) {
   const [typed, setTyped] = useState("");
@@ -94,8 +90,8 @@ export function Hero({ lines, total }: { lines: BootLine[]; total: number }) {
           </h1>
           <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
             In-depth guides, a curated AI tool directory, and a plain-language
-            glossary for building with AI coding agents — plus ready-to-use
-            agents, skills, and commands for Claude Code.
+            glossary for anyone working with AI — plus ready-to-use agents,
+            skills, and commands if you build with Claude Code.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -105,10 +101,10 @@ export function Hero({ lines, total }: { lines: BootLine[]; total: number }) {
               </Link>
             </Button>
             <Link
-              href={START_HERE.href}
+              href="/for"
               className="font-mono text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              start here: {START_HERE.label} →
+              start here: pick your role →
             </Link>
           </div>
 

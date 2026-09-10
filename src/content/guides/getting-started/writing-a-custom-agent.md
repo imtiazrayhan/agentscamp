@@ -31,6 +31,7 @@ faq:
     a: "Usually well under 100 lines. Long prompts dilute attention, accumulate contradictions, cost context on every invocation, and rot unmaintained. If yours is growing past a couple hundred lines, the agent is doing too many jobs — split it before you patch it."
   - q: "What tools should a review agent have?"
     a: "Read-only: Read, Grep, Glob, and Bash for running checks. With no write tools it physically cannot edit your code, and the restriction sharpens behavior — an agent that can only read naturally produces analysis instead of drifting into making changes."
+audience: ["developers"]
 ---
 
 A custom subagent is one of the highest-leverage things you can add to a Claude Code setup. Done well, it gives Claude a specialist it can hand work to — a code reviewer, a debugger, a migration assistant — that runs in its own context window with its own focused instructions and a restricted toolset. Done poorly, it becomes a 1,500-line prompt that nobody trusts and Claude never delegates to.

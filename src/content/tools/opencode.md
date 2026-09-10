@@ -26,6 +26,7 @@ faq:
     a: "Both are terminal-native coding agents. Claude Code is Anthropic's first-party agent, tuned tightly around Claude models with deep MCP/subagent/hooks extensibility. OpenCode is community-driven and provider-agnostic: any model (including local), LSP-powered code intelligence, and an open MIT codebase. Control and model freedom vs. first-party polish and tuning."
   - q: "Which repo is the real OpenCode?"
     a: "github.com/anomalyco/opencode. It moved from sst/opencode in January 2026 when SST rebranded to Anomaly. Note that github.com/opencode-ai/opencode is a different, archived project — confusingly, though, the npm package for the real OpenCode is named opencode-ai."
+audience: ["developers"]
 ---
 
 OpenCode is the open-source AI coding agent — by mid-2026 the most-starred in the category (~173k GitHub stars) and the first project to seriously disrupt the Cursor/Claude Code duopoly. It runs as a polished terminal TUI: point it at a repository, describe the task, and it plans, edits files, and runs commands, with the model of your choice behind it. It's built by Anomaly (the company formerly known as SST) and licensed MIT.

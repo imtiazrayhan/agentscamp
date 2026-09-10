@@ -25,6 +25,7 @@ faq:
     a: "Scope. The project CLAUDE.md is committed and shared — team conventions, commands, gotchas. CLAUDE.local.md is gitignored and personal to you in this project — local paths, machine-specific notes. ~/.claude/CLAUDE.md follows you across every project — your personal style rules. Team-true → committed; you-everywhere → user file; you-here → local."
   - q: "Can I put secrets in CLAUDE.md?"
     a: "Never. It's committed to version control and loaded verbatim into model context every session — treat it as fully public. Document how secrets are loaded (.env.local, your secrets manager), never the values themselves."
+audience: ["developers"]
 ---
 
 `CLAUDE.md` is the one file Claude Code reads automatically on every session, before you've typed a word. That makes it the highest-leverage configuration you own — and the easiest to get wrong. A tight `CLAUDE.md` saves you from re-explaining the build command, the test runner, and the one migration gotcha that breaks production. A bloated one quietly taxes every single turn, burning context budget on instructions the model either already knew or didn't need yet.

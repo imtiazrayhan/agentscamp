@@ -22,6 +22,7 @@ faq:
   - q: "Can OpenCode use Claude models?"
     a: "Yes — Anthropic is among its 75+ providers; bring an API key. You get Claude's intelligence inside OpenCode's harness, though without the first-party tuning, prompt-caching optimization, and ecosystem (subagents/hooks/skills) that make Claude Code more than a model wrapper."
 related: ["tool:claude-code", "tool:opencode", "guide:claude-code-vs-codex-cli", "guide:ai-coding-agents-cli-2026", "guide:claude-code-vs-cursor", "tool:ollama"]
+audience: ["developers"]
 ---
 
 This is the category's cleanest philosophical matchup: the **first-party agent** (Anthropic's Claude Code — one model family, everything tuned around it) versus the **open-source champion** (OpenCode — ~173k stars, MIT, built by Anomaly, pointed at any model you choose). Neither is the budget option or the toy; these are the two strongest expressions of opposite bets.

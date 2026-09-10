@@ -4,9 +4,11 @@ import {
   getContentByType,
   getCategories,
   getByTopic,
+  getByAudience,
   latestDate,
   contentTypeList,
   topics,
+  audiences,
 } from "@/lib/content";
 import { toolAlternativesCollection } from "@/lib/seo/collections";
 import { site } from "@/lib/site";
@@ -52,6 +54,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const items = getByTopic(t.slug);
     if (items.length) add(`/topics/${t.slug}`, latestDate(items));
   }
+
+  // Role paths (/for/<role>), plus the index once any role has content.
+  const rolePaths = audiences
+    .map((a) => ({ slug: a.slug, items: getByAudience(a.slug) }))
+    .filter((a) => a.items.length);
+  if (rolePaths.length) add("/for", latestDate(rolePaths.flatMap((a) => a.items)));
+  for (const a of rolePaths) add(`/for/${a.slug}`, latestDate(a.items));
 
   // Tool facets (only indexable ones, >= 2 items).
   for (const c of getCategories("tool")) {

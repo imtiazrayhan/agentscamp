@@ -67,6 +67,7 @@ export interface BaseContentItem {
   color?: ClaudeColor;
   tags: string[];
   topics: string[];
+  audience: string[];
   featured: boolean;
   related: string[];
   date?: string;

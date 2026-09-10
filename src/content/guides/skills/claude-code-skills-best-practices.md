@@ -27,6 +27,7 @@ faq:
   - q: "Does allowed-tools sandbox a skill?"
     a: "No. allowed-tools pre-approves listed tools so Claude can use them without a permission prompt while the skill is active — it removes friction, it doesn't restrict. Every other tool stays callable under your normal permission settings. To actually keep a tool out of a skill's reach, use disallowed-tools, and for a hard block across everything, add deny rules in your permission settings."
 related: ["guide:what-are-claude-skills", "guide:claude-skills-examples", "guide:writing-your-first-skill", "guide:skills-vs-agents-vs-commands", "guide:writing-a-custom-agent", "guide:claude-md-best-practices", "guide:skills-vs-mcp-servers", "guide:testing-and-debugging-skills"]
+audience: ["developers"]
 ---
 
 You can write a skill that works in five minutes. Writing one that fires when it should, stays quiet when it shouldn't, does exactly one thing, and still works six months from now is a different discipline. The mechanics are easy; the reliability is the craft. This guide is about the craft — the handful of patterns that separate a skill you trust from one you keep re-explaining or quietly disabling.

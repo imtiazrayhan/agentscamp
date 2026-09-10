@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { topics, getByTopic } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { topicsGraph } from "@/lib/seo/jsonld";
+import { hubGraph } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 
 const DESCRIPTION =
@@ -25,7 +25,17 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(topicsGraph(entries, DESCRIPTION)),
+          __html: JSON.stringify(
+            hubGraph({
+              path: "/topics",
+              name: "Topics",
+              description: DESCRIPTION,
+              entries: entries.map((t) => ({
+                href: `/topics/${t.slug}`,
+                label: t.label,
+              })),
+            }),
+          ),
         }}
       />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Topics" }]} />

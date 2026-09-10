@@ -19,6 +19,7 @@ faq:
     a: "Cursor is freemium. The free Hobby tier includes limited AI usage; paid Individual (Pro and up) and Teams plans raise included usage and unlock premium models, with on-demand usage billed beyond the included amount. You can also supply your own API keys."
   - q: "Cursor vs VS Code?"
     a: "Cursor is a separate application built on the VS Code codebase, not an extension — it runs alongside (not inside) a standard VS Code install. Existing extensions, themes, keybindings, and settings carry over, so the learning curve is mostly the AI features layered on top."
+audience: ["developers"]
 ---
 
 Cursor is a code editor forked from VS Code that puts AI assistance at the center of the editing experience. Because it is built on the VS Code codebase, existing extensions, themes, keybindings, and settings carry over, so the learning curve is mostly about the AI features layered on top.

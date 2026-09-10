@@ -42,9 +42,11 @@ export default function AboutPage() {
           Useful AI resources, with the work shown
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-          AgentsCamp is a curated, public library for people building with AI
-          coding agents. We publish practical guides and a collection of agents,
-          skills, commands, tools, and definitions that readers can inspect before
+          AgentsCamp is a curated, public library for people working with AI —
+          developers building with coding agents first, and increasingly the
+          founders, marketers, designers, and analysts putting the same tools to
+          work. We publish practical guides and a collection of agents, skills,
+          commands, tools, and definitions that readers can inspect before
           adopting.
         </p>
       </header>

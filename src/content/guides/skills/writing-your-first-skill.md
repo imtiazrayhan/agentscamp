@@ -63,6 +63,7 @@ faq:
     a: "They've converged. Custom commands were merged into skills, so .claude/commands/deploy.md and .claude/skills/deploy/SKILL.md both give you /deploy and behave the same way; existing command files keep working. Skills add what a flat file can't: a directory for supporting scripts and references, frontmatter controlling whether you or Claude invokes it, and automatic loading when the task matches."
   - q: "Can a skill run in its own context window?"
     a: "Yes — set context: fork and the skill runs in a forked subagent context instead of your main one, so a research-heavy or file-scanning procedure burns tokens in the subagent's window and returns only its result. Pair it with agent to choose the subagent type, and background: false when you want the result in the same turn rather than in the background."
+audience: ["developers"]
 ---
 
 A skill is the cheapest way to give Claude Code a capability it doesn't already have — a recurring procedure, a house convention, a multi-step workflow — without bloating your context or your `CLAUDE.md`. Done well, a skill sits dormant until the moment its task comes up, then loads its instructions, runs the work, and gets out of the way. Done poorly, it either never triggers or it loads on every unrelated request and burns context you needed elsewhere.

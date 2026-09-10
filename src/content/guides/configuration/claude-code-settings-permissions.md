@@ -28,6 +28,7 @@ faq:
   - q: "What does bypassPermissions mode do?"
     a: "It skips permission prompts entirely — Claude runs tools without asking. It exists for isolated environments (containers, throwaway VMs, CI sandboxes) where the blast radius is contained. Don't run it on your laptop: the prompt you would have denied is exactly the one that matters."
 related: ["guide:claude-code-hooks", "skill:claude-settings-auditor", "guide:claude-code-memory-context", "guide:claude-code-tips", "guide:effective-tool-use", "guide:claude-md-best-practices", "tool:claude-code"]
+audience: ["developers"]
 ---
 
 Every Claude Code behavior you'd want to standardize — what it may run without asking, what it must never touch, which hooks fire, which model it uses — lives in `settings.json`. The trouble is that there are five of them, they merge, and the permission syntax has real gotchas. This guide is the map.

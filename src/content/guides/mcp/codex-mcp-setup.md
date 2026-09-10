@@ -37,6 +37,7 @@ howtoSteps:
     text: "Allow only the tools the workflow needs and require prompts for writes or sensitive side effects."
   - name: "Restart and verify"
     text: "Restart the relevant Codex client, inspect the server with /mcp or codex mcp list, and test one read-only call before enabling actions."
+audience: ["developers"]
 ---
 
 **Model Context Protocol gives Codex a standard way to use live tools and data outside the repository.** An MCP server can expose search, issue trackers, design files, browser controls, observability data, databases, or internal APIs as typed tools the agent can select during a task.

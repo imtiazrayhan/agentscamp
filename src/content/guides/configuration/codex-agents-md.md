@@ -35,6 +35,7 @@ howtoSteps:
     text: "Launch Codex from the intended working directory and ask it to summarize its active instruction sources and the commands it will run."
   - name: "Maintain from real friction"
     text: "When Codex repeats a mistake, add the smallest rule that prevents it; remove stale guidance as the repository evolves."
+audience: ["developers"]
 ---
 
 **`AGENTS.md` is the repository's durable instruction file for coding agents.** Codex reads it before starting work, giving every task the same map of the codebase, commands, constraints, and verification expectations without making you repeat them in each prompt.

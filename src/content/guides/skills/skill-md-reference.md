@@ -32,6 +32,7 @@ faq:
   - q: "Do these fields work outside Claude Code?"
     a: "The core (name, description, license, metadata, compatibility) is the open agentskills.io standard that 40+ tools read. Execution fields like allowed-tools, context, model, and hooks are Claude Code behaviors — other tools, including the Claude Agent SDK, may ignore them."
 related: ["guide:what-are-claude-skills", "guide:writing-your-first-skill", "guide:claude-skills-examples", "guide:claude-code-skills-best-practices", "guide:testing-and-debugging-skills", "skill:hook-writer"]
+audience: ["developers"]
 ---
 
 Most write-ups of the SKILL.md format stop at `name`, `description`, and `allowed-tools`. The actual field set is roughly twice that size. This is the field-by-field reference, current as of July 2026, drawn from the Claude Code docs and the open Agent Skills specification (agentskills.io). If you're new to skills, start with [What Are Claude Skills?](/guides/skills/what-are-claude-skills) — this page assumes you know why you're writing one.

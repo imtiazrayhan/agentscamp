@@ -1,4 +1,9 @@
-import { getContentByType, contentTypeList } from "@/lib/content";
+import {
+  getContentByType,
+  getByAudience,
+  contentTypeList,
+  audiences,
+} from "@/lib/content";
 import { site, network } from "@/lib/site";
 import { toMarkdownFile, canonicalUrl } from "./artifact";
 
@@ -14,7 +19,7 @@ export function buildLlmsIndex(): string {
     "",
     `> ${site.description}`,
     "",
-    "Everything here is copy-paste/installable and format-validated for use with AI coding agents (Claude Code). Each page below has a clean Markdown twin at the same URL with a `.md` suffix.",
+    "Guides, a tool directory, and a glossary for anyone working with AI, plus agents, skills, and commands that are copy-paste/installable and format-validated for Claude Code. Each content page below has a clean Markdown twin at the same URL with a `.md` suffix.",
     "",
   ];
 
@@ -25,6 +30,19 @@ export function buildLlmsIndex(): string {
     lines.push(`${def.description}`, "");
     for (const item of items) {
       lines.push(`- [${item.title}](${canonicalUrl(item)}.md): ${item.description}`);
+    }
+    lines.push("");
+  }
+
+  const roles = audiences.filter((a) => getByAudience(a.slug).length > 0);
+  if (roles.length) {
+    lines.push("## By role", "");
+    lines.push(
+      "Curated reading orders per reader role, each followed by the tools, skills, and agents picked for that work.",
+      "",
+    );
+    for (const a of roles) {
+      lines.push(`- [${a.label}](${site.url}/for/${a.slug}): ${a.description}`);
     }
     lines.push("");
   }

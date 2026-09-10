@@ -48,6 +48,7 @@ const base = (doc: RawDoc, fm: Record<string, unknown>) => ({
   slug: doc.slug,
   tags: (fm.tags as string[]) ?? [],
   topics: (fm.topics as string[]) ?? [],
+  audience: (fm.audience as string[]) ?? [],
   featured: Boolean(fm.featured),
   related: (fm.related as string[]) ?? [],
   date: isoDate(fm.date),

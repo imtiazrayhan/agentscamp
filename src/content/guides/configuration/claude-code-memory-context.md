@@ -37,6 +37,7 @@ faq:
   - q: "How do I add something to Claude Code's memory quickly?"
     a: "Start a message with # — e.g. '# always use pnpm in this repo' — and Claude Code saves it to memory. Run /memory to browse and edit everything that's stored: CLAUDE.md files, rules, and the auto-memory folder."
 related: ["guide:claude-md-best-practices", "guide:context-engineering", "guide:claude-code-settings-permissions", "guide:claude-code-hooks", "guide:claude-code-tips", "guide:parallel-claude-code-worktrees", "tool:claude-code"]
+audience: ["developers"]
 ---
 
 Claude Code has two resources that get conflated: **context** — what the model can see right now, a finite per-session window — and **memory** — what persists when the session ends. Long sessions degrade when context fills with noise; new sessions start dumb when nothing was persisted. This guide is the map of both systems and the commands that move things between them. (For *what to write* in a CLAUDE.md, see [CLAUDE.md Best Practices](/guides/configuration/claude-md-best-practices) — this guide covers the machinery around it.)

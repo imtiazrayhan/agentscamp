@@ -16,6 +16,7 @@ faq:
     a: "Yes whenever the defect can be reproduced safely. Seeing the new test fail for the expected reason proves it covers the bug; a test written after the fix can pass without ever exercising the broken behavior."
   - q: "At what level should a regression test live?"
     a: "Use the lowest layer that reproduces the real failure without mocking away its cause. Pure logic belongs in a unit test, database or framework behavior in an integration test, interface incompatibility in a contract test, and only genuinely cross-system failures in end-to-end tests."
+audience: ["developers"]
 ---
 
 Produce a minimal, trustworthy test that fails on the bug and protects the behavior after the fix.

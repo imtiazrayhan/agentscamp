@@ -26,6 +26,7 @@ faq:
   - q: "Can I make a private, team-only plugin marketplace?"
     a: "Yes — a marketplace is just a marketplace.json in a git repo (private repos work, including via SSH). Teams add it with /plugin marketplace add, and enterprises can restrict which marketplaces are allowed via managed settings."
 related: ["guide:claude-code-hooks", "guide:claude-code-settings-permissions", "guide:skills-vs-agents-vs-commands", "guide:writing-your-first-skill", "guide:writing-a-custom-agent", "skill:plugin-scaffolder", "guide:claude-code-mcp-setup", "tool:claude-code"]
+audience: ["developers"]
 ---
 
 For most of Claude Code's life, sharing your setup meant a README: "copy these files into `.claude/agents/`, add this to settings, run `claude mcp add`…" **Plugins** replace that with a real distribution format — one installable, versioned package that can carry your whole toolkit.

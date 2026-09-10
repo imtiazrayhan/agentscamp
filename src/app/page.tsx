@@ -5,12 +5,15 @@ import {
   getFeatured,
   getNewest,
   getByTopic,
+  getByAudience,
   contentTypeList,
   topics,
+  audiences,
 } from "@/lib/content";
 import type { ContentTypeId, ContentItem } from "@/lib/content/types";
 import type { ContentTypeDef } from "@/lib/content/registry";
 import { Hero } from "@/components/sections/Hero";
+import { RoleStrip } from "@/components/sections/RoleStrip";
 import { Section } from "@/components/sections/Section";
 import { ContentGrid } from "@/components/content/ContentGrid";
 import { ContentCard } from "@/components/content/ContentCard";
@@ -86,6 +89,14 @@ export default function Home() {
   const topicEntries = topics
     .map((t) => ({ ...t, count: getByTopic(t.slug).length }))
     .filter((t) => t.count > 0);
+  const roleEntries = audiences
+    .map((a) => ({
+      slug: a.slug,
+      label: a.label,
+      description: a.description,
+      count: getByAudience(a.slug).length,
+    }))
+    .filter((a) => a.count > 0);
 
   const bootLines = contentTypeList.map((d) => ({
     label: d.label.toLowerCase(),
@@ -95,6 +106,8 @@ export default function Home() {
   return (
     <div className="space-y-10">
       <Hero lines={bootLines} total={total} />
+
+      {roleEntries.length > 0 && <RoleStrip roles={roleEntries} />}
 
       {latestGuides.length > 0 && (
         <Section

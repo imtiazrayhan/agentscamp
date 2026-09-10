@@ -23,6 +23,7 @@ faq:
   - q: "Which has the bigger free tier, Claude Code or Gemini CLI?"
     a: "Historically Gemini CLI — its personal-account free tier offered up to ~1,000 requests/day on Gemini models, with no equivalent free agent loop in Claude Code (which runs through paid Pro/Max plans or an API key). But that free access is exactly what the June 18, 2026 cutover removed for individuals, so the advantage is gone — Gemini's free agent loop now lives in Antigravity CLI."
 related: ["tool:claude-code", "tool:gemini-cli", "guide:claude-code-vs-codex-cli", "guide:claude-code-vs-opencode", "guide:ai-coding-agents-cli-2026", "guide:claude-code-mcp-setup"]
+audience: ["developers"]
 ---
 
 Claude Code and Gemini CLI both put an agent in your terminal, but they sit on opposite sides of an old trade: **first-party stability and depth versus open-source reach and a free tier**. As of mid-2026 that trade comes with a wrinkle — Google has folded Gemini CLI's consumer service into a different tool.

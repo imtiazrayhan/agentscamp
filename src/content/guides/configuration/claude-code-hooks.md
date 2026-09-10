@@ -37,6 +37,7 @@ faq:
   - q: "Do hooks work with MCP tools?"
     a: "Yes. MCP tools appear with names like mcp__github__create_issue, and hook matchers can target them the same way as built-in tools — so you can gate, log, or post-process MCP tool calls with the same machinery."
 related: ["guide:claude-code-settings-permissions", "skill:hook-writer", "skill:claude-settings-auditor", "guide:claude-code-memory-context", "guide:claude-code-tips", "guide:claude-md-best-practices", "tool:claude-code", "command:setup-claude-ci"]
+audience: ["developers"]
 ---
 
 Claude Code hooks are user-defined commands that run automatically at specific points in Claude Code's lifecycle — before a tool call, after a file edit, when you submit a prompt, when the session starts or ends. They are the difference between *asking* the agent to follow a rule and *enforcing* it.

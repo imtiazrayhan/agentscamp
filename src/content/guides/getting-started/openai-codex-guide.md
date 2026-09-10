@@ -24,6 +24,7 @@ faq:
   - q: "How do I get better results from Codex?"
     a: "State the goal, point to relevant files or errors, name constraints, and define done with observable checks. Add stable build commands and conventions to AGENTS.md, and ask Codex to run tests and review the final diff before it stops."
 related: ["tool:codex-cli", "guide:claude-code-vs-codex-cli", "guide:codex-agents-md", "guide:codex-config-toml", "guide:codex-skills-guide", "guide:codex-mcp-setup", "guide:codex-subagents", "guide:codex-automations", "guide:codex-troubleshooting", "glossary:agents-md", "glossary:agent-skills"]
+audience: ["developers"]
 ---
 
 **OpenAI Codex is a software-development agent: it can inspect a repository, plan a change, edit files, run commands, test the result, and review its own diff.** The useful mental model is not “a chatbot that writes code snippets,” but a teammate operating inside a bounded development environment.

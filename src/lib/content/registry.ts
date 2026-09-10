@@ -154,6 +154,69 @@ export const topics: TopicDef[] = [
   // Promoted in Wave 7 with the voice/vision depth cluster (was deferred in
   // Phase 1, riding mlops-ai-infra until it earned the pill).
   { slug: "multimodal-ai", label: "Voice & Multimodal" },
+  // Role-path expansion (2026-09): work done WITH AI outside engineering —
+  // founders, marketers, designers, analysts. Inert until that content lands.
+  { slug: "ai-at-work", label: "AI at Work" },
 ];
 
 export const topicBySlug = new Map(topics.map((t) => [t.slug, t]));
+
+// Audience paths (/for/<role>): curated entry points per reader role, NOT
+// exhaustive filters. An item joins a role path via frontmatter `audience: [...]`
+// (validated against these slugs); `startHere` is the ordered opening sequence
+// of typed IDs rendered at the top of the role page (each must also carry the
+// tag — enforced by validate-content). A role renders only once it has items,
+// exactly like topics.
+export interface AudienceDef {
+  slug: string;
+  label: string;
+  /** ≤160 chars — doubles as the meta description and the card copy. */
+  description: string;
+  startHere: string[];
+}
+
+export const audiences: AudienceDef[] = [
+  {
+    slug: "developers",
+    label: "Developers",
+    description:
+      "Claude Code, coding agents, skills, MCP, and the engineering guides, tools, and installables that make AI-assisted development actually ship.",
+    startHere: [
+      "guide:what-is-claude-code",
+      "guide:installing-claude-code",
+      "guide:claude-md-best-practices",
+      "guide:what-are-claude-skills",
+      "guide:claude-code-hooks",
+    ],
+  },
+  {
+    slug: "founders",
+    label: "Founders & non-technical builders",
+    description:
+      "Build and run a product without an engineering team: Claude Code in plain language, AI app builders, automation, and which Claude plan to pay for.",
+    startHere: [],
+  },
+  {
+    slug: "marketers",
+    label: "Marketers & content teams",
+    description:
+      "Claude for marketing and content work: brand-voice skills, research workflows, the official marketing plugin, and the AI writing tools worth paying for.",
+    startHere: [],
+  },
+  {
+    slug: "designers",
+    label: "Designers",
+    description:
+      "Claude Design, Figma-to-code with Claude Code, design-system upkeep, and the AI design and image tools that fit a working designer's stack.",
+    startHere: [],
+  },
+  {
+    slug: "analysts",
+    label: "Data & analytics teams",
+    description:
+      "Claude for data analysis: Claude for Excel, text-to-SQL, notebooks with Claude Code, checking AI analyses, and the analytics tools that hold up.",
+    startHere: [],
+  },
+];
+
+export const audienceBySlug = new Map(audiences.map((a) => [a.slug, a]));

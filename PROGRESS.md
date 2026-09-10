@@ -1,3 +1,50 @@
+# Role paths: audience taxonomy + /for/<role> (2026-09-10) — WAVE 0 SHIPPED
+
+Owner direction: position the hub so every role — developers, founders,
+marketers, designers, analysts — lands on a relevant page and finds a path to
+the guides, tools, skills, agents, and commands that fit their work. Decision:
+role paths are curated (not filters), new non-dev content is anchored to the
+Claude ecosystem per role plus tool-agnostic roundups, all four non-dev roles
+ship in two waves, no new "models" content type, and each role gets a small
+set of installables usable on claude.ai, Claude Code, and Cowork.
+
+## Done (one commit on master)
+- Content model: `audience: [...]` site field (zod enum sourced from the new
+  `audiences` registry entry; unknown slugs fail at load time); `getByAudience`;
+  `audienceCollection` (ordered `startHere` sequence + remaining tagged items
+  grouped by type, featured-first then newest); `audienceParams`.
+- Routes: `/for` (role index, CollectionPage + ItemList via the generalized
+  `hubGraph`, which also now serves `/topics`) and `/for/[role]`
+  (`CollectionView` + new `RolePath` list slot). A role renders only once it
+  has tagged items, like topics.
+- Entry points: homepage "Who are you?" `RoleStrip` (GA4 `role_select`), hero
+  "start here" now points at `/for`, nav "Start here" (lg+ only — seven links
+  wrap at md), how-to-use FAQ answers by role, about copy broadened.
+- Sitemap includes `/for` + rendered roles; llms.txt gains a "By role" section
+  and a non-dev-assuming intro line.
+- Validator: every `startHere` ref must exist, be unique, and carry the tag;
+  `/for*` added to valid link routes; empty roles warn.
+- Registry: new topic `ai-at-work` (inert until content lands).
+- Developers path curated: 49 items tagged (33 guides across getting-started,
+  configuration, mcp, skills, troubleshooting, claude-code comparisons; 6 tools;
+  4 agents, 4 skills, 2 commands). Validate 0 errors; build green (2,372 pages);
+  JSON-LD ItemList order = start-here first; nav screenshot-checked at 768/1024.
+
+## Next
+- Wave 1a Foundation (16): tool pages for claude.ai, Claude Cowork, Claude Design,
+  Claude for Excel/Chrome, ChatGPT, Gemini app, Perplexity, NotebookLM, M365
+  Copilot; guides claude-cowork-guide, claude-knowledge-work-plugins,
+  claude-plans-compared-2026 (the one page with plan facts, tier-1); 3 glossary.
+  Gates every role roundup (tool-coverage rule now includes claude.ai/ChatGPT).
+- Wave 1b Founders (30) → 1c Marketers (33) → mirror sync + CLI 0.8.0.
+- Wave 2 Designers (32) → Analysts (32) → cross-role tag pass (~75 edits).
+- Full item tables, gates, and query families: docs/content-roadmap-phase3.md
+  (local) / the approved plan.
+- Dev server on :3001 was running during the production build and now 500s on
+  its CSS chunk — restart `npm run dev`.
+
+---
+
 # Alternatives pages deepened, data-only (2026-09-10) — SHIPPED
 
 Assessment: the 133 indexable `/tools/*/alternatives` pages ranked on the

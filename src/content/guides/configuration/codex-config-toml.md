@@ -35,6 +35,7 @@ howtoSteps:
     text: "Check the current directory, selected profile, CLI overrides, and managed requirements before assuming Codex ignored a setting."
   - name: "Test the boundary"
     text: "Run a harmless read and a workspace edit to confirm the sandbox and approval behavior match the intended configuration."
+audience: ["developers"]
 ---
 
 **`config.toml` is the operational control plane for Codex.** It sets defaults for models, reasoning effort, sandboxing, approvals, MCP servers, subagents, feature flags, shell behavior, and other runtime choices. It does not replace [`AGENTS.md`](/guides/configuration/codex-agents-md), which tells the agent how your repository works, or a [skill](/guides/skills/codex-skills-guide), which teaches a conditional workflow.

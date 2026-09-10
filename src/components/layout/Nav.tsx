@@ -7,7 +7,10 @@ import { MobileNav } from "./MobileNav";
 import { NavLinks } from "./NavLinks";
 
 export function Nav() {
-  const links = contentTypeList.map((d) => ({ label: d.label, href: d.basePath }));
+  const links = [
+    { label: "Start here", href: "/for", lgOnly: true },
+    ...contentTypeList.map((d) => ({ label: d.label, href: d.basePath })),
+  ];
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur">

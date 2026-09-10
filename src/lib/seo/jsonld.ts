@@ -391,12 +391,21 @@ export function glossaryHubGraph(
   };
 }
 
-/** @graph for the /topics hub: CollectionPage + ItemList of topic landing pages. */
-export function topicsGraph(
-  entries: { slug: string; label: string }[],
-  description: string,
-): Node {
-  const path = "/topics";
+/**
+ * @graph for an index of landing pages (/topics, /for): CollectionPage +
+ * ItemList of the hub's entries.
+ */
+export function hubGraph({
+  path,
+  name,
+  description,
+  entries,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  entries: { href: string; label: string }[];
+}): Node {
   const listId = entityId(path, "list");
   return {
     "@context": "https://schema.org",
@@ -405,7 +414,7 @@ export function topicsGraph(
         "@type": "CollectionPage",
         "@id": pageId(path),
         url: abs(path),
-        name: "Topics",
+        name,
         description,
         isPartOf: { "@id": SITE_ID },
         breadcrumb: { "@id": crumbId(path) },
@@ -413,18 +422,18 @@ export function topicsGraph(
         inLanguage: locale,
       },
       breadcrumbNode(
-        [{ label: "Home", href: "/" }, { label: "Topics" }],
+        [{ label: "Home", href: "/" }, { label: name }],
         crumbId(path),
       ),
       {
         "@type": "ItemList",
         "@id": listId,
         numberOfItems: entries.length,
-        itemListElement: entries.map((t, i) => ({
+        itemListElement: entries.map((e, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          url: abs(`/topics/${t.slug}`),
-          name: t.label,
+          url: abs(e.href),
+          name: e.label,
         })),
       },
     ],

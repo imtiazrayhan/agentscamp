@@ -26,6 +26,7 @@ faq:
   - q: "What's the difference between a skill and a subagent?"
     a: "A skill is a procedure loaded into the current conversation — same context, same permissions, just added instructions. A subagent is a separate context window with its own system prompt and tool policy. Encode how-to knowledge as skills; delegate isolated jobs to agents."
 related: ["guide:what-are-claude-skills", "guide:how-to-install-claude-skills", "guide:best-claude-code-agents-skills", "guide:writing-your-first-skill", "skill:conventional-commits", "skill:hook-writer", "skill:secret-scanner", "skill:migration-writer"]
+audience: ["developers"]
 ---
 
 This is the skills-only companion to our mixed [starter kit of agents, skills, and commands](/guides/getting-started/best-claude-code-agents-skills). Everything here is a `SKILL.md` from the AgentsCamp library: a procedure that sits dormant until your task matches its description, then loads and runs like a checklist Claude actually follows. New to the format? Start with [What Are Claude Skills?](/guides/skills/what-are-claude-skills)
