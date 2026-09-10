@@ -2,6 +2,8 @@
 name: "Vercel Sandbox"
 description: "Ephemeral Firecracker microVMs on Vercel for untrusted and AI-generated code — millisecond startup, Node and Python runtimes, persistent by default."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://vercel.com/docs/sandbox"
 pricing: "freemium"
 category: "platform"
@@ -18,12 +20,12 @@ sameAs:
   - "https://github.com/vercel/sandbox"
   - "https://www.npmjs.com/package/@vercel/sandbox"
 related: ["guide:sandboxing-ai-generated-code", "tool:e2b", "tool:modal", "tool:daytona", "tool:vercel-ai-sdk", "tool:v0"]
-summary: "Vercel Sandbox (GA January 2026) runs untrusted and AI-generated code in ephemeral Firecracker microVMs: millisecond startup, Node and Python runtimes with sudo, sandboxes persistent by default via automatic filesystem snapshots, up to 2,000 concurrent on Pro. The SDK and CLI are open-source Apache-2.0; Hobby gets a real free monthly allotment, Pro is usage-billed."
+summary: "Vercel Sandbox (GA January 2026) runs untrusted and AI-generated code in ephemeral Firecracker microVMs: millisecond startup, Node and Python runtimes with sudo, sandboxes persistent by default via automatic filesystem snapshots, up to 10,000 concurrent on Pro. The SDK and CLI are open-source Apache-2.0; Hobby gets a real free monthly allotment, Pro is usage-billed."
 faq:
   - q: "What is Vercel Sandbox for?"
     a: "Running code you didn't write and can't trust — user submissions and, overwhelmingly, agent-generated code — in isolation: each sandbox is a Firecracker microVM with its own filesystem and network, unable to reach your env vars, databases, or cloud resources. It's the execution backend pattern v0 and AI-coding products use in production."
   - q: "What runtimes and limits does it support?"
-    a: "Node (26/24/22) and Python 3.13 on Amazon Linux 2023, with sudo — install anything, including system-level workloads. Default timeout 5 minutes, extendable to 45 minutes on Hobby and 5 hours on Pro+; up to 8 vCPUs/16GB (Pro) or 32 vCPUs/64GB (Enterprise) per sandbox, with 2,000 concurrent sandboxes on Pro."
+    a: "The default managed image is Ubuntu-based with the current Node LTS, Python 3.14, and common coding agents, and you can boot your own Linux image instead; sudo is included, so you can install anything, including system-level workloads. Default timeout 5 minutes, extendable to 45 minutes on Hobby and 24 hours on Pro and Enterprise; up to 8 vCPUs/16GB (Pro) or 32 vCPUs/64GB (Enterprise) per sandbox, with 10,000 concurrent sandboxes on Pro."
   - q: "How does persistence work?"
     a: "It's on by default: stopping a sandbox auto-snapshots the filesystem, and resuming by name restores it — dependency installs survive between runs. Snapshots count toward billed storage and expire 30 days after last use; pass persistent: false for true one-offs."
 ---
@@ -33,9 +35,9 @@ Vercel Sandbox is the platform answer to the agent-code-execution problem: if yo
 ## Highlights
 
 - **Firecracker isolation** — each sandbox is a microVM with its own filesystem and network; sandboxed code can't touch your environment, data, or cloud resources.
-- **Real runtimes with root** — Node 26/24/22 and Python 3.13 on Amazon Linux, sudo included: package installs, Docker-in-sandbox, even VPN clients and FUSE.
-- **Persistent by default** — automatic filesystem snapshots on stop; resume by name and skip the reinstall; explicit snapshots and beta Drives for attachable storage.
-- **Serious ceilings** — millisecond startup, timeouts to 5 hours, 32 vCPUs/64GB at the top tier, 2,000 concurrent sandboxes on Pro.
+- **Real runtimes with root** — an Ubuntu-based default image with the current Node LTS and Python 3.14 (or your own Linux image), sudo included: package installs, Docker-in-sandbox, even VPN clients and FUSE.
+- **Persistent by default** — automatic filesystem snapshots on stop; resume by name and skip the reinstall; explicit snapshots and Drives — still a private beta as of September 2026 — for attachable storage.
+- **Serious ceilings** — millisecond startup, sessions up to 24 hours, 32 vCPUs/64GB at the top tier, 10,000 concurrent sandboxes on Pro.
 - **Open SDK + CLI** — `@vercel/sandbox` (and a Python SDK) open-sourced Apache-2.0 at GA, with a CLI for scripting fleets.
 - **Honest free tier** — Hobby includes monthly Active-CPU hours, creations, and storage at no charge (it pauses rather than bills when exhausted).
 
@@ -49,7 +51,7 @@ npm i @vercel/sandbox     # auth via your linked project's OIDC: vercel link && 
 The canonical loop: your agent (likely on the [AI SDK](/tools/vercel-ai-sdk)) generates code → executes it in a sandbox → reads results as observations. Billing nuance worth knowing: I/O wait isn't billed as Active CPU, so long-running-but-idle agent sessions cost less than wall-clock suggests.
 
 > [!NOTE]
-> Two setup quirks: it currently runs in a single region (`iad1`), and auth wants a linked Vercel project even if you deploy nothing. And remember persistence-by-default means snapshots accrue storage — clean up or opt out for throwaways.
+> Two setup quirks: sandboxes are regional (19 regions, `iad1` by default), and auth wants a linked Vercel project even if you deploy nothing. And remember persistence-by-default means snapshots accrue storage — clean up or opt out for throwaways.
 
 ## Good to know
 

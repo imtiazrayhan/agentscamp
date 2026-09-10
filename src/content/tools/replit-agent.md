@@ -2,6 +2,8 @@
 name: "Replit Agent"
 description: "Replit's AI agent that builds, runs, and deploys full-stack apps from a prompt inside the Replit cloud IDE."
 date: 2026-06-03
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://replit.com"
 pricing: "freemium"
 category: "app-builder"
@@ -16,7 +18,7 @@ faq:
   - q: "What is Replit Agent?"
     a: "Replit Agent is the AI builder inside Replit's browser-based cloud IDE. You describe an app in plain language and the agent scaffolds the project, writes the code, installs packages, runs the app, and can publish it to a live URL — with database, auth, hosting, and monitoring provisioned for you. The current generation is Agent 4."
   - q: "How much does Replit Agent cost?"
-    a: "Pricing is freemium. The free Starter tier includes limited daily Agent credits and one published project. Core ($20/month billed annually, $25 monthly) adds $25 of monthly usage credits; Pro ($95/month annually, $100 monthly) raises credits to $100/month with 10 concurrent agents and database rollbacks; Enterprise adds SSO/SAML and VPC peering on custom pricing."
+    a: "Pricing is freemium, as of September 2026 from replit.com/pricing. The free Starter tier includes daily Agent credits and lets you publish one live project. Core is $20/month, or $18/month billed annually, and adds more agent usage plus $20 toward the most powerful models, plan mode, and unlimited workspaces. Pro is $100/month, or $90/month annually, with $100 toward the most powerful models, 10 parallel agents, up to 15 collaborators, 50 viewers, and database rollback up to 28 days. Enterprise is custom, adding SSO/SAML, advanced privacy controls, single-tenant environments, and static outbound IPs."
   - q: "Do Replit credits roll over?"
     a: "On Core, no — credits are a shared pool covering Agent runs, hosting, database compute, and data transfer, and they expire each billing cycle. Replit bills per checkpoint with effort-based pricing: simple edits are cheap, while complex multi-component builds cost proportionally more."
 audience: ["founders"]
@@ -52,7 +54,7 @@ The agent scaffolds the app, provisions the database, runs it for review, and �
 
 ## Good to know
 
-Replit runs entirely in the browser (plus a mobile app), so there is nothing to install. Pricing is **freemium**: a free Starter tier includes limited daily Agent credits and lets you publish one project, while **Core** ($20/month billed annually, $25/month monthly) adds **$25 of monthly usage credits**, up to 5 collaborators, and two concurrent agents. **Pro** ($95/month annually, $100/month) raises credits to **$100/month**, supports up to 15 collaborators and 10 concurrent agents, and includes database rollbacks and priority support. **Enterprise** adds SSO/SAML, SCIM, VPC peering, and static outbound IPs on custom pricing.
+Replit runs entirely in the browser (plus a mobile app), so there is nothing to install. Pricing is **freemium**, as of September 2026 from replit.com/pricing: a free Starter tier includes daily Agent credits and lets you publish one live project, while **Core** ($20/month, or $18/month billed annually) adds more agent usage, **$20 toward the most powerful models**, plan mode, and unlimited workspaces. **Pro** ($100/month, or $90/month annually) raises that to **$100 toward the most powerful models**, 10 parallel agents, up to 15 collaborators plus 50 viewers, database rollback up to 28 days, and premium support. **Enterprise** adds SSO/SAML, advanced privacy controls, single-tenant environments, and static outbound IPs on custom pricing.
 
 > [!WARNING]
 > Credits are a shared pool covering Agent runs, hosting, database compute, and data transfer — and on Core they expire each billing cycle rather than rolling over. Replit uses effort-based pricing per checkpoint: simple edits are cheap, but complex multi-component builds cost proportionally more, so real monthly spend depends heavily on how much you build and how ambitious your prompts are.

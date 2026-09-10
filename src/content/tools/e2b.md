@@ -2,6 +2,7 @@
 name: "E2B"
 description: "Open-source Firecracker-microVM sandboxes where AI agents safely run untrusted code — stateful interpreters, full Linux, pause/resume, desktop VMs."
 date: 2026-06-11
+reviewed: 2026-09-10
 url: "https://e2b.dev"
 pricing: "freemium"
 category: "platform"
@@ -24,7 +25,7 @@ faq:
   - q: "What is E2B used for?"
     a: "Giving agents a safe computer. The canonical case is the code interpreter: the LLM writes Python, E2B executes it in an isolated microVM and returns results (including charts), so generated code never touches your infrastructure. Beyond that: full Linux terminals for agent workflows, data analysis over uploaded files, and cloud desktops for computer-use agents."
   - q: "Is E2B open source?"
-    a: "Genuinely, by sandbox-category standards: the SDKs AND the production cloud infrastructure are Apache-2.0 (e2b-dev/infra), so self-hosting the real stack is possible. The turnkey experience is their hosted cloud — free Hobby tier with one-time credits, then per-second compute billing and a Pro tier for longer sessions and more concurrency."
+    a: "Genuinely, by sandbox-category standards: the SDKs AND the production cloud infrastructure are Apache-2.0 (e2b-dev/infra), so self-hosting the real stack is possible. The turnkey experience is their hosted cloud — plans as of September 2026 from e2b.dev/pricing: Hobby has no plan fee and a one-time $100 in usage credits, Pro is $150/month plus usage, and Enterprise carries a $3,000 monthly minimum. Compute meters per second on top of that, at $0.000014 per vCPU-second and $0.0000045 per GiB-second."
   - q: "How do sessions and persistence work?"
     a: "Sandboxes are stateful while running (Hobby caps sessions at 1 hour, Pro at 24), and pause/resume preserves the full filesystem and memory state indefinitely — so an agent can park a sandbox and pick it up days later. Two SDK layers exist: the base e2b SDK and e2b-code-interpreter with the run-code niceties."
 ---
@@ -55,4 +56,4 @@ The integration point is the agent's "execute code" tool: generated code goes to
 
 ## Good to know
 
-$21M Series A led by Insight Partners (July 2025). Hobby sessions cap at one hour (pause/resume or Pro for longer); sandboxes are Linux-only including desktops. How it compares to [Daytona](/tools/daytona)'s multi-OS speed play, [Modal](/tools/modal)'s broader compute platform, and [Vercel Sandbox](/tools/vercel-sandbox)'s ecosystem integration: [Sandboxing AI-Generated Code](/guides/advanced/sandboxing-ai-generated-code).
+$21M Series A led by Insight Partners (July 2025). Hobby sessions cap at one hour and Pro at 24 (pause/resume to go longer); sandboxes are Linux-only including desktops. Plan fees, as of September 2026 from e2b.dev/pricing: Hobby $0 with a one-time $100 in usage credits, Pro $150/month plus per-second usage, and Enterprise at a $3,000 monthly minimum. How it compares to [Daytona](/tools/daytona)'s multi-OS speed play, [Modal](/tools/modal)'s broader compute platform, and [Vercel Sandbox](/tools/vercel-sandbox)'s ecosystem integration: [Sandboxing AI-Generated Code](/guides/advanced/sandboxing-ai-generated-code).

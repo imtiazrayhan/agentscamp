@@ -4,6 +4,8 @@ title: "Factory"
 description: "Factory is an agent-native software development platform whose Droids plan, write, test, and ship code from the terminal, IDE, and web with org context."
 url: "https://factory.ai"
 date: 2026-06-24
+updated: 2026-09-10
+reviewed: 2026-09-10
 pricing: "paid"
 category: "agent"
 sameAs:
@@ -23,7 +25,7 @@ faq:
   - q: "What is Factory?"
     a: "Factory is an agent-native software development platform. Its autonomous coding agents are called Droids: you describe a task in natural language and a Droid plans, writes, tests, and ships code, turning a prompt into a pull request. Droids run in the terminal via the Droid CLI, inside IDEs like VS Code and JetBrains, and on the web, and they pull context from your codebase and tools such as GitHub, Jira, and Slack."
   - q: "How much does Factory cost?"
-    a: "Factory is a proprietary paid product. Individual plans are Pro at $20/month, Plus at $100/month, and Max at $200/month, with higher tiers offering more usage and earlier access to features. Teams and Enterprise plans are custom-priced. There is no standing free tier, though Droid Core lets you keep working on a set of open-weight models with separate rate limits. Confirm current plans on the official pricing page."
+    a: "Factory is a proprietary paid product with no free tier. Plans, as of September 2026 from docs.factory.ai: individual plans are Pro at $20/month, Plus at $100/month (about 5x Pro usage), and Max at $200/month (about 10x); Teams is self-serve at $60/month per team plus $40/month per seat for up to 10 seats; Business and Enterprise are custom-priced. Droid Core, a free pool of open-weight models with its own rate limits, keeps you working once standard usage runs out."
   - q: "How does Factory compare to Devin?"
     a: "Both are autonomous coding agents that take a task and produce working code. Devin is positioned as a standalone AI software engineer you assign tickets to, while Factory centers on Droids that meet developers where they work — terminal, IDE, and web — and emphasizes organizational context and enterprise deployment options (SaaS, hybrid, on-premise, air-gapped). Factory's Droid is also model-flexible, running Claude, GPT, and Gemini among others."
 ---
@@ -55,4 +57,4 @@ droid
 
 ## Good to know
 
-Factory is a proprietary SaaS product, not open source. Individual plans run from Pro at $20/month up through Plus and Max, with custom-priced Teams and Enterprise tiers and deployment options spanning SaaS, hybrid, on-premise, and air-gapped. There is no standing free tier, though Droid Core keeps you working on open-weight models with separate rate limits. Plans and limits change, so confirm current details on the official pricing page. For broader context on how agentic coding tools are being adopted, see [AI Coding Statistics 2026](/guides/concepts/ai-coding-statistics-2026).
+Factory is a proprietary SaaS product, not open source. Plans, as of September 2026 from docs.factory.ai: Pro $20/month, Plus $100/month, and Max $200/month for individuals; Teams at $60/month per team plus $40/month per seat (up to 10 seats); Business and Enterprise custom-priced, with deployment options spanning SaaS, hybrid, on-premise, and air-gapped. There is no free tier, though Droid Core keeps you working on open-weight models with separate rate limits. Plans and limits change, so confirm current details on the official pricing page. For broader context on how agentic coding tools are being adopted, see [AI Coding Statistics 2026](/guides/concepts/ai-coding-statistics-2026).

@@ -2,6 +2,8 @@
 name: "Tavily"
 description: "The web-access layer for agents — Search, Extract, Crawl, Map, and Research APIs purpose-built for LLMs, behind one key, with a hosted MCP server."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://tavily.com"
 pricing: "freemium"
 category: "platform"
@@ -24,7 +26,7 @@ faq:
   - q: "How is Tavily different from Exa and Firecrawl?"
     a: "Breadth-in-one-key versus specialist depth. Exa's center is semantic search quality and entity research (Websets); Firecrawl's is industrial-strength scraping and crawling. Tavily bundles credible versions of search + extract + crawl + research behind a single key and credit pool — the convenience pick for agents that need all of it, with speed as its search pitch."
   - q: "Is Tavily free to start?"
-    a: "Yes — the Researcher plan includes 1,000 API credits every month with no credit card; beyond that it's pay-as-you-go per credit or sliding-scale plans. Mind the credit math: advanced search costs 2 credits, and the Research endpoint is dynamic — up to a couple hundred credits for deep runs."
+    a: "Yes — as of September 2026 the free Researcher plan includes 1,000 API credits every month with no credit card, and beyond that pay-as-you-go is $0.008 per credit, with larger plans and Enterprise above it. Mind the credit math: basic search costs 1 credit and advanced 2, extract bills 1 credit per 5 URLs (2 on advanced), and the Research endpoint is dynamic — 4 to 110 credits per request on mini, 15 to 250 on pro."
   - q: "How do I use Tavily from Claude Code?"
     a: "Its hosted MCP server: claude mcp add tavily-remote-mcp --transport http https://mcp.tavily.com/mcp/ (OAuth, or append your tvly- API key as a parameter). It exposes the search/extract/map/crawl tools; a local npm server (tavily-mcp) exists too."
 ---

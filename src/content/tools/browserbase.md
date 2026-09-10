@@ -4,6 +4,7 @@ title: "Browserbase"
 description: "Managed headless-browser infrastructure for AI agents and web automation — serverless cloud browsers with stealth, proxies, live view, and Playwright/Stagehand."
 url: "https://www.browserbase.com"
 date: 2026-06-24
+reviewed: 2026-09-10
 pricing: "freemium"
 category: "platform"
 color: "orange"
@@ -23,7 +24,7 @@ faq:
   - q: "What is Browserbase?"
     a: "Browserbase is a managed headless-browser platform for AI agents and web automation. It runs real, sandboxed cloud browsers on demand with stealth, proxies, and CAPTCHA handling, plus a live session view for debugging — so teams can run browser agents and scrapers at scale without operating their own browser fleet. You control the browsers with standard tools like Playwright or Puppeteer over CDP."
   - q: "How much does Browserbase cost?"
-    a: "Browserbase is proprietary SaaS with a free tier for prototyping and paid plans on top. At publication it advertised a Free plan ($0), a Developer plan ($20/mo), a Startup plan ($99/mo), and a custom-priced Scale plan, with browser-hours, concurrency, and proxy bandwidth metered per tier. Pricing changes often — confirm current plans and limits on the official pricing page."
+    a: "Browserbase is proprietary SaaS with a free tier for prototyping and paid plans on top. Plans, as of September 2026 from browserbase.com/pricing: Free ($0/mo, 3 concurrent browsers and 1 browser hour), Developer ($20/mo, 25 concurrent browsers and 100 browser hours), Startup ($99/mo, 100 concurrent browsers and 500 browser hours), and a custom-priced Scale plan, with browser-hours, concurrency, agent runs, and proxy bandwidth metered per tier. Pricing changes often — confirm current plans and limits on the official pricing page."
   - q: "How does Browserbase relate to Stagehand?"
     a: "They are separate things from the same company. Stagehand is Browserbase's open-source (MIT) browser-automation framework that adds natural-language act/extract/observe primitives on top of code-level control. Browserbase is the proprietary hosted browser infrastructure those scripts can run on. You can use Stagehand against local Chromium for free, or point it at Browserbase's cloud browsers for production scale, stealth, and session recording."
 ---
@@ -61,4 +62,4 @@ await page.goto("https://example.com");
 
 ## Good to know
 
-Browserbase is a **proprietary SaaS platform**, not open source — the open-source piece is Stagehand, not the browser infrastructure itself. There is a free tier for prototyping plus paid plans (Free, Developer, Startup, and a custom Scale tier at publication), metered on browser-hours, concurrency, and proxy bandwidth; these change frequently, so confirm current tiers and limits on the official pricing page before you budget. For background on the agents that drive these browsers, see [How Computer-Use Agents Work](/guides/concepts/how-computer-use-agents-work).
+Browserbase is a **proprietary SaaS platform**, not open source — the open-source piece is Stagehand, not the browser infrastructure itself. There is a free tier for prototyping plus paid plans — as of September 2026 the published tiers are Free ($0/mo), Developer ($20/mo), Startup ($99/mo), and a custom Scale tier — metered on browser-hours, concurrency, and proxy bandwidth; these change frequently, so confirm current tiers and limits on the official pricing page before you budget. For background on the agents that drive these browsers, see [How Computer-Use Agents Work](/guides/concepts/how-computer-use-agents-work).

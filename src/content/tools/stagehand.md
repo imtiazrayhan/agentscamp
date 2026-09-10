@@ -2,6 +2,8 @@
 name: "Stagehand"
 description: "Browserbase's open-source SDK for browser agents — act, extract, observe, and agent primitives that mix natural language with code-level control."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://stagehand.dev"
 pricing: "open-source"
 category: "sdk"
@@ -19,7 +21,7 @@ sameAs:
   - "https://docs.stagehand.dev"
   - "https://www.browserbase.com"
 related: ["guide:browser-agents-compared-2026", "tool:browser-use", "tool:skyvern", "guide:how-computer-use-agents-work", "tool:playwright-mcp", "glossary:structured-output"]
-summary: "Stagehand (MIT, ~23k stars, by Browserbase) is the engineer's browser-agent SDK: four primitives — act() for natural-language actions that survive redesigns, extract() with Zod-validated schemas, observe() to preview actionable elements, agent() for full autonomy — composable with ordinary code. TypeScript-first, Python too; Browserbase cloud optional."
+summary: "Stagehand (MIT, ~24k stars, by Browserbase) is the engineer's browser-agent SDK: four primitives — act() for natural-language actions that survive redesigns, extract() with Zod-validated schemas, observe() to preview actionable elements, agent() for full autonomy — composable with ordinary code. TypeScript-first, Python too; Browserbase cloud optional."
 faq:
   - q: "How is Stagehand different from Browser Use?"
     a: "Control philosophy. Browser Use leads with full autonomy — one task string, the agent figures it out. Stagehand leads with composable primitives: you write real code and drop to natural language exactly where selectors would be brittle (act('click the login button')), with extract() returning schema-validated data. Determinism where you want it, AI where you need it."
@@ -53,4 +55,4 @@ The sweet spot is **reliable automations with AI joints**: a checkout flow that'
 
 ## Good to know
 
-MIT, from Browserbase (whose $40M Series B, June 2025, funds the cloud layer: hosted browsers, recordings, stealth, proxies — optional, paid, and where scale lives). v2-era content predates the Playwright removal — check versions when following tutorials. Field positioning against Browser Use, Skyvern, and the MCP-based options: [Browser Agents in 2026](/guides/comparisons/browser-agents-compared-2026).
+MIT, from Browserbase, whose cloud layer — hosted browsers, recordings, stealth, proxies — is the optional paid half: plans, as of September 2026 from browserbase.com, run Free ($0/mo, 1 browser hour), Developer ($20/mo, 100 hours), and Startup ($99/mo, 500 hours), with Scale on custom pricing. v2-era content predates the Playwright removal — check versions when following tutorials. Field positioning against Browser Use, Skyvern, and the MCP-based options: [Browser Agents in 2026](/guides/comparisons/browser-agents-compared-2026).

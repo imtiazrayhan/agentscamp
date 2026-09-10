@@ -2,6 +2,8 @@
 name: "Cartesia"
 description: "Real-time voice AI on state-space models — Sonic streaming TTS, Ink STT with native turn detection, and Line, a code-first voice-agent platform."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://www.cartesia.ai"
 pricing: "freemium"
 category: "voice"
@@ -22,9 +24,9 @@ faq:
   - q: "What makes Cartesia different from ElevenLabs?"
     a: "Architecture and posture. Cartesia's models are state-space (SSM/Mamba lineage — its founders created the architecture), built for streaming-first, low-latency realtime voice; ElevenLabs leads on voice variety, expressiveness, and its broader audio product surface. For interactive agents where every millisecond of latency is conversational quality, Cartesia is the specialist; for produced audio and voice breadth, ElevenLabs."
   - q: "What is Cartesia Line?"
-    a: "Their voice-agent platform (GA August 2025): code-first SDK and CLI with one-command deploys, hosted infrastructure, phone numbers and SIP (beta), call recording and transcripts, latency metrics, and LLM-as-judge evals — defaulting to Sonic + Ink, so the whole loop runs on Cartesia's stack at per-minute pricing."
+    a: "Their voice-agent platform (GA August 2025): code-first SDK and CLI with one-command deploys, hosted infrastructure, telephony via Cartesia-provisioned numbers, imported Twilio numbers, or your own SIP trunk (all documented as generally available, with no beta label as of September 2026), call recording and transcripts, latency metrics, and LLM-as-judge evals — defaulting to Sonic + Ink, so the whole loop runs on Cartesia's stack at per-minute pricing."
   - q: "Is there a free tier?"
-    a: "Yes — monthly free credits covering meaningful testing, but it's non-commercial: a commercial-use license starts at the inexpensive Pro plan, which also unlocks instant voice cloning. Credits meter both TTS and STT (TTS burns them several times faster)."
+    a: "Yes — plans as of September 2026 from cartesia.ai/pricing: Free is $0/mo with 20K credits a month, but it is non-commercial. A commercial-use license starts at Pro ($5/mo, 100K credits), which also unlocks instant voice cloning; Startup is $49/mo for 1.25M credits, Scale is $299/mo for 8M credits, and Enterprise is custom. Credits meter both TTS and STT (TTS burns them several times faster)."
 ---
 
 Cartesia is the latency specialist of voice AI — founded by the creators of the state-space model architecture, and betting that **conversation-grade voice is a realtime systems problem**. Its stack covers both directions (Sonic out, Ink in) and, with Line, the agent platform that runs them.
@@ -46,4 +48,4 @@ Sign up, take an API key, and stream over WebSocket — or let Line own the loop
 
 ## Good to know
 
-$64M Series A led by Kleiner Perkins (March 2025); a larger late-2025 raise is third-party-reported but not vendor-confirmed, so we don't state it. Hosted/proprietary (the GitHub org carries SDKs). Against the field — [ElevenLabs](/tools/elevenlabs)' breadth, [Deepgram](/tools/deepgram)'s enterprise STT, [Vapi](/tools/vapi) as the assemble-don't-build alternative to Line — see [Best TTS APIs](/guides/voice/best-tts-apis-2026) and [Best STT APIs](/guides/voice/best-stt-apis-2026).
+$64M Series A led by Kleiner Perkins (March 2025); a larger late-2025 raise is third-party-reported but not vendor-confirmed, so we don't state it. Hosted/proprietary (the GitHub org carries SDKs). Voice agents bill separately from credits: as of September 2026 the pricing page lists $0.06 per minute of call duration, plus $0.014 per minute when the call runs on a Cartesia-provisioned phone number. Against the field — [ElevenLabs](/tools/elevenlabs)' breadth, [Deepgram](/tools/deepgram)'s enterprise STT, [Vapi](/tools/vapi) as the assemble-don't-build alternative to Line — see [Best TTS APIs](/guides/voice/best-tts-apis-2026) and [Best STT APIs](/guides/voice/best-stt-apis-2026).

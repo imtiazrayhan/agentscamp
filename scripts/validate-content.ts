@@ -61,8 +61,6 @@ const warn = (m: string) => {
 
 const validTopics = new Set(topics.map((t) => t.slug));
 const TODAY = new Date().toISOString().slice(0, 10);
-/** Content authored on or after this date must date every price it quotes. */
-const GATE_DATE = "2026-09-10";
 const contentId = (item: ContentItem) => `${item.type}:${item.slug}`;
 
 interface MarkdownNode {
@@ -211,8 +209,9 @@ function run() {
       if (PRICE.test(text) && !AS_OF.test(text)) {
         // Guides quote funding and valuations, which are dated events rather
         // than perishable prices, so they never escalate past a warning.
-        const isNew = item.type === "tool" && (item.date ?? "") >= GATE_DATE;
-        (isNew ? err : warn)(`${id}: dollar figure with no as-of date`);
+        (item.type === "tool" ? err : warn)(
+          `${id}: dollar figure with no as-of date`,
+        );
       } else if (VAGUE_AS_OF.test(text)) {
         warn(`${id}: as-of date has no month`);
       }

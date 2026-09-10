@@ -2,6 +2,7 @@
 name: "Modal"
 description: "Serverless AI infrastructure in pure Python — GPU functions with sub-second cold starts, secure sandboxes for agent code, batch jobs, and per-second billing."
 date: 2026-06-11
+reviewed: 2026-09-10
 url: "https://modal.com"
 pricing: "freemium"
 category: "platform"
@@ -26,7 +27,7 @@ faq:
   - q: "How do Modal Sandboxes compare to E2B?"
     a: "Same job — secure containers for executing agent-generated code, with exec, timeouts up to 24h, and reattachment by ID — different center of gravity. E2B is sandbox-first with code-interpreter ergonomics and an open infra stack; Modal's sandboxes live inside a broader compute platform, which wins when the same team also needs GPU inference, batch pipelines, and scheduled jobs in one place."
   - q: "What does Modal cost?"
-    a: "Per-second usage against vendor-listed rates (e.g. H100s by the second, CPU cores and GiB-seconds likewise), with plan credits softening it: the free Starter tier includes $30/month of credits, Team $100/month on top of its subscription. You pay for compute you use and nothing while idle."
+    a: "Per-second usage against vendor-listed rates (e.g. H100s by the second, CPU cores and GiB-seconds likewise), with plan credits softening it. As of September 2026, modal.com/pricing lists Starter at $0 plus compute with $30/month of free credits and 3 seats, Team at $250/month plus compute with $100/month of free credits and unlimited seats, and custom Enterprise; an H100 SXM5 is $0.001097 per second. You pay for compute you use and nothing while idle."
 ---
 
 Modal's pitch collapsed an entire DevOps stack into a decorator: **infrastructure as Python**. Container images, GPUs, autoscaling, schedules — all declared in the code that uses them, deployed in seconds, billed per second. It became a default substrate for AI teams — and, through its Sandboxes, for agents that need somewhere safe to run the code they write.

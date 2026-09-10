@@ -2,8 +2,10 @@
 name: "Greptile"
 description: "An AI code review agent that reviews pull requests with full-codebase context — catching multi-file logical bugs and learning your team's standards."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://www.greptile.com"
-pricing: "paid"
+pricing: "freemium"
 category: "review"
 os: ["Web"]
 color: "green"
@@ -17,12 +19,12 @@ sameAs:
   - "https://twitter.com/greptile"
   - "https://www.linkedin.com/company/greptile"
 related: ["tool:coderabbit", "tool:qodo", "guide:best-ai-code-review-tools-2026", "agent:code-reviewer", "command:review-pr", "guide:claude-code-ci-github-actions"]
-summary: "Greptile reviews pull requests with full context of the codebase — not just the diff — so it catches multi-file logical bugs diff-scoped reviewers miss. It learns team standards from your engineers' own PR comments, takes custom rules in plain English (and reads CLAUDE.md/.cursorrules), and hands fixes off to Claude Code or Cursor. Paid per seat, 14-day trial; free for qualifying open source."
+summary: "Greptile reviews pull requests with full context of the codebase — not just the diff — so it catches multi-file logical bugs diff-scoped reviewers miss. It learns team standards from your engineers' own PR comments, takes custom rules in plain English (and reads CLAUDE.md/.cursorrules), and hands fixes off to Claude Code or Cursor. Free Starter tier; Pro per seat, 14-day trial; free for OSS."
 faq:
   - q: "What makes Greptile different from other AI code reviewers?"
     a: "Codebase-wide context and learned standards. It indexes the whole repository, so a review considers callers, conventions, and side effects beyond the diff — and its v4 architecture learns from how your engineers actually comment on PRs, cutting nitpick noise over time. Custom rules are plain English, and it auto-detects CLAUDE.md and .cursorrules files."
   - q: "How much does Greptile cost?"
-    a: "It's a paid product — Pro runs $30 per seat/month with 50 reviews per seat included ($1 per extra review), with a 14-day trial, a 50% startup discount, and custom Enterprise plans. There's no permanent free tier, but qualifying open-source projects (MIT/Apache/GPL, non-commercial) get it free."
+    a: "Plans, as of September 2026 from greptile.com/pricing: Starter is free for one active developer with unlimited repositories and 50 credits a month; Pro is $30 per seat/month with 50 credits included per seat and $1 per additional credit; Enterprise is custom-priced. Credits meter reviews — one standard review costs 1 credit and one TREX review costs 3. Pro has a 14-day free trial, pre-Series A startups under $2M revenue get 50% off, and qualifying non-commercial open-source projects (MIT or Apache) are free."
   - q: "Does Greptile work with GitLab and self-hosting?"
     a: "Yes on both: GitHub (Cloud and Enterprise Server) and GitLab (Cloud and Self-Managed) are supported, and the platform is SOC 2 Type II with self-hosted deployment via Docker Compose or Kubernetes — including air-gapped setups with custom LLMs for stricter environments."
 ---
@@ -47,4 +49,4 @@ Install the GitHub or GitLab app, select repos, and reviews start appearing on P
 
 ## Good to know
 
-Greptile is a proprietary SaaS (the GitHub org hosts integrations, not the product), backed by a $25M Series A led by Benchmark (September 2025) and used by 9,000+ teams including Brex and PostHog by mid-2026. Reviews are metered per seat (50/month on Pro, then per-review) — relevant for very high-PR-volume teams. GitHub and GitLab only; Bitbucket/Azure DevOps shops should look at [Qodo](/tools/qodo). How it stacks against the field is in [Best AI Code Review Tools in 2026](/guides/comparisons/best-ai-code-review-tools-2026).
+Greptile is a proprietary SaaS (the GitHub org hosts integrations, not the product), backed by a $25M Series A led by Benchmark (September 2025) and used by 9,000+ teams including Brex and PostHog by mid-2026. Reviews are metered in credits per seat (50/month on Pro, then $1 per extra credit as of September 2026, with a TREX runtime-validation review costing 3) — relevant for very high-PR-volume teams; a free Starter tier covers a single active developer. GitHub and GitLab only; Bitbucket/Azure DevOps shops should look at [Qodo](/tools/qodo). How it stacks against the field is in [Best AI Code Review Tools in 2026](/guides/comparisons/best-ai-code-review-tools-2026).

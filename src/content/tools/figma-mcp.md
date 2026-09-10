@@ -3,6 +3,7 @@ name: "Figma MCP"
 title: "Figma MCP"
 description: "Figma's official MCP server — structured design context, variables, screenshots, and Code Connect mappings for agents, plus write-back to the canvas."
 date: 2026-06-11
+reviewed: 2026-09-10
 url: "https://developers.figma.com/docs/figma-mcp-server/"
 pricing: "freemium"
 category: "mcp"
@@ -24,7 +25,7 @@ faq:
   - q: "How do I connect Figma to Claude Code?"
     a: "The preferred path is the official plugin: claude plugin install figma@claude-plugins-official (it bundles the MCP server plus skills). Manual: claude mcp add --transport http figma https://mcp.figma.com/mcp, then authenticate via /mcp. For your live selection in the desktop app, enable the MCP server in Dev Mode and add http://127.0.0.1:3845/mcp."
   - q: "Is the Figma MCP server free?"
-    a: "It's free during the beta period, with Figma signaling it will eventually become a usage-based paid feature. The remote server works on all seats and plans; the desktop (Dev Mode) server requires a Dev or Full seat on a paid plan."
+    a: "It is still in beta and free as of September 2026, with Figma signaling it will eventually become a usage-based paid feature. The remote server works on all seats and plans; the desktop (Dev Mode) server requires a Dev or Full seat on a paid plan."
 audience: ["designers"]
 ---
 
@@ -56,4 +57,4 @@ Paste a Figma frame URL (or select a frame in the desktop app) and ask for the c
 
 ## Good to know
 
-The server is hosted and closed-source (the GitHub presence is a usage guide, not the implementation), free during beta with usage-based pricing signposted, and only clients in Figma's MCP Catalog may connect — Claude Code is among them. The popular community alternative, **Framelink** (`figma-developer-mcp`, MIT), reads designs via a Figma REST token with no seat requirements — read-only, but a fine fallback if the official server's plan gating bites.
+The server is hosted and closed-source (the GitHub presence is a usage guide, not the implementation), free during a beta that was still running as of September 2026, with usage-based pricing signposted, and only clients in Figma's MCP Catalog may connect — Claude Code is among them. The popular community alternative, **Framelink** (`figma-developer-mcp`, MIT), reads designs via a Figma REST token with no seat requirements — read-only, but a fine fallback if the official server's plan gating bites.

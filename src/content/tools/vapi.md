@@ -2,6 +2,8 @@
 name: "Vapi"
 description: "The API-first voice-agent platform — assemble phone and web agents from any STT/LLM/TTS mix, with telephony, squads, and tool calling handled for you."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://vapi.ai"
 pricing: "paid"
 category: "voice"
@@ -20,7 +22,7 @@ related: ["guide:realtime-voice-apis", "guide:build-a-voice-agent", "tool:liveki
 summary: "Vapi is the buy side of voice agents: define an Assistant (prompt, model, voice, tools), attach a phone number, and you're live — the platform owns orchestration, turn-taking (vendor-claimed sub-600ms responses), interruptions, telephony, and multi-assistant Squads with context handoffs. Bring any STT/LLM/TTS providers (at cost with your own keys) plus a per-minute platform fee."
 faq:
   - q: "How does Vapi pricing actually work?"
-    a: "Layered usage: a platform fee per call minute, with model costs passed through at provider rates — or at zero markup if you bring your own API keys — and telephony billed by the carrier. So the headline per-minute number is the orchestration fee, not the all-in cost; BYO keys keep the model side transparent. Compliance (HIPAA, zero-data-retention) are paid add-ons, and the entry plan caps concurrent calls."
+    a: "Layered usage, as of September 2026 from vapi.ai/pricing: Vapi hosting is $0.05 per call minute (and $0.005 per SMS or chat message), model costs pass through at provider rates — or at zero markup if you bring your own API keys — and telephony is billed by the carrier. So the headline per-minute number is the orchestration fee, not the all-in cost. The usage-based Build plan includes 10 concurrent call lines and charges $10 per extra line per month; compliance add-ons are $2,000/month for HIPAA and $1,000/month for zero data retention. Scale is an annual contract with a fixed platform fee and committed volume."
   - q: "What are Squads?"
     a: "Vapi's multi-agent primitive: several Assistants with defined handoffs that preserve conversation context — the receptionist that warm-transfers to the billing specialist, as config. It's the platform expression of the orchestration patterns you'd otherwise build."
   - q: "Vapi or LiveKit?"

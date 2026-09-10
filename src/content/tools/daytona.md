@@ -2,6 +2,7 @@
 name: "Daytona"
 description: "Sub-90ms agent sandboxes — isolated computers with snapshots, volumes, Git and LSP tools, on Linux, Windows, or Android; AGPL self-host or managed cloud."
 date: 2026-06-11
+reviewed: 2026-09-10
 url: "https://www.daytona.io"
 pricing: "freemium"
 category: "platform"
@@ -26,7 +27,7 @@ faq:
   - q: "What makes Daytona different from E2B?"
     a: "Three visible bets: startup speed (sub-90ms creation, the headline claim), multi-OS sandboxes (Windows and Android alongside Linux — rare in the category), and deployment flexibility (managed cloud, fully self-hosted AGPL stack via Docker Compose, or a hybrid where Daytona runs the control plane over your compute). E2B counters with the code-interpreter ergonomics, Apache licensing, and the desktop product."
   - q: "How is Daytona priced?"
-    a: "Usage-based: per-hour rates for vCPU, memory, and storage (GPUs like H100s available hourly), with free compute credits on signup and startup-program credits beyond that. Self-hosting under AGPL-3.0 trades the meter for ops — with copyleft obligations if you modify and serve it."
+    a: "Usage-based, as of September 2026 from daytona.io/pricing: $0.0504 per vCPU-hour, $0.0162 per GiB of memory per hour, and $0.000108 per GiB of storage per hour after the first 5 GiB free, all billed per second. Windows sandboxes add $0.0858 per vCPU-hour, and GPUs run hourly from $0.57 (RTX 4090) to $3.59 (Nvidia B200), with an H100 at $2.27. New accounts get $200 in free compute and the startup program grants up to $50k in credits. Self-hosting under AGPL-3.0 trades the meter for ops — with copyleft obligations if you modify and serve it."
 ---
 
 Daytona is the category's speed-and-breadth play, and one of 2026's cleaner pivot stories: the dev-environment manager rebuilt itself as **infrastructure for agent code execution** — "give every agent a computer" — and the market answered (a FirstMark-led $24M Series A in February 2026, with LangChain among the customers).

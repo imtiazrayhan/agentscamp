@@ -3,6 +3,8 @@ name: "Lovable"
 description: "An AI app builder that turns natural-language prompts into shippable full-stack web apps."
 seoDescription: "Lovable is an AI app builder that turns natural-language prompts into shippable full-stack web apps — features, pricing, and closest alternatives."
 date: 2026-06-03
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://lovable.dev"
 pricing: "freemium"
 category: "app-builder"
@@ -17,7 +19,7 @@ faq:
   - q: "What is Lovable?"
     a: "Lovable is a prompt-driven app builder — the canonical 'vibe coding' tool. You describe the app you want in plain language, watch it scaffold in a live preview, then refine and deploy from one place. It writes real code: React, Vite, TypeScript, Tailwind, and shadcn/ui on the frontend with Supabase for the backend, not a throwaway mockup."
   - q: "How much does Lovable cost?"
-    a: "It's freemium. The free tier gives 5 credits/day capped at 30/month, hosted on lovable.app domains. Pro is $25/mo and Business $50/mo (both 100 monthly credits), adding private projects, custom domains, SSO, and team workspaces; unused monthly credits roll over while subscribed. Credits are consumed per AI message and scale with task complexity."
+    a: "It's freemium, and the plans are credit tiers rather than single prices. As of September 2026, docs.lovable.dev lists a Free plan with 5 build credits a day capped at 30 a month, plus monthly grants of 20 Cloud credits and 4 AI credits, hosted on lovable.app domains. Pro starts at $25/month for 100 credits and Business at $50/month for 100 credits, each scaling up the credit slider (Pro $50 for 200, $100 for 400, and so on; Business is roughly double), adding private projects, custom domains, SSO, and team workspaces. Unused plan credits roll over on paid plans while the subscription is active but still expire two months after they were issued; Free credits do not roll over. Top-ups cost $15 per 50 credits on Pro and $30 per 50 on Business. Credits are consumed per AI message and scale with task complexity."
   - q: "Can I export code from Lovable?"
     a: "Yes. Lovable outputs a standard React + Vite + TypeScript SPA styled with Tailwind and shadcn/ui, and two-way GitHub sync connects a repository so developers can contribute via pull requests or take the code and deploy it anywhere."
 audience: ["founders", "designers"]
@@ -50,4 +52,4 @@ and a billing page. Use Supabase for the backend and Stripe for subscriptions.
 
 ## Good to know
 
-Lovable is a hosted web platform — no local install. Pricing is freemium: the free tier gives 5 credits/day, capped at 30 credits/month, with projects hosted on lovable.app domains. Paid plans start at Pro ($25/mo for 100 monthly credits) and Business ($50/mo for 100 monthly credits), adding private projects, custom domains, SSO, team workspaces, and role-based access; unused monthly credits roll over while your subscription is active. Enterprise pricing is volume-based. Credits are consumed per AI message and scale with task complexity, so a multi-week MVP can burn through a few hundred credits — budget accordingly. The backend is opinionated around Supabase, which is convenient if that fits your stack and a constraint if it does not.
+Lovable is a hosted web platform — no local install. Plans, as of September 2026 from docs.lovable.dev: the Free plan grants 5 build credits a day capped at 30 a month, plus monthly grants of 20 Cloud credits and 4 AI credits, with projects hosted on lovable.app domains. Paid plans are credit tiers, not flat prices — Pro starts at $25/month for 100 credits and Business at $50/month for 100 credits, and both scale up the slider (Pro reaches $2,250/month for 10,000 credits) — adding private projects, custom domains, SSO, team workspaces, and role-based access. Unused plan credits roll over on Pro and Business while the subscription is active, but expire two months after issue; Free credits do not roll over, and top-ups run $15 per 50 credits on Pro and $30 per 50 on Business. Enterprise pricing is volume-based. Credits are consumed per AI message and scale with task complexity, so a multi-week MVP can burn through a few hundred credits — budget accordingly. The backend is opinionated around Supabase, which is convenient if that fits your stack and a constraint if it does not.

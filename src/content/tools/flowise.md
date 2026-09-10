@@ -4,6 +4,8 @@ title: "Flowise"
 description: "Open-source, low-code visual builder for LLM apps and AI agents — drag-and-drop to assemble chains, agents, and RAG; self-host or use Flowise Cloud."
 url: "https://flowiseai.com"
 date: 2026-06-24
+updated: 2026-09-10
+reviewed: 2026-09-10
 pricing: "open-source"
 category: "platform"
 repo: "https://github.com/FlowiseAI/Flowise"
@@ -25,7 +27,7 @@ faq:
   - q: "What is Flowise?"
     a: "Flowise is an open-source, low-code visual builder for LLM apps and AI agents. You assemble chains, agentic systems, and RAG pipelines by dragging and connecting nodes on a canvas instead of writing orchestration code, then run the result locally, self-hosted, or on Flowise Cloud. Every flow exposes an API and an embeddable chat widget."
   - q: "Is Flowise free, and what's the license?"
-    a: "The Community Edition is free and open source under Apache-2.0 — you can self-host, modify, and use it commercially. A separate Enterprise Edition lives in the repo's /enterprise directory and is governed by a commercial license, staying inactive without a license key. Flowise Cloud is a paid managed option (a free tier plus paid plans starting around $35/month — confirm current pricing on the official site)."
+    a: "The Community Edition is free and open source under Apache-2.0 — you can self-host, modify, and use it commercially. A separate Enterprise Edition lives in the repo's /enterprise directory and is governed by a commercial license, staying inactive without a license key. Note that FlowiseAI archived the GitHub repository on August 13, 2026 and wound the project down, with core-team support ending August 31, 2026; the Apache-2.0 code stays public and forkable but is no longer maintained upstream. Flowise Cloud still sells: as of September 2026, flowiseai.com lists a Free tier at $0/month, Starter at $35/month, and Pro at $65/month."
   - q: "How does Flowise compare to Dify?"
     a: "Both are visual LLM-app platforms. Flowise's core is cleanly Apache-2.0 (only the enterprise add-ons are commercial), which makes single-tenant and SaaS self-hosting straightforward. Dify ships a broader product surface (built-in RAG pipeline, prompt IDE, LLMOps) under a modified Apache-2.0 that restricts multi-tenant operation. Pick Flowise for a permissively licensed agent/flow builder; pick Dify for a heavier all-in-one app platform."
 ---
@@ -57,6 +59,9 @@ For where this slots against automation-first and app-first tools, see [n8n vs. 
 
 ## Good to know
 
-License matters here. The Community Edition is **Apache-2.0** — permissive enough to self-host, modify, and use commercially, including running it as a service. A separate Enterprise Edition ships inside the repo's `/enterprise` directory under a commercial license and stays inactive without a license key, so confirm which edition you're deploying before building a SaaS on it. Flowise Cloud is the paid managed path (a free tier plus paid plans starting around $35/month — verify current pricing on the official site). For how it stacks up against other visual builders, see [Best AI App Builders (2026)](/guides/comparisons/best-ai-app-builders-2026).
-</content>
-</invoke>
+License matters here. The Community Edition is **Apache-2.0** — permissive enough to self-host, modify, and use commercially, including running it as a service. A separate Enterprise Edition ships inside the repo's `/enterprise` directory under a commercial license and stays inactive without a license key, so confirm which edition you're deploying before building a SaaS on it. Flowise Cloud is the paid managed path — as of September 2026 flowiseai.com lists Free at $0/month, Starter at $35/month, and Pro at $65/month (5 users, then $15/user/month).
+
+> [!WARNING]
+> FlowiseAI **archived the GitHub repository on August 13, 2026** and wound the project down, saying capable coding agents had outrun the rigid low-code approach; core-team support in Discord and GitHub ended August 31, 2026. The Apache-2.0 code remains public and forkable, and Flowise Cloud is still selling, but there is no official successor repo and no upstream maintenance — treat new deployments as depending on a fork you own.
+
+For how it stacks up against other visual builders, see [Best AI App Builders (2026)](/guides/comparisons/best-ai-app-builders-2026).

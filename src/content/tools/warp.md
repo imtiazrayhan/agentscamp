@@ -2,6 +2,8 @@
 name: "Warp"
 description: "A modern, AI-powered terminal with an agent mode that can run and chain commands across your codebase."
 date: 2026-06-03
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://www.warp.dev"
 repo: "https://github.com/warpdotdev/warp"
 pricing: "open-source"
@@ -13,12 +15,12 @@ tags: ["terminal", "agent"]
 featured: false
 related: ["tool:claude-code", "tool:codex-cli", "tool:wave-terminal", "guide:ai-coding-agents-cli-2026"]
 alternativeTo: ["claude-code", "codex-cli", "gemini-cli", "opencode"]
-summary: "Warp is a modern, AI-powered terminal whose agent can plan, run, and chain commands while you approve what executes. Output is grouped into navigable blocks, workflows share vetted commands across teams, and the agent grounds itself in your indexed codebase. The client is open source (mostly AGPL-3.0), with a free tier, paid plans, and BYOK on every tier."
+summary: "Warp is a modern, AI-powered terminal whose agent can plan, run, and chain commands while you approve what executes. Output is grouped into navigable blocks, workflows share vetted commands across teams, and the agent grounds itself in your indexed codebase. The client is open source (mostly AGPL-3.0), with a free tier, paid plans, and bring-your-own inference from the free tier up."
 faq:
   - q: "What is Warp?"
     a: "Warp is a rebuilt, AI-powered terminal that pairs a fast, modern CLI experience with a built-in coding agent. Output is grouped into navigable blocks instead of endless scrollback, the input editor behaves like a real text editor, and Warp Agent can read your repo, propose and run commands, and chain multi-step tasks with permission controls over what executes."
   - q: "Is Warp free?"
-    a: "The client is open source (mostly AGPL-3.0, UI-framework crates under MIT) and the Free tier includes the terminal plus 75 AI credits/month (150 for the first two months). Build is $20/mo with 1,500 credits and full agent access; Business ($50/user/mo) adds SAML SSO and Zero Data Retention; Enterprise adds custom credit pools and self-hosted cloud agents. BYOK is available on every plan."
+    a: "The client is open source (mostly AGPL-3.0, UI-framework crates under MIT). As of September 2026 the Free tier includes the terminal, limited agent and cloud-agent access, and reload credits at pay-as-you-go rates rather than a bundled monthly allowance. Build is $20/month ($18 annually) for 1,500 credits and full agent access; Max is $200/month for 18,000 credits; Business ($50/user/month, up to 25 seats) adds 1,500 credits per seat, SAML SSO, and admin-configurable data controls with Zero Data Retention; Enterprise adds unlimited seats, custom shared credit pools, and self-hosted cloud agents. Bring-your-own inference starts on the Free tier and carries up through the paid plans."
   - q: "Does Warp replace Claude Code?"
     a: "No — it complements terminal agents rather than replacing them. You can run a dedicated coding agent like Claude Code inside Warp's terminal and let Warp's blocks, workflows, and shell context speed up everything around it."
 ---
@@ -52,4 +54,4 @@ The agent reads the command, its output, and relevant repo files, then proposes 
 
 ## Good to know
 
-Warp is available on macOS, Windows (x64 and ARM64), and Linux (`.deb`, `.rpm`, `.tar.zst`, AppImage); the client is open source (mostly AGPL-3.0, with the UI-framework crates under MIT) at [github.com/warpdotdev/warp](https://github.com/warpdotdev/warp). The **Free** tier includes the terminal plus 75 AI credits/month (150 for the first two months) and limited agent access. The **Build** plan ($20/mo) gives 1,500 monthly credits, full agent access across frontier Anthropic, OpenAI, and Google models, and rollover reload credits. **Business** ($50/user/mo, up to 25 seats) adds SAML SSO, Zero Data Retention controls, shared team reload credits, and admin usage metrics. **Enterprise** offers unlimited seats, custom credit pools, bring-your-own-LLM, and self-hosted cloud agents. AI features run on a credit budget — BYOK is available on every tier if you prefer to pay your model provider directly.
+Warp is available on macOS, Windows (x64 and ARM64), and Linux (`.deb`, `.rpm`, `.tar.zst`, AppImage); the client is open source (mostly AGPL-3.0, with the UI-framework crates under MIT) at [github.com/warpdotdev/warp](https://github.com/warpdotdev/warp). Plans, as of September 2026 from warp.dev/pricing: the **Free** tier includes the terminal, limited agent and cloud-agent access, and reload credits at pay-as-you-go rates rather than a bundled monthly allowance. **Build** ($20/month, or $18 billed annually) gives 1,500 credits — $20 of included agent usage at API rates — plus full agent access across frontier Anthropic, OpenAI, and Google models. **Max** ($200/month) raises that to 18,000 credits. **Business** ($50/user/month, up to 25 seats) adds 1,500 credits per seat, SAML SSO, admin-configurable data controls with Zero Data Retention, and team usage metrics. **Enterprise** offers unlimited seats, custom shared credit pools, bring-your-own-LLM, and self-hosted cloud agents. AI features run on a credit budget — bring-your-own inference starts on the Free tier if you prefer to pay your model provider directly.

@@ -3,6 +3,8 @@ name: "Amp"
 description: "Sourcegraph's agentic coding tool — a CLI and editor extensions tuned for frontier-model coding."
 seoDescription: "Amp is Sourcegraph's agentic coding tool — a CLI and editor extensions tuned for frontier-model coding. What it does, pricing, and closest alternatives."
 date: 2026-06-03
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://ampcode.com"
 pricing: "freemium"
 category: "agent"
@@ -18,7 +20,7 @@ faq:
   - q: "What is Amp?"
     a: "Amp is Sourcegraph's agentic coding tool. You drive it from the terminal or an editor extension, describe a task, and the agent reads, edits, and runs commands across your repository. It tracks the strongest available models rather than locking you to one, and adds subagents, a second-opinion Oracle model, and shareable threads."
   - q: "How much does Amp cost?"
-    a: "Pricing is usage-based: Amp Free grants $10/day of credits (new sign-ups are currently paused), and beyond that you pay as you go for actual model usage with no markup for individuals and a $5 minimum top-up — there is no subscription. Enterprise pricing is 50% higher than individual rates and starts with a one-time $1,000 credit purchase."
+    a: "Plans, as of September 2026 from ampcode.com: Megawatt is $20/month with at least $20 of included agent usage and 750 hours of small orbs; Gigawatt is $200/month with at least $200 of included usage and 1,000 hours of xxlarge orbs; students and teachers pay $10/month. The Unconstrained tier drops the subscription and bills model tokens and orbs at API pricing, with no markup on providers' API prices for individuals and non-enterprise workspaces. Enterprise is custom-priced. Amp Free still exists and is now ad-free, but Sourcegraph has been reducing or pausing its daily allowance for less-active users, so treat it as a trial rather than a budget."
   - q: "How do I install Amp?"
     a: "Install the CLI with curl -fsSL https://ampcode.com/install.sh | bash, then run amp inside your project. The CLI runs on macOS, Linux, and Windows via WSL, with extensions for VS Code and its forks, JetBrains, Neovim, and Zed."
 ---
@@ -55,4 +57,4 @@ amp
 
 Amp is made by Sourcegraph (not to be confused with their earlier Cody assistant). The CLI runs on macOS, Linux, and Windows via WSL, with extensions for VS Code and its forks, JetBrains, Neovim, and Zed.
 
-Pricing is usage-based: Amp Free grants $10/day of credits at no cost — once ad-supported, now ad-free, though new sign-ups are currently paused. Beyond the free allowance you pay as you go for actual model usage with no markup for individuals — there is no subscription, and the minimum credit top-up is $5. Enterprise pricing is 50% higher than individual rates and starts at a one-time $1,000 credit purchase that also unlocks SSO and workspace governance. Because billing tracks real model calls, cost scales with how much you run the agent rather than a flat monthly fee.
+Plans, as of September 2026 from ampcode.com/docs/pricing: Megawatt is $20/month and includes at least $20 of agent usage plus 750 hours of small orbs; Gigawatt is $200/month with at least $200 of included usage and 1,000 hours of xxlarge orbs; students and teachers pay $10/month. An Unconstrained tier drops the subscription entirely and bills model tokens and orbs at API pricing — Amp adds no markup to providers' API prices for individuals and non-enterprise workspaces — and Enterprise is custom-priced, adding SCIM, admin controls, and retention policy. Included usage resets each billing period and does not roll over, and purchased credits expire twelve months after purchase. Amp Free is still around and no longer ad-supported, but Sourcegraph has been reducing or pausing its daily allowance for less-active users, so we no longer quote a figure for it.

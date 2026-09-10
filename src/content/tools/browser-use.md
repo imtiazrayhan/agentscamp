@@ -2,6 +2,8 @@
 name: "Browser Use"
 description: "The most-adopted open-source browser-agent framework — point an LLM at a task and it drives a real browser: navigating, clicking, typing, extracting."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://browser-use.com"
 pricing: "open-source"
 category: "sdk"
@@ -19,7 +21,7 @@ sameAs:
   - "https://docs.browser-use.com"
   - "https://x.com/browser_use"
 related: ["guide:browser-agents-compared-2026", "guide:how-computer-use-agents-work", "tool:stagehand", "tool:skyvern", "agent:browser-agent-engineer", "glossary:computer-use"]
-summary: "Browser Use (MIT, ~98k stars) is the breakout browser-agent framework: hand it a task string and an LLM and it autonomously navigates, clicks, types, and extracts — driving Chromium over the DevTools Protocol. Model-agnostic (their hosted models, OpenAI, Anthropic, Gemini, local), with domain guardrails, and a 2026 Rust-core beta agent for persistence and recovery."
+summary: "Browser Use (MIT, ~114k stars) is the breakout browser-agent framework: hand it a task string and an LLM and it autonomously navigates, clicks, types, and extracts — driving Chromium over the DevTools Protocol. Model-agnostic (their hosted models, OpenAI, Anthropic, Gemini, local), with domain guardrails, and a 2026 Rust-core beta agent for persistence and recovery."
 faq:
   - q: "What does Browser Use actually do?"
     a: "It turns 'go to this site, find X, do Y' into an autonomous browser session: an agent loop perceives the page (structure plus vision), decides actions, executes them via the Chrome DevTools Protocol, and iterates to task completion. Agent(task=..., llm=...) is the whole API surface to start."
@@ -29,7 +31,7 @@ faq:
     a: "Different layers. Playwright executes scripted automation you write; Browser Use decides the steps itself from a natural-language task (and notably drives the browser via CDP directly rather than through Playwright). Use Playwright-style tools when you know the steps; Browser Use when you want the agent to figure them out."
 ---
 
-Browser Use is the project that made "give an AI a browser" a one-liner. At ~98k GitHub stars it's the most-adopted framework in the [browser-agent](/glossary/computer-use) category: a Python library where `Agent(task="find the three cheapest flights and extract prices", llm=...)` produces an autonomous session that navigates, clicks, types, and reports back.
+Browser Use is the project that made "give an AI a browser" a one-liner. At ~114k GitHub stars it's the most-adopted framework in the [browser-agent](/glossary/computer-use) category: a Python library where `Agent(task="find the three cheapest flights and extract prices", llm=...)` produces an autonomous session that navigates, clicks, types, and reports back.
 
 ## Highlights
 
@@ -37,7 +39,7 @@ Browser Use is the project that made "give an AI a browser" a one-liner. At ~98k
 - **CDP-native** — drives Chromium over the Chrome DevTools Protocol directly (not via Playwright), with structure+vision grounding.
 - **Model-agnostic** — OpenAI, Anthropic, Gemini, local models, or Browser Use's own hosted agent models.
 - **Guardrails built in** — browser profiles with `allowed_domains`, headless control, and scoped credentials keep the agent inside the fence.
-- **2026 Rust core (beta)** — a new harness with persistent tools and recovery loops (`browser_use.beta`), the project's bet on production reliability.
+- **2026 Rust core (beta)** — a new harness with persistent tools and recovery loops (`browser_use.beta`), the project's bet on production reliability; still opt-in behind that import as of September 2026.
 - **Optional cloud** — stealth/anti-detect browsers, CAPTCHA solving, residential proxies, scheduling, webhooks — the operational layer self-hosting makes you build.
 
 ## In an AI-assisted workflow
@@ -56,4 +58,4 @@ It's the general-purpose answer to the web's no-API long tail — the workflows 
 
 ## Good to know
 
-MIT, Python 3.11+, backed by a $17M Felicis-led seed (March 2025, YC W25). The 0.13-era API is mid-transition (classic `Agent` import still works; the Rust-core agent lives under `browser_use.beta`) — pin versions in production. Where it sits against [Stagehand](/tools/stagehand)'s code-first primitives and [Skyvern](/tools/skyvern)'s workflow platform: [Browser Agents in 2026](/guides/comparisons/browser-agents-compared-2026).
+MIT, Python 3.11+, backed by a $17M Felicis-led seed (March 2025, YC W25). The 0.13-era API is still mid-transition (classic `Agent` import works; the Rust-core agent stays under `browser_use.beta`) — pin versions in production. Cloud pricing, as of September 2026 from browser-use.com/pricing: there is no subscription — eligible Google, GitHub, or Microsoft signups get a one-time $15 credit, the minimum top-up is $5, and usage bills at $0.02 per browser-hour plus traffic ($5/GB on the default residential proxies, $0.20/GB direct) and model tokens at a 20% service fee; Enterprise is a negotiated annual credit pool. Where it sits against [Stagehand](/tools/stagehand)'s code-first primitives and [Skyvern](/tools/skyvern)'s workflow platform: [Browser Agents in 2026](/guides/comparisons/browser-agents-compared-2026).

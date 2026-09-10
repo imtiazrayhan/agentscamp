@@ -3,6 +3,7 @@ name: "Exa"
 title: "Exa"
 description: "The search engine built for AIs — semantic web search, page contents, Websets, and research APIs, plus the ecosystem's most-used search MCP server."
 date: 2026-06-11
+reviewed: 2026-09-10
 url: "https://exa.ai"
 pricing: "freemium"
 category: "platform"
@@ -26,7 +27,7 @@ faq:
   - q: "How do I add Exa to Claude Code?"
     a: "One verified command: claude mcp add --transport http exa https://mcp.exa.ai/mcp. It even works keyless with rate limits; add an API key from dashboard.exa.ai (x-api-key header) to lift them. The server exposes web_search_exa, web_fetch_exa, and an opt-in advanced search tool."
   - q: "Is Exa free?"
-    a: "Freemium: a monthly free request allowance, then pay-as-you-go metered per thousand requests by product (search, deep search, contents), with enterprise plans adding volume pricing and zero-data-retention. The MCP server itself is MIT-licensed."
+    a: "Freemium and pay-as-you-go, with no subscription tier. As of September 2026, exa.ai/pricing gives new accounts $20 in free credits and adds $10 in free credits every month, then meters by product: $7 per 1,000 searches, $1 per 1,000 pages per content type, $12 per 1,000 deep-search requests ($15 for deep-reasoning), and $5 per 1,000 answers. Enterprise adds volume pricing and zero-data-retention. The MCP server itself is MIT-licensed."
 audience: ["marketers"]
 ---
 
@@ -57,4 +58,4 @@ The MCP toolset is deliberately small after a 2025–26 consolidation: `web_sear
 
 ## Good to know
 
-Exa Labs raised an $85M Series B (Benchmark, announced September 2025) — the "search engine for AIs" thesis is well-funded and the API surface is moving fast. Pricing is freemium: a monthly free allowance, then metered pay-as-you-go per product tier; enterprise adds zero-data-retention. Like any web-content tool, what it fetches enters your agent's context — treat retrieved pages as untrusted input in [injection-sensitive setups](/guides/ai-safety/defending-prompt-injection).
+Exa Labs raised an $85M Series B (Benchmark, announced September 2025) — the "search engine for AIs" thesis is well-funded and the API surface is moving fast. Pricing, as of September 2026 from exa.ai/pricing: $20 in free credits at signup plus $10 more every month, then metered pay-as-you-go — $7 per 1,000 searches, $1 per 1,000 pages of contents, $12–$15 per 1,000 deep-search requests — with enterprise adding volume discounts and zero-data-retention. Like any web-content tool, what it fetches enters your agent's context — treat retrieved pages as untrusted input in [injection-sensitive setups](/guides/ai-safety/defending-prompt-injection).

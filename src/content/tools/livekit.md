@@ -2,6 +2,8 @@
 name: "LiveKit"
 description: "Open-source realtime infrastructure — a WebRTC server plus the LiveKit Agents framework for production voice AI, with turn detection, telephony, and cloud."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://livekit.com"
 pricing: "freemium"
 category: "voice"
@@ -22,7 +24,7 @@ related: ["guide:realtime-voice-apis", "guide:build-a-voice-agent", "tool:pipeca
 summary: "LiveKit is the open-source realtime stack voice AI standardized on: an Apache-2.0 WebRTC server plus the LiveKit Agents framework (Python/Node) wiring STT→LLM→TTS or speech-to-speech models, with an open multilingual turn-detection model, full telephony (SIP, DTMF, transfers), and LiveKit Cloud as the managed network. Self-host free; cloud freemium with metered minutes."
 faq:
   - q: "What exactly is LiveKit — the server or the agents framework?"
-    a: "Both, layered: livekit/livekit is the WebRTC SFU (the media transport), and livekit/agents is the framework for building voice agents on top — pluggable STT/LLM/TTS providers or realtime speech-to-speech models, turn detection, interruptions, telephony. Self-host both for free, or run on LiveKit Cloud and pay metered minutes."
+    a: "Both, layered: livekit/livekit is the WebRTC SFU (the media transport), and livekit/agents is the framework for building voice agents on top — pluggable STT/LLM/TTS providers or realtime speech-to-speech models, turn detection, interruptions, telephony. Self-host both for free, or run on LiveKit Cloud and pay metered minutes. Cloud plans, as of September 2026 from livekit.com/pricing: Build is $0/month with 1,000 agent-session minutes and no card, Ship starts at $50/month with 5,000 minutes then $0.01 per extra minute, Scale starts at $500/month with 50,000 minutes, and Enterprise is custom."
   - q: "Does ChatGPT's voice mode really run on LiveKit?"
     a: "Per LiveKit's own blog: yes — OpenAI integrates a LiveKit client SDK in the ChatGPT app, with calls connecting over LiveKit Cloud, alongside an announced partnership around the Realtime API. It's vendor-attributed (phrase it that way), but it's the strongest production credential in the category."
   - q: "LiveKit vs Vapi — build or buy?"
@@ -55,4 +57,4 @@ It's the substrate under the [voice-agent pipeline](/guides/voice/build-a-voice-
 
 ## Good to know
 
-Apache-2.0 throughout (~19k/11k stars across server/agents), with a $45M Series B (April 2025) and a **$100M Series C at a $1B valuation** (Index Ventures, January 2026) — agents downloads topped a million a month. The build-vs-buy line against [Vapi](/tools/vapi) and the OSS-pipeline comparison with [Pipecat](/tools/pipecat) are drawn in [Realtime Voice Agents](/guides/voice/realtime-voice-apis).
+Apache-2.0 throughout (~21k/14k stars across server/agents as of September 2026), with a $45M Series B (April 2025) and a **$100M Series C at a $1B valuation** (Index Ventures, January 2026) — agents downloads topped a million a month. Cloud pricing, as of September 2026 from livekit.com/pricing: a free Build tier with 1,000 agent-session minutes, Ship from $50/month, Scale from $500/month, and custom Enterprise. The build-vs-buy line against [Vapi](/tools/vapi) and the OSS-pipeline comparison with [Pipecat](/tools/pipecat) are drawn in [Realtime Voice Agents](/guides/voice/realtime-voice-apis).

@@ -2,6 +2,8 @@
 name: "Devin"
 description: "Cognition's autonomous AI software engineer that works in its own cloud workspace with an editor, terminal, and browser."
 date: 2026-06-03
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://devin.ai"
 pricing: "freemium"
 category: "agent"
@@ -12,12 +14,12 @@ tags: ["autonomous", "agent", "cloud"]
 featured: false
 related: ["tool:claude-code", "tool:goose", "tool:amp"]
 alternativeTo: ["openhands", "swe-agent", "amp", "goose", "claude-code"]
-summary: "Devin is Cognition's autonomous AI software engineer. You hand it a task — a bug, refactor, migration, or ticket — and it works unattended in a sandboxed cloud VM with an editor, terminal, and browser, then opens a pull request you review. Trigger it from Slack, Teams, or Linear, run sessions in parallel, and pay via usage quotas measured in ACUs."
+summary: "Devin is Cognition's autonomous AI software engineer. You hand it a task — a bug, refactor, migration, or ticket — and it works unattended in a sandboxed cloud VM with an editor, terminal, and browser, then opens a pull request you review. Trigger it from Slack, Teams, or Linear, run sessions in parallel, and pay through daily and weekly usage quotas with prepaid on-demand credits beyond them."
 faq:
   - q: "What is Devin?"
     a: "Devin is an autonomous AI software engineer from Cognition. You hand it a task and it works on its own in a sandboxed cloud workspace with a code editor, terminal, and browser — planning the work, running commands, reading logs, and opening a pull request you review at the end. It is most at home on well-scoped chores like dependency bumps, test backfills, migrations, and bug triage."
   - q: "How much does Devin cost?"
-    a: "Self-serve tiers are Free (a limited quota to try it), Pro at $20/month, and Max at $200/month, each with daily and weekly usage quotas that refresh automatically. Teams is $80/month base plus $40/month per full developer seat; Enterprise is custom-priced. Usage is measured in ACUs (Agent Compute Units — roughly 15 minutes of active work per ACU), with extra usage purchasable at API pricing."
+    a: "Self-serve tiers, as of September 2026 from docs.devin.ai: Free (a limited quota to try it, single member), Pro at $20/month, and Max at $200/month, each with daily and weekly usage quotas that refresh automatically. Teams starts at $80/month and adds $40/month per full seat, alongside free flex seats that draw on the workspace credit pool; Enterprise is custom-priced. Self-serve usage past the included quota runs on prepaid on-demand credits that roll over, while Enterprise contracts are billed in ACUs (Agent Compute Units) at the rate set in the order form."
   - q: "How do I use Devin?"
     a: "Write a clear, self-contained task and hand it off — tag Devin in Slack or Microsoft Teams, assign it a Linear ticket, or drive it from the CLI, desktop app, or API. It works in its cloud VM, pushes a branch, opens a PR, and responds to review comments, so you review the diff like any other contributor's."
 ---
@@ -53,4 +55,4 @@ and open a PR against main.
 
 ## Good to know
 
-Devin is a cloud-hosted product with no self-managed install option. Self-serve tiers are Free (a limited quota to try it), Pro at $20/month, and Max at $200/month, each with daily and weekly usage quotas that refresh automatically. Teams is $80/month base plus $40/month per full developer seat with unlimited concurrent sessions; Enterprise is custom-priced. Usage is measured in ACUs (Agent Compute Units — Cognition's normalized measure of VM time, model inference, and bandwidth, roughly 15 minutes of active work per ACU); extra usage beyond included quotas can be purchased at API pricing. Note that Cognition also acquired the Windsurf editor (July 2025), so devin.ai now spans more than the autonomous agent — this entry covers Devin, the agent itself.
+Devin is a cloud-hosted product with no self-managed install option. Self-serve tiers, as of September 2026 from docs.devin.ai: Free (a limited quota to try it, one member), Pro at $20/month, and Max at $200/month, each with daily and weekly usage quotas that refresh automatically — Max drops the daily cap and runs on a larger weekly allowance. Teams starts at $80/month and adds $40/month per full seat, plus free flex seats that draw on the workspace's shared on-demand credits; Enterprise is custom-priced. Self-serve usage beyond the included quota runs on prepaid on-demand credits that roll over month to month, while Enterprise contracts are billed in ACUs (Agent Compute Units — Cognition's normalized measure of VM time, model inference, and bandwidth) at the rate set in the order form. Note that Cognition also acquired the Windsurf editor (July 2025), so devin.ai now spans more than the autonomous agent — this entry covers Devin, the agent itself.

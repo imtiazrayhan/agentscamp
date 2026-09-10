@@ -2,6 +2,8 @@
 name: "OpenCode"
 description: "The open-source AI coding agent — a terminal TUI from Anomaly with 75+ model providers, LSP-powered context, parallel agents, and shareable sessions."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://opencode.ai"
 pricing: "open-source"
 category: "cli"
@@ -18,7 +20,7 @@ sameAs:
   - "https://opencode.ai/docs/"
   - "https://x.com/opencode"
 related: ["tool:claude-code", "tool:codex-cli", "tool:aider", "tool:cursor", "tool:gemini-cli", "guide:ai-coding-agents-cli-2026"]
-summary: "OpenCode is the most-starred open-source coding agent (~173k GitHub stars by mid-2026) — a terminal TUI from Anomaly (formerly SST) that works with 75+ model providers including local ones, loads language servers for real code intelligence, runs parallel sessions, and shares sessions via links. MIT-licensed; bring your own keys or use the optional Zen gateway."
+summary: "OpenCode is the most-starred open-source coding agent (~206k GitHub stars by September 2026) — a terminal TUI from Anomaly (formerly SST) that works with 75+ model providers including local ones, loads language servers for real code intelligence, runs parallel sessions, and shares sessions via links. MIT-licensed; bring your own keys or use the optional Zen gateway."
 faq:
   - q: "Is OpenCode free?"
     a: "The agent itself is free and MIT-licensed. You supply the model: bring an API key from any of 75+ supported providers, sign in with an existing GitHub Copilot or ChatGPT Plus/Pro subscription, run a local model, or use OpenCode Zen — the team's optional pay-as-you-go gateway of tested models."
@@ -29,9 +31,9 @@ faq:
 audience: ["developers"]
 ---
 
-OpenCode is the open-source AI coding agent — by mid-2026 the most-starred in the category (~173k GitHub stars) and the first project to seriously disrupt the Cursor/Claude Code duopoly. It runs as a polished terminal TUI: point it at a repository, describe the task, and it plans, edits files, and runs commands, with the model of your choice behind it. It's built by Anomaly (the company formerly known as SST) and licensed MIT.
+OpenCode is the open-source AI coding agent — by September 2026 the most-starred in the category (~206k GitHub stars) and the first project to seriously disrupt the Cursor/Claude Code duopoly. It runs as a polished terminal TUI: point it at a repository, describe the task, and it plans, edits files, and runs commands, with the model of your choice behind it. It's built by Anomaly (the company formerly known as SST) and licensed MIT.
 
-The pitch is **control without compromise on UX**. Where most open-source agents trade polish for freedom, OpenCode ships a genuinely refined terminal experience — plus a desktop app in beta and IDE extensions — while staying fully bring-your-own-model.
+The pitch is **control without compromise on UX**. Where most open-source agents trade polish for freedom, OpenCode ships a genuinely refined terminal experience — plus a desktop app (still in beta as of September 2026) and IDE extensions — while staying fully bring-your-own-model.
 
 ## Highlights
 

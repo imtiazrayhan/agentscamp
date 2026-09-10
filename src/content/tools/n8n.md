@@ -2,6 +2,8 @@
 name: "n8n"
 description: "Fair-code workflow automation with native AI: a visual canvas plus code, 400+ integrations, and LangChain agent nodes; self-host free or cloud per-run."
 date: 2026-06-11
+updated: 2026-09-10
+reviewed: 2026-09-10
 url: "https://n8n.io"
 pricing: "freemium"
 category: "platform"
@@ -18,7 +20,7 @@ sameAs:
   - "https://docs.n8n.io"
   - "https://blog.n8n.io"
 related: ["guide:n8n-vs-dify", "tool:dify", "tool:langchain", "glossary:human-in-the-loop", "guide:agent-frameworks-2026"]
-summary: "n8n (~192k stars) is the automation platform that grew an AI brain: a visual workflow canvas (with code when you want it), 400+ app integrations, and AI agent nodes — built on LangChain — with memory backends, vector-store nodes for RAG, and broad model support. Fair-code licensed: free self-hosting for internal use, EUR-priced cloud billed per execution."
+summary: "n8n (~204k stars) is the automation platform that grew an AI brain: a visual workflow canvas (with code when you want it), 400+ app integrations, and AI agent nodes — built on LangChain — with memory backends, vector-store nodes for RAG, and broad model support. Fair-code licensed: free self-hosting for internal use, EUR-priced cloud billed per execution."
 faq:
   - q: "What makes n8n good for AI workflows specifically?"
     a: "It puts agents inside real automations. The AI Agent node (Tools, ReAct, Plan-and-Execute, SQL variants) is built on LangChain, with conversation memory (Redis/Postgres/Zep), vector-store nodes (Pinecone, Qdrant, Weaviate…) for RAG, and every major model provider — and crucially, 400+ app integrations as the agent's hands: the AI step slots between the Gmail trigger and the Slack action."
@@ -29,7 +31,7 @@ faq:
 audience: ["founders"]
 ---
 
-n8n attacks AI from the opposite direction of the AI-native platforms: it was already the automation layer — ~192k stars, 400+ integrations, a decade of workflow muscle — and then gave its workflows a brain. The result is distinctive: **agents with hands**, where the AI node sits between real triggers and real actions.
+n8n attacks AI from the opposite direction of the AI-native platforms: it was already the automation layer — ~204k stars, 400+ integrations, a decade of workflow muscle — and then gave its workflows a brain. The result is distinctive: **agents with hands**, where the AI node sits between real triggers and real actions.
 
 ## Highlights
 
@@ -54,4 +56,4 @@ The signature pattern: **automation-first, intelligence where it pays** — a de
 
 ## Good to know
 
-The October 2025 Series C ($180M, Accel-led, $2.5B valuation, NVIDIA's venture arm participating) made n8n the automation category's AI flagship; 2.0 followed with security-by-default. Cloud "AI credits" are starter allowances — you bring model keys. The head-to-head with the AI-native canvas: [n8n vs Dify](/guides/comparisons/n8n-vs-dify).
+The October 2025 Series C ($180M, Accel-led, $2.5B valuation, NVIDIA's venture arm participating) made n8n the automation category's AI flagship; 2.0 followed with security-by-default. Cloud plans, as of September 2026 from n8n.io: Starter €20/mo, Pro €50/mo, and Business €667/mo, all billed annually and metered by workflow execution with unlimited steps and users; Enterprise is sales-led. The cloud "AI credits" are starter allowances — you bring model keys. The head-to-head with the AI-native canvas: [n8n vs Dify](/guides/comparisons/n8n-vs-dify).
