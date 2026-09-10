@@ -10,7 +10,6 @@ import { PromoBar } from "@/components/layout/PromoBar";
 import { Container } from "@/components/ui/container";
 import { SearchProvider } from "@/components/search/SearchProvider";
 import { ThemeProvider } from "@/components/theme-provider";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -91,33 +90,31 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TooltipProvider delayDuration={200}>
-            <SearchProvider>
-              <a
-                href="#main"
-                className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
-              >
-                Skip to content
-              </a>
-              {/* Applies the dismissal before first paint — same technique as
-                  next-themes uses for the theme class, so there is no flash
-                  and no layout shift either way. */}
-              <script
-                dangerouslySetInnerHTML={{
-                  __html: `try{if(localStorage.getItem('promo-dismissed-v1')==='1')document.documentElement.dataset.promo='off'}catch(e){}`,
-                }}
-              />
-              <PromoBar />
-              <Nav />
-              <main id="main" tabIndex={-1} className="focus:outline-none">
-                <Container className="min-h-[60vh] py-10 sm:py-12">
-                  {children}
-                </Container>
-              </main>
-              <Footer />
-              <Toaster richColors position="bottom-right" />
-            </SearchProvider>
-          </TooltipProvider>
+          <SearchProvider>
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+            >
+              Skip to content
+            </a>
+            {/* Applies the dismissal before first paint — same technique as
+                next-themes uses for the theme class, so there is no flash
+                and no layout shift either way. */}
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `try{if(localStorage.getItem('promo-dismissed-v1')==='1')document.documentElement.dataset.promo='off'}catch(e){}`,
+              }}
+            />
+            <PromoBar />
+            <Nav />
+            <main id="main" tabIndex={-1} className="focus:outline-none">
+              <Container className="min-h-[60vh] py-10 sm:py-12">
+                {children}
+              </Container>
+            </main>
+            <Footer />
+            <Toaster richColors position="bottom-right" />
+          </SearchProvider>
         </ThemeProvider>
       </body>
     </html>
