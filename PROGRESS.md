@@ -1,3 +1,83 @@
+# Sales & revenue role path (2026-09-10) — SHIPPED
+
+Two commits. The ninth `/for/<role>` path and the first of the five remaining
+Anthropic knowledge-work plugin roles we did not cover. Hub **748 -> 778**.
+Six authors wrote in parallel into a scratchpad against a frozen manifest; a
+separate adversarial fact-checker then tried to falsify every product claim.
+
+## Shipped
+6 guides in `guides/sales` (one cornerstone pillar at 4,079 words), a tier-1
+roundup and a versus in `guides/comparisons`, 10 tool pages in a new `sales`
+category, 4 skills + 2 commands + 1 agent, 5 glossary terms, 25 existing items
+back-tagged. `/for/sales` renders 50 curated items.
+
+## The angle is the Claude surface, not the sales framing
+All ten tools ship a first-party MCP server and nine carry a Connectors
+Directory listing. No page-one competitor organises around that, and it is what
+lets a developer byline carry a sales page without writing sales strategy. The
+second wedge is freshness: every listicle ranking today still lists Qualified,
+Common Room and Clari as independent going concerns, and all three changed
+ownership in 2026.
+
+## The planned installables all cloned Anthropic's plugin — caught and replaced
+The approved sketch (prospect-researcher, battlecard-builder,
+discovery-call-prepper, outreach-sequence-writer, deal-review-checklist,
+prep-call, pipeline-reviewer) duplicated `account-research`,
+`competitive-intelligence`, `call-prep`, `draft-outreach` and `pipeline-review`
+— shipped free by Anthropic. Replaced with the complement: verify and audit
+rather than research and draft (`outreach-claim-checker`,
+`cold-email-deliverability-auditor`, `crm-export-auditor`,
+`security-questionnaire-responder`, `/check-outreach`, `/audit-crm`,
+`agent:sales-engineer`). Max description overlap against 265 existing artifacts
+plus Anthropic's nine: 0.18 Jaccard. Four skills, not five — the gate allows
+3-5 and a forced fifth collided with `command:seed-data`.
+
+## Four planned tools dropped on verifiable grounds
+- **11x** — its own Alice pricing page contradicts itself by $9,000/yr; no MCP.
+- **Regie.ai** — no MCP server, no developer docs site at all.
+- **Clari** — clari.com carries a banner saying it redirects 2026-09-15.
+- **Qualified / Common Room** — acquired by Salesforce and Zoom in 2026.
+Replaced with **Unify** and **Nooks**. `outreach.io` now 301s to `outreach.ai`,
+so the planned URL would have shipped a redirect on day one.
+
+## The fact-check produced 29 corrections, all applied
+The ones that mattered:
+- **Close's tool count** was "99 tools, 54 read / 17 safe-write / 28 destructive"
+  in ten places, sourced to nothing. Its catalogue lists 117 (67/16/34) and
+  Anthropic's directory lists 55. The internal consistency of 54+17+28=99 is
+  what made a fabricated number look verified.
+- **Clay's endpoint** — we told readers a URL claiming to be it "did not come
+  from Clay". Anthropic publishes it in two first-party places.
+- **The verification badges ARE machine-readable** (`aria-label="Verified"`), so
+  our stated reason for not repeating them was false in ten places. The
+  editorial conclusion survives on Anthropic's own disclaimer instead.
+- Attio 21 -> 23 (directory) and 50+ -> 41 (docs); Apollo 230M -> 240M+;
+  Apollo/Pocus is dated March 2026 on both vendors' pages; Gong's 55% was
+  quarterly growth, not ARR growth; Gong's MCP docs are 27 Aug, not 5 Jul;
+  ZoomInfo's GTM Studio and Copilot launched May 2025, not 2026.
+
+## Process notes
+- **My own brief contradicted the spec on prices.** I told the roundup author to
+  include Clay's and Apollo's figures; house precedent is that all three
+  existing tier-1 roundups carry zero dollar figures. Stripped, with the insight
+  kept and the dated numbers left on the tool pages. Versus guides are mixed
+  (`exa-vs-tavily` carries four), so those may keep prices.
+- **Never re-invent the validator's regexes.** My pre-integration checker was
+  stricter than the repo and produced four false errors on tool pages; the real
+  `prose()` strips fenced and inline code before `PRICE`/`AS_OF` run.
+- A cornerstone guide needs `reviewed` when `updated` is absent
+  (`validate-content.ts:266`) — the only legal route for new content.
+- Nested double quotes inside a double-quoted YAML scalar break the loader; that
+  and a 400-char summary overrun were the only two self-inflicted build breaks.
+
+## Next
+CLI `agentscamp@0.9.0` is staged (263 installables, verify-bundle OK) and
+awaits the owner's `cd cli && npm publish`. Mirror synced and pushed.
+Remaining uncovered plugin roles: customer support, product management,
+finance, legal. Engineering leaders remains the strongest non-plugin candidate.
+
+---
+
 # Engineering sub-paths: /for/ai-engineers, /for/devops, /for/security (2026-09-10) — SHIPPED
 
 One commit, no new content. `/for/developers` carried **547 of 748 items (73%)**
