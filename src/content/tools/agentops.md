@@ -4,6 +4,7 @@ title: "AgentOps"
 description: "Observability for AI agents — session replay, cost and latency tracking, and debugging for multi-step runs."
 url: "https://www.agentops.ai"
 date: 2026-06-03
+updated: "2026-09-11"
 pricing: "freemium"
 category: "observability"
 repo: "https://github.com/AgentOps-AI/agentops"
@@ -20,7 +21,7 @@ faq:
   - q: "What is AgentOps?"
     a: "AgentOps is an observability platform built specifically for AI agents. It turns an opaque multi-step agent run into a session replay — a step-by-step timeline of every LLM call, tool call, and decision — with cost, latency, and errors attached, plus failure analytics across runs."
   - q: "Is AgentOps free?"
-    a: "AgentOps offers an open-source SDK with a hosted dashboard on a freemium model — a free tier plus paid plans for scale and retention. You bring your own agent framework and model provider."
+    a: "AgentOps offers an open-source SDK (MIT) with a hosted dashboard on a freemium model — a free tier plus paid plans for scale and retention. You bring your own agent framework and model provider."
   - q: "How do I use AgentOps?"
     a: "Setup is a couple of lines: import agentops and call agentops.init(), then run your agent — every step, tool call, cost, and error is captured. It has drop-in integrations for popular agent frameworks including CrewAI, AutoGen, the OpenAI Agents SDK, and LangGraph."
 ---
@@ -49,4 +50,4 @@ agentops.init()   # then run your agent — every step, tool call, cost, and err
 
 ## Good to know
 
-AgentOps offers an open-source SDK with a hosted dashboard on a freemium model (free tier plus paid plans for scale and retention). You bring your agent framework and model provider. It's most useful once an agent has enough steps that logs alone stop being readable — see [agent-reliability-reviewer](/agents/meta-orchestration/agent-reliability-reviewer) for hardening what the traces reveal.
+AgentOps offers an open-source SDK (MIT) with a hosted dashboard on a freemium model (free tier plus paid plans for scale and retention). The repo also holds a self-hostable app, but its license is unclear: the app folder carries an Elastic License 2.0 file while the README calls it MIT. Development has slowed: as of September 2026, the latest SDK release is 0.4.21 from August 2025, and 2026 commits are sparse. You bring your agent framework and model provider. It's most useful once an agent has enough steps that logs alone stop being readable — see [agent-reliability-reviewer](/agents/meta-orchestration/agent-reliability-reviewer) for hardening what the traces reveal.

@@ -3,21 +3,22 @@ name: "GitHub Copilot"
 description: "GitHub’s AI pair programmer with inline completions and an agent mode."
 seoDescription: "GitHub Copilot is GitHub's AI pair programmer with inline completions, chat, and an agent mode — features, pricing tiers, and closest alternatives."
 date: 2026-06-03
+updated: "2026-09-11"
 url: "https://github.com/features/copilot"
-pricing: "paid"
+pricing: "freemium"
 category: "extension"
 color: "blue"
 topics: ["coding-languages"]
 tags: ["vscode", "github"]
 alternativeTo: ["cursor", "windsurf", "cody", "continue", "tabnine"]
-summary: "GitHub Copilot is GitHub's AI coding assistant: inline completions as you type, Copilot Chat for questions, tests, and refactors, and an agent mode that plans and applies multi-file changes. It works in VS Code, Visual Studio, JetBrains IDEs, Neovim, and the GitHub web UI. Paid subscription with a limited free tier; free for verified students."
+summary: "GitHub Copilot is GitHub's AI coding assistant: inline completions as you type, Copilot Chat for questions, tests, and refactors, and an agent mode that plans and applies multi-file changes. It works in VS Code, Visual Studio, JetBrains IDEs, Neovim, and the GitHub web UI. Freemium: a Free plan, with paid tiers billed in GitHub AI Credits since June 2026."
 faq:
   - q: "What is GitHub Copilot?"
     a: "GitHub Copilot is an AI coding assistant that integrates directly into the editor to suggest code as you type. Built on large language models trained on public code, it offers inline completions, a chat interface for explaining code and generating tests, and an autonomous agent mode that can plan and apply multi-file changes."
   - q: "Is GitHub Copilot free?"
-    a: "Copilot is a paid subscription, with a limited free tier and free access for verified students and maintainers of popular open-source projects. It requires a GitHub account and a supported editor, and suggestion quality and available models vary by plan."
+    a: "Yes, within limits. As of September 2026, Copilot Free costs $0 and includes 2,000 completions a month plus an allowance of GitHub AI Credits. Paid plans run from Pro at $10/user/month through Pro+ at $39 and Max at $100; since June 1, 2026 their chat, agent, and CLI usage draws on GitHub AI Credits, while completions stay unlimited. Verified students get a free Student plan, and verified teachers and maintainers of popular open-source projects may qualify for free Pro."
   - q: "How do I install GitHub Copilot?"
-    a: "For the terminal, install the Copilot CLI with npm install -g @github/copilot (or brew install copilot-cli) and start an interactive session with copilot. In the editor, Copilot supports VS Code, Visual Studio, JetBrains IDEs, Neovim, and the GitHub web UI."
+    a: "For the terminal, install the Copilot CLI with curl -fsSL https://gh.io/copilot-install | bash (or brew install --cask copilot-cli, or winget install GitHub.Copilot on Windows) and start an interactive session with copilot. In the editor, Copilot supports VS Code, Visual Studio, JetBrains IDEs, Neovim, and the GitHub web UI."
 audience: ["developers"]
 related: ["tool:cursor", "tool:claude-code", "tool:windsurf", "guide:ai-code-review-workflow", "glossary:vibe-coding"]
 ---
@@ -40,7 +41,7 @@ Copilot suits a tight inner-loop workflow: accept completions for boilerplate, u
 
 ```bash
 # Install the GitHub Copilot CLI, then start an interactive session
-npm install -g @github/copilot   # or: brew install copilot-cli
+curl -fsSL https://gh.io/copilot-install | bash   # or: brew install --cask copilot-cli
 copilot
 ```
 
@@ -49,4 +50,4 @@ copilot
 
 ## Good to know
 
-Copilot is a paid subscription (with a limited free tier and free access for verified students and maintainers of popular open-source projects). It requires a GitHub account and a supported editor. Suggestion quality and available models vary by plan, and an internet connection is required.
+Copilot is freemium, as of September 2026: the $0 Free plan includes 2,000 completions a month and an allowance of GitHub AI Credits, paid plans have billed chat, agent, and CLI usage in GitHub AI Credits since June 1, 2026, verified students get a free Student plan, and eligible verified teachers and popular open-source maintainers can get Pro for free. It normally requires a GitHub account, a supported editor, and an internet connection; the exception is bring-your-own-key chat in VS Code, which works with local models through Ollama or Foundry Local without a Copilot plan. Available models vary by plan. Comparing options? [The best GitHub Copilot alternatives](/guides/comparisons/best-github-copilot-alternatives-2026) covers free, open-source, and self-hosted picks.

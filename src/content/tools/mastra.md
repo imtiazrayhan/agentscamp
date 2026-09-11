@@ -4,11 +4,12 @@ title: "Mastra"
 description: "An open-source TypeScript framework for building AI agents, workflows, RAG, and tool-calling, with memory, model routing, and built-in observability."
 url: "https://mastra.ai"
 date: 2026-06-24
+updated: 2026-09-11
 pricing: "open-source"
 category: "sdk"
 repo: "https://github.com/mastra-ai/mastra"
-license: "Apache-2.0"
-sameAs: ["https://github.com/mastra-ai/mastra", "https://mastra.ai/docs", "https://x.com/mastra_ai"]
+license: "Apache-2.0 (core; ee/ commercial)"
+sameAs: ["https://github.com/mastra-ai/mastra", "https://mastra.ai/docs", "https://x.com/mastra"]
 color: "blue"
 topics: ["ai-agents-systems", "llm-app-dev"]
 audience: ["ai-engineers"]
@@ -23,7 +24,7 @@ faq:
   - q: "Is Mastra free?"
     a: "Mastra's core framework is open source under Apache-2.0 and free to self-host (deploy to Node.js, Vercel, Cloudflare, Netlify, or your own infra). The optional Mastra Platform is a commercial hosted offering with a free Starter tier and paid usage-metered tiers — confirm current pricing on the official site."
   - q: "How does Mastra compare to LangGraph?"
-    a: "Both build controllable, multi-step agents, but Mastra is TypeScript-native and ships agents, workflows, memory, and observability as one framework, while LangGraph is a Python-first (with JS port) low-level graph library focused on explicit state machines. If your stack is Node/TypeScript, Mastra keeps you in one language; LangGraph is the more common choice in Python shops."
+    a: "Both build controllable, multi-step agents, but Mastra is TypeScript-native and ships agents, workflows, memory, and observability as one framework, while LangGraph is a low-level graph library for explicit state machines, available in Python and JavaScript (both reached 1.0 in October 2025). If your stack is Node/TypeScript, Mastra keeps you in one language; LangGraph is the more common choice in Python shops."
 ---
 
 Mastra is an **open-source TypeScript framework for building AI agents, workflows, RAG, and tool-calling**, from the team behind Gatsby (Sam Bhagwat and co-founders). It packages the primitives an agentic app needs — typed agents, a graph-based workflow engine, agent memory, model routing, and observability — into one modular framework so you stay in TypeScript instead of reaching for a separate Python stack.
@@ -54,4 +55,4 @@ npm create mastra@latest
 
 ## Good to know
 
-Mastra's core framework is open source under Apache-2.0 and free to self-host; code under `ee/` directories is source-available under the Mastra Enterprise License, and the hosted Mastra Platform is a separate commercial offering with a free Starter tier and paid usage-based tiers. Confirm current pricing and license terms on the official site. For broader framework trade-offs, see [LangGraph vs. CrewAI](/guides/comparisons/langgraph-vs-crewai).
+Mastra's core framework is open source under Apache-2.0 and free to self-host; code under `ee/` directories falls under the Mastra Enterprise Edition License, which since August 24, 2026 permits production use only under a written agreement with Kepler Software, Inc., and the hosted Mastra Platform is a separate commercial offering with a free Starter tier and paid usage-based tiers. Confirm current pricing and license terms on the official site. For broader framework trade-offs, see [LangGraph vs. CrewAI](/guides/comparisons/langgraph-vs-crewai).

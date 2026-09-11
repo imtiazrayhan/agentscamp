@@ -3,6 +3,7 @@ name: "Cody"
 description: "Sourcegraph's AI coding assistant for the IDE, grounded in deep codebase context."
 seoDescription: "Cody is Sourcegraph's AI coding assistant for the IDE, grounded in deep codebase context — features, pricing, and how it compares to alternatives."
 date: 2026-06-03
+updated: "2026-09-11"
 url: "https://sourcegraph.com/cody"
 pricing: "enterprise"
 category: "extension"
@@ -18,9 +19,9 @@ faq:
   - q: "What is Cody?"
     a: "Cody is Sourcegraph's AI coding assistant that lives inside your editor and answers, completes, and edits code using context pulled from your whole codebase. Instead of seeing only the open file, it fetches relevant definitions, references, and files across the repository — and, on Enterprise, across many repositories — so responses are grounded in how your code actually works."
   - q: "Is Cody free?"
-    a: "Not anymore. Cody is now part of the Sourcegraph Enterprise plan only: the Cody Free and Cody Pro tiers were discontinued on July 23, 2025, with new signups closed June 25, 2025. Enterprise pricing scales with team size and is quote-based."
+    a: "Not anymore. Cody is now part of the Sourcegraph Enterprise plan only: the Cody Free and Cody Pro tiers were discontinued on July 23, 2025, with new signups closed June 25, 2025. Enterprise is sold through sales on an annual contract that scales with team size."
   - q: "Cody vs Amp?"
-    a: "Both are Sourcegraph products with different audiences. If you are an individual developer, Sourcegraph now points you to Amp (ampcode.com), its standalone agentic coding tool, while Cody continues as the IDE assistant bundled with Sourcegraph Enterprise."
+    a: "They are no longer sibling products: Amp spun out of Sourcegraph as an independent company in December 2025. When Sourcegraph ended Cody Free and Pro in 2025, it pointed individual developers to Amp (ampcode.com); Cody continues as the IDE assistant supported on Sourcegraph Enterprise."
 ---
 
 Cody is Sourcegraph's AI coding assistant that lives inside your editor and answers, completes, and edits code using context pulled from your whole codebase. Its differentiator is Sourcegraph's code intelligence: instead of seeing only the open file, Cody fetches relevant definitions, references, and files across the repository (and, on Enterprise, across many repositories) so its responses are grounded in how your code actually works.
@@ -34,7 +35,7 @@ It is aimed at engineering teams working in large, multi-repo codebases where co
 - **Auto-edit** — contextual, multi-line suggestions that react to your cursor and recent changes as you type.
 - **Prompts** — reusable, customizable prompt templates for recurring workflows like writing tests, explaining code, or documenting a function.
 - **Context Filters** — admins can control which repositories are allowed to inform Cody's responses, keeping sensitive code out of context.
-- **Editor reach** — VS Code, JetBrains IDEs, Visual Studio (experimental), the Sourcegraph web app, and a command-line interface (Cody CLI).
+- **Editor reach** — VS Code, JetBrains IDEs, Visual Studio (experimental), the Sourcegraph web app, and a command-line interface (Cody CLI, experimental).
 
 ## In an AI-assisted workflow
 
@@ -50,7 +51,7 @@ its resolvers registered? Then add a `lastSeenAt` field end to end.
 
 ## Good to know
 
-Cody is available in VS Code, JetBrains, Visual Studio (experimental), the web app, and via CLI. It is now part of the **Sourcegraph Enterprise** plan only: the Cody Free and Cody Pro tiers were discontinued on July 23, 2025 (new signups closed June 25, 2025).
+Cody is available in VS Code, JetBrains, Visual Studio (experimental), the web app, and via CLI (experimental). It is now part of the **Sourcegraph Enterprise** plan only: the Cody Free and Cody Pro tiers were discontinued on July 23, 2025 (new signups closed June 25, 2025).
 
 > [!WARNING]
-> If you are an individual developer, Cody is no longer the product to reach for — Sourcegraph now points solo users to **Amp** (ampcode.com), its standalone agentic coding tool, while Cody continues as the IDE assistant bundled with Sourcegraph Enterprise. Enterprise pricing scales with team size and is quote-based.
+> If you are an individual developer, Cody is no longer the product to reach for. When it ended Cody Free and Pro in 2025, Sourcegraph pointed solo users to **Amp** (ampcode.com), which has been an independent company since December 2025; Cody continues as the IDE assistant supported on Sourcegraph Enterprise. Enterprise is sold through sales on an annual contract that scales with team size.

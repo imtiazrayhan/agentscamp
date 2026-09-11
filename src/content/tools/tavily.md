@@ -2,8 +2,8 @@
 name: "Tavily"
 description: "The web-access layer for agents — Search, Extract, Crawl, Map, and Research APIs purpose-built for LLMs, behind one key, with a hosted MCP server."
 date: 2026-06-11
-updated: 2026-09-10
-reviewed: 2026-09-10
+updated: "2026-09-11"
+reviewed: "2026-09-11"
 url: "https://tavily.com"
 pricing: "freemium"
 category: "platform"
@@ -35,11 +35,11 @@ Tavily's framing is exactly the 2026 need: not "a search engine you can call" bu
 
 ## Highlights
 
-- **Search built for agents** — LLM-ready results at basic/advanced depth, with a vendor-claimed 180ms p50 that matters when search sits inside an agent loop.
+- **Search built for agents** — LLM-ready results at ultra-fast, fast, basic or advanced depth, with a vendor-claimed 180ms p50 that matters when search sits inside an agent loop.
 - **Extract, Crawl, Map** — clean content from URLs, instruction-guided site traversal, and URL discovery: the ingestion half, included.
 - **Research endpoint** — multi-step investigations (pro/mini tiers) as a single API call, for when one search isn't an answer.
-- **Hosted MCP server** — `mcp.tavily.com/mcp/` makes the whole surface a one-liner in Claude Code and friends.
-- **Drop-in ecosystem** — Python/JS SDKs and first-class integrations across OpenAI, Anthropic, LangChain, plus marketplace placements (Databricks, JetBrains).
+- **Hosted MCP server** — `mcp.tavily.com/mcp/` makes search, extract, map and crawl a one-liner in Claude Code and friends.
+- **Drop-in ecosystem** — Python/JS SDKs and first-class integrations across OpenAI, Anthropic, LangChain, plus marketplace placements (Databricks) and a JetBrains integration.
 
 ## In an AI-assisted workflow
 
@@ -55,4 +55,4 @@ In agent stacks it's typically *the* web tool: the [agentic-RAG](/guides/concept
 
 ## Good to know
 
-The company grew out of open-source GPT Researcher and raised ~$25M (a $20M Series A led by Insight Partners, August 2025); in February 2026 Nebius Group agreed to acquire it for $275M (up to ~$400M with milestones), with Tavily continuing under its own brand. It now claims 2M+ developers. SDKs and the MCP server are MIT; the API is the product. Credits aren't 1:1 with calls — budget for advanced/research multipliers. Field positioning against [Exa](/tools/exa) and [Firecrawl](/tools/firecrawl): [Getting Web Data into AI Agents](/guides/concepts/web-data-for-ai-agents).
+The company comes from the team behind open-source GPT Researcher and raised a $25M Series A in August 2025; Nebius Group then acquired it, closing on February 19, 2026 without disclosing a price, and Tavily continues under its own brand as Tavily by Nebius. It now claims 2M+ developers. SDKs and the MCP server are MIT; the API is the product. Credits aren't 1:1 with calls — budget for advanced/research multipliers. Field positioning against [Exa](/tools/exa) and [Firecrawl](/tools/firecrawl): [Getting Web Data into AI Agents](/guides/concepts/web-data-for-ai-agents).

@@ -3,8 +3,8 @@ name: "Firecrawl"
 title: "Firecrawl"
 description: "The API to search, scrape, and crawl the web for AI — clean Markdown out of any site, LLM-powered extraction, and a first-class MCP server."
 date: 2026-06-11
-updated: 2026-09-10
-reviewed: 2026-09-10
+updated: "2026-09-11"
+reviewed: "2026-09-11"
 url: "https://firecrawl.dev"
 pricing: "freemium"
 category: "platform"
@@ -21,32 +21,33 @@ sameAs:
   - "https://www.npmjs.com/package/firecrawl-mcp"
 related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "tool:exa", "agent:data-engineer", "guide:how-rag-works", "skill:chunking-strategy-optimizer"]
 alternativeTo: ["exa", "jina-reader", "tavily", "browser-use"]
-summary: "Firecrawl (~179k GitHub stars) turns the messy web into agent-ready data: /scrape renders any page to clean Markdown, /crawl walks whole sites, /map discovers URLs, /search queries the web, and /extract pulls structured data with an LLM. Open-source core (AGPL-3.0) with a hosted API, and an MIT MCP server installable into Claude Code as a hosted remote or local npx server."
+summary: "Firecrawl turns the messy web into agent-ready data: /scrape renders any page to clean Markdown, /crawl walks whole sites, /map discovers URLs, /search queries the web, and /extract pulls structured data with an LLM. Open-source core (AGPL-3.0) with a hosted API, and an MIT MCP server installable into Claude Code as a hosted remote or local npx server."
 faq:
   - q: "What does Firecrawl do that plain fetching doesn't?"
     a: "It handles the web's hostile parts — JavaScript rendering, anti-bot friction, pagination, layout noise — and returns clean Markdown or structured JSON ready for an LLM. One endpoint scrapes a page; /crawl does entire sites with depth and limit controls; /extract turns 'get every product's name and price' into a schema-validated result."
   - q: "How do I add Firecrawl to Claude Code?"
-    a: "Two documented options. Local: claude mcp add firecrawl -e FIRECRAWL_API_KEY=your-key -- npx -y firecrawl-mcp. Hosted remote: claude mcp add --transport http firecrawl https://mcp.firecrawl.dev/your-api-key/v2/mcp — note the key is embedded in that URL, so treat the whole URL as a secret."
+    a: "Hosted remote, as Firecrawl documents it: claude mcp add --transport http firecrawl https://mcp.firecrawl.dev/v2/mcp works keyless, or send your API key as an Authorization: Bearer header, never in the URL; an OAuth variant lives at /v2/mcp-oauth. Local: run npx -y firecrawl-mcp with FIRECRAWL_API_KEY set in the environment."
   - q: "Is Firecrawl open source?"
     a: "The core is AGPL-3.0 and self-hostable (SDKs and some components are MIT, as is the MCP server). The hosted cloud adds proprietary niceties like Fire-Engine. AGPL matters if you modify and operate it as a service — most teams just use the hosted API, whose free tier is 1,000 credits a month as of September 2026."
 audience: ["ai-engineers", "sales", "marketers"]
 ---
 
-Firecrawl is the ingestion workhorse of the agent stack: give it a URL and get back **clean Markdown**; give it a domain and get back the whole site, crawled and converted. At ~179k GitHub stars (September 2026) it has become the default answer to "how do I get web content into my LLM pipeline without writing a scraper per site."
+Firecrawl is the ingestion workhorse of the agent stack: give it a URL and get back **clean Markdown**; give it a domain and get back the whole site, crawled and converted. At ~179k GitHub stars (as of September 2026) it has become the default answer to "how do I get web content into my LLM pipeline without writing a scraper per site."
 
 ## Highlights
 
 - **`/scrape`** — any page to clean Markdown or JSON, JavaScript rendering included.
 - **`/crawl` + `/map`** — walk entire sites with depth/limit controls, or just discover the URL tree fast.
 - **`/search`** — web search with optional content scraping of the results in one call.
-- **`/extract`** — LLM-powered structured extraction: define a schema, get validated objects from messy pages.
-- **Agent-grade MCP server** — 14 tools including scrape/map/search/crawl, extraction, and newer agent/browser-session tools; hosted or local.
+- **`/extract`** — LLM-powered structured extraction: define a schema, get validated objects from messy pages (Firecrawl now calls `/agent` its successor).
+- **Agent-grade MCP server** — about 25 tools spanning scrape/map/search/crawl, parse, research, monitoring, and newer agent/browser-session tools (the former Extract tool is deprecated); hosted or local.
 - **Open core** — AGPL-3.0, self-hostable; the hosted cloud adds managed scale and the proprietary Fire-Engine.
 
 ## In an AI-assisted workflow
 
 ```bash
-claude mcp add firecrawl -e FIRECRAWL_API_KEY=your-api-key -- npx -y firecrawl-mcp
+claude mcp add --transport http firecrawl https://mcp.firecrawl.dev/v2/mcp-oauth
+# OAuth sign-in; the keyless /v2/mcp endpoint covers only search, scrape, and parse
 # then:
 # > Crawl docs.example.com, extract every API endpoint and its auth requirements
 # > into a table, and flag the ones our client doesn't implement yet
@@ -55,8 +56,8 @@ claude mcp add firecrawl -e FIRECRAWL_API_KEY=your-api-key -- npx -y firecrawl-m
 For [RAG ingestion](/guides/concepts/how-rag-works), Firecrawl is the step before [chunking](/skills/data/chunking-strategy-optimizer): site → clean Markdown → chunks → embeddings, without the per-site parser zoo.
 
 > [!WARNING]
-> Two operational cautions: the hosted MCP URL embeds your API key in the path — treat the URL itself as a secret — and scraped content is untrusted input to your model (the classic [indirect prompt-injection](/guides/ai-safety/defending-prompt-injection) vector). Respect target sites' policies; Firecrawl's own terms put that responsibility on you.
+> Two operational cautions: keep your API key in an environment variable or secret store, never in the hosted MCP URL (Firecrawl's docs are explicit on this), and scraped content is untrusted input to your model (the classic [indirect prompt-injection](/guides/ai-safety/defending-prompt-injection) vector). Respect target sites' policies; Firecrawl's own terms put that responsibility on you.
 
 ## Good to know
 
-Plans, as of September 2026 from firecrawl.dev/pricing: Free is 1,000 credits a month with no card, then Hobby at $16/month for 5,000 credits, Standard at $83/month for 100,000, Growth at $333/month for 500,000, and Scale at $599/month for 1,000,000 — all quoted on annual billing, with monthly billing costing more. Credits don't roll over below the Scale tier, which carries one month over. The company raised a $14.5M Series A (Nexus, with Y Combinator) alongside the v2 API in August 2025, and the GitHub org renamed from `mendableai` to `firecrawl`. Pair with [Exa](/tools/exa) — search to *find* pages, Firecrawl to *extract* them — for the full web-data layer under an agent.
+Plans, as of September 2026 from firecrawl.dev/pricing: Free is 1,000 credits a month with no card, then Hobby at $16/month for 5,000 credits, Standard at $83/month for 100,000, Growth at $333/month for 500,000, and Scale at $599/month for 1,000,000 — all quoted on annual billing, with monthly billing costing more. Credits don't roll over, except on Scale (one month) and Enterprise (a custom amount). The company raised a $14.5M Series A (Nexus, with Y Combinator) alongside the v2 API in August 2025, and the GitHub org renamed from `mendableai` to `firecrawl`. Pair with [Exa](/tools/exa) — search to *find* pages, Firecrawl to *extract* them — for the full web-data layer under an agent.

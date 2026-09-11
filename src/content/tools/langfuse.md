@@ -5,10 +5,11 @@ description: "An open-source LLM engineering platform for tracing, evals, prompt
 seoDescription: "Langfuse is an open-source LLM engineering platform for tracing, evals, prompt management, and metrics — self-hosted or cloud. Pricing and alternatives."
 url: "https://langfuse.com"
 date: 2026-06-03
+updated: "2026-09-11"
 pricing: "open-source"
 category: "observability"
 repo: "https://github.com/langfuse/langfuse"
-license: "MIT"
+license: "MIT (core; ee/ commercial)"
 sameAs: ["https://github.com/langfuse/langfuse", "https://langfuse.com/docs"]
 color: "cyan"
 topics: ["llm-evals"]
@@ -22,9 +23,9 @@ faq:
   - q: "What is Langfuse?"
     a: "Langfuse is an open-source LLM engineering platform that brings tracing, evaluation, prompt management, and metrics together. It captures nested traces of LLM calls, tool calls, and agent steps with cost and latency per span, lets you score runs manually, with LLM-as-judge, or via user feedback, and versions prompts you can deploy without redeploying your app."
   - q: "Is Langfuse free?"
-    a: "Yes — Langfuse is open source under MIT and free to self-host; a managed cloud with a free tier and paid plans is also available. You bring an LLM provider for judge-based evals."
+    a: "Yes — Langfuse's core is open source under MIT and free to self-host (code in its ee/ directories is commercially licensed, and some self-hosted add-on features need a license key); a managed cloud with a free tier and paid plans is also available. You bring an LLM provider for judge-based evals."
   - q: "Langfuse vs LangSmith?"
-    a: "Langfuse is a popular open-source alternative to LangSmith: MIT-licensed, framework-agnostic, and fully self-hostable for privacy or cost control. LangSmith and Braintrust are the commercial comparisons, and Arize Phoenix is the OTel-native open-source one."
+    a: "Langfuse is a popular open-source alternative to LangSmith: MIT-licensed core, framework-agnostic, and fully self-hostable for privacy or cost control. LangSmith and Braintrust are the commercial comparisons, and Arize Phoenix is the OTel-native, source-available (ELv2) one."
 ---
 
 Langfuse is an open-source LLM engineering platform that brings tracing, evaluation, prompt management, and metrics together. It captures detailed traces of your LLM and agent runs, lets you score them (manually, with LLM-as-judge, or via user feedback), manages and versions prompts, and tracks cost and latency — all in a tool you can self-host or run as a managed cloud.
@@ -41,7 +42,7 @@ It is aimed at teams who want a vendor-neutral, open-source backbone for LLM obs
 
 ## In an AI-assisted workflow
 
-Instrument your app with the SDK (or an OpenTelemetry integration), then traces, costs, and scores flow into Langfuse where you can build datasets and run evals against real traffic.
+Instrument your app with the SDK (built on OpenTelemetry), or point any OpenTelemetry exporter at Langfuse's native OTLP endpoint (`/api/public/otel`); then traces, costs, and scores flow into Langfuse where you can build datasets and run evals against real traffic.
 
 ```python
 from langfuse import observe
@@ -56,4 +57,4 @@ def answer(question: str) -> str:
 
 ## Good to know
 
-Langfuse is open source (MIT) and free to self-host; a managed cloud with a free tier and paid plans is also available. You bring an LLM provider for judge-based evals. Compare with the commercial [LangSmith](/tools/langsmith) and [Braintrust](/tools/braintrust), and the OTel-native [Arize Phoenix](/tools/arize-phoenix).
+Langfuse's core is open source (MIT) and free to self-host; code under its `ee/` directories is commercially licensed, and some self-hosted add-on features need a license key. A managed cloud with a free tier and paid plans is also available. ClickHouse acquired Langfuse (announced January 2026); Langfuse says it stays open source and self-hostable, with no licensing changes planned. You bring an LLM provider for judge-based evals. Compare with the commercial [LangSmith](/tools/langsmith) and [Braintrust](/tools/braintrust), and the OTel-native [Arize Phoenix](/tools/arize-phoenix).

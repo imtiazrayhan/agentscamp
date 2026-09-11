@@ -4,10 +4,11 @@ title: "Marker"
 description: "Open-source pipeline that converts PDFs, images, and Office docs into clean Markdown, JSON, or HTML fast, with optional LLM assist for tables and equations."
 url: "https://www.datalab.to"
 date: 2026-06-19
+updated: "2026-09-11"
 pricing: "open-source"
 category: "sdk"
 repo: "https://github.com/datalab-to/marker"
-license: "GPL-3.0"
+license: "Apache-2.0"
 sameAs: ["https://github.com/datalab-to/marker", "https://documentation.datalab.to"]
 color: "orange"
 topics: ["rag-retrieval", "data-ml"]
@@ -21,7 +22,7 @@ faq:
   - q: "What is Marker?"
     a: "Marker is an open-source document-conversion pipeline from Datalab. It turns PDFs, images, and Office formats into clean Markdown, JSON, or HTML, preserving tables, equations, forms, and code while stripping headers, footers, and other clutter. It builds on the Surya OCR and layout models and runs on your own hardware."
   - q: "Is Marker free?"
-    a: "The Marker code is open source under GPL-3.0 and free to run yourself; its model weights use a modified AI Pubs Open Rail-M license that covers research, personal use, and smaller companies. Commercial self-hosting beyond those limits requires a license, and Datalab also offers a hosted API (with free starter credits) running its higher-accuracy Chandra model."
+    a: "The Marker code is open source under Apache-2.0 and free to use, including commercially. Its model weights use a modified AI Pubs Open Rail-M license that is free for research, personal use, and startups below a revenue and funding threshold, and bars use by companies offering a product that competes with Datalab's. Commercial self-hosting beyond those limits requires a license, and Datalab also offers a hosted API (with free starter credits) running its higher-accuracy Chandra model."
   - q: "How do I use Marker?"
     a: "Install the marker-pdf package, then run marker_single on a file or marker on a folder to emit Markdown, JSON, or HTML. It uses GPU, CPU, or Apple MPS automatically. Add the --use_llm flag to route tricky tables, inline math, and form fields through an LLM such as Gemini, Claude, or a local Ollama model for higher accuracy."
 ---
@@ -32,4 +33,4 @@ Under the hood Marker builds on Datalab's **Surya OCR, layout, and table-recogni
 
 For accuracy-critical pages, an optional `--use_llm` flag layers a language model on top of the deterministic pipeline to handle harder cases such as merging tables across page boundaries, cleaning inline math, and extracting form values. The flag works with hosted models like Gemini and Claude or a local Ollama model, so you can trade cost for accuracy only where it matters.
 
-The Marker code is licensed under **GPL-3.0**, with model weights under a modified AI Pubs Open Rail-M license that is free for research, personal use, and smaller companies; broader commercial self-hosting requires a license. Datalab also runs a managed API platform built on its newer Chandra OCR model for teams that prefer a hosted, higher-accuracy option over self-hosting.
+The Marker code is licensed under **Apache-2.0**, with model weights under a modified AI Pubs Open Rail-M license that is free for research, personal use, and small startups (as of September 2026, Datalab's pages cite a $2M–$5M revenue or funding threshold) and bars use by anyone offering a product that competes with Datalab's; broader commercial self-hosting requires a license. Datalab also runs a managed API platform built on its newer Chandra OCR model for teams that prefer a hosted, higher-accuracy option over self-hosting.

@@ -3,15 +3,26 @@ title: "Codex config.toml: Settings, Precedence, and Safe Defaults"
 description: "Configure OpenAI Codex with config.toml — user and project scopes, precedence, sandbox and approvals, MCP, subagents, profiles, and safe defaults."
 author: "Imtiaz Rayhan"
 date: 2026-08-04
+updated: "2026-09-11"
+sources:
+  - title: "Config basics"
+    url: "https://learn.chatgpt.com/docs/config-file/config-basic"
+    publisher: "OpenAI"
+  - title: "Configuration Reference"
+    url: "https://learn.chatgpt.com/docs/config-file/config-reference"
+    publisher: "OpenAI"
+  - title: "Advanced Configuration"
+    url: "https://learn.chatgpt.com/docs/config-file/config-advanced"
+    publisher: "OpenAI"
 color: "cyan"
 topics: ["workflow-prompting", "ai-agents-systems"]
 tags: ["codex", "config-toml", "configuration", "sandbox", "openai"]
 featured: true
-summary: "Codex uses config.toml for operational behavior: models, reasoning, sandboxing, approvals, MCP servers, subagents, and feature flags. Put personal defaults in ~/.codex/config.toml and trusted repository settings in .codex/config.toml. More specific project files and one-off CLI flags override broader defaults, while managed requirements can constrain what users are allowed to select."
+summary: "Codex uses config.toml for operational behavior: models, reasoning, sandboxing, approvals, MCP servers, subagents, and feature flags. Put personal defaults in ~/.codex/config.toml and trusted repository settings in .codex/config.toml. More specific project files and one-off CLI flags override broader defaults, while managed requirements can forbid values."
 keyTakeaways:
   - "Use config.toml for runtime settings; use AGENTS.md for repository instructions and skills for conditional workflows."
   - "Personal defaults live in ~/.codex/config.toml; trusted projects can add .codex/config.toml files with closer directories taking precedence."
-  - "CLI overrides win for one run, then project config, profile config, user config, system config, and built-in defaults."
+  - "CLI overrides win for one run, then project config, profile config, user config, cloud-managed defaults, system config, and built-in defaults."
   - "Sandbox mode controls technical access; approval policy controls when Codex must pause and ask."
   - "Start with a small config, change one layer at a time, and inspect active settings before debugging agent behavior."
 faq:
@@ -20,7 +31,7 @@ faq:
   - q: "What is the difference between config.toml and AGENTS.md?"
     a: "config.toml controls runtime behavior such as sandboxing, approvals, model defaults, MCP servers, and subagents. AGENTS.md provides natural-language repository guidance such as architecture, commands, conventions, and verification expectations."
   - q: "Which Codex setting wins when the same option appears more than once?"
-    a: "From highest to lowest precedence: CLI and --config overrides, project .codex/config.toml files from the root toward the working directory, the selected profile, user config, system config, and built-in defaults. Managed requirements may still forbid certain values."
+    a: "From highest to lowest precedence: CLI and --config overrides, project .codex/config.toml files from the root toward the working directory, the selected profile, user config, cloud-managed defaults delivered for your signed-in workspace, system config, and built-in defaults. Managed requirements may still forbid certain values."
   - q: "Should a team commit .codex/config.toml?"
     a: "Yes when the repository needs shared operational defaults, such as a project MCP server or scoped sandbox behavior. Codex loads project configuration only for trusted projects, and credentials should stay in environment variables or OAuth rather than the committed file."
 related: ["guide:codex-agents-md", "guide:codex-mcp-setup", "guide:codex-subagents", "guide:openai-codex-guide", "tool:codex-cli", "guide:sandboxing-ai-generated-code"]
@@ -64,7 +75,7 @@ repo/services/payments/.codex/config.toml
 
 Project settings are useful when an integration, permission boundary, or subagent setup belongs to the repository rather than one developer. Codex skips project `.codex/` layers for repositories marked untrusted; user and system configuration still apply.
 
-The CLI and IDE extension share the same configuration layers. In the desktop app, **Settings → Configuration → Open config.toml** opens the user file.
+The CLI and IDE extension share the same configuration layers. In the IDE extension, select the gear icon, then **Codex Settings → Open config.toml** to edit the active layer directly.
 
 ## Precedence: which value wins?
 
@@ -74,8 +85,9 @@ Codex resolves the same setting from most specific to broadest:
 2. Project `.codex/config.toml` files, from repository root toward the current working directory; the closest wins.
 3. The selected profile file, such as `~/.codex/review.config.toml`.
 4. User config at `~/.codex/config.toml`.
-5. System config at `/etc/codex/config.toml` on Unix, when present.
-6. Built-in defaults.
+5. Cloud-managed `config.toml` defaults, when delivered for your signed-in workspace.
+6. System config at `/etc/codex/config.toml` on Unix, when present.
+7. Built-in defaults.
 
 Managed environments can also enforce constraints through `requirements.toml`. A user value can win normal precedence and still be rejected because the organization disallows that mode.
 
@@ -110,7 +122,7 @@ These controls answer different questions:
 
 `read-only` is useful for audits, explanations, and planning. `workspace-write` supports normal implementation while keeping writes scoped to the workspace. Broader access should follow from a task that actually needs it, not from frustration with one denied command.
 
-Approval settings do not create access the sandbox forbids. Conversely, a broad sandbox with no approval prompts removes both the technical and human checkpoints. Configure the pair as one risk decision and test it with harmless operations before trusting it on unattended work.
+Approval settings don't widen the sandbox on their own, but with `on-request` Codex can ask to run a specific command outside it, so approving that prompt is itself an access decision. Conversely, a broad sandbox with no approval prompts removes both the technical and human checkpoints. Configure the pair as one risk decision and test it with harmless operations before trusting it on unattended work. Every combination, with the current flags, is in [Codex CLI sandbox and approvals](/guides/configuration/codex-sandbox-and-approvals).
 
 ## Project settings and secrets
 

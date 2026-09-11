@@ -2,11 +2,11 @@
 name: "Warp"
 description: "A modern, AI-powered terminal with an agent mode that can run and chain commands across your codebase."
 date: 2026-06-03
-updated: 2026-09-10
-reviewed: 2026-09-10
+updated: "2026-09-11"
+reviewed: "2026-09-11"
 url: "https://www.warp.dev"
 repo: "https://github.com/warpdotdev/warp"
-pricing: "open-source"
+pricing: "freemium"
 category: "terminal"
 color: "blue"
 topics: ["workflow-prompting"]
@@ -15,14 +15,14 @@ tags: ["terminal", "agent"]
 featured: false
 related: ["tool:claude-code", "tool:codex-cli", "tool:wave-terminal", "guide:ai-coding-agents-cli-2026"]
 alternativeTo: ["claude-code", "codex-cli", "gemini-cli", "opencode"]
-summary: "Warp is a modern, AI-powered terminal whose agent can plan, run, and chain commands while you approve what executes. Output is grouped into navigable blocks, workflows share vetted commands across teams, and the agent grounds itself in your indexed codebase. The client is open source (mostly AGPL-3.0), with a free tier, paid plans, and bring-your-own inference from the free tier up."
+summary: "Warp is an AI-powered terminal whose agent can plan, run, and chain commands while you approve what executes. Output is grouped into navigable blocks, workflows share vetted commands, and the agent grounds itself in your indexed codebase. A standalone Warp Agent CLI followed in August 2026. The client is open source (mostly AGPL-3.0), with a free tier."
 faq:
   - q: "What is Warp?"
     a: "Warp is a rebuilt, AI-powered terminal that pairs a fast, modern CLI experience with a built-in coding agent. Output is grouped into navigable blocks instead of endless scrollback, the input editor behaves like a real text editor, and Warp Agent can read your repo, propose and run commands, and chain multi-step tasks with permission controls over what executes."
   - q: "Is Warp free?"
     a: "The client is open source (mostly AGPL-3.0, UI-framework crates under MIT). As of September 2026 the Free tier includes the terminal, limited agent and cloud-agent access, and reload credits at pay-as-you-go rates rather than a bundled monthly allowance. Build is $20/month ($18 annually) for 1,500 credits and full agent access; Max is $200/month for 18,000 credits; Business ($50/user/month, up to 25 seats) adds 1,500 credits per seat, SAML SSO, and admin-configurable data controls with Zero Data Retention; Enterprise adds unlimited seats, custom shared credit pools, and self-hosted cloud agents. Bring-your-own inference starts on the Free tier and carries up through the paid plans."
   - q: "Does Warp replace Claude Code?"
-    a: "No — it complements terminal agents rather than replacing them. You can run a dedicated coding agent like Claude Code inside Warp's terminal and let Warp's blocks, workflows, and shell context speed up everything around it."
+    a: "Partly. Since August 2026 Warp also ships the standalone Warp Agent CLI (the warp command), a multi-model coding agent that runs in any terminal and competes directly with Claude Code. The Warp terminal app still complements other agents too: you can run Claude Code, Codex, or OpenCode inside it and let Warp's blocks, workflows, and shell context speed up everything around it."
 ---
 
 Warp is a rebuilt terminal that pairs a fast, modern command-line interface with a built-in coding agent. Output is grouped into navigable **blocks** instead of an endless scrollback, and the input editor behaves like a real text editor with selections, cursor positioning, and autocomplete. On top of that, Warp Agent can read your repo, propose and run commands, and chain multi-step tasks while you stay in control of what executes.
@@ -50,7 +50,7 @@ This command failed. Find the cause and fix it, then re-run the test.
 The agent reads the command, its output, and relevant repo files, then proposes the next commands. You approve each one (or set broader permissions for trusted tasks) so nothing destructive runs silently.
 
 > [!TIP]
-> Warp complements rather than replaces an agent like Claude Code — run a dedicated coding agent inside Warp's terminal and let Warp's own blocks, workflows, and shell context speed up everything around it.
+> Warp's terminal also hosts other agents — run a dedicated coding agent like Claude Code inside it and let Warp's own blocks, workflows, and shell context speed up everything around it. If you would rather use Warp's own agent in a different terminal, that is what the standalone Warp Agent CLI is for.
 
 ## Good to know
 

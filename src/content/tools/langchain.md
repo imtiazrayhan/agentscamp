@@ -2,6 +2,7 @@
 name: "LangChain"
 description: "The provider-agnostic agent framework, post-1.0: a standard create_agent loop on the LangGraph runtime, middleware hooks, and the largest integration ecosystem."
 date: 2026-06-11
+updated: "2026-09-11"
 url: "https://www.langchain.com"
 pricing: "open-source"
 category: "sdk"
@@ -19,7 +20,7 @@ sameAs:
   - "https://docs.langchain.com"
   - "https://pypi.org/project/langchain/"
 related: ["guide:langchain-vs-llamaindex", "guide:agent-frameworks-2026", "tool:langgraph", "tool:langsmith", "tool:llamaindex", "tool:pydantic-ai"]
-summary: "LangChain 1.0 (October 2025) answered its own bloat discourse by shrinking: the framework now centers on create_agent — a standard tool-calling loop running on the LangGraph runtime — plus middleware hooks and normalized content blocks across providers. Legacy chains moved to langchain-classic. MIT, Python and JS, ~139k stars; LangSmith is the commercial layer."
+summary: "LangChain 1.0 (October 2025) answered its own bloat discourse by shrinking: the framework now centers on create_agent — a standard tool-calling loop running on the LangGraph runtime — plus middleware hooks and normalized content blocks across providers. Legacy chains moved to langchain-classic. MIT, Python and JS; LangSmith is the commercial layer."
 faq:
   - q: "Do I still need LangChain in 2026?"
     a: "The honest framing the 1.0 release itself embraced: if you're on one provider, a first-party SDK or direct API calls cover simple agents with fewer layers. LangChain's remaining case is real, though — provider-agnosticism (swap models without rewrites), middleware around the agent loop, and the seamless path down to LangGraph for control and out to LangSmith for observability."
@@ -44,7 +45,7 @@ LangChain spent two years as both the most-used and most-criticized framework in
 
 ```bash
 pip install langchain        # or: npm install langchain
-# agent = create_agent(model, tools, middleware=[HumanInTheLoop()])
+# agent = create_agent(model, tools, middleware=[HumanInTheLoopMiddleware(...)])
 ```
 
 The 2026 fit: teams that want a standard agent loop **without marrying a provider**, and that value the graduated stack (LangChain → LangGraph → LangSmith) over assembling equivalents.
@@ -54,4 +55,4 @@ The 2026 fit: teams that want a standard agent loop **without marrying a provide
 
 ## Good to know
 
-MIT, ~139k stars, free; the company monetizes LangSmith (freemium per-seat). Where it sits against the data-framework lineage of LlamaIndex — the classic confusion — is exactly the [LangChain vs LlamaIndex](/guides/comparisons/langchain-vs-llamaindex) question; the wider field is [Agent Frameworks in 2026](/guides/concepts/agent-frameworks-2026).
+MIT, ~146k GitHub stars (as of September 2026), free; the company monetizes LangSmith (freemium per-seat). Where it sits against the data-framework lineage of LlamaIndex — the classic confusion — is exactly the [LangChain vs LlamaIndex](/guides/comparisons/langchain-vs-llamaindex) question; the wider field is [Agent Frameworks in 2026](/guides/concepts/agent-frameworks-2026).

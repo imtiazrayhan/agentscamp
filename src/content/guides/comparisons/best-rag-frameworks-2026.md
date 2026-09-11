@@ -5,8 +5,8 @@ seoTitle: "Best RAG Frameworks in 2026 (LlamaIndex, LangChain, DSPy)"
 seoDescription: "LlamaIndex, LangChain, LangGraph, DSPy, Dify and Mastra compared for RAG in 2026, with a verdict each and the parsing, chunking and reranking layer underneath."
 author: "Imtiaz Rayhan"
 date: 2026-06-17
-updated: 2026-09-10
-reviewed: 2026-09-10
+updated: 2026-09-11
+reviewed: 2026-09-11
 color: "green"
 topics: ["rag-retrieval"]
 audience: ["developers"]
@@ -31,7 +31,7 @@ faq:
   - q: "Where do embeddings and reranking fit in?"
     a: "Every framework here is a thin layer over the same primitives: a parser, a chunker, an embedding model, a vector store and usually a reranker. The framework wires them together but their quality determines your answers, so invest there first. Reranking in particular is the cheapest large improvement most pipelines have not made yet."
   - q: "Which RAG framework should a TypeScript team use?"
-    a: "Mastra is the TypeScript-native agent framework, open source under Apache-2.0 for the core with source-available enterprise features. Its own positioning is around agents, tools, workflows, memory and observability rather than retrieval primitives, so plan on assembling the retrieval layer yourself. Teams that want retrieval depth in TypeScript often keep the retrieval service in Python and call it from the TypeScript app."
+    a: "Mastra is the TypeScript-native agent framework, open source under Apache-2.0 for the core with source-available enterprise features. Its RAG helpers cover chunking, embeddings, vector stores and reranking, but document loading stops at text, HTML, Markdown and JSON, so plan on bringing your own parser for PDFs. Teams that want retrieval depth in TypeScript often keep the retrieval service in Python and call it from the TypeScript app."
 howtoSteps:
   - name: "Decide whether retrieval is the hard part"
     text: "Write down which of two problems you have. If the model keeps missing relevant context in messy documents, retrieval is the problem and the framework should be chosen for indexing and parsing depth. If retrieval is basically working and the difficulty is orchestration, tools and state, choose the agent framework instead and treat retrieval as one node inside it."
@@ -115,7 +115,7 @@ What has changed is where the company's weight sits. LlamaIndex now presents its
 
 ### Mastra — the TypeScript answer
 
-[Mastra](/tools/mastra) is the TypeScript-native framework, Apache-2.0 at the core with source-available enterprise features and free to start with no seat tiers. Its positioning is agents, tools, workflows, memory and observability rather than retrieval primitives, so treat it as the orchestration half and plan to assemble parsing, chunking and reranking yourself.
+[Mastra](/tools/mastra) is the TypeScript-native framework, Apache-2.0 at the core with source-available enterprise features and free to start with no seat tiers. Its positioning leads with agents, tools, workflows, memory and observability, but its RAG helpers include chunking, vector stores and reranking; what you still bring yourself is a parser for PDFs and other messy documents.
 
 **Verdict:** the right call when keeping one language across the product outweighs retrieval depth. Teams that need both often keep a Python retrieval service behind an API and call it from the TypeScript app.
 
@@ -127,7 +127,7 @@ What has changed is where the company's weight sits. LlamaIndex now presents its
 
 The honest caveat outranks the entire comparison above: **the framework matters less than your retrieval quality.** Four decisions move answer quality more than the library does.
 
-**Parsing.** Most bad RAG is bad extraction. [Unstructured](/tools/unstructured), [Docling](/tools/docling), [Marker](/tools/marker), [Reducto](/tools/reducto) and [LlamaParse](/tools/llamaparse) turn messy PDFs, documents and images into clean text before anything else happens. Read the output yourself before indexing it.
+**Parsing.** Most bad RAG is bad extraction. [Unstructured](/tools/unstructured), [Docling](/tools/docling), [Marker](/tools/marker), [Reducto](/tools/reducto) and [LlamaParse](/tools/llamaparse) turn messy PDFs, documents and images into clean text before anything else happens. Read the output yourself before indexing it, and see [the document parser roundup](/guides/comparisons/best-document-parsers-for-rag-2026) for how they differ.
 
 **Chunking.** Boundaries decide what can be retrieved at all. [Chonkie](/tools/chonkie) is the lightweight, MIT-licensed library for the job if you would rather not write splitters by hand.
 

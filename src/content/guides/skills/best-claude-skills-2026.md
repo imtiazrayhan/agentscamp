@@ -43,12 +43,16 @@ The highest-frequency wins, because you commit more often than you do anything e
 - **[commit-splitter](/skills/git/commit-splitter)** — splits a mixed working tree into atomic commits that each build and pass tests.
 - **[git-blame-investigator](/skills/git/git-blame-investigator)** — reconstructs *why* a line exists from history before you delete it. Cheap insurance against re-introducing the bug the line was fixing.
 
+The [full Git list](/guides/skills/best-claude-skills-for-git) adds the undo, conflict-resolution, branch-cleanup, and changelog picks.
+
 ## Testing and review
 
 - **[test-scaffolder](/skills/testing/test-scaffolder)** — scaffolds test files that match your project's framework and conventions instead of a generic template.
 - **[coverage-gap-finder](/skills/testing/coverage-gap-finder)** — runs your coverage tool and names the highest-value untested paths, not just the percentage.
 - **[mutation-test-runner](/skills/testing/mutation-test-runner)** — answers the question coverage can't: would the suite actually *catch* a bug?
 - **[integration-test-designer](/skills/testing/integration-test-designer)** — designs tests against real collaborators at a deliberate seam, for the bugs that slip past mocked-everything unit suites.
+
+When a test is already failing, the [debugging list](/guides/skills/best-claude-skills-for-debugging) picks up where these leave off; to restructure the code under test safely, see the [refactoring list](/guides/skills/best-claude-skills-for-refactoring).
 
 ## Databases and SQL
 
@@ -80,6 +84,8 @@ If you build AI features, these encode the eval-first discipline that separates 
 - **[llm-eval-suite-scaffolder](/skills/data/llm-eval-suite-scaffolder)** — stands up a real eval suite (dataset, metrics, baseline, CI gate) for a feature that has none.
 - **[chunking-strategy-optimizer](/skills/data/chunking-strategy-optimizer)** — sweeps chunk configurations against a fixed eval set instead of guessing at 512-with-overlap.
 - **[hallucination-evaluator](/skills/data/hallucination-evaluator)** — decomposes answers into atomic claims and checks each for grounding.
+
+Building retrieval specifically? The [RAG list](/guides/skills/best-claude-skills-for-rag) covers the pipeline end to end, from scaffolding and chunking to embeddings, reranking, and grounding checks.
 
 ## Skills that extend Claude Code itself
 

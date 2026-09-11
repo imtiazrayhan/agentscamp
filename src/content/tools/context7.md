@@ -2,6 +2,7 @@
 name: "Context7"
 description: "Upstash's MCP server that pulls up-to-date, version-specific library documentation into your agent's context — the cure for hallucinated APIs."
 date: 2026-06-11
+updated: "2026-09-11"
 url: "https://context7.com"
 pricing: "freemium"
 category: "mcp"
@@ -19,17 +20,17 @@ sameAs:
   - "https://www.npmjs.com/package/@upstash/context7-mcp"
 related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "command:add-mcp-server", "tool:smithery", "agent:documentation-engineer", "guide:govern-mcp-servers"]
 alternativeTo: ["exa", "firecrawl", "jina-reader"]
-summary: "Context7 is the most-adopted MCP server in the ecosystem (~57k GitHub stars): it resolves a library name to its indexed docs and injects current, version-specific documentation and code examples into the model's context at query time. Two tools — resolve-library-id and query-docs — kill the 'trained on last year's API' failure mode. Hosted at mcp.context7.com or local via npx."
+summary: "Context7 (~62k GitHub stars as of September 2026) resolves a library name to its indexed docs and injects current, version-specific documentation and code examples into the model's context at query time. Two tools — resolve-library-id and query-docs — kill the 'trained on last year's API' failure mode. Hosted at mcp.context7.com or local via npx."
 faq:
   - q: "What does Context7 actually do?"
     a: "When your agent needs to use a library, Context7 fetches that library's current, version-specific documentation and code examples and injects them into context. Instead of the model guessing an API from training data, it reads the real docs for the version you're on — which is why it became the default first MCP server for coding agents."
   - q: "Is Context7 free?"
-    a: "The server is MIT-licensed and the hosted service has a free tier (rate-limited, public-library docs; a free API key raises the limits). Paid Pro and Enterprise plans add private-repo indexing and higher quotas."
+    a: "The MCP server is MIT-licensed; the docs backend it queries is proprietary. Anonymous use gets low rate limits. A free API key puts you on the Free plan: 1,000 API calls a month for public repos, after which you're blocked except for 20 bonus calls a day until the month resets (as of September 2026). Paid Pro and Enterprise plans add private-repo indexing and higher quotas."
   - q: "How do I add Context7 to Claude Code?"
-    a: "Fastest: npx ctx7 setup --claude, which handles login, key, and install. Manual remote: claude mcp add --scope user --header \"CONTEXT7_API_KEY: YOUR_API_KEY\" --transport http context7 https://mcp.context7.com/mcp. A local stdio variant runs via npx -y @upstash/context7-mcp."
+    a: "Fastest: npx ctx7 setup --claude, which handles login, key, and install. Manual remote: claude mcp add --scope user --header 'Authorization: Bearer YOUR_API_KEY' --transport http context7 https://mcp.context7.com/mcp. A local stdio variant: claude mcp add --scope user context7 -- npx -y @upstash/context7-mcp --api-key YOUR_API_KEY."
 ---
 
-Context7, open-sourced by Upstash, is the most-adopted MCP server in the ecosystem — and the one with the clearest job description: **stop the model from hallucinating APIs.** Models are trained on snapshots; libraries move. Context7 closes the gap by fetching current, version-specific documentation and code examples for thousands of libraries and injecting exactly the relevant slice into your agent's context at query time.
+Context7 is Upstash's documentation MCP server, with the clearest job description in the ecosystem: **stop the model from hallucinating APIs.** Models are trained on snapshots; libraries move. Context7 closes the gap by fetching current, version-specific documentation and code examples for thousands of libraries and injecting exactly the relevant slice into your agent's context at query time.
 
 ## Highlights
 
@@ -46,7 +47,7 @@ The one-command setup wires Claude Code up end to end:
 ```bash
 npx ctx7 setup --claude
 # or, manually (remote server + API key header):
-claude mcp add --scope user --header "CONTEXT7_API_KEY: YOUR_API_KEY" \
+claude mcp add --scope user --header "Authorization: Bearer YOUR_API_KEY" \
   --transport http context7 https://mcp.context7.com/mcp
 ```
 
@@ -57,4 +58,4 @@ From then on, "use the current Drizzle syntax for this migration — check Conte
 
 ## Good to know
 
-The server is MIT-licensed; the hosted service is freemium — anonymous use is rate-limited, a free API key (from the dashboard) lifts the limits, and the free tier covers public libraries only. It's also a good first server for learning [how MCP setup works in Claude Code](/guides/mcp/claude-code-mcp-setup): no OAuth dance, instant value, obvious failure modes.
+The MCP server, the `ctx7` CLI, and the SDKs in the repo are open source (MIT); Upstash's README says the API backend, parsing engine, and crawling engine behind them are private. The hosted service is freemium — anonymous use gets low rate limits, a free API key (from the dashboard) raises them to the Free plan's 1,000 API calls a month, and the free tier covers public libraries only (as of September 2026). It's also a good first server for learning [how MCP setup works in Claude Code](/guides/mcp/claude-code-mcp-setup): no OAuth dance, instant value, obvious failure modes.

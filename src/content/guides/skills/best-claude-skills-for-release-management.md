@@ -3,6 +3,7 @@ title: "9 Best Claude Skills for Release Management"
 description: "Use Claude skills for readiness reviews, canaries, rollbacks, API deprecations, migrations, versioning, changelogs, and release notes."
 author: "Imtiaz Rayhan"
 date: 2026-08-04
+updated: 2026-09-11
 color: "green"
 topics: ["devops-infra", "workflow-prompting"]
 audience: ["developers"]
@@ -40,7 +41,7 @@ The best Claude release skills turn shipping into an evidence-backed sequence: f
 | [migration-writer](/skills/database/migration-writer) | Schema compatibility | Migration files and sequence | Writes files |
 | [semver-advisor](/skills/release/semver-advisor) | Version impact | SemVer recommendation | No |
 | [version-bumper](/skills/release/version-bumper) | Coordinated version files | Version edits | Writes files |
-| [changelog-from-prs](/skills/release/changelog-from-prs) | Maintainer history | Changelog entry | Writes docs |
+| [changelog-from-prs](/skills/release/changelog-from-prs) | Maintainer history | Changelog entry | No; drafts an entry to paste |
 | [release-notes-writer](/skills/release/release-notes-writer) | User communication | Release notes | Writes docs |
 
 ## 1. release-readiness-reviewer: issue the decision

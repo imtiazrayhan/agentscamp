@@ -4,7 +4,8 @@ title: "Together AI"
 description: "A cloud for running, fine-tuning, and deploying open-source models (Llama, DeepSeek, Qwen) via an OpenAI-compatible API plus dedicated GPU endpoints."
 url: "https://www.together.ai"
 date: 2026-06-19
-pricing: "freemium"
+updated: "2026-09-11"
+pricing: "paid"
 category: "platform"
 sameAs:
   - "https://github.com/togethercomputer"
@@ -22,7 +23,7 @@ faq:
   - q: "What is Together AI?"
     a: "Together AI is a hosted cloud platform for open-source models. It offers serverless inference over a large catalog of open-weight models — Llama, DeepSeek, Qwen, and many others — behind an OpenAI-compatible API, plus fine-tuning (LoRA and full) and dedicated GPU endpoints and clusters for teams that need reserved capacity."
   - q: "Is Together AI free?"
-    a: "It's freemium: you start with free credits, then pay as you go. Serverless inference is billed per million input and output tokens, with a batch discount for asynchronous jobs; dedicated endpoints and GPU clusters are billed per GPU-hour. The platform is proprietary, but the official Python SDK is open source (Apache-2.0)."
+    a: "No. As of September 2026 there's no free trial: the platform is prepaid, and you buy credits (minimum $5) before calling the API. Serverless inference is billed per million input and output tokens, with a batch discount for asynchronous jobs; dedicated endpoints and GPU clusters are billed per GPU-hour. The platform is proprietary, but the official Python SDK is open source (Apache-2.0)."
   - q: "How does Together AI compare to OpenRouter or Groq?"
     a: "All expose open and hosted models through an OpenAI-compatible API, but the center of gravity differs. OpenRouter is a router across many providers; Groq optimizes for very low-latency inference on its own hardware. Together AI is a full open-model cloud — inference plus fine-tuning, dedicated endpoints, and raw GPU clusters — so the same team can serve, customize, and scale open weights in one place."
 ---
@@ -41,7 +42,7 @@ Beyond serverless inference, the platform spans the full lifecycle of open weigh
 ## In an AI-assisted workflow
 
 ```bash
-curl https://api.together.xyz/v1/chat/completions \
+curl https://api.together.ai/v1/chat/completions \
   -H "Authorization: Bearer $TOGETHER_API_KEY" \
   -d '{"model":"<open-weight-model>","messages":[{"role":"user","content":"hi"}]}'
 ```
@@ -53,4 +54,4 @@ Because the API is OpenAI-compatible, it slots into the same gateways and framew
 
 ## Good to know
 
-The platform is proprietary SaaS; the official Python SDK is open source under Apache-2.0. Pricing is freemium — free credits to start, then per-token serverless rates, per-GPU-hour dedicated and cluster pricing, and a batch discount for asynchronous jobs. Exact rates and the model catalog change over time, so confirm current details on the official pricing page before committing. Compare with [Fine-tune vs. RAG vs. Prompt](/guides/mlops/finetune-vs-rag-vs-prompt) when deciding whether fine-tuning is even the right lever.
+The platform is proprietary SaaS; the official Python SDK is open source under Apache-2.0. Pricing is prepaid — no free trial and a minimum credit purchase to start, then per-token serverless rates, per-GPU-hour dedicated and cluster pricing, and a batch discount for asynchronous jobs. Exact rates and the model catalog change over time, so confirm current details on the official pricing page before committing. Compare with [Fine-tune vs. RAG vs. Prompt](/guides/mlops/finetune-vs-rag-vs-prompt) when deciding whether fine-tuning is even the right lever.

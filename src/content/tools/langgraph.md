@@ -4,6 +4,7 @@ title: "LangGraph"
 description: "A low-level library for building stateful, controllable agents as graphs, with checkpointing and human-in-the-loop."
 url: "https://www.langchain.com/langgraph"
 date: 2026-06-03
+updated: "2026-09-11"
 pricing: "open-source"
 category: "sdk"
 repo: "https://github.com/langchain-ai/langgraph"
@@ -21,7 +22,7 @@ faq:
   - q: "What is LangGraph?"
     a: "LangGraph is a low-level orchestration library for building agents as explicit state graphs: you define nodes (steps), edges (transitions), and a shared state object, so the agent's control flow becomes something you can see, test, and resume. Built-in checkpointing, human-in-the-loop interrupts, and streaming make runs durable and debuggable. Despite the name, it does not require the rest of LangChain."
   - q: "Is LangGraph free?"
-    a: "Yes — LangGraph is open source under MIT and free to self-host. The optional LangGraph Platform (hosted deployment) and LangSmith (observability) are commercial."
+    a: "Yes — LangGraph is open source under MIT and free to self-host. The optional LangSmith Deployment (hosted deployment, renamed from LangGraph Platform in October 2025) and LangSmith (observability) are commercial."
   - q: "LangGraph vs CrewAI?"
     a: "LangGraph trades one-line convenience for control: explicit graphs, persistence, and human-in-the-loop, which production agents tend to need once they outgrow a demo. For quick role-based multi-agent setups, a higher-level framework like CrewAI is faster to start."
 ---
@@ -36,7 +37,7 @@ It is aimed at engineers building durable, multi-step or multi-agent systems whe
 - **Persistence / checkpointing** — save and restore agent state, so runs are resumable and crash-safe.
 - **Human-in-the-loop** — interrupt the graph for approval or input, then resume from the exact point.
 - **Streaming** — stream tokens and intermediate steps for responsive UIs and debugging.
-- **Deployable** — pairs with LangGraph Platform for hosted deployment, plus [LangSmith](/tools/langsmith) for tracing.
+- **Deployable** — pairs with LangSmith Deployment (formerly LangGraph Platform) for hosted deployment, plus [LangSmith](/tools/langsmith) for tracing.
 
 ## In an AI-assisted workflow
 
@@ -55,4 +56,4 @@ app = g.compile(checkpointer=checkpointer)  # resumable, interruptible
 
 ## Good to know
 
-LangGraph is open source (MIT) and free to self-host; the optional LangGraph Platform (hosted deployment) and LangSmith (observability) are commercial. It's lower-level than role-based frameworks, so expect to write more wiring in exchange for more control.
+LangGraph is open source (MIT) and free to self-host; the optional LangSmith Deployment (hosted deployment; LangChain renamed it from LangGraph Platform in October 2025) and LangSmith (observability) are commercial. It's lower-level than role-based frameworks, so expect to write more wiring in exchange for more control.

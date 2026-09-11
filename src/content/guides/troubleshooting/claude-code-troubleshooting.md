@@ -35,7 +35,7 @@ Claude Code problems cluster: install and auth, context limits, MCP connections,
 
 ### "command not found: claude" after installing
 
-The install landed outside your PATH. If you used npm (`npm install -g @anthropic-ai/claude-code`), check `npm config get prefix` points somewhere your shell looks; on version managers (nvm, fnm), each Node version has its own globals, so switching Node "removes" Claude Code. Reinstall under the Node you actually use, or use the native installer from the docs, then verify with `claude --version` and `/doctor`.
+The install landed outside your PATH. If you used npm (`npm install -g @anthropic-ai/claude-code`), check `npm config get prefix` points somewhere your shell looks; on version managers (nvm, fnm), each Node version has its own globals, so switching Node "removes" Claude Code. Reinstall under the Node you actually use, or use the native installer from the docs, then verify with `claude --version` and `/doctor`. If it broke after an update, or `which -a claude` shows more than one install, [How to Update Claude Code](/guides/getting-started/update-claude-code) covers removing duplicates and switching install methods.
 
 ### Claude Code bills the API though you have Pro/Max
 

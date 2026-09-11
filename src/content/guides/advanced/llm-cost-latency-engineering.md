@@ -3,6 +3,7 @@ title: "LLM Cost and Latency Engineering: Caching, Right-Sizing, and p95 Budgets
 description: "A practical playbook for cutting LLM cost and tail latency — caching, model right-sizing, prompt trimming, and enforced p95 budgets — without losing quality."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+updated: 2026-09-11
 color: "green"
 topics: ["devops-infra"]
 audience: ["developers", "ai-engineers"]
@@ -18,7 +19,7 @@ keyTakeaways:
   - "Re-check quality against an eval set after every cut — a cheaper, faster system that's less accurate is a regression, not a win."
 howtoSteps:
   - name: "Measure and attribute the spend"
-    text: "Before changing anything, attribute cost and latency to specific calls, prompts, and routes: input vs. output tokens, calls per feature, p50/p95/p99, and dollars per request. Use observability (Helicone, Portkey, or your traces). Optimization without measurement is guessing."
+    text: "Before changing anything, attribute cost and latency to specific calls, prompts, and routes: input vs. output tokens, calls per feature, p50/p95/p99, and dollars per request. Use observability (Langfuse, Portkey, or your own traces). Optimization without measurement is guessing."
   - name: "Cache the repeats"
     text: "Turn on provider prompt caching for stable prefixes (system prompt, instructions, few-shot, long context), and add response or semantic caching for repeated and near-duplicate queries. Caching is usually the single biggest cost-and-latency win when calls share context."
   - name: "Right-size the model per task"
@@ -49,7 +50,7 @@ LLM cost and tail latency feel like vague, ever-growing problems, but they almos
 
 ## Measure before you cut
 
-You can't optimize what you can't see. Attribute cost and latency to specific calls: input vs. output tokens, calls per feature, p50/p95/p99, and dollars per request. Observability tooling ([Helicone](/tools/helicone), [Portkey](/tools/portkey), or your own traces) turns "the bill is too high" into "these three prompts are 70% of spend." Without that, every change is a guess.
+You can't optimize what you can't see. Attribute cost and latency to specific calls: input vs. output tokens, calls per feature, p50/p95/p99, and dollars per request. Observability tooling ([Langfuse](/tools/langfuse), [Portkey](/tools/portkey), or your own traces) turns "the bill is too high" into "these three prompts are 70% of spend." Without that, every change is a guess. [Helicone](/tools/helicone) still works for this, but it has been in maintenance mode since Mintlify acquired it in March 2026; [the LLM observability tools roundup](/guides/comparisons/best-llm-observability-tools-2026) compares the options.
 
 ## The levers, in order of leverage
 

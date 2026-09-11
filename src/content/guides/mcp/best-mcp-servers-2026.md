@@ -4,7 +4,7 @@ description: "The MCP servers actually worth connecting in 2026 — Context7, Gi
 author: "Imtiaz Rayhan"
 date: 2026-07-01
 freshness: "tier1"
-updated: 2026-09-01
+updated: 2026-09-11
 color: "green"
 topics: ["mcp", "architecture"]
 tags: ["mcp", "comparison", "best-of", "tools", "agents"]
@@ -35,11 +35,11 @@ The MCP ecosystem spans 11,000+ public servers and landed under the Linux Founda
 
 If you connect nothing else, connect these:
 
-**[Context7](/tools/context7)** — the most-adopted server in the ecosystem (~61k stars), for one reason: it ends hallucinated APIs. Two tools resolve a library and inject its **current, version-specific docs** into context. Every coding agent benefits, every day.
+**[Context7](/tools/context7)** — the most-adopted server in the ecosystem (~62k stars), for one reason: it ends hallucinated APIs. Two tools resolve a library and inject its **current, version-specific docs** into context. Every coding agent benefits, every day.
 
-**[GitHub MCP Server](/tools/github-mcp-server)** — GitHub's official server makes the development loop agent-native: issues, PRs, Actions runs, and security findings become readable and updatable. Twenty-one toolsets (as of September 2026), each mountable read-only; free hosted remote.
+**[GitHub MCP Server](/tools/github-mcp-server)** — GitHub's official server makes the development loop agent-native: issues, PRs, Actions runs, and security findings become readable and updatable. Twenty-two toolsets (as of September 2026), each mountable read-only; free hosted remote.
 
-**A real browser** — two strong picks with different jobs. **[Chrome DevTools MCP](/tools/chrome-devtools-mcp)** (Google, ~50k stars) is the *debugger*: console with source maps, network inspection, performance traces with insights. **[Playwright MCP](/tools/playwright-mcp)** (Microsoft, ~37k stars) is the *automator*: cross-browser flows and testing. Frontend-heavy teams run both.
+**A real browser** — two strong picks with different jobs. **[Chrome DevTools MCP](/tools/chrome-devtools-mcp)** (Google, ~52k stars) is the *debugger*: console with source maps, network inspection, performance traces with insights. **[Playwright MCP](/tools/playwright-mcp)** (Microsoft, ~37k stars) is the *automator*: cross-browser flows and testing. Frontend-heavy teams run both.
 
 ## Code intelligence
 
@@ -47,9 +47,11 @@ If you connect nothing else, connect these:
 
 **[Sequential Thinking](/tools/sequential-thinking-mcp)** — the reference server that survived 2025's great archiving. A structured-reasoning scaffold (numbered thoughts, revisions, branches); less essential now that frontier models think natively, still useful when you want reasoning externalized as inspectable tool calls.
 
+**Docs and repo context.** Beyond [Context7](/tools/context7), [GitMCP](/tools/gitmcp) and [DeepWiki MCP](/tools/deepwiki-mcp) let an agent query a public GitHub repository's documentation, [Ref](/tools/ref-tools) searches current library docs, [Claude Context](/tools/claude-context) adds semantic search over your own codebase, and [Repomix](/tools/repomix) packs a repo into a single AI-friendly file. [Desktop Commander](/tools/desktop-commander) is the odd one out: terminal and file-editing tools for clients like Claude Desktop.
+
 ## Web data
 
-**[Exa](/tools/exa)** — semantic search built for AI consumers; its hosted server is the most-used search MCP and even works keyless to trial. **[Firecrawl](/tools/firecrawl)** (~175k stars) is the extraction half: any site to clean Markdown, whole-site crawls, schema-validated extraction. Search finds; Firecrawl fetches — agent stacks commonly run both.
+**[Exa](/tools/exa)** — semantic search built for AI consumers; its hosted server even works keyless to trial. **[Firecrawl](/tools/firecrawl)** (~179k stars) is the extraction half: any site to clean Markdown, whole-site crawls, schema-validated extraction. Search finds; Firecrawl fetches — agent stacks commonly run both.
 
 ## Official vendor servers, by stack
 

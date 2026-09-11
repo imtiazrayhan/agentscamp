@@ -4,14 +4,15 @@ description: "Install Claude Code, authenticate, start a session in a real proje
 seoDescription: "How to install Claude Code, authenticate, and start your first session in a real project — plus the minimal CLAUDE.md that makes it productive from day one."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
+updated: 2026-09-11
 color: "green"
 topics: ["workflow-prompting"]
 featured: false
 related: ["guide:what-is-claude-code", "guide:getting-started-with-agents"]
-summary: "Install Claude Code with the zero-dependency native installer (one curl command on macOS/Linux/WSL, a PowerShell one-liner on Windows) or via npm with Node 18+. Authenticate once with your Claude.ai or Console account, start it inside a real repository, and run /init to scaffold the CLAUDE.md that makes every later session better."
+summary: "Install Claude Code with the zero-dependency native installer (one curl command on macOS/Linux/WSL, a PowerShell one-liner on Windows) or via npm with Node 22+. Authenticate once with your Claude.ai or Console account, start it inside a real repository, and run /init to scaffold the CLAUDE.md that makes every later session better."
 howtoSteps:
   - name: "Install the CLI"
-    text: "Use the native installer — curl -fsSL https://claude.ai/install.sh | bash on macOS/Linux/WSL, or irm https://claude.ai/install.ps1 | iex in PowerShell on Windows. It has no dependencies and auto-updates. Prefer npm tooling instead? npm install -g @anthropic-ai/claude-code requires Node 18+."
+    text: "Use the native installer — curl -fsSL https://claude.ai/install.sh | bash on macOS/Linux/WSL, or irm https://claude.ai/install.ps1 | iex in PowerShell on Windows. It has no dependencies and auto-updates. Prefer npm tooling instead? npm install -g @anthropic-ai/claude-code requires Node 22+."
   - name: "Verify and authenticate"
     text: "Run claude --version to confirm the install, then run claude and complete the one-time browser sign-in. You need a Claude Pro/Max, Team/Enterprise, or Anthropic Console account — the free Claude.ai plan doesn't include Claude Code."
   - name: "Start inside a real project"
@@ -22,7 +23,7 @@ howtoSteps:
     text: "/help lists commands, Esc interrupts mid-action, /clear resets a noisy session, and claude doctor is the health check when anything misbehaves."
 faq:
   - q: "How do I install Claude Code?"
-    a: "The recommended path is the native installer: curl -fsSL https://claude.ai/install.sh | bash on macOS, Linux, or WSL (PowerShell: irm https://claude.ai/install.ps1 | iex). It has zero dependencies and auto-updates in the background. The npm alternative — npm install -g @anthropic-ai/claude-code — works too but requires Node.js 18+."
+    a: "The recommended path is the native installer: curl -fsSL https://claude.ai/install.sh | bash on macOS, Linux, or WSL (PowerShell: irm https://claude.ai/install.ps1 | iex). It has zero dependencies and auto-updates in the background. The npm alternative — npm install -g @anthropic-ai/claude-code — works too but requires Node.js 22+."
   - q: "Do I need Node.js for Claude Code?"
     a: "Only if you install via npm. The native installer and Homebrew paths have no Node dependency at all — which also sidesteps the classic npm EACCES permission errors."
   - q: "Is Claude Code free?"
@@ -69,7 +70,7 @@ That's it for the native path — updates arrive automatically, and you can forc
 
 ## Install via npm (advanced)
 
-If you prefer npm — for example, to pin Claude Code alongside your other global tooling — you can install it that way instead. This path requires **Node.js 18 or later**; the native installer and Homebrew have no Node dependency.
+If you prefer npm — for example, to pin Claude Code alongside your other global tooling — you can install it that way instead. This path requires **Node.js 22 or later**; the native installer and Homebrew have no Node dependency.
 
 ```bash
 node --version
@@ -90,7 +91,7 @@ When a new release ships, upgrade with:
 npm install -g @anthropic-ai/claude-code@latest
 ```
 
-Don't use `npm update -g` — it respects the semver range from your original install and can silently leave you on a stale version. To apply an update immediately without reinstalling, run `claude update`.
+Don't use `npm update -g` — it respects the semver range from your original install and can silently leave you on a stale version. To apply an update immediately without reinstalling, run `claude update`. Every install method's update command, release channels, and fixes for failed updates are in [How to Update Claude Code](/guides/getting-started/update-claude-code).
 
 > [!WARNING]
 > If the global install fails with an `EACCES` permission error, do **not** reach for `sudo npm install -g`. That leaves root-owned files in your npm prefix that break future installs. Instead, point npm at a user-writable prefix (`npm config set prefix ~/.npm-global` and add `~/.npm-global/bin` to your `PATH`) or install Node through `nvm`, which sidesteps the problem entirely. The simplest fix of all is to switch to the native installer above, which avoids npm permissions completely.
@@ -177,7 +178,7 @@ A Next.js app for internal analytics dashboards. TypeScript throughout.
 The payoff compounds: every command you document is one Claude won't guess at, and every convention you state is one it won't violate. Keep it tight and update it when the project's facts change.
 
 > [!TIP]
-> You can also keep a personal `~/.claude/CLAUDE.md` in your home directory for instructions that follow you across every project — things like "always run the linter after edits" or "explain your plan before large refactors." Project files override personal ones when they conflict.
+> You can also keep a personal `~/.claude/CLAUDE.md` in your home directory for instructions that follow you across every project — things like "always run the linter after edits" or "explain your plan before large refactors." Both load into the same session rather than overriding each other, so keep them from contradicting.
 
 ## IDE integrations at a glance
 
@@ -185,7 +186,7 @@ Claude Code runs fine in a plain terminal, but editor integrations let it open d
 
 | Editor | How it connects |
 |--------|-----------------|
-| VS Code (and forks like Cursor) | Install the Claude Code extension from the marketplace; it attaches to the integrated terminal |
+| VS Code (and forks like Cursor) | Install the Claude Code extension from the marketplace; it opens a graphical chat panel in the editor |
 | JetBrains IDEs (IntelliJ, PyCharm, WebStorm, …) | Install the Claude Code plugin from the JetBrains marketplace |
 | Any terminal | Run `claude` directly — no integration required |
 
@@ -195,14 +196,14 @@ With an editor extension installed, running `claude` from that editor's integrat
 
 A handful of issues account for most rough first runs:
 
-- **`command not found: claude`** — the npm global bin directory isn't on your `PATH`. Run `npm prefix -g` to find it, then add its `bin` subfolder to `PATH` in your shell profile (`~/.zshrc`, `~/.bashrc`) and open a new terminal.
+- **`command not found: claude`** — the install directory isn't on your `PATH`: `~/.local/bin` for the native installer, or npm's global `bin` folder (find it with `npm prefix -g`) for npm. Add it to `PATH` in your shell profile (`~/.zshrc`, `~/.bashrc`) and open a new terminal.
 - **`EACCES` on install** — a permissions problem in the npm prefix, not a Claude bug. See the EACCES warning above; the simplest fix is to switch to the native installer, which sidesteps npm permissions entirely.
 - **Auth won't complete** — the browser callback was blocked or you're on a headless box. Run it once on a machine with a browser to cache credentials, or follow the on-screen instructions for completing auth manually.
 - **Claude can't see your files** — you launched it from the wrong directory. Quit, `cd` into the actual project root, and start again; it only sees the tree below where it was started.
 - **Responses feel context-blind** — you haven't given it a `CLAUDE.md`, or the conversation has drifted. Add the file with `/init`, and use `/clear` to reset a session that's gone off the rails.
 
 > [!NOTE]
-> When something behaves unexpectedly, run `claude doctor` first — it's the canonical health check, reporting on your installation, update status, settings, and MCP configuration in one pass. To discover the commands and flags your installed version supports, run `claude --help`; the CLI evolves, and `--help` always reflects exactly what your version offers.
+> When something behaves unexpectedly, run `claude doctor` first — it's the canonical health check, reporting on your installation, update status, and settings files in one pass. To discover the commands and flags your installed version supports, run `claude --help`; the CLI evolves, and `--help` always reflects exactly what your version offers.
 
 ## Where to go next
 

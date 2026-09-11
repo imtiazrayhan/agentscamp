@@ -3,14 +3,15 @@ title: "Getting Web Data into AI Agents: Search & Scraping APIs Compared"
 description: "The agent web-data layer — Exa for semantic search, Firecrawl for extraction at scale, Tavily for all-in-one, Jina Reader for zero-setup — and how they compose."
 author: "Imtiaz Rayhan"
 date: 2026-06-12
+updated: "2026-09-11"
 color: "green"
 topics: ["ai-agents-systems", "rag-retrieval"]
 tags: ["web-data", "search", "scraping", "agents", "comparison"]
 featured: true
-summary: "Agent web access splits into find and fetch. Exa is the semantic search specialist (meaning-based retrieval, Websets); Firecrawl is the extraction workhorse (any site to clean Markdown, whole-site crawls, schema extraction); Tavily bundles search + extract + crawl + research behind one key; Jina Reader is the zero-setup fetcher — prepend a URL prefix, get markdown."
+summary: "Agent web access splits into find and fetch. Exa is the semantic search specialist (meaning-based retrieval, Websets); Firecrawl is the extraction workhorse (any site to clean Markdown, whole-site crawls, schema extraction); Tavily bundles search + extract + crawl + research behind one key; Jina Reader is the zero-setup fetcher — prefix a URL, get markdown."
 keyTakeaways:
   - "Separate the verbs: FIND (which pages matter — Exa, Tavily search) and FETCH (turn pages into clean model input — Firecrawl, Jina Reader, the extract endpoints). Tools specialize accordingly."
-  - "Exa's edge is retrieval quality for AI consumers — semantic search with clean contents out; Firecrawl's is industrial extraction (JS rendering, crawls, schema-validated /extract)."
+  - "Exa's edge is retrieval quality for AI consumers — semantic search with clean contents out; Firecrawl's is industrial extraction (JS rendering, crawls, schema-based extraction)."
   - "Tavily's edge is integration economy: one key, one credit pool, four capabilities, fast search — the default for agents that need a bit of everything."
   - "Jina Reader's edge is zero ceremony: r.jina.ai/<url> from any HTTP client, PDFs and Office docs included — the lightweight fetcher for 'just read this page.'"
   - "Every fetched byte is untrusted input with prompt-injection potential — treat web content as data, never instructions, and gate tools that act on it."
@@ -21,6 +22,22 @@ faq:
     a: "These APIs read the web; browser agents operate it. If the task is information (search, read, extract), data APIs are faster, cheaper, and more reliable than driving Chrome. Browser agents earn their cost when the task is action — logins, forms, clicking through apps. Reach for Browser Use/Stagehand only when reading isn't enough."
   - q: "What about prompt injection from web content?"
     a: "It's the category's standing risk: any fetched page can contain instructions aimed at your model (indirect injection). Defenses are architectural — render content as quoted data in prompts, never grant fetch-adjacent tools write/spend powers without gates, and treat 'the page told me to' as a failure mode you've planned for."
+sources:
+  - title: "Jina Reader README"
+    url: "https://github.com/jina-ai/reader"
+    publisher: "Jina AI"
+  - title: "Firecrawl on GitHub"
+    url: "https://github.com/firecrawl/firecrawl"
+    publisher: "Firecrawl"
+  - title: "Firecrawl Extract docs"
+    url: "https://docs.firecrawl.dev/features/extract"
+    publisher: "Firecrawl"
+  - title: "Tavily API credits"
+    url: "https://docs.tavily.com/documentation/api-credits"
+    publisher: "Tavily"
+  - title: "Exa Search API reference"
+    url: "https://exa.ai/docs/reference/search"
+    publisher: "Exa"
 related: ["tool:exa", "tool:firecrawl", "tool:tavily", "tool:jina-reader", "guide:agentic-rag", "glossary:rag", "guide:defending-prompt-injection", "skill:web-research-pipeline"]
 audience: ["ai-engineers", "sales", "marketers"]
 ---
@@ -40,11 +57,11 @@ An agent without web access is frozen at its [training cutoff](/glossary/knowled
 
 **[Exa](/tools/exa)** is search rebuilt for machine consumers: meaning-based retrieval over the web, contents returned as clean text rather than links to render, deep-search profiles when an agent is researching rather than skimming, and Websets for entity-set building. When the question is *"which pages should my agent read?"*, Exa's answer quality is the product.
 
-**[Firecrawl](/tools/firecrawl)** is the extraction workhorse (~131k stars of consensus): `/scrape` renders any page — JavaScript included — to Markdown, `/crawl` walks whole sites with limits, `/extract` returns schema-validated objects from messy pages. It's the step before [chunking](/glossary/rag) in web-fed RAG, and the heavy machinery when fetch volume is the job.
+**[Firecrawl](/tools/firecrawl)** is the extraction workhorse (~179k GitHub stars as of September 2026): `/scrape` renders any page — JavaScript included — to Markdown, `/crawl` walks whole sites with limits, `/extract` returns schema-validated objects from messy pages (Firecrawl now calls `/agent` its successor). It's the step before [chunking](/glossary/rag) in web-fed RAG, and the heavy machinery when fetch volume is the job.
 
-**[Tavily](/tools/tavily)** bets on integration economy: search (with latency as its pitch), extract, crawl, map, and a multi-step research endpoint behind one key and credit pool, with a hosted MCP server making it a one-liner in Claude Code. For agents that need *a bit of everything* without three vendor accounts, it's the pragmatic default. Deciding between the two search specialists? [Exa vs Tavily](/guides/comparisons/exa-vs-tavily) breaks it down.
+**[Tavily](/tools/tavily)** bets on integration economy: search (with latency as its pitch), extract, crawl, map, and a multi-step research endpoint behind one key and credit pool, with a hosted MCP server making it a one-liner in Claude Code. For agents that need *a bit of everything* without three vendor accounts, it's the pragmatic default. Deciding between the two search specialists? [Exa vs Tavily](/guides/comparisons/exa-vs-tavily) breaks it down, and [the best web search APIs for AI agents](/guides/comparisons/best-web-search-apis-for-ai-agents-2026) covers the wider field, including Brave and Parallel.
 
-**[Jina Reader](/tools/jina-reader)** wins on ceremony — there is none: prepend `r.jina.ai/` to a URL and markdown comes back (PDFs, Office docs, captioned images included); `s.jina.ai` searches and returns the full content of top results. It's the fetcher for workflows where an SDK would be overkill.
+**[Jina Reader](/tools/jina-reader)** wins on ceremony — there is none: prepend `r.jina.ai/` to a URL and markdown comes back (PDFs, Office docs, and optional image captions included); `s.jina.ai` searches and returns the full content of top results. It's the fetcher for workflows where an SDK would be overkill; its request headers are documented in the [Jina Reader API guide](/guides/advanced/jina-reader-api).
 
 ## How they compose
 

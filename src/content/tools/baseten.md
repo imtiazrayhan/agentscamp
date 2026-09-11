@@ -6,7 +6,8 @@ seoTitle: "Baseten: Pricing, Truss Deployments, and Alternatives"
 seoDescription: "Baseten serves ML and LLM models on autoscaling GPUs with scale-to-zero and open-source Truss packaging. Its pricing model, who it fits, and top alternatives."
 url: "https://www.baseten.co"
 date: 2026-06-19
-pricing: "paid"
+updated: "2026-09-11"
+pricing: "freemium"
 category: "platform"
 repo: "https://github.com/basetenlabs/truss"
 sameAs: ["https://github.com/basetenlabs/truss", "https://docs.baseten.co"]
@@ -22,14 +23,14 @@ faq:
   - q: "What is Baseten?"
     a: "Baseten is an inference platform for deploying ML and LLM models into production on autoscaling GPU infrastructure. You package a model with the open-source Truss framework, run truss push, and Baseten handles containerization, scaling, and a live API endpoint."
   - q: "Is Baseten free?"
-    a: "No — Baseten is a commercial platform billed by usage on GPU compute, metered per minute a replica is running across hardware tiers (T4 through B200). Deployments can scale to zero to avoid charges while idle. The Truss packaging framework is separately open-source under MIT."
+    a: "It's freemium: the entry Basic plan is pay-as-you-go with no monthly fee, and new accounts come with credits to experiment with deployments for free. After that, Baseten bills by usage on GPU compute, metered per minute a replica is running across hardware tiers (T4 through B200). Deployments can scale to zero to avoid charges while idle. The Truss packaging framework is separately open-source under MIT."
   - q: "How do I deploy a model on Baseten?"
-    a: "Package your model's serving logic with Truss, iterate locally with truss watch live-reload, then run truss push --publish to deploy. Baseten provisions a GPU-backed endpoint with configurable autoscaling, and a GitHub Action can automate deploys from your repo."
+    a: "Package your model's serving logic with Truss, iterate with truss watch, which live-patches a development deployment, then run truss push to deploy; published deployments are now the default. Baseten provisions a GPU-backed endpoint with configurable autoscaling, and a GitHub Action can automate deploys from your repo."
 ---
 
 Baseten is an **inference platform for putting your own ML and LLM models into production**. Rather than calling a hosted model API, you bring a model — custom, fine-tuned, or open-source — package its serving logic, and Baseten runs it on GPU infrastructure as an autoscaling endpoint. It is built around productionizing models you control, with the operational concerns (containerization, scaling, observability, high availability) handled for you.
 
-Packaging happens through **Truss**, Baseten's open-source (MIT) framework. You define the model server and its dependencies in Python, iterate locally with `truss watch` live-reload, and deploy with `truss push --publish`. Truss serves models from frameworks like vLLM, SGLang, TensorRT-LLM, transformers, diffusers, PyTorch, and TensorFlow, and **Truss Chains** compose multi-step, multi-model workflows.
+Packaging happens through **Truss**, Baseten's open-source (MIT) framework. You define the model server and its dependencies in Python, iterate with `truss watch`, which live-patches a development deployment, and deploy with `truss push` (published deployments are now the default). Truss serves models from frameworks like vLLM, SGLang, TensorRT-LLM, transformers, diffusers, PyTorch, and TensorFlow, and **Truss Chains** compose multi-step, multi-model workflows.
 
 Dedicated deployments **autoscale on traffic** — configurable min/max replicas, concurrency targets, and **scale-to-zero** so idle deployments cost nothing. Baseten supports multi-region and multi-cloud replicas for high availability, plus per-deployment dashboards covering request volume, latency, GPU utilization, and logs. Alongside dedicated deployments, it offers pre-optimized Model APIs for quick evaluation and training that lands directly on inference-ready infrastructure.
 

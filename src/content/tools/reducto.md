@@ -4,6 +4,7 @@ title: "Reducto"
 description: "High-accuracy document ingestion API — parsing, agentic OCR, table and figure extraction, and splitting that turns messy PDFs into LLM-ready data for RAG."
 url: "https://reducto.ai"
 date: 2026-06-19
+updated: "2026-09-11"
 pricing: "freemium"
 category: "platform"
 sameAs: ["https://github.com/reductoai", "https://docs.reducto.ai"]
@@ -19,7 +20,7 @@ faq:
   - q: "What is Reducto?"
     a: "Reducto is a hosted document ingestion platform for AI teams. Its Parse API turns PDFs, images, spreadsheets, and slides into LLM-ready structured data — capturing layout, reading order, tables, and figures — and it adds Extract (schema-based data extraction), Split (separating multi-document files), and Edit APIs. It's aimed at production RAG and document pipelines where accuracy on complex or financial documents matters."
   - q: "Is Reducto free?"
-    a: "Reducto is freemium: a free tier with included credits, then usage-based paid plans (Standard and Growth) and an Enterprise tier for VPC/on-prem deployment, custom SLAs, and security agreements like ZDR and BAAs. The product is a closed-source hosted API, though Reducto publishes open-source client SDKs (Python, Node, Go) under Apache-2.0."
+    a: "Reducto is freemium: the pay-as-you-go Standard plan includes free starter credits, the Growth plan is custom-priced and adds zero-data-retention and BAA agreements, and an Enterprise tier adds VPC/on-prem deployment and custom SLAs. The product is a closed-source hosted API, though Reducto publishes open-source client SDKs (Python, Node, Go) under Apache-2.0."
   - q: "How do I use Reducto?"
     a: "Sign up for an API key and call the REST API directly or via the official Python, Node, or Go SDK. Submit a document to the Parse API to get back structured, chunked output with bounding-box citations, or use Extract to pull fields against a schema. The parsed output drops into a retrieval pipeline or vector store for RAG."
 ---
@@ -39,4 +40,4 @@ It is a **closed-source hosted API**, not a library you self-host (though it off
 
 ## Good to know
 
-Reducto is freemium: a free tier with included credits, usage-based Standard and Growth plans, and an Enterprise tier adding VPC/on-prem deployment, custom SLAs, and security commitments (SOC 2, HIPAA, zero data retention, BAAs). It's most useful when document parsing is the accuracy bottleneck in a RAG pipeline — pair it with [how RAG works](/guides/concepts/how-rag-works) for the surrounding retrieval design and a [chunking strategy optimizer](/skills/data/chunking-strategy-optimizer) for tuning the chunks it produces.
+Reducto is freemium (plans as of September 2026): a pay-as-you-go Standard plan with free starter credits, a custom-priced Growth plan that adds zero-data-retention and BAA agreements, and an Enterprise tier adding VPC/on-prem deployment and custom SLAs; Reducto is SOC 2 Type II audited. It's most useful when document parsing is the accuracy bottleneck in a RAG pipeline — pair it with [how RAG works](/guides/concepts/how-rag-works) for the surrounding retrieval design and a [chunking strategy optimizer](/skills/data/chunking-strategy-optimizer) for tuning the chunks it produces.

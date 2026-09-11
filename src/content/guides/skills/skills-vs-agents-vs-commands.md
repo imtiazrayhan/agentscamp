@@ -193,6 +193,8 @@ disable-model-invocation: true
 > [!NOTE]
 > Add `disable-model-invocation: true` to any skill you only want to run on your explicit trigger — otherwise Claude may auto-invoke it when it judges the task relevant, and the "saved prompt I fire myself" behavior won't hold.
 
+The commands that ship with Claude Code itself, from `/compact` to `/permissions`, are listed in [Claude Code slash commands](/guides/configuration/claude-code-slash-commands) alongside the full custom-command syntax.
+
 ## Passing arguments to a command
 
 Skills accept arguments, which is what makes them feel like CLI subcommands for your repo. There are two styles.

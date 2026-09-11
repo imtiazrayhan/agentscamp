@@ -2,6 +2,7 @@
 name: "Cline"
 description: "Open-source autonomous coding agent for VS Code that plans, edits files, and runs commands with diff approval, using any model you bring or a local runtime."
 date: 2026-06-03
+updated: "2026-09-11"
 url: "https://cline.bot"
 pricing: "open-source"
 category: "extension"
@@ -17,7 +18,7 @@ faq:
   - q: "What is Cline?"
     a: "Cline is an open-source autonomous coding agent that runs as a Visual Studio Code extension. It adds a chat-driven agent to your editor that reads your codebase, writes and edits files, and executes terminal commands to complete multi-step tasks — with every file change and command shown for review and approval before it runs."
   - q: "Is Cline free?"
-    a: "Yes, Cline is free and open source under Apache-2.0. It does not include model inference, though — you supply your own API key (Anthropic, OpenAI, OpenRouter, Google, AWS Bedrock, and others) or point it at a local model via Ollama or LM Studio, so costs depend on the provider you connect."
+    a: "Yes, Cline is free and open source under Apache-2.0. Model usage is separate: you supply your own API key (Anthropic, OpenAI, OpenRouter, Google, AWS Bedrock, and others), point it at a local model via Ollama or LM Studio, or buy inference through Cline itself, at cost or with the optional ClinePass subscription. Costs depend on the route you choose."
   - q: "How do I install Cline?"
     a: "Install it from the VS Code Marketplace and add a provider key, then open the Cline panel and state a task. Cline proposes edits and commands, and you approve each before it executes. It's also available as a JetBrains plugin and a terminal CLI for headless or scripted runs."
 ---
@@ -47,8 +48,8 @@ Add a /health endpoint to the Express server in src/ that returns
 Cline proposes edits and commands; you approve each before it runs.
 
 > [!NOTE]
-> Cline does not include model inference — you pay your chosen provider directly for token usage.
+> Cline doesn't tie you to its own inference: pay your chosen provider directly for token usage, or buy model inference through Cline at cost or with the optional ClinePass subscription.
 
 ## Good to know
 
-Cline is free and open source (Apache-2.0). It requires VS Code and an external model provider, so usage costs depend on the API or local hardware you connect.
+Cline is free and open source (Apache-2.0), though its JetBrains plugin is not open-sourced. Usage costs depend on the API, local hardware, or Cline-provided inference you use.

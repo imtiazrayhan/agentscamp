@@ -60,7 +60,7 @@ For each important task, define:
 - **Cost:** tokens and provider spend per successful task
 - **Reliability:** error, timeout, fallback, retry, and abandonment rates
 
-These measures create the questions the instrumentation must answer. Tools come afterward.
+These measures create the questions the instrumentation must answer. Tools come afterward; when you reach that step, [the LLM observability tools roundup](/guides/comparisons/best-llm-observability-tools-2026) compares the main platforms on tracing, OpenTelemetry support, self-hosting, and cost tracking.
 
 ## Trace the whole request tree
 

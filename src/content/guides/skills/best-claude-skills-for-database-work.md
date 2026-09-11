@@ -3,6 +3,7 @@ title: "8 Best Claude Skills for Database Work"
 description: "Compare Claude skills for safe migrations, data backfills, indexes, query plans, pooling, deadlocks, vector search, and SQL tuning."
 author: "Imtiaz Rayhan"
 date: 2026-08-04
+updated: 2026-09-11
 color: "blue"
 topics: ["data-ml", "devops-infra"]
 audience: ["developers"]
@@ -37,7 +38,7 @@ Start with the failure mode you face rather than asking Claude to “optimize th
 | --- | --- | --- | --- |
 | [migration-writer](/skills/database/migration-writer) | Schema evolution | Schema, deploy order, compatibility | Writes migration files |
 | [safe-data-backfill-planner](/skills/database/safe-data-backfill-planner) | Existing-row transformation | Cardinality, load, target invariant | Plan only |
-| [query-plan-analyzer](/skills/database/query-plan-analyzer) | One slow query | Actual execution plan | Analysis only |
+| [query-plan-analyzer](/skills/database/query-plan-analyzer) | One slow query | Actual execution plan | Executes queries and DDL |
 | [postgres-index-strategist](/skills/database/postgres-index-strategist) | Postgres index design | Query shapes and workload | Recommendation |
 | [connection-pool-tuner](/skills/database/connection-pool-tuner) | Pool waits and saturation | Fleet and database metrics | Recommendation |
 | [deadlock-diagnoser](/skills/database/deadlock-diagnoser) | Transaction deadlocks | Engine deadlock report | Analysis only |

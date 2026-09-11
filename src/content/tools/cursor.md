@@ -2,7 +2,7 @@
 name: "Cursor"
 description: "An AI-first code editor built on VS Code with deep in-editor agent features, parallel agents, in-house Composer models, and a plugin marketplace."
 date: 2026-06-03
-updated: 2026-06-11
+updated: "2026-09-11"
 url: "https://cursor.com"
 pricing: "freemium"
 category: "ide"
@@ -51,4 +51,4 @@ and update all call sites in @app/.
 
 ## Good to know
 
-Cursor is available on macOS, Windows, and Linux. The free Hobby tier includes limited AI usage; paid Individual (Pro and up) and Teams plans raise included usage and unlock premium models, with on-demand usage billed beyond the included amount. You can also supply your own API keys. Because it is a separate application rather than an extension, it runs alongside (not inside) a standard VS Code install.
+SpaceX completed its acquisition of Cursor in August 2026, and Cursor's plans now include Grok models and Grok Bot alongside its in-house Composer models. Cursor is available on macOS, Windows, and Linux. The free Hobby tier includes limited AI usage; paid Individual (Pro and up) and Teams plans raise included usage and unlock premium models, with on-demand usage billed beyond the included amount. You can also supply your own API keys. Because it is a separate application rather than an extension, it runs alongside (not inside) a standard VS Code install.

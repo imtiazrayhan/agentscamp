@@ -35,7 +35,7 @@ Modal's pitch collapsed an entire DevOps stack into a decorator: **infrastructur
 ## Highlights
 
 - **Functions with GPUs in one line** — `@app.function(gpu="h100")`; container images defined in Python, cold starts in sub-second territory.
-- **Sandboxes for agent code** — secure containers created at runtime: `sandbox.exec()`, timeouts from 5 minutes to 24 hours, readiness probes, tags, and reattach via `from_id()` — built for LLM-generated code execution.
+- **Sandboxes for agent code** — secure containers created at runtime: `sandbox.exec()`, a 5-minute default lifetime you can raise to 24 hours, readiness probes, tags, and reattach via `from_id()` — built for LLM-generated code execution.
 - **Scale without ceremony** — autoscaling inference endpoints, massively parallel batch jobs, scheduled functions, web endpoints.
 - **Storage that follows the code** — Volumes (distributed filesystems), secrets, and env vars usable across functions and sandboxes.
 - **Beyond Python callers** — define apps in Python, invoke from JavaScript/TypeScript or Go; GPU notebooks with live collaboration round it out.

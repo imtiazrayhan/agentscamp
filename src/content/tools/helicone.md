@@ -4,6 +4,7 @@ title: "Helicone"
 description: "Open-source LLM observability and AI gateway with one-line integration — logging, tracing, caching, and cost/latency tracking across providers."
 url: "https://helicone.ai"
 date: 2026-06-04
+updated: "2026-09-11"
 pricing: "open-source"
 category: "observability"
 repo: "https://github.com/Helicone/helicone"
@@ -15,11 +16,11 @@ audience: ["ai-engineers", "devops"]
 tags: ["observability", "gateway", "caching", "cost-control", "open-source"]
 featured: false
 alternativeTo: ["langfuse", "langsmith", "portkey"]
-summary: "Helicone is an open-source LLM observability platform and AI gateway with a one-line integration — logging, tracing, caching, and cost/latency tracking across providers. Note: Mintlify acquired Helicone in March 2026 and it's now in maintenance mode (security and bug fixes only, no new features), though the Apache-2.0 proxy still works and is self-hostable."
+summary: "Helicone is an open-source LLM observability platform and AI gateway with a one-line integration — logging, tracing, caching, and cost/latency tracking across providers. Note: Mintlify acquired Helicone in March 2026 and it's now in maintenance mode (security, bug, and new-model updates continue), though the Apache-2.0 proxy still works and is self-hostable."
 related: ["guide:llm-gateways-compared", "tool:portkey", "tool:litellm", "guide:llm-cost-latency-engineering", "tool:langfuse"]
 faq:
   - q: "What is Helicone?"
-    a: "Helicone is an open-source LLM observability platform with a built-in AI gateway, known for one-line setup: change your base URL or add a header and your calls are logged, traced, and analyzed. It adds caching and rate limiting at the proxy, cost and latency tracking per call, prompt management, and datasets/evals. Note: Mintlify acquired Helicone in March 2026 and it is now in maintenance mode — security and bug fixes only, no new features."
+    a: "Helicone is an open-source LLM observability platform with a built-in AI gateway, known for one-line setup: change your base URL or add a header and your calls are logged, traced, and analyzed. It adds caching and rate limiting at the proxy, cost and latency tracking per call, prompt management, and datasets/evals. Note: Mintlify acquired Helicone in March 2026 and it is now in maintenance mode — security updates, new-model support, and bug and performance fixes continue."
   - q: "Is Helicone free?"
     a: "Helicone is open source under Apache-2.0 and free to self-host (Docker/Helm), with a hosted cloud offering a free tier and paid plans."
   - q: "How do I use Helicone?"
@@ -48,8 +49,8 @@ client = OpenAI(base_url="https://oai.helicone.ai/v1",
 ```
 
 > [!WARNING]
-> **Status (2026):** [Mintlify acquired Helicone](https://www.helicone.ai/blog/joining-mintlify) in March 2026, and the product is now in **maintenance mode** — security patches, bug fixes, and new-model support continue, but there are no new features or roadmap, and Mintlify is helping customers migrate to other platforms. The open-source proxy still works and the Docker image is current, so existing self-hosted deployments keep running; new projects should weigh that it is no longer actively developed.
+> **Status (2026):** [Mintlify acquired Helicone](https://www.helicone.ai/blog/joining-mintlify) in March 2026, and the product is now in **maintenance mode** — security patches, bug and performance fixes, and new-model support continue, and Mintlify is helping customers migrate to other platforms. The open-source proxy still works and existing self-hosted deployments keep running, but as of September 2026 none of its published Docker Hub images has been updated since August 2025, even though security commits continue; new projects should weigh that it is no longer actively developed.
 
 ## Good to know
 
-Helicone is open source (Apache-2.0) and free to self-host; a hosted cloud with a free tier and paid plans is also available. It was used in production by 16,000+ organizations at the time of the acquisition. Given the maintenance-mode status above, teams starting fresh should compare actively-developed observability platforms like [Langfuse](/tools/langfuse) and [LangSmith](/tools/langsmith), and the gateway-first [Portkey](/tools/portkey) — see [LLM Gateways Compared](/guides/advanced/llm-gateways-compared).
+Helicone is open source (Apache-2.0) and free to self-host; a hosted cloud with a free tier and paid plans is also available. At the acquisition, Helicone said 16,000 organizations had trusted it with their LLM infrastructure. Given the maintenance-mode status above, teams starting fresh should compare actively-developed observability platforms like [Langfuse](/tools/langfuse) and [LangSmith](/tools/langsmith), and the gateway-first [Portkey](/tools/portkey) — see [LLM Gateways Compared](/guides/advanced/llm-gateways-compared).

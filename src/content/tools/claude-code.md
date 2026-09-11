@@ -51,3 +51,5 @@ Treat it as a pair working in your repo: describe a task, review the diff it pro
 
 > [!NOTE]
 > Claude Code requires a paid plan (Claude Pro/Max subscription or Anthropic API usage). Because it can run commands and modify files, review its proposed changes before committing, and use a version-controlled branch when granting broader autonomy.
+
+Weighing other options? [The best Claude Code alternatives](/guides/comparisons/best-claude-code-alternatives-2026) sorts the field by why you'd switch: cost, open source, local models, an IDE, or async cloud agents.

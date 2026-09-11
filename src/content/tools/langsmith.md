@@ -5,9 +5,10 @@ description: "LangChain's platform for tracing, evaluating, and monitoring LLM a
 seoDescription: "LangSmith is LangChain's platform for tracing, evaluating, and monitoring LLM apps — framework-agnostic, with datasets, evals, and dashboards."
 url: "https://www.langchain.com/langsmith"
 date: 2026-06-03
+updated: "2026-09-11"
 pricing: "freemium"
 category: "observability"
-sameAs: ["https://docs.smith.langchain.com"]
+sameAs: ["https://docs.langchain.com/langsmith"]
 color: "blue"
 topics: ["llm-evals"]
 audience: ["ai-engineers", "devops"]
@@ -20,11 +21,11 @@ faq:
   - q: "What is LangSmith?"
     a: "LangSmith is LangChain's platform for the operational side of LLM apps: tracing every step of a run, evaluating against datasets, and monitoring quality, latency, and cost in production. Despite the name, it is framework-agnostic — you can instrument an app built with or without LangChain."
   - q: "How much does LangSmith cost?"
-    a: "LangSmith is a commercial platform with a free tier and usage-based paid plans. It is hosted, and a self-hostable enterprise option exists."
+    a: "LangSmith is a commercial platform with a free tier and per-seat paid plans plus usage-based trace billing. It is hosted, and a self-hostable enterprise option exists."
   - q: "How do I use LangSmith?"
     a: "Set a few environment variables — LANGSMITH_TRACING=true and LANGSMITH_API_KEY — and your runs start showing up as traces. From there, promote interesting traces into a dataset and run evaluations against it as you change prompts or models. Tracing is the foundation: instrument first, then build datasets from real traffic."
   - q: "LangSmith vs Langfuse?"
-    a: "LangSmith is the commercial, hosted option from LangChain. For fully open-source alternatives, the usual comparisons are Langfuse and Arize Phoenix."
+    a: "LangSmith is the commercial, hosted option from LangChain. For self-hostable alternatives, the usual comparisons are Langfuse (open source, MIT core) and Arize Phoenix (source-available, ELv2)."
 ---
 
 LangSmith is LangChain's platform for the operational side of LLM apps: **tracing** every step of a run, **evaluating** against datasets, and **monitoring** quality, latency, and cost in production. Despite the name, it is framework-agnostic — you can instrument an app built with or without LangChain.
@@ -37,7 +38,7 @@ It is aimed at teams who want one place to see what their chains and agents actu
 - **Datasets & evals** — build datasets from traces, run offline evals (including LLM-as-judge), and compare versions.
 - **Online evaluation & monitoring** — score production traffic and track quality/latency/cost over time.
 - **Prompt management & playground** — version prompts and iterate with a hosted playground.
-- **Framework-agnostic** — SDKs and OpenTelemetry-style instrumentation for any stack.
+- **Framework-agnostic** — SDKs plus native OpenTelemetry (OTLP) trace ingest for any stack.
 
 ## In an AI-assisted workflow
 
@@ -55,4 +56,4 @@ Then promote interesting traces into a dataset and run evaluations against it as
 
 ## Good to know
 
-LangSmith is a commercial platform with a free tier and usage-based paid plans. It is hosted (a self-hostable enterprise option exists). For fully open-source alternatives, compare [Langfuse](/tools/langfuse) and [Arize Phoenix](/tools/arize-phoenix); see [Best LLM & RAG Evaluation Tools in 2026](/guides/evaluation/best-llm-eval-tools-2026) for the full landscape.
+LangSmith is a commercial platform with a free tier and per-seat paid plans plus usage-based trace billing. It is hosted (a self-hostable enterprise option exists). For self-hostable alternatives, compare [Langfuse](/tools/langfuse) (open source, MIT core) and [Arize Phoenix](/tools/arize-phoenix) (source-available, ELv2); see [Best LLM & RAG Evaluation Tools in 2026](/guides/evaluation/best-llm-eval-tools-2026) for the full landscape.

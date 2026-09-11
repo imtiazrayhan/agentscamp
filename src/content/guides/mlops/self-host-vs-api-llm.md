@@ -31,7 +31,7 @@ related: ["agent:llm-inference-engineer", "tool:vllm", "tool:ollama", "tool:lm-s
 
 ## What each model gives you
 
-**Hosted API** (frontier providers, or open models served by inference clouds like [Groq](/tools/groq), [Together AI](/tools/together-ai), and [Fireworks AI](/tools/fireworks-ai)) — you call an endpoint and run nothing. You get the best models the moment they ship, zero infrastructure, instant scaling, and pay-per-token billing with no fixed cost. The trade: your data goes to a third party, you live with their rate limits and pricing, and cost scales linearly forever with usage.
+**Hosted API** (frontier providers, or open models served by inference clouds like [Groq](/tools/groq), [Together AI](/tools/together-ai), and [Fireworks AI](/tools/fireworks-ai)) — you call an endpoint and run nothing. You get the best models the moment they ship, zero infrastructure, instant scaling, and pay-per-token billing with no fixed cost. The trade: your data goes to a third party, you live with their rate limits and pricing, and cost scales linearly forever with usage. [The inference provider roundup](/guides/comparisons/best-llm-inference-providers-2026) compares those hosts by workload.
 
 **Self-hosted** (an open-weight model served on your own or rented GPUs) — you get control, privacy, and the ability to run offline and customize the model, with **no per-token fee**. The trade: you pay for the GPUs whether or not they're busy, you operate the whole stack, and open models still trail the frontier on the hardest tasks.
 

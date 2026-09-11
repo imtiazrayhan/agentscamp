@@ -68,6 +68,7 @@ Anthropic's first-party toolkit for building agents on Claude, with native tool 
 - **Conversational / research multi-agent or code-exec loops** → **AutoGen/AG2**.
 - **A clean, minimal, provider-agnostic loop** → **OpenAI Agents SDK**.
 - **Building on Claude, want the smoothest path** → **Claude Agent SDK**.
+- **A TypeScript team that wants one language end to end** → **Mastra** or LangGraph.js; see [Mastra vs LangChain](/guides/comparisons/mastra-vs-langchain).
 - **A single model with a few tools** → maybe **no framework** — write the loop directly.
 
 These aren't mutually exclusive. A common trajectory is to prototype high-level (CrewAI/AutoGen), then move the production-critical path to LangGraph once you need control and durability. Whatever you pick, the next two problems are the same everywhere: giving the agent [memory](/guides/concepts/agent-memory-architecture) and making its [tool calling](/guides/concepts/production-tool-calling) robust — and then [making it production-ready](/agents/meta-orchestration/agent-reliability-reviewer).
