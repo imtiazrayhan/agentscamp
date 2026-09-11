@@ -1,6 +1,6 @@
 # agentscamp
 
-> 256 ready-to-use Claude Code agents, skills, and slash commands — installable in one command.
+> 263 ready-to-use Claude Code agents, skills, and slash commands — installable in one command.
 
 [AgentsCamp](https://agentscamp.com) is a curated, format-validated directory of AI coding artifacts. This CLI bundles the full catalog and installs items straight into your `.claude/` directory.
 
@@ -14,7 +14,7 @@ npx agentscamp
 
 ```
 What do you want to install?
-❯ Everything            256 items
+❯ Everything            263 items
   Agents only          58
   Skills only          90
   Commands only        50
@@ -29,9 +29,9 @@ npx agentscamp --all
 ```
 
 ```
-Installing 256 items into ~/.claude …
+Installing 263 items into ~/.claude …
 ✓ 65 agents, 130 skills, 61 commands installed
-256 installed · ~/.claude
+263 installed · ~/.claude
 ```
 
 ## Commands
