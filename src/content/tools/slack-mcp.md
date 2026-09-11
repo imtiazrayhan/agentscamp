@@ -25,7 +25,7 @@ faq:
     a: "With a Slack user OAuth token: claude mcp add slack --env SLACK_MCP_XOXP_TOKEN=xoxp-... -- npx -y slack-mcp-server@latest --transport stdio. Bot tokens (xoxb) work with reduced capability (no message search), and a browser-session mode (xoxc/xoxd) exists for workspaces where you can't create an app."
   - q: "Can the agent post messages to Slack?"
     a: "Only if you switch it on. The conversations_add_message tool ships disabled by default and is enabled via an env var, optionally restricted to specific channels — a sensible default for a tool that speaks as you."
-audience: ["marketers"]
+audience: ["sales", "marketers"]
 ---
 
 Slack is where the context lives — decisions, incident threads, the answer someone posted three weeks ago. The Slack MCP Server makes it retrievable mid-task: the agent searches messages, reads thread history with sensible pagination, and (only if you opt in) posts updates back.

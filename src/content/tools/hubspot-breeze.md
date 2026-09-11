@@ -9,7 +9,7 @@ category: "marketing"
 color: "orange"
 os: ["Web", "iOS", "Android"]
 topics: ["ai-at-work", "ai-agents-systems"]
-audience: ["marketers"]
+audience: ["sales", "marketers"]
 tags: ["hubspot", "crm", "ai-agents", "marketing-automation", "breeze"]
 featured: false
 alternativeTo: ["claude-cowork", "zapier-agents", "lindy"]

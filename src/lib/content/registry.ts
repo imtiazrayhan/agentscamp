@@ -232,6 +232,19 @@ export const audiences: AudienceDef[] = [
     ],
   },
   {
+    slug: "sales",
+    label: "Sales & revenue teams",
+    description:
+      "Claude for sales work: the official sales plugin, prospect research you can actually source, CRM and deliverability audits, and which tools connect to Claude.",
+    startHere: [
+      "guide:claude-for-sales-teams",
+      "guide:claude-sales-plugin-guide",
+      "guide:research-prospects-with-claude",
+      "guide:best-ai-sales-tools-2026",
+      "guide:which-claude-plan-for-sales-teams",
+    ],
+  },
+  {
     slug: "founders",
     label: "Founders & non-technical builders",
     description:

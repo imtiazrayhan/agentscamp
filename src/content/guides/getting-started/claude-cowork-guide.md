@@ -9,7 +9,7 @@ freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "ai-agents-systems"]
-audience: ["developers", "founders", "marketers"]
+audience: ["developers", "sales", "founders", "marketers"]
 tags: ["claude", "cowork", "desktop-agent", "knowledge-work", "getting-started"]
 featured: true
 keywords: ["Claude Cowork", "Claude desktop agent", "Cowork vs Claude Code", "Cowork plugins", "Cowork permissions"]

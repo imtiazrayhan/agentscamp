@@ -9,7 +9,7 @@ freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
-audience: ["developers", "founders", "marketers"]
+audience: ["developers", "sales", "founders", "marketers"]
 tags: ["claude", "pricing", "plans", "pro", "max", "team", "comparison"]
 featured: true
 keywords: ["Claude pricing 2026", "Claude Pro vs Max", "Claude Team plan", "Claude Free plan limits", "Claude plans compared"]

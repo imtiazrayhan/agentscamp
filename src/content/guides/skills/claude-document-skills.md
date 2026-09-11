@@ -30,7 +30,7 @@ faq:
   - q: "Are the document skills open source?"
     a: "Yes — they live in Anthropic's public anthropics/skills repository. Reading the xlsx or pptx SKILL.md is the single best education in how a production-grade skill is written: procedure, bundled helpers, and boundaries."
 related: ["guide:what-are-claude-skills", "guide:claude-skills-on-claude-ai-and-api", "guide:claude-skills-examples", "guide:how-to-install-claude-skills", "skill:multimodal-document-extractor", "guide:claude-skills-use-cases"]
-audience: ["marketers", "analysts"]
+audience: ["sales", "marketers", "analysts"]
 ---
 
 The most-used Claude skills are ones most people don't know are skills: ask claude.ai for a spreadsheet, a slide deck, a formatted Word document, or a filled PDF, and what answers isn't the base model winging it — it's one of four Anthropic-built **document skills** (`xlsx`, `pptx`, `docx`, `pdf`) loading and driving code execution to produce a real file. They're also the clearest demonstration of what the [skills format](/guides/skills/what-are-claude-skills) is for.

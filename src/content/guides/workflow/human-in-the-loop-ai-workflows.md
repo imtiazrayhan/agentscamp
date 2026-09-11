@@ -37,7 +37,7 @@ howtoSteps:
   - name: "Audit and tune the gates"
     text: "Keep an immutable audit trail of who approved what and when. Review approval rates: if humans approve 99% without edits, the gate is over-tuned — relax it."
 keywords: ["human in the loop", "HITL", "agent approval gate", "autonomous agent safety", "agent oversight", "approval workflow"]
-audience: ["founders"]
+audience: ["sales", "founders"]
 ---
 
 **Human-in-the-loop (HITL) means inserting a human approval or correction step at exactly the moments where an agent's mistake would be expensive or irreversible — and nowhere else.** The hard part isn't adding approvals; it's adding them surgically so automation stays fast and humans stay engaged. Gate too little and a bad [tool call](/guides/prompting/effective-tool-use) sends the wrong invoice or drops a production table. Gate too much and your reviewers turn into a rubber stamp, which is worse than no gate at all because it manufactures false trust.

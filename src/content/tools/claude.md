@@ -8,7 +8,7 @@ pricing: "freemium"
 category: "assistant"
 color: "pink"
 topics: ["ai-at-work", "workflow-prompting"]
-audience: ["developers", "founders", "marketers"]
+audience: ["developers", "sales", "founders", "marketers"]
 tags: ["claude", "anthropic", "assistant", "chat", "connectors", "skills"]
 featured: false
 related: ["tool:claude-cowork", "tool:claude-design", "tool:claude-for-excel", "tool:claude-for-chrome", "tool:claude-code", "guide:claude-plans-compared-2026", "guide:claude-skills-on-claude-ai-and-api", "glossary:ai-connectors", "glossary:claude-plugins"]

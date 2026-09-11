@@ -9,7 +9,7 @@ category: "automation"
 color: "purple"
 os: ["Web"]
 topics: ["ai-at-work", "ai-agents-systems"]
-audience: ["founders"]
+audience: ["sales", "founders"]
 tags: ["automation", "ai-agents", "ai-employee", "slack", "founders"]
 featured: false
 alternativeTo: ["zapier-agents", "n8n", "claude-cowork"]

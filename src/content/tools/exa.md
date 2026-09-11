@@ -28,7 +28,7 @@ faq:
     a: "One verified command: claude mcp add --transport http exa https://mcp.exa.ai/mcp. It even works keyless with rate limits; add an API key from dashboard.exa.ai (x-api-key header) to lift them. The server exposes web_search_exa, web_fetch_exa, and an opt-in advanced search tool."
   - q: "Is Exa free?"
     a: "Freemium and pay-as-you-go, with no subscription tier. As of September 2026, exa.ai/pricing gives new accounts $20 in free credits and adds $10 in free credits every month, then meters by product: $7 per 1,000 searches, $1 per 1,000 pages per content type, $12 per 1,000 deep-search requests ($15 for deep-reasoning), and $5 per 1,000 answers. Enterprise adds volume pricing and zero-data-retention. The MCP server itself is MIT-licensed."
-audience: ["ai-engineers", "marketers"]
+audience: ["ai-engineers", "sales", "marketers"]
 ---
 
 Exa is what search looks like when the customer is an agent: **semantic search in, clean text out.** Where Google optimizes for a human scanning ten blue links, Exa's Search API returns machine-ranked results and its Contents API hands back the page as clean text, highlights, or AI summaries — the retrieval layer for agents and RAG pipelines, sold as an API.

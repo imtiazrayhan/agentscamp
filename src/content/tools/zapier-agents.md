@@ -9,7 +9,7 @@ category: "automation"
 color: "orange"
 os: ["Web"]
 topics: ["ai-at-work", "ai-agents-systems"]
-audience: ["founders"]
+audience: ["sales", "founders"]
 tags: ["automation", "ai-agents", "zapier", "no-code", "founders"]
 featured: false
 alternativeTo: ["lindy", "n8n", "claude-cowork"]

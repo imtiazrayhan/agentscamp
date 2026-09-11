@@ -25,7 +25,7 @@ faq:
     a: "Eighteen, spanning the real workflows: notion-search and notion-fetch for retrieval; create/update/move/duplicate for pages; database creation, views, and queries; comments; and user/team lookups. Outputs use Notion-flavored Markdown, which keeps token usage down versus raw block JSON."
   - q: "Is Notion MCP free?"
     a: "Connecting is free with any Notion account, but some tools are plan-gated: cross-connector search (Slack, Google Drive, Jira) requires Notion AI, database-view queries need Business+, and data-source queries need Enterprise with Notion AI."
-audience: ["founders", "marketers"]
+audience: ["sales", "founders", "marketers"]
 ---
 
 Notion MCP turns the team wiki from something you quote at the agent into something it reads itself. Specs, runbooks, decision docs, meeting notes — `notion-search` and `notion-fetch` make them retrievable mid-task, and the write tools let the agent file its own output where the team will actually find it.

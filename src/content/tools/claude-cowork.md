@@ -8,7 +8,7 @@ pricing: "paid"
 category: "assistant"
 color: "pink"
 topics: ["ai-at-work", "ai-agents-systems"]
-audience: ["developers", "founders", "marketers"]
+audience: ["developers", "sales", "founders", "marketers"]
 tags: ["claude", "cowork", "anthropic", "agent", "knowledge-work", "plugins"]
 featured: false
 related: ["tool:claude", "tool:claude-code", "tool:claude-design", "tool:claude-for-excel", "tool:claude-for-chrome", "guide:claude-cowork-guide", "guide:claude-knowledge-work-plugins", "guide:claude-plans-compared-2026", "glossary:claude-cowork", "glossary:claude-plugins", "glossary:ai-connectors"]

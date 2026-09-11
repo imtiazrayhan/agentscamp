@@ -9,7 +9,7 @@ freshness: "tier1"
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
-audience: ["developers", "founders", "marketers"]
+audience: ["developers", "sales", "founders", "marketers"]
 tags: ["claude", "cowork", "plugins", "knowledge-work", "skills", "connectors"]
 featured: false
 keywords: ["knowledge-work plugins", "Claude Cowork plugins", "Anthropic plugins GitHub", "sales plugin Claude", "finance plugin Claude"]
