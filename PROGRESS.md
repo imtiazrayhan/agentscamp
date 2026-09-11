@@ -1,3 +1,176 @@
+# GSC demand wave (2026-09-11) — SHIPPED
+
+30 items plus one template change, chosen from Search Console (Jun 2 → Sep 7).
+Tool `/alternatives` pages are the format that wins clicks (over half of all
+clicks), followed by the "best Claude skills for X" listicles; head-term
+roundups rank but rarely win the click. This wave writes what searchers already
+ask us and we answer badly.
+
+## Slate
+- 4 intent-fix guides: Jina Reader API reference, Codex CLI sandbox and
+  approvals, updating Claude Code, Claude Code slash commands.
+- 8 roundups / versus: best Claude Code alternatives (cornerstone), best GitHub
+  Copilot alternatives (cornerstone), document parsers for RAG, LLM inference
+  providers, LLM observability, web search APIs for agents, Cline vs Kilo Code
+  vs Roo Code, Mastra vs LangChain.
+- 4 "best Claude skills for X": debugging, refactoring, git, RAG.
+- 14 tool pages: 6 coding-context MCP servers (docfork, ref-tools, gitmcp,
+  deepwiki-mcp, claude-context, repomix), 4 coding agents (kiro, jules,
+  qwen-code, crush), 4 roundup dependencies (brave-search-api, parallel,
+  mistral-ocr, cerebras).
+- Template: each alternatives page links the comparison guide that covers the
+  most of its alternatives (only when it covers two or more).
+
+## Status
+- [x] 0. Plan and manifest frozen (local-only `docs/content-roadmap-phase4.md`).
+- [x] 1. Research fact packs: all 8 are in. They cover ~82k words of dated,
+  primary-sourced facts, each fact labelled PRIMARY, SECONDARY or UNCONFIRMED.
+- [~] 2. Authoring: 16 of 30 pages are integrated into the repo:
+  - the 4 skills listicles;
+  - Cline vs Kilo Code vs Roo Code;
+  - 6 MCP tool pages;
+  - 4 coding-agent tool pages;
+  - Brave Search API and Parallel.
+
+  Still writing: the 3 intent guides, the 2 cornerstones, 4 infrastructure
+  roundups, Mastra vs LangChain, the Jina guide, and Mistral OCR and Cerebras.
+- [~] Integration: 24 of 30 new pages are in the repo, including the Codex,
+  update-Claude-Code, slash-command, observability and Mastra guides. 16
+  established pages link to the new ones.
+- [~] Corrections: three of four batches reviewed as diffs and applied, 29
+  existing pages in all:
+  - parsers and inference: 9
+  - MCP and observability: 13
+  - web search: 7
+
+  Direct fixes:
+  - `claude-code-vs-codex-cli`: the retired `untrusted` policy, the
+    trust-dependent default, and local models via `--oss`.
+  - `ai-coding-agents-cli-2026` (tier 1): Roo's shutdown, Kilo, and Cline
+    inference.
+  - `mastra`: LangGraph's 1.0 release, which shipped Python and JS together.
+  - `llm-cost-latency-engineering`: Helicone's maintenance mode.
+  - Exa: an unverified "most-used" claim.
+  - A mislinked glossary term.
+- [x] 3. Integration complete: all 30 new pages are in (hub 778 → 808), and 55
+  existing pages are corrected or relinked. `npm run validate` passes with 0
+  errors and 23 warnings (baseline 25). Every new page has inbound body links
+  and a 110–160 character meta description.
+- Alternatives-page handoff is live. Each alternatives page links the
+  comparison that covers the most of its alternatives:
+
+  | Alternatives page | Links to | Covers |
+  |---|---|---|
+  | `/tools/claude-code/alternatives` | Claude Code cornerstone | 15 of 21 |
+  | `/tools/github-copilot/alternatives` | Copilot cornerstone | 8 of 10 |
+  | groq, llamaparse, docling, langfuse, tavily, mastra, kilo-code | their new roundups | — |
+
+  Context7's alternatives grew from 6 to 9 and Serena's from 5 to 8.
+- Gates on the integrated state all pass:
+  - typecheck, lint, design-system checks;
+  - `next build`: 3,101 static pages;
+  - external-link policy: 1,144 pages.
+- The built output was checked with a script:
+  - handoffs render on the Claude Code, Copilot and Groq alternatives pages;
+  - the Context7 and Serena alternatives pages list the new MCP servers;
+  - FAQPage and HowTo JSON-LD are emitted;
+  - the sitemap holds all 30 new URLs;
+  - the search index has 808 records.
+- Note: postbuild runs IndexNow in "changed since HEAD~1" mode even locally.
+  Do the final local build before committing, and let Vercel's deploy
+  submit the URLs.
+- [x] 4. Adversarial fact-check, done. Ten checkers were barred from the
+  research packs and the briefs, and re-verified every claim against primary
+  sources they fetched themselves:
+  - 3,108 claims checked;
+  - about 176 corrected, of which 28 were outright false;
+  - every corrected copy diff-reviewed and guard-checked before it was
+    applied.
+
+  The most consequential catches:
+  - Kilo Code has no built-in "Review" agent. Its README says it does, but
+    its docs and source code say it doesn't.
+  - Devin has no concurrent-session limit.
+  - npm installs of Claude Code do auto-update.
+  - Mastra has built-in chunking and reranking, and `@mastra/langsmith`
+    exists.
+  - Together AI offers no free credits.
+  - Exa's Research API was retired; Exa Agent is a separate product.
+  - Continue's config example used the wrong secrets syntax.
+  - Roo Code's table was missing its Orchestrator and checkpoints.
+- Corrections D swapped some dollar figures for words, e.g. "four dollars" in
+  langfuse-vs-langsmith. A stale fee claim moved to the "fee on credits"
+  wording, and exa-vs-tavily no longer quotes prices because its old Exa
+  figure was wrong.
+- [x] Template change: alternatives pages link the widest-covering comparison
+  guide. Typecheck, lint and the design-system gates pass.
+- [~] Corrections pass (added mid-wave): research found about 35 existing pages
+  that contradict current primary sources. Two editors are making surgical,
+  pack-verified fixes, each marked with `updated`. Scope details:
+  - Examples: Roo Code shut down (2026-05-15); Kilo rebuilt on OpenCode;
+    Continue acquired by Cursor; Amp spun out of Sourcegraph; Codex removed
+    `--full-auto` and the `untrusted` policy; Langfuse acquired by ClickHouse;
+    Context7's auth header and free tier changed.
+  - Why: several of these pages would contradict the new roundups.
+- [ ] 3. Integration, inbound links, gates.
+- [ ] 4. Adversarial fact-check.
+- [x] 5. Shipped in five commits to master:
+  - 99aa7b4: the alternatives-page handoff
+  - f7e35a7: the 14 new tools
+  - 7082fa0: the 16 new guides
+  - 8ab3e6c: the corrections to existing pages
+  - this log
+
+  Vercel deploys and submits the changed URLs to IndexNow. The mirror sync
+  runs after the push. There's no CLI publish, because this wave has no
+  installables.
+
+## Swaps
+- Docfork → desktop-commander. Docfork shut down on 2026-06-14 and its repo is
+  archived.
+
+## Next
+**GSC checkpoint around 2026-10-23.** Track the 12 targeted query families.
+Success means:
+- "claude code alternatives" and "copilot alternatives" reach position 30 or
+  better.
+- At least half of the families reach position 20 or better.
+- Clicks per day are still trending up.
+
+If a family misses, adjust titles and seoTitles only; don't widen the scope.
+
+**CLI republish needed.** These installable fixes ship only through the npm
+bundle:
+- Skills whose `allowed-tools` don't match what they do: extract-module,
+  circular-dependency-breaker, feature-flag-retirer, dead-code-finder, and
+  several debugging skills.
+- Stale "latest model" references: agent-trajectory-evaluator,
+  scaffold-rag-pipeline, hallucination-evaluator.
+- changelog-from-prs: missing frontmatter.
+- create-slash-command: overstates what `allowed-tools` does.
+- Tools mentioned without their current status:
+  - Helicone, which is in maintenance mode: set-perf-budget,
+    llm-cost-optimizer, prompt-cache-optimizer.
+  - AgentOps, whose development has stalled: agent-reliability-reviewer.
+  - Phoenix, which is ELv2 rather than open source: llm-observability-engineer.
+
+**Content follow-ups**
+- Deepen the thin pages already on page 1: `sandboxing-ai-generated-code`,
+  `cursor-vs-windsurf`, `best-tts-apis-2026`.
+- Tag `best-rag-frameworks-2026` as a `comparison` and add `tool:` entries to
+  its `related`, so it earns the alternatives-page handoff.
+- The alternatives meta template (`collections.ts:271`) says "AI coding tools"
+  for every category.
+- Most skills, agents and commands have no outbound internal body links; they
+  would benefit from a related-guides pass.
+- The local `scripts/audit-links.ts` is stale. It resolves `related` by bare
+  slug and doesn't know `/for/*`. Rely on `npm run validate`.
+
+**Owner action carried over from the sales wave:** CLI `agentscamp@0.9.0` is
+still staged. Run `cd cli && npm publish`.
+
+---
+
 # Sales & revenue role path (2026-09-10) — SHIPPED
 
 Two commits. The ninth `/for/<role>` path and the first of the five remaining
