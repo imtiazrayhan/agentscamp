@@ -5,7 +5,8 @@ seoTitle: "The Best GitHub Copilot Alternatives in 2026 (Free and Paid)"
 seoDescription: "Cursor, Cline, Kilo Code, Tabnine, Zed, Kiro and more GitHub Copilot alternatives, with free options, self-hosted picks and a clear verdict for each."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
-reviewed: "2026-09-11"
+updated: "2026-10-01"
+reviewed: "2026-10-01"
 color: "green"
 depth: "cornerstone"
 freshness: "tier1"
@@ -27,7 +28,7 @@ faq:
   - q: "Is there a free alternative to GitHub Copilot?"
     a: "Yes. Cline and Kilo Code are free, open-source extensions that work with your own API key or a local model, Zed's Personal plan includes 2,000 accepted edit predictions, and Tabby is free to self-host for up to five users. Cursor, Kiro and Devin Desktop have free tiers, and ChatGPT's Free plan includes Codex."
   - q: "Is there a free, unlimited alternative to Copilot?"
-    a: "Not as a hosted service, because every free cloud tier has a quota. The closest is an open-source tool pointed at a local model, such as Cline or Kilo Code with Ollama or LM Studio, or a self-hosted Tabby server, where your hardware sets the limit. In JetBrains IDEs, the free JetBrains AI tier includes unlimited Mellum code completion and unlimited local models."
+    a: "Not as a hosted service, because every free cloud tier has a quota. The closest is an open-source tool pointed at a local model, such as Cline or Kilo Code with Ollama or LM Studio, or a self-hosted Tabby server, where your hardware sets the limit. In JetBrains IDEs, the free JetBrains AI tier includes code completion and local models through Ollama or LM Studio."
   - q: "Can I self-host an AI coding assistant instead of Copilot?"
     a: "Yes. Tabnine deploys as SaaS, in your VPC, on-premises or fully air-gapped, and Tabby is a self-hosted server that runs with your own models. Cody Enterprise runs on self-hosted Sourcegraph with your own LLM keys. Copilot is not currently available for GitHub Enterprise Server."
   - q: "Is GitHub Copilot still free?"
@@ -62,9 +63,9 @@ sources:
   - title: "Planned March 31 sunset for Next Edit and Completions"
     url: "https://www.augmentcode.com/changelog/planned-march-31-sunset-for-next-edit-and-completions"
     publisher: "Augment Code"
-  - title: "Tabnine pricing and deployment"
-    url: "https://www.tabnine.com/pricing"
-    publisher: "Tabnine"
+  - title: "Tricentis acquires Tabnine"
+    url: "https://www.tricentis.com/news/tricentis-acquires-tabnine"
+    publisher: "Tricentis"
   - title: "Tabby pricing"
     url: "https://www.tabbyml.com/pricing"
     publisher: "TabbyML"
@@ -88,7 +89,7 @@ related: ["tool:github-copilot", "tool:cursor", "tool:windsurf", "tool:kiro", "t
 
 The best GitHub Copilot alternative for most developers in 2026 is [Cursor](/tools/cursor) if you'll switch editors, and [Cline](/tools/cline) if you won't: it's free, open source, and runs in VS Code and JetBrains with any model. Pick [Tabnine](/tools/tabnine) when code can't leave your network, and [Claude Code](/tools/claude-code) or [Codex CLI](/tools/codex-cli) when you want a terminal agent rather than autocomplete.
 
-*Last reviewed: September 2026.*
+*Last reviewed: October 2026.*
 
 Prices change often; each tool page lists current pricing.
 
@@ -98,7 +99,7 @@ Prices change often; each tool page lists current pricing.
 
 - **Billing.** Since June 1, 2026, every plan bills in GitHub AI Credits. Completions and next-edit suggestions stay unlimited on paid plans, but chat, agents and the CLI consume credits depending on the model, and a new Max plan sits at the top.
 - **Access.** On April 20, 2026, GitHub paused Pro, Pro+ and Student sign-ups and removed Opus models from Pro. Individual sign-ups began reopening on June 17, and Business and Enterprise on September 3.
-- **Policy.** An August 28, 2026 changelog moves Copilot Chat on github.com and GitHub Mobile, plus the cloud agent, to a single "unified Copilot experience", on by default once it launches no earlier than September 28, and says github.com chat data will be kept for the life of the account instead of 28 days. Business and Enterprise admins are asked to review the new policy before then.
+- **Policy.** An August 28, 2026 changelog moves Copilot Chat on github.com and GitHub Mobile, plus the cloud agent, to a single "unified Copilot experience", on by default once it launches (no earlier than September 28; GitHub had announced no launch as of October 1), and says github.com chat data will be kept for the life of the account instead of 28 days. Business and Enterprise admins were asked to review the new policy first.
 - **Deployment.** "Copilot is not currently available for GitHub Enterprise Server."
 
 > [!TIP]
@@ -134,11 +135,11 @@ Prices change often; each tool page lists current pricing.
 **Pick Cline** for agent work: free, Apache-2.0, any provider or local model, Plan and Act modes, checkpoints, and a plugin on the JetBrains Marketplace. Kilo Code (MIT) is the alternative with more agent types, parallel worktrees and inline autocomplete. Augment Code is agent-first with a Context Engine for large codebases, but it ended completions and Next Edit for non-Enterprise plans on March 31, 2026. Tabnine keeps completions, chat and agents together for enterprises. The trade-offs are laid out in [Cline vs Kilo Code vs Roo Code](/guides/comparisons/cline-vs-kilo-code-vs-roo-code).
 
 > [!NOTE]
-> If autocomplete is most of what you use Copilot for, remember that Cline focuses on agent work. For completions as you type, look at Cursor's Tab, Zed's edit predictions, Kilo Code's inline autocomplete, Tabnine or Tabby. JetBrains' own AI Free tier also includes unlimited completion from its Mellum model.
+> If autocomplete is most of what you use Copilot for, remember that Cline focuses on agent work. For completions as you type, look at Cursor's Tab, Zed's edit predictions, Kilo Code's inline autocomplete, Tabnine or Tabby. JetBrains' own AI Free tier also includes code completion.
 
 ### You need self-hosted or air-gapped
 
-**Pick Tabnine.** It deploys as SaaS, in your VPC, on-premises or fully air-gapped, promises zero code retention and no training on your code, and offers unlimited usage when you bring your own LLM endpoint. Tabby is the free self-hosted alternative for up to five users: you run the server and plug in runtimes such as Ollama, vLLM or llama.cpp, though its last stable release was in January 2026. Cody Enterprise, the only Cody still offered since July 2025, runs on self-hosted Sourcegraph with your own LLM keys. Cursor's Self-Hosted Machines are partial: only execution moves to your infrastructure.
+**Pick Tabnine.** It deploys as SaaS, in your VPC, on-premises or fully air-gapped, and promises zero code retention and no training on your code. Tricentis acquired Tabnine on July 30, 2026, so confirm the product roadmap before a long commitment. Tabby is the free self-hosted alternative for up to five users: you run the server and plug in runtimes such as Ollama, vLLM or llama.cpp, though its last stable release was in January 2026. Cody Enterprise, the only Cody still offered since July 2025, runs on self-hosted Sourcegraph with your own LLM keys. Cursor's Self-Hosted Machines are partial: only execution moves to your infrastructure.
 
 ### You want a terminal agent instead
 
@@ -166,7 +167,7 @@ Cursor is an AI-native VS Code fork, owned by SpaceX since August 14, 2026. Curs
 
 ### Devin Desktop (formerly Windsurf)
 
-Windsurf became Devin Desktop on June 2, 2026, "the same IDE, same editor", now led by an Agent Command Center for local and cloud agents. Cascade became Devin Local, with subagents and sandboxing. Models include Cognition's SWE-1.7 family plus Anthropic, OpenAI, Google and xAI models. The Windsurf JetBrains plugin is in maintenance mode, while the VS Code plugin (formerly Codeium) still gets updates.
+Windsurf became Devin Desktop on June 2, 2026, "the same IDE, same editor", now led by an Agent Command Center for local and cloud agents. Cascade became Devin Local, with subagents and sandboxing, and Cascade itself was removed in September 2026. Models include Cognition's SWE-2 and SWE-1.7 families plus Anthropic, OpenAI, Google and xAI models. The Windsurf JetBrains plugin is in maintenance mode, while the VS Code plugin (formerly Codeium) still gets updates.
 
 **Verdict:** the strongest choice for teams that want Devin's cloud agents alongside a local editor.
 
@@ -202,7 +203,7 @@ Augment is now agent-first: completions and Next Edit ended for non-Enterprise p
 
 ### Tabnine
 
-Tabnine is the enterprise-deployment specialist: SaaS, VPC, on-premises or fully air-gapped, with "zero code retention" and no training on your code. It supports VS Code, JetBrains, Eclipse and Visual Studio. The Code Assistant plan covers completions and chat, and the Agentic plan adds agents, a CLI agent and a Context Engine. Usage is unlimited with your own LLM. There is no free plan, and the classic VS Code listing is now labelled legacy.
+Tabnine is the enterprise-deployment specialist: SaaS, VPC, on-premises or fully air-gapped, with "zero code retention" and no training on your code. It supports VS Code, JetBrains, Eclipse and Visual Studio. Tricentis acquired Tabnine on July 30, 2026, and tabnine.com now redirects to Tricentis, so Tabnine no longer publishes its own plan page; ask sales for current packaging. The classic VS Code listing is labelled legacy.
 
 **Verdict:** the default answer when code can't leave your network.
 
@@ -220,7 +221,7 @@ Claude Code is Anthropic's agentic coding tool: it reads your codebase, plans ch
 
 ### Codex CLI
 
-OpenAI's Codex CLI is an Apache-2.0 terminal agent included in every ChatGPT plan from Free and Go up, or usable with an API key. The same product spans an IDE extension, the Codex desktop app and Codex Web, and the CLI can run local models through Ollama or LM Studio. Before granting it autonomy, read [Codex CLI sandbox and approval modes](/guides/configuration/codex-sandbox-and-approvals).
+OpenAI's Codex CLI is an Apache-2.0 terminal agent included in every ChatGPT plan from Free and Go up, or usable with an API key. The same product spans an IDE extension, the ChatGPT desktop app and Codex Cloud, and the CLI can run local models through Ollama or LM Studio. Before granting it autonomy, read [Codex CLI sandbox and approval modes](/guides/configuration/codex-sandbox-and-approvals).
 
 **Verdict:** the open-source terminal agent to try first, especially if you already have ChatGPT.
 
@@ -248,6 +249,7 @@ If a Copilot-alternatives list predates these changes, it may recommend a produc
 | Jun 2, 2026 | Windsurf becomes Devin Desktop |
 | ~Jun 15, 2026 | Cursor acquires Continue |
 | Jun 26, 2026 | Cline v4.0.0 ships on the Cline SDK |
+| Jul 30, 2026 | Tricentis acquires Tabnine |
 | Jul 31, 2026 | Kilo's legacy Roo-derived extension reaches end of life |
 | Aug 14, 2026 | SpaceX completes its acquisition of Cursor |
 | Sep 3, 2026 | Copilot Business and Enterprise sign-ups begin reopening |

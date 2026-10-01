@@ -5,7 +5,8 @@ seoTitle: "Best Claude Code Alternatives (2026): Free, Open-Source & Paid"
 seoDescription: "Codex CLI, OpenCode, Cursor, Devin, Kiro and 13 more Claude Code alternatives, picked by reason: cost, open source, local models, IDE, or cloud agents."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
-reviewed: "2026-09-11"
+updated: "2026-10-01"
+reviewed: "2026-10-01"
 color: "green"
 depth: "cornerstone"
 freshness: "tier1"
@@ -34,7 +35,7 @@ faq:
   - q: "What is Google's equivalent of Claude Code?"
     a: "Google Antigravity, which ships a desktop app, the agy CLI and IDE extensions, and has a free Individual plan. Gemini CLI is still an open-source project, but since June 18, 2026 it only works with paid Gemini API keys, Vertex AI or enterprise Code Assist licenses. Jules is Google's asynchronous cloud agent."
   - q: "What is OpenAI's equivalent of Claude Code?"
-    a: "Codex. The Codex CLI runs locally in your terminal, and the same product spans an IDE extension, the ChatGPT desktop app and Codex Web, a cloud agent. You sign in with a ChatGPT plan, including Free and Go, or use an API key."
+    a: "Codex. The Codex CLI runs locally in your terminal, and the same product spans an IDE extension, the ChatGPT desktop app and Codex Cloud, a cloud agent. You sign in with a ChatGPT plan, including Free and Go, or use an API key."
 sources:
   - title: "Codex pricing and plans"
     url: "https://learn.chatgpt.com/docs/pricing"
@@ -86,7 +87,7 @@ related: ["tool:codex-cli", "tool:opencode", "tool:aider", "tool:cline", "tool:k
 
 The best Claude Code alternative for most developers in 2026 is OpenAI's [Codex CLI](/tools/codex-cli): open source under Apache-2.0, included even in ChatGPT's Free and Go plans, and able to run local models. The right replacement still depends on why you're leaving [Claude Code](/tools/claude-code), so the picks below are sorted by reason, every product gets a verdict, and a dated changelog shows what moved in 2026.
 
-*Last reviewed: September 2026.*
+*Last reviewed: October 2026.*
 
 Prices change often; each tool page lists current pricing. For what Claude's own plans include, see [Claude plans compared](/guides/getting-started/claude-plans-compared-2026).
 
@@ -94,7 +95,7 @@ Prices change often; each tool page lists current pricing. For what Claude's own
 
 | Tool | Type | Open source? | Models | Best for |
 |---|---|---|---|---|
-| [Codex CLI](/tools/codex-cli) | CLI, IDE, desktop, cloud | Yes (Apache-2.0) | GPT-5.6; local via `--oss` | Closest like-for-like swap |
+| [Codex CLI](/tools/codex-cli) | CLI, IDE, desktop, cloud | Yes (Apache-2.0) | GPT-6; local via `--oss` | Closest like-for-like swap |
 | [OpenCode](/tools/opencode) | Terminal, desktop | Yes (MIT) | 75+ providers; local | Open source, any model |
 | [Aider](/tools/aider) | Terminal | Yes (Apache-2.0) | Almost any; local | Commit-per-edit workflow |
 | [goose](/tools/goose) | Desktop, CLI | Yes (Apache-2.0) | 15+ providers; local | Code and non-code tasks |
@@ -104,7 +105,7 @@ Prices change often; each tool page lists current pricing. For what Claude's own
 | [Warp](/tools/warp) | Terminal, Agent CLI | Client only (AGPL-3.0, Apr 2026) | Frontier, open-weight; BYOK | Hosting several agents |
 | [Factory](/tools/factory) | CLI, desktop, SDK | No | Any; local via BYOK | Teams, remote runs |
 | [Cursor](/tools/cursor) (SpaceX, Aug 2026) | AI-native editor | No | Frontier, Composer, Grok | Agent-first editor |
-| [Devin Desktop](/tools/windsurf) (ex-Windsurf, Jun 2026) | Editor | No | SWE-1.7, Claude, GPT | Local plus cloud agents |
+| [Devin Desktop](/tools/windsurf) (ex-Windsurf, Jun 2026) | Editor | No | SWE-2, Claude, GPT | Local plus cloud agents |
 | [Kiro](/tools/kiro) | IDE, CLI, web | No | Claude, open-weight, Auto | Spec-driven work |
 | [Antigravity](/tools/antigravity) | Desktop, CLI, extensions | No | Gemini, Claude Sonnet/Opus 4.6 | Google's free agent |
 | [Cline](/tools/cline) | Extension, CLI, desktop | Yes (Apache-2.0; JetBrains plugin closed) | Any; local | Agent inside VS Code |
@@ -153,13 +154,13 @@ Claude Code already integrates with VS Code and JetBrains, so try that first if 
 
 ### If you want async cloud agents
 
-Devin runs tasks in cloud VMs and accepts hand-offs "from the Devin CLI, Claude Code, Codex, Cursor, and more", the others through an open-source Devin Handoff plugin. Codex Web is Codex's cloud side, with GitLab support in beta as of September 2026. Jules gives 15 free tasks a day but has had no changelog entry since March 2026. Amp's remote orbs, Factory's Droid Computers and Kiro's cloud sessions (launched in preview in August 2026) keep working after you close the laptop, and OpenHands Cloud's free tier allows 10 conversations a day.
+Devin runs tasks in cloud VMs and accepts hand-offs "from the Devin CLI, Claude Code, Codex, or any coding agent", the others through an open-source Devin Handoff plugin. Codex Cloud is Codex's cloud side, with GitLab support in beta as of October 2026. Jules gives 15 free tasks a day but has had no changelog entry since March 2026. Amp's remote orbs, Factory's Droid Computers and Kiro's cloud sessions (launched in preview in August 2026) keep working after you close the laptop, and OpenHands Cloud's free tier allows 10 conversations a day.
 
 **Pick:** Devin for the most complete cloud product; Jules if free matters more than momentum.
 
 ### If you want to stay with OpenAI or Google
 
-**OpenAI:** Codex is the direct equivalent, with the CLI, an IDE extension, the ChatGPT desktop app and Codex Web on one ChatGPT plan. See [Claude Code vs Codex CLI](/guides/comparisons/claude-code-vs-codex-cli) and [Codex CLI sandbox and approval modes](/guides/configuration/codex-sandbox-and-approvals). **Google:** Antigravity is the successor Google named for Gemini CLI's consumer users, with a desktop app and the `agy` CLI, and Jules covers async work. **AWS:** Kiro replaced the Amazon Q Developer CLI.
+**OpenAI:** Codex is the direct equivalent, with the CLI, an IDE extension, the ChatGPT desktop app and Codex Cloud on one ChatGPT plan. See [Claude Code vs Codex CLI](/guides/comparisons/claude-code-vs-codex-cli) and [Codex CLI sandbox and approval modes](/guides/configuration/codex-sandbox-and-approvals). **Google:** Antigravity is the successor Google named for Gemini CLI's consumer users, with a desktop app and the `agy` CLI, and Jules covers async work. **AWS:** Kiro replaced the Amazon Q Developer CLI.
 
 > [!NOTE]
 > Gemini CLI's consumer access ended on June 18, 2026, for Google AI Pro and Ultra subscribers and free Code Assist individuals. The Apache-2.0 project still ships weekly for paid Gemini API keys, Vertex AI and Code Assist Standard or Enterprise, though its README still advertises the old free tier. See [Claude Code vs Gemini CLI](/guides/comparisons/claude-code-vs-gemini-cli).
@@ -170,13 +171,13 @@ Devin runs tasks in cloud VMs and accepts hand-offs "from the Devin CLI, Claude 
 
 ### Codex CLI
 
-OpenAI's agent "runs locally on your computer" and is Apache-2.0 on GitHub. Every ChatGPT plan from Free and Go to Enterprise includes it, or you can use an API key. Models are Astra and GPT-5.6 Sol, Terra and Luna; any Chat Completions or Responses provider also works, and `--oss` goes local. The same product spans an IDE extension, the ChatGPT desktop app and Codex Web.
+OpenAI's agent "runs locally on your computer" and is Apache-2.0 on GitHub. Every ChatGPT plan from Free and Go to Enterprise includes it, or you can use an API key. Models are Astra, GPT-6.1 Sol and GPT-6 Luna; any Responses API provider also works (Chat Completions-only endpoints are no longer supported), and `--oss` goes local. The same product spans an IDE extension, the ChatGPT desktop app and Codex Cloud.
 
 **Verdict:** the default switch. It's the closest to Claude Code in shape, it's open source, and it's the cheapest way in if you have ChatGPT.
 
 ### OpenCode
 
-Anomaly's MIT terminal agent (now at anomalyco/opencode) is the most-starred project here, with 206,680 GitHub stars as of September 11, 2026. It has build and plan agents, 75+ providers and local models. OpenCode Zen (a pay-as-you-go gateway) and OpenCode Go (an open-model subscription) are optional, and the desktop app is in beta as of September 2026. See [Claude Code vs OpenCode](/guides/comparisons/claude-code-vs-opencode).
+Anomaly's MIT terminal agent (now at anomalyco/opencode) is the most-starred project here, with 211,260 GitHub stars as of October 1, 2026. It has build and plan agents, 75+ providers and local models. OpenCode Zen (a pay-as-you-go gateway) and OpenCode Go (an open-model subscription) are optional, and the desktop app is in beta as of October 2026. See [Claude Code vs OpenCode](/guides/comparisons/claude-code-vs-opencode).
 
 **Verdict:** the best open-source Claude Code alternative, and the pick if model freedom is why you're leaving.
 
@@ -236,7 +237,7 @@ Windsurf was renamed Devin Desktop on June 2, 2026: "the same IDE, same editor, 
 
 ### Kiro
 
-AWS's Kiro, generally available since November 2025, is what the Amazon Q Developer CLI was rebranded into. It turns prompts into specs (requirements, design and tasks) and checks code against them with property-based testing. One agent harness drives the IDE, `kiro-cli` and Kiro Web, plus an iOS app launched in June 2026. Models include Claude up to Opus 5, GPT-5.6 Sol, Terra and Luna, open-weight options and an Auto router. It's proprietary; only Kiro Crew is Apache-2.0.
+AWS's Kiro, generally available since November 2025, is what the Amazon Q Developer CLI was rebranded into. It turns prompts into specs (requirements, design and tasks) and checks code against them with property-based testing. One agent harness drives the IDE, `kiro-cli` and Kiro Web, plus an iOS app in early access through TestFlight. Models include Claude up to Opus 5.5, GPT-5.6 Sol, Terra and Luna, open-weight options and an Auto router. It's proprietary; only Kiro Crew is Apache-2.0.
 
 **Verdict:** for teams that want specs, tests and AWS governance over free-form prompting. There's no documented support for your own model keys.
 
@@ -303,8 +304,10 @@ Dates come from each vendor's own post, docs or repository.
 | Aug 20, 2026 | Antigravity joins eligible Gemini Enterprise subscriptions |
 | Aug 31, 2026 | GPT-5.4 and GPT-5.4 mini retire from Codex |
 | Sep 5, 2026 | Codex removes its `codex mcp-server` command |
+| Sep 14, 2026 | GPT-5.3-Codex-Spark retires from Codex |
+| Oct 14, 2026 | GPT-5.5 is scheduled to retire from ChatGPT and Codex |
 
-Three corrections to common claims. Not every Codex-named model is gone: as of September 2026, 5.3 Codex Spark remains as a text-only research preview, and gpt-5.3-codex is deprecated for ChatGPT sign-in but absent from the API shutdown list. Crush is not OpenCode: the archived opencode-ai/opencode project became Crush. And Roo Code users have maintained successors, covered in [Cline vs Kilo Code vs Roo Code](/guides/comparisons/cline-vs-kilo-code-vs-roo-code).
+Three corrections to common claims. Not every Codex-named model is gone: 5.3 Codex Spark was retired on September 14, 2026, but as of October 2026 gpt-5.3-codex, though deprecated for ChatGPT sign-in, is still absent from the API shutdown list. Crush is not OpenCode: the archived opencode-ai/opencode project became Crush. And Roo Code users have maintained successors, covered in [Cline vs Kilo Code vs Roo Code](/guides/comparisons/cline-vs-kilo-code-vs-roo-code).
 
 ## Moving your setup
 

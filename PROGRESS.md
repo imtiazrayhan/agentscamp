@@ -1,3 +1,49 @@
+# Tier-1 freshness refresh (2026-10-01, unattended) — PR OPEN
+
+Scope: the 18 pages declaring `freshness: "tier1"` (the 8 original money pages
+plus the role roundups, the two coding-alternatives cornerstones and the three
+Claude plan/Cowork guides). `npm run freshness` was permission-blocked in the
+headless run, so scope was read straight from frontmatter; the script's
+`hygiene` list was not available (the `npm run validate` warnings stood in).
+
+## Done
+- Eight read-only research agents against primary sources; every figure that
+  went on a page was then re-read from the raw vendor page or API in the main
+  session, because the agents' fetch tool summarises pages and miscounts lists.
+- All 18 pages changed and carry `reviewed: 2026-10-01`. Validate (22 warnings,
+  one fewer than before) and build green; PR from `freshness/2026-10`.
+- Biggest corrections: all three big vendors replaced their flagships in
+  September — Claude Fable 5.1 (Sep 1), Opus 5.5 at $4/$20 (Sep 22), Sonnet 5.5
+  (Sep 28); GPT-6 Astra / 6.1 Sol / Luna; Gemini 3.8 Flash. DeepSeek V4.1 Flash
+  with a price cut (Sep 10), Grok 4.7 (Sep 21), three Fireworks host cells no
+  longer serverless, Qwen 3.7 Plus is not open weights. Claude plans: Fable now
+  on Team Premium seats, context "up to 1M" on every plan, dead source URL.
+  Cowork merging into chat (Sep 16) and moving Pro/Max tasks to the cloud
+  (Oct 6). Plugins repo: 121 marketplace entries, sales rebuilt to 36 skills,
+  small-business to 44. Devin Desktop removed Cascade (Sep 8); OpenAI's
+  proposed Nov 12 cut-off of Cursor is now primary-sourced; Tricentis owns
+  Tabnine; clari.com redirects to Salesloft; Salesforce in Claude is in beta.
+  Stats: npm MCP SDK 228M, Smithery 17,990, PulseMCP 21,765, JetBrains 2026 and
+  Stack Overflow pulse-survey agent numbers.
+- Left untouched and flagged in the PR: PyPI figures (pypistats down all day —
+  kept with their September 1 label), mcp.so (403), Lovable $600M run-rate
+  (press only), Claude Design on Free (Anthropic's own pages disagree),
+  HubSpot Breeze → Agent Hub naming, Microsoft 365 Copilot tier renames, the
+  11x prices on the sales roundup (verified, but a roundup-price exception).
+
+## Next
+- Owner reviews/merges the PR. Next tier-1 run 2026-11-01.
+- Watch: Stack Overflow 2026 survey (due "in the next days" per its Sep 30
+  post), GPT-5.5 leaving ChatGPT/Codex Oct 14, Copilot default-enablement
+  policy Oct 22, Stripe MCP key change Oct 31, OpenAI–Cursor shutoff Nov 12,
+  GPT-5.6 Sol promo Nov 21, Sonnet 4.5 retirement Nov 30, Gemini Flash intro
+  pricing Dec 31, DeepSeek V4.1 Pro, Zapier Agents shut-off date.
+- Tool pages outside tier 1 that this run showed are stale:
+  `tools/github-mcp-server` (says 17 toolsets, now 22), `tools/sentry-mcp`
+  (repo now resolves to getsentry/toolkit), `tools/tabnine` (Tricentis).
+
+---
+
 # GSC demand wave (2026-09-11) — SHIPPED
 
 30 items plus one template change, chosen from Search Console (Jun 2 → Sep 7).

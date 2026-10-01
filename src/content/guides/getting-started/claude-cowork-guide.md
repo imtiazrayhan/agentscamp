@@ -6,6 +6,8 @@ seoDescription: "Claude Cowork explained for non-developers: what it does with y
 author: "Imtiaz Rayhan"
 date: 2026-09-10
 freshness: "tier1"
+updated: 2026-10-01
+reviewed: 2026-10-01
 color: "green"
 depth: standard
 topics: ["ai-at-work", "ai-agents-systems"]
@@ -29,7 +31,7 @@ faq:
   - q: "How is Cowork different from Claude Code?"
     a: "Same agentic architecture, different workspace. Claude Code runs in a terminal or IDE against a code repository and is built for developers. Cowork runs in the Claude Desktop app, on the web, and on mobile against your folders, documents, browser, and connected business apps, and is built for people who do not write code."
   - q: "What platforms does Cowork run on?"
-    a: "Claude Desktop for macOS and Windows gives the full experience, including local folder access, the built-in browser, and computer use. Web at claude.ai and the iOS and Android apps run cloud sessions, in beta as of September 2026, which reach local files and the browser only through an open desktop app. The Chrome side panel also opens a Cowork session on Max and Team plans, rolling out to Pro."
+    a: "Claude Desktop for macOS and Windows gives the full experience, including local folder access, the built-in browser, and computer use. Web at claude.ai and the iOS and Android apps run cloud sessions, in beta as of October 2026, which reach local files and the browser only through an open desktop app. The Chrome side panel also opens a Cowork session on Max and Team plans, rolling out to Pro."
   - q: "Is Cowork safe to give access to my files?"
     a: "It sees only the folders you connect, runs its work in an isolated VM on desktop or a temporary cloud sandbox, requires explicit permission before permanently deleting any file, and asks before accessing each application when computer use is on. Anthropic recommends manual approval for tasks that touch sensitive files or accounts and giving Claude access only to sites you trust."
 related: ["guide:claude-knowledge-work-plugins", "guide:claude-plans-compared-2026", "guide:what-is-claude-code", "tool:claude-cowork", "tool:claude", "glossary:claude-cowork", "glossary:claude-plugins", "glossary:ai-connectors"]
@@ -61,7 +63,7 @@ howtoSteps:
   - name: "Sign in with a paid plan"
     text: "Sign in with a Pro, Max, Team, or Enterprise account. Cowork is not on the Free plan. On Team and Enterprise, an organization owner may need to enable it under Organization settings."
   - name: "Select Cowork and connect a folder"
-    text: "In the message box, select Cowork in the bottom-left corner. Create a project with Use an existing folder and pick the folder Claude should work in. Claude reads and writes only inside folders you connect."
+    text: "In the message box, select Cowork in the bottom-left corner. If your message box no longer shows Chat and Cowork options, your account has the merged experience and any conversation can run a task. Create a project with Use an existing folder and pick the folder Claude should work in. Claude reads and writes only inside folders you connect."
   - name: "Add a connector or a plugin"
     text: "Open the Customize menu in the left sidebar. Under Connectors, authorize the apps the task needs (Gmail, Google Drive, Slack, Notion, and others) and set each one's approval mode. Under Plugins, browse the Knowledge Work marketplace and install a role plugin if one fits."
   - name: "Run a task with a clear brief"
@@ -74,20 +76,22 @@ Claude Cowork is the version of Claude that does the work instead of describing 
 
 This guide is for people who do not write code: what Cowork is, how it differs from Claude chat and Claude Code, which plans and platforms include it, how plugins and connectors extend it, how its permission model works, and a worked example you can copy.
 
-**Last verified: September 2026**, against Anthropic's support articles, release notes, and product page.
+**Last verified: October 2026**, against Anthropic's support articles, release notes, and product page.
 
 ## What Cowork is
 
-Anthropic's own description is the cleanest: Cowork "brings Claude Code's agentic capabilities to knowledge work beyond coding." You "describe an outcome, step away, and come back to finished work." Under the hood it uses the same agentic architecture as Claude Code, the developer tool, but there is no terminal. You start it from the same message box as a normal chat by selecting **Cowork** in the bottom-left corner.
+Anthropic's own description is the cleanest: Cowork "brings Claude Code's agentic capabilities to knowledge work beyond coding." You "describe an outcome, step away, and come back to finished work." Under the hood it uses the same agentic architecture as Claude Code, the developer tool, but there is no terminal. You start it from the same message box as a normal chat by selecting **Cowork** in the bottom-left corner. That selector is going away: since September 16, 2026, Anthropic has been merging Cowork and chat into one Claude, on Pro and Max first, so on a merged account any conversation can take on a task.
 
 [Claude Cowork](/tools/claude-cowork) moved from experiment to product quickly:
 
 - **January 12, 2026**: research preview on Claude Desktop, macOS only, for the Max plan; Pro followed four days later.
-- **January 30, 2026**: plugin support, with eleven open-source role plugins (seventeen Anthropic-built plugins in the repo as of September 2026).
+- **January 30, 2026**: plugin support, with eleven open-source role plugins (seventeen Anthropic-built plugins in the repo as of October 2026).
 - **February 24-25, 2026**: a plugin marketplace, admin controls, scheduled tasks, and a Customize menu that groups skills, plugins, and connectors.
 - **April 9, 2026**: generally available on macOS and Windows through Claude Desktop.
 - **July 7, 2026**: web and mobile, with sessions running in the cloud (beta).
 - **August 25, 2026**: memory works across chat and Cowork in the cloud.
+- **September 16, 2026**: Cowork and chat begin merging into one Claude, rolling out to Pro and Max over the following weeks, with Team and Free to follow.
+- **October 6, 2026**: new Cowork tasks on Pro and Max run in the cloud, and the *Only on your computer* setting is removed.
 
 The glossary entry for [Claude Cowork](/glossary/claude-cowork) has the one-paragraph version.
 
@@ -110,21 +114,21 @@ In [regular Claude](/tools/claude) you are the runtime: you ask, read the answer
 
 **Plans.** Cowork is included on Pro, Max, Team, and Enterprise. It is not on the Free plan. On Team and Enterprise it is on by default, but organization owners can turn it off, and Enterprise defaults to *off* for cloud sessions until an admin enables them. Prices and everything else each plan unlocks live on [Claude plans compared](/guides/getting-started/claude-plans-compared-2026).
 
-**Platforms**, as of September 2026:
+**Platforms**, as of October 2026:
 
 - **Claude Desktop for macOS and Windows**: the full experience, including local folder access, the built-in browser, and computer use.
 - **Web (claude.ai) and iOS/Android**: cloud sessions, in beta for Pro, Max, and Team, and on Enterprise where the admin enables them. Local files, local connectors, the browser, and computer use still route through the desktop app, which has to be open and online.
 - **Chrome side panel**: opens a Cowork session directly on Max and Team, rolling out to Pro; see [Claude in Chrome](/tools/claude-for-chrome).
 
-Cloud sessions are what let you close your laptop while Claude keeps going, and scheduled tasks run with no device online.
+Cloud sessions are what let you close your laptop while Claude keeps going, and scheduled tasks run with no device online. From October 6, 2026, new Cowork tasks on Pro and Max run in the cloud by default: your folders stay on your computer, Claude fetches a copy of just the file a task needs, and any task that uses local files needs the desktop app open.
 
 ## What it can do
 
-- **Files.** Read, organize, rename, create, and edit files in folders you connect. On desktop there are no uploads or downloads; Claude reads and writes the folder directly.
+- **Files.** Read, organize, rename, create, and edit files in folders you connect. You never upload or download anything yourself; Claude reaches the folder through the desktop app.
 - **Documents and spreadsheets.** Produce Excel files with formulas, PowerPoint decks, Word documents, and reports. Since February 24, 2026, Cowork can run multi-step tasks across Excel and PowerPoint on all paid plans on Mac and Windows (a research preview at launch); [Claude for Excel](/tools/claude-for-excel) is the in-app counterpart.
 - **Browser.** A built-in browser on desktop opens sites, reads pages, clicks, types, and fills forms while you watch, and can import your existing logins.
 - **Computer use.** In beta for Pro and Max only (not Team or Enterprise), Claude can operate other applications, asking permission before it touches each app.
-- **Scheduled tasks and Dispatch.** Save a task to run on a cadence or on demand, or assign work from your phone through a persistent thread (research preview for Pro and Max since March 2026).
+- **Scheduled tasks and Dispatch.** Save a task to run on a cadence or on demand, or assign work from your phone through a persistent thread (Dispatch, a limited beta on Pro and Max since March 2026, is no longer open to new users).
 - **Projects.** Group tasks in a workspace with its own files, instructions, and memory. A project created from a local folder stays on that computer.
 
 ## Plugins and connectors
@@ -133,21 +137,21 @@ Two things extend Cowork, and it helps to keep them straight.
 
 **[Connectors](/glossary/ai-connectors)** wire Claude to a service (Slack, Gmail, Google Drive, Notion, HubSpot, Snowflake, and many more) over the [Model Context Protocol](/glossary/model-context-protocol). You manage them from the **Customize** menu, and each connector's tools run in one of three approval modes: *Manual* (Claude asks each time), *Auto* (Claude decides, with safety checks), or *Skip* (no approval, nothing checks the action). Connector tokens never enter the sandbox where Claude's work runs; calls are made server-side.
 
-**[Plugins](/glossary/claude-plugins)** bundle [skills](/glossary/agent-skills), connectors, slash commands, and sub-agents for a role. Install one from **Customize > Plugins > Browse plugins**. The Knowledge Work marketplace is registered by default, and Anthropic's role plugins (sales, finance, legal, marketing, HR, and more) are open source; every one of them is cataloged in [Anthropic's knowledge-work plugins, explained](/guides/getting-started/claude-knowledge-work-plugins). Hooks and sub-agents inside a plugin run only in Cowork; in plain chat they appear grayed out.
+**[Plugins](/glossary/claude-plugins)** bundle [skills](/glossary/agent-skills), connectors, slash commands, and sub-agents for a role. Install one from **Customize > Plugins**: open the **Discover** tab, pick a plugin, and click **Add**. The Knowledge Work marketplace is registered by default, and Anthropic's role plugins (sales, finance, legal, marketing, HR, and more) are open source; every one of them is cataloged in [Anthropic's knowledge-work plugins, explained](/guides/getting-started/claude-knowledge-work-plugins). Hooks and sub-agents inside a plugin run in Cowork and Claude Code; in plain chat they appear grayed out.
 
 ## The permission and safety model
 
 Cowork takes real actions, so know what stands between a bad instruction and a deleted folder.
 
 - **Scope.** Claude only sees the folders you connect. Cloud sessions reach your computer only for those folders, with the permissions you already set, and the sandbox cannot reach your home or company network.
-- **Isolation.** On desktop, the agent loop runs natively and code execution runs in an isolated VM (Apple Virtualization.framework on macOS, Hyper-V on Windows). In the cloud, both run in a temporary sandbox on Anthropic's infrastructure that is removed when the session ends.
+- **Isolation.** When a task runs on your computer, the agent loop runs natively and code execution runs in an isolated VM (Apple Virtualization.framework on macOS, Hyper-V on Windows). In the cloud, both run in a temporary sandbox on Anthropic's infrastructure that is removed when the session ends.
 - **Deletion.** "Cowork requires your explicit permission before permanently deleting any files." You see a prompt and must select Allow.
 - **Injection.** Files and web pages can carry hidden instructions. Anthropic scans untrusted content entering Claude's context and flags potential injections, and reviews each action for safety before it runs.
 
 Anthropic's own advice: switch to manual approval when a task touches sensitive files, accounts, or sites; only give Claude access to sites you trust; and be cautious with financial documents, credentials, and personal records.
 
 > [!WARNING]
-> Approval modes are a dial, not a guarantee. *Skip* means "nothing checks its actions automatically." Reserve it for low-stakes, well-understood tasks in a folder you have backed up.
+> Approval modes are a dial, not a guarantee. In *Skip*, in Anthropic's words, "nothing checks its actions." Reserve it for low-stakes, well-understood tasks in a folder you have backed up.
 
 ## Worked example: a folder of invoices into a spreadsheet
 
@@ -172,7 +176,7 @@ The brief is the whole trick: name the output file, the columns, the formula beh
 
 ## Limits to know
 
-- Cowork "consumes more of your usage allocation than chatting with Claude." It draws from the same pool as chat and Claude Code; check Settings > Usage.
+- Cowork tasks use more of your usage than a quick question: every step that runs code, creates a file, or calls a connected app spends tokens. It draws from the same pool as chat and Claude Code; check Settings > Usage.
 - Sessions cannot be shared with other people.
 - Computer use is Pro and Max only, and in beta.
 - Web and mobile cannot touch local files or the browser unless the desktop app is online.

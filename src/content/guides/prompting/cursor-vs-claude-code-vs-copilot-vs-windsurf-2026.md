@@ -4,7 +4,8 @@ description: "A practical, opinionated comparison of the four mainstream AI codi
 author: "Imtiaz Rayhan"
 date: 2026-06-03
 freshness: "tier1"
-updated: 2026-09-01
+updated: 2026-10-01
+reviewed: 2026-10-01
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -23,7 +24,7 @@ faq:
   - q: "Is GitHub Copilot still worth it when agents exist?"
     a: "Yes, if you want AI without changing tools. Copilot now has an agent mode in addition to its inline completions, and it runs inside VS Code, Visual Studio, JetBrains, and Neovim. It's the lowest-friction option for teams already standardized on those editors."
   - q: "Is Windsurf the same as Devin Desktop?"
-    a: "Yes. Cognition AI acquired Windsurf in 2025 and rebranded the standalone editor as Devin Desktop in June 2026; the JetBrains plugin keeps the Windsurf name. In the same update, Devin Local became the default agent for new tabs (the legacy Cascade agent remains selectable), and an Agent Command Center became the default surface with the full IDE behind it."
+    a: "Yes. Cognition AI acquired Windsurf in 2025 and rebranded the standalone editor as Devin Desktop in June 2026; the JetBrains plugin keeps the Windsurf name but is now in maintenance mode. In the same update, Devin Local became the default agent and an Agent Command Center became the default surface with the full IDE behind it. The legacy Cascade agent was removed in September 2026, leaving Devin Local as the only agent."
   - q: "Which one is best for large, multi-file changes?"
     a: "Claude Code and the agent modes in Cursor and Windsurf are all built for multi-file work. Claude Code tends to go furthest autonomously in a repo (running commands, iterating against test output, opening PRs), while Cursor and Windsurf keep that work inside a review-as-you-go editor surface."
 related: ["tool:cursor", "tool:claude-code", "tool:github-copilot", "tool:windsurf", "guide:what-is-claude-code", "guide:choosing-the-right-model", "guide:installing-claude-code"]
@@ -48,7 +49,7 @@ If you already love your editor and just want AI in it, that points to Copilot o
 All four can take a natural-language task and edit across files. They differ in how far they'll run on their own:
 
 - **Claude Code** is the most agentic of the four. It plans, edits, runs commands, reads the output, self-corrects against failing tests or builds, and can stage commits and open pull requests on request. It's designed to be handed a task and trusted to iterate.
-- **Cursor's agents** and **Devin Desktop's Devin Local** (successor to Cascade) run multi-step edits with command execution, but keep you in an editor where you accept or reject each diff as it goes — autonomy with a tight review loop. Cursor 3.0 (April 2026; the 3.x line reached 3.18 by September) pushed this furthest among the editors: an agent-first interface that runs many agents in parallel — locally, in git worktrees, or in the cloud.
+- **Cursor's agents** and **Devin Desktop's Devin Local** (successor to Cascade) run multi-step edits with command execution, but keep you in an editor where you accept or reject each diff as it goes — autonomy with a tight review loop. Cursor 3.0 (April 2026; the 3.x line reached 3.22 by October) pushed this furthest among the editors: an agent-first interface that runs many agents in parallel — locally, in git worktrees, or in the cloud.
 - **Copilot's agent mode** delegates multi-file tasks and iterates, layered on top of its strong inline completion. Its inner loop (accept a completion as you type) remains its most-used feature.
 
 > [!NOTE]
@@ -62,8 +63,8 @@ Cursor, Windsurf, and Claude Code all index or map your project so the model can
 
 This is a real differentiator:
 
-- **Cursor**, **Copilot**, and **Windsurf** let you **switch between frontier models** (Anthropic, OpenAI, and others) per request or per plan — and Cursor now fields its own **Composer** models (Composer 2.5), tuned for fast agentic coding, alongside them, plus Grok 4.5/4.6 variants jointly trained with SpaceXAI and sold as "Cursor Models" since the acquisition.
-- **Claude Code** runs **Anthropic's models** exclusively, and is tuned tightly around them — see [Choosing the Right Model](/guides/getting-started/choosing-the-right-model) for picking between Haiku, Sonnet, and Opus.
+- **Cursor**, **Copilot**, and **Windsurf** let you **switch between frontier models** (Anthropic, OpenAI, and others) per request or per plan — and Cursor now fields its own **Composer** models (Composer 2.5), tuned for fast agentic coding, alongside them, plus SpaceXAI's Grok models (Grok 4.7 since September 21, 2026), sold with Composer as "Cursor Models" since the acquisition. One dial is narrowing: OpenAI has told SpaceX it intends to stop supplying its models to Cursor, with a proposed shutoff date of November 12, 2026 (not yet final as of October 2026).
+- **Claude Code** runs **Anthropic's models** exclusively, and is tuned tightly around them — see [Choosing the Right Model](/guides/getting-started/choosing-the-right-model) for picking between Haiku, Sonnet, Opus, and Fable.
 
 If model flexibility matters to you, the three editors give you a dial Claude Code intentionally doesn't.
 

@@ -4,13 +4,14 @@ description: "How much code AI writes, who uses the tools, and what it does to q
 author: "Imtiaz Rayhan"
 date: 2026-07-01
 freshness: "tier1"
-updated: 2026-09-01
+updated: 2026-10-01
+reviewed: 2026-10-01
 color: "green"
 topics: ["coding-languages", "ai-agents-systems"]
 audience: ["ai-engineers"]
 tags: ["statistics", "ai-coding", "data", "adoption", "research"]
 featured: true
-summary: "The sourced numbers, September 2026: Google says 75% of new code is AI-generated; 84% of developers use or plan AI tools (Stack Overflow); GitHub Copilot hit 50M users; Claude Code passed $2.5B run-rate; SpaceX closed its $60B all-stock Cursor acquisition on August 14; and the METR RCT found experienced devs 19% slower. Every figure dated and sourced."
+summary: "The sourced numbers, October 2026: Google says 75% of new code is AI-generated; 84% of developers use or plan AI tools (Stack Overflow); GitHub Copilot hit 50M users; Claude Code passed $2.5B run-rate; SpaceX closed its $60B all-stock Cursor acquisition on August 14; and the METR RCT found experienced devs 19% slower. Every figure dated and sourced."
 keyTakeaways:
   - "The code-share headline: Google reports 75% of its new code is AI-generated and engineer-approved (April 2026, up from ~25% in late 2024); Microsoft reported 20–30% a year earlier."
   - "Adoption is near-saturation: 84% of developers use or plan AI tools (Stack Overflow, 49k respondents), 90% of tech professionals use AI at work (DORA), 85% regularly (JetBrains) — the question moved from whether to how."
@@ -30,7 +31,7 @@ faq:
 related: ["guide:claude-vs-gpt-vs-gemini-coding", "guide:vibe-coding-guide", "guide:ai-coding-agents-cli-2026", "guide:best-claude-code-agents-skills", "guide:mcp-ecosystem-statistics", "guide:ai-engineer-roadmap-2026", "guide:testing-ai-generated-code"]
 ---
 
-AI-coding statistics are mostly laundered guesses — numbers that trace to an SEO listicle citing another listicle. This page is the opposite: **every figure below is dated, sourced, and labeled** (primary / survey / reported), verified September 1, 2026, and refreshed on a cadence. Numbers we couldn't trace are omitted.
+AI-coding statistics are mostly laundered guesses — numbers that trace to an SEO listicle citing another listicle. This page is the opposite: **every figure below is dated, sourced, and labeled** (primary / survey / reported), verified October 1, 2026, and refreshed on a cadence. Numbers we couldn't trace are omitted.
 
 ## How much code does AI write?
 
@@ -41,17 +42,17 @@ AI-coding statistics are mostly laundered guesses — numbers that trace to an S
 
 ## Who's using the tools
 
-- **84%** of developers use or plan to use AI tools (76% in 2024); **51%** of professional developers use them **daily** — Stack Overflow Developer Survey, 49,000+ respondents, **July 2025** *(survey)*. (The 2026 survey opened June 23; results were not yet published at our September 1 check — "2026 survey" numbers circulating online are 2025 figures relabeled.)
+- **84%** of developers use or plan to use AI tools (76% in 2024); **51%** of professional developers use them **daily** — Stack Overflow Developer Survey, 49,000+ respondents, **July 2025** *(survey)*. (The 2026 survey opened June 23; results were still unpublished at our October 1 check, though Stack Overflow said on September 30 they would land "in the next days" — "2026 survey" numbers circulating online are 2025 figures relabeled.)
 - **90%** of tech professionals use AI at work (+14 pts YoY), median **2 hours/day** with AI — DORA, ~5,000 surveyed, **September 2025** *(survey)*.
 - **85%** regularly use AI tools; 68% expect AI proficiency to become a job requirement — JetBrains State of the Developer Ecosystem, 24,534 devs, **October 2025** *(survey)*.
-- **Agents specifically:** 31% of developers used AI agents in 2025 (SO); by early 2026, **55%** of engineers used agents regularly — 63.5% among staff+ — Pragmatic Engineer survey, 906 respondents, *(survey; self-selected, senior-skewed sample)*.
+- **Agents specifically:** 31% of developers used AI agents in 2025 (SO); by early 2026, **55%** of engineers used agents regularly — 63.5% among staff+ — Pragmatic Engineer survey, 906 respondents, *(survey; self-selected, senior-skewed sample)*. Stack Overflow's smaller April 2026 pulse survey put agent use at **59%**, nearly double its 2025 figure *(survey)*, and JetBrains found **90%** of professional developers using AI coding agents at work at least weekly, 68% daily — Developer Ecosystem Survey 2026, 15,000+ professional developers, fielded **May–July 2026** *(survey)*.
 - **Trust lags:** 46% distrust AI output accuracy (31% in 2024); the top frustration is AI output that's "almost right, but not quite" (66%), with time spent **debugging AI-generated code** close behind (45%) — SO 2025. The [verification stack](/guides/testing/testing-ai-generated-code) exists for a reason.
 
 ## The tool race, by sourced metric
 
-- **Preference:** Claude Code ranked **most-used and most-loved** (46% most-loved, vs Cursor 19%, Copilot 9%) — Pragmatic Engineer, **March 2026** *(survey)*.
+- **Preference:** Claude Code ranked **most-used and most-loved** (46% most-loved, vs Cursor 19%, Copilot 9%) — Pragmatic Engineer, **March 2026** *(survey)*. JetBrains' larger 2026 survey agrees on the leader: ~39% of professional developers worldwide used Claude Code at work in May–July 2026 (up from 18% in January), against 21% for GitHub Copilot *(survey)*.
 - **Scale:** GitHub Copilot reached **50M users** (Microsoft FY26 Q4 earnings, **July 29, 2026**, *primary*), up from 20M a year earlier; the last disclosed paid figure is **4.7M subscribers**, +75% YoY (January 2026) — the two are not like-for-like. The same call put GitHub at 225M users with **1 in 3 pull requests involving an agent**; ~80% of new GitHub users adopt Copilot in week one (Octoverse, *primary*). Google's Antigravity passed **2.4M weekly active users** (Alphabet Q2 call, July 22, 2026, *primary*).
-- **Revenue:** Claude Code hit **$1B run-rate six months after GA** (December 2025) and **>$2.5B by February 2026**, with enterprise over half of it — Anthropic *(primary; no Claude Code breakout since)*. Cursor's annualized revenue climbed from **$2B (February)** to **$3B (late April)** — Bloomberg — to **~$4B (early June 2026)** — Forbes *(reported)*; SpaceX announced its acquisition of Cursor (Anysphere) on June 16 and **closed it on August 14, 2026**, issuing 389.3M Class A shares at a **$60.0B implied equity value** *(primary, SEC 8-K)*. OpenAI's Codex passed **5M weekly active users** (June 2, 2026, *primary*); its product lead posted **25M "active users"** on August 31 *(primary, exec social post — no time window stated, includes non-developer knowledge workers)*.
+- **Revenue:** Claude Code hit **$1B run-rate six months after GA** (December 2025) and **>$2.5B by February 2026**, with enterprise over half of it — Anthropic *(primary; no Claude Code breakout since)*. Cursor's annualized revenue climbed from **$2B (February)** to **$3B (late April)** — Bloomberg — to **~$4B (early June 2026)** — Forbes *(reported)*; SpaceX announced its acquisition of Cursor (Anysphere) on June 16 and **closed it on August 14, 2026**, issuing 389.3M Class A shares at a **$60.0B implied equity value** *(primary, SEC 8-K)*. The deal had a cost: on August 28 OpenAI said it intends to wind down its contract supplying models to Cursor, with a proposed shutoff date of November 12, 2026 *(primary)*. OpenAI's Codex passed **5M weekly active users** (June 2, 2026, *primary*); its product lead posted **25M "active users"** on August 31 *(primary, exec social post — no time window stated, includes non-developer knowledge workers)*.
 - **The builders:** Lovable confirmed **$500M ARR** as of June 2026 (up from $400M in February) and raised a **$400M Series C at a $13.3B valuation** on August 12, 2026 *(reported, company-confirmed / primary)*; Bolt went **$0→$20M ARR in two months** post-launch *(reported, founder on record)*.
 
 ## What it does to productivity and quality
