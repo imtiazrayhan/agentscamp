@@ -4,7 +4,8 @@ description: "The three frontier model families compared for real coding work �
 author: "Imtiaz Rayhan"
 date: 2026-06-11
 freshness: "tier1"
-updated: 2026-09-01
+updated: 2026-10-01
+reviewed: 2026-10-01
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -37,9 +38,9 @@ The honest version of this comparison starts with a confession: **all three fami
 
 ## Posture, not leaderboards
 
-**Claude (Anthropic)** built its coding reputation on *agentic discipline*: models that sustain long multi-step tasks, make careful scoped edits, verify their own work, and recover from errors — the qualities that matter when an agent runs for an hour, not a prompt. The ecosystem is the moat: Claude Code, the Agent SDK, MCP's birthplace. Blind code-review comparisons and small-company adoption surveys through 2025–26 repeatedly favored it for exactly this work. Its tiers (Haiku 4.5 / Sonnet 5 / Opus 5, with Fable 5 above them) map cleanly to task difficulty — [the tier guide](/guides/getting-started/choosing-the-right-model).
+**Claude (Anthropic)** built its coding reputation on *agentic discipline*: models that sustain long multi-step tasks, make careful scoped edits, verify their own work, and recover from errors — the qualities that matter when an agent runs for an hour, not a prompt. The ecosystem is the moat: Claude Code, the Agent SDK, MCP's birthplace. Blind code-review comparisons and small-company adoption surveys through 2025–26 repeatedly favored it for exactly this work. Its tiers (Haiku 4.5 / Sonnet 5.5 / Opus 5.5, with Fable 5.1 above them) map cleanly to task difficulty — [the tier guide](/guides/getting-started/choosing-the-right-model).
 
-**GPT (OpenAI)** is the ubiquity play with frontier reasoning at the top: the o-series lineage made test-time reasoning mainstream (it's legacy now, with shutdowns scheduled through December 2026), the GPT-5.6 Sol/Terra/Luna line carries the broad work, and Codex (CLI and cloud) is a credible first-party agent family — running on the mainline models since the dedicated Codex models retired in July 2026. Whatever tool, library, or platform you touch, GPT integration came first. If your stack is OpenAI-shaped — or you lean hard on its reasoning tiers — the gravity is real.
+**GPT (OpenAI)** is the ubiquity play with frontier reasoning at the top: the o-series lineage made test-time reasoning mainstream (it's legacy now, with shutdowns scheduled through December 2026), the GPT-6 line (Astra, GPT-6.1 Sol, Luna) carries the broad work, and Codex (CLI and cloud) is a credible first-party agent family — running on the mainline models since most of the dedicated Codex models were shut down in July 2026. Whatever tool, library, or platform you touch, GPT integration came first. If your stack is OpenAI-shaped — or you lean hard on its reasoning tiers — the gravity is real.
 
 **Gemini (Google)** competes on scale and integration: million-token-class context as standard, strong native multimodality, aggressive price-performance at the flash end, and the Google platform — Cloud, Workspace, and now Antigravity as the agentic front door (which absorbed [Gemini CLI](/tools/gemini-cli)'s free, Pro, and Ultra service as of June 18, 2026). For context-monster tasks and Google-native shops, it's the natural pick — and for the terminal agents specifically, [Claude Code vs Gemini CLI](/guides/comparisons/claude-code-vs-gemini-cli) goes head-to-head.
 

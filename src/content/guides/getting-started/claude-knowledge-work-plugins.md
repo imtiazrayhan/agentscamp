@@ -6,6 +6,8 @@ seoDescription: "Every Anthropic knowledge-work plugin for Claude Cowork and Cla
 author: "Imtiaz Rayhan"
 date: 2026-09-10
 freshness: "tier1"
+updated: 2026-10-01
+reviewed: 2026-10-01
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -15,7 +17,7 @@ featured: false
 keywords: ["knowledge-work plugins", "Claude Cowork plugins", "Anthropic plugins GitHub", "sales plugin Claude", "finance plugin Claude"]
 summary: "Anthropic's knowledge-work-plugins repository is a set of Apache-2.0 role plugins (sales, finance, legal, marketing, HR, design, engineering, operations, data, support, and more), each a folder of Markdown skills plus a JSON list of connectors. They install from Cowork's Customize menu or with two claude plugin commands, and are meant to be forked."
 keyTakeaways:
-  - "Seventeen Anthropic-built plugins live in the repo as of September 2026, plus five partner-built ones and dozens of third-party entries in its marketplace.json."
+  - "Seventeen Anthropic-built plugins live in the repo as of October 2026, plus five partner-built ones and dozens of third-party entries in its marketplace.json."
   - "Each plugin is skills plus connectors: SKILL.md files Claude loads automatically (they double as /plugin:skill commands) and an .mcp.json of MCP servers."
   - "Cowork installs from Customize > Plugins. Claude Code: claude plugin marketplace add anthropics/knowledge-work-plugins, then claude plugin install <name>."
   - "Plugins are tool-agnostic: skills reference categories like ~~CRM and ~~chat, and whatever you connect in that category fills the slot."
@@ -25,7 +27,7 @@ faq:
   - q: "What are Anthropic's knowledge-work plugins?"
     a: "An open-source GitHub repository, anthropics/knowledge-work-plugins, of role plugins for Claude Cowork that also load in Claude Code. Each plugin bundles skills (Markdown procedures Claude uses automatically), pre-configured connectors to the tools that role depends on, and in some cases explicit slash commands. Anthropic open-sourced the first eleven on January 30, 2026 and added HR, design, engineering, and operations on February 24, 2026."
   - q: "How do I install a knowledge-work plugin in Cowork?"
-    a: "Open the Customize menu in the left sidebar of Claude Desktop or claude.ai, choose Plugins, click Browse plugins, and press Install. The Knowledge Work marketplace is registered by default. Plugins are available on all paid plans, and any connectors the plugin bundles are set up for you, though you still authorize each service."
+    a: "Open the Customize menu in the left sidebar of Claude Desktop or claude.ai, choose Plugins, open the Discover tab, and click Add on the plugin you want. The Knowledge Work marketplace is registered by default. Plugins are available on all paid plans, and any connectors the plugin bundles are set up for you, though you still authorize each service."
   - q: "How do I install one in Claude Code?"
     a: "Two terminal commands: claude plugin marketplace add anthropics/knowledge-work-plugins, then claude plugin install sales@knowledge-work-plugins (swap sales for the plugin you want). Inside a session, the same works as /plugin marketplace add and /plugin install. Skills then fire automatically and are available as namespaced commands such as /sales:call-prep."
   - q: "Can I customize or fork them for my company?"
@@ -57,7 +59,7 @@ sources:
     publisher: "Anthropic"
 ---
 
-Anthropic's `knowledge-work-plugins` repository is a set of open-source, Apache-2.0 licensed plugins that turn Claude into a specialist for a job: sales, finance, legal, marketing, HR, design, engineering, and more. Each one is a folder of Markdown skills plus a JSON file of connector definitions, built for [Claude Cowork](/tools/claude-cowork) and also loadable in [Claude Code](/tools/claude-code). This guide catalogs every Anthropic-built plugin in the repo as of September 2026, gives the exact install commands, and shows how to fork one for your team.
+Anthropic's `knowledge-work-plugins` repository is a set of open-source, Apache-2.0 licensed plugins that turn Claude into a specialist for a job: sales, finance, legal, marketing, HR, design, engineering, and more. Each one is a folder of Markdown skills plus a JSON file of connector definitions, built for [Claude Cowork](/tools/claude-cowork) and also loadable in [Claude Code](/tools/claude-code). This guide catalogs every Anthropic-built plugin in the repo as of October 2026, gives the exact install commands, and shows how to fork one for your team.
 
 It is deliberately *not* the developer guide. For the plugin format itself (manifests, hooks, LSP servers, marketplaces) read [Claude Code Plugins: Install, Use, and Build Your Own](/guides/configuration/claude-code-plugins). This page is about the role plugins Anthropic ships; the glossary entry on [Claude plugins](/glossary/claude-plugins) covers the term.
 
@@ -65,16 +67,17 @@ It is deliberately *not* the developer guide. For the plugin format itself (mani
 
 - **January 30, 2026**: Anthropic added plugins to Cowork as a research preview for all paid users and open-sourced eleven plugins its own teams use: productivity, enterprise search, plugin management, sales, finance, data, legal, marketing, customer support, product management, and biology research.
 - **February 24, 2026**: HR, design, engineering, and operations joined the repo, along with partner-built plugins (Slack by Salesforce, Apollo, Common Room, and a brand-voice plugin by Tribe AI) and admin controls for Team and Enterprise. Financial-analysis, investment-banking, equity-research, private-equity, and wealth-management plugins shipped the same day but live in a separate `anthropics/financial-services` repository.
-- **September 2026**: the repo's `marketplace.json` lists 99 entries. Seventeen are Anthropic-built and live in the repo, five partner plugins sit in `partner-built/`, and the rest are third-party plugins pulled from their own GitHub repositories (Zapier, Figma, Canva, Datadog, Box, Dropbox, Airtable, monday.com, and others).
+- **September 15, 2026**: the `sales` plugin was rebuilt as version 2.0 with 36 skills, and `small-business` relaunched as Claude for Small Business with 44.
+- **October 2026**: the repo's `marketplace.json` lists 121 entries. Seventeen are Anthropic-built and live in the repo, five partner plugins sit in `partner-built/`, and the rest are third-party plugins pulled from their own GitHub repositories (Zapier, Figma, Canva, Datadog, Box, Dropbox, Airtable, monday.com, and others).
 
 ## Every Anthropic-built plugin
 
-Counts come from the repository tree at commit `34e1eae` (September 8, 2026). "Skills" are the `SKILL.md` folders each plugin ships; connectors are the MCP servers pre-configured in its `.mcp.json`.
+Counts come from the repository tree at commit `da38ec1` (September 24, 2026). "Skills" are the `SKILL.md` folders each plugin ships; connectors are the MCP servers pre-configured in its `.mcp.json`.
 
 | Plugin | What it is for | Skills and commands | Connectors pre-configured |
 |---|---|---|---|
 | `productivity` | Tasks, calendar, daily planning, personal memory | 4: `start`, `task-management`, `memory-management`, `update` | Slack, Notion, Asana, Linear, Atlassian, Monday, ClickUp, Google Calendar, Gmail |
-| `sales` | Prospecting, call prep, pipeline, outreach, forecasts | 9, incl. `call-prep`, `pipeline-review`, `forecast`, `draft-outreach`, `account-research` | Slack, HubSpot, Close, Monday, Clay, ZoomInfo, Notion, Atlassian, Fireflies, Apollo, Outreach, Google Calendar, Gmail, Similarweb |
+| `sales` | Prospecting, call prep, pipeline, outreach, forecasts | 36, incl. `call-prep`, `pipeline-review`, `forecast`, `draft-outreach`, `account-research` | Slack, HubSpot, Salesforce, Close, Monday, Clay, ZoomInfo, Notion, Atlassian, Fireflies, Apollo, Outreach, Google Calendar, Gmail, Microsoft 365, Similarweb, Google Drive, Gong, Zoom, Otter.ai, Calendly, Lusha, Crunchbase |
 | `customer-support` | Ticket triage, responses, escalations, KB articles | 5: `ticket-triage`, `draft-response`, `customer-escalation`, `customer-research`, `kb-article` | Slack, Intercom, HubSpot, Guru, Atlassian, Notion, Google Calendar, Gmail |
 | `product-management` | Specs, roadmaps, research synthesis, stakeholder updates | 8 skills incl. `write-spec`, `roadmap-update`, `sprint-planning`, plus one command, `brainstorm` | Slack, Linear, Asana, Monday, ClickUp, Atlassian, Notion, Figma, Amplitude, Pendo, Intercom, Fireflies, Google Calendar, Gmail, Similarweb |
 | `marketing` | Content, campaigns, brand voice, SEO, performance reports | 8, incl. `campaign-plan`, `brand-review`, `seo-audit`, `email-sequence`, `performance-report` | Slack, Canva, Figma, HubSpot, Amplitude, Notion, Ahrefs, Similarweb, Klaviyo, Supermetrics, Google Calendar, Gmail |
@@ -87,17 +90,17 @@ Counts come from the repository tree at commit `34e1eae` (September 8, 2026). "S
 | `human-resources` | Recruiting, onboarding, reviews, compensation, policy | 9, incl. `recruiting-pipeline`, `draft-offer`, `performance-review`, `comp-analysis`, `policy-lookup` | Slack, Google Calendar, Gmail, Notion, Atlassian |
 | `design` | Critique, design systems, UX copy, accessibility, research | 7: `design-critique`, `design-system`, `design-handoff`, `ux-copy`, `accessibility-review`, `user-research`, `research-synthesis` | Slack, Figma, Linear, Asana, Atlassian, Notion, Intercom, Google Calendar, Gmail |
 | `operations` | Vendors, process docs, change requests, capacity, risk | 9, incl. `process-doc`, `runbook`, `vendor-review`, `capacity-plan`, `status-report` | Slack, Google Calendar, Gmail, Notion, Atlassian, Asana |
-| `small-business` | Payroll planning, month-end close, weekly briefs, campaigns | 31, incl. `monday-brief`, `friday-brief`, `invoice-chase`, `close-month`, `plan-payroll`, `tax-prep` | QuickBooks, PayPal, HubSpot, Canva, Docusign, Slack, Stripe, Square, Gmail, Google Calendar, Google Drive |
+| `small-business` | Payroll planning, month-end close, weekly briefs, campaigns | 44, incl. `monday-brief`, `invoice-chase`, `close-month`, `plan-payroll`, `tax-prep` | 35 servers, incl. QuickBooks, Xero, Gusto, PayPal, Stripe, Square, Shopify, HubSpot, Mailchimp, Canva, Docusign, Slack, Gmail, Google Calendar, Google Drive |
 | `pdf-viewer` | View, annotate, fill, and sign PDFs in a live viewer | 1 skill, `view-pdf`, plus 4 commands: `open`, `annotate`, `fill-form`, `sign` | A bundled PDF MCP server |
 | `cowork-plugin-management` | Create or customize plugins for your organization | 2: `create-cowork-plugin`, `cowork-plugin-customizer` | None |
 
-Two things stand out. First, the plugins are heavy on **skills** and light on everything else: only `product-management` and `pdf-viewer` ship a `commands/` folder, and no Anthropic-built plugin ships an `agents/` folder even though the README mentions sub-agents (the partner-built brand-voice plugin does). Skills double as slash commands (`/sales:call-prep`, `/data:write-query`), so nothing is lost. Second, the connector lists are long because plugins are **tool-agnostic**: each `CONNECTORS.md` explains that skills reference categories like `~~CRM` or `~~chat`, and whatever you connect in that category fills the slot.
+Two things stand out. First, the plugins are heavy on **skills** and light on everything else: only `product-management` and `pdf-viewer` ship a `commands/` folder, and no Anthropic-built plugin ships an `agents/` folder even though the README mentions sub-agents (the partner-built brand-voice plugin does). Skills double as slash commands (`/sales:call-prep`, `/data:write-query`), so nothing is lost. Second, the connector lists are long because plugins are **tool-agnostic**: the `CONNECTORS.md` most of them ship explains that skills reference categories like `~~CRM` or `~~chat`, and whatever you connect in that category fills the slot.
 
 ## What skills, connectors, and commands mean here
 
 If you have read [What Are Claude Skills?](/guides/skills/what-are-claude-skills), the pieces are familiar; if not, here is the short version.
 
-- A **skill** is a `SKILL.md` file whose description tells Claude when to use it. Claude loads it when a task matches, or you invoke it by name. The sales plugin's `call-prep` triggers on "prep me for my call with [company]" and "works standalone with user input and web research, supercharged when you connect your CRM." See [agent skills](/glossary/agent-skills).
+- A **skill** is a `SKILL.md` file whose description tells Claude when to use it. Claude loads it when a task matches, or you invoke it by name. The sales plugin's `call-prep` triggers on requests like "prep me for [meeting/company]" or "call prep [company]", and its README notes that every skill works without any connectors. See [agent skills](/glossary/agent-skills).
 - A **connector** is an entry in the plugin's `.mcp.json`: an MCP server for HubSpot, Snowflake, Gmail, and so on, over the [Model Context Protocol](/glossary/model-context-protocol). Installing the plugin pre-configures them; you still authorize each one. [AI connectors](/glossary/ai-connectors) covers the concept.
 - A **command** is a Markdown file in `commands/` that you run explicitly. Newer plugins put everything in `skills/` instead, which the Claude Code docs now recommend.
 
@@ -105,9 +108,9 @@ Everything is Markdown and JSON; there is no code to compile, which is why non-d
 
 ## Installing in Cowork
 
-The Knowledge Work marketplace is registered in Cowork by default. Open the **Customize** menu in the left sidebar, choose **Plugins**, click **Browse plugins**, and press **Install** on the one you want. Plugins are available on all paid plans (Pro, Max, Team, Enterprise); which plan you need for Cowork itself is covered in [Claude plans compared](/guides/getting-started/claude-plans-compared-2026). You can also install in chat on the web and in the Chat tab of Claude Desktop, but hooks and sub-agents run only in Cowork and appear grayed out elsewhere. A plugin's bundled connectors are set up for you "without you connecting each one."
+The Knowledge Work marketplace is registered in Cowork by default. Open the **Customize** menu in the left sidebar, choose **Plugins**, open the **Discover** tab, and click **Add** on the one you want. Plugins are available on all paid plans (Pro, Max, Team, Enterprise); which plan you need for Cowork itself is covered in [Claude plans compared](/guides/getting-started/claude-plans-compared-2026). You can also install in chat on the web and in the Chat tab of Claude Desktop, but hooks and sub-agents run only in Cowork and Claude Code and appear grayed out in chat. A plugin's bundled connectors are set up for you "without you connecting each one."
 
-On Team and Enterprise, owners can mark each plugin *Installed by default*, *Available*, *Required*, or *Not available*, run an organization-specific marketplace, and (in private beta) use private GitHub repositories as plugin sources. Members cannot remove required plugins.
+On Team and Enterprise, owners can mark each plugin *Installed by default*, *Available to install*, *Required*, or *Not available*, run an organization-specific marketplace, and (in private beta) use private GitHub repositories as plugin sources. Members cannot remove required plugins.
 
 ## Installing in Claude Code
 
@@ -123,16 +126,13 @@ claude plugin install sales@knowledge-work-plugins
 
 Inside a session the equivalents are `/plugin marketplace add anthropics/knowledge-work-plugins` and `/plugin install sales@knowledge-work-plugins`. Once installed, skills fire automatically and are also available as namespaced slash commands, `/sales:call-prep` and the like. If you have never used the terminal tool, [Installing Claude Code](/guides/getting-started/installing-claude-code) is the ten-minute setup.
 
-> [!NOTE]
-> Some individual plugin READMEs still show an older form, `claude plugins add knowledge-work-plugins/sales`. Use the two-command form above; it matches the root README and the Claude Code plugin docs.
-
 In Claude Code the `.mcp.json` servers are ordinary MCP configs: you authorize each one the first time it starts, and warehouse connectors such as Snowflake need credentials your admin controls.
 
 ## Forking and customizing
 
 The README is candid that "these plugins are generic starting points." The intended path:
 
-1. **Copy the plugin folder.** It is four things: `.claude-plugin/plugin.json`, `.mcp.json`, `skills/`, and a `CONNECTORS.md`.
+1. **Copy the plugin folder.** It is usually four things: `.claude-plugin/plugin.json`, `.mcp.json`, `skills/`, and a `CONNECTORS.md`.
 2. **Swap connectors.** Edit `.mcp.json` to point at your stack. If your CRM is Salesforce rather than HubSpot, that is one entry.
 3. **Add company context.** Put your terminology, org chart, pricing tiers, and house style into the relevant `SKILL.md` files. This is where most of the value comes from.
 4. **Adjust workflows.** Rewrite a skill's steps to match how your team actually does the thing, "not how a textbook says to."
