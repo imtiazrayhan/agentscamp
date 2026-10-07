@@ -88,6 +88,8 @@ See the [Gemini Notebook overview](/tools/notebooklm) for broader product contex
 
 Choose around your required artifact and available access, rather than an unsupported accuracy ranking. The [ChatGPT](/tools/chatgpt) and [Claude](/tools/claude) entries provide broader product context; the evidence checks here remain the same.
 
+When the corpus is academic papers you still need to select, the [AI literature-review workflow](/guides/workflow/ai-literature-review-workflow) adds eligibility criteria, study-level evidence tables, and a screening record. [Elicit](/tools/elicit) provides workflows for that research stage.
+
 ## Inspect the imported sources separately
 
 Before synthesis, ask for the relevant claims from each document individually. Compare the result with the original file. Did a timing table arrive? Are headings and page references usable? Can you find the section the assistant names?

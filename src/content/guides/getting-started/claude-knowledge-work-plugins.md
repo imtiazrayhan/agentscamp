@@ -91,6 +91,8 @@ Counts come from the repository tree at commit `34e1eae` (September 8, 2026). "S
 | `pdf-viewer` | View, annotate, fill, and sign PDFs in a live viewer | 1 skill, `view-pdf`, plus 4 commands: `open`, `annotate`, `fill-form`, `sign` | A bundled PDF MCP server |
 | `cowork-plugin-management` | Create or customize plugins for your organization | 2: `create-cowork-plugin`, `cowork-plugin-customizer` | None |
 
+For the research row, [evidence synthesis](/glossary/evidence-synthesis) means bringing findings from multiple studies together while keeping their differences and limitations visible.
+
 Two things stand out. First, the plugins are heavy on **skills** and light on everything else: only `product-management` and `pdf-viewer` ship a `commands/` folder, and no Anthropic-built plugin ships an `agents/` folder even though the README mentions sub-agents (the partner-built brand-voice plugin does). Skills double as slash commands (`/sales:call-prep`, `/data:write-query`), so nothing is lost. Second, the connector lists are long because plugins are **tool-agnostic**: each `CONNECTORS.md` explains that skills reference categories like `~~CRM` or `~~chat`, and whatever you connect in that category fills the slot.
 
 ## What skills, connectors, and commands mean here

@@ -98,6 +98,8 @@ by the end. Be aggressive; I will argue back.
 
 [user-interview-synthesizer](/skills/product/user-interview-synthesizer) turns a pile of interview notes or transcripts into a synthesis: recurring themes, supporting quotes, contradictions between participants, and what to ask next time. Its job is to separate what people said from what you hoped they said.
 
+For support tickets and survey exports, the [AI customer-feedback workflow](/guides/workflow/analyze-customer-feedback-with-ai) adds a reviewed codebook and distinct customer counts. [Dovetail](/tools/dovetail) organizes this research in a dedicated workspace; [thematic analysis](/glossary/thematic-analysis) explains the difference between labels and patterns of meaning.
+
 ```text
 Use user-interview-synthesizer. Here are notes from eight interviews
 with clinic managers: [paste]. Tag each theme with which interviews

@@ -160,6 +160,8 @@ Claude is a general model with a code sandbox, not a BI product, and several too
 
 The trade is governance versus generality. A tool built on your semantic layer will answer "what was churn last month" more reliably than a chat window will. A chat window will do the odd one-off nobody modeled. Most analysts end up with both. The full field is ranked in [Best AI Tools for Data Analysts (2026)](/guides/comparisons/best-ai-tools-for-data-analysts-2026), the query layer specifically in [Best Text-to-SQL Tools (2026)](/guides/comparisons/best-text-to-sql-tools-2026), and the head-to-head most people actually want is [ChatGPT vs Claude for Data Analysis](/guides/comparisons/chatgpt-vs-claude-for-data-analysis).
 
+For work another analyst must continue, [data lineage](/glossary/data-lineage) records the route from input data through transformations to the report, so the next person can trace a number back to its source.
+
 ## Plans, models, and context
 
 Code execution is on every plan including Free, which means you can test the whole workflow before paying. Claude for Excel needs Pro, Max, Team, or Enterprise. Claude Code and Cowork need a paid plan. Beyond that the tiers buy usage, not features, and usage is one shared pool across chat, Claude Code, Cowork, and the Office add-ins. Context matters more for analysts than for most roles, because a wide schema plus a long session plus generated files fills a window quickly. Which tier fits occasional CSV work versus daily modeling versus a warehouse workflow is in [Which Claude Plan (and Model) Should a Data Analyst Pay For?](/guides/analytics/which-claude-plan-for-data-analysts), and the current prices live on [Claude plans compared (2026)](/guides/getting-started/claude-plans-compared-2026).

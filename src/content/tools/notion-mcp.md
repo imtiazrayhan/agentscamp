@@ -49,6 +49,8 @@ claude mcp add --transport http notion https://mcp.notion.com/mcp
 
 The pattern: docs in, decisions out. The agent grounds work in the team's written context, then writes durable artifacts back instead of leaving them in a chat transcript.
 
+When another teammate takes over, use the [AI project-handoff workflow](/guides/workflow/ai-project-handoff) to preserve the source files, decisions, and unresolved work. For company knowledge spread across configured systems, [Glean](/tools/glean) is an enterprise search option to evaluate.
+
 > [!TIP]
 > The agent's access equals your access — scope writes with [permission rules](/guides/configuration/claude-code-settings-permissions) (`ask` on `mcp__notion__notion-update-page` and friends) while you build trust, and keep retrieval tools friction-free.
 
