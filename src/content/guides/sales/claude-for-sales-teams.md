@@ -148,6 +148,8 @@ Anthropic's framing for the whole plugin collection is "Built for Claude Cowork,
 
 Use [Cowork](/guides/getting-started/claude-cowork-guide) when the deliverable is a document and the input is a folder or an app you already use. A week of call notes into a summary. A folder of transcripts into a themes tracker. A morning briefing that runs on a schedule without you asking. Cowork works across folders and desktop apps you choose, which is the shape most sales work actually has.
 
+For a single call, the [meeting notes workflow](/guides/workflow/ai-meeting-notes-action-items) provides a transcript prompt and a review checklist for decisions and action items.
+
 Use [Claude Code](/guides/getting-started/what-is-claude-code) when the input is a file that will need the same treatment again next month. A CRM export with 12,000 rows and a duplicate problem. Two hundred outbound drafts that all need the same compliance check. A quarterly data hygiene pass. Claude Code edits files, runs commands, and leaves a repeatable artifact behind, which is the difference between doing the job and owning the job. That whole track, including the parts a rev-ops person can run without being a developer, is in [Claude Code for revenue ops](/guides/sales/claude-code-for-revenue-ops).
 
 The mistake to avoid is using Claude Code as a chat window because someone on the team is technical. If the output is a document, Cowork is less friction and produces a better artifact.

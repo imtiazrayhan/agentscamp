@@ -3,6 +3,7 @@ title: "Claude for Marketing Teams: claude.ai, Cowork, Claude Design, and Connec
 description: "A surface map for marketing teams: which Claude product to open for brand context, asset folders, recurring reports, decks, CMS chores, and connectors."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-10-06
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -78,6 +79,8 @@ The rest of this guide is the reasoning behind each row.
 Anthropic describes Projects as "self-contained workspaces with their own chat histories and knowledge bases." For a marketing team that is the answer to the question every new chat otherwise asks: what does this brand sound like? Upload the style guide, the personas, the messaging pillars, and five of your best pieces to project knowledge, and write the rules you would otherwise repeat (banned phrases, product naming, the "no stat without a source" rule) into the project instructions. Every chat in the project starts with all of it.
 
 Two details matter. On paid plans a large knowledge base switches to a retrieval mode that, in Anthropic's words, expands capacity "by up to 10x," so you can keep adding past work. And on Team and Enterprise a project can be shared with "Can view" or "Can edit" permissions, so one owner maintains the brand project and everyone else chats from it. That is the closest thing Claude has to a team brand-voice setting. Skills upload here too; the five built for marketers are in [Claude Skills for Marketers](/guides/marketing/claude-skills-for-marketers).
+
+If your team is choosing where to maintain that shared brief, compare [ChatGPT Projects and Claude Projects](/guides/comparisons/chatgpt-projects-vs-claude-projects), including a source-owner template and an access check.
 
 ## Cowork: asset folders and recurring reports
 

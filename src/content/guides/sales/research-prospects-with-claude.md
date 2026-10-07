@@ -3,6 +3,7 @@ title: "How to Research a Prospect with Claude (and Verify It Before You Send)"
 description: "A step-by-step prospect research workflow in Claude: run account-research standalone, add an enrichment connector, draft the email, then verify every claim."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-10-06
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -126,6 +127,8 @@ Three rules make the pass fast:
 ## 7. Keep the sources with the record
 
 When the check passes, paste the verified source list into the CRM activity alongside the sent message. It pays twice: when the prospect replies asking where you saw something, and when the next rep on the account inherits the research instead of redoing it.
+
+For internal reports and document sets, the [document research workflow](/guides/workflow/ai-document-research-with-citations) adds a source register and a table for conflicting versions.
 
 ## Where this fits
 

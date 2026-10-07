@@ -3,6 +3,7 @@ name: "Gemini Notebook (formerly NotebookLM)"
 description: "Google's source-grounded research notebook, renamed from NotebookLM in July 2026, that answers only from your uploaded sources and turns them into media."
 seoDescription: "Gemini Notebook (formerly NotebookLM) for founders and analysts: sources, Audio and Video Overviews, Free vs Google AI Pro and Ultra limits, September 2026."
 date: 2026-09-10
+updated: 2026-10-06
 url: "https://notebook.google"
 pricing: "freemium"
 category: "assistant"
@@ -50,6 +51,8 @@ reports on the category. Where do the analyst growth assumptions differ
 from the numbers in our own decks? Quote the specific figures from each
 source and flag any place a deck contradicts the P&L.
 ```
+
+For a complete worked example, follow [AI document research with citations](/guides/workflow/ai-document-research-with-citations): register sources, preserve contradictions, and check the claims before drafting.
 
 When the answer holds up, generate an Audio Overview for the drive to the meeting, or a slide deck as the skeleton for the real one. For the write-up itself, hand the cited findings to [Claude](/tools/claude) or [ChatGPT](/tools/chatgpt), which are stronger at long-form drafting; Notebook is for understanding, not for prose.
 

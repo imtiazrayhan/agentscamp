@@ -3,6 +3,7 @@ name: "Fireflies"
 description: "Fireflies joins Zoom, Meet and Teams calls, transcribes them, and turns transcripts into searchable notes, action items and CRM records for sales teams."
 seoDescription: "Fireflies for sales teams: per-seat prices as of September 2026, the AI-credit footnote behind unlimited, and why its connector lists only three tools."
 date: 2026-09-10
+updated: 2026-10-06
 url: "https://fireflies.ai"
 pricing: "freemium"
 category: "sales"
@@ -29,6 +30,8 @@ faq:
 ---
 
 Fireflies is the notetaker that shows up. It joins Zoom, Google Meet and Microsoft Teams calls, records and transcribes them, and then does the part that actually saves time: turning the transcript into searchable notes, extracted action items and records pushed into the CRM. For a sales team, the value is not the transcript. It is that last week's objection is findable.
+
+Once you have a transcript, follow the [AI meeting notes workflow](/guides/workflow/ai-meeting-notes-action-items) to separate confirmed decisions, action owners, and unresolved questions before sharing the minutes.
 
 The AI splits cleanly into two kinds. AskFred, Live Assist and the library of 200-plus AI Skills are assistive — you ask, they answer or draft. The Email Assistant, which auto-drafts replies, and Voice Agents, which place calls, act without you in the loop for each step. Knowing which is which matters when you decide what to switch on for a team.
 

@@ -5,6 +5,7 @@ seoTitle: "Claude vs ChatGPT for Writing and Marketing Copy (2026)"
 seoDescription: "Claude vs ChatGPT for marketing copy in 2026: Projects vs Projects, skills vs GPTs, document skills vs Work mode, Cowork vs Work, and which to pick per job."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-10-06
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -78,6 +79,8 @@ Claude for writing where the voice has to hold across many pieces, for finished 
 ## Long-form quality and voice control
 
 Both tools give you a Project: a workspace with uploaded files, custom instructions, and its own memory, so every chat about a product launch starts with the brief and the style guide already loaded. Anthropic's help center lists Claude's Projects on every plan, capped at five on Free (the pricing page files them under Pro and above), and paid plans switch to a retrieval mode when the knowledge base gets large. ChatGPT's Projects keep chats, files, instructions, and project-only memory together and can hold both Chat and Work sessions. Call this a draw.
+
+For shared files, project instructions, and checking what teammates can access, use the [ChatGPT Projects vs Claude Projects team guide](/guides/comparisons/chatgpt-projects-vs-claude-projects).
 
 The difference is what sits above the Project. Claude has skills: a folder with a SKILL.md you upload as a ZIP on any plan, which Claude applies automatically when the task matches, in chat, in Cowork, and in the Microsoft 365 add-ins. ChatGPT has custom GPTs: a packaged assistant with instructions, files, and optional actions that lives inside ChatGPT and needs a paid plan to build. Skills compose, so a voice skill and a format skill can both fire on one draft; a conversation happens inside one GPT. [Claude Skills vs custom GPTs](/guides/comparisons/claude-skills-vs-custom-gpts) goes row by row.
 
