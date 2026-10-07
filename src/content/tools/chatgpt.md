@@ -63,3 +63,5 @@ ChatGPT runs on the web, in desktop apps for macOS, Windows, and Linux, and in i
 Business is the smallest plan with a dedicated workspace, SAML SSO, and no training on your data by default; Enterprise adds SCIM, RBAC, audit logs via the Compliance API, and data residency. Feature availability depends on plan, platform, region, and workspace settings, so check what your admin has enabled before building a process around Work, plugins, or browser use.
 
 If your comparison set is wider than ChatGPT, the other general assistants worth a look are [Gemini](/tools/gemini) for Google Workspace users, [Microsoft 365 Copilot](/tools/microsoft-copilot) for Office-centric teams, and [Perplexity](/tools/perplexity) when cited research matters more than drafting. For a plan-by-plan view of the Anthropic side, see [Claude plans compared](/guides/getting-started/claude-plans-compared-2026).
+
+For Office-based teams, [Microsoft 365 Copilot vs ChatGPT for Work](/guides/comparisons/microsoft-365-copilot-vs-chatgpt-for-work) provides a source-access checklist and a small pilot you can run in your own workspace.

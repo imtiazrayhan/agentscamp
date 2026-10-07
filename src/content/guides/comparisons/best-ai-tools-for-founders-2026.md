@@ -174,6 +174,8 @@ The category splits by what comes out, and the [app builders roundup](/guides/co
 
 **Verdict:** Claude Design if you are already on a paid Claude plan and want the deck to match the product; Gamma if you want the fastest path from outline to something presentable.
 
+Once you have a source report, follow the [report-to-presentation workflow](/guides/workflow/ai-presentation-from-report) to decide what each slide can claim and check the finished deck before sharing.
+
 ## Building: when the app is real
 
 **[Claude Code](/tools/claude-code).** The agent that reads your codebase, edits files, runs commands, and works with git, in the terminal, IDE, desktop app, or browser. It needs a paid Claude plan or an API account. This is the tool for the moment your app is a repository and needs changes a chat builder cannot make safely; the [non-developer's guide](/guides/founders/claude-code-for-non-developers) is the on-ramp, [build an MVP with Claude Code](/guides/founders/build-an-mvp-with-claude-code) is the weekend plan, and the [Lovable to Claude Code handoff](/guides/founders/lovable-to-claude-code-handoff) is the migration.

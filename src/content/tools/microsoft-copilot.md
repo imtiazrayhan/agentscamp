@@ -31,6 +31,8 @@ Microsoft 365 Copilot is the AI assistant that lives inside Word, Excel, PowerPo
 
 It is aimed at companies that run on Microsoft 365 and want AI where the work already happens: the founder in Outlook and Teams, the marketer building decks in PowerPoint, the analyst in Excel. It is not [GitHub Copilot](/tools/github-copilot), Microsoft's coding assistant, which is a separate product with its own licensing.
 
+If your team is comparing workplace assistants, use [Microsoft 365 Copilot vs ChatGPT for Work](/guides/comparisons/microsoft-365-copilot-vs-chatgpt-for-work) to check source access, app context, and the deliverable your team needs.
+
 ## Highlights
 
 - **Copilot in the apps** — draft, rewrite, and summarize in Word; analyze data, write formulas, and build visuals in Excel; generate and restyle decks in PowerPoint; draft and summarize threads in Outlook; summarize and transcribe meetings and capture action items in Teams.
@@ -51,6 +53,8 @@ a one-page brief with a risks section and cite each source.
 ```
 
 Then open the pipeline workbook and ask Copilot in Excel to flag rows where the close date slipped more than two weeks and explain the formula it used. When the same brief is needed every week, schedule it as a recurring prompt in Cowork so it lands in your inbox before the meeting.
+
+For a long conversation that needs a reply, the [AI email-thread workflow](/guides/workflow/ai-email-thread-summary-reply) shows how to separate current instructions from quoted history and keep unresolved details out of the draft.
 
 > [!WARNING]
 > Copilot Chat (the free tier) only sees the web and whatever you paste, upload, or have open in Teams or Outlook. If a colleague's answer "used our files" and yours did not, the difference is almost always the license, not the prompt.

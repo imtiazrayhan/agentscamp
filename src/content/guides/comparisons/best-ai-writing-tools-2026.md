@@ -100,6 +100,8 @@ The best AI writing tool in 2026 is whichever one fits the job in front of you, 
 
 **Claude or ChatGPT for the writing; Copy.ai when data triggers it.** A five-email sequence is a structured writing task, and the [email sequence drafter](/skills/marketing/email-sequence-drafter) skill on Claude produces the whole thing from a brief with the voice already applied. ChatGPT with a GPT that holds your sequence rules does the same. Copy.ai earns its place when the email is the output of a workflow that starts with a CRM record or a signal, not a brief; that is a sales-ops job as much as a writing one. For one-off replies, Gemini in Gmail and Copilot in Outlook are already where the thread is.
 
+When the reply depends on a long conversation, use the [email-thread summary and reply workflow](/guides/workflow/ai-email-thread-summary-reply) to verify the latest commitments before drafting.
+
 ### Docs-native: writing inside Docs or Word
 
 **Gemini in Docs, Copilot in Word, or Claude for Word.** When the file is the deliverable and reviewers live in comments, the assistant should be in the file. Gemini handles Docs on the paid Google AI plans and on Workspace Business Standard and higher. Copilot handles Word on the paid add-on. Claude for Word, PowerPoint, and Excel are Microsoft AppSource add-ins on paid Claude plans, and skills you have enabled apply inside them. If your team is on neither suite, Claude's document skills produce the `.docx` and you upload it.

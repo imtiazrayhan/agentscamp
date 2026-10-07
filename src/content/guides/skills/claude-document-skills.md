@@ -75,6 +75,8 @@ The skills handle format mechanics; content quality is still yours to specify. T
 4. **Ask for a verification pass.** "Before finishing, re-open the file and check every formula resolves and no cell shows an error" — the skill runs code, so it can actually check its own artifact.
 5. **Iterate on the file, not from scratch.** Follow-ups ("make sheet 2 a pivot by region") edit the existing artifact rather than regenerating.
 
+For a report-to-deck task, the [AI presentation workflow](/guides/workflow/ai-presentation-from-report) adds a claim-to-slide map and a review of both slides and speaker notes.
+
 ## Limits worth knowing
 
 The execution container is sandboxed: **no network access**, so a document skill can't pull live data mid-build — provide the data in the conversation or as an uploaded file. On the API, uploads run through the Files API and requests carry at most 8 skills. And very large or intricate documents (hundred-tab workbooks, pixel-perfect design decks) still hit the ceiling of what code-built documents do well — the skills raise the floor dramatically; they don't replace a designer.
