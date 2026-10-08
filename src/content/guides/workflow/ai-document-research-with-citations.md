@@ -171,6 +171,8 @@ For the invented example, the supported answer is: “Use S2's commitment: onboa
 
 If a meeting note is central evidence, use the [meeting notes workflow](/guides/workflow/ai-meeting-notes-action-items) to check whether the record establishes agreement. Do not let the final prose erase an unresolved question just because it interrupts the narrative.
 
+For vendor agreements, carry this evidence discipline into a more specific packet. The [vendor-contract review workflow](/guides/workflow/ai-vendor-contract-review-packet) preserves clause references, conditions, missing documents, and unresolved dates in an obligation register for a qualified reviewer.
+
 ## Repair common evidence failures
 
 | Failure | Next action |

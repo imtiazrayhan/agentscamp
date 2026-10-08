@@ -34,6 +34,8 @@ It is aimed at anyone who has to understand a pile of documents rather than the 
 
 ## Highlights
 
+A notebook can generate a large draft study set, but the next useful step is reviewing small recall prompts against the passages they came from. The [AI study-card workflow](/guides/workflow/ai-study-cards-from-notes) keeps answers, exact source evidence and unresolved questions together before a learner starts practicing.
+
 - **Source-grounded answers with citations** — chat with the notebook and every answer cites the source passage it came from, so checking is one click.
 - **Broad source support** — Google Docs, Slides, Sheets, PDFs, Word, PowerPoint, Markdown, CSV, ePub, images, audio, web pages, public YouTube videos, pasted text, and Gemini chats, up to 500,000 words or 200 MB per source.
 - **Audio and Video Overviews** — generate a podcast-style discussion or a narrated video explainer of your sources; audio can be downloaded for offline listening in the mobile app.

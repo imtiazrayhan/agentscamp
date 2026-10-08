@@ -50,6 +50,8 @@ An AI-generated analysis is usually right, occasionally wrong, and almost never 
 
 This is tool-agnostic: it applies to a chat answer, a notebook, a warehouse query, or a dashboard someone generated in an afternoon. It is the review half of [Claude for data analysis](/guides/analytics/claude-for-data-analysis); the automated version of the same pass is the [analysis-reviewer](/agents/analytics/analysis-reviewer) agent.
 
+If the datasets lack a reliable shared key, the [cross-source record-linkage workflow](/guides/analytics/link-records-across-datasets) builds a reviewable candidate crosswalk first. Preserve uncertain identity links before checking the row counts of the eventual join.
+
 ## 1. Silent row drops from joins and filters
 
 The most common wrong number is a right calculation over the wrong rows. An inner join where a left join was meant removes every customer with no order. A `WHERE region IS NOT NULL` quietly deletes the 4 percent of records where the region was never captured. Nothing errors, and the total still looks like a total.

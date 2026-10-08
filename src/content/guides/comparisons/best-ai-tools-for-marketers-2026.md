@@ -107,6 +107,8 @@ related: ["guide:claude-code-for-marketers", "guide:claude-for-marketing-teams",
 
 The best AI tools for marketers in 2026 are the ones that map to a job you run every week, not the ones with the longest feature list. This page sorts 22 tools into seven jobs and ends every category with a verdict. Every tool links to its own page, where the current plans live; this page stays free of prices so it can stay honest between reviews. If you are deciding whether the stack should center on Claude, start with [Claude Code for marketers](/guides/marketing/claude-code-for-marketers), the pillar this list hangs off.
 
+When the recurring job is finding and reusing media, start with [reviewed asset metadata](/guides/marketing/ai-digital-asset-metadata) and a [known-example asset search test](/guides/marketing/ai-asset-search-acceptance-test). These workflows help you assess whether a catalog returns the intended asset version.
+
 *Last reviewed: September 2026.*
 
 ## The summary table

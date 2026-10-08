@@ -195,6 +195,8 @@ Do not test on good copy. Take a draft you know is off-voice (the counterexample
 
 On claude.ai, either edit the skill files where they open beside a chat (highlight text, click **Edit with Claude**) or disable the old skill, delete it from the three-dot menu, and upload the new ZIP. In Claude Code, editing the file is enough; skill directories are watched live.
 
+When copy moves into another language, add a review packet alongside the voice rules. The [AI localization workflow](/guides/marketing/ai-localization-review-workflow) separates preferred terminology from literal placeholders and combines source-target checks with qualified language review.
+
 ## Keeping it honest
 
 A voice skill only stays useful if it stays true. Re-run the profiler every quarter on copy that shipped; if a rule is being broken everywhere, either the voice moved or the rule was never real. Keep the file in git even if you mostly use claude.ai; the upload is a deploy target, not the source of truth. The same discipline pays off downstream: [An SEO content workflow in Claude Code](/guides/marketing/seo-content-workflow-with-claude-code) runs every draft through this skill before the on-page check, and [Does AI-written content rank in 2026?](/guides/marketing/ai-content-and-search-2026) explains why a distinct voice matters more, not less, when AI does the drafting.

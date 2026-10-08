@@ -46,4 +46,6 @@ Speech-to-text stopped being one product: **realtime streaming** (agents, captio
 
 ## How to actually choose
 
+Choosing a transcription engine is the beginning of a caption workflow. After generating a track, [review AI captions against the recording](/guides/voice/review-ai-captions-before-publishing) to check words, speaker changes, meaningful sounds and timing in the final media cut; a parser alone cannot settle those questions.
+
 Three checks beat any leaderboard. **WER on your audio**: fifty representative clips — your accents, your jargon, your phone-line quality — through each candidate; the published-benchmark winner loses on somebody's domain every week. **Latency where it counts**: for agents, measure streaming time-to-first-token and endpointing behavior from your region, p95 not median. **The billing fine print**: AssemblyAI streams bill by *session* time (idle sockets cost), Whisper bills in GPU-hours and engineering, add-ons stack per hour everywhere. The output half of the conversation is [Best TTS APIs](/guides/voice/best-tts-apis-2026); the architecture that consumes both is [Realtime Voice Agents](/guides/voice/realtime-voice-apis).

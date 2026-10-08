@@ -42,6 +42,8 @@ A VLM reads the image and the text together, so it grasps **layout and meaning**
 
 ## Getting reliable structured output
 
+For a fixed transcription of a scan, [review OCR text beside the original page](/guides/vision/review-ocr-text-against-scans) and record proposed repairs as exact spans in a correction ledger. Keep unreadable characters unresolved and have a reviewer confirm the image evidence before creating a separate corrected copy.
+
 The reliable pattern for document extraction:
 
 1. **Define the schema** — the exact fields, types, and enums you want, with clear descriptions.

@@ -43,6 +43,8 @@ The 2026 version leans hard on Underlord, Descript's AI co-editor, which the com
 
 ## In a content team's workflow
 
+Before turning a recording into other assets, compare any processed voice track with its original. The [AI speech-cleanup review workflow](/guides/voice/review-ai-speech-cleanup) organizes timed listening notes and keep, retry or rerecord decisions so a quieter track does not hide a changed word.
+
 Descript's transcript export is the hinge that connects video work to text work. A webinar recorded and cleaned in Descript yields an accurate transcript; that transcript feeds every written asset, and an agent can do that fan-out while you finish the edit.
 
 ```text

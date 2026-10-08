@@ -26,6 +26,8 @@ AI can help organize customer feedback if you retain the original records, revie
 
 This workflow is for mixed support tickets and open survey responses. It separates what someone said, how you classified it, and what your team might do next. For interview-specific participant themes and jobs to be done, use the [User Interview Synthesizer](/skills/product/user-interview-synthesizer).
 
+Before collecting a new questionnaire, use the [survey branching plan](/guides/workflow/ai-survey-branching-plan) to make navigation explicit and the [survey logic test workflow](/guides/workflow/test-ai-survey-logic) to preview known response paths. Those checks address which questions a respondent sees before these feedback records exist.
+
 ## Choose a question and a unit
 
 Replace “What do customers want?” with a bounded question such as “What problems do these records describe around preparing a weekly review?” Write the time window, channels, and exclusions beside it. Decide whether you are counting records, customers, or both before asking AI to find themes.
@@ -141,6 +143,8 @@ Decision owner: person responsible for the product choice
 For F3, a useful next check might be watching a participant locate the export control. For F2, reproduce the reported failure with the necessary support context. Neither observation by itself determines a roadmap priority. Priority also needs your team's goals, costs, constraints, and judgment.
 
 If an export is partial, describe the covered subset. If channels disagree, keep their summaries separate. If a record lacks evidence for the proposed code, keep it Unresolved. These repairs improve the claim you can defend without manufacturing a stronger result.
+
+When reviewed feedback exposes a recurring support question, the next artifact may be an answer card rather than a product recommendation. The [support answer-library workflow](/guides/workflow/ai-customer-support-answer-library) connects each proposed answer to an approved source, applicability limits, escalation rules, and checked test cases.
 
 ## Choose tools by the stage
 

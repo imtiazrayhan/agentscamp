@@ -137,4 +137,6 @@ When the output is machine-readable, you can feed it into CI, a review script, o
 
 ## Putting It Together
 
+The same input-and-output discipline helps when an educator drafts questions from taught material. The [exit-ticket workflow](/guides/workflow/ai-exit-tickets-from-lesson-objectives) maps each prompt and answer key to a supplied objective, then leaves classroom use and interpretation with the educator.
+
 These patterns compose. A strong workflow often chains steps, where each step uses a few-shot example to fix the style, runs in a context-managed subagent, verifies through tools, and returns structured output for the next step to consume. Start with one pattern that fixes your most painful failure mode, then layer the others as your agent workflows mature.

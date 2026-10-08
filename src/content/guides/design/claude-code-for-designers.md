@@ -49,6 +49,8 @@ related: ["guide:claude-design-guide", "guide:figma-to-code-with-claude", "guide
 
 Claude Code is a program that reads and edits the files in a folder you choose and runs commands from plain-English instructions. Anthropic describes it as "an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools." For a designer, the useful translation is this: the design system stops being a document you describe to engineers and becomes a folder you can change directly, with someone reading every change before it lands.
 
+Image wording has its own evidence checks: [review AI alt text in page context](/guides/design/ai-alt-text-context-review) for meaningful still images, and use the [chart long-description workflow](/guides/design/ai-chart-long-descriptions) when essential information needs more than a short alternative.
+
 ## Why a designer would open a terminal agent
 
 Four jobs make it worth the setup, and they are all jobs where a static mockup loses information.

@@ -52,6 +52,8 @@ To create an AI presentation from a report, approve the argument and evidence be
 
 The practical goal is a presentation that helps a named audience make a decision. It is rarely a slide for every report heading. Start with what the audience needs to decide, select the evidence that bears on it, and move supporting detail to an appendix. If the source report itself needs checking, begin with the [document research workflow](/guides/workflow/ai-document-research-with-citations) before compressing it into slides.
 
+For a single visual explanation, the [text-to-diagram workflow](/guides/design/ai-explanatory-diagram-from-text) checks the meaning of labels and arrows before export. If the source needs a navigable overview first, a [source-grounded mind map](/guides/workflow/source-grounded-ai-mind-map) keeps each conceptual branch tied to evidence.
+
 ## Write the brief around a decision
 
 The following community workshop report and all its figures are fictional. They illustrate review choices; they are not product-test outputs. The report describes a pilot with eight sessions offered, six held, 120 registration records, 84 check-ins and feedback from 30 attendees. Staff recommend another limited pilot, while venue capacity remains unresolved.

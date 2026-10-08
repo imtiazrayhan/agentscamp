@@ -115,6 +115,8 @@ If the thing you are building is really a chatbot or an LLM-powered feature rath
 
 **Worked example: the daily brief and the meeting prep.** Set a personal routine for 8am: summarize overnight email and today's calendar, flag anything from investors or customers, deliver to your Slack DM. Set a workspace routine triggered by calendar events: thirty minutes before an external meeting, pull the last thread with that company, the CRM notes, and open tasks into the meeting's Slack thread. Dry-run both for a week. Neither routine writes anywhere, so there is nothing to approve; when you later add "draft the follow-up email after the meeting", that write action is where the approval lands.
 
+Before automating a repeated task, document how the team actually performs it. The [AI SOP workflow](/guides/workflow/ai-standard-operating-procedures) turns captured steps into a reviewed procedure with prerequisites, exception paths, and a teammate walkthrough.
+
 ## Choosing, and starting small
 
 If you are still unsure, ask two questions: where does the input live, and what is the single irreversible action? Files in, document out: Cowork. A chain of app steps with branching: n8n. An event in one SaaS tool, an action in another: Zapier Agents. A team in Slack that needs a standing routine: Lindy.

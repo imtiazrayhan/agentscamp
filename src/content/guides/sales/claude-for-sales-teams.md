@@ -235,6 +235,8 @@ A sequence that produces evidence rather than opinions:
 
 Steps two and three together are also the fastest way to learn [prospect research mechanics](/guides/sales/research-prospects-with-claude), which is the highest-volume job in the whole list.
 
+An RFP response needs a requirement record before it needs more persuasive prose. The [AI RFP compliance-matrix workflow](/guides/sales/ai-rfp-compliance-matrix) maps the buyer's wording to approved evidence, response locations, owners, and unresolved gaps, then checks coverage with code.
+
 ## The honest limits
 
 A few things this guide will not pretend.

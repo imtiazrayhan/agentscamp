@@ -62,6 +62,8 @@ related: ["guide:claude-for-excel-guide", "guide:claude-code-for-data-analysts",
 
 Claude can run code on your data. That one capability, a sandboxed Python environment attached to a chat window, is what separates a model that describes a dataset from a tool that computes over one, and it shows up in four Anthropic products with four different shapes. This guide is the mechanics from a developer's side of the desk: which surface to open for which job, what the sandbox can and cannot do, the ways an analysis fails quietly, and the habits that catch it before a number reaches a slide.
 
+When similar rows may describe the same real-world entity, use the [duplicate-record review workflow](/guides/analytics/ai-duplicate-record-review) before proposing merges. It keeps candidate similarity separate from the source owner’s identity decision.
+
 ## The four surfaces, and when each one wins
 
 One subscription, four places Claude will touch your data. The choice is not about capability, because all four run code. It is about what has to exist when you are done.

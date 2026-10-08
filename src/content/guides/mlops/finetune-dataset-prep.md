@@ -42,6 +42,8 @@ related: ["agent:finetuning-engineer", "skill:finetune-dataset-builder", "skill:
 
 Almost every fine-tuning failure is a dataset failure. The training run is the easy, mechanical part; the model's quality is decided before training starts, by what's in the data. **The dataset is the model** — it learns exactly the distribution, format, and quality you feed it, including the mistakes. So the work is in preparation: the right format, clean and representative examples, careful augmentation, and an honest eval split.
 
+If the raw text still needs labels, the [AI prelabeling workflow](/guides/data/ai-text-dataset-prelabeling) keeps suggestions separate from human responses. Resolve disputed examples with the [annotation adjudication workflow](/guides/data/adjudicate-ai-assisted-text-labels) before treating those labels as training targets.
+
 ## Quality and coverage beat size
 
 The instinct to gather "as much data as possible" is usually wrong. A few hundred to a few thousand **clean, on-distribution** examples typically outperform tens of thousands of noisy ones, especially for parameter-efficient methods like LoRA/QLoRA. More data with errors, duplicates, or off-distribution noise doesn't help — it teaches the model the noise. Optimize for *representativeness* (does the set cover the real inputs, including the hard cases?) and *correctness*, then add volume only where evals show a gap.

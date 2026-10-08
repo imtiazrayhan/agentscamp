@@ -74,6 +74,8 @@ related: ["guide:best-ai-tools-for-designers-2026", "guide:claude-design-guide",
 
 For design work in 2026, pick an image generator by what it does after the first render: Ideogram if words appear in the artwork, Recraft if the deliverable is a vector or has to match a house style, Midjourney if the brief is a mood, Canva if the person generating is not a designer, and fal or Replicate if the generation happens inside a product you are building. Raw image quality has converged; text rendering, vector output, style control, and licensing have not. This page is the image chapter of [the best AI tools for designers in 2026](/guides/comparisons/best-ai-tools-for-designers-2026), and the [Claude Design guide](/guides/design/claude-design-guide) is the pillar behind both.
 
+For assets that must work in a 3D scene, the [AI mesh review workflow](/guides/design/review-ai-generated-3d-meshes) checks supplied geometry evidence and the [PBR texture import workflow](/guides/design/review-ai-pbr-texture-imports) records the target material setup and actual viewer observations.
+
 *Last reviewed: September 2026.*
 
 ## The comparison
