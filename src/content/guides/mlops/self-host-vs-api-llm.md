@@ -62,7 +62,7 @@ Most mature stacks are hybrid: a hosted frontier API for the hardest or spikiest
 
 ## Putting it together
 
-Decide in this order: if a hard constraint (privacy, offline) forces self-hosting, that's your answer. Otherwise default to an **API** for speed and frontier quality, and switch tasks to **self-hosting** only where you have steady volume to keep GPUs busy *and* an open model that clears your eval bar — counting the full operating cost, not the sticker price. For the serving side of self-hosting, the [llm-inference-engineer](/agents/data-ai/llm-inference-engineer) sizes and tunes it; for trying models locally first, [Ollama](/tools/ollama) and [LM Studio](/tools/lm-studio) get you there in minutes.
+Decide in this order: if a hard constraint (privacy, offline) forces self-hosting, that's your answer. Otherwise default to an **API** for speed and frontier quality, and switch tasks to **self-hosting** only where you have steady volume to keep GPUs busy *and* an open model that clears your eval bar — counting the full operating cost, not the sticker price. Which open models exist, and what each licence allows you to ship, is the [open-weight LLM roundup](/guides/comparisons/best-open-source-llms-2026). For the serving side of self-hosting, the [llm-inference-engineer](/agents/data-ai/llm-inference-engineer) sizes and tunes it; for trying models locally first, [Ollama](/tools/ollama) and [LM Studio](/tools/lm-studio) get you there in minutes.
 
 ## Continue exploring
 

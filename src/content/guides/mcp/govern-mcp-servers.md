@@ -74,6 +74,7 @@ So scope tools to the task. An agent that triages issues needs the issue tools, 
 A connected MCP server runs code and is trusted with credentials and tool access. That makes the fleet a supply-chain problem:
 
 - **Vet provenance.** Prefer open, audited servers from known publishers; a registry with provenance beats a random repo.
+- **Read tool descriptions, not just tool names.** A server can hide instructions in a description the model sees but the UI summarizes away; see [tool poisoning](/glossary/tool-poisoning) for the attack and its rug-pull and shadowing variants.
 - **Pin versions.** Depend on a specific, reviewed version, not `latest`.
 - **Least-privilege credentials.** Scope every token to the minimum the server needs; assume a server can do anything its credentials allow.
 - **Require approval to add.** In shared projects, adding a server should be a reviewed action, not a silent config change. (Claude Code already prompts each teammate to approve a project-scoped server from `.mcp.json` before its tools activate.)
@@ -81,6 +82,8 @@ A connected MCP server runs code and is trusted with credentials and tool access
 
 > [!WARNING]
 > A malicious MCP server doesn't need an exploit — it just needs to be *connected*. If it's handed a token and a tool surface, it can use them. The defenses are organizational as much as technical: provenance, pinning, least privilege, and an approval gate before anything joins the fleet.
+
+Two installables make these checks routine: the [mcp-config-auditor](/skills/security/mcp-config-auditor) skill (or the [/mcp-audit](/commands/review/mcp-audit) command) reads every config a machine loads and flags unpinned versions, inline secrets, and wide roots, and the [mcp-security-reviewer](/agents/quality-security/mcp-security-reviewer) agent reviews a server's code and tool descriptions before it joins the fleet.
 
 ## Putting it together
 

@@ -95,6 +95,8 @@ Claude Code reads from more than one place, and putting a fact in the wrong scop
 | `./CLAUDE.local.md` | This project, **yours only** (gitignored) | Local paths, personal scratch notes, machine-specific setup |
 | `~/.claude/CLAUDE.md` | **Every** project you work on | Your personal style: "prefer named exports," "always run typecheck before committing" |
 
+If Cursor, Codex or Copilot also work in the repository, [AGENTS.md vs CLAUDE.md vs Cursor rules](/guides/configuration/agents-md-vs-claude-md-vs-cursor-rules) covers when a shared AGENTS.md should carry the common instructions; the [CLAUDE.md glossary entry](/glossary/claude-md) has the short definition.
+
 The rule of thumb: if it's true for everyone on the team, it goes in the committed project file. If it's true for *you* everywhere, it goes in user memory. If it's true for you *only here*, it goes in the local file.
 
 > [!TIP]
@@ -102,6 +104,8 @@ The rule of thumb: if it's true for everyone on the team, it goes in the committ
 
 > [!NOTE]
 > `CLAUDE.local.md` lives only in the worktree where you created it — it doesn't follow you across git worktrees of the same repo. To share personal notes across worktrees, import a home-directory file instead: `@~/.claude/my-project-notes.md`.
+
+If the team also runs Codex, Cursor, or Copilot, keep `CLAUDE.md` as the source and generate the other files from it: the [instruction-file-migrator](/skills/workflow/instruction-file-migrator) skill converts between formats while keeping path-scoped rules scoped, and [/convert-rules](/commands/workflow/convert-rules) does a single file.
 
 ## What NOT to put in it
 

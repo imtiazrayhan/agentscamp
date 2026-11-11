@@ -80,7 +80,7 @@ The chat window is still where most founder work should start, because most foun
 
 **Web search and research** turn the chat into a sourced research assistant. Ask for a competitor comparison and you get citations you can check rather than confident recollection. Save the good ones into the relevant Project.
 
-**Skills** upload here too. The five founder skills we built, covered in [Claude Skills for Founders](/guides/founders/claude-skills-for-founders), run in plain claude.ai as a ZIP upload, no Claude Code required.
+**Skills** upload here too. The five founder skills we built, covered in [Claude Skills for Founders](/guides/founders/claude-skills-for-founders), run in plain claude.ai as a ZIP upload, no Claude Code required. The wider product set, including feedback codebooks, survey path tests, and hiring scorecards, is compared in [9 Best Claude Skills for Product Managers](/guides/skills/best-claude-skills-for-product-managers).
 
 What claude.ai is not for: anything that needs to happen *to* your files rather than *about* them. If you find yourself copying output into a spreadsheet, a deck, or a folder, one of the surfaces below would have done that step for you.
 
@@ -106,7 +106,7 @@ Cowork is also where Anthropic's knowledge-work plugins were built to run first,
 
 That covers more than it sounds like. A landing page, an MVP, an internal admin tool, a script that reconciles two exports, a chart from a CSV, a data pipeline that runs nightly. The distinguishing feature against Cowork and the app builders is what it leaves behind: ordinary files in an ordinary folder, plus a `CLAUDE.md` briefing and a git history, which is exactly what an engineer needs on day one.
 
-The mechanics for non-developers, including the permission model and the three tasks to try first, are in [Claude Code for Non-Developers and Founders](/guides/founders/claude-code-for-non-developers). The build path is [Build an MVP with Claude Code](/guides/founders/build-an-mvp-with-claude-code).
+The mechanics for non-developers, including the permission model and the three tasks to try first, are in [Claude Code for Non-Developers and Founders](/guides/founders/claude-code-for-non-developers). The build path is [Build an MVP with Claude Code](/guides/founders/build-an-mvp-with-claude-code). Before the build, the [product-manager](/agents/product/product-manager) agent turns interview notes, tickets, and feedback into a PRD or a scope cut with every item tied to its evidence, and asks for the inputs it is missing instead of inventing a metric.
 
 ## Claude for Excel and Claude in Chrome: inside the tools you already use
 

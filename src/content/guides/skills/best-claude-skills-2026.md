@@ -75,6 +75,7 @@ The specialist tier: rarely triggered, disproportionately valuable when they are
 - **[secret-scanner](/skills/security/secret-scanner)** — scans for committed keys and tokens before they reach a public remote. Pair it with a pre-push [hook](/guides/configuration/claude-code-hooks).
 - **[dependency-audit](/skills/security/dependency-audit)** — turns noisy scanner output into a triaged, prioritized upgrade plan.
 - **[threat-model-builder](/skills/security/threat-model-builder)** — builds a STRIDE model from the actual architecture, not a template.
+- **[mcp-config-auditor](/skills/security/mcp-config-auditor)** — reads every MCP config a machine loads and flags unpinned packages, inline secrets, wide filesystem roots, and tool descriptions that instruct the model.
 
 ## LLM and RAG work
 
@@ -84,6 +85,8 @@ If you build AI features, these encode the eval-first discipline that separates 
 - **[llm-eval-suite-scaffolder](/skills/data/llm-eval-suite-scaffolder)** — stands up a real eval suite (dataset, metrics, baseline, CI gate) for a feature that has none.
 - **[chunking-strategy-optimizer](/skills/data/chunking-strategy-optimizer)** — sweeps chunk configurations against a fixed eval set instead of guessing at 512-with-overlap.
 - **[hallucination-evaluator](/skills/data/hallucination-evaluator)** — decomposes answers into atomic claims and checks each for grounding.
+
+The eval-specific picks, including the regression harness and the calibrated judge, are compared in [8 Best Claude Skills for LLM Evals](/guides/skills/best-claude-skills-for-llm-evals), and the prompt-side tooling in [9 Best Claude Skills for Prompt Engineering](/guides/skills/best-claude-skills-for-prompt-engineering).
 
 Building retrieval specifically? The [RAG list](/guides/skills/best-claude-skills-for-rag) covers the pipeline end to end, from scaffolding and chunking to embeddings, reranking, and grounding checks.
 
@@ -95,6 +98,7 @@ The compounding tier — each one makes every future session better:
 - **[claude-settings-auditor](/skills/workflow/claude-settings-auditor)** — audits every settings layer before you trust a new repo's checked-in config.
 - **[plugin-scaffolder](/skills/workflow/plugin-scaffolder)** — packages your accumulated skills, agents, and commands into one installable plugin for the team.
 - **[agent-memory-designer](/skills/workflow/agent-memory-designer)** — writes a CLAUDE.md from the repo's real commands and gotchas, sized to stay in context.
+- **[instruction-file-migrator](/skills/workflow/instruction-file-migrator)** — converts CLAUDE.md, AGENTS.md, Cursor rules, and Copilot instructions into each other without losing path scoping.
 
 > [!TIP]
 > Install in one command: `npx agentscamp add skills/conventional-commits` (project scope) or add `-g` for `~/.claude/`. Running bare `npx agentscamp` opens an interactive picker across the whole library.
@@ -109,3 +113,5 @@ The full library is at [/skills](/skills) — 90+ skills across twelve categorie
 - [8 Best Claude Skills for Database Work](/guides/skills/best-claude-skills-for-database-work) — Compare Claude skills for safe migrations, data backfills, indexes, query plans, pooling, deadlocks, vector search, and SQL tuning.
 - [7 Best Claude Skills for Documentation](/guides/skills/best-claude-skills-for-documentation) — Use Claude skills to verify code examples and create accurate READMEs, API docs, runbooks, onboarding guides, ADRs, and diagrams.
 - [9 Best Claude Skills for Software Testing](/guides/skills/best-claude-skills-for-testing) — Compare Claude skills for regression, unit, integration, contract, property, mutation, prompt, and test-data workflows.
+- [9 Best Claude Skills for Product Managers](/guides/skills/best-claude-skills-for-product-managers) — Compare Claude skills for PRDs, MVP scope cuts, competitor teardowns, interview synthesis, feedback codebooks, survey tests, scorecards, and investor updates.
+- [9 Best Claude Skills for SEO (and AI Search)](/guides/skills/best-claude-skills-for-seo) — Compare Claude skills for technical audits, JSON-LD, answer-engine readiness, llms.txt, briefs, and Core Web Vitals.

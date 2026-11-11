@@ -28,7 +28,7 @@ faq:
     a: "The model file format of the llama.cpp/ggml ecosystem — a single file carrying quantized weights plus metadata, designed for fast memory-mapped local loading. When you download a '4-bit GGUF' of a model, you're getting the format this project defined; Ollama, LM Studio, and Jan all consume it."
 ---
 
-llama.cpp is the project that made local LLMs a thing: Georgi Gerganov's plain C/C++ engine (now stewarded by the **ggml-org**, ~116k stars) proved frontier-architecture models could run on consumer hardware, defined the **GGUF** format and the [quantization](/glossary/quantization) culture around it, and became the engine inside most local-AI products you've heard of — [Ollama](/tools/ollama), [LM Studio](/tools/lm-studio), and [Jan](/tools/jan) included.
+llama.cpp is the project that made local LLMs a thing: Georgi Gerganov's plain C/C++ engine (now stewarded by the **ggml-org**, ~116k stars) proved frontier-architecture models could run on consumer hardware, defined the [**GGUF**](/glossary/gguf) format and the [quantization](/glossary/quantization) culture around it, and became the engine inside most local-AI products you've heard of — [Ollama](/tools/ollama), [LM Studio](/tools/lm-studio), and [Jan](/tools/jan) included.
 
 ## Highlights
 

@@ -47,6 +47,8 @@ The honest version of this comparison starts with a confession: **all three fami
 
 Three rules survive every release cycle. **Pick the harness first**: you'll live in an agent or editor, not a leaderboard — Claude Code, Codex, Cursor-with-model-choice, or Antigravity each imply (or free) the model decision ([Claude Code vs Codex](/guides/comparisons/claude-code-vs-codex-cli) covers the first-party pair). **Benchmark on your repo**: an afternoon running this month's contenders on three real tasks beats every public eval for *your* codebase. **Measure cost per task, not per token**: stronger models that finish in fewer iterations — with [prompt caching](/glossary/prompt-caching) doing its work — regularly undercut "cheaper" ones on the actual bill.
 
+When a vendor cites SWE-bench Verified or Terminal-Bench, [LLM Benchmarks Explained](/guides/evaluation/llm-benchmarks-explained-2026) tells you which harness and version produced the number and whether the board is still current.
+
 And hold the meta-lesson loosely tied to any vendor: the model is one component. Context discipline, tool design, and verification — the [harness craft](/guides/concepts/agent-frameworks-2026) — move outcomes more than the logo on the API key.
 
 ## Continue exploring

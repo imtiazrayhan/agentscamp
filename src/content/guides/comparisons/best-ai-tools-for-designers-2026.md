@@ -153,7 +153,7 @@ The best AI tools for designers in 2026 are the ones that map to a job you alrea
 
 **[fal](/tools/fal)** and **[Replicate](/tools/replicate).** The two ways to reach image models from code rather than a canvas. fal is generative-media focused, billed per output or per compute on prepaid credits, and carries model families like Flux, Seedream, Nano Banana, GPT Image, and Qwen Image. Replicate runs a broader open-model catalog billed per second or per output, with Cog for packaging your own.
 
-**Verdict:** Ideogram when words appear in the artwork, Recraft when the deliverable is a vector or a brand style, Midjourney when the brief is a mood. Reach for fal or Replicate only when a product feature needs [text-to-image](/glossary/text-to-image) generation, not when you do. The tool-by-tool licensing breakdown is in [the best AI image generators in 2026](/guides/comparisons/best-ai-image-generators-2026).
+**Verdict:** Ideogram when words appear in the artwork, Recraft when the deliverable is a vector or a brand style, Midjourney when the brief is a mood. Reach for fal or Replicate only when a product feature needs [text-to-image](/glossary/text-to-image) generation, not when you do. The tool-by-tool licensing breakdown is in [the best AI image generators in 2026](/guides/comparisons/best-ai-image-generators-2026). For video, [Runway](/tools/runway) and [Kling](/tools/kling) lead [the best AI video generators in 2026](/guides/comparisons/best-ai-video-generators-2026).
 
 ## Decks, one-pagers, and visuals
 

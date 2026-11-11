@@ -116,7 +116,7 @@ The MCP servers are the right answer far more often than the frameworks admit, b
 
 [Claude in Chrome](/tools/claude-for-chrome) is the entrant that changes the shape of the category, and it is now generally available on paid Claude plans rather than a limited preview. It reads the page you are on and can click, type and fill forms without approving every step, while a separate safety check reviews each action for risk and for instructions hidden inside the site. Access is granted site by site through a permissions mode, sensitive actions such as purchases stop for explicit approval, and Team and Enterprise admins can enforce allowlists and blocklists org-wide.
 
-**Verdict:** the pragmatic option for one-off work on sites you are already authenticated to, precisely because it inherits your session instead of rebuilding it. That is also the reason to keep it away from banking and health records, which Anthropic's own guidance says outright.
+**Verdict:** the pragmatic option for one-off work on sites you are already authenticated to, precisely because it inherits your session instead of rebuilding it. That is also the reason to keep it away from banking and health records, which Anthropic's own guidance says outright. If you would rather switch browsers than add an extension, [Perplexity Comet](/tools/perplexity-comet) and [Dia](/tools/dia-browser) are the consumer options; the [best AI browsers roundup](/guides/comparisons/best-ai-browsers-2026) compares them with Claude in Chrome, Gemini in Chrome and Copilot in Edge.
 
 ## What you run it all on
 

@@ -1,3 +1,418 @@
+# Demand wave for SEO/AEO/GEO (2026-10-21) — COMPLETE LOCALLY, awaiting owner review
+
+User: "create some new content on all sides to bring more seo, aeo, geo traffic".
+Decision: demand-first slate chosen from the formats Search Console proved
+(tool `/alternatives` pages = 54% of clicks; "best Claude skills for X" = 1.0
+clicks/page), not the paused doubling targets. No newer GSC export was on disk.
+
+## Done
+- Hub 952 → **1,007 items** (+55): 15 tools (new `browser` tool category),
+  14 guides (6 roundups, 4 skills roundups, 4 intent/GEO), 13 glossary terms,
+  13 installables (6 skills, 3 agents, 4 commands). Every new tool joins a live
+  alternativeTo cluster; every roundup is tagged `comparison` with all covered
+  tools in `related`, so the alternatives→guide handoff fires (verified in the
+  rendered HTML for comet and granola).
+- ~45 existing pages received anchored contextual inbound links (applied from
+  the seven writer handoffs with assert-based edits); claude-for-chrome renamed
+  "Claude in Chrome" (updated 2026-10-21); stale `#` memory note fixed in
+  claude-code-troubleshooting; open-weights glossary parenthetical refreshed;
+  `browser` category intro added in src/lib/seo/collections.ts.
+- Research (4 agents, primary sources, exact quotes) found slate changes that
+  were applied: ChatGPT Atlas retired Aug 9 2026 (page dropped), Sora
+  discontinued, Meta → "Muse" models, Qwen3.7-Plus hosted-only, Terminal-Bench
+  4.0, LMArena → Arena, Claude Code reads AGENTS.md natively (2.1.277), `#`
+  shortcut removed (2.0.70), Cursor dropped .cursorrules from docs, Fathom →
+  fathom.ai, SGLang steward RadixArk, ElevenLabs "ElevenAgents".
+- Fact checks: every dollar figure sits in an "as of October 2026" sentence
+  (build gate); all tool prices/star counts grep-matched to the packs; every
+  numeric table token in the two GEO guides matched the pack (one derived sum);
+  one unsourced inferred sentence removed (sglang→opik).
+- Gates: `npm run validate` = 1,007 items, 0 errors, 23 unchanged baseline
+  warnings; lint + typecheck clean; `VERCEL_ENV=development npm run build`
+  exit 0 (3,849 static routes; external-link policy OK over 1,389 pages / 246
+  tool pages / 820 citations; IndexNow skipped); all 55 new URLs rendered, all
+  15 new alternatives pages indexable, sitemap + search index (1,007) updated;
+  FAQ/Question JSON-LD present on sampled pages. CLI bundle rebuilt (87/163/85
+  = 335 items, verify-bundle OK) and three temporary installs checked.
+- Titles added to installables whose slugs contain acronyms (SEO/MCP/llms.txt)
+  after the build showed "Seo Technical Auditor"; validate re-run clean.
+- All seven authoring worktrees removed after copy verification; research
+  packs, manifest and handoffs preserved in docs/demand-wave-2026-10-21/
+  (gitignored). Memory: demand-wave-2026-10.md.
+
+## Next (owner)
+- Review and commit/push (public scope = 55 new files + edited existing pages
+  + collections.ts + public/search-index.json; no AI trailers). PROGRESS.md and
+  AGENTS.md stay out unless the owner wants them in.
+- `cd cli && npm publish` (bundle current at 335 items), then
+  `npm run mirror:build` + push the mirror.
+- Freshness: tool pages dated October 2026 enter the derived pool automatically;
+  Mistral Large 4 weights and DeepSeek V4.1-Pro were "not downloadable as of
+  October 2026" in best-open-source-llms-2026 and need a one-line edit if they
+  ship. GSC checkpoint for this wave ~2026-12-01.
+- Deferred candidates with demand: Composio, Docker MCP Toolkit, Atlassian
+  MCP, Taskmaster, Manus, DeepSeek, Grok, HeyGen/Synthesia, Luma.
+
+## Blocked
+- None.
+
+---
+
+# Double all content types — PAUSED (verified through wave 03)
+
+Fixed baseline: 832 entries at master `bca9841`. Target: 1,664, doubling each
+original type. Three verified waves added 120 entries. Current: 952; 712 remain.
+Do not reset the baseline to 952 or mark the goal complete at this checkpoint.
+
+## Commit and push — 2026-10-08
+
+User authorized committing and pushing the completed content to master.
+Content expansion remains paused after the user’s stop request.
+
+- Current master and origin inspected; fetched origin/master.
+- Exact scope is 140 public paths: 120 new content files, 19 contextual-link
+  edits, and search index. All 120 hashes and 952 search records rechecked.
+- Internal AGENTS, docs, and PROGRESS stay unstaged.
+- Fresh validation passed at 952 entries (23 unchanged warnings); cumulative
+  rendered/artifact checks passed 120 pages, 50 installs and 458 links.
+- Staged exactly 140 public paths; index bytes match verified source files.
+- Committed exactly 140 public paths as `9fd0d6f`; committed bytes
+  match verified source files and commit message has no attribution trailer.
+- Pushed `9fd0d6f` to origin/master; direct remote SHA equals local HEAD.
+- Only local PROGRESS and untracked AGENTS remain outside the commit.
+- Commit/push task complete; content expansion remains paused.
+
+
+| Type | Start | Current | Target | Remaining |
+|---|---:|---:|---:|---:|
+| Agents | 69 | 84 | 138 | 54 |
+| Skills | 137 | 157 | 274 | 117 |
+| Commands | 66 | 81 | 132 | 51 |
+| Guides | 242 | 268 | 484 | 216 |
+| Tools | 207 | 231 | 414 | 183 |
+| Glossary | 111 | 131 | 222 | 91 |
+| Total | 832 | 952 | 1664 | 712 |
+
+## Done
+
+- This wave added 48: 3 agents, 8 skills, 3 commands, 14 guides, 12 tools, 8 terms.
+  Topics: survey routing, source-grounded visuals, asset catalogs, annotation,
+  entity matching, image descriptions, and AI 3D review. Distinct intents and
+  original worked examples were checked against the current 952 inventory.
+- Cumulative public scope: 120 new Markdown files, 19 existing files with 20
+  exact inbound paragraphs,and generated search index (140 public paths).
+  No app/schema/CLI implementation,package-version,commit,push or deployment.
+- User steering:publication dates are backdated/varied. The120 new entries
+  have 53 dates from 2026-08-08 through 2026-10-06; reviewed stays 2026-10-07,
+  the actual verification day. Previous 72 changes have date-only byte proofs.
+- Research/authoring/review used separate worktrees and clean report inputs.
+  Independent final review approves all 48 new bodies and 8 exact inverse
+  insertions. Removed 76 repeated W3C-derived words in 5 repairs across 4 files;
+  all 30 source caps pass (highest totals190/200 and187/200 including research).
+- Final production build passed after repairs: 952 valid entries, 23 unchanged
+  baseline warnings,TypeScript, 3,653 static routes and external-link policy
+  (1318 pages,231 tools,702 citations). IndexNow skipped with
+  `VERCEL_ENV=development`. Root lint and whitespace checks passed.
+- Cumulative rendered/output verifier passed all 120 added pages,visible
+  summaries/takeaways,canonical/meta,source+FAQ JSON-LD,search/sitemap,exact
+  Markdown twins,assigned dates,and 458 contextual edges. CLI build/bundle
+  verifier passed 322 artifacts; 50 exact temporary CLI installs passed.
+- Root ran 70 literal fixtures from final command blocks on each of Python 3.9
+  and 3.12 (140 cases),with unchanged sources. Owner also verified 7 command
+  examples and 2 skill examples on each runtime. Previous wave executable
+  evidence remains valid; command source hashes are unchanged by prose fixes.
+- Resolved private-harness failures:graph inventory used the wrong ID format;
+  oldmanifest metadata was optional ; YAML Date needed JSON normalization;
+  one sentence-removal guard needed paragraph-ending whitespace. Final gates
+  pass. No public implementation changed to accommodate harnesses.
+- All120 final hashes and48 independently reviewed hashes were checked.
+  Five completed task worktrees were archived thenremoved; only main remains.
+  Archived JS/TS files have .txt suffixes to avoidcompiler/lint inputs.
+
+## Evidence
+
+Ignored docs contain the immutable ledger, cumulative manifest/verifier,
+final build log, independent review/source counts, both-runtime command
+proofs,date-only proofs,integration inverse proofs,source repairs andcleanup.
+Key files:`content-doubling-2026-10-07.json`,
+`content-doubling-wave-03-manifest.json`,
+`content-doubling-wave-03-verification.json`,
+`doubling-wave-03-independent-review.json`,
+`content-doubling-date-adjustments.json`,and
+`doubling-wave-03-final-build.log`. Prior-wave evidence is retained.
+
+## Next
+
+Continue toward every fixed target;712 additions remain. Prioritize remaining
+counts proportionally and teach distinct tasks rather than padding.
+User's varied-backdate preference persists; do not give every new entry today's
+publication date. Review dates must reflect actual source verification.
+
+For >5 files or >2 sources,research via a subagent in an isolated worktree;
+start clean authoring from its structured report. HEAD is now 9fd0d6f and includes the complete 952 snapshot.
+Use that current commit for any future worktree; the immutable doubling
+baseline remains bca9841 (832 entries). Preserve root edits and actual `.claude` formats
+and `inherit` model. Do not change taxonomy/architecture. Extend cumulative
+120-entry proofs on new waves. Builds use VERCEL_ENV=development to avoid IndexNow.
+Keep AGENTS/docs/PROGRESS local. Writing is authorized; release/deploy is separate.
+
+## Blocked
+
+None. Goal remains active because 712 required additions remain.
+
+---
+
+# All content types wave (2026-10-06) — PUSHED TO MASTER
+
+User: create more content on all fronts, not just guides. Continue broader
+AI users/teams coverage alongside the coding-agent niche. Target 18 distinct
+additions: 3 guides, 3 tools, 3 glossary terms, 3 agents, 3 skills, 3 commands,
+subject to actual coverage gaps. No new schema/taxonomy or publishing.
+
+## Done
+- Read checkpoints and current workspace: master `3c6dd45`, 814 items;
+  only local PROGRESS and AGENTS files differ from pushed content.
+- Defined gates: nonduplicative intent, primary product sources, working links,
+  real installable/artifact validation, production build and CLI bundle checks.
+- Created isolated research worktree; clean authoring follows its report.
+- Actual schemas/CLI use Claude Code artifacts (.claude, inherit/sonnet/etc),
+  contradicting Codex wording in AGENTS. User informed; preserve actual
+  accepted contract, no migration.
+- Provisional clusters: customer feedback (Dovetail/thematic analysis), human
+  project handoffs (Glean/data lineage), literature workflow (Elicit/evidence
+  synthesis). New installables cover distinct review/extraction/count jobs.
+- Root CLI dependency check succeeds (own esbuild/typescript present); no
+  npm install needed. Final bundle build will use the existing lock/toolchain.
+- Thematic authors' site 502 and university repository 403 are excluded as
+  fact sources. Research uses reachable narrower primary material.
+- Prepare two clean writers with separate worktrees: editorial 9 additions
+  plus scoped old links; installables 9 new files only. Root validates combined
+  references after both halves are integrated (no temporary stub content).
+
+- Research reports and planned manifest delivered: 18 schema-valid templates,
+  explicit ownership, source caps, exact graph and independent fixtures.
+- Created isolated editorial and installables authoring worktrees.
+
+- Three guides and all nine installable files drafted in isolated worktrees.
+- Root prepared independent rendered/SEO/link/search/sitemap/export/install
+  verification runner in ignored docs; published command fixtures running.
+
+- Both writers finalized drafts and direct schema/metadata/graph checks.
+- Integrated exactly 18 new files plus 5 contextual paragraphs into master;
+  existing content was clean and exact baseline bytes verified before copy.
+- Installable writer reports 40 executable normal/failure fixture checks.
+
+- Integrated validate passed: 832 items and 23 unchanged warnings.
+- CLI build and verify-bundle passed: 272 items, dist present.
+- Root independently executed published commands 12 times; arithmetic,
+  duplicates/conflicts, hashes/scoping, structural evidence errors/statuses,
+  output guards and source byte preservation passed. Results saved in docs.
+- Site compilation and TypeScript passed; static generation running.
+
+- Production build and TypeScript passed: 3,191 static pages; external-link
+  policy passed for 1,171 pages / 632 guide citations. IndexNow skipped.
+- All 18 pages and exact Markdown twins pass rendered canonical/metadata/
+  structured-data/source/sitemap/search checks; 18 contextual edges present.
+- Exact 9 CLI bundle artifacts and temporary project installs passed.
+- Local verification runner first expected generic Article/object citations;
+  inspected actual valid TechArticle/string citations and corrected checker.
+  Complete rerun passes; no public markup or architecture fix required.
+- Final inventory and evidence: docs/content-wave-2026-10-06-all-fronts-handoff.md.
+- Verified integrated bytes match final writers; removed task-only worktrees
+  after preserving reports/results. Root content and local notes remain.
+- No commit/push/deployment/npm release/mirror changes in this new wave.
+
+- User authorized commit and push to master on 2026-10-07.
+- Existing completed validation/build/install evidence reviewed; exact public
+  scope confirmed. Internal AGENTS, docs and PROGRESS remain excluded.
+
+- Commit created and pushed: `bca984158e06d427db81c9483c4974f8b8a4dd69`
+  (`feat(content): expand workplace AI content across all formats`).
+- Exact 24-path commit scope verified: 18 new items, 5 contextual paragraphs
+  and generated index. No internal files or AI attribution trailers.
+- Remote refs/heads/master verified at exact SHA; local/remote divergence 0/0.
+- Only local PROGRESS and untracked AGENTS remain outside published content.
+
+## Next
+- Git publication complete. CLI npm release remains separate from this request.
+
+## Blocked
+- None. Actual search/citation gains remain unmeasured until publication.
+
+---
+
+# Publish workplace batch + write next batch (2026-10-06) — BOTH BATCHES PUSHED
+
+User authorized committing/pushing the completed guides to master, then
+creating more content for broader AI users and teams.
+
+## Done
+- Created a scoped content commit containing only 3 guides and 6 inbound links.
+- Cherry-picked onto master without merging pending freshness/2026-10.
+- Preserved local progress; internal AGENTS/docs remain excluded from commits.
+
+- Master build passed: 811 content records, 3,110 static routes, 23 existing
+  warnings (master baseline differs from pending freshness branch).
+- Search index adds exactly 3 guides and changes no existing records.
+- Added generated index to commit and pushed master: `469fad0`. Remote
+  `refs/heads/master` verified as `469fad084595a973f68651f0dc7691d468a4a64d`.
+- Created isolated second-batch research worktree from pushed master.
+- Second-batch provisional slate: Microsoft 365 Copilot vs ChatGPT for work;
+  report-to-presentation workflow; long email thread to reviewed reply.
+  Research found distinct gaps; query demand is still hypothetical.
+- Official-source caveats under review: current Copilot naming and scope,
+  partial app-context features versus broader work grounding, and separate
+  PowerPoint creation routes rather than universal file-reference support.
+
+- Second-batch research completed and schema/metadata/hrefs verified.
+  Handoff: `docs/content-wave-2026-10-06-batch2-research.md` (10 new official
+  source pages, 3 exact article paths, 6 inbound links in 5 existing files).
+- Clean authoring worktree created from pushed master `469fad0`.
+
+- Second-batch drafts completed (~1,383 / 1,408 / 1,395 visible body words).
+- Root reviewed new guides and all six surgical inbound paragraphs. Existing
+  frontmatter unchanged; no false freshness/review-date changes.
+- Authoring validation passes: 814 items, 239 guides, 23 unchanged warnings.
+  Metadata, source budgets, links and source arrays verified.
+- Integrated all eight scoped content files into main workspace.
+
+- Second-batch local production build passes: 3,119 static routes, 814 content
+  records, and rendered external-link policy. IndexNow submission skipped.
+- Generated index adds exactly 3 new records; no existing records changed.
+- Root rendered-output assertions pass: all three titles/descriptions and
+  canonicals, visible summaries/fictional examples/tables/prompts, source
+  citations, FAQ and HowTo JSON-LD, sitemap/search, and Markdown exports.
+- All six inbound anchors and illustrative 75%/70% arithmetic verified.
+- User explicitly authorized committing and pushing the second batch.
+- Publishing scope reviewed: 3 guides, 6 inbound links in 5 existing files,
+  and generated search index. Prior build/render gates pass unchanged.
+- Remote fetched before commit; master and origin/master were synchronized.
+- Staged exactly 9 public files: 3 new guides, 5 existing pages with 6
+  contextual links, and search index. Internal files excluded.
+- Committed and pushed second batch: `3c6dd45`. Remote master verified as
+  `3c6dd45cfe4edfee1d9be0e8c627c267bbe76a80`; local/remote divergence 0/0.
+- No content changed since the passing production build/render checks.
+  Existing warnings remain 23; no repeated build was necessary.
+
+## Next
+- Both completed content batches are committed and pushed to master.
+  No CLI publish needed (guides only). Research and measurement notes are in
+  `docs/content-wave-2026-10-06-batch2-research.md`.
+- Existing Microsoft Copilot card has a stale license-only warning; report
+  flags it for a separate scoped freshness pass. No adjacent facts rewritten.
+
+## Blocked
+- None. Query demand remains hypothetical without current Search Console.
+
+---
+
+# New search and AI citation content batch (2026-10-06) — COMPLETE LOCALLY
+
+Scope: first batch of three practical, source-backed guides. User selected
+**broader AI users and teams**; prioritize workplace intent and existing gaps.
+Use demonstrated historical search demand where relevant. No publishing,
+CLI release, architecture changes, or claims of guaranteed traffic.
+
+## Done
+- Read project instructions and prior checkpoints. Existing September GSC wave
+  says alternatives pages and role-specific skills guides earned clicks.
+- Defined gates: real coverage gaps, primary-source verification, working
+  internal links, valid metadata, content validation, and production build.
+- Baseline `npm run validate` passes: 808 items including 233 guides;
+  22 existing warnings. No Search Console connector is available.
+- Research agent is auditing coverage and current official sources in its
+  isolated worktree; clean authoring will start from its report.
+- User selected broader AI users and teams; research redirected to practical
+  workplace queries rather than the coding-agent niche.
+- Preliminary gaps: ChatGPT Projects versus Claude Projects, verifiable
+  document research, and meeting transcripts to decisions/action items.
+  Demand for these specific queries is a hypothesis, not measured volume.
+- Created isolated research/authoring worktree at
+  `/Users/imtiazrayhan/agentscamp-content-wave-20261006` (HEAD 4d652eb).
+
+- Research completed: `docs/content-wave-2026-10-06-research.md` contains
+  three exact article paths, verified primary fact packs, source budgets,
+  metadata, examples, inbound links, and an optional measurement plan.
+- Created separate clean authoring worktree at
+  `/Users/imtiazrayhan/agentscamp-content-authoring-20261006`.
+
+- Three guides written and reviewed: ~1,386 / 1,496 / 1,532 visible body
+  words, with decision tables, fictional examples, and reusable templates.
+- Integrated the three guides and six surgical contextual inbound links.
+- Authoring validation passes: 811 items, 22 unchanged warnings. Metadata,
+  body hrefs, inline citations, and per-source derivation budgets checked.
+- Root typecheck and lint pass. Two temporary freshness warnings were fixed
+  before integration (explicit as-of date; no false review-date update).
+
+- `VERCEL_ENV=development npm run build` passes: 3,110 static routes,
+  811 search records, and rendered external-link policy checks pass.
+  IndexNow explicitly skipped submission; no publish/push/deploy performed.
+- One-off rendered-output assertions pass for all three pages: SEO title and
+  description, canonical, visible summaries/examples/tables/templates, source
+  and FAQ structured data, sitemap/search inclusion, and Markdown exports.
+- All six contextual inbound links verified in generated HTML.
+- Root review confirmed source-backed claims and clearly fictional examples.
+
+## Next
+- Publishing/review is outside this writing task. The three guides and six
+  inbound-link edits are in the main workspace; regenerated search index is
+  included. No CLI publish is needed (guides-only batch).
+- After publication, use the research report's four-week measurement plan
+  to record GSC query/page performance and observed AI citations/referrals.
+  Current demand estimates remain editorial hypotheses.
+
+## Blocked
+- None. Current Search Console analytics unavailable; recorded historical
+  evidence is dated and new query opportunities are explicitly hypotheses.
+
+---
+
+# Tier-1 freshness refresh (2026-10-01, unattended) — PR OPEN
+
+Scope: the 18 pages declaring `freshness: "tier1"` (the 8 original money pages
+plus the role roundups, the two coding-alternatives cornerstones and the three
+Claude plan/Cowork guides). `npm run freshness` was permission-blocked in the
+headless run, so scope was read straight from frontmatter; the script's
+`hygiene` list was not available (the `npm run validate` warnings stood in).
+
+## Done
+- Eight read-only research agents against primary sources; every figure that
+  went on a page was then re-read from the raw vendor page or API in the main
+  session, because the agents' fetch tool summarises pages and miscounts lists.
+- All 18 pages changed and carry `reviewed: 2026-10-01`. Validate (22 warnings,
+  one fewer than before) and build green; PR from `freshness/2026-10`.
+- Biggest corrections: all three big vendors replaced their flagships in
+  September — Claude Fable 5.1 (Sep 1), Opus 5.5 at $4/$20 (Sep 22), Sonnet 5.5
+  (Sep 28); GPT-6 Astra / 6.1 Sol / Luna; Gemini 3.8 Flash. DeepSeek V4.1 Flash
+  with a price cut (Sep 10), Grok 4.7 (Sep 21), three Fireworks host cells no
+  longer serverless, Qwen 3.7 Plus is not open weights. Claude plans: Fable now
+  on Team Premium seats, context "up to 1M" on every plan, dead source URL.
+  Cowork merging into chat (Sep 16) and moving Pro/Max tasks to the cloud
+  (Oct 6). Plugins repo: 121 marketplace entries, sales rebuilt to 36 skills,
+  small-business to 44. Devin Desktop removed Cascade (Sep 8); OpenAI's
+  proposed Nov 12 cut-off of Cursor is now primary-sourced; Tricentis owns
+  Tabnine; clari.com redirects to Salesloft; Salesforce in Claude is in beta.
+  Stats: npm MCP SDK 228M, Smithery 17,990, PulseMCP 21,765, JetBrains 2026 and
+  Stack Overflow pulse-survey agent numbers.
+- Left untouched and flagged in the PR: PyPI figures (pypistats down all day —
+  kept with their September 1 label), mcp.so (403), Lovable $600M run-rate
+  (press only), Claude Design on Free (Anthropic's own pages disagree),
+  HubSpot Breeze → Agent Hub naming, Microsoft 365 Copilot tier renames, the
+  11x prices on the sales roundup (verified, but a roundup-price exception).
+
+## Next
+- Owner reviews/merges the PR. Next tier-1 run 2026-11-01.
+- Watch: Stack Overflow 2026 survey (due "in the next days" per its Sep 30
+  post), GPT-5.5 leaving ChatGPT/Codex Oct 14, Copilot default-enablement
+  policy Oct 22, Stripe MCP key change Oct 31, OpenAI–Cursor shutoff Nov 12,
+  GPT-5.6 Sol promo Nov 21, Sonnet 4.5 retirement Nov 30, Gemini Flash intro
+  pricing Dec 31, DeepSeek V4.1 Pro, Zapier Agents shut-off date.
+- Tool pages outside tier 1 that this run showed are stale:
+  `tools/github-mcp-server` (says 17 toolsets, now 22), `tools/sentry-mcp`
+  (repo now resolves to getsentry/toolkit), `tools/tabnine` (Tricentis).
+
+---
+
 # GSC demand wave (2026-09-11) — SHIPPED
 
 30 items plus one template change, chosen from Search Console (Jun 2 → Sep 7).

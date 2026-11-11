@@ -58,4 +58,4 @@ vllm serve meta-llama/Llama-3.1-8B-Instruct --max-model-len 8192
 
 ## Good to know
 
-vLLM is free and open source under Apache-2.0 and targets Linux with NVIDIA (and other) accelerators — it's production-serving infrastructure, not a local desktop app. For running a model locally on a laptop for development, [Ollama](/tools/ollama) or [LM Studio](/tools/lm-studio) are the simpler fit; weigh self-hosting against a hosted API in [Self-Host vs API](/guides/mlops/self-host-vs-api-llm).
+vLLM is free and open source under Apache-2.0 and targets Linux with NVIDIA (and other) accelerators — it's production-serving infrastructure, not a local desktop app. For running a model locally on a laptop for development, [Ollama](/tools/ollama) or [LM Studio](/tools/lm-studio) are the simpler fit; weigh self-hosting against a hosted API in [Self-Host vs API](/guides/mlops/self-host-vs-api-llm). The closest Apache-2.0 alternative for agentic traffic is [SGLang](/tools/sglang), which adds an Anthropic-compatible `/v1/messages` endpoint for Claude Code.

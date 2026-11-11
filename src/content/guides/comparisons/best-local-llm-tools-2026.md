@@ -140,8 +140,12 @@ Fit is arithmetic, not vibes. A four-bit quantized model costs roughly 0.5 to 0.
 
 **You want to try models with a mouse.** LM Studio if polish wins, Jan if the licence wins. Both serve an OpenAI-compatible endpoint, so neither traps you.
 
+**You want a shared, browser-based workspace for a team.** [Open WebUI](/tools/open-webui) or [AnythingLLM](/tools/anythingllm) in front of Ollama; both self-host with Docker and add RAG, MCP tools and multi-user accounts that the desktop apps lack.
+
 **You are chasing a specific backend, quantization, or brand-new model.** llama.cpp, directly.
 
-**You have users.** vLLM, on server hardware, with the laptop runtimes demoted to development tooling.
+**You are choosing which model to pull.** The current open-weight families, the licence each card states, and which runtime fits each one are in [Best Open-Source LLMs in 2026](/guides/comparisons/best-open-source-llms-2026).
+
+**You have users.** vLLM, on server hardware, with the laptop runtimes demoted to development tooling. [SGLang](/tools/sglang) is the Apache-2.0 sibling to weigh when the traffic is agentic; it adds an Anthropic-compatible endpoint that Claude Code can target directly.
 
 **You are still deciding whether to run anything locally.** That is an economics question rather than a tooling one, and the [self-hosting versus API guide](/guides/mlops/self-host-vs-api-llm) is the honest version of the sums.

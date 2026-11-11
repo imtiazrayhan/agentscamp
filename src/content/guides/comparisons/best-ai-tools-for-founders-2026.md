@@ -134,7 +134,7 @@ The best AI tools for founders in 2026 are not the most powerful ones; they are 
 
 **[NotebookLM](/tools/notebooklm).** Google's notebook that answers only from sources you upload, renamed Gemini Notebook on July 16, 2026 (the old name is still how most people know it). Drop in your customer interviews or your data room and ask questions that stay grounded.
 
-**Verdict:** one paid assistant, used daily. Claude if your bottleneck is documents and reasoning; ChatGPT if it is breadth; Gemini if it is Workspace. Add Perplexity for research and NotebookLM for your own corpus; both are cheap enough to keep on the side.
+**Verdict:** one paid assistant, used daily. Claude if your bottleneck is documents and reasoning; ChatGPT if it is breadth; Gemini if it is Workspace. Add Perplexity for research and NotebookLM for your own corpus; both are cheap enough to keep on the side. For the meetings themselves, a notetaker is the cheapest AI win on this page: [Granola](/tools/granola) if you do not want a bot in investor calls, [Fathom](/tools/fathom) if you want free recordings with video; the [meeting note takers roundup](/guides/comparisons/best-ai-meeting-note-takers-2026) compares them with Otter.ai and Fireflies.
 
 ## App builders: the first version
 

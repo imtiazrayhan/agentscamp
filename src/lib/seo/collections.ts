@@ -93,6 +93,8 @@ const TOOL_CATEGORY_OVERRIDES: Record<string, (n: number) => string> = {
     `${n} AI marketing and content tools — writing, SEO, decks, video — compared on what each does, how it's priced, and where it fits a content workflow.`,
   analytics: (n) =>
     `${n} AI analytics tools — notebooks, text-to-SQL, chat-first analysis — compared on what each does, how it's priced, and where it fits an analyst's stack.`,
+  browser: (n) =>
+    `${n} AI browsers with built-in assistants and agent modes — what each can do on a page, how memory and privacy work, and which fits everyday work.`,
 };
 
 export interface Collection {

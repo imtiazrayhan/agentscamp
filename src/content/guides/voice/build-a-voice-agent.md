@@ -71,7 +71,7 @@ A natural conversation isn't just fast — it has rhythm. Three mechanics matter
 
 ## Orchestrate it with a framework
 
-Building real-time audio transport, streaming hand-offs, and turn-taking by hand is where most voice projects stall. An open-source framework like [Pipecat](/tools/pipecat) gives you the composable STT → LLM → TTS pipeline, WebRTC/WebSocket transports, and integrations with dozens of providers — so you build the agent's behavior, not the plumbing. You can prototype against a single bundled voice-agent API first, then unbundle the stage that's limiting you.
+Building real-time audio transport, streaming hand-offs, and turn-taking by hand is where most voice projects stall. An open-source framework like [Pipecat](/tools/pipecat) gives you the composable STT → LLM → TTS pipeline, WebRTC/WebSocket transports, and integrations with dozens of providers — so you build the agent's behavior, not the plumbing. You can prototype against a single bundled voice-agent API first, then unbundle the stage that's limiting you. The [best voice agent platforms](/guides/comparisons/best-voice-agent-platforms-2026) roundup compares those bundled options, from [Vapi](/tools/vapi) and [Retell AI](/tools/retell-ai) to [Bland AI](/tools/bland-ai).
 
 ## Putting it together
 

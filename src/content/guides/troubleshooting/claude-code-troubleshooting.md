@@ -49,11 +49,11 @@ A set `ANTHROPIC_API_KEY` wins over your subscription login. Unset it (check `~/
 
 ### "Conversation too long" / context-limit errors
 
-Free space now: `/compact` with instructions — `/compact keep the failing test output and the plan` — or `/clear` between tasks (history stays in `/resume`). If compaction itself errors, clear and reattach what you need by `@`-mentioning files. Prevent it structurally: `/context` shows what's eating the window (MCP tool schemas are a frequent surprise), and verbose work belongs in subagents — the [memory & context guide](/guides/configuration/claude-code-memory-context) covers the full hygiene list.
+Free space now: `/compact` with instructions — `/compact keep the failing test output and the plan` — or `/clear` between tasks (history stays in `/resume`). If compaction itself errors, clear and reattach what you need by `@`-mentioning files. Prevent it structurally: `/context` shows what's eating the window (MCP tool schemas are a frequent surprise), and verbose work belongs in subagents — the [memory & context guide](/guides/configuration/claude-code-memory-context) covers the full hygiene list. If the problem is the limit rather than the window, [Claude Code usage limits explained](/guides/getting-started/claude-code-usage-limits) covers the five-hour and weekly caps, what burns usage, and usage credits.
 
 ### Claude "forgot" an instruction mid-session
 
-Long sessions compact; conversation-only instructions can fade in the summary. Anything that must hold belongs in a file — `CLAUDE.md`, a `.claude/rules/` entry, or a `#` memory — not just in chat. Rules that must hold *mechanically* belong in [hooks](/guides/configuration/claude-code-hooks).
+Long sessions compact; conversation-only instructions can fade in the summary. Anything that must hold belongs in a file — `CLAUDE.md`, a `.claude/rules/` entry, or an auto-memory note — not just in chat. Rules that must hold *mechanically* belong in [hooks](/guides/configuration/claude-code-hooks).
 
 ### Lost a session / wrong directory
 

@@ -130,6 +130,7 @@ This page states Claude's prices only. If you are comparing against [ChatGPT](/t
 ## Before you pay
 
 - Free is enough to test skills, connectors, memory, and how Claude reasons. It is not enough to test Cowork, Claude Code, or Design; none of those exist on Free.
+- Usage, not features, is what separates the paid tiers. [Claude Code usage limits explained](/guides/getting-started/claude-code-usage-limits) covers how the five-hour and weekly windows work, what drains them, and how to stretch them before you upgrade.
 - Annual Pro saves $40 a year against monthly. Annual billing is available for Pro and Team; Max is monthly only, and Enterprise is annual only.
 - Upgrades apply immediately with unused time credited toward the new plan; downgrades take effect at the end of the billing period, and your chats, projects, and files stay with the account.
 - Cancel at least 24 hours before renewal to avoid the next charge. Payments are generally non-refundable outside the consumer terms and local law, with a 14-day withdrawal window in the EEA and UK.

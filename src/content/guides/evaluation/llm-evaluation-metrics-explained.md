@@ -127,3 +127,5 @@ A judge is only trustworthy after you've checked its agreement against human lab
 6. **Build a labeled eval set** of 20–50+ real cases (oversampling the hard ones) so every metric has ground truth to score against.
 
 Pick the two or three metrics the feature is actually graded on, baseline them, and wire them into CI. More metrics is not more rigor — the right metric on a real dataset is.
+
+Public leaderboards are a different instrument from your own evals; [LLM Benchmarks Explained](/guides/evaluation/llm-benchmarks-explained-2026) covers what SWE-bench, Terminal-Bench, Arena and ARC-AGI actually score and how to read pass@k.

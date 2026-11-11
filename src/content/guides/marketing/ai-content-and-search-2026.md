@@ -96,7 +96,7 @@ You can now measure this. Search Console launched Search Generative AI performan
 
 For Google's engines the answer is above: indexed, snippet-eligible, helpful pages that answer specific sub-questions, with structured data that matches the visible text. The page is explicit about the file question asked most: "You don't need to create new machine readable files, AI text files, or markup to appear in these features. There's also no special schema.org structured data that you need to add." That covers [llms.txt](/glossary/llms-txt): other crawlers may read it and it costs nothing to publish, but Google says it does not need it.
 
-Whether other engines behave the same is not something Google's documentation can tell you, and this guide does not guess. What [generative engine optimization](/glossary/generative-engine-optimization) shares with Google's advice is direct, specific, attributable answers over volume.
+Whether other engines behave the same is not something Google's documentation can tell you, and this guide does not guess. What [generative engine optimization](/glossary/generative-engine-optimization) shares with Google's advice is direct, specific, attributable answers over volume. To find out whether those answers are being cited at all, the [best AI visibility tools in 2026](/guides/comparisons/best-ai-visibility-tools-2026) roundup compares nine trackers, from [Profound](/tools/profound) to [Peec AI](/tools/peec-ai).
 
 ## A practical checklist
 

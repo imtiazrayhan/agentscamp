@@ -53,4 +53,4 @@ Download a model in the GUI, start the local server, and point your OpenAI clien
 
 ## Good to know
 
-LM Studio is free to download and use for both personal and commercial/work use, and runs on macOS, Windows, and Linux; organizations can buy an optional Enterprise tier (SSO, governance). Like other local runners it's built for single-machine development and privacy, not high-concurrency production serving — for that, see [vLLM](/tools/vllm) and the [Self-Host vs API](/guides/mlops/self-host-vs-api-llm) trade-offs.
+LM Studio is free to download and use for both personal and commercial/work use, and runs on macOS, Windows, and Linux; organizations can buy an optional Enterprise tier (SSO, governance). Like other local runners it's built for single-machine development and privacy, not high-concurrency production serving — for that, see [vLLM](/tools/vllm) and the [Self-Host vs API](/guides/mlops/self-host-vs-api-llm) trade-offs. For a multi-user, browser-based workspace in front of the same local models, see [Open WebUI](/tools/open-webui).

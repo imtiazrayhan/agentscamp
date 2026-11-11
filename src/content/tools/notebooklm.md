@@ -67,4 +67,4 @@ Gemini Notebook runs on the web and in Android (Android 10 and up) and iPhone an
 
 With a work or school account, Gemini Notebook is a core Workspace service in Business Starter, Business Standard, Business Plus, and the Enterprise and Education editions, with the enterprise data protections those plans carry: uploads, chats, and outputs are not reviewed by humans or used to train models. Google Cloud also sells Gemini Notebook for Enterprise with higher artifact limits and controls such as VPC Service Controls and IAM. Google says more than 30 million people and 600,000 organizations use the product.
 
-If your questions need the open web rather than a fixed document set, [Perplexity](/tools/perplexity) is the closer tool; if you need the documents acted on rather than explained, look at Claude.
+If your questions need the open web rather than a fixed document set, [Perplexity](/tools/perplexity) is the closer tool, and [Perplexity Comet](/tools/perplexity-comet) puts the same engine in a browser that can read your open tabs; if you need the documents acted on rather than explained, look at Claude.

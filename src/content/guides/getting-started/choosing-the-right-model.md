@@ -46,7 +46,7 @@ Ask these questions in order. The first "yes" usually tells you the tier.
 2. **Does it involve real code reasoning but within a known pattern?** (write a feature, refactor a module, fix a normal bug, review a PR) → **Sonnet**
 3. **Is the cost of a subtle mistake high, or does the problem span many systems?** (design an API, audit auth, reason about a race condition, plan a migration) → **Opus**
 
-If two tiers feel plausible, weigh frequency against stakes. A task that runs hundreds of times a day leans cheaper; a task that runs once but gates a release leans smarter.
+If two tiers feel plausible, weigh frequency against stakes. A task that runs hundreds of times a day leans cheaper; a task that runs once but gates a release leans smarter. If a self-hosted open model is on the table instead, start from the [open-weight families](/guides/comparisons/best-open-source-llms-2026) and read any benchmark claim alongside [LLM Benchmarks Explained](/guides/evaluation/llm-benchmarks-explained-2026).
 
 ## Haiku: fast, cheap, mechanical
 

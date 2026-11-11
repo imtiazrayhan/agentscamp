@@ -69,7 +69,7 @@ Run your metrics over the frozen dataset to get a **baseline**, then change one 
 
 ## Make it a CI gate
 
-An eval suite you run by hand is an eval suite you'll stop running. Wire it into CI so a metric falling below threshold **fails the build** — now every prompt or model change is scored automatically, and regressions are caught in the PR. The [run-evals](/commands/testing/run-evals) command and [llm-eval-suite-scaffolder](/skills/data/llm-eval-suite-scaffolder) skill set this up; [DeepEval](/tools/deepeval) and [promptfoo](/tools/promptfoo) are built for it.
+An eval suite you run by hand is an eval suite you'll stop running. Wire it into CI so a metric falling below threshold **fails the build** — now every prompt or model change is scored automatically, and regressions are caught in the PR. The [run-evals](/commands/testing/run-evals) command and [llm-eval-suite-scaffolder](/skills/data/llm-eval-suite-scaffolder) skill set this up; [DeepEval](/tools/deepeval) and [promptfoo](/tools/promptfoo) are built for it. Every eval skill and command in the library, with its allowed tools and what it writes, is compared in [8 Best Claude Skills for LLM Evals](/guides/skills/best-claude-skills-for-llm-evals).
 
 > [!WARNING]
 > Never tune against the cases you report on, and never relax a threshold just to go green. A gamed suite is worse than none — it manufactures false confidence. If a threshold is genuinely wrong, change it in its own commit with a rationale.

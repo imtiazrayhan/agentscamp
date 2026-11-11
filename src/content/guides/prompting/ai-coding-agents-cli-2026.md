@@ -45,7 +45,7 @@ sources:
 related: ["tool:opencode", "tool:cline", "tool:aider", "tool:codex-cli", "tool:roo-code", "tool:continue", "tool:gemini-cli", "tool:antigravity", "tool:goose", "tool:cursor", "tool:windsurf", "tool:claude-code"]
 ---
 
-The proprietary AI editors — [Cursor](/tools/cursor), [Windsurf](/tools/windsurf), [GitHub Copilot](/tools/github-copilot) — are the most polished way to get AI into your day. But a large and fast-growing tier of **open-source and CLI agents** wins on a different axis: **control.** You bring your own model (or run one locally), your code goes only where you choose, and you can script the agent into CI. This guide compares that tier and helps you decide when it's the right call. For the proprietary editors head-to-head, see [Cursor vs Claude Code vs Copilot vs Windsurf](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026).
+The proprietary AI editors — [Cursor](/tools/cursor), [Windsurf](/tools/windsurf), [GitHub Copilot](/tools/github-copilot) — are the most polished way to get AI into your day. But a large and fast-growing tier of **open-source and CLI [coding agents](/glossary/coding-agent)** wins on a different axis: **control.** You bring your own model (or run one locally), your code goes only where you choose, and you can script the agent into CI. This guide compares that tier and helps you decide when it's the right call. For the proprietary editors head-to-head, see [Cursor vs Claude Code vs Copilot vs Windsurf](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026).
 
 ## Why pick an open-source / CLI agent
 

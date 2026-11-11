@@ -22,4 +22,4 @@ OpenAI Codex supports layered discovery. It can read personal guidance from the 
 
 Useful instructions are concrete and observable: exact paths, copyable commands, explicit do-not rules, and change-specific verification. Generic requests to “follow best practices” or “test thoroughly” consume context without telling the agent what action to take.
 
-The [full AGENTS.md guide](/guides/configuration/codex-agents-md) includes a starter template, discovery order, scoping examples, and a verification workflow.
+The [full AGENTS.md guide](/guides/configuration/codex-agents-md) includes a starter template, discovery order, scoping examples, and a verification workflow. For how it compares with [CLAUDE.md](/glossary/claude-md) and [Cursor rules](/glossary/cursor-rules), and which agents read which file, see [AGENTS.md vs CLAUDE.md vs Cursor rules](/guides/configuration/agents-md-vs-claude-md-vs-cursor-rules).

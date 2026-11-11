@@ -308,7 +308,7 @@ Also on the market, without pages here:
 - **OpenLLMetry:** its maker, Traceloop, joined ServiceNow, which called the acquisition "recently completed" in May 2026.
 - **Weave:** CoreWeave has owned its maker, Weights & Biases, since May 2025.
 - **Datadog:** its product is now titled "Agent Observability," and it accepts OTel GenAI traces without Datadog's SDK.
-- **Opik (Comet), Laminar and OpenLIT:** self-hostable Apache-2.0 platforms.
+- **[Opik](/tools/opik) (Comet), Laminar and OpenLIT:** self-hostable Apache-2.0 platforms; Opik also ships an MCP server and skill pack for Claude Code.
 
 ## How to evaluate on your own workload
 

@@ -182,7 +182,7 @@ The payoff compounds: every command you document is one Claude won't guess at, a
 
 ## IDE integrations at a glance
 
-Claude Code runs fine in a plain terminal, but editor integrations let it open diffs in your IDE and pick up your current selection and open files as context.
+Claude Code runs fine in a plain terminal, but editor integrations let it open diffs in your IDE and pick up your current selection and open files as context. For what the VS Code extension adds over the terminal, its requirements, and how it relates to the CLI it bundles, see [Claude Code in VS Code](/guides/getting-started/claude-code-vscode-extension).
 
 | Editor | How it connects |
 |--------|-----------------|

@@ -105,7 +105,7 @@ Every token competes for attention. A tight 400-token prompt usually beats a spr
 
 ## Treat the prompt as a versioned, tested artifact
 
-Prompts are code that happens to be English. Store them in the repo, not pasted into a dashboard. Label versions. When you change a rule, you want to know what else moved — so gate changes behind an eval set ([how to write LLM evals](/guides/evaluation/write-llm-evals)) rather than eyeballing a few cases. A prompt change that fixes one report and silently breaks five others is the default outcome without evals. The [prompt-optimizer](/skills/workflow/prompt-optimizer) skill helps tighten wording against examples once you have that harness.
+Prompts are code that happens to be English. Store them in the repo, not pasted into a dashboard. Label versions. When you change a rule, you want to know what else moved — so gate changes behind an eval set ([how to write LLM evals](/guides/evaluation/write-llm-evals)) rather than eyeballing a few cases. A prompt change that fixes one report and silently breaks five others is the default outcome without evals. The [prompt-optimizer](/skills/workflow/prompt-optimizer) skill helps tighten wording against examples once you have that harness. The rest of the prompt tooling, from the regression harness to output and tool schemas, is compared in [9 Best Claude Skills for Prompt Engineering](/guides/skills/best-claude-skills-for-prompt-engineering).
 
 ## Agent system prompts
 

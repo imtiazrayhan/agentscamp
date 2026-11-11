@@ -62,7 +62,7 @@ These are working definitions for this guide, rather than a legal standard:
 | AI summary | A selected and compressed interpretation | Omitted conditions or a proposal presented as agreement |
 | Minutes | The team's reviewed record of decisions, actions, and questions | Whether participants approved the consequential details |
 
-Start from the most complete authorized record available. Notes are usable input, but label them as notes; do not ask the assistant to present them as a verbatim transcript. Keep attachments and meeting-chat decisions separately identified when you supply them.
+Start from the most complete authorized record available. Notes are usable input, but label them as notes; do not ask the assistant to present them as a verbatim transcript. Keep attachments and meeting-chat decisions separately identified when you supply them. Which record you have depends on the tool: bot-free notetakers such as [Granola](/tools/granola) and Fathom's Transcript Only mode keep no audio, while [Otter.ai](/tools/otter-ai) and Fireflies keep a recording you can replay; the [meeting note takers roundup](/guides/comparisons/best-ai-meeting-note-takers-2026) lists which is which.
 
 For example, Google Meet's transcript feature captures spoken words, not chat messages. Restarting transcription creates separate files; the transcript is saved in the organizer's Drive and linked through the Calendar event. Check that you have every segment. Availability depends on the workspace. [Google's transcript documentation](https://support.google.com/meet/answer/12849897?hl=en)
 

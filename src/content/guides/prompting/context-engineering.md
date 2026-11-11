@@ -32,7 +32,7 @@ This isn't prompt wording. A perfectly phrased request still fails if the surrou
 
 ## The window is a budget, not a backpack
 
-Long context does not mean infinite attention. As a window fills, two things degrade together: the model's ability to find the relevant fact among everything else, and its tendency to lose facts buried in the middle of a long window while over-weighting whatever appears at the very start and end. A 200K window holds a lot, but the useful question is never "does it fit" — it's "does adding this make the *next* answer better or worse."
+Long context does not mean infinite attention. As a window fills, two things degrade together: the model's ability to find the relevant fact among everything else, and its tendency to lose facts buried in the middle of a long window while over-weighting whatever appears at the very start and end. A 200K window holds a lot, but the useful question is never "does it fit" — it's "does adding this make the *next* answer better or worse." This degradation has a name, [context rot](/glossary/context-rot): Chroma's 2025 report measured it across 18 models, and Anthropic defines it as recall accuracy decreasing as the tokens in the window increase.
 
 Treat every addition as a withdrawal from a budget:
 

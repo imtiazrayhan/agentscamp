@@ -141,3 +141,5 @@ Official reference: [Custom instructions with AGENTS.md](https://learn.chatgpt.c
 ## Continue exploring
 
 - [AGENTS.md](/glossary/agents-md) — AGENTS.md is a versioned instruction file that tells coding agents how to work in a repository — including commands, conventions, boundaries, and checks.
+- [AGENTS.md vs CLAUDE.md vs Cursor rules](/guides/configuration/agents-md-vs-claude-md-vs-cursor-rules) — which instruction file each coding agent reads, how nesting differs between tools, and how to migrate between formats.
+- [convert-rules](/commands/workflow/convert-rules) — Convert a CLAUDE.md or .cursorrules file into AGENTS.md (or back) and see which rules had no one-to-one place.
