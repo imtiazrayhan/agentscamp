@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 import fs from "node:fs";
 import path from "node:path";
+import { basePaths, flatTypes } from "./src/lib/content/paths";
+
+// URL segments per content type, for the Markdown rewrites below.
+const typeIds = Object.keys(basePaths) as (keyof typeof basePaths)[];
+const segment = (t: (typeof typeIds)[number]) => basePaths[t].slice(1);
+const nestedBases = typeIds.filter((t) => !flatTypes.has(t)).map(segment).join("|");
+const flatBases = typeIds.filter((t) => flatTypes.has(t)).map(segment).join("|");
+const allBases = typeIds.map(segment).join("|");
 
 /**
  * Build the redirect map from the Step-0 URL snapshot: any old agent URL whose
@@ -45,15 +53,39 @@ const nextConfig: NextConfig = {
   // path*="a/b.agent" and 404. Export handler at /export/[...path] (last segment
   // = format id); the .md twin handler at /raw/[...path]. Both set their own
   // canonical header, preserved through the rewrite.
+  //
+  // Content negotiation (beforeFiles, so it wins over the prerendered page): a
+  // request for an item's HTML URL that asks for Markdown — `Accept: text/markdown`,
+  // as Claude Code's fetch sends — gets the item's Markdown twin. Slugs never
+  // contain a dot, so `[^./]+` keeps `.md` twins, export suffixes, and the
+  // per-type llms.txt out of it. Browsers and search crawlers never send it.
   async rewrites() {
-    return [
-      { source: "/:path*.agent.md", destination: "/export/:path*/copilot" },
-      { source: "/:path*.cursor.mdc", destination: "/export/:path*/cursor" },
-      { source: "/:path*.cline.md", destination: "/export/:path*/cline" },
-      { source: "/:path*.windsurf.md", destination: "/export/:path*/windsurf" },
-      { source: "/:path*.continue.md", destination: "/export/:path*/continue" },
-      { source: "/:path*.md", destination: "/raw/:path*" },
+    const acceptsMarkdown = [
+      { type: "header" as const, key: "accept", value: ".*text/markdown.*" },
     ];
+    return {
+      beforeFiles: [
+        {
+          source: `/:base(${nestedBases})/:category([^./]+)/:slug([^./]+)`,
+          has: acceptsMarkdown,
+          destination: "/raw/:base/:category/:slug",
+        },
+        {
+          source: `/:base(${flatBases})/:slug([^./]+)`,
+          has: acceptsMarkdown,
+          destination: "/raw/:base/:slug",
+        },
+      ],
+      afterFiles: [
+        { source: "/:path*.agent.md", destination: "/export/:path*/copilot" },
+        { source: "/:path*.cursor.mdc", destination: "/export/:path*/cursor" },
+        { source: "/:path*.cline.md", destination: "/export/:path*/cline" },
+        { source: "/:path*.windsurf.md", destination: "/export/:path*/windsurf" },
+        { source: "/:path*.continue.md", destination: "/export/:path*/continue" },
+        { source: "/:path*.md", destination: "/raw/:path*" },
+        { source: `/:base(${allBases})/llms.txt`, destination: "/llms-index/:base" },
+      ],
+    };
   },
 };
 

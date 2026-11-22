@@ -1,3 +1,23 @@
+# Markdown for agents: content negotiation + split llms.txt — 2026-11-22 — DONE
+
+Found: Claude Code's fetch sends `Accept: text/markdown, text/html, */*` (UA
+`Claude-User`), but item URLs returned HTML; llms.txt was 313 KB (too big for one fetch).
+
+## Done
+- next.config.ts beforeFiles rewrites (bases derived from src/lib/content/paths.ts): an item
+  URL requested with `Accept: text/markdown` serves its /raw Markdown twin. `[^./]+` slug
+  params keep `.md`, export suffixes, and `/<base>/llms.txt` out. The /raw response adds
+  `Vary: Accept` so shared caches can't serve Markdown to browsers.
+- llms.txt is now a short map (313 KB → 13 KB): per type, a link to the full per-type index
+  plus up to 6 featured items. Per-type indexes at /<base>/llms.txt (22–84 KB, grouped by
+  category; no heading when a type has one category), served by src/app/llms-index/[type]
+  via an afterFiles rewrite. llms-full.txt unchanged. how-to-use copy updated.
+- Verified locally (next start): all 6 types negotiate (Markdown body identical to the .md
+  twin); a browser Accept header gets HTML; listings, /alternatives, `.md`, `.agent.md`,
+  `.cursor.mdc`, and all llms.txt files are unchanged; unknown slugs 404.
+- Built in worktree ../agentscamp-md (branch md-for-agents), because another session was
+  working in the main folder at the same time.
+
 # AI-recommendation playbook (Ramp-style) — 2026-11-22 — CODE DONE, awaiting owner keys + review
 
 User shared a summary of Ramp's "get AI to recommend you" experiment. Decided: skip the

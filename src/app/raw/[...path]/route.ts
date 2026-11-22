@@ -36,6 +36,8 @@ export async function GET(
       "Content-Type": "text/markdown; charset=utf-8",
       "Cache-Control": "public, max-age=3600",
       Link: `<${canonicalUrl(item)}>; rel="canonical"`,
+      // Also served at the HTML URL to `Accept: text/markdown` requests (next.config).
+      Vary: "Accept",
     },
   });
 }

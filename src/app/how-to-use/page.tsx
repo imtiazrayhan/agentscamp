@@ -34,7 +34,7 @@ const faq = [
   },
   {
     q: "Does AgentsCamp offer machine-readable content for LLMs and agents?",
-    a: "Yes. Every page has a clean Markdown version at the same URL with a .md suffix, and the entire catalog is available at /llms.txt (an index) and /llms-full.txt (every page concatenated).",
+    a: "Yes. Every content page has a clean Markdown version at the same URL with a .md suffix, and agents that request a page with Accept: text/markdown get that version automatically. The catalog is indexed at /llms.txt (which links a full index per content type, such as /agents/llms.txt), and /llms-full.txt has every page concatenated.",
   },
   {
     q: "How do I install a Claude Code agent?",
@@ -142,12 +142,17 @@ export default function Page() {
         <p>
           AgentsCamp is built to be read by machines as well as people. Every page
           has a clean Markdown twin at the same URL plus a <code>.md</code> suffix
-          — for example, <code>/agents/&lt;category&gt;/&lt;slug&gt;.md</code>. For
-          the whole catalog, fetch{" "}
+          — for example, <code>/agents/&lt;category&gt;/&lt;slug&gt;.md</code> — and
+          a request for the page itself with <code>Accept: text/markdown</code>{" "}
+          gets that twin. For the whole catalog, fetch{" "}
           <a href="/llms.txt">
             <code>/llms.txt</code>
           </a>{" "}
-          (a linked index) or{" "}
+          (a short map linking a full index per type, such as{" "}
+          <a href="/agents/llms.txt">
+            <code>/agents/llms.txt</code>
+          </a>
+          ) or{" "}
           <a href="/llms-full.txt">
             <code>/llms-full.txt</code>
           </a>{" "}
