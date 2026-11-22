@@ -1,3 +1,38 @@
+# AI-recommendation playbook (Ramp-style) — 2026-11-22 — CODE DONE, awaiting owner keys + review
+
+User shared a summary of Ramp's "get AI to recommend you" experiment. Decided: skip the
+AI-only hidden content (user-agent cloaking: against Google spam policy, AdSense risk);
+do the open equivalents. Plan: ~/.claude/plans/users-imtiazrayhan-desktop-sc-bright-hopper-of-*.md
+
+## Done
+- Part 1, install line in the Markdown copies: `cliInstallCommand(item)` in
+  src/lib/seo/artifact.ts (also used by InstallActions.tsx). `toMarkdownFile` adds
+  `_Install: \`npx agentscamp add <type>/<slug>\` …_` under the `_Source:_` line for
+  agents, skills and commands only. Verified on the built site: 345/345 installables have it
+  in their `.md` and in llms-full.txt; guide `.md` unchanged; HTML command unchanged.
+  The CLI bundle, mirror and download button use `buildArtifact`, so they're untouched.
+- Part 2, `npm run ai-visibility` (scripts/ai-visibility.ts + ai-visibility-questions.json,
+  15 starter questions): Claude (SDK, claude-opus-5-5, web_search_20260209, fallbacks
+  "default"), OpenAI (Responses API, gpt-6.2-astra, web_search), Perplexity (Agent API
+  /v1/agent, effort "fast"; Sonar is now legacy). Deterministic scoring (mentioned / cited
+  / cited pages / top domains). Writes docs/ai-visibility/<UTC timestamp>.json (gitignored).
+  @anthropic-ai/sdk ^1.12.0 added as a devDependency.
+  Verified: typecheck, lint, validate and build pass; no keys → all skipped loudly, exit 1;
+  fake keys → each engine stops on 401, error recorded, exit 1.
+
+## Next (owner)
+- Add ANTHROPIC_API_KEY / OPENAI_API_KEY / PERPLEXITY_API_KEY to .env.local, then
+  `npm run ai-visibility -- --limit 2` (smoke), spot-check one answer, then a full run.
+  Use the printed token and search usage to choose daily or weekly.
+- Publish CLI 0.11.0 (`cd cli && npm publish`): on 0.10.0, November-wave items fail
+  (verified: `skills/model-card-writer` "not found"; `agents/analysis-reviewer` installs fine).
+- Part 3: check Vercel Observability / Firewall for AI-bot requests by path (`*.md`,
+  llms.txt). If it doesn't show bot × path, next step is a UA-matched proxy.ts → GA4 event.
+- Edit the question list to match real GSC queries.
+
+## Blocked
+- Real tracker runs need the owner's API keys (none on this machine).
+
 # Content wave 2026-11-22 (50 items, all six types) — COMPLETE LOCALLY, awaiting owner review
 
 User: "let's create more content for the site on all categories." Owner chose ~50 items

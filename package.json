@@ -12,6 +12,7 @@
     "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate-content.ts",
     "freshness": "tsx scripts/freshness-report.ts",
+    "ai-visibility": "tsx scripts/ai-visibility.ts",
     "indexnow": "tsx scripts/submit-indexnow.ts",
     "cli:content": "tsx scripts/build-cli-content.ts",
     "cli:build": "tsx scripts/build-cli-content.ts && npm --prefix cli run build",
@@ -46,6 +47,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^1.12.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.16",
