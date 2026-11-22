@@ -1,3 +1,64 @@
+# Content wave 2026-11-22 (50 items, all six types) — COMPLETE LOCALLY, awaiting owner review
+
+User: "let's create more content for the site on all categories." Owner chose ~50 items
+(same shape as the October wave). Slate, briefs, packs, handoffs, fact-check logs:
+docs/content-wave-2026-11-22/ (gitignored).
+
+## Done
+- Hub 1,007 → **1,057 items** (+50): 14 tools (deepseek, grok, mistral-vibe, hugging-face,
+  manus, weave, junie, heygen, synthesia, luma, composio, docker-mcp-toolkit, atlassian-mcp,
+  taskmaster), 13 guides (5 roundups: best-chatgpt-alternatives-2026 [cornerstone, tier1],
+  best-ai-agents-2026, best-ai-avatar-video-generators-2026, best-mcp-gateways-2026,
+  best-spec-driven-development-tools-2026; 4 best-claude-skills-for-{observability,
+  mcp-development, system-design, codebase-onboarding}; 4 Claude Code guides: headless-mode,
+  with-other-models, subagents, checkpoints), 13 glossary terms, 10 installables (skills
+  model-card-writer, tts-script-preparer, mcp-server-tester, avatar-video-script-writer,
+  spec-writer; agents open-model-scout, spec-implementer; commands model-card,
+  test-mcp-server, spec).
+- Gap check dropped planned duplicates (best MCP servers / vector DB / eval tools, agent
+  frameworks, hooks/plugins guides, role "claude skills for X" guides already existed).
+- Research (R1–R6) changed the slate: Le Chat → Mistral Vibe (renamed 2026-05-28); SpaceX
+  owns xAI; Manus independent again (assistant category); ChatGPT agent gone (ChatGPT Work);
+  Cowork merged into Claude; Junie plugin retiring into JetBrains Air; Luma → "Luma AI"/Luma
+  Agents; Hour One history-only; Smithery hosting shut 2026-10-31 (directory only, Arcade.dev);
+  Tessl/MetaMCP dropped; Taskmaster MIT+Commons Clause; MCP spec 2026-07-28 stateless +
+  Inspector/SDK v2; Claude Code /agents menu removed, `fable` alias.
+- Corrections pass: 248 handoff proposals → 222 applied, 7 merged, 14 skipped (log:
+  integration-edits-log.md); 110 existing files edited, 36 with `updated: 2026-11-22`
+  (incl. smithery.md rewrite, mcp-inspector license Apache-2.0/MIT transition).
+- Adversarial fact-check (6 checkers barred from packs): 1,638 claims checked, ~71 fixed
+  (FC1 381, FC2 278, FC3 246, FC4 292, FC5 277, FC6 164; logs in factcheck/). Cross-file
+  follow-through applied (D-ID consent in ai-avatar glossary).
+- Dates: spread 2026-11-09…11-21; W1 pages re-dated to 11-20/21 (cite later-Nov facts);
+  `reviewed: 2026-11-22` on all 27 new tools/guides. Luma category → marketing (matches
+  runway/kling). docker-mcp-toolkit alternativeTo + portkey (alternatives page indexable).
+- Gates: validate 1,057 items, 0 errors, 33 warnings (29 baseline + 4 accurate "reviewed
+  predates updated" on pages that got targeted fixes, incl. founders tier-1 kept on its
+  09-10 clock); lint + tsc clean; build exit 0 (4,023 static pages, search index 1,057,
+  external-link policy OK); all 50 routes + 14 alternatives pages rendered.
+- CLI: bundle regenerated (89 agents/168 skills/88 commands = 345, verify OK); 0.10.0 is
+  already on npm (2026-11-11), so cli/package.json + lock bumped to **0.11.0**.
+- All 8 worktrees removed after copy verification.
+
+## Next (owner)
+- Review, then commit/push (public scope = 50 new files + ~110 edited existing files +
+  public/search-index.json + cli/package.json + cli/package-lock.json; no AI trailers;
+  PROGRESS.md/AGENTS.md/docs stay out unless wanted).
+- `cd cli && npm publish` (0.11.0), then `npm run mirror:build` + push the mirror.
+- Freshness run is overdue: 6 tier-1 pages 52 days past cadence + 4 "reviewed predates
+  updated" pages; skipped items for it: llm-api-pricing-2026 DeepSeek/Grok rows,
+  mcp-ecosystem-statistics Smithery count, ElevenLabs "70+ languages" (now 90+).
+- Owner decisions: smithery still listed in alternativeTo of mcp-inspector/fastmcp (it is a
+  directory now); site schema `modelEnum` lacks Claude Code's new `fable` alias; existing
+  installables flagged by FC5: commands/docs/explain-code has no allowed-tools (its
+  "never edits" isn't enforced), slo-definer slow-burn rule (3x/6h ticket) differs from the
+  SRE workbook (6x/6h page).
+
+## Blocked
+- None.
+
+---
+
 # Demand wave for SEO/AEO/GEO (2026-10-21) — COMPLETE LOCALLY, awaiting owner review
 
 User: "create some new content on all sides to bring more seo, aeo, geo traffic".
