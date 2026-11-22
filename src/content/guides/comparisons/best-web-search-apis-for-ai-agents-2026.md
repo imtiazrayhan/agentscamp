@@ -1,22 +1,23 @@
 ---
 title: "Best Web Search APIs for AI Agents in 2026: Tavily vs Exa vs Brave vs Parallel"
 seoTitle: "Best Web Search APIs for AI Agents (2026): Tavily Alternatives"
-description: "Tavily, Exa, the Brave Search API, Parallel, Jina Reader and Firecrawl compared on search, extraction, answers, index ownership, and official MCP servers."
+description: "Tavily, Exa, Brave, Parallel, Jina Reader, Firecrawl and Context.dev compared on search, extraction, answers, index ownership, and official MCP servers."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
+updated: "2026-11-22"
 reviewed: "2026-09-11"
 color: "green"
 topics: ["ai-agents-systems", "rag-retrieval"]
 audience: ["ai-engineers"]
 tags: ["comparison", "best-of", "web-search", "search-api", "web-data", "mcp"]
 keywords: ["tavily alternatives", "tavily competitors", "tavily open source alternative", "tavily free alternative", "jina reader alternative", "tavily vs parallel", "exa vs tavily", "web search api for ai agents"]
-summary: "Pick by job. Tavily is still the one-key default for search plus extraction, Exa leads on semantic search over its own index, Brave offers an independent index with pre-extracted LLM Context, and Parallel pairs objective-based search with deep research. Jina Reader and Firecrawl are the extraction specialists. All six ship official MCP servers."
+summary: "Pick by job. Tavily is still the one-key default for search plus extraction, Exa leads on semantic search over its own index, Brave offers an independent index with pre-extracted LLM Context, and Parallel pairs objective-based search with deep research. Jina Reader and Firecrawl are the extraction specialists, and Context.dev adds search to scraping. All seven ship official MCP servers."
 keyTakeaways:
   - "Split the job before you pick a vendor: search results, content extraction and synthesized answers are different products, and most APIs are strongest at one of them."
-  - "Brave, Exa and Parallel say they serve results from their own web index. s.jina.ai queries third-party engines, Firecrawl uses an unnamed upstream provider for web search, and Tavily doesn't say."
-  - "All six ship an official MCP server. Tavily, Exa, Parallel, Jina and Firecrawl host theirs; Brave's runs locally over stdio or HTTP."
+  - "Brave, Exa and Parallel say they serve results from their own web index. s.jina.ai queries third-party engines, Firecrawl uses an unnamed upstream provider for web search, and Tavily and Context.dev don't say."
+  - "All seven ship an official MCP server. Tavily, Exa, Parallel, Jina, Firecrawl and Context.dev host theirs; Brave's runs locally over stdio or HTTP."
   - "Ownership moved: Elastic completed its Jina AI acquisition in October 2025, and Nebius closed its Tavily acquisition in February 2026. Both vendors say their APIs continue unchanged."
-  - "Free starting points are easy to find: Parallel's hosted Search MCP needs no key, Tavily and Firecrawl have no-card free plans, and Jina Reader works without a key at a low rate limit."
+  - "Free starting points are easy to find: Parallel's hosted Search MCP needs no key, Tavily, Firecrawl and Context.dev have no-card free plans, and Jina Reader works without a key at a low rate limit."
   - "Every vendor benchmarks itself. Run 30 to 50 of your own agent queries through two candidates before you commit."
 faq:
   - q: "What is the best Tavily alternative?"
@@ -28,9 +29,9 @@ faq:
   - q: "What is a good Jina Reader alternative for AI agents?"
     a: "Firecrawl is the closest match, adding site crawling, URL mapping and a keyless hosted MCP server; Jina Reader itself continues under Elastic, which acquired Jina AI in October 2025. If you want content returned alongside search results, Exa's contents options, Parallel's Extract API and Brave's LLM Context endpoint all return page text without a separate scraping step."
   - q: "Which web search APIs run their own index?"
-    a: "Brave, Exa and Parallel each say they serve results from their own web index. Jina's s.jina.ai queries third-party search engines according to its open-source code, Firecrawl uses an unnamed upstream provider for general web search, and Tavily does not say."
+    a: "Brave, Exa and Parallel each say they serve results from their own web index. Jina's s.jina.ai queries third-party search engines according to its open-source code, Firecrawl uses an unnamed upstream provider for general web search, and Tavily and Context.dev do not say."
   - q: "Which web search APIs have an official MCP server?"
-    a: "All six covered here. Tavily, Exa, Parallel, Jina and Firecrawl run hosted remote servers you can add to Claude Code with one command. Brave's official MIT-licensed server runs locally over stdio or HTTP."
+    a: "All seven covered here. Tavily, Exa, Parallel, Jina, Firecrawl and Context.dev run hosted remote servers you can add to Claude Code with one command. Brave's official MIT-licensed server runs locally over stdio or HTTP."
 sources:
   - title: "Tavily Search API reference"
     url: "https://docs.tavily.com/documentation/api-reference/endpoint/search"
@@ -62,10 +63,16 @@ sources:
   - title: "Elastic Completes Acquisition of Jina AI"
     url: "https://ir.elastic.co/News--Events/news/news-details/2025/Elastic-Completes-Acquisition-of-Jina-AI-a-Leader-in-Frontier-Models-for-Multimodal-and-Multilingual-Search/default.aspx"
     publisher: "Elastic"
-related: ["tool:tavily", "tool:exa", "tool:brave-search-api", "tool:parallel", "tool:jina-reader", "tool:firecrawl", "guide:jina-reader-api", "guide:web-data-for-ai-agents", "guide:exa-vs-tavily"]
+  - title: "Context.dev web search API reference"
+    url: "https://docs.context.dev/api-reference/web-scraping/search"
+    publisher: "Context.dev"
+  - title: "Context.dev MCP setup"
+    url: "https://docs.context.dev/install-mcp"
+    publisher: "Context.dev"
+related: ["tool:tavily", "tool:exa", "tool:brave-search-api", "tool:parallel", "tool:jina-reader", "tool:firecrawl", "guide:jina-reader-api", "guide:web-data-for-ai-agents", "guide:exa-vs-tavily", "tool:context-dev"]
 ---
 
-Most agents need two web APIs, not one: a search API that returns ranked results and an extractor that turns pages into clean text. [Tavily](/tools/tavily), owned by Nebius since February 2026, is still the easiest single-key default. [Exa](/tools/exa), the [Brave Search API](/tools/brave-search-api) and [Parallel](/tools/parallel) are the strongest alternatives if you want results from an independent index, while [Jina Reader](/tools/jina-reader) and [Firecrawl](/tools/firecrawl) win when the job is extraction.
+Most agents need two web APIs, not one: a search API that returns ranked results and an extractor that turns pages into clean text. [Tavily](/tools/tavily), owned by Nebius since February 2026, is still the easiest single-key default. [Exa](/tools/exa), the [Brave Search API](/tools/brave-search-api) and [Parallel](/tools/parallel) are the strongest alternatives if you want results from an independent index, while [Jina Reader](/tools/jina-reader) and [Firecrawl](/tools/firecrawl) win when the job is extraction. [Context.dev](/tools/context-dev) puts scraping to Markdown or JSON and web search behind one key.
 
 *Last reviewed: September 2026.*
 
@@ -81,14 +88,15 @@ Prices change often; each tool page lists current pricing.
 | Parallel | Search, extract, research, answers | Own | Hosted and keyless; config repo MIT | Monthly credits with a card on file | Series B, Apr 2026 |
 | Jina Reader | Extract; search plus full-page read | Third-party engines | Hosted, Apache-2.0 | 10M tokens per new key | Elastic-owned since Oct 2025 |
 | Firecrawl | Extract, crawl, search | Upstream provider plus own specialty indexes | Hosted, MIT | 1,000 credits a month, no card | Independent |
+| Context.dev | Extract (Markdown or JSON), search, crawl, answers | Not disclosed | Hosted with OAuth, not open source | 1,000 credits a month, no card | Renamed from Brand.dev, Mar 2026 |
 
 ## Three jobs: search results, extraction, answers
 
 Most confusion in this category comes from comparing products that do different jobs.
 
-- **Search results.** A query goes in and ranked URLs with snippets come out. The agent then decides what to read. Brave's Web Search, Exa's `/search`, Parallel's Search API, Tavily's Search and Firecrawl's `/search` all do this.
-- **Content extraction.** A URL goes in and clean markdown comes out, ready for the model's context. Jina Reader and Firecrawl are built for this. Tavily Extract, Exa's contents options, Parallel Extract and Brave's LLM Context endpoint add it next to search.
-- **Synthesized answers.** A question goes in and a cited answer comes out. Tavily's `include_answer`, Exa's `/answer`, Brave's Answers endpoint and Parallel's Responses API return one. Jina and Firecrawl don't.
+- **Search results.** A query goes in and ranked URLs with snippets come out. The agent then decides what to read. Brave's Web Search, Exa's `/search`, Parallel's Search API, Tavily's Search, Firecrawl's `/search` and Context.dev's `/web/search` all do this.
+- **Content extraction.** A URL goes in and clean markdown comes out, ready for the model's context. Jina Reader, Firecrawl and Context.dev are built for this. Tavily Extract, Exa's contents options, Parallel Extract and Brave's LLM Context endpoint add it next to search.
+- **Synthesized answers.** A question goes in and a cited answer comes out. Tavily's `include_answer`, Exa's `/answer`, Brave's Answers endpoint, Parallel's Responses API and Context.dev's `/web/answers` return one. Jina and Firecrawl don't.
 
 Answer endpoints are convenient, but they put a second model between your agent and the sources. If your agent already reasons well, search results plus extraction usually give it more control over what it cites. That is the [grounding](/glossary/grounding) pattern [agentic RAG](/guides/concepts/agentic-rag) relies on.
 
@@ -104,12 +112,13 @@ Whether a vendor crawls the web itself decides freshness, coverage and how expos
 | Tavily | Not stated |
 | Jina (s.jina.ai) | Third-party engines (Google, per Elastic's tutorial), plus an optional search over Reader's own page cache |
 | Firecrawl | An unnamed upstream search provider, plus its own Research and Developer indexes |
+| Context.dev | Not stated |
 
 Every figure in that table comes from the vendor. The practical point is that Brave, Exa and Parallel can change ranking on their own schedule, while proxy-style search inherits whatever its upstream engine does.
 
 ## Official MCP servers
 
-All six have an official MCP server, so each one can be a tool in Claude Code or any MCP client. The hosted ones install with one command; these lines are copied from each vendor's docs:
+All seven have an official MCP server, so each one can be a tool in Claude Code or any MCP client. The hosted ones install with one command; these lines are copied from each vendor's docs:
 
 ```bash
 # Tavily (OAuth)
@@ -120,6 +129,8 @@ claude mcp add --transport http exa https://mcp.exa.ai/mcp
 claude mcp add --transport http "Parallel-Search-MCP" https://search.parallel.ai/mcp
 # Firecrawl (keyless)
 claude mcp add --transport http firecrawl https://mcp.firecrawl.dev/v2/mcp
+# Context.dev (OAuth: run /mcp to sign in)
+claude mcp add --transport http context https://mcp.context.dev/mcp
 # Jina
 claude mcp add -s user --transport http jina https://mcp.jina.ai/v1 \
   --header "Authorization: Bearer ${JINA_API_KEY}"
@@ -135,11 +146,11 @@ Exa and Parallel are the closest full-stack substitutes: each covers search, con
 
 ### You need page content, not links
 
-Start with [Jina Reader](/guides/advanced/jina-reader-api) for single URLs and PDFs, and move to Firecrawl when you need crawls, sitemaps or volume. If you also need search, Brave's LLM Context and Parallel's Extract return grounding text without a separate scraper.
+Start with [Jina Reader](/guides/advanced/jina-reader-api) for single URLs and PDFs, and move to Firecrawl when you need crawls, sitemaps or volume. If you also need search, Brave's LLM Context and Parallel's Extract return grounding text without a separate scraper. Context.dev pairs a scraper with search on one key and fills a JSON Schema from each page when you need fields rather than prose.
 
 ### You want a free or open-source option
 
-Firecrawl's AGPL-3.0 core and Jina Reader's Apache-2.0 pipeline can both be self-hosted with Docker. Both are extraction pipelines first, and neither gives you an independent search index. For hosted and free, Parallel's Search MCP needs no key, and Tavily and Firecrawl both have no-card free plans.
+Firecrawl's AGPL-3.0 core and Jina Reader's Apache-2.0 pipeline can both be self-hosted with Docker. Both are extraction pipelines first, and neither gives you an independent search index. For hosted and free, Parallel's Search MCP needs no key, and Tavily, Firecrawl and Context.dev all have no-card free plans.
 
 ### You want an independent index
 
@@ -192,6 +203,12 @@ Firecrawl's `/search` returns titles, descriptions and URLs, and `scrapeOptions`
 
 **Verdict:** the extraction workhorse. Its search is a convenient front door to scraping, not an independent index.
 
+### Context.dev: scraping and search on one API
+
+Context.dev, called Brand.dev until March 2026, is built around `/web/scrape`, which turns any URL into Markdown, HTML, screenshots or JSON. For JSON you pass a JSON Schema, plus optional instructions, and a model fills it from the page's Markdown, JSON-LD and meta tags. Web search, added in May 2026, returns ranked results with relevance labels and can attach highlights or each result's full Markdown in the same call. Map, crawl (up to 500 pages per call), batch jobs and a cited Answers endpoint share the same key and credit pool, and JavaScript rendering and proxies are always on. The hosted MCP server signs in with OAuth and also exposes the brand, company and people data the company started with. Its docs don't say whether search runs on its own index, and there is no self-hosted edition.
+
+**Verdict:** a strong single-vendor choice when your agent needs structured fields from pages and search behind the same key. Pick Firecrawl instead if you need to self-host.
+
 ## Also on the shortlist
 
 Four more APIs come up in the same evaluations:
@@ -207,10 +224,12 @@ Four more APIs come up in the same evaluations:
 - **November 2025:** Parallel raised a Series A co-led by Kleiner Perkins and Index Ventures.
 - **February 12, 2026:** Brave launched the LLM Context API and reorganized its plans into Search, Answers, Spellcheck and Autocomplete. Exa launched Exa Instant the same month.
 - **February 19, 2026:** Nebius closed its acquisition of Tavily, first announced February 10. Tavily keeps its brand.
+- **March 21, 2026:** Brand.dev renamed itself Context.dev as it moved from brand data into scraping and search.
 - **April 29, 2026:** Parallel raised a Series B led by Sequoia Capital.
-- **May 2026:** Parallel launched Index by Parallel, which compensates content owners (May 19), and Exa raised a Series C led by a16z (May 20).
+- **May 2026:** Context.dev added web search (May 16), Parallel launched Index by Parallel, which compensates content owners (May 19), and Exa raised a Series C led by a16z (May 20).
 - **July and August 2026:** Parallel added Turbo mode (July 13), the Responses API (July 21), free monthly credits (July) and Fast mode (August 21).
 - **As of September 2026:** Firecrawl calls `/agent` the successor to `/extract`, and Perplexity supports Sonar until September 27, 2026.
+- **October 2026:** Context.dev raised a seed round led by General Catalyst.
 
 ## How to evaluate on your own workload
 
@@ -229,6 +248,7 @@ Each vendor here publishes benchmarks it ran itself, and none of them will match
 - **Search quality is the product:** Exa or Parallel. Run both on your own queries.
 - **Independent results plus grounding text in one call:** the Brave Search API with LLM Context.
 - **Reading known URLs, PDFs or whole sites:** Jina Reader for single pages, Firecrawl for crawls.
+- **Structured fields from pages, plus search, from one vendor:** Context.dev.
 - **Most production agents:** search with one API and extract with another. [Getting web data into AI agents](/guides/concepts/web-data-for-ai-agents) walks through that find-then-fetch pattern.
 
 Whichever you pick, treat every fetched page as untrusted input, and [quote it as data](/guides/ai-safety/defending-prompt-injection) before your agent acts on it.

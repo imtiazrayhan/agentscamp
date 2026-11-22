@@ -104,10 +104,10 @@ export default function AboutPage() {
 
         <h3>Commercial independence</h3>
         <p>
-          AgentsCamp does not currently label rankings as paid placements. If a page
-          includes sponsorship, affiliate compensation, or another material
-          commercial relationship in the future, that relationship should be
-          disclosed where it can affect the reader&apos;s judgment.
+          Some tool pages and guide entries are paid placements. AgentsCamp writes
+          and fact-checks them itself against the vendor&apos;s own documentation,
+          and links to a paying vendor&apos;s site are marked{" "}
+          <code>rel=&quot;sponsored&quot;</code>.
         </p>
 
         <h2>Use the library</h2>

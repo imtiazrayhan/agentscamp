@@ -131,7 +131,7 @@ export const listingSeo: Record<ContentTypeId, ListingSeo> = {
       },
       {
         q: "How are tools chosen?",
-        a: "Tools are curated for relevance to building with AI coding agents. Listings link to official sources and are not paid placements.",
+        a: "Tools are curated for relevance to building with AI coding agents. Listings link to official sources.",
       },
       {
         q: "How do I find alternatives to a tool?",
