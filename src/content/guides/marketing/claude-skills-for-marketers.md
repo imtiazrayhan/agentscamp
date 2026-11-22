@@ -92,7 +92,7 @@ The full pipeline from export to published post is in [SEO Content Workflow with
 
 ### 3. content-repurposer
 
-[content-repurposer](/skills/marketing/content-repurposer) takes one long piece and produces the derivatives you name, each with its own length and format rules, without inventing examples the source does not contain.
+[content-repurposer](/skills/marketing/content-repurposer) takes one long piece and produces the derivatives you name, each with its own length and format rules, without inventing examples the source does not contain. For video presented by an AI avatar, the [avatar-video-script-writer](/skills/marketing/avatar-video-script-writer) skill turns the script into scenes that fit HeyGen's or Synthesia's limits.
 
 ```text
 Use content-repurposer on this post: [paste]. Outputs: a five-post

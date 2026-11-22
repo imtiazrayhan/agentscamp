@@ -52,7 +52,7 @@ claude mcp add --transport http --scope project linear https://mcp.linear.app/mc
 
 ## Step 6 — Verify the connection
 
-Confirm the server actually connected and exposes what you expect: run `claude mcp list` (and `/mcp` inside a session) to check status and tools, or connect with the [MCP Inspector](/tools/mcp-inspector) to list and call a tool directly. A server that's "added" but not connected — or that exposes no usable tools — is not done.
+Confirm the server actually connected and exposes what you expect: run `claude mcp list` (and `/mcp` inside a session) to check status and tools, or connect with the [MCP Inspector](/tools/mcp-inspector) to list and call a tool directly. A server that's "added" but not connected — or that exposes no usable tools — is not done. For a scripted pass or fail on its tools, run [/test-mcp-server](/commands/testing/test-mcp-server).
 
 > [!NOTE]
 > If the server needs OAuth (common for hosted remote servers), the client will prompt for authorization on first use — `/mcp` is where you complete it and confirm the tools became available.

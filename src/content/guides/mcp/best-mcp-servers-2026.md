@@ -61,6 +61,7 @@ The big 2025–26 shift: vendors run their own hosted, OAuth'd servers now. Conn
 | --- | --- |
 | [Figma MCP](/tools/figma-mcp) | Structured design context + tokens + Code Connect; write-back to canvas on the remote |
 | [Linear MCP](/tools/linear-mcp) | Tickets become the spec: read, update, comment — one command to add |
+| [Atlassian MCP Server](/tools/atlassian-mcp) | Jira, Confluence and Bitbucket through one hosted endpoint; OAuth 2.1, sees only what the user can |
 | [Notion MCP](/tools/notion-mcp) | The team wiki as retrieval surface; Markdown-optimized tools |
 | [Sentry MCP](/tools/sentry-mcp) | Production errors, traces, and Seer root-cause analysis as agent context |
 | [Supabase MCP](/tools/supabase-mcp) | SQL, migrations, logs, advisors, Edge Functions — with read-only scoping in the URL |
@@ -72,7 +73,7 @@ The big 2025–26 shift: vendors run their own hosted, OAuth'd servers now. Conn
 ## What didn't make the list, and why
 
 - **Archived reference servers** people still recommend — the official Slack and Postgres servers are read-only history; the community successors above are the real picks.
-- **Aggregator sprawl** — registries like [Smithery](/tools/smithery) are how you *find* long-tail servers, not a reason to connect twenty. Discovery ≠ adoption.
+- **Aggregator sprawl** — directories like [Smithery](/tools/smithery), whose hosting shut down on October 31, 2026, are how you *find* long-tail servers, not a reason to connect twenty; if you do need many, put them behind one of the [MCP gateways](/guides/comparisons/best-mcp-gateways-2026). Discovery ≠ adoption.
 - **Anything you wouldn't `npm install`** — an MCP server is a dependency with credentials. Unknown provenance, no source, broad scopes: pass, or sandbox it first with [MCP Inspector](/tools/mcp-inspector).
 
 ## The discipline that makes them pay

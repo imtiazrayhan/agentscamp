@@ -28,7 +28,7 @@ faq:
     a: "Hallucination on silence and noise (the model card says outputs may include text never spoken — notorious in quiet segments), repetition loops, uneven accuracy on low-resource languages and accents, 30-second windowing with no native streaming, and no built-in diarization. Production stacks add VAD, run via faster-whisper/whisper.cpp, and layer diarization separately."
 ---
 
-Whisper is the model that democratized speech-to-text: open weights, MIT license, and robustness that held up outside the lab. Three-plus years on, it remains the **self-hosted baseline** the whole category is measured against — less because it's unbeatable than because it's *everywhere*, free, and good.
+Whisper is the model that democratized [speech-to-text](/glossary/speech-to-text): open weights, MIT license, and robustness that held up outside the lab. Three-plus years on, it remains the **self-hosted baseline** the whole category is measured against — less because it's unbeatable than because it's *everywhere*, free, and good.
 
 ## Highlights
 

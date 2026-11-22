@@ -61,4 +61,4 @@ Return one reply with three parts.
 - Never edit the server, its config, or its dependencies. Report and propose.
 - Never start the server without the user's explicit yes in this session.
 - Severity follows reach: High when a finding can lead to credential exposure, file or shell access outside the task, or arbitrary network calls; Medium for unlabeled untrusted content and missing transport checks; Low for hygiene.
-- Point to the fleet-level controls when the finding is organizational rather than code: [Governing MCP servers](/guides/mcp/govern-mcp-servers) covers registries, gateways, and approval gates, and [Claude Code MCP setup](/guides/mcp/claude-code-mcp-setup) covers scopes and the approval prompt.
+- Point to the fleet-level controls when the finding is organizational rather than code: [Governing MCP servers](/guides/mcp/govern-mcp-servers) covers registries, [gateways](/glossary/mcp-gateway), and approval gates, and [Claude Code MCP setup](/guides/mcp/claude-code-mcp-setup) covers scopes and the approval prompt.

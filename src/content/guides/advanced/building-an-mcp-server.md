@@ -143,7 +143,7 @@ claude mcp remove weather    # unregister it
 ```
 
 > [!NOTE]
-> Inside a Claude Code session, type `/mcp` to see live connection status, the tools each server exposes, and authentication prompts for servers that need OAuth. It's the fastest way to confirm a new server actually connected and to see what the model can now call.
+> Inside a Claude Code session, type `/mcp` to see live connection status, the tools each server exposes, and authentication prompts for servers that need OAuth. It's the fastest way to confirm a new server actually connected and to see what the model can now call. The [MCP development skills roundup](/guides/skills/best-claude-skills-for-mcp-development) lists the skills and commands that scaffold, test, register, and audit a server.
 
 Once connected, the server's tools appear to the model namespaced as `mcp__<server>__<tool>` — for example `mcp__weather__get_weather`. You generally don't type those; the model calls them, and you can reference a server's capabilities in plain language.
 

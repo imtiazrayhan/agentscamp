@@ -34,7 +34,7 @@ Notion MCP turns the team wiki from something you quote at the agent into someth
 
 - **18 tools across the real workflows** — search, fetch-by-URL, page create/update/move/duplicate, database creation and queries, views, comments, user/team lookups.
 - **Markdown-optimized** — tools speak Notion-flavored Markdown rather than raw block JSON, a deliberate token-efficiency design Notion has written up publicly.
-- **Connector-aware search** — with Notion AI, `notion-search` reaches connected Slack, Google Drive, and Jira too: one retrieval tool over the team's whole knowledge surface.
+- **Connector-aware search** — with Notion AI, `notion-search` reaches connected Slack, Google Drive, and Jira too: one retrieval tool over the team's whole knowledge surface. To update Jira itself, add the [Atlassian MCP Server](/tools/atlassian-mcp).
 - **Hosted, OAuth-only** — `mcp.notion.com/mcp`; access inherits the authorizing user's permissions, so the agent sees exactly what you see.
 
 ## In an AI-assisted workflow

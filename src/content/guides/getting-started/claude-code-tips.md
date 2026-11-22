@@ -45,7 +45,7 @@ Claude Code rewards depth: the default chat loop works on day one, but the opera
 
 **6. Double-`Esc` rewinds the conversation.** Jump back to a previous message, edit it, rerun from there — fix the *prompt* instead of patching its consequences.
 
-**7. `/rewind` undoes a wrong turn.** Roll code and conversation back to a checkpoint when an approach failed. Cheaper than asking the agent to un-dig its hole.
+**7. `/rewind` undoes a wrong turn.** Roll code, conversation, or both back to a [checkpoint](/guides/getting-started/claude-code-checkpoints) when an approach failed. Cheaper than asking the agent to un-dig its hole.
 
 **8. Queue your next message.** You can keep typing while Claude works — queued messages deliver when the current step finishes. Batch your guidance instead of waiting at the spinner.
 
@@ -81,7 +81,7 @@ Claude Code rewards depth: the default chat loop works on day one, but the opera
 
 **21. Custom slash commands.** A Markdown file in `.claude/commands/` becomes `/your-command`; `$ARGUMENTS` interpolates what you pass. Any prompt you've typed twice deserves the third time to be one word — steal ideas from the [commands directory](/commands).
 
-**22. Pipe into headless mode.** `cat error.log | claude -p "find the root cause"` — Claude Code as a Unix filter. `-p` is also the [CI entry point](/guides/advanced/claude-code-ci-github-actions), with JSON output when scripts consume the answer.
+**22. Pipe into headless mode.** `cat error.log | claude -p "find the root cause"` — Claude Code as a Unix filter. `-p` is also the [CI entry point](/guides/advanced/claude-code-ci-github-actions), with JSON output when scripts consume the answer; [headless mode](/guides/configuration/claude-code-headless-mode) covers every flag.
 
 **23. Hooks make rules deterministic.** Format-after-edit, block-protected-paths, notify-when-waiting — [hooks](/guides/configuration/claude-code-hooks) run every time, no model memory required.
 

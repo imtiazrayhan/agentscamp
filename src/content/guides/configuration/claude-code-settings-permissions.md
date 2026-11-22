@@ -5,6 +5,7 @@ seoTitle: "Claude Code settings.json: Permissions, Deny Rules & Pattern Syntax"
 seoDescription: "Which Claude Code settings file wins, the allow/deny permission-rule syntax with its Bash and path-pattern gotchas, permission modes, and a safe starter file."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-22
 color: "green"
 topics: ["workflow-prompting"]
 tags: ["claude-code", "settings", "permissions", "configuration", "security"]
@@ -114,7 +115,7 @@ Modes set the default posture; rules carve out exceptions.
 | `plan` | Read-only: Claude explores and proposes a plan, edits nothing until approved |
 | `bypassPermissions` | No prompts at all — for isolated containers/VMs only |
 
-Cycle modes with **Shift+Tab** mid-session, start one with `claude --permission-mode plan`, or pin a default with `"defaultMode"` in settings. (Recent versions add further opt-in modes — an auto-approval mode with safety checks among them — but these four are the durable core.)
+Cycle modes with **Shift+Tab** mid-session, start one with `claude --permission-mode plan`, or pin a default with `"defaultMode"` in settings. (There are six modes in all: `auto` and `dontAsk` complete the set. Since v2.1.283, `auto` is the built-in starting mode in terminal and VS Code sessions, while `claude -p` and SDK runs start in `default`.)
 
 > [!WARNING]
 > `bypassPermissions` is not a convenience setting. Everything that makes an agent safe to run on your machine routes through the permission system; bypass it only where the environment itself is the sandbox — a container or CI runner you can throw away. For day-to-day speed, `acceptEdits` plus a good allow-list gets you 90% of the velocity at a fraction of the risk.

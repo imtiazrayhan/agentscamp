@@ -5,6 +5,7 @@ seoTitle: "Best Open-Source LLMs in 2026 (Open-Weight Models Compared)"
 seoDescription: "Every major open-weight LLM family as of October 2026: release dates, total and active parameters, context, the licence on the model card, and how to run each."
 author: "Imtiaz Rayhan"
 date: 2026-10-20
+updated: 2026-11-22
 reviewed: 2026-10-20
 color: "green"
 depth: standard
@@ -30,7 +31,7 @@ faq:
   - q: "Can I run these models on a laptop?"
     a: "The small end, yes. OpenAI states gpt-oss-20b runs within 16GB of memory; Gemma 4 E2B and E4B are the small end of that family; Granite 4.2 ships 3B and 8B; Meta describes Muse Glimmer 30B as purpose-built for consumer hardware. Anything with hundreds of billions of total parameters needs server GPUs: gpt-oss-120b fits a single 80GB GPU, and Muse Spark Open needs at least 700GB of VRAM at NVFP4 per its card."
   - q: "Is DeepSeek V4.1 open source?"
-    a: "Its weights are open under the MIT licence; every V4 and V4.1 instruct card states the repository and weights are MIT-licensed. The newest checkpoint is DeepSeek-V4.1-Flash-1017 (October 17, 2026) with a 1M-token context and image input. DeepSeek V4.1-Pro has been named but not released, and V4-Pro API requests route to V4.1-Flash until it launches."
+    a: "Its weights are open under the MIT licence; every V4 and V4.1 instruct card states the repository and weights are MIT-licensed. The newest checkpoint is DeepSeek-V4.1-Flash-1017 (October 17, 2026) with a 1M-token context and image input. DeepSeek V4.1-Pro has been named but not released; DeepSeek's changelog says it will keep providing API services for DeepSeek V4 Pro after September 14, 2026, and the pricing page lists V4-Pro-0813 as of November 2026."
 sources:
   - title: "DeepSeek-V4.1-Flash-1017 model card"
     url: "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
@@ -76,7 +77,7 @@ sources:
     publisher: "IBM"
 related: ["tool:ollama", "tool:vllm", "tool:sglang", "tool:open-webui", "tool:llama-cpp", "tool:lm-studio", "glossary:open-weights", "glossary:gguf", "glossary:mixture-of-experts", "guide:best-local-llm-tools-2026", "guide:self-host-vs-api-llm", "guide:choosing-the-right-model"]
 ---
-"Open source LLM" is what people search for; "open weights" is what they get, and in 2026 the gap between the two is the story. Every family below publishes a downloadable checkpoint on Hugging Face, but the licence on the card now runs from Apache-2.0 and MIT through custom community licences with revenue clauses to non-commercial terms. This page lists the families current as of October 2026, what each vendor claims on its own model card, and the licence exactly as the card states it. Benchmark figures are vendor self-reports on different harnesses, never compared across vendors here; dates are the vendor's where a dated post exists and Hugging Face's otherwise.
+"Open source LLM" is what people search for; "open weights" is what they get, and in 2026 the gap between the two is the story. Every family below publishes a downloadable checkpoint on [Hugging Face](/tools/hugging-face), but the licence on the card now runs from Apache-2.0 and MIT through custom community licences with revenue clauses to non-commercial terms. This page lists the families current as of October 2026, what each vendor claims on its own model card, and the licence exactly as the card states it. Benchmark figures are vendor self-reports on different harnesses, never compared across vendors here; dates are the vendor's where a dated post exists and Hugging Face's otherwise.
 
 ## The open-weight families at a glance
 
@@ -100,7 +101,7 @@ Not downloadable as of October 2026: Mistral Large 4 (preview API since October 
 
 ## DeepSeek V4 and V4.1
 
-Every V4 and V4.1 instruct card states "This repository and the model weights are licensed under the MIT License," which makes DeepSeek the most permissively licensed frontier-scale family. The current model, DeepSeek-V4.1-Flash-1017, is "a minor update to DeepSeek-V4.1-Flash": a multimodal [mixture-of-experts](/glossary/mixture-of-experts) model with 552B backbone parameters that activates 8B per token during prefill and 16B during decode, a 1M-token context, and a reasoning effort setting from 1 to 100. Card figures for the 1017 release: Terminal-Bench 4.0 42.3, DeepSWE v1.1 77.0, HLE without tools 42.6. V4-Pro (1.6T / 49B) is being phased out; its API requests route to V4.1-Flash "until V4.1-Pro launches."
+Every V4 and V4.1 instruct card states "This repository and the model weights are licensed under the MIT License," which makes [DeepSeek](/tools/deepseek) the most permissively licensed frontier-scale family. The current model, DeepSeek-V4.1-Flash-1017, is "a minor update to DeepSeek-V4.1-Flash": a multimodal [mixture-of-experts](/glossary/mixture-of-experts) model with 552B backbone parameters that activates 8B per token during prefill and 16B during decode, a 1M-token context, and a reasoning effort setting from 1 to 100. Card figures for the 1017 release: Terminal-Bench 4.0 42.3, DeepSWE v1.1 77.0, HLE without tools 42.6. V4-Pro (1.6T / 49B) stays on the API: DeepSeek reversed its September plan to route V4-Pro requests to V4.1-Flash, and its pricing page lists V4-Pro-0813 as of November 2026.
 
 ## Qwen3.8, 3.6 and 3.5 (Alibaba)
 
@@ -124,7 +125,7 @@ Llama 4 Scout and Maverick (April 5, 2025) remain the last models branded Llama,
 
 ## Mistral Small 4, Medium 3.5 and Large 4
 
-Mistral Small 4 (March 16, 2026) unifies "Magistral for reasoning, Pixtral for multimodal, and Devstral for agentic coding, into a single, versatile model": 119B total, 6.5B active, 256k context, text and image input, Apache-2.0. Mistral Medium 3.5 (May 22, 2026) is a dense 128B model "released as open weights, under a modified MIT license," which Mistral says "scores 77.6% on SWE-Bench Verified." Mistral Large 4, "a 1 trillion-parameter natively multimodal model with 52 billion active parameters," launched as a preview API on October 6, 2026 with the line "Weights drop end of this month"; as of October 2026 no repository exists and the licence is not stated by the vendor.
+Mistral's assistant is [Mistral Vibe](/tools/mistral-vibe), formerly Le Chat. Mistral Small 4 (March 16, 2026) unifies "Magistral for reasoning, Pixtral for multimodal, and Devstral for agentic coding, into a single, versatile model": 119B total, 6.5B active, 256k context, text and image input, Apache-2.0. Mistral Medium 3.5 (May 22, 2026) is a dense 128B model "released as open weights, under a modified MIT license," which Mistral says "scores 77.6% on SWE-Bench Verified." Mistral Large 4, "a 1 trillion-parameter natively multimodal model with 52 billion active parameters," launched as a preview API on October 6, 2026 with the line "Weights drop end of this month"; as of October 2026 no repository exists and the licence is not stated by the vendor.
 
 ## gpt-oss (OpenAI)
 
@@ -162,7 +163,7 @@ Tool by tool, see [Best Tools for Running LLMs Locally](/guides/comparisons/best
 
 ## How to choose
 
-**You want a permissive licence and no legal review.** DeepSeek V4.1-Flash (MIT) at the top end, Gemma 4 31B or Qwen3.8-27B (Apache-2.0) in the 30B class, gpt-oss or Granite 4.2 below that.
+**You want a permissive licence and no legal review.** DeepSeek V4.1-Flash (MIT) at the top end, Gemma 4 31B or Qwen3.8-27B (Apache-2.0) in the 30B class, gpt-oss or Granite 4.2 below that. To search the Hub yourself against a licence, size and context budget, the [open-model-scout](/agents/data-ai/open-model-scout) agent builds a shortlist from each model's card.
 
 **You are on a laptop or a single consumer GPU.** Gemma 4 E2B, E4B or 12B, gpt-oss-20b, Granite 4.2 8B, Ministral 3, or Muse Glimmer 30B, built "for autonomous agentic tasks on consumer hardware."
 

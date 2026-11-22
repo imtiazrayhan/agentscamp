@@ -3,6 +3,7 @@ name: "Claude Cowork"
 description: "Anthropic's agent for knowledge work that completes multi-step tasks in your folders, connectors, and browser, on desktop, web, and mobile."
 seoDescription: "Claude Cowork is Anthropic's agent for knowledge work: multi-step tasks in your files and tools on desktop, web, and mobile. Plans, plugins, limits for 2026."
 date: 2026-09-10
+updated: 2026-11-22
 url: "https://claude.com/product/cowork"
 pricing: "paid"
 category: "assistant"
@@ -15,12 +16,12 @@ related: ["tool:claude", "tool:claude-code", "tool:claude-design", "tool:claude-
 alternativeTo: ["claude-code", "microsoft-copilot"]
 os: ["macOS", "Windows", "Linux", "Web", "iOS", "Android"]
 sameAs: ["https://www.anthropic.com", "https://github.com/anthropics/knowledge-work-plugins"]
-summary: "Claude Cowork is Anthropic's agent for non-coding work: describe an outcome and Claude reads, edits, and creates files in folders you choose, uses connectors and plugins, and runs multi-step tasks to completion. Launched January 12, 2026 as a macOS research preview, it is now on Pro, Max, Team, and Enterprise across desktop, web, mobile, and Chrome."
+summary: "Claude Cowork is Anthropic's agent for non-coding work. Since September 16, 2026 it has been merging into Claude itself, which brings in Cowork's capabilities when a task involves your files. It launched January 12, 2026; the unified Claude reached general availability for Enterprise on October 23, 2026 and Team on November 12, 2026."
 faq:
   - q: "What is Claude Cowork?"
     a: "Claude Cowork is the agentic mode of the Claude app for knowledge work. Instead of answering in a single reply, Claude takes a task, plans it, and works through files in folders you grant access to, connectors you have enabled, and optionally a browser, then reports back with finished documents, organized files, or synthesized research. Anthropic describes it as bringing Claude Code's agentic capabilities to work beyond coding."
   - q: "Which plans include Claude Cowork?"
-    a: "Paid plans only: Pro, Max, Team, and Enterprise. The Free plan does not include it. Cowork on Claude Desktop for macOS and Windows is available on all paid plans; the web, mobile, and Chrome side panel surfaces are on Pro, Max, and Team, with Enterprise availability depending on what an admin has enabled."
+    a: "Paid plans only: Pro, Max, Ultra, Team, and Enterprise. The Free plan does not include it. Cowork on Claude Desktop for macOS and Windows is available on all paid plans; the web, mobile, and Chrome side panel surfaces are on Pro, Max, and Team, with Enterprise availability depending on what an admin has enabled."
   - q: "How is Cowork different from Claude Code?"
     a: "Same agent loop, different audience and surface. Claude Code runs in a terminal or IDE and is built for code: it edits repositories, runs commands, and reads build output. Cowork runs inside the Claude app, works in ordinary folders and business tools, and adds scheduled tasks, cloud sessions, a built-in browser, and plugins aimed at roles like sales, legal, and finance."
   - q: "When did Cowork launch?"
@@ -29,7 +30,7 @@ faq:
     a: "Yes. Anthropic's help center says Cowork consumes more of your usage allocation than chatting with Claude, because a single task involves many model calls and tool actions. Cowork, chat, Claude Code, and Claude Design all draw from the same pool."
 ---
 
-[Claude Cowork](/glossary/claude-cowork) is Anthropic's agent for knowledge work. Where [Claude](/tools/claude) chat gives you one reply at a time, Cowork takes a task, plans it, and works through it: reading and editing files in folders you choose, pulling from connectors like Google Drive and Slack, driving a browser when a task needs one, and coming back with finished output. Anthropic's own framing is that it brings [Claude Code](/tools/claude-code)'s agentic capabilities to work beyond coding.
+[Claude Cowork](/glossary/claude-cowork) is Anthropic's agent for knowledge work, and as of November 2026 it is no longer a separate mode: Anthropic's product page says "Claude Cowork is now just Claude." Where [Claude](/tools/claude) chat gives you one reply at a time, Cowork takes a task, plans it, and works through it: reading and editing files in folders you choose, pulling from connectors like Google Drive and Slack, driving a browser when a task needs one, and coming back with finished output. Anthropic's own framing is that it brings [Claude Code](/tools/claude-code)'s agentic capabilities to work beyond coding.
 
 It is aimed at operators, founders, marketers, analysts, and anyone else whose day is documents and tools rather than repositories. Developers use it too, for the parts of their work that are not code: research digests, release notes, spreadsheet cleanup, weekly reports.
 
@@ -60,8 +61,8 @@ Cowork shows each step it takes, asks before permanently deleting anything, and 
 
 ## Good to know
 
-Availability, per the Claude help center as of September 2026: Cowork is on paid plans only (Pro, Max, Team, Enterprise). Claude Desktop for macOS and Windows has it on all paid plans; web at claude.ai and the mobile apps have it on Pro, Max, and Team (Enterprise where an admin has enabled it); the Chrome side panel is on Max and Team and rolling out to Pro. A Linux desktop build is in beta for Ubuntu and Debian and lists Cowork for Pro, Max, Team, and Enterprise.
+Availability: since September 16, 2026, chat and Cowork have been merging into one Claude, rolling out on Pro, Max and Ultra, and generally available for Enterprise from October 23, 2026 and for Team from November 12, 2026. Claude Desktop for macOS and Windows has it on all paid plans; web at claude.ai and the mobile apps have it on Pro, Max, and Team (Enterprise where an admin has enabled it); the Chrome side panel is on Max and Team and rolling out to Pro. A Linux desktop build is in beta for Ubuntu and Debian and lists Cowork for Pro, Max, Team, and Enterprise.
 
-Timeline: research preview on macOS for Max on January 12, 2026; Pro on January 16, 2026; general availability on macOS and Windows on April 9, 2026; web and mobile in beta on July 7, 2026.
+Timeline: research preview on macOS for Max on January 12, 2026; Pro on January 16, 2026; general availability on macOS and Windows on April 9, 2026; web and mobile in beta on July 7, 2026. On September 16, 2026, Anthropic began merging Cowork and chat into one Claude; the unified experience reached general availability for Claude Enterprise on October 23, 2026 and for Claude Team on November 12, 2026.
 
-Limits worth knowing: Cowork uses more of your usage allowance than chat, and shares that allowance with chat, Claude Code, and [Claude Design](/tools/claude-design). Sessions cannot be shared with other people, though individual artifacts can. Some features remain desktop-only. If your work lives inside spreadsheets specifically, [Claude for Excel](/tools/claude-for-excel) works in the workbook itself rather than on files in a folder.
+Limits worth knowing: Cowork uses more of your usage allowance than chat, and shares that allowance with chat, Claude Code, and [Claude Design](/tools/claude-design). Sessions cannot be shared with other people, though individual artifacts can. Some features remain desktop-only. If your work lives inside spreadsheets specifically, [Claude for Excel](/tools/claude-for-excel) works in the workbook itself rather than on files in a folder. For how Cowork compares with Manus, ChatGPT Work and Copilot Cowork, see the [best AI agents of 2026](/guides/comparisons/best-ai-agents-2026).

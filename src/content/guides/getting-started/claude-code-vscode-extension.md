@@ -98,7 +98,7 @@ The panel needs none of the CLI setup; [Installing Claude Code](/guides/getting-
 
 **Selection and @-mentions.** Claude automatically sees your selected text and which file you have open, even with nothing selected; the prompt box shows the file's name. Press `Option+K` (`Alt+K`) to insert a reference like `@file.ts#5-10` for the selection. Typing `@` followed by a file or folder name attaches it, with fuzzy matching, and `@terminal:name` includes a terminal's output. If you only want the selection and not the whole open file, turn off the **Attach Open File** setting (v2.1.271 or later).
 
-**Checkpoints and rewind.** The extension tracks Claude's file edits. Hover over any message to reveal the rewind button and pick **Fork conversation from here**, **Rewind code to here**, or **Fork conversation and rewind code**.
+**Checkpoints and rewind.** The extension tracks Claude's file edits ([what checkpoints do and don't capture](/guides/getting-started/claude-code-checkpoints)). Hover over any message to reveal the rewind button and pick **Fork conversation from here**, **Rewind code to here**, or **Fork conversation and rewind code**.
 
 **Sessions, history and tabs.** The **Session history** button at the top of the panel searches past conversations by keyword or browses them by time. **Open in New Tab** or **Open in New Window** starts parallel conversations, each with its own context. A small colored dot on the Spark icon reports status: blue means a permission request is waiting, orange means Claude finished while the tab was hidden.
 

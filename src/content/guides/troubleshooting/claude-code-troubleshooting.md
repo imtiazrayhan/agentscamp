@@ -3,6 +3,7 @@ title: "Claude Code Troubleshooting: Fixes for the Most Common Problems"
 description: "Fixes for the Claude Code problems people actually hit — install and auth failures, context-limit errors, MCP servers that won't connect, permission loops."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-22
 color: "green"
 topics: ["workflow-prompting"]
 tags: ["claude-code", "troubleshooting", "errors", "debugging", "mcp"]
@@ -95,7 +96,7 @@ Deny beats allow from any scope — including a checked-in project file or manag
 
 ### Works interactively, fails in CI
 
-Three usual suspects: **auth** (CI needs `ANTHROPIC_API_KEY` or Bedrock/Vertex env — no browser login); **permissions** (no human to approve prompts — pass explicit `--allowedTools`, `--permission-mode`, `--max-turns`); **environment** (hooks/plugins/CLAUDE.md from your machine don't exist there — or *do* exist via the repo and surprise you; `--bare` starts deterministic and lets you add back only what the job needs). Full reference: [Running Claude Code in CI](/guides/advanced/claude-code-ci-github-actions).
+Three usual suspects: **auth** (CI needs `ANTHROPIC_API_KEY`, Bedrock/Vertex env, or a `CLAUDE_CODE_OAUTH_TOKEN` from `claude setup-token` on a paid plan, which `--bare` doesn't read — no browser login); **permissions** (no human to approve prompts — pass explicit `--allowedTools`, `--permission-mode`, `--max-turns`); **environment** (hooks/plugins/CLAUDE.md from your machine don't exist there — or *do* exist via the repo and surprise you; `--bare` starts deterministic and lets you add back only what the job needs). Full reference: [Running Claude Code in CI](/guides/advanced/claude-code-ci-github-actions).
 
 ### The GitHub Action doesn't respond to @claude
 

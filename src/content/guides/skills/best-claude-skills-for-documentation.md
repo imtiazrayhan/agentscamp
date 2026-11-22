@@ -3,6 +3,7 @@ title: "7 Best Claude Skills for Documentation"
 description: "Use Claude skills to verify code examples and create accurate READMEs, API docs, runbooks, onboarding guides, ADRs, and diagrams."
 author: "Imtiaz Rayhan"
 date: 2026-08-04
+updated: 2026-11-22
 color: "yellow"
 topics: ["workflow-prompting", "architecture"]
 audience: ["developers"]
@@ -63,11 +64,11 @@ Runbooks should use placeholders for secrets and avoid irreversible steps withou
 
 ## 5. onboarding-guide-writer: shorten the first contribution
 
-[onboarding-guide-writer](/skills/docs/onboarding-guide-writer) maps prerequisites, access, local setup, architecture orientation, common commands, debugging, contribution flow, and known traps. Its success criterion is a new contributor reaching a small verified change—not merely installing dependencies.
+[onboarding-guide-writer](/skills/docs/onboarding-guide-writer) maps prerequisites, access, local setup, architecture orientation, common commands, debugging, contribution flow, and known traps. Its success criterion is a new contributor reaching a small verified change—not merely installing dependencies. The [codebase onboarding roundup](/guides/skills/best-claude-skills-for-codebase-onboarding) pairs it with the skills a newcomer uses to learn the repo first.
 
 ## 6. adr-writer: preserve decision context
 
-[adr-writer](/skills/docs/adr-writer) records status, context, decision drivers, considered options, chosen decision, consequences, and follow-up. It separates known constraints from opinion and captures rejected alternatives without turning the document into a retrospective justification.
+[adr-writer](/skills/docs/adr-writer) writes a numbered Nygard-format record (Status, Context, Decision, and Consequences with positives and negatives) plus a Considered Alternatives section, mining the repo for the constraints behind the decision. It separates known constraints from opinion and captures rejected alternatives without turning the document into a retrospective justification. The [system design roundup](/guides/skills/best-claude-skills-for-system-design) shows where ADRs fit alongside design docs, diagrams, and threat models.
 
 ## 7. architecture-diagram-generator: show relationships
 

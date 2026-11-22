@@ -4,6 +4,7 @@ seoTitle: "Claude Code Slash Commands: Built-in List + Custom Commands"
 description: "Claude Code's built-in slash commands grouped by job, and how to write your own as skills: file format, frontmatter, arguments, and plugin namespacing."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
+updated: "2026-11-22"
 color: "green"
 topics: ["workflow-prompting"]
 audience: ["developers"]
@@ -67,7 +68,7 @@ These are highlights from Anthropic's commands reference, grouped by job. The li
 | | `/compact [instructions]` | Free up context by summarizing |
 | | `/context [all]` | Visualize context usage |
 | | `/resume` | Return to an earlier conversation |
-| | `/rewind` | Roll back code and conversation to a checkpoint |
+| | `/rewind` | Roll back code, conversation, or both to a checkpoint (aliases `/undo`, `/checkpoint`) |
 | | `/btw [question]` | Ask a side question without affecting history |
 | | `/branch [name]` | Branch the conversation to try another direction |
 | | `/export [filename]` | Export the conversation as text |
@@ -102,7 +103,7 @@ These are highlights from Anthropic's commands reference, grouped by job. The li
 A few of these pay off on day one:
 - `/clear` between unrelated tasks.
 - `/compact` with instructions about what to keep, when context runs long.
-- `/rewind` when an edit goes wrong, because it rolls back code and conversation together.
+- `/rewind` when an edit goes wrong: it can roll back code, the conversation, or both (see [checkpoints](/guides/getting-started/claude-code-checkpoints)).
 
 [Managing memory and context](/guides/configuration/claude-code-memory-context) covers `/compact`, `/context` and `/memory` in depth. [Settings and permissions](/guides/configuration/claude-code-settings-permissions) explains what `/permissions` edits.
 

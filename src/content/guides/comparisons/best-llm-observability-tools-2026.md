@@ -5,6 +5,7 @@ seoTitle: "Best LLM Observability Tools 2026: Langfuse & LangSmith Alternatives"
 seoDescription: "The best Langfuse and LangSmith alternatives in 2026: Braintrust, Arize Phoenix, Helicone and AgentOps compared on self-hosting, OpenTelemetry and status."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
+updated: "2026-11-22"
 reviewed: "2026-09-11"
 color: "green"
 topics: ["mlops-ai-infra", "llm-evals", "ai-agents-systems"]
@@ -304,9 +305,9 @@ What this means in practice:
 - **July 29 and August 17:** the Langfuse v4 platform release landed, followed by the "Langfuse v4 is live" post, which says dashboards over longer time ranges load "at least 10x faster in large projects."
 - **All year:** no AgentOps SDK release followed 0.4.21 (August 29, 2025).
 
-Also on the market, without pages here:
+Also on the market:
 - **OpenLLMetry:** its maker, Traceloop, joined ServiceNow, which called the acquisition "recently completed" in May 2026.
-- **Weave:** CoreWeave has owned its maker, Weights & Biases, since May 2025.
+- **[W&B Weave](/tools/weave):** CoreWeave has owned its maker, Weights & Biases, since May 2025; CoreWeave's docs now call Agent Lens (in preview as of November 2026) Weave's successor, while Weave itself remains live.
 - **Datadog:** its product is now titled "Agent Observability," and it accepts OTel GenAI traces without Datadog's SDK.
 - **[Opik](/tools/opik) (Comet), Laminar and OpenLIT:** self-hostable Apache-2.0 platforms; Opik also ships an MCP server and skill pack for Claude Code.
 

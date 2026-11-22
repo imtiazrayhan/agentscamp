@@ -129,7 +129,7 @@ The `description` is the routing signal — it's how Claude decides to delegate,
 
 The isolation is real in both directions, and this is where expectations usually break. A subagent's starting context contains its own system prompt and environment details, the delegation message Claude writes when handing off, the `CLAUDE.md` hierarchy, a git status snapshot from the parent session's start, any preloaded skills, and a roster of its sibling agents.
 
-It does **not** contain your conversation history, the files you've already read, the skills you've already invoked, or your output style preferences.
+It does **not** contain your conversation history, the files you've already read, the skills you've already invoked, or your output style preferences. Forks are the exception: they inherit the whole conversation (see [how subagents work now](/guides/configuration/claude-code-subagents)).
 
 That blank slate is the feature — it's precisely why the subagent's noise stays out of your thread — but it has a practical consequence worth internalizing: everything the subagent needs must arrive through its system prompt, its preloaded skills, or the delegation message. "Review the change we just discussed" means nothing to a worker that never saw the discussion. This is the single most common reason a well-written subagent returns a disappointing result.
 

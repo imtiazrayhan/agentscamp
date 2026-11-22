@@ -27,7 +27,7 @@ faq:
 related: ["guide:how-rag-works", "guide:agentic-rag", "guide:rag-vs-long-context", "glossary:rag", "guide:hybrid-search-reranking", "skill:graphrag-scaffolder", "glossary:vector-database"]
 ---
 
-Vector [RAG](/glossary/rag) has a structural blind spot: it retrieves passages that *resemble the question*. Ask something whose answer is **assembled from connections** — across documents, through relationships, over the whole corpus — and no chunk resembles the question, so retrieval returns fragments and the model improvises. **GraphRAG** is the fix for exactly that class of question: retrieval over a knowledge graph instead of a similarity index.
+Vector [RAG](/glossary/rag) has a structural blind spot: it retrieves passages that *resemble the question*. Ask something whose answer is **assembled from connections** — across documents, through relationships, over the whole corpus — and no chunk resembles the question, so retrieval returns fragments and the model improvises. **[GraphRAG](/glossary/graphrag)** is the fix for exactly that class of question: retrieval over a knowledge graph instead of a similarity index.
 
 ## The mechanism
 

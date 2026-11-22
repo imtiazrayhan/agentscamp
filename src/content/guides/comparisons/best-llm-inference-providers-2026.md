@@ -4,6 +4,7 @@ description: "Groq, Cerebras, Together AI, Fireworks AI, Baseten, Modal, fal and
 seoTitle: "Best LLM Inference Providers (2026): Groq Alternatives Compared"
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
+updated: "2026-11-22"
 reviewed: "2026-09-11"
 color: "green"
 topics: ["mlops-ai-infra", "llm-app-dev"]
@@ -22,7 +23,7 @@ faq:
   - q: "What are the best Groq alternatives?"
     a: "Cerebras is the closest match on speed; its pricing page lists GPT OSS 120B at about 3,000 tokens per second as of September 2026. For a broader open-model catalogue with fine-tuning, use Together AI or Fireworks AI, and for your own models on dedicated GPUs, use Baseten or Modal."
   - q: "Are there free alternatives to Groq?"
-    a: "Groq itself has a rate-limited free plan. Cerebras offers a free trial with credits, Fireworks and Baseten give new accounts starting credits, and Modal's Starter plan includes monthly free credits. Hugging Face Inference Providers also has a free tier that routes to several of these providers."
+    a: "Groq itself has a rate-limited free plan. Cerebras offers a free trial with credits, Fireworks and Baseten give new accounts starting credits, and Modal's Starter plan includes monthly free credits. Hugging Face Inference Providers passes provider rates through with no markup, but as of November 2026 free Hugging Face accounts get no monthly inference credits, so you buy credits or use a PRO or Team plan."
   - q: "What are the best alternatives to Together AI?"
     a: "Fireworks AI is the most direct alternative, with a large open-model catalogue, serverless and dedicated deployments, and SFT, DPO and reinforcement fine-tuning. Baseten suits teams that want their own models on dedicated GPUs, and Groq or Cerebras suit workloads where latency matters more than catalogue breadth."
   - q: "Did NVIDIA acquire Groq?"
@@ -125,7 +126,7 @@ Choose fal for production image, video, audio and 3D features billed per output.
 
 ### Routing across providers
 
-[OpenRouter](/tools/openrouter) isn't a host: it sends your request to a model provider and, per its FAQ, passes provider pricing through with no inference markup, charging a fee when you buy credits instead. Hugging Face Inference Providers works similarly at `https://router.huggingface.co/v1`, with `:fastest`, `:cheapest` and `:preferred` suffixes; its partners include every provider on this page except Modal, plus DeepInfra. For a self-hosted gateway, read [LiteLLM vs OpenRouter](/guides/comparisons/litellm-vs-openrouter) and [LLM gateways compared](/guides/advanced/llm-gateways-compared). DeepInfra and SambaNova, which have no page here, also turn up in evaluations.
+[OpenRouter](/tools/openrouter) isn't a host: it sends your request to a model provider and, per its FAQ, passes provider pricing through with no inference markup, charging a fee when you buy credits instead. [Hugging Face](/tools/hugging-face) Inference Providers works similarly at `https://router.huggingface.co/v1`, with `:fastest`, `:cheapest` and `:preferred` suffixes; its partners include every provider on this page except Modal, plus DeepInfra, and since November 16, 2026 its chat models route through OpenRouter. For a self-hosted gateway, read [LiteLLM vs OpenRouter](/guides/comparisons/litellm-vs-openrouter) and [LLM gateways compared](/guides/advanced/llm-gateways-compared). DeepInfra and SambaNova, which have no page here, also turn up in evaluations.
 
 ## The providers, one at a time
 

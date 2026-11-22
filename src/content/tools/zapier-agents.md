@@ -3,6 +3,7 @@ name: "Zapier Agents"
 description: "Zapier's no-code AI agents that take plain-English instructions and act across 9,000+ apps on a schedule, on app events, or on demand."
 seoDescription: "Zapier Agents for founders: build AI agents in plain English with triggers, actions, and knowledge across 9,000+ apps. Activities billing as of September 2026."
 date: 2026-09-10
+updated: 2026-11-22
 url: "https://zapier.com/agents"
 pricing: "freemium"
 category: "automation"
@@ -16,7 +17,7 @@ alternativeTo: ["lindy", "n8n", "claude-cowork"]
 sameAs: ["https://help.zapier.com/hc/en-us/articles/24393442652557-Build-an-agent-in-Zapier-Agents"]
 related: ["guide:automate-startup-ops-with-ai-agents", "guide:claude-code-for-non-developers", "tool:lindy", "tool:n8n", "tool:claude-cowork", "glossary:workflow-automation", "glossary:ai-agent"]
 keywords: ["Zapier Agents", "no-code AI agent", "AI workflow automation", "Zapier AI", "agent automation"]
-summary: "Zapier Agents lets you describe an AI agent in plain English (what triggers it, what it does, which apps it may use), give it knowledge sources, and publish it to run on a schedule, on app events, from a Zap, or on demand across 9,000+ integrations. Usage is billed in activities, separate from Zapier tasks, with free and Pro tiers as of September 2026."
+summary: "Zapier Agents lets you describe an AI agent in plain English, give it knowledge sources, and run it on a schedule, on app events, from a Zap, or on demand across 9,000+ apps. As of November 2026 Zapier is migrating Agents to AI by Zapier, an agentic step in the Zap editor billed in tasks, with per-tool approvals and no turn-off date set."
 faq:
   - q: "What is Zapier Agents?"
     a: "Zapier Agents is Zapier's product for building AI agents without code. You write instructions describing what should trigger the agent, what tasks it should do, and which apps it should use; add actions as tools and knowledge sources as reference data; test it; then publish. Zapier Copilot helps configure it and investigate errors."
@@ -28,7 +29,7 @@ faq:
     a: "As of September 2026 the Agents pricing page lists a free tier with 400 activities a month and a 10-activity cap per run, and a Pro tier starting at about 33.33 dollars a month on annual billing with 1,500 activities a month and a 40-activity cap per run; testing does not count on paid plans. Enterprise pricing is arranged through sales. An activity is any billable action the agent takes."
 ---
 
-Zapier Agents is the agent layer on top of the biggest integration catalog in no-code automation. Instead of drawing a fixed Zap, you write instructions in plain English about what should trigger the agent, what it should do, and which apps it may touch, then attach actions as tools and documents as knowledge. Zapier Copilot helps you configure it, you test it, and you publish. From then on it runs on a schedule, reacts to app events, or answers when you chat with it.
+Zapier Agents is the agent layer on top of the biggest integration catalog in no-code automation. As of November 2026, Zapier "is migrating Agents (agents.zapier.com) to AI by Zapier, a more powerful AI experience built directly into the Zap editor", which uses task-based pricing and a per-tool "Require approval before running" setting; "Zapier has not set a date to turn off Agents yet." Instead of drawing a fixed Zap, you write instructions in plain English about what should trigger the agent, what it should do, and which apps it may touch, then attach actions as tools and documents as knowledge. Zapier Copilot helps you configure it, you test it, and you publish. From then on it runs on a schedule, reacts to app events, or answers when you chat with it.
 
 For a founder who already runs the company on Gmail, Slack, HubSpot, and a spreadsheet, that is the appeal: the connections are already there, and the agent is the part that used to require a person to read, decide, and act.
 
@@ -62,4 +63,4 @@ Publish it, watch the activity log for a week, and tighten the instructions wher
 
 Zapier Agents runs at agents.zapier.com and needs no install beyond the optional Chrome extension. As of September 2026 the Agents pricing page lists a free tier (400 activities a month, tests count, 10 activities per run) and a Pro tier starting at about $33.33/month on annual billing (1,500 activities a month, tests free, 40 per run), with Enterprise arranged via sales and activities shared across the account on Team and Enterprise. When the monthly allowance runs out, agents stop running actions but you keep chat access.
 
-Compared with [Lindy](/tools/lindy), which lives in Slack and behaves like one teammate with skills and routines, Zapier Agents feels like a fleet of small, purpose-built workers wired to your existing Zaps. [n8n](/tools/n8n) is the choice if you want a visual canvas, self-hosting, and finer control over each step; [Claude Cowork](/tools/claude-cowork) is the choice when the work is documents and files on your own machine rather than events across SaaS apps. The [AI workflow automation](/glossary/workflow-automation) entry sets out the vocabulary these tools share.
+Compared with [Lindy](/tools/lindy), which lives in Slack and behaves like one teammate with skills and routines, Zapier Agents feels like a fleet of small, purpose-built workers wired to your existing Zaps. [n8n](/tools/n8n) is the choice if you want a visual canvas, self-hosting, and finer control over each step; [Claude Cowork](/tools/claude-cowork) is the choice when the work is documents and files on your own machine rather than events across SaaS apps, and [Composio](/tools/composio) is the developer route, giving your own agent OAuth-managed access to those SaaS apps. The [AI workflow automation](/glossary/workflow-automation) entry sets out the vocabulary these tools share, and the [best AI agents of 2026](/guides/comparisons/best-ai-agents-2026) compares Zapier with Manus, Claude and ChatGPT Work.

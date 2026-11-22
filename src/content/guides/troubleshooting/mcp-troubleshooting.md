@@ -50,4 +50,4 @@ Remote-server 401s want the built-in flow: `/mcp` → server → **Authenticate*
 **Truncated output** is policy, not a bug — ~25k tokens default (`MAX_MCP_OUTPUT_TOKENS` to raise; better to request less). **Slow tool calls** have per-call timeout controls server-side and in config. **Context bloat** from too many connected servers shows up in `/context` — every server's schemas ride along; prune per project.
 
 > [!TIP]
-> The universal bisection tool: [MCP Inspector](/tools/mcp-inspector). Drive the misbehaving server directly — list its tools, call one with known-good arguments. Fails there too → the server is broken (file the issue upstream). Works there → your client config is the problem, and Layers 1–4 will find it.
+> The universal bisection tool: [MCP Inspector](/tools/mcp-inspector). Drive the misbehaving server directly — list its tools, call one with known-good arguments ([/test-mcp-server](/commands/testing/test-mcp-server) scripts exactly this check with the Inspector CLI). Fails there too → the server is broken (file the issue upstream). Works there → your client config is the problem, and Layers 1–4 will find it.

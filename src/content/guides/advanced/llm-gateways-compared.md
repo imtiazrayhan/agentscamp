@@ -5,6 +5,7 @@ seoTitle: "Portkey vs Helicone vs LiteLLM: Best LLM Gateway for Cost Tracking"
 seoDescription: "Portkey, Helicone, and LiteLLM compared on caching, per-provider cost tracking, and observability, with each one's 2026 status and self-hosted vs hosted fit."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+updated: 2026-11-22
 color: "green"
 topics: ["devops-infra"]
 audience: ["developers", "ai-engineers"]
@@ -32,7 +33,7 @@ faq:
 related: ["tool:portkey", "tool:helicone", "tool:litellm", "guide:llm-cost-latency-engineering", "skill:prompt-cache-optimizer", "agent:llm-cost-optimizer", "guide:calling-any-model-gateways", "tool:openrouter"]
 ---
 
-Once more than one app talks to an LLM, you start wanting a single place to handle caching, fallback, keys, cost, and budgets — instead of reimplementing them in every service. That place is an **LLM gateway**. This guide compares the three most common choices for **caching and cost control** — [Portkey](/tools/portkey), [LiteLLM](/tools/litellm), and [Helicone](/tools/helicone) — including each one's current status, which matters more than usual in 2026.
+Once more than one app talks to an LLM, you start wanting a single place to handle caching, fallback, keys, cost, and budgets — instead of reimplementing them in every service. That place is an **[LLM gateway](/glossary/ai-gateway)**. This guide compares the three most common choices for **caching and cost control** — [Portkey](/tools/portkey), [LiteLLM](/tools/litellm), and [Helicone](/tools/helicone) — including each one's current status, which matters more than usual in 2026.
 
 ## What a gateway gives you
 
@@ -45,7 +46,7 @@ Once more than one app talks to an LLM, you start wanting a single place to hand
 
 ### [Portkey](/tools/portkey) — gateway + LLMOps control plane
 
-The most platform-complete option. An **open-source (MIT) routing gateway** — 1,600+ models, retries, fallbacks, load balancing, and both **simple and semantic caching** — paired with a **freemium hosted control plane** for observability, prompt management, virtual keys, budgets, guardrails, and governance — the [LLMOps](/glossary/llmops) layer on top of the raw gateway. Best when you want caching and cost control as a managed, batteries-included service. (Palo Alto Networks acquired Portkey in 2026 — unlike Helicone's, a continuity move: it becomes the gateway in PANW's AI-security platform and stays actively developed.)
+The most platform-complete option. An **open-source (MIT) routing gateway** — 1,600+ models, retries, fallbacks, load balancing, and both **simple and semantic caching** — paired with a **freemium hosted control plane** for observability, prompt management, virtual keys, budgets, guardrails, and governance — the [LLMOps](/glossary/llmops) layer on top of the raw gateway. Best when you want caching and cost control as a managed, batteries-included service. (Palo Alto Networks completed its acquisition of Portkey on May 29, 2026 — unlike Helicone's, a continuity move: it becomes the gateway in PANW's AI-security platform and stays actively developed.)
 
 ### [LiteLLM](/tools/litellm) — open-source library or self-hosted proxy
 
@@ -64,7 +65,7 @@ All three cache and track cost; the difference is how much is managed for you:
 
 | | Caching | Cost control | Form factor | 2026 status |
 |---|---|---|---|---|
-| **Portkey** | Simple + semantic | Budgets, virtual keys, rate limits, cost analytics | OSS gateway + hosted plane | Actively developed |
+| **Portkey** | Simple + semantic | Budgets, virtual keys, rate limits, cost analytics | OSS gateway + hosted plane | Actively developed; Palo Alto Networks since May 29, 2026 (docs now "Prisma AIRS AI Gateway") |
 | **LiteLLM** | Proxy cache | Cost tracking, budgets, rate limits (self-run) | Library or self-hosted proxy | Actively developed |
 | **Helicone** | Proxy cache | Cost/latency analytics | One-line proxy / self-host | Maintenance mode |
 

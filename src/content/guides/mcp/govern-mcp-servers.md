@@ -3,6 +3,7 @@ title: "Connecting and Governing MCP Servers: Registries, Gateways, and Tool Spr
 description: "As MCP servers multiply, discovery, trust, and tool sprawl become the problem. How registries, gateways, and curation keep a growing fleet secure and usable."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+updated: 2026-11-22
 color: "green"
 topics: ["mcp", "architecture"]
 audience: ["developers", "ai-engineers", "security"]
@@ -21,7 +22,7 @@ faq:
   - q: "How do I manage MCP tool sprawl?"
     a: "Treat the model's tool list as a scarce resource and curate it. Don't connect every server to every agent — expose only the tools a given task actually needs, because each extra tool consumes context and increases the chance the model picks the wrong one. Use a gateway or per-agent configuration to filter tools, namespace them to avoid collisions, and periodically prune servers and tools nobody uses. A small, sharp tool list outperforms a large, noisy one."
   - q: "What is the MCP registry?"
-    a: "A registry is a catalog of MCP servers you can discover, evaluate, and install from. The official MCP Registry provides a standard, open catalog with provenance, and platforms like Smithery offer curated registries plus hosting and one-command installation. Registries solve the discovery and trust problem — finding servers that exist, seeing who published them, and pinning a specific version — rather than copy-pasting setup from a README of unknown origin."
+    a: "A registry is a catalog of MCP servers you can discover, evaluate, and install from. The official MCP Registry, in preview as of November 2026, provides a standard, open catalog with provenance, and directories like Smithery (whose hosting and CLI shut down on October 31, 2026) help you browse what exists. Registries solve the discovery and trust problem — finding servers that exist, seeing who published them, and pinning a specific version — rather than copy-pasting setup from a README of unknown origin."
   - q: "Are third-party MCP servers safe to use?"
     a: "Not by default — treat every third-party MCP server as supply-chain risk. A server runs code and is handed credentials and tool access, so a malicious or compromised one can exfiltrate data or take harmful actions. Vet provenance (who publishes it, is it open and audited), pin a specific version rather than tracking latest, scope any credentials to least privilege, run it isolated where possible, and require explicit approval before a server is added to a shared project."
 related: ["guide:building-an-mcp-server", "guide:deploy-remote-mcp-server", "agent:mcp-server-engineer", "tool:smithery", "tool:mcp-inspector", "command:add-mcp-server"]
@@ -41,15 +42,15 @@ Registries address the first, gateways the second and third, and curation ties t
 
 A **registry** is a catalog of MCP servers you can search, evaluate, and install from — the difference between "I found a gist" and "I installed a known server at a pinned version."
 
-- **The official MCP Registry** provides an open, standard catalog with provenance, so clients and tools can discover servers programmatically rather than by word of mouth.
-- **[Smithery](/tools/smithery)** and similar platforms add a curated registry on top of discovery — often with hosting and one-command installation — so you can go from "I need a Postgres server" to a running, versioned connection quickly.
+- **The official MCP Registry**, in preview as of November 2026, provides an open, standard catalog with provenance, so clients and tools can discover servers programmatically rather than by word of mouth.
+- **[Smithery](/tools/smithery)** is now a public, non-proxied directory run by Arcade.dev. Its hosting, API and CLI shut down on October 31, 2026, so use it to find servers and use a gateway or your client's own config to run them.
 - **Vendor registries** let an organization publish an internal catalog of approved servers, which is how you give developers a paved road instead of a free-for-all.
 
 The governance win is **provenance and pinning**: know who published a server, and depend on a specific version you've vetted rather than whatever `latest` becomes tomorrow.
 
 ## Gateways: a single control point
 
-A **gateway** sits between your clients and your MCP servers and presents many servers through one governed entry point. Instead of configuring auth, limits, and allow-lists in every client, you enforce them **once** at the gateway:
+A **gateway** ([MCP gateway](/glossary/mcp-gateway)) sits between your clients and your MCP servers and presents many servers through one governed entry point; the [best MCP gateways of 2026](/guides/comparisons/best-mcp-gateways-2026) compares the options, from the local Docker MCP Toolkit to hosted ones like [Composio](/tools/composio). Instead of configuring auth, limits, and allow-lists in every client, you enforce them **once** at the gateway:
 
 - **Central authentication** — clients authenticate to the gateway; the gateway holds the credentials to the upstream servers.
 - **Allow-listing** — which servers and which tools are reachable at all, decided centrally.
@@ -78,7 +79,7 @@ A connected MCP server runs code and is trusted with credentials and tool access
 - **Pin versions.** Depend on a specific, reviewed version, not `latest`.
 - **Least-privilege credentials.** Scope every token to the minimum the server needs; assume a server can do anything its credentials allow.
 - **Require approval to add.** In shared projects, adding a server should be a reviewed action, not a silent config change. (Claude Code already prompts each teammate to approve a project-scoped server from `.mcp.json` before its tools activate.)
-- **Isolate where you can.** Run untrusted servers with constrained network and filesystem access.
+- **Isolate where you can.** Run untrusted servers with constrained network and filesystem access. The [Docker MCP Toolkit](/tools/docker-mcp-toolkit) does this by default: each server runs in a container with no access to the host filesystem.
 
 > [!WARNING]
 > A malicious MCP server doesn't need an exploit — it just needs to be *connected*. If it's handed a token and a tool surface, it can use them. The defenses are organizational as much as technical: provenance, pinning, least privilege, and an approval gate before anything joins the fleet.

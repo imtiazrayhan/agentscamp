@@ -77,4 +77,4 @@ how it hooks into existing patterns, and the public interface.>
 
 ## Report
 
-Deliver the plan as your message — it is the whole deliverable. Keep it tight enough to read in one pass, specific enough to start coding from immediately, and end with the single recommended first step. Remember: no files were changed; this is a plan to act on, not the action.
+Deliver the plan as your message — it is the whole deliverable. Keep it tight enough to read in one pass, specific enough to start coding from immediately, and end with the single recommended first step. Remember: no files were changed; this is a plan to act on, not the action. When the feature needs a spec an agent can execute, with testable acceptance criteria and a traced task list, use [/spec](/commands/plan/spec) instead.

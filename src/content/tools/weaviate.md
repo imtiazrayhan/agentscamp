@@ -33,7 +33,7 @@ It is aimed at teams who want a feature-rich, open-source store they can self-ho
 
 ## Highlights
 
-- **Built-in hybrid search** — combine BM25 keyword scoring and vector similarity with a single query and tunable fusion weighting.
+- **Built-in hybrid search** — combine [BM25](/glossary/bm25) keyword scoring and vector similarity with a single query and tunable fusion weighting.
 - **Vectorizer modules** — optional integrations that embed your data on ingest (OpenAI, Cohere, Hugging Face, local models), so the store owns the embedding step if you want it to.
 - **Rich filtering & schema** — typed properties with metadata filtering, cross-references, and a defined collection schema.
 - **Multi-tenancy** — isolate many tenants within a class efficiently, built for SaaS retrieval.

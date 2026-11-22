@@ -27,7 +27,7 @@ faq:
     a: "All three sit in the gateway space with different centers of gravity: Portkey couples routing with an LLMOps control plane (caching, guardrails, budgets, observability), LiteLLM is the library-or-self-hosted proxy, and Helicone is observability-first."
 ---
 
-Portkey is an **AI gateway** paired with an **LLMOps control plane**. The gateway puts 1,600+ models behind one OpenAI-compatible API and adds the reliability and cost levers you'd otherwise build yourself — caching, retries, fallbacks, load balancing — while the hosted platform layers on observability, prompt management, and governance. It's aimed at teams who want one managed control point for all their LLM traffic, with caching and cost control built in rather than bolted on.
+Portkey is an **[AI gateway](/glossary/ai-gateway)** paired with an **LLMOps control plane**. The gateway puts 1,600+ models behind one OpenAI-compatible API and adds the reliability and cost levers you'd otherwise build yourself — caching, retries, fallbacks, load balancing — while the hosted platform layers on observability, prompt management, and governance. It's aimed at teams who want one managed control point for all their LLM traffic, with caching and cost control built in rather than bolted on.
 
 It earns its place in a **cost-and-latency** stack specifically: caching cuts the cost and latency of repeated calls, routing lets you right-size models per request, observability attributes spend per key/team, and virtual keys with budgets and rate limits cap runaway cost.
 

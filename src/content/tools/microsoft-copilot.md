@@ -3,6 +3,7 @@ name: "Microsoft 365 Copilot"
 description: "Microsoft's work assistant inside Word, Excel, PowerPoint, Outlook, and Teams, grounded in your company's Microsoft 365 data, with Researcher and Analyst."
 seoDescription: "Microsoft 365 Copilot for founders and analysts: Copilot Chat vs the paid add-on as of September 2026, Researcher and Analyst agents, Cowork, Copilot Studio."
 date: 2026-09-10
+updated: 2026-11-22
 url: "https://www.microsoft.com/en-us/microsoft-365-copilot"
 pricing: "paid"
 category: "assistant"
@@ -27,7 +28,7 @@ faq:
     a: "Copilot Cowork is Microsoft's agent that carries out tasks across your Microsoft 365 environment: sending email, scheduling meetings, creating Word, Excel, PowerPoint, and PDF files, posting in Teams, running deep research, and scheduling recurring prompts. It asks for approval before consequential actions. It is generally available for work accounts under usage-based billing with Copilot credits, and in preview for personal accounts."
 ---
 
-Microsoft 365 Copilot is the AI assistant that lives inside Word, Excel, PowerPoint, Outlook, OneNote, and Teams, plus a standalone Microsoft 365 Copilot app on the web, desktop, and mobile. Its distinguishing feature is not the model but the grounding: with the paid license, answers draw automatically on your organization's email, files, meetings, calendars, and chats through Microsoft Graph and Work IQ, scoped to what you already have permission to see.
+Microsoft 365 Copilot is the AI assistant that lives inside Word, Excel, PowerPoint, Outlook, OneNote, and Teams, plus the Microsoft Copilot app (renamed from the Microsoft 365 Copilot app) on the web, desktop, and mobile. Its distinguishing feature is not the model but the grounding: with the paid license, answers draw automatically on your organization's email, files, meetings, calendars, and chats through Microsoft Graph and Work IQ, scoped to what you already have permission to see.
 
 It is aimed at companies that run on Microsoft 365 and want AI where the work already happens: the founder in Outlook and Teams, the marketer building decks in PowerPoint, the analyst in Excel. It is not [GitHub Copilot](/tools/github-copilot), Microsoft's coding assistant, which is a separate product with its own licensing.
 
@@ -65,6 +66,6 @@ Microsoft describes three tiers. Copilot Chat is included with eligible Microsof
 
 Plans as of September 2026, per microsoft.com: Copilot Chat is listed as included; the enterprise Microsoft 365 Copilot add-on is $30 per user per month paid yearly, on top of a qualifying Microsoft 365 plan; the Microsoft 365 Copilot Business add-on for smaller companies is $18 per user per month paid yearly through December 2026 (list $21; $25.20 monthly), and Microsoft also sells Business Standard and Business Premium bundles with Copilot included. For individuals, Copilot Pro is no longer available for purchase; its support ended August 1, 2026, and Microsoft points personal users to Microsoft 365 Premium, where AI features apply only to the subscription owner.
 
-Copilot is available on the web at m365copilot.com, in the desktop app for Windows and Mac, in the iPhone and Android apps, and inside the Office apps. Enterprise Data Protection applies across all three tiers with a work account, EU traffic stays inside the EU Data Boundary, and admins manage it from Copilot controls in the admin center.
+Copilot is available on the web at copilot.cloud.microsoft, in the desktop app for Windows and Mac, in the iPhone and Android apps, and inside the Office apps. Enterprise Data Protection applies across all three tiers with a work account, EU traffic stays inside the EU Data Boundary, and admins manage it from Copilot controls in the admin center.
 
 The closest Anthropic comparison is [Claude Cowork](/tools/claude-cowork), which delegates file-based tasks in a similar approve-each-step style but without the Office integration; [Claude for Excel](/tools/claude-for-excel) is the head-to-head for spreadsheet work. On the Google side, [Gemini](/tools/gemini) plays the same role for Workspace, and [ChatGPT](/tools/chatgpt) is the general assistant with the broadest consumer feature set.

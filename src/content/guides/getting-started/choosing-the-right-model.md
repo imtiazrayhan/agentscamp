@@ -3,11 +3,12 @@ title: "Choosing the Right Model: Haiku vs Sonnet vs Opus"
 description: "How to pick the right Claude model tier — Haiku, Sonnet, or Opus — for any Claude Code agent or task, with a clear decision rubric and per-agent examples."
 author: "Imtiaz Rayhan"
 date: 2026-05-10
+updated: 2026-11-22
 color: "green"
 topics: ["workflow-prompting"]
 summary: "Match each Claude Code agent to a tier: Haiku for mechanical, high-volume transformations; Sonnet as the balanced default for real coding work; Opus for architecture, security, and anything where a mistake is expensive. The model field is optional (defaults to inherit). Start on Sonnet; demote to Haiku when a task proves mechanical, promote to Opus on real reasoning failures."
 keyTakeaways:
-  - "Three tiers, three jobs: Haiku is fast and cheap for mechanical work, Sonnet is the balanced default, Opus is deepest reasoning for high-stakes problems."
+  - "Haiku is fast and cheap for mechanical work, Sonnet is the balanced default, Opus is deepest reasoning for high-stakes problems; Claude Code also accepts a fourth alias, `fable`, and full model IDs."
   - "The rubric in order: mechanical and well-specified → Haiku; real coding within a known pattern → Sonnet; costly mistakes or cross-system reasoning → Opus."
   - "When two tiers feel plausible, weigh frequency against stakes — runs-hundreds-of-times leans cheaper, gates-a-release leans smarter."
   - "model: inherit makes an agent follow the main session — right for general helpers, wrong for agents whose quality must not silently degrade (pin your security auditor to opus)."
@@ -27,9 +28,9 @@ related: ["guide:llm-api-pricing-2026", "guide:llm-context-windows-compared", "g
 
 A Claude Code subagent can set a model in its frontmatter — and that one line decides how fast, how cheap, and how smart the agent is. (It's optional: omit it and the agent inherits the main session's model.) Pick wrong and you either burn budget on trivial work or starve a hard problem of reasoning. This guide gives you a clear decision rubric and concrete per-agent examples so you can match each task to the right tier.
 
-## The three tiers at a glance
+## The model aliases at a glance
 
-Claude ships in three tiers, and Claude Code lets each subagent target one of them:
+Claude Code's `model` field accepts four aliases (`haiku`, `sonnet`, `opus`, `fable`) plus full model IDs; the three most setups choose between are:
 
 - **Haiku** — fastest and cheapest. Great for high-volume, mechanical, low-ambiguity work where the answer is mostly lookup or transformation.
 - **Sonnet** — the balanced default. Strong general coding, refactoring, and analysis at a sensible cost. When in doubt, this is your pick.

@@ -26,7 +26,7 @@ faq:
     a: "CrewAI is one of the fastest ways to stand up a collaborative multi-agent prototype — you describe who does what and it handles the coordination. If you later need explicit state, checkpointing, and resumability, compare LangGraph; within CrewAI, use Flows when you want determinism over agent autonomy."
 ---
 
-CrewAI is a Python framework for building multi-agent systems around an intuitive metaphor: a **crew** of agents, each with a role, a goal, and a backstory, working through tasks toward a shared objective. That high-level abstraction makes it one of the fastest ways to stand up collaborative multi-agent workflows — you describe who does what, and CrewAI handles the coordination.
+CrewAI is a Python framework for building [multi-agent systems](/glossary/multi-agent-system) around an intuitive metaphor: a **crew** of agents, each with a role, a goal, and a backstory, working through tasks toward a shared objective. That high-level abstraction makes it one of the fastest ways to stand up collaborative multi-agent workflows — you describe who does what, and CrewAI handles the coordination.
 
 It is aimed at developers who want role-based multi-agent orchestration without wiring a state graph by hand. For cases that need tighter, event-driven control, CrewAI also provides **Flows**, a more deterministic execution model you can combine with crews.
 

@@ -4,10 +4,11 @@ title: "MCP Inspector"
 description: "The official open-source visual tool for testing and debugging Model Context Protocol servers — connect, list, and call tools, resources, and prompts."
 url: "https://github.com/modelcontextprotocol/inspector"
 date: 2026-06-04
+updated: 2026-11-22
 pricing: "open-source"
 category: "mcp"
 repo: "https://github.com/modelcontextprotocol/inspector"
-license: "MIT"
+license: "Apache-2.0 and MIT"
 sameAs: ["https://github.com/modelcontextprotocol/inspector", "https://modelcontextprotocol.io"]
 os: ["macOS", "Linux", "Windows"]
 color: "blue"
@@ -24,7 +25,7 @@ faq:
   - q: "How do I run MCP Inspector?"
     a: "No install needed: run npx @modelcontextprotocol/inspector node ./my-server/index.js to launch it against a local stdio server (it opens a browser UI), or point it at a remote Streamable HTTP server by URL."
   - q: "Is MCP Inspector free?"
-    a: "Yes — free and open source under MIT, run locally via Node.js. It's the standard first stop when building a server with a framework like FastMCP or the official SDKs."
+    a: "Yes — free and open source, run locally via Node.js. The MCP project is moving it from MIT to Apache-2.0: new code is Apache-2.0, while older contributions stay MIT until their authors consent to relicensing. It's the standard first stop when building a server with a framework like FastMCP or the official SDKs."
 ---
 
 MCP Inspector is the official, open-source developer tool for **testing and debugging** Model Context Protocol servers. It's the fastest way to see what a server actually exposes: connect to it, browse its tools, resources, and prompts, call them with arbitrary inputs, and watch the raw request/response traffic — all from a local web UI, with no client and no model in the loop.
@@ -54,4 +55,4 @@ It opens a UI where you connect, list the server's tools, call one with sample i
 
 ## Good to know
 
-MCP Inspector is free and open source under MIT and maintained as part of the Model Context Protocol project. You run it locally via Node.js (`npx @modelcontextprotocol/inspector`), and it's the standard first stop when building a server with a framework like [FastMCP](/tools/fastmcp) or the official SDKs.
+MCP Inspector is free and open source, maintained as part of the Model Context Protocol project, which is moving its license from MIT to Apache-2.0 (new code is Apache-2.0; older contributions stay MIT until their authors consent). Version 2, current at 2.16.0 as of November 2026, adds `--cli` and `--tui` modes next to the web UI. You run it locally via Node.js (`npx @modelcontextprotocol/inspector`), and it's the standard first stop when building a server with a framework like [FastMCP](/tools/fastmcp) or the official SDKs.

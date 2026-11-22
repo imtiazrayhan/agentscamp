@@ -44,7 +44,7 @@ claude mcp add --transport http linear-server https://mcp.linear.app/mcp
 # > Read LIN-482, implement the fix, and comment with a summary + the PR link
 ```
 
-The pattern that pays: let the ticket be the spec. The agent pulls acceptance criteria from the issue rather than your paraphrase, and status updates land where the team already looks.
+The pattern that pays: let the ticket be the spec. (Jira teams get the same loop from the [Atlassian MCP Server](/tools/atlassian-mcp).) The agent pulls acceptance criteria from the issue rather than your paraphrase, and status updates land where the team already looks.
 
 > [!TIP]
 > Pair it with the [GitHub MCP server](/tools/github-mcp-server) and the loop closes end-to-end: Linear holds the *why*, GitHub holds the *what*, and the agent moves both — issue → branch → PR → comment — without you ferrying context between tabs.

@@ -3,6 +3,7 @@ title: "Running Claude Code in CI: Headless Mode & GitHub Actions"
 description: "Claude Code without the terminal — claude -p flags, JSON and structured output, safe permission scoping, and the official GitHub Action responding to @claude."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-22
 color: "green"
 topics: ["workflow-prompting"]
 audience: ["developers", "ai-engineers", "devops"]
@@ -42,7 +43,7 @@ faq:
 related: ["command:setup-claude-ci", "guide:claude-agent-sdk-tutorial", "guide:claude-code-settings-permissions", "guide:claude-code-hooks", "guide:claude-code-mcp-setup", "command:create-pr", "command:review-pr", "tool:claude-code"]
 ---
 
-Everything Claude Code does interactively, it can do unattended: triage an issue, fix a failing test, review a PR, draft release notes on a schedule. The interactive session is one frontend; this guide covers the other two — the **headless CLI** and the **GitHub Action** — and the permission discipline that makes unattended runs safe.
+Everything Claude Code does interactively, it can do unattended: triage an issue, fix a failing test, review a PR, draft release notes on a schedule. The interactive session is one frontend; this guide covers the other two — the **headless CLI** (full flag, output and permissions reference in [Claude Code headless mode](/guides/configuration/claude-code-headless-mode)) and the **GitHub Action** — and the permission discipline that makes unattended runs safe.
 
 ## Headless mode: `claude -p`
 
@@ -73,7 +74,7 @@ claude -p "Fix the lint errors" \
   --max-turns 10
 ```
 
-`--allowedTools`/`--disallowedTools` pre-approve exactly what the run may do (same [rule syntax as settings](/guides/configuration/claude-code-settings-permissions)), and `--max-turns` is the circuit breaker. One more flag earns its keep in CI: **`--bare`** skips hooks, skills, plugins, CLAUDE.md, and MCP auto-discovery for a fast, deterministic start — then you add back only what the job needs via `--settings`, `--mcp-config`, or `--append-system-prompt`. Auth in CI is `ANTHROPIC_API_KEY` (or Bedrock/Vertex credentials); piped stdin is capped at 10MB; transient API errors retry automatically.
+`--allowedTools`/`--disallowedTools` pre-approve exactly what the run may do (same [rule syntax as settings](/guides/configuration/claude-code-settings-permissions)), and `--max-turns` is the circuit breaker. One more flag earns its keep in CI: **`--bare`** skips hooks, skills, plugins, CLAUDE.md, and MCP auto-discovery for a fast, deterministic start — then you add back only what the job needs via `--settings`, `--mcp-config`, or `--append-system-prompt`. Auth in CI is `ANTHROPIC_API_KEY` (or Bedrock/Vertex credentials, or a `CLAUDE_CODE_OAUTH_TOKEN` from `claude setup-token` on a paid plan, which `--bare` doesn't read); piped stdin is capped at 10MB; transient API errors retry automatically.
 
 ## The GitHub Action
 

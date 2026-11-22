@@ -3,6 +3,7 @@ title: "10 Best Claude Skills for API Development"
 description: "Choose Claude skills for error contracts, idempotency, pagination, limits, webhooks, CORS, GraphQL, OpenAPI, tools, and MCP servers."
 author: "Imtiaz Rayhan"
 date: 2026-08-04
+updated: 2026-11-22
 color: "cyan"
 topics: ["architecture", "llm-app-dev"]
 audience: ["developers"]
@@ -31,7 +32,7 @@ related: ["guide:best-claude-skills-2026", "skill:api-error-contract-designer", 
 
 The best Claude skills for API development each own one contract clients depend on: error shape, retry semantics, pagination stability, rate-limit feedback, event authenticity, cross-origin policy, schema evolution, or machine-readable documentation. Their value is consistency across endpoints and services.
 
-Use this list to assemble the smallest stack that matches your interface.
+Use this list to assemble the smallest stack that matches your interface; for the system-level decisions around it, see the [system design roundup](/guides/skills/best-claude-skills-for-system-design).
 
 | Skill | Best for | Main artifact | Typical mode |
 | --- | --- | --- | --- |
@@ -86,11 +87,11 @@ It also guards the boundary between useful errors and leaked internals: stack tr
 
 ## 10. mcp-server-scaffolder: package tools behind MCP
 
-[mcp-server-scaffolder](/skills/api/mcp-server-scaffolder) builds the project structure, transport setup, tool registration, input validation, error handling, and local verification for an MCP server. Keep its exposed surface narrow and use least-privilege credentials behind each tool.
+[mcp-server-scaffolder](/skills/api/mcp-server-scaffolder) builds the project structure, the transport setup, one tool with a strict schema, the MCP Inspector command, and the claude mcp add line for an MCP server; the handler is a stub that still needs input validation. Keep its exposed surface narrow and use least-privilege credentials behind each tool.
 
 ## Recommended API stacks
 
-For a conventional HTTP API, install the error, idempotency, pagination, and OpenAPI skills. Add webhook and rate-limit skills when the API accepts external events or public traffic. For agent integrations, add tool definitions first and an MCP scaffold second.
+For a conventional HTTP API, install the error, idempotency, pagination, and OpenAPI skills. Add webhook and rate-limit skills when the API accepts external events or public traffic. For agent integrations, add tool definitions first and an MCP scaffold second; the [MCP development roundup](/guides/skills/best-claude-skills-for-mcp-development) covers testing, registration, and security review after that.
 
 ```bash
 npx agentscamp add skills/api-error-contract-designer

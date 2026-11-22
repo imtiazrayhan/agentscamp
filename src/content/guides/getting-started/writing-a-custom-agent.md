@@ -4,6 +4,7 @@ description: "A step-by-step guide to authoring a focused, effective custom suba
 seoDescription: "A step-by-step guide to authoring a focused Claude Code subagent — scoping the job, writing the description, picking tools, and testing the result."
 author: "Imtiaz Rayhan"
 date: 2026-05-06
+updated: 2026-11-22
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
@@ -15,7 +16,7 @@ howtoSteps:
   - name: "Write a description that earns delegation"
     text: "The description field is the routing signal, not documentation. State when to use the agent and include 'Examples —' with realistic situations phrased the way people actually ask; that's what Claude pattern-matches against."
   - name: "Scope the tools"
-    text: "Grant only what the job needs via the tools field. A reviewer gets Read, Grep, Glob, Bash and physically cannot edit code; a refactorer adds Edit and Write. Minimum first — widening later is easy, tightening is hard."
+    text: "Grant only what the job needs via the tools field. A reviewer gets Read, Grep, Glob (add Bash only if it must run checks, since Bash can still change files); a refactorer adds Edit and Write. Minimum first — widening later is easy, tightening is hard."
   - name: "Pick the model"
     text: "Match the tier to cognitive load: haiku for mechanical high-volume work, sonnet as the default for review/debugging/coding agents, opus only for genuinely hard reasoning like architecture or subtle concurrency."
   - name: "Keep the system prompt under ~100 lines"
@@ -30,13 +31,13 @@ faq:
   - q: "How long should a subagent's system prompt be?"
     a: "Usually well under 100 lines. Long prompts dilute attention, accumulate contradictions, cost context on every invocation, and rot unmaintained. If yours is growing past a couple hundred lines, the agent is doing too many jobs — split it before you patch it."
   - q: "What tools should a review agent have?"
-    a: "Read-only: Read, Grep, Glob, and Bash for running checks. With no write tools it physically cannot edit your code, and the restriction sharpens behavior — an agent that can only read naturally produces analysis instead of drifting into making changes."
+    a: "Read, Grep and Glob, plus Bash only if it must run checks. Without Edit or Write it can't use the file-editing tools, though Anthropic notes Bash can still change files, and the restriction sharpens behavior — an agent that can only read naturally produces analysis instead of drifting into making changes."
 audience: ["developers"]
 ---
 
 A custom subagent is one of the highest-leverage things you can add to a Claude Code setup. Done well, it gives Claude a specialist it can hand work to — a code reviewer, a debugger, a migration assistant — that runs in its own context window with its own focused instructions and a restricted toolset. Done poorly, it becomes a 1,500-line prompt that nobody trusts and Claude never delegates to.
 
-This guide walks through authoring your first one: where it lives, the five decisions that determine whether it's good, and the trap most people fall into.
+This guide walks through authoring your first one: where it lives, the five decisions that determine whether it's good, and the trap most people fall into. For every frontmatter field, the built-in agents, background runs, nesting and forks, see the [subagents reference](/guides/configuration/claude-code-subagents).
 
 ## What a subagent actually is
 
@@ -88,13 +89,13 @@ Also state when *not* to use it. If your reviewer shouldn't write features, sayi
 
 ## Step 3: Scope the tools
 
-By default a subagent inherits every tool the main thread has. That's rarely what you want. The `tools` field lets you grant only what the job needs, as a comma-separated list.
+By default a subagent inherits the built-in and MCP tools available in the main conversation, minus a few that are always removed; background subagents, the default, get a reduced set. That's rarely what you want. The `tools` field lets you grant only what the job needs, as a comma-separated list.
 
-Scoping tools does two things. It prevents accidents — a review agent with no write tools physically cannot edit your code. And it sharpens behavior — an agent that can only `Read`, `Grep`, and `Glob` naturally produces analysis instead of drifting into making changes.
+Scoping tools does two things. It prevents accidents — a review agent with no Edit or Write tools can't use the file editors (give it Bash only if it must run commands, because Bash can still change files). And it sharpens behavior — an agent that can only `Read`, `Grep`, and `Glob` naturally produces analysis instead of drifting into making changes.
 
 | Agent type | Reasonable toolset |
 |------------|--------------------|
-| Reviewer / auditor | `Read, Grep, Glob, Bash` (read-only) |
+| Reviewer / auditor | `Read, Grep, Glob` (add `Bash` only to run checks; Bash can still write files) |
 | Debugger | `Read, Grep, Glob, Bash, Edit` |
 | Refactorer | `Read, Grep, Glob, Edit, Write, Bash` |
 
@@ -102,7 +103,7 @@ Grant the minimum that lets the agent finish its job. You can always widen later
 
 ## Step 4: Pick a model
 
-The `model` field accepts `haiku`, `sonnet`, or `opus`. Match the model to the cognitive load of the task, not to prestige.
+The `model` field accepts the aliases `haiku`, `sonnet`, `opus`, or `fable`, a full model ID such as `claude-opus-5-5`, or `inherit`. Match the model to the cognitive load of the task, not to prestige.
 
 - **haiku** — fast, cheap, great for mechanical or high-volume work like formatting, simple lookups, or classification.
 - **sonnet** — the balanced default. Most review, debugging, and coding agents belong here.

@@ -45,7 +45,7 @@ Pure vector search is where most RAG demos start and most RAG production systems
 ## Dense + sparse: two retrievers, different blind spots
 
 - **Dense (vector) search** encodes meaning. It nails paraphrases, synonyms, and conceptual matches, and it's robust to wording. It misses exact strings and rare tokens.
-- **Sparse (keyword / BM25) search** matches terms. It nails codes, IDs, names, and exact phrases, and it's transparent. It misses anything phrased differently from the document.
+- **Sparse (keyword / [BM25](/glossary/bm25)) search** matches terms. It nails codes, IDs, names, and exact phrases, and it's transparent. It misses anything phrased differently from the document.
 
 Real user queries contain both kinds of intent, often in the same sentence ("why does `ERR_2043` happen when I rotate credentials?"). **Hybrid search runs both retrievers and fuses the results**, so you don't have to choose which class of query to fail.
 

@@ -25,14 +25,14 @@ faq:
 audience: ["ai-engineers", "marketers"]
 ---
 
-ElevenLabs is a voice-AI platform whose core strength is **text-to-speech** — among the most natural and expressive synthetic voices available, across many languages, with low-latency models (Flash, Turbo) built for real-time use. Around that it has grown a full voice suite: voice cloning, dubbing, sound effects, music, a speech-to-text model (Scribe), and **conversational AI agents** — all accessible via API and billed under one credit system.
+ElevenLabs is a voice-AI platform whose core strength is **[text-to-speech](/glossary/text-to-speech)** — among the most natural and expressive synthetic voices available, across many languages, with low-latency models (Flash, Turbo) built for real-time use. Around that it has grown a full voice suite: voice cloning, dubbing, sound effects, music, a speech-to-text model (Scribe), and **conversational AI agents** — all accessible via API and billed under one credit system.
 
 For building a [voice agent](/guides/voice/build-a-voice-agent), it's most often the **TTS** stage — the voice your agent speaks with — though its bundled conversational-agent product can cover the whole STT → LLM → TTS loop when you want the simplest path.
 
 ## Highlights
 
 - **State-of-the-art TTS** — natural, expressive voices in 70+ languages, with low-latency Flash/Turbo models for real-time agents.
-- **Voice cloning** — instant clones from a short sample, or high-fidelity professional voice cloning.
+- **[Voice cloning](/glossary/voice-cloning)** — instant clones from a short sample, or high-fidelity professional voice cloning.
 - **Conversational AI agents** — build real-time voice agents with built-in STT, LLM, and TTS.
 - **Dubbing, sound effects & music** — translate and re-voice audio/video, generate effects and music.
 - **One API, one credit system** — TTS billed per character; speech-to-text per minute; agents per minute.

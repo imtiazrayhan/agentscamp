@@ -3,7 +3,7 @@ title: "Multi-Agent Orchestration"
 description: "Four patterns for coordinating multiple agents — fan-out, pipeline, orchestrator-worker, and verify/critic — and when each earns its overhead."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
-updated: 2026-08-25
+updated: 2026-11-22
 depth: cornerstone
 color: "green"
 topics: ["workflow-prompting", "architecture"]
@@ -56,7 +56,7 @@ That's the whole thesis. The patterns below are different ways of arranging that
 
 ## Context isolation is the actual product
 
-Every subagent in Claude Code runs in its **own context window** and returns only a summary to its caller. Nothing else crosses the boundary — not the parent's conversation, not sibling agents' work, not the raw tool output the subagent generated to reach its answer.
+Every subagent in Claude Code runs in its **own context window** and returns only a summary to its caller. Little else crosses the boundary — not the parent's conversation (unless the subagent is a fork, which inherits it), not sibling agents' work, not the raw tool output the subagent generated to reach its answer.
 
 This isolation is what you're really buying. It gives you three things a single thread cannot:
 
@@ -65,7 +65,7 @@ This isolation is what you're really buying. It gives you three things a single 
 - **Independence.** Two agents reaching the same conclusion from separate contexts is genuine corroboration. Two passes in one context just agree with themselves.
 
 > [!NOTE]
-> Isolation cuts both ways. A subagent starts blank — it cannot see a constraint the user mentioned three turns ago. Anything it must know ("the DB is Postgres", "don't touch the `legacy/` folder") has to be written into the task prompt you hand it.
+> Isolation cuts both ways. A non-fork subagent starts blank on the conversation — it cannot see a constraint the user mentioned three turns ago. Anything it must know ("the DB is Postgres", "don't touch the `legacy/` folder") has to be written into the task prompt you hand it.
 
 ### What a subagent actually starts with
 
@@ -136,7 +136,7 @@ You own the migration process; you do not edit code yourself.
 4. If a worker reports an ambiguous case, stop and surface it — do not guess.
 ```
 
-Note the role separation: the orchestrator's `tools` exclude `Edit`/`Write` on purpose — it physically can't do a worker's job, which keeps the process owner and the task workers cleanly separated. (A subagent's `tools` field is a genuine allowlist — it restricts the agent to exactly those tools.) You can set a per-worker model in the agent definition's frontmatter: the [`model:` field](https://code.claude.com/docs/en/sub-agents) accepts an alias (`sonnet`, `opus`, `haiku`, `fable`), a full model ID, or `inherit` (the default). Claude Code resolves it in order — the `CLAUDE_CODE_SUBAGENT_MODEL` env var, then a per-invocation `model` parameter, then the frontmatter `model`, then the main conversation's model — so you can pin a worker's model in the file or override it at invocation time. The overhead here is highest of any pattern, so reserve it for work with many similar subtasks or a coordination logic worth naming and reusing.
+Note the role separation: the orchestrator's `tools` exclude `Edit`/`Write` on purpose — it physically can't do a worker's job, which keeps the process owner and the task workers cleanly separated. (A subagent's `tools` field is a genuine allowlist — it restricts the agent to exactly those tools.) You can set a per-worker model in the agent definition's frontmatter: the [`model:` field](https://code.claude.com/docs/en/sub-agents) accepts an alias (`sonnet`, `opus`, `haiku`, `fable`), a full model ID, or `inherit` (the default). Claude Code resolves it in order — a per-invocation `model` parameter, then the frontmatter `model`, then the `CLAUDE_CODE_SUBAGENT_MODEL` env var, then the main conversation's model (before v2.1.251 the env var came first) — so you can pin a worker's model in the file or override it at invocation time. The overhead here is highest of any pattern, so reserve it for work with many similar subtasks or a coordination logic worth naming and reusing.
 
 ## Pattern 4 — Verify / critic (adversarial checking)
 
@@ -188,7 +188,7 @@ The four shapes above are the ones that come up most in coding work, but they're
 
 ## What multi-agent actually costs
 
-The "coordination isn't free" warning deserves numbers, and Anthropic has published them. Agents typically use about **4x more tokens than chat interactions, and multi-agent systems about 15x more**. That's the bar the work has to clear before the pattern pays.
+The "coordination isn't free" warning deserves numbers, and Anthropic has published them. Agents typically use about **4x more tokens than chat interactions, and [multi-agent systems](/glossary/multi-agent-system) about 15x more**. That's the bar the work has to clear before the pattern pays.
 
 Sometimes it clears it decisively. In Anthropic's research system, a multi-agent setup with Opus as the lead agent and Sonnet subagents outperformed single-agent Opus by **90.2%** on their research eval, and parallel tool calling cut research time by up to 90% on complex queries.
 

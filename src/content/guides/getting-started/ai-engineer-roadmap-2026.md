@@ -37,7 +37,7 @@ The skill isn't clever wording; it's **what the model sees**. Learn [context eng
 
 ## Stage 3 — Retrieval (RAG), properly
 
-The #1 production pattern: models answering from *your* data. Learn the [pipeline end to end](/guides/concepts/how-rag-works) — [embeddings](/glossary/embedding), [vector databases](/guides/database/best-vector-database-2026), [chunking](/skills/data/chunking-strategy-optimizer) — then the quality stack: [hybrid search and reranking](/guides/concepts/hybrid-search-reranking). Build a docs-QA system and **debug it with the [checklist](/guides/troubleshooting/rag-debugging-checklist)** — localizing RAG failures teaches more than building three demos. Know the frontier variants exist ([agentic RAG](/guides/concepts/agentic-rag), [GraphRAG](/guides/concepts/graph-rag)) and when they're warranted.
+The #1 production pattern: models answering from *your* data. Learn the [pipeline end to end](/guides/concepts/how-rag-works) — [embeddings](/glossary/embedding), [vector databases](/guides/database/best-vector-database-2026), [chunking](/skills/data/chunking-strategy-optimizer) — then the quality stack: [hybrid search and reranking](/guides/concepts/hybrid-search-reranking). Build a docs-QA system and **debug it with the [checklist](/guides/troubleshooting/rag-debugging-checklist)** — localizing RAG failures teaches more than building three demos. Know the frontier variants exist ([agentic RAG](/guides/concepts/agentic-rag), [GraphRAG](/guides/concepts/graph-rag)) and when they're warranted; the glossary defines [agentic RAG](/glossary/agentic-rag) and [GraphRAG](/glossary/graphrag) in a paragraph each.
 
 ## Stage 4 — Agents and tools
 

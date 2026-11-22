@@ -46,7 +46,7 @@ MCP servers are how [Claude Code](/tools/claude-code) reaches beyond your filesy
 
 ## One command, two transports
 
-**Local (stdio) servers** run on your machine as a child process Claude Code launches. This is most open-source servers — anything you'd run with `npx`, `uvx`, or `docker run`:
+**Local (stdio) servers** run on your machine as a child process Claude Code launches. This is most open-source servers — anything you'd run with `npx`, `uvx`, or `docker run` (the [Docker MCP Toolkit](/tools/docker-mcp-toolkit) runs them as isolated containers behind one gateway):
 
 ```bash
 # the -- separator is critical: everything after it is the server's own command
@@ -109,7 +109,7 @@ Two operational limits worth knowing: server startup has a timeout (raise with `
 
 An MCP server is code that runs with the credentials you hand it, feeding text straight into your agent's context. That has two failure modes: a malicious or compromised server (supply chain), and a *legitimate* server returning attacker-controlled content (prompt injection — a web-fetching tool reading a hostile page). So:
 
-- **Vet provenance before adding** — prefer official vendor servers and well-known projects; read the source of small community ones. The [Add MCP Server](/commands/workflow/add-mcp-server) command walks this checklist, and [MCP Inspector](/tools/mcp-inspector) lets you poke a server's tools directly before trusting it in a session. Before approving a repo's `.mcp.json`, run [/mcp-audit](/commands/review/mcp-audit); for a server nobody has read, the [mcp-security-reviewer](/agents/quality-security/mcp-security-reviewer) agent reviews its tool descriptions and result handling.
+- **Vet provenance before adding** — prefer official vendor servers and well-known projects; read the source of small community ones. The [Add MCP Server](/commands/workflow/add-mcp-server) command walks this checklist, and [MCP Inspector](/tools/mcp-inspector) lets you poke a server's tools directly before trusting it in a session. Before approving a repo's `.mcp.json`, run [/mcp-audit](/commands/review/mcp-audit); for a server nobody has read, the [mcp-security-reviewer](/agents/quality-security/mcp-security-reviewer) agent reviews its tool descriptions and result handling. The [MCP development roundup](/guides/skills/best-claude-skills-for-mcp-development) puts these checks in order with the build and test skills.
 - **Scope credentials down** — read-only tokens and modes where offered; many servers ship them precisely for this.
 - **Don't hoard servers** — every connected server's tool definitions ride along in context. Keep the per-project set tight, and disable ones you're not using (the `enableAllProjectMcpServers` setting auto-approves a repo's full set — convenient, but understand what you're signing).
 

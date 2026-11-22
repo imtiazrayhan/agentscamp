@@ -43,7 +43,7 @@ Mistral OCR is the pick when you want a **hosted, per-page OCR API** that keeps 
 
 ## In an AI-assisted workflow
 
-Mistral's official SDKs are `mistralai` for Python and `@mistralai/mistralai` for TypeScript, both Apache-2.0. After `pip install mistralai`, this example from the Python SDK repo parses a PDF by URL and prints the JSON response:
+Mistral's chat and coding assistant is [Mistral Vibe](/tools/mistral-vibe), formerly Le Chat. Mistral's official SDKs are `mistralai` for Python and `@mistralai/mistralai` for TypeScript, both Apache-2.0. After `pip install mistralai`, this example from the Python SDK repo parses a PDF by URL and prints the JSON response:
 
 ```python
 import json

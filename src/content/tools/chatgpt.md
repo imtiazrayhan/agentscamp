@@ -3,6 +3,7 @@ name: "ChatGPT"
 description: "OpenAI's general-purpose AI assistant for chat, research, and finished documents, with Projects, memory, plugins, and a Work mode for multi-step tasks."
 seoDescription: "ChatGPT for founders and marketers: plans as of September 2026, Projects, memory, plugins, GPTs vs Workspace Agents, and where it fits next to Claude."
 date: 2026-09-10
+updated: 2026-11-22
 url: "https://chatgpt.com"
 pricing: "freemium"
 category: "assistant"
@@ -18,7 +19,7 @@ keywords: ["ChatGPT", "ChatGPT plans", "ChatGPT Projects", "ChatGPT Work", "cust
 summary: "ChatGPT is OpenAI's general-purpose assistant. In 2026 it has three modes: Chat for questions and drafts, Work for multi-step tasks that end in a document, deck, or spreadsheet, and Codex for developers. Projects, memory, plugins, and GPTs carry context between chats. Plans run from Free and Go through Plus, Pro, Business, and Enterprise."
 faq:
   - q: "How much does ChatGPT cost in 2026?"
-    a: "As of September 2026, OpenAI lists Free at $0, Go at $8 per month, Plus at $20 per month, Pro from $100 per month (a $200 tier exists), and Business at $20 per user per month billed annually for two or more users ($25 monthly). Enterprise and Edu are quoted by sales. Higher tiers raise usage limits and add models, and every paid tier can top up with ChatGPT credits."
+    a: "As of September 2026, OpenAI lists Free at $0, Go at $8 per month, Plus at $20 per month, Pro in three usage tiers from $100 per month (as of November 2026, including a $500 Pro 500 tier added September 29, 2026), and Business at $20 per user per month billed annually for two or more users ($25 monthly). Enterprise and Edu are quoted by sales. Higher tiers raise usage limits and add models, and every paid tier can top up with ChatGPT credits."
   - q: "What is the difference between custom GPTs and Workspace Agents?"
     a: "A custom GPT is a saved persona with instructions, files, and optionally connected apps or custom actions, and it lives inside ChatGPT. Workspace Agents are reusable agents that a Business or Enterprise workspace can build, publish, share, and schedule with shared connections, and they can be triggered from outside ChatGPT through the Workspace Agents API. GPTs suit personal or team helpers; Workspace Agents suit governed, repeatable processes."
   - q: "What is ChatGPT Work?"
@@ -58,10 +59,10 @@ Review the file in the viewer, ask for targeted revisions, and download it. If t
 
 ## Good to know
 
-ChatGPT runs on the web, in desktop apps for macOS, Windows, and Linux, and in iOS and Android apps. Plans as of September 2026, per OpenAI's pricing docs: Free ($0), Go ($8/month), Plus ($20/month), Pro (from $100/month, with a $200/month tier that adds unlimited voice), Business ($20 per user per month billed annually for two or more users, $25 monthly), and Enterprise and Edu (contact sales). Paid tiers can extend usage with ChatGPT credits, and Work shares its usage budget with Codex. The current models are the GPT-5.6 family (Sol, Terra, and Luna), with GPT-6 Astra rolling out to eligible Pro, Business, and Enterprise accounts.
+ChatGPT runs on the web, in desktop apps for macOS, Windows, and Linux, and in iOS and Android apps. Plans as of September 2026, per OpenAI's pricing docs: Free ($0), Go ($8/month), Plus ($20/month), Pro (from $100/month in three usage tiers as of November 2026, including a $200/month tier that adds unlimited voice and a $500/month Pro 500 tier added September 29, 2026), Business ($20 per user per month billed annually for two or more users, $25 monthly), and Enterprise and Edu (contact sales). Paid tiers can extend usage with ChatGPT credits, and Work shares its usage budget with Codex. Since October 7, 2026, Chat uses GPT-6 Sol on Plus, Pro, Business, and Enterprise and GPT-6 Luna on Free and Go, with GPT-6 Astra behind Pro's reasoning option; Work and Codex add GPT-6.1 Sol and GPT-6.1 Terra, and GPT-6.2 Astra and GPT-6.2 Sol are in preview there as of November 2026.
 
 Business is the smallest plan with a dedicated workspace, SAML SSO, and no training on your data by default; Enterprise adds SCIM, RBAC, audit logs via the Compliance API, and data residency. Feature availability depends on plan, platform, region, and workspace settings, so check what your admin has enabled before building a process around Work, plugins, or browser use.
 
-If your comparison set is wider than ChatGPT, the other general assistants worth a look are [Gemini](/tools/gemini) for Google Workspace users, [Microsoft 365 Copilot](/tools/microsoft-copilot) for Office-centric teams, and [Perplexity](/tools/perplexity) when cited research matters more than drafting. For a plan-by-plan view of the Anthropic side, see [Claude plans compared](/guides/getting-started/claude-plans-compared-2026).
+If your comparison set is wider than ChatGPT, the other general assistants worth a look are [Gemini](/tools/gemini) for Google Workspace users, [Microsoft 365 Copilot](/tools/microsoft-copilot) for Office-centric teams, [Perplexity](/tools/perplexity) when cited research matters more than drafting, and [Grok](/tools/grok) for live news from X; the [best ChatGPT alternatives](/guides/comparisons/best-chatgpt-alternatives-2026) roundup compares them all. For a plan-by-plan view of the Anthropic side, see [Claude plans compared](/guides/getting-started/claude-plans-compared-2026).
 
 For Office-based teams, [Microsoft 365 Copilot vs ChatGPT for Work](/guides/comparisons/microsoft-365-copilot-vs-chatgpt-for-work) provides a source-access checklist and a small pilot you can run in your own workspace.

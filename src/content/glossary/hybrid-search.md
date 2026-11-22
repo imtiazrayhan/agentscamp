@@ -3,6 +3,7 @@ term: "Hybrid Search"
 description: "Hybrid search runs keyword (BM25) and semantic (vector) retrieval together and merges the results — catching both exact terms and paraphrases."
 summary: "Hybrid search runs keyword retrieval and vector retrieval together and merges the results, usually with reciprocal rank fusion. Neither half suffices alone: vectors have a blind spot for exact strings such as error codes and function names, while keyword search cannot bridge vocabulary mismatch. Most vector databases now ship it, so what is left is tuning."
 date: 2026-06-12
+updated: 2026-11-22
 topics: ["rag-retrieval"]
 audience: ["ai-engineers"]
 tags: ["hybrid-search", "bm25", "retrieval", "rag"]
@@ -14,8 +15,8 @@ faq:
     a: "Most commonly Reciprocal Rank Fusion (RRF) — combining by rank position rather than raw scores, which sidesteps the incomparable-score-scales problem — or a weighted score blend tuned per corpus. Then, typically, a reranker sorts the merged pool precisely. Most vector databases now ship hybrid search built in."
 ---
 
-**Hybrid search retrieves with two engines at once — lexical keyword search (BM25) and [semantic vector search](/glossary/semantic-search) — and merges their results, so queries match both by exact terms and by meaning.**
+**Hybrid search retrieves with two engines at once — lexical keyword search ([BM25](/glossary/bm25)) and [semantic vector search](/glossary/semantic-search) — and merges their results, so queries match both by exact terms and by meaning.**
 
 It exists because neither half suffices alone. Pure vector retrieval has a famous blind spot: **exact strings** — error codes, function names, part numbers — where "semantically similar" is precisely wrong. Pure keyword search has the inverse: zero tolerance for vocabulary mismatch between askers and documents. Production corpora contain both query types, so production retrieval runs both engines — usually merged by Reciprocal Rank Fusion (rank-based, immune to score-scale mismatch) and refined by a [reranker](/glossary/reranking) that sorts the combined pool.
 
-Adoption is now mostly a checkbox: [vector databases](/glossary/vector-database) from Qdrant to Weaviate to pgvector-based stacks ship hybrid retrieval natively. The judgment that remains is tuning — fusion weights per corpus, and measuring whether the lexical leg actually helps *your* queries — covered with the full recall-to-precision architecture in [Hybrid Search & Reranking](/guides/concepts/hybrid-search-reranking). When [RAG](/glossary/rag) misses queries containing exact identifiers, hybrid search is the first fix on [the debugging checklist](/guides/troubleshooting/rag-debugging-checklist).
+Adoption is now mostly a checkbox: among [vector databases](/glossary/vector-database), Qdrant and Weaviate ship hybrid retrieval natively; with pgvector you pair it with Postgres full-text search and fuse the results yourself. The judgment that remains is tuning — fusion weights per corpus, and measuring whether the lexical leg actually helps *your* queries — covered with the full recall-to-precision architecture in [Hybrid Search & Reranking](/guides/concepts/hybrid-search-reranking). When [RAG](/glossary/rag) misses queries containing exact identifiers, hybrid search is the first fix on [the debugging checklist](/guides/troubleshooting/rag-debugging-checklist).

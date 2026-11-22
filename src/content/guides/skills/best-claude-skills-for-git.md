@@ -82,7 +82,7 @@ For an existing fat commit that is not yet pushed, it uses `git reset HEAD~1` or
 
 ## 7. git-blame-investigator: find the commit that introduced the logic
 
-`git blame` names the last commit that touched a line, which is often a formatter run. [git-blame-investigator](/skills/git/git-blame-investigator) sees through that with `--ignore-rev` and a `.git-blame-ignore-revs` file, follows moved code with `-C -C -M` and renames with `git log --follow`, and uses `git log -L` and the pickaxe (`-S`, `-G`) to date when a string appeared. It reads the full commit, the PR, and neighboring commits, then returns safe to remove, do not touch, or needs a test first.
+`git blame` names the last commit that touched a line, which is often a formatter run. [git-blame-investigator](/skills/git/git-blame-investigator) sees through that with `--ignore-rev` and a `.git-blame-ignore-revs` file, follows moved code with `-C -C -M` and renames with `git log --follow`, and uses `git log -L` and the pickaxe (`-S`, `-G`) to date when a string appeared. It reads the full commit, the PR, and neighboring commits, then returns safe to remove, do not touch, or needs a test first. It is also a core step in the [codebase onboarding roundup](/guides/skills/best-claude-skills-for-codebase-onboarding).
 
 For regressions, the [debugging list](/guides/skills/best-claude-skills-for-debugging) pairs it with the [git-bisect](/commands/git/git-bisect) command, which pins the first bad commit.
 

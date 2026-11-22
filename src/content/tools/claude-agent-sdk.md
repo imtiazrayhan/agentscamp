@@ -24,7 +24,7 @@ faq:
 
 The Claude Agent SDK is a toolkit for building custom AI agents on the same agent harness that powers Claude Code. It exposes the core agent loop — reading files, running shell commands, calling tools, and iterating against feedback — as a programmable library, so you can embed that behavior in your own applications instead of driving it through the terminal.
 
-It is aimed at developers building agentic products: coding assistants, automation pipelines, internal developer tools, or any workflow where an agent needs to operate over a filesystem and a set of tools with minimal scaffolding.
+It is aimed at developers building agentic products: coding assistants, automation pipelines, internal developer tools, or any workflow where an agent needs to operate over a filesystem and a set of tools with minimal scaffolding. When those tools are third-party apps, [Composio](/tools/composio) ships a Claude Agent SDK adapter and manages each user's OAuth connections.
 
 ## Highlights
 

@@ -35,7 +35,7 @@ llama.cpp is the project that made local LLMs a thing: Georgi Gerganov's plain C
 - **No-dependency C/C++ core** — compiles anywhere, from a Raspberry Pi to a workstation; 1.5- to 8-bit integer quantization built in.
 - **Every backend that matters** — Apple Metal/NEON, x86 AVX, NVIDIA CUDA, AMD HIP, Vulkan, SYCL, even RISC-V — with CPU+GPU hybrid offload for models bigger than VRAM.
 - **`llama-server`** — an OpenAI-compatible HTTP server in the box: `llama-server -hf ggml-org/gemma-3-1b-it-GGUF` and you have an endpoint.
-- **Direct Hugging Face integration** — `-hf` flags download models straight from the Hub.
+- **Direct [Hugging Face](/tools/hugging-face) integration** — `-hf` flags download models straight from the Hub.
 - **Multimodal and current** — vision support landed in 2025; new model architectures (gpt-oss with native MXFP4, Qwen, Gemma, DeepSeek lines) arrive here first.
 - **The ecosystem's development ground** — llama.cpp is the main playground for the ggml library; the GGUF spec lives in the same org.
 

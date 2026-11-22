@@ -83,7 +83,7 @@ Google tiers long context: the Pro model's input price doubles (output 1.5x) bey
 | Grok 4.6 (xAI) | $2.00 (<200K) / $4.00 (≥200K) | $6.00 / $12.00 | Newest flagship (August 2026); 500K context |
 | Grok 4.3 (xAI) | $1.25 (<200K) / $2.50 (≥200K) | $2.50 / $5.00 | 1M context |
 
-DeepSeek's August change is the biggest move on this page: **peak/off-peak pricing** took effect August 16, 2026 — off-peak rates are half of peak, with peak defined as 01:00–04:00 and 06:00–10:00 UTC on weekdays — and list prices rose with it (V4 Flash was $0.14/$0.28 flat in our July snapshot). Off-peak V4 Flash now sits *inside* the Western budget band rather than under it; the 1M window and 384K max output survive, and the legacy `deepseek-chat`/`deepseek-reasoner` aliases (slated for retirement July 24, 2026) no longer appear in DeepSeek's model list. xAI bills like Google: a prompt that reaches 200K tokens pays the higher rate on every token in the request.
+[DeepSeek](/tools/deepseek)'s August change is the biggest move on this page: **peak/off-peak pricing** took effect August 16, 2026 — off-peak rates are half of peak, with peak defined as 01:00–04:00 and 06:00–10:00 UTC on weekdays — and list prices rose with it (V4 Flash was $0.14/$0.28 flat in our July snapshot). Off-peak V4 Flash now sits *inside* the Western budget band rather than under it; the 1M window and 384K max output survive, and the legacy `deepseek-chat`/`deepseek-reasoner` aliases (slated for retirement July 24, 2026) no longer appear in DeepSeek's model list. xAI bills like Google: a prompt that reaches 200K tokens pays the higher rate on every token in the request.
 
 ## Open-weights via hosts
 

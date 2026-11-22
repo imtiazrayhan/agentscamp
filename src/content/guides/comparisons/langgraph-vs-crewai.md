@@ -25,7 +25,7 @@ faq:
 related: ["tool:langgraph", "tool:crewai", "guide:agent-frameworks-2026", "guide:multi-agent-orchestration", "agent:agent-reliability-reviewer", "tool:openai-agents-sdk"]
 ---
 
-LangGraph vs CrewAI is the agent-framework version of an old engineering choice: **explicit control or productive abstraction**. Both build real multi-agent systems; they differ on what they make easy and what they make possible.
+LangGraph vs CrewAI is the agent-framework version of an old engineering choice: **explicit control or productive abstraction**. Both build real [multi-agent systems](/glossary/multi-agent-system); they differ on what they make easy and what they make possible.
 
 ## The short answer
 

@@ -23,7 +23,7 @@ Bring the README back in sync with the code. Your job is to find where the READM
 - A focus area (`scripts`, `env vars`, `project structure`, `badges`) means reconcile that aspect across the whole README.
 - A path hint (`packages/api`) means update the README that governs that subtree.
 
-If `$ARGUMENTS` is empty, audit the entire top-level README end to end.
+If `$ARGUMENTS` is empty, audit the entire top-level README end to end. For a Hugging Face model repo, whose README is the model card, use [/model-card](/commands/docs/model-card) instead.
 
 > [!NOTE]
 > Do not invent commands, scripts, env vars, or features that are not present in the repo. The README must describe what the code actually does today, not what it should do or once did.

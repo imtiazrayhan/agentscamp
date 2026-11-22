@@ -20,7 +20,7 @@ summary: Automatic captioning uses speech recognition to produce timed text for 
 term: Automatic captioning
 ---
 
-**Automatic captioning uses speech recognition to create timed text for recorded or live media.** Captions convey speech and meaningful non-speech sound in sync with the media. Automatic output needs checking and correction because even a missing word can change meaning. [W3C's caption guidance](https://www.w3.org/WAI/media/av/captions/) explains that review need and distinguishes open captions, which stay visible, from closed captions, which viewers can toggle.
+**Automatic captioning uses [speech recognition](/glossary/speech-to-text) to create timed text for recorded or live media.** Captions convey speech and meaningful non-speech sound in sync with the media. Automatic output needs checking and correction because even a missing word can change meaning. [W3C's caption guidance](https://www.w3.org/WAI/media/av/captions/) explains that review need and distinguishes open captions, which stay visible, from closed captions, which viewers can toggle.
 
 The immediate output is a draft track. Its timestamps may be valid while its words are wrong. In the fictional community-garden video, a draft says “We did open the gate,” while a human listener records “We did not open the gate.” Both sentences are fluent, but they describe opposite actions. The missing negation cannot be repaired through syntax checking.
 

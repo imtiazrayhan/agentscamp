@@ -25,7 +25,7 @@ faq:
 related: ["tool:deepgram", "tool:assemblyai", "tool:whisper", "tool:cartesia", "guide:best-tts-apis-2026", "guide:realtime-voice-apis", "guide:build-a-voice-agent"]
 ---
 
-Speech-to-text stopped being one product: **realtime streaming** (agents, captions), **batch with understanding** (every call center's analytics), and **self-hosted** (privacy and unit economics) reward different engines. The 2026 field maps cleanly onto those workloads.
+[Speech-to-text](/glossary/speech-to-text) stopped being one product: **realtime streaming** (agents, captions), **batch with understanding** (every call center's analytics), and **self-hosted** (privacy and unit economics) reward different engines. The 2026 field maps cleanly onto those workloads.
 
 ## The short list
 

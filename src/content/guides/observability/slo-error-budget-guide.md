@@ -189,7 +189,7 @@ Do not tighten the target merely because the service happened to outperform it. 
 > [!TIP]
 > An SLO is a decision tool, not a vanity percentage. If nobody changes a release, incident, or investment decision when the budget moves, the program is measuring without governing.
 
-Use the [SLO Definer](/skills/observability/slo-definer) to produce the initial spec and the [Alerting Rules Tuner](/skills/observability/alerting-rules-tuner) to convert burn thresholds into actionable alerts.
+Use the [SLO Definer](/skills/observability/slo-definer) to produce the initial spec and the [Alerting Rules Tuner](/skills/observability/alerting-rules-tuner) to convert burn thresholds into actionable alerts. The [observability skills roundup](/guides/skills/best-claude-skills-for-observability) covers the logging, tracing, and dashboard skills that complete the setup.
 
 ## Continue exploring
 

@@ -27,7 +27,7 @@ faq:
     a: "Point your client at the proxy — e.g. OpenAI(base_url='https://oai.helicone.ai/v1', default_headers={'Helicone-Auth': f'Bearer {HELICONE_API_KEY}'}) — and traffic becomes observable with no SDK rewrite. Async logging is available if you'd rather not route requests through a proxy. Given the maintenance-mode status, new projects should also weigh actively developed alternatives like Langfuse, LangSmith, or Portkey."
 ---
 
-Helicone is an open-source **LLM observability** platform with a built-in **AI gateway**, known for a famously low-friction setup: change your base URL (or add a header) and your calls are logged, traced, and analyzed — no SDK rewrite. On top of monitoring it offers caching and rate limiting at the proxy, cost and latency tracking, prompt management, and datasets/evals.
+Helicone is an open-source **LLM observability** platform with a built-in **[AI gateway](/glossary/ai-gateway)**, known for a famously low-friction setup: change your base URL (or add a header) and your calls are logged, traced, and analyzed — no SDK rewrite. On top of monitoring it offers caching and rate limiting at the proxy, cost and latency tracking, prompt management, and datasets/evals.
 
 For a cost-and-latency stack its draw is the one-line on-ramp to **per-call cost and latency visibility** — you can't optimize what you can't see — plus proxy-level **caching** to cut spend on repeated calls.
 

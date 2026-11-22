@@ -25,7 +25,7 @@ faq:
     a: "OpenRouter is the managed counterpart to running your own gateway — no proxy to operate, just an endpoint. LiteLLM's proxy is what you self-host when you need data control or custom policies. Choose hosted for zero infrastructure, self-hosted for control."
 ---
 
-OpenRouter is a hosted router that puts hundreds of models — from OpenAI, Anthropic, Google, Meta, and many open-weight providers — behind a single OpenAI-compatible API. One API key, one bill, and you can switch models by changing a string. It's the managed counterpart to running your own gateway: no proxy to operate, just an endpoint.
+OpenRouter is a hosted router that puts hundreds of models — from OpenAI, Anthropic, Google, Meta, and many open-weight providers — behind a single OpenAI-compatible API. One API key, one bill, and you can switch models by changing a string. It's the managed counterpart to running your own gateway: no proxy to operate, just an endpoint. OpenRouter also documents a Claude Code setup; [Claude Code with other models](/guides/configuration/claude-code-with-other-models) lists its caveats.
 
 It is aimed at developers and teams who want broad model access and resilience without infrastructure. Because OpenRouter sits in front of multiple upstream providers, it can **fall back** and **load-balance** across them, so a single provider's outage or rate limit doesn't take your app down.
 

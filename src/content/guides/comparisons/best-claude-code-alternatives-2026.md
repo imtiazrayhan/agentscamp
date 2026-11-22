@@ -147,7 +147,7 @@ Every open-source tool above runs local models, and so do Crush and Factory. The
 
 ### If you'd rather work in an editor than a terminal
 
-Claude Code already integrates with VS Code and JetBrains, so try that first if the terminal is your only friction. Otherwise, keep your editor with Cline or Kilo Code, compared in [Cline vs Kilo Code vs Roo Code](/guides/comparisons/cline-vs-kilo-code-vs-roo-code). Or switch editors: Cursor, owned by SpaceX since August 2026, is the most agent-centric; Devin Desktop, called Windsurf until June 2026, pairs local and cloud agents; Kiro adds specs; Antigravity pairs a desktop app with IDE extensions.
+Claude Code already integrates with VS Code and JetBrains, so try that first if the terminal is your only friction; JetBrains users can also try [Junie](/tools/junie), JetBrains' own agent, which now lives in JetBrains Air. Otherwise, keep your editor with Cline or Kilo Code, compared in [Cline vs Kilo Code vs Roo Code](/guides/comparisons/cline-vs-kilo-code-vs-roo-code). Or switch editors: Cursor, owned by SpaceX since August 2026, is the most agent-centric; Devin Desktop, called Windsurf until June 2026, pairs local and cloud agents; Kiro adds specs; Antigravity pairs a desktop app with IDE extensions.
 
 **Pick:** Cline to keep your editor and your model; Cursor for a full AI-native editor. [Claude Code vs Cursor](/guides/comparisons/claude-code-vs-cursor) goes deeper.
 

@@ -25,7 +25,7 @@ related: ["tool:elevenlabs", "tool:cartesia", "tool:deepgram", "guide:best-stt-a
 audience: ["ai-engineers", "marketers"]
 ---
 
-TTS quietly became two markets. **Produced audio** — narration, content, dubbing — where expressiveness and voice variety win. **Live conversation** — voice agents — where the only metric users feel is *how fast the voice starts*. The 2026 shortlist sorts cleanly along that line.
+[TTS](/glossary/text-to-speech) quietly became two markets. **Produced audio** — narration, content, dubbing — where expressiveness and voice variety win. **Live conversation** — voice agents — where the only metric users feel is *how fast the voice starts*. The 2026 shortlist sorts cleanly along that line.
 
 ## The short list
 
@@ -45,4 +45,4 @@ TTS quietly became two markets. **Produced audio** — narration, content, dubbi
 
 ## How to actually choose
 
-Run the hour-long bake-off; the category rewards it. Take ten of *your* real scripts (agent responses with numbers and names, or narration passages), generate across candidates, and measure two things: **blind preference** (have three people rank them) and, for agents, **p95 time-to-first-audio from your region**. Vendor demos use flattering scripts; your edge cases — acronyms, prices, interruptions mid-sentence — are where they separate. And keep the integration thin: TTS is the most swappable component in the voice stack, which makes loyalty expensive and bake-offs cheap. The other half of the loop — speech in — is [Best STT APIs](/guides/voice/best-stt-apis-2026), and the full realtime architecture is [Realtime Voice Agents](/guides/voice/realtime-voice-apis).
+Run the hour-long bake-off; the category rewards it. Take ten of *your* real scripts (agent responses with numbers and names, or narration passages), generate across candidates, and measure two things: **blind preference** (have three people rank them) and, for agents, **p95 time-to-first-audio from your region**. Vendor demos use flattering scripts; your edge cases — acronyms, prices, interruptions mid-sentence — are where they separate. Once you have picked an engine, the [tts-script-preparer](/skills/marketing/tts-script-preparer) skill spells those edge cases out in that engine's own syntax. And keep the integration thin: TTS is the most swappable component in the voice stack, which makes loyalty expensive and bake-offs cheap. The other half of the loop — speech in — is [Best STT APIs](/guides/voice/best-stt-apis-2026), and the full realtime architecture is [Realtime Voice Agents](/guides/voice/realtime-voice-apis).

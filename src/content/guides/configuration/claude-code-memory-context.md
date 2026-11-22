@@ -81,7 +81,7 @@ Quick capture for any layer: start a message with `#` — "`# integration tests 
 
 **Compress it: `/compact`.** Mid-task, `/compact` summarizes the conversation and frees the window — and takes instructions: `/compact keep the failing test output and the refactor plan`. Auto-compaction fires on its own when the window fills, but a deliberate compact at a milestone beats an automatic one mid-thought. Know what survives: project CLAUDE.md is re-read from disk, rules and auto-memory persist — **conversation-only instructions are what fade**. The corollary is the core discipline: *if it must survive, put it in a file.*
 
-**Time-travel it: `/rewind` and `/resume`.** `/rewind` rolls back to a checkpoint when a direction failed (cheaper than arguing the agent out of a bad path); `/resume` and `--continue` reattach to past sessions per directory.
+**Time-travel it: `/rewind` and `/resume`.** `/rewind` rolls back to a [checkpoint](/guides/getting-started/claude-code-checkpoints) when a direction failed (cheaper than arguing the agent out of a bad path); `/resume` and `--continue` reattach to past sessions per directory.
 
 ## Keeping sessions lean
 

@@ -34,7 +34,7 @@ It is aimed at teams whose scale genuinely justifies a purpose-built, horizontal
 ## Highlights
 
 - **Built for billion-scale** — distributed, with separated storage and compute for independent scaling and high availability.
-- **Many index types** — HNSW, IVF (Flat/PQ/SQ), DiskANN, and GPU indexes, so you can tune the recall/latency/cost trade-off precisely.
+- **Many index types** — [HNSW](/glossary/hnsw), IVF (Flat/PQ/SQ), DiskANN, and GPU indexes, so you can tune the recall/latency/cost trade-off precisely.
 - **Hybrid search & filtering** — dense + sparse retrieval with fusion, plus scalar metadata filtering.
 - **Milvus Lite** — a lightweight embedded build for local prototyping that uses the same API, so you can develop on a laptop and deploy to a cluster.
 - **Managed option** — Zilliz Cloud runs Milvus for you when you don't want to operate the cluster.

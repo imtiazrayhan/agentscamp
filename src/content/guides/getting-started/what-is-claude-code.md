@@ -77,7 +77,7 @@ Claude Code lives in your **terminal** first. You run `claude` in a project dire
 
 It is not terminal-only, though. The same engine runs in several places:
 
-- **Terminal / CLI** — the interactive REPL, plus a one-shot `claude -p "..."` mode for scripting and piping.
+- **Terminal / CLI** — the interactive REPL, plus a one-shot [`claude -p "..."` mode](/guides/configuration/claude-code-headless-mode) for scripting and piping.
 - **IDE extensions** — VS Code and JetBrains integrations that run Claude Code alongside your editor, with diffs surfaced inline.
 - **GitHub** — a CI/Action mode that responds to issues and reviews pull requests in the repo.
 - **SDK / headless** — embed the same agent loop in your own scripts and applications.

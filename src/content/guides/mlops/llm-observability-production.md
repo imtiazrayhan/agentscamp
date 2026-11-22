@@ -181,4 +181,4 @@ This is the LLM equivalent of turning an incident into a unit test. Over time, t
 > [!TIP]
 > Instrument before optimizing. Without spans and version metadata, cost or quality work becomes a sequence of plausible guesses that cannot be attributed or rolled back confidently.
 
-The [LLM Observability Engineer](/agents/data-ai/llm-observability-engineer) packages this rollout as an implementation workflow; [Langfuse](/tools/langfuse), [Arize Phoenix](/tools/arize-phoenix), and [LangSmith](/tools/langsmith) are cataloged backends for storing and exploring the resulting traces and evaluations.
+The [LLM Observability Engineer](/agents/data-ai/llm-observability-engineer) packages this rollout as an implementation workflow; [Langfuse](/tools/langfuse), [Arize Phoenix](/tools/arize-phoenix), [LangSmith](/tools/langsmith), and [W&B Weave](/tools/weave) are cataloged backends for storing and exploring the resulting traces and evaluations. For the service side of the stack (structured logs, distributed traces, SLOs, and alerts), see the [observability skills roundup](/guides/skills/best-claude-skills-for-observability).

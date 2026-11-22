@@ -27,16 +27,16 @@ related: ["tool:spec-kit", "guide:vibe-coding-guide", "command:plan-feature", "c
 audience: ["founders"]
 ---
 
-The second generation of agentic-coding wisdom is converging on something almost embarrassingly traditional: **write down what you want before building it.** Spec-driven development (SDD) is that discipline rebuilt for agents — where the spec isn't bureaucracy, it's the *program you write in English*, and the agent is its compiler.
+The second generation of agentic-coding wisdom is converging on something almost embarrassingly traditional: **write down what you want before building it.** [Spec-driven development (SDD)](/glossary/spec-driven-development) is that discipline rebuilt for agents — where the spec isn't bureaucracy, it's the *program you write in English*, and the agent is its compiler.
 
 ## The inversion
 
 [Vibe coding](/guides/prompting/vibe-coding-guide) steers downstream: prompt, inspect behavior, correct, repeat — every correction spent *after* implementation exists. SDD moves the steering upstream, where it's cheap. The workflow that emerged as canonical — popularized by GitHub's [Spec Kit](/tools/spec-kit) — runs in reviewed stages:
 
-1. **Specify.** Author the spec: the problem, requirements, constraints, *acceptance criteria*. This is the thinking; expect it to be the hard part.
-2. **Plan.** The agent derives a technical plan — architecture, components, trade-offs — and you review *that*, killing wrong directions while they're still paragraphs.
+1. **Specify.** Author the spec: the problem, requirements, constraints, *acceptance criteria*. This is the thinking; expect it to be the hard part. The [spec-writer](/skills/workflow/spec-writer) skill drafts it in Kiro's or Spec Kit's file layout with EARS acceptance criteria.
+2. **Plan.** The agent derives a technical plan — architecture, components, trade-offs — and you review *that*, killing wrong directions while they're still paragraphs. The [system design skills](/guides/skills/best-claude-skills-for-system-design) cover the design doc, ADR, diagram, and threat model that make that review concrete.
 3. **Tasks.** The plan decomposes into discrete tasks with checkable outcomes — each sized for a focused session, each independently verifiable.
-4. **Implement.** Agents execute tasks against the spec, with tests embodying the acceptance criteria. Review arrives as small, purposeful diffs traceable to requirements.
+4. **Implement.** Agents execute tasks against the spec, with tests embodying the acceptance criteria. Review arrives as small, purposeful diffs traceable to requirements. In Claude Code, the [spec-implementer](/agents/core-development/spec-implementer) agent works this way, one task and one test-proven diff at a time.
 
 Each stage gate is the same trick: **review text before code, small before large.** A flawed assumption caught in the plan costs a sentence; caught in the diff, a day.
 
@@ -52,6 +52,6 @@ Each stage gate is the same trick: **review text before code, small before large
 SDD earns its overhead on **work that outlives the session**: features with real surface area, integrations with contracts, team codebases, anything multiple agents will touch. It's the wrong tool for **exploration** — spikes, prototypes, "what would this feel like" — where the honest spec doesn't exist yet and writing one is fiction. The mature loop uses both: *vibe to discover, spec to build.* Prototype freely; when the throwaway proves the idea, write the spec the prototype taught you, and let agents build the real one against it.
 
 > [!TIP]
-> Already inside Claude Code, the lightweight on-ramp is built in: [plan mode](/guides/configuration/claude-code-settings-permissions) plus the [plan-feature](/commands/plan/plan-feature) and [breakdown-task](/commands/plan/breakdown-task) commands give you spec→plan→tasks ergonomics for medium work without adopting a full toolkit; [Spec Kit](/tools/spec-kit) adds the standardized pipeline and constitution when the team wants the whole discipline.
+> Already inside Claude Code, the lightweight on-ramp is built in: [plan mode](/guides/configuration/claude-code-settings-permissions) plus the [plan-feature](/commands/plan/plan-feature) and [breakdown-task](/commands/plan/breakdown-task) commands give you spec→plan→tasks ergonomics for medium work without adopting a full toolkit, and [/spec](/commands/plan/spec) drafts requirements, design, and tasks files with EARS acceptance criteria; [Spec Kit](/tools/spec-kit) adds the standardized pipeline and constitution when the team wants the whole discipline, and [Taskmaster](/tools/taskmaster) covers just the tasks stage, turning a PRD into a dependency-ordered task list. The [best spec-driven development tools](/guides/comparisons/best-spec-driven-development-tools-2026) roundup compares the field.
 
 The deeper point survives any particular tool: as implementation gets cheaper, **specification becomes the engineering**. The teams getting the most from agents in 2026 aren't the best prompters — they're the best at saying precisely what they want and proving they got it.

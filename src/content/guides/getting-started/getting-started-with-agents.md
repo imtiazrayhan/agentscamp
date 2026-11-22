@@ -4,6 +4,7 @@ description: "What Claude Code subagents are, why they help, and how to add your
 seoDescription: "What Claude Code subagents are, why they help, and how to add your first one — with a working example agent you can copy into .claude/agents today."
 author: "Imtiaz Rayhan"
 date: 2026-05-02
+updated: 2026-11-22
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
@@ -88,14 +89,14 @@ Here is what each frontmatter field does:
 
 - **`name`** — a unique, lowercase, hyphenated identifier. This is how the agent is referenced.
 - **`description`** — a natural-language summary of when this agent should be used. This field is the most important one for delegation (more on that below).
-- **`model`** — which model the subagent runs on: `haiku`, `sonnet`, `opus`, or `inherit`. This field is optional and defaults to `inherit` (the agent follows the main session's model). Set it explicitly to pin a tier — `haiku` for cheap, fast jobs, `opus` for hard reasoning.
+- **`model`** — which model the subagent runs on: `haiku`, `sonnet`, `opus`, `fable`, a full model ID, or `inherit`. This field is optional and defaults to `inherit` (the agent follows the main session's model). Set it explicitly to pin a tier — `haiku` for cheap, fast jobs, `opus` for hard reasoning.
 - **`color`** — a display color for the terminal UI. Cosmetic, but handy for telling agents apart.
 
 Everything after the closing `---` is the system prompt. This is where you define the agent's role, its step-by-step process, and any constraints. Treat it like a job description: the more specific you are, the more reliable the agent.
 
 ### Optional: limiting tools
 
-You can also restrict which tools an agent may use by adding a `tools` field. If you omit it, the subagent inherits the full tool set. A read-only reviewer, for example, might only need a few:
+You can also restrict which tools an agent may use by adding a `tools` field. If you omit it, the subagent inherits the built-in and MCP tools available in the main conversation, minus a few that are always removed. A read-only reviewer, for example, might only need a few:
 
 ```yaml
 tools: Read, Grep, Glob

@@ -36,7 +36,7 @@ An [agent](/guides/getting-started/what-is-claude-code) works by acting, observi
 - The goal is unambiguous: make this red turn green.
 - Feedback is free: every run's failure output tells the agent what to fix next — no human in the inner loop.
 - Victory is checkable: the agent can't talk its way past a red suite.
-- The spec survives: requirements live in an executable file, not scrollback — kin to [spec-driven development](/guides/workflow/spec-driven-development), at function scale.
+- The spec survives: requirements live in an executable file, not scrollback — kin to [spec-driven development](/guides/workflow/spec-driven-development), at function scale. At feature scale, the [spec-implementer](/agents/core-development/spec-implementer) agent turns each task's acceptance criteria into tests the same way.
 
 ## The workflow
 

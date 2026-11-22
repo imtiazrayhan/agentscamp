@@ -27,7 +27,7 @@ faq:
     a: "Yes. As of September 2026, the Free plan includes 50 credits a month for open-weight models and Claude Sonnet 4.5, and paid plans run from $20 to $200 per user per month with more credits and premium models. Kiro itself is proprietary; only the Kiro Crew workspace is Apache-2.0."
 ---
 
-Kiro is AWS's agentic development platform, built around **spec-driven development**: a prompt becomes a written spec of requirements, design decisions and sequenced tasks, and Kiro checks the finished code against that spec with property-based tests. Pick it when you want an agent that works from a reviewable plan across an IDE, a terminal and cloud sandboxes, rather than from a chat thread. It is proprietary, built and operated by AWS, and has a free plan.
+Kiro is AWS's agentic development platform, built around **[spec-driven development](/glossary/spec-driven-development)**: a prompt becomes a written spec of requirements, design decisions and sequenced tasks, and Kiro checks the finished code against that spec with property-based tests. Pick it when you want an agent that works from a reviewable plan across an IDE, a terminal and cloud sandboxes, rather than from a chat thread. It is proprietary, built and operated by AWS, and has a free plan.
 
 Kiro reached general availability in November 2025, when the Kiro CLI launched alongside the IDE. That CLI replaces the Amazon Q Developer CLI, which AWS's docs say "has been rebranded to Kiro". Amazon Q Developer stopped taking new signups on May 15, 2026, and its IDE plugins and paid subscriptions reach end of support on April 30, 2027.
 
@@ -58,7 +58,7 @@ Then work spec-first:
 > Implement the first task and check it against the spec's properties
 ```
 
-That spec, tasks, implement loop is the one our [spec-driven development guide](/guides/workflow/spec-driven-development) walks through with any agent. If you'd rather stay in [Claude Code](/tools/claude-code) and borrow only Kiro's correctness idea, the [Property Test Designer](/skills/testing/property-test-designer) skill designs property-based tests that assert invariants across hundreds of random inputs.
+That spec, tasks, implement loop is the one our [spec-driven development guide](/guides/workflow/spec-driven-development) walks through with any agent, and the [spec-driven development tools roundup](/guides/comparisons/best-spec-driven-development-tools-2026) compares Kiro with Spec Kit, OpenSpec and Taskmaster. To write Kiro-style requirements.md, design.md, and tasks.md files from inside Claude Code, use the [spec-writer](/skills/workflow/spec-writer) skill. If you'd rather stay in [Claude Code](/tools/claude-code) and borrow only Kiro's correctness idea, the [Property Test Designer](/skills/testing/property-test-designer) skill designs property-based tests that assert invariants across hundreds of random inputs.
 
 > [!TIP]
 > Review the requirements before you approve the task list. A contradiction fixed in the spec costs a sentence; the same contradiction found in code review costs a rewrite.

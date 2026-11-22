@@ -36,7 +36,7 @@ This guide is about writing the version that earns its place: what to put in, wh
 
 When Claude Code starts in a repo, it loads `CLAUDE.md` from the project root (and any parent directories) into context automatically. It is persistent project memory — the durable facts about *this* codebase that you'd otherwise repeat in prompt after prompt.
 
-The mental model that keeps it useful: **CLAUDE.md is onboarding for a fast new engineer who already knows how to code.** You don't teach them React. You tell them this repo uses `pnpm` not `npm`, that tests run with `vitest --run`, and that the `legacy/` directory is frozen and must not be touched. Everything that passes that filter belongs; everything that fails it is noise.
+The mental model that keeps it useful: **CLAUDE.md is onboarding for a fast new engineer who already knows how to code.** You don't teach them React. You tell them this repo uses `pnpm` not `npm`, that tests run with `vitest --run`, and that the `legacy/` directory is frozen and must not be touched. Everything that passes that filter belongs; everything that fails it is noise. For a repo you just joined, the [codebase onboarding skills](/guides/skills/best-claude-skills-for-codebase-onboarding) include agent-memory-designer, which drafts the file from the commands CI actually runs.
 
 > [!NOTE]
 > CLAUDE.md is not a prompt you fire once — it loads on *every* turn for the whole session. A 600-line file isn't 600 lines of help; it's 600 lines competing for attention against the actual task on every single response. See [Context Engineering](/guides/prompting/context-engineering) for why that competition is real.

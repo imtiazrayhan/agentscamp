@@ -3,6 +3,7 @@ title: "Building Agents with the Claude Agent SDK"
 description: "A working tutorial for the Claude Agent SDK in TypeScript and Python — query(), tool permissions, custom in-process MCP tools, subagents, hooks, and auth."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-22
 color: "green"
 topics: ["workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -85,7 +86,7 @@ Install with `npm install @anthropic-ai/claude-agent-sdk` (the package bundles t
 | Option | What it does |
 | --- | --- |
 | `allowedTools` / `disallowedTools` | The permission boundary — grant exactly what the task needs |
-| `permissionMode` | `default`, `acceptEdits`, `plan`, `bypassPermissions` — same dial as Claude Code |
+| `permissionMode` | `default`, `acceptEdits`, `plan`, `dontAsk`, `auto`, `bypassPermissions` — same dial as Claude Code |
 | `maxTurns` | Circuit breaker for runaway loops |
 | `model` | Pin the model per agent |
 | `systemPrompt` | Replace or extend the agent's instructions |

@@ -38,4 +38,4 @@ QLoRA makes fine-tuning a real option on one modest GPU: it quantizes the base m
 
 ## Output
 
-A trained LoRA adapter plus the run's record: the QLoRA config (quantization, rank/alpha, target modules, LR, epochs, seed), the training/validation loss curves, the dataset version, and a quick held-out eval confirming the intended behavior change — reproducible enough to re-run or tune. Full evaluation and the ship/no-ship call belong to the [finetuning-engineer](/agents/data-ai/finetuning-engineer).
+A trained LoRA adapter plus the run's record: the QLoRA config (quantization, rank/alpha, target modules, LR, epochs, seed), the training/validation loss curves, the dataset version, and a quick held-out eval confirming the intended behavior change — reproducible enough to re-run or tune. Full evaluation and the ship/no-ship call belong to the [finetuning-engineer](/agents/data-ai/finetuning-engineer); the [model-card-writer](/skills/docs/model-card-writer) skill turns this record into a Hugging Face model card.

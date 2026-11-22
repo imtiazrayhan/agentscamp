@@ -57,7 +57,7 @@ Verified against each vendor's own docs (July 2026):
 | **Gemini CLI** | User `~/.gemini/skills/` (alias `~/.agents/skills/`), workspace `.gemini/skills/` (alias `.agents/skills/`), with a consent prompt on activation |
 | **OpenAI Codex** | `.agents/skills` (scanned up to repo root), `~/.agents/skills`, admin `/etc/codex/skills` — its docs cite the open standard explicitly |
 
-Beyond those: Goose, OpenHands, Letta, JetBrains Junie, Spring AI, Amp, OpenCode, Roo Code, Qodo, Tabnine, and enough others that "40+ tools" is now simply accurate.
+Beyond those: Goose, OpenHands, Letta, [JetBrains Junie](/tools/junie), Spring AI, Amp, OpenCode, Roo Code, Qodo, Tabnine, and enough others that "40+ tools" is now simply accurate.
 
 Two patterns jump out of that table. First, **`.agents/skills/` is the neutral ground** — the one directory nearly everyone reads. Second, **`.claude/skills/` travels**: Copilot, VS Code, and Cursor read it directly, so a repo already set up for Claude Code is, for most teams, already set up for everything else.
 

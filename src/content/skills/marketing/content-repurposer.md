@@ -39,7 +39,7 @@ Repurposing is where accurate long-form content turns into inaccurate short-form
 
 ## Output
 
-One Markdown document with the eight sections above. The four derivatives are ready to paste into their channels once the Flags list is cleared; the ledger stays with the document as the record of what the piece claims and what backs it. The video script can go to an editing tool such as [Descript](/tools/descript); the written derivatives can go to the [content-editor](/agents/marketing/content-editor) agent for a voice and claims pass.
+One Markdown document with the eight sections above. The four derivatives are ready to paste into their channels once the Flags list is cleared; the ledger stays with the document as the record of what the piece claims and what backs it. The video script can go to an editing tool such as [Descript](/tools/descript), or to the [avatar-video-script-writer](/skills/marketing/avatar-video-script-writer) skill when an AI avatar will present it; the written derivatives can go to the [content-editor](/agents/marketing/content-editor) agent for a voice and claims pass.
 
 ## Example
 

@@ -28,6 +28,6 @@ In the fictional neighborhood interview, listener J. Chen records “the west be
 
 The [speech-cleanup workflow](/guides/voice/review-ai-speech-cleanup) records paired observations, time bounds, decisions, and pending work. A processing surface such as [Adobe Podcast](/tools/adobe-podcast) can provide the variant being reviewed, while the listener decides whether its speech should be used.
 
-Transcription turns speech into text, and text-to-speech creates spoken output from text. Enhancement works on an existing speech recording. In this review workflow, the [Speech Cleanup Reviewer](/agents/marketing/speech-cleanup-reviewer) organizes supplied observations; it cannot claim an audition merely because it can read file names or notes.
+Transcription ([speech-to-text](/glossary/speech-to-text)) turns speech into text, and [text-to-speech](/glossary/text-to-speech) creates spoken output from text. Enhancement works on an existing speech recording. In this review workflow, the [Speech Cleanup Reviewer](/agents/marketing/speech-cleanup-reviewer) organizes supplied observations; it cannot claim an audition merely because it can read file names or notes.
 
 Keep the original unchanged and mark unreviewed intervals pending. A complete row shows who compared the two versions and why they chose one, but a structural checker cannot verify that listening occurred. The acceptance decision still belongs to the listener before an interval or final master is used.

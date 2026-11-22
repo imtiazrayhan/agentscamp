@@ -36,7 +36,7 @@ It is aimed at teams who already run Postgres and want vector search without add
 ## Highlights
 
 - **Vector types in Postgres** — `vector`, `halfvec` (half-precision), and `sparsevec`, with distance operators for L2 (`<->`), cosine (`<=>`), and inner product (`<#>`).
-- **HNSW & IVFFlat indexes** — HNSW for high recall and low latency, IVFFlat for smaller memory footprints; both expose tuning parameters for the recall/speed trade-off.
+- **HNSW & IVFFlat indexes** — [HNSW](/glossary/hnsw) for high recall and low latency, IVFFlat for smaller memory footprints; both expose tuning parameters for the recall/speed trade-off.
 - **SQL-native filtering** — combine similarity search with any `WHERE` clause, join, or `ORDER BY` — no separate metadata-filter API to learn.
 - **Transactional & consistent** — inserts and updates to vectors are ACID, just like the rest of your data.
 - **Scales further with extensions** — `pgvectorscale` adds StreamingDiskANN and better quantization to push past in-memory limits while staying in Postgres.

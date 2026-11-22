@@ -198,7 +198,7 @@ Perplexity and Gemini Notebook, above, cover research by hand. These two are for
 
 **[ElevenLabs](/tools/elevenlabs).** Text-to-speech, voice cloning, and dubbing on a credit system with a free tier. The voice for the ad, the explainer, and the podcast intro.
 
-**Verdict:** these three chain together: record and cut in Descript, clip in OpusClip, voice or dub in ElevenLabs. The [content repurposer](/skills/marketing/content-repurposer) skill writes the scripts and post copy that feed them.
+**Verdict:** these three chain together: record and cut in Descript, clip in OpusClip, voice or dub in ElevenLabs. When there is no one to film, [HeyGen](/tools/heygen) or [Synthesia](/tools/synthesia) puts an AI presenter on screen; [the best AI avatar video generators in 2026](/guides/comparisons/best-ai-avatar-video-generators-2026) compares them. The [content repurposer](/skills/marketing/content-repurposer) skill writes the scripts and post copy that feed them.
 
 ## Automation and CRM: running the program
 

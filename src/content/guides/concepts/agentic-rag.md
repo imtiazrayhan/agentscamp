@@ -27,7 +27,7 @@ faq:
 related: ["guide:how-rag-works", "guide:graph-rag", "guide:rag-vs-long-context", "guide:hybrid-search-reranking", "agent:rag-pipeline-engineer", "guide:production-tool-calling", "guide:write-llm-evals"]
 ---
 
-Classic [RAG](/glossary/rag) is a pipeline with the intelligence at the end: embed the user's query, fetch top-k, hand it to the model, hope. Its defining weakness is that **the retrieval happens before any thinking does** — one shot, on the user's raw phrasing, with no recourse if the shot misses. Agentic RAG moves the intelligence forward: retrieval becomes a *tool* an [agent](/glossary/ai-agent) wields — repeatedly, judgmentally — rather than a fixed pre-step.
+Classic [RAG](/glossary/rag) is a pipeline with the intelligence at the end: embed the user's query, fetch top-k, hand it to the model, hope. Its defining weakness is that **the retrieval happens before any thinking does** — one shot, on the user's raw phrasing, with no recourse if the shot misses. [Agentic RAG](/glossary/agentic-rag) moves the intelligence forward: retrieval becomes a *tool* an [agent](/glossary/ai-agent) wields — repeatedly, judgmentally — rather than a fixed pre-step.
 
 ## What the agent actually does differently
 

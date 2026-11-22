@@ -36,7 +36,7 @@ Cartesia is the latency specialist of voice AI — founded by the creators of th
 - **Sonic TTS** — streaming-first synthesis with vendor-claimed sub-100ms model latency; Sonic 3.5 (May 2026) spans 42 languages with emotion and laughter controls.
 - **Ink STT** — streaming transcription with **turn detection native to the model** (turn-start/turn-end events, no external VAD), plus careful handling of phone numbers, emails, and IDs; Ink-2 launched May 2026 (English-first).
 - **Line** — the voice-agent platform: SDK/CLI with one-command deploys, hosted infra, provisioned phone numbers, recordings/transcripts, latency dashboards, and built-in evals.
-- **Voice cloning** — instant (Pro) and professional tiers.
+- **[Voice cloning](/glossary/voice-cloning)** — instant (Pro) and professional tiers.
 - **SSM pedigree** — the architecture bet (efficient streaming inference) is the product's whole thesis.
 
 ## In an AI-assisted workflow

@@ -90,7 +90,7 @@ Use it after the service is stable. The postmortem is not a live-response substi
 
 ## A small-team SRE stack
 
-Start with one skill for each stage: `slo-definer`, `structured-logging-designer`, `alerting-rules-tuner`, `rollback-plan-writer`, and `incident-postmortem-writer`.
+Start with one skill for each stage: `slo-definer`, `structured-logging-designer`, `alerting-rules-tuner`, `rollback-plan-writer`, and `incident-postmortem-writer`; the [observability roundup](/guides/skills/best-claude-skills-for-observability) goes deeper on the telemetry skills.
 
 ```bash
 npx agentscamp add skills/slo-definer

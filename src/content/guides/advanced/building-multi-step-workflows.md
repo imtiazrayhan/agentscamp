@@ -3,6 +3,7 @@ title: "Building Multi-Step Agent Workflows"
 description: "Patterns for building multi-step agent workflows in Claude Code: decompose tasks, fan-out to parallel subagents, verify every step, and orchestrate."
 author: "Imtiaz Rayhan"
 date: 2026-05-16
+updated: 2026-11-22
 color: "green"
 topics: ["workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -13,7 +14,7 @@ keyTakeaways:
   - "Plan in plain text before touching files: reviewing a 6-line plan is cheaper than reviewing the wrong 600-line implementation."
   - "Fan-out works because subagents share no memory — which also means fan-in is real work: the parent must merge, dedupe, and resolve conflicts itself."
   - "Agents are optimistic and will report success on code that doesn't compile — make verification an explicit step: build/lint/test, plus a fresh subagent reviewing the diff with no stake in it."
-  - "Subagents inherit nothing from the parent conversation; pass every constraint explicitly, and persist must-not-lose facts to a PLAN.md every step re-reads."
+  - "A non-fork subagent sees none of the parent's chat history (it does load CLAUDE.md); restate conversation-only constraints, and persist must-not-lose facts to a PLAN.md every step re-reads."
 faq:
   - q: "How do I break a big task into steps for an agent?"
     a: "Ask for the plan first, as plain text, before any code — each numbered step should name the files touched, the change, and how to verify it in isolation. The heuristic: every step produces an artifact you could review on its own (a diff, a file, a test result). Then each item becomes a unit you can run, check, and roll back independently."
@@ -51,7 +52,7 @@ Once the plan exists, each numbered item becomes a unit of execution you can run
 
 Some steps are independent of each other — they don't share state and can run at the same time. **Fan-out** means dispatching those independent steps in parallel; **fan-in** means collecting their results and merging them into a single coherent outcome.
 
-In Claude Code, fan-out happens when you launch multiple subagents (via the Task tool) in one turn. Each subagent runs in its **own isolated context window**, does its slice of work, and returns a summary. The main agent then performs the fan-in: reading each summary and reconciling them.
+In Claude Code, fan-out happens when you launch multiple subagents (via the Agent tool, called Task before v2.1.63) in one turn. Each subagent runs in its **own isolated context window**, does its slice of work, and returns a summary. The main agent then performs the fan-in: reading each summary and reconciling them.
 
 Fan-out shines for read-heavy, embarrassingly-parallel research:
 
@@ -134,7 +135,7 @@ An orchestrator is itself a subagent (`.claude/agents/workflow-orchestrator.md`)
 Subagents return only a *summary*, and the main thread can compact or drop detail over a long run. Critical specifics — exact filenames, version numbers, an edge case the user mentioned once — evaporate between steps. Defend against it by writing durable state to a file (a `PLAN.md` or a scratch notes file) that every step re-reads, rather than relying on the conversation to remember.
 
 > [!WARNING]
-> Never assume a subagent inherited context from the parent. Each one starts fresh. If a subagent needs a constraint ("our DB is Postgres, not MySQL"), pass it explicitly in the task prompt — it cannot see the rest of your conversation.
+> Never assume a subagent inherited your conversation. A non-fork subagent starts fresh, with only CLAUDE.md, a git status snapshot and its task. If a subagent needs a constraint ("our DB is Postgres, not MySQL"), pass it explicitly in the task prompt — it cannot see the rest of your conversation.
 
 ### Over-decomposition
 
