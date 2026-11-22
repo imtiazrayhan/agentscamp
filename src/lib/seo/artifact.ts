@@ -56,6 +56,11 @@ export function artifactFilename(item: ContentItem): string {
   return item.type === "skill" ? `${item.slug}/SKILL.md` : `${item.slug}.md`;
 }
 
+/** The `npx agentscamp` install command for an installable item (agent/skill/command). */
+export function cliInstallCommand(item: ContentItem): string {
+  return `npx agentscamp add ${contentTypes[item.type].basePath.slice(1)}/${item.slug}`;
+}
+
 /** The canonical absolute HTML URL for an item. */
 export function canonicalUrl(item: ContentItem): string {
   return `${site.url}${item.href}`;
@@ -75,7 +80,10 @@ export function toMarkdownFile(item: ContentItem): string {
   const source = `\n\n---\n\n_Source: ${canonicalUrl(item)} — ${contentTypes[item.type].singular} on ${site.name}._\n`;
 
   const artifact = buildArtifact(item);
-  if (artifact) return artifact + source;
+  if (artifact) {
+    const install = `_Install: \`${cliInstallCommand(item)}\` (project .claude/; add -g for ~/.claude/)._\n`;
+    return artifact + source + install;
+  }
 
   const parts: string[] = [`# ${item.title}`, "", `> ${item.description}`];
   if (item.summary) parts.push("", item.summary);

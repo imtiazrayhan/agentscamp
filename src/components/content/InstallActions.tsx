@@ -3,7 +3,7 @@
 import { ChevronRight, Download, ExternalLink, FileText, Github } from "lucide-react";
 import type { AgentItem, ContentItem } from "@/lib/content/types";
 import { contentTypes } from "@/lib/content/registry";
-import { buildArtifact, artifactFilename } from "@/lib/seo/artifact";
+import { buildArtifact, artifactFilename, cliInstallCommand } from "@/lib/seo/artifact";
 import { AGENT_EXPORT_FORMATS } from "@/lib/export/agent-formats";
 import { CopyButton } from "./CopyButton";
 import { Button } from "@/components/ui/button";
@@ -110,7 +110,7 @@ export function InstallActions({ item }: { item: ContentItem }) {
   const file = buildArtifact(item);
   if (!file) return null;
   const filename = artifactFilename(item);
-  const cliCommand = `npx agentscamp add ${def.basePath.slice(1)}/${item.slug}`;
+  const cliCommand = cliInstallCommand(item);
 
   return (
     <div className="space-y-3">
