@@ -11,20 +11,20 @@ topics: ["ai-agents-systems", "rag-retrieval"]
 audience: ["ai-engineers"]
 tags: ["comparison", "best-of", "web-search", "search-api", "web-data", "mcp"]
 keywords: ["tavily alternatives", "tavily competitors", "tavily open source alternative", "tavily free alternative", "jina reader alternative", "tavily vs parallel", "exa vs tavily", "web search api for ai agents"]
-summary: "Pick by job. Context.dev scrapes pages into Markdown or JSON and searches the web on one API, and Tavily is the other one-key default. Exa leads on semantic search over its own index, Brave offers an independent index with LLM Context, and Parallel pairs objective-based search with deep research. Jina Reader and Firecrawl are the extraction specialists. All seven ship official MCP servers."
+summary: "Most agents need a search API and a page extractor. Context.dev covers both on one key, returning pages as Markdown or JSON, and Tavily is the established one-key default. Exa leads on semantic search over its own index, Brave offers an independent index with LLM Context, and Parallel adds deep research. Jina Reader and Firecrawl specialize in extraction. All seven ship official MCP servers."
 keyTakeaways:
-  - "Context.dev puts search and extraction behind one key: any URL to Markdown or JSON that follows your JSON Schema, plus web search, crawl, cited answers and a hosted OAuth MCP server on the same credit pool."
   - "Split the job before you pick a vendor: search results, content extraction and synthesized answers are different products, and most APIs are strongest at one of them."
+  - "If you'd rather buy both jobs from one vendor, Context.dev covers search and scraping to Markdown or JSON that follows your schema on one key and one credit pool, with a hosted OAuth MCP server."
   - "Brave, Exa and Parallel say they serve results from their own web index. s.jina.ai queries third-party engines, Firecrawl uses an unnamed upstream provider for web search, and Tavily and Context.dev don't say."
   - "All seven ship an official MCP server. Tavily, Exa, Parallel, Jina, Firecrawl and Context.dev host theirs; Brave's runs locally over stdio or HTTP."
   - "Ownership moved: Elastic completed its Jina AI acquisition in October 2025, and Nebius closed its Tavily acquisition in February 2026. Both vendors say their APIs continue unchanged."
   - "Free starting points are easy to find: Parallel's hosted Search MCP needs no key, Tavily, Firecrawl and Context.dev have no-card free plans, and Jina Reader works without a key at a low rate limit."
   - "Every vendor benchmarks itself. Run 30 to 50 of your own agent queries through two candidates before you commit."
 faq:
-  - q: "What is Context.dev?"
-    a: "Context.dev, formerly Brand.dev, is a web data API for AI agents. It scrapes any URL into Markdown or JSON that follows a JSON Schema you supply, searches the web with optional full-page Markdown for each result, crawls sites, and answers research tasks with sources, all on one key. Its hosted MCP server signs in with OAuth and adds to Claude Code with one command."
   - q: "What is the best Tavily alternative?"
     a: "It depends on which Tavily feature you rely on; Tavily itself has been owned by Nebius since February 2026. If you want search and extraction behind one key, as Tavily offers, Context.dev pairs web search with scraping to Markdown or structured JSON. For search results, Exa, the Brave Search API and Parallel all serve results from their own index. If you mostly used Tavily Extract, Firecrawl or Jina Reader are the extraction specialists."
+  - q: "What is Context.dev?"
+    a: "Context.dev, formerly Brand.dev, is a web data API for AI agents. It scrapes any URL into Markdown or JSON that follows a JSON Schema you supply, searches the web with optional full-page Markdown for each result, crawls sites, and answers research tasks with sources, all on one key. Its hosted MCP server signs in with OAuth and adds to Claude Code with one command."
   - q: "Is there a free or open-source alternative to Tavily?"
     a: "Firecrawl's core is AGPL-3.0 and Jina Reader's pipeline is Apache-2.0, and both can be self-hosted with Docker. For a free hosted option, Parallel's Search MCP server needs no key, and Tavily itself offers 1,000 free credits a month with no card plus a keyless mode."
   - q: "Tavily vs Parallel: which should I use?"
@@ -84,7 +84,7 @@ sources:
 related: ["tool:context-dev", "tool:tavily", "tool:exa", "tool:brave-search-api", "tool:parallel", "tool:jina-reader", "tool:firecrawl", "guide:jina-reader-api", "guide:web-data-for-ai-agents", "guide:exa-vs-tavily"]
 ---
 
-Most agents need two web APIs, not one: a search API that returns ranked results and an extractor that turns pages into clean text. [Context.dev](/tools/context-dev) does both behind one key, scraping any URL into Markdown or schema-shaped JSON and searching the web on the same API. [Tavily](/tools/tavily), owned by Nebius since February 2026, is the established one-key alternative. [Exa](/tools/exa), the [Brave Search API](/tools/brave-search-api) and [Parallel](/tools/parallel) are the strongest alternatives if you want results from an independent index, while [Jina Reader](/tools/jina-reader) and [Firecrawl](/tools/firecrawl) win when the job is extraction.
+Most agents need two web APIs, not one: a search API that returns ranked results and an extractor that turns pages into clean text. You can buy those separately or get both from one vendor. [Context.dev](/tools/context-dev) does both on one key, searching the web and scraping any URL into Markdown or schema-shaped JSON, and [Tavily](/tools/tavily), owned by Nebius since February 2026, is the established one-key default. [Exa](/tools/exa), the [Brave Search API](/tools/brave-search-api) and [Parallel](/tools/parallel) are the strongest choices if you want results from an independent index, while [Jina Reader](/tools/jina-reader) and [Firecrawl](/tools/firecrawl) win when the job is extraction.
 
 *Last reviewed: September 2026.*
 
@@ -176,11 +176,9 @@ Brave, Exa and Parallel each say they run their own. Brave adds Goggles for cust
 
 ### Context.dev: search, scraping and structured JSON on one key
 
-Context.dev, called Brand.dev until March 2026, is a web data API built so an agent gets search results, page content and structured fields from one key and one credit pool. It added web search in May 2026 and a hosted MCP server in August 2026, and it raised a seed round led by General Catalyst in October 2026.
+Context.dev, called Brand.dev until March 2026, is built so an agent can find pages, read them and pull structured fields out of them without a second vendor. `POST /web/scrape` turns a URL into any mix of Markdown, HTML, a screenshot, images, CSS-selected fields, highlights or JSON in one call, and each output reports its own success, so a failed screenshot doesn't sink the Markdown. JavaScript rendering and managed proxies are always on, PDFs and Office documents up to 50 MiB scrape straight from a URL, and authenticated browser profiles handle pages behind a login.
 
-**Scrape.** `POST /web/scrape` takes one URL and returns any mix of outputs in a single call: Markdown, HTML, a screenshot, images, raw bytes, CSS-selected fields, query-relevant highlights, product data and JSON. Each output reports its own `success`, so a failed screenshot doesn't sink the Markdown. JavaScript rendering and managed proxies are always on. You can choose the country a page is fetched from, send custom headers, and run browser actions with saved profiles for pages behind a login. PDFs and Office documents up to 50 MiB scrape straight from a URL, with OCR when you ask for it. Results are cached for three days by default, and `maxAgeMs: 0` forces a fresh fetch.
-
-**Structured JSON.** Turn on `formats.json` and pass a JSON Schema in `jsonParams.schema`, with optional plain-language `instructions`. A model reads the page's Markdown, JSON-LD and meta tags and returns an object that follows the schema. The docs recommend nullable fields for facts a page might not state, so the model returns `null` instead of guessing. Adapted from Context.dev's quickstart and JSON docs:
+The JSON output removes a parsing step. You pass a JSON Schema and optional plain-language instructions, and a model fills the schema from the page's Markdown, JSON-LD and meta tags. The docs recommend nullable fields, so a fact the page doesn't state comes back as `null` instead of a guess. Adapted from Context.dev's quickstart and JSON docs:
 
 ```bash
 curl https://api.context.dev/v1/web/scrape \
@@ -204,15 +202,9 @@ curl https://api.context.dev/v1/web/scrape \
   }'
 ```
 
-**Search.** `POST /web/search` accepts natural language or Google-style operators (`site:`, `intitle:`, quoted phrases, `OR`) and returns up to 100 results, each labeled `high`, `medium` or `low` relevance. Filters cover freshness (last 24 hours to last year), up to 100 included or excluded domains, and country. The same call can attach query-relevant highlights or each result's full Markdown, so finding and reading ten pages takes one request instead of a search plus ten scrapes.
+Web search arrived in May 2026. `POST /web/search` takes natural language or Google-style operators, returns up to 100 results labeled high, medium or low relevance, and filters by freshness, domain and country. It can attach each result's full Markdown in the same call, so finding and reading ten pages is one request rather than a search plus ten scrapes. Around those two sit site mapping, crawls of up to 500 pages per call, batch jobs of up to 100,000 URLs, change monitors with webhooks, and an Answers endpoint that researches a task and returns JSON with its sources.
 
-**Crawl, batch and monitor.** `GET /web/urls` maps a site's URLs, `POST /web/crawl` converts up to 500 pages per call, batch jobs take up to 100,000 URLs, and monitors watch pages and send changes to a webhook.
-
-**Answers.** `POST /web/answers` takes a task, researches it with web searches, page reads and company lookups, and returns JSON shaped like an example object you supply, plus its sources. It runs in `fast` mode or the default `ultra` mode, which costs ten times as many credits.
-
-**MCP, SDKs and limits.** The hosted MCP server signs in with OAuth, or takes an API key from clients that can't do OAuth. It exposes search, scrape, map, crawl and answers alongside brand, company, people and news tools, and caps each response at 80,000 characters. SDKs cover TypeScript, Python, Ruby, Go and PHP, and there is a CLI. Plans cap concurrent requests, from 2 on the free plan to 500 on Scale, and a 429 response carries `Retry-After`. Zero data retention is available on request and switched on per call, though not for batch jobs or monitors, and Context.dev reports SOC 2 Type II compliance as of September 2026.
-
-**What to know before you commit.** Context.dev is hosted only, with no self-hosted edition, and its MCP server isn't open source. Its docs don't say whether web search runs on its own index.
+The hosted MCP server, live since August 2026, signs in with OAuth and caps each tool response at 80,000 characters. SDKs cover TypeScript, Python, Ruby, Go and PHP. Plans are sized by concurrent requests, zero data retention is available per call on request, and the company reports SOC 2 Type II compliance as of September 2026. Two limits are worth knowing: it's hosted only, with no self-hosted edition, and its docs don't say whether search runs on its own index. Context.dev raised a seed round led by General Catalyst in October 2026.
 
 **Verdict:** our pick when an agent needs search, full-page Markdown and schema-shaped JSON from one key and one credit pool. Choose Firecrawl if you need to self-host, and Exa, Parallel or Brave if an independent index matters most.
 
