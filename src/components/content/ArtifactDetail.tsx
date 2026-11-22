@@ -12,6 +12,7 @@ import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
 import type { ContentItem } from "@/lib/content/types";
 import { KeyTakeaways } from "./ArticleBoxes";
 import { PageHeader } from "./PageHeader";
+import { ToolRail } from "./ToolRail";
 
 /**
  * Spec-sheet template for the five non-guide types (agent, skill, command, tool,
@@ -21,15 +22,7 @@ import { PageHeader } from "./PageHeader";
  * JSON-LD (`graphFor`) and breadcrumbs are carried over verbatim from the old
  * DetailView.
  */
-function Meta({
-  item,
-  toolCategoryHref,
-  toolPricingHref,
-}: {
-  item: ContentItem;
-  toolCategoryHref?: string;
-  toolPricingHref?: string;
-}) {
+function Meta({ item }: { item: ContentItem }) {
   const chips: React.ReactNode[] = [];
   if (item.type === "agent") {
     chips.push(
@@ -52,31 +45,6 @@ function Meta({
           v{item.version}
         </Badge>,
       );
-  } else if (item.type === "tool") {
-    chips.push(
-      toolPricingHref ? (
-        <Link key="p" href={toolPricingHref}>
-          <Badge variant="brand" className="capitalize">
-            {item.pricing.replace("-", " ")}
-          </Badge>
-        </Link>
-      ) : (
-        <Badge key="p" variant="brand" className="capitalize">
-          {item.pricing.replace("-", " ")}
-        </Badge>
-      ),
-      toolCategoryHref ? (
-        <Link key="c" href={toolCategoryHref}>
-          <Badge variant="outline" className="capitalize">
-            {item.category}
-          </Badge>
-        </Link>
-      ) : (
-        <Badge key="c" variant="outline" className="capitalize">
-          {item.category}
-        </Badge>
-      ),
-    );
   } else if (item.type === "command") {
     chips.push(
       <Badge key="s" variant="outline">
@@ -99,12 +67,14 @@ export function ArtifactDetail({
   toolCategoryHref,
   toolPricingHref,
   toolAlternativesHref,
+  toolAlternatives,
 }: {
   item: ContentItem;
   related: ContentItem[];
   toolCategoryHref?: string;
   toolPricingHref?: string;
   toolAlternativesHref?: string;
+  toolAlternatives?: ContentItem[];
 }) {
   const def = contentTypes[item.type];
   const categoryHref =
@@ -112,6 +82,7 @@ export function ArtifactDetail({
       ? `/tools/category/${item.category}`
       : `${def.basePath}/${item.category}`;
   const updated = item.updated ?? item.date;
+  const isTool = item.type === "tool";
 
   return (
     <article>
@@ -121,6 +92,15 @@ export function ArtifactDetail({
       />
       <Breadcrumbs items={breadcrumbsFor(item)} />
 
+      {/* Tools get a right rail (spec sheet, alternatives, contents) beside the
+          header and body; the other types stay single-column. */}
+      <div
+        className={
+          isTool
+            ? "lg:grid lg:grid-cols-[minmax(0,41rem)_18rem] lg:justify-between lg:gap-x-12"
+            : undefined
+        }
+      >
       <PageHeader
         className="measure"
         eyebrow={
@@ -141,18 +121,17 @@ export function ArtifactDetail({
         title={item.title}
         lead={item.description}
       >
-        <div className="mt-4 flex flex-wrap items-center gap-2">
-          <Meta
-            item={item}
-            toolCategoryHref={toolCategoryHref}
-            toolPricingHref={toolPricingHref}
-          />
-          {updated && (
-            <span className="text-xs text-muted-foreground">
-              Updated <time dateTime={updated}>{formatDate(updated)}</time>
-            </span>
-          )}
-        </div>
+        {/* On tool pages these facts live in the rail's spec sheet. */}
+        {!isTool && (
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <Meta item={item} />
+            {updated && (
+              <span className="text-xs text-muted-foreground">
+                Updated <time dateTime={updated}>{formatDate(updated)}</time>
+              </span>
+            )}
+          </div>
+        )}
 
         {item.summary && (
           <p className="mt-6 text-lg leading-relaxed text-foreground">
@@ -166,7 +145,7 @@ export function ArtifactDetail({
           {toolAlternativesHref && (
             <Link
               href={toolAlternativesHref}
-              className="mt-3 inline-flex text-sm font-medium text-primary hover:underline"
+              className="mt-3 inline-flex text-sm font-medium text-primary hover:underline lg:hidden"
             >
               Compare {item.title} alternatives
             </Link>
@@ -174,12 +153,23 @@ export function ArtifactDetail({
         </div>
       </PageHeader>
 
+      {item.type === "tool" && (
+        <ToolRail
+          item={item}
+          categoryHref={toolCategoryHref}
+          pricingHref={toolPricingHref}
+          alternatives={toolAlternatives}
+          alternativesHref={toolAlternativesHref}
+        />
+      )}
+
       <div className="min-w-0 measure">
         <KeyTakeaways items={item.keyTakeaways} />
 
         {item.body && <Markdown source={item.body} />}
         <FaqSection faq={item.faq} />
         <FiledUnder item={item} />
+      </div>
       </div>
 
       <RelatedItems items={related} />

@@ -51,6 +51,7 @@ export default async function Page({ params }: { params: Params }) {
           ? `${item.href}/alternatives`
           : undefined
       }
+      toolAlternatives={alternatives?.items.slice(0, 5)}
     />
   );
 }
