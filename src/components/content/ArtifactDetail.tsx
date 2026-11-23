@@ -7,60 +7,20 @@ import { FaqSection } from "./FaqSection";
 import { FiledUnder } from "./FiledUnder";
 import { contentTypes } from "@/lib/content/registry";
 import { titleCaseLabel, formatDate } from "@/lib/format";
-import { Badge } from "@/components/ui/badge";
 import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
 import type { ContentItem } from "@/lib/content/types";
 import { KeyTakeaways } from "./ArticleBoxes";
 import { PageHeader } from "./PageHeader";
-import { ToolRail } from "./ToolRail";
+import { DetailRail } from "./DetailRail";
 
 /**
  * Spec-sheet template for the five non-guide types (agent, skill, command, tool,
- * glossary). They differ only in the chip row and their install action, both of
+ * glossary). They differ only in the rail spec sheet and their install action, both of
  * which are already switch-based — so one component, not five.
  *
  * JSON-LD (`graphFor`) and breadcrumbs are carried over verbatim from the old
  * DetailView.
  */
-function Meta({ item }: { item: ContentItem }) {
-  const chips: React.ReactNode[] = [];
-  if (item.type === "agent") {
-    chips.push(
-      <Badge key="m" variant="brand" className="capitalize">
-        {item.model}
-      </Badge>,
-    );
-    if (item.tools?.length)
-      chips.push(
-        <Badge key="t" variant="outline">
-          {item.tools.length} tools
-        </Badge>,
-      );
-  } else if (item.type === "skill") {
-    if (item.userInvocable) chips.push(<Badge key="i">User-invocable</Badge>);
-    if (item.multiFile) chips.push(<Badge key="mf">Multi-file</Badge>);
-    if (item.version)
-      chips.push(
-        <Badge key="v" variant="outline">
-          v{item.version}
-        </Badge>,
-      );
-  } else if (item.type === "command") {
-    chips.push(
-      <Badge key="s" variant="outline">
-        <code className="font-mono">/{item.slug}</code>
-      </Badge>,
-    );
-    if (item.argumentHint)
-      chips.push(
-        <Badge key="ah" variant="outline">
-          {item.argumentHint}
-        </Badge>,
-      );
-  }
-  return <div className="flex flex-wrap items-center gap-2">{chips}</div>;
-}
-
 export function ArtifactDetail({
   item,
   related,
@@ -82,7 +42,8 @@ export function ArtifactDetail({
       ? `/tools/category/${item.category}`
       : `${def.basePath}/${item.category}`;
   const updated = item.updated ?? item.date;
-  const isTool = item.type === "tool";
+  // Glossary entries are short definitions: no spec sheet, single column.
+  const withRail = item.type !== "glossary";
 
   return (
     <article>
@@ -92,11 +53,11 @@ export function ArtifactDetail({
       />
       <Breadcrumbs items={breadcrumbsFor(item)} />
 
-      {/* Tools get a right rail (spec sheet, alternatives, contents) beside the
-          header and body; the other types stay single-column. */}
+      {/* A right rail (spec sheet, alternatives, contents) sits beside the
+          header and body. */}
       <div
         className={
-          isTool
+          withRail
             ? "lg:grid lg:grid-cols-[minmax(0,41rem)_18rem] lg:justify-between lg:gap-x-12"
             : undefined
         }
@@ -121,16 +82,11 @@ export function ArtifactDetail({
         title={item.title}
         lead={item.description}
       >
-        {/* On tool pages these facts live in the rail's spec sheet. */}
-        {!isTool && (
-          <div className="mt-4 flex flex-wrap items-center gap-2">
-            <Meta item={item} />
-            {updated && (
-              <span className="text-xs text-muted-foreground">
-                Updated <time dateTime={updated}>{formatDate(updated)}</time>
-              </span>
-            )}
-          </div>
+        {/* With a rail, the type's facts and date live in its spec sheet. */}
+        {!withRail && updated && (
+          <p className="mt-4 text-xs text-muted-foreground">
+            Updated <time dateTime={updated}>{formatDate(updated)}</time>
+          </p>
         )}
 
         {item.summary && (
@@ -153,8 +109,8 @@ export function ArtifactDetail({
         </div>
       </PageHeader>
 
-      {item.type === "tool" && (
-        <ToolRail
+      {withRail && (
+        <DetailRail
           item={item}
           categoryHref={toolCategoryHref}
           pricingHref={toolPricingHref}
