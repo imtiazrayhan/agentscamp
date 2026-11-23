@@ -1,5 +1,6 @@
 ---
 name: "ChatLLM"
+title: "ChatLLM"
 description: "ChatLLM by Abacus.AI puts GPT, Claude, Gemini, Grok and open models in one app, with RouteLLM to pick a model per prompt and an agent that builds apps."
 seoDescription: "ChatLLM by Abacus.AI: Basic and Pro prices as of November 2026, the models it includes, RouteLLM, Abacus AI Agent, its training policy, and alternatives."
 date: 2026-11-23
