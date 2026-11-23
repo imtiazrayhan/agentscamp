@@ -64,7 +64,7 @@ The [avatar video script writer](/skills/marketing/avatar-video-script-writer) s
 
 As of November 2026, Synthesia's regular price for Basic is $0, with 500 credits a month (10 minutes of Studio video creation or dubbing), nine AI avatars and a watermark on every video. Starter costs $19 a month, or $14 a month billed yearly ($168 a year), as of November 2026, with 1,250 credits a month, 125+ stock avatars, three personal avatars and no Synthesia logo. Pro costs $89 a month, or $59 a month billed yearly ($708 a year), as of November 2026, with 6,000 credits a month, five personal avatars, interactive videos and 180+ stock avatars. Business costs $99 a month for one member, or $79 a month billed yearly ($948 a year), as of November 2026, with up to 10 members at $20 per added seat per month, 6,000 credits a month, one-click translation into 140+ languages, unlimited personal avatars and SCORM export. Enterprise is priced by quote, with unlimited video minutes under a fair-usage policy, SAML SSO and SCIM, and 240+ stock avatars.
 
-A Studio Express-1 avatar is a paid add-on at $1,000 a year for annual-plan users as of November 2026. The pricing page was running a Black Friday promotion when we read it; the figures above are regular list prices.
+A Studio Express-1 avatar is a paid add-on at $1,000 a year for annual-plan users as of November 2026. The pricing page was running a Black Friday promotion when we read it; the figures above are regular list prices. For seasonal discounts, see [AI video and voice Black Friday deals](/guides/deals/ai-video-voice-black-friday-deals).
 
 ## Good to know
 
