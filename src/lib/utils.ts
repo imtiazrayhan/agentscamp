@@ -77,24 +77,11 @@ export function isExternalHref(href: string): boolean {
  * Default is nofollow — a link we render but do not vouch for (directory listings,
  * promos, share intents). Pass { vouch: true } for links the site stands behind:
  * cited primary sources, in-body editorial links, our own identity profiles.
- * Links to a paid-placement domain are always rel="sponsored", whatever the caller asks.
  */
 export function externalLinkProps(href: string, opts?: { vouch?: boolean }) {
   if (!isExternalHref(href)) return {};
   return {
     target: "_blank" as const,
-    rel: isSponsoredHref(href)
-      ? "noopener noreferrer sponsored"
-      : opts?.vouch
-        ? "noopener noreferrer"
-        : "noopener noreferrer nofollow",
+    rel: opts?.vouch ? "noopener noreferrer" : "noopener noreferrer nofollow",
   };
-}
-
-/** Domains with a paid placement on the site; subdomains included. */
-const SPONSORED_DOMAINS = ["context.dev"];
-
-export function isSponsoredHref(href: string): boolean {
-  const host = new URL(href, site.url).hostname;
-  return SPONSORED_DOMAINS.some((d) => host === d || host.endsWith(`.${d}`));
 }

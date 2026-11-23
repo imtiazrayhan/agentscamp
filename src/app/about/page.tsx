@@ -105,9 +105,7 @@ export default function AboutPage() {
         <h3>Commercial independence</h3>
         <p>
           Some tool pages and guide entries are paid placements. AgentsCamp writes
-          and fact-checks them itself against the vendor&apos;s own documentation,
-          and links to a paying vendor&apos;s site are marked{" "}
-          <code>rel=&quot;sponsored&quot;</code>.
+          and fact-checks them itself against the vendor&apos;s own documentation.
         </p>
 
         <h2>Use the library</h2>

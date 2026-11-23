@@ -8,7 +8,6 @@
  * Policy (owner decision 2026-09-10):
  *   nofollow  - tool directory url/repo, owner-network cross-promo, share intents
  *   dofollow  - cited primary sources, in-body editorial links, first-party identity
- *   sponsored - every link to a paid-placement domain, on any surface
  *   always    - noopener noreferrer on everything off-site
  *
  * The policy is per-SURFACE, not per-URL: the same destination can legitimately be
@@ -24,7 +23,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { loadAllByType } from "../src/lib/content/loaders";
 import { site, network } from "../src/lib/site";
-import { isSponsoredHref } from "../src/lib/utils";
 
 const HTML_ROOT = ".next/server/app";
 const INTERNAL_HOST = new URL(site.url).hostname;
@@ -60,7 +58,6 @@ interface Anchor {
   href: string;
   rel: string;
   nofollow: boolean;
-  sponsored: boolean;
 }
 
 const htmlFiles: string[] = [];
@@ -103,7 +100,6 @@ for (const file of htmlFiles) {
       href,
       rel,
       nofollow: /\bnofollow\b/.test(rel),
-      sponsored: /\bsponsored\b/.test(rel),
     });
   }
   byPage.set(page, anchors);
@@ -169,7 +165,7 @@ for (const t of byType.tool) {
     const hits = anchors.filter((a) => norm(a.href) === norm(value));
     if (hits.length === 0) {
       problems.push(`[tool ${field} not rendered] ${tool.href} -> ${value}`);
-    } else if (!hits.some((a) => a.nofollow || a.sponsored)) {
+    } else if (!hits.some((a) => a.nofollow)) {
       problems.push(`[directory link should be nofollow] ${tool.href} -> ${value}`);
     }
   }
@@ -203,15 +199,6 @@ for (const g of byType.guide) {
     if (a.nofollow && identity.has(norm(a.href))) bad.add(a.href);
   }
   for (const href of bad) problems.push(`[identity link should stay dofollow] ${href}`);
-}
-
-// ---- 6. Paid-placement domains are rel="sponsored" everywhere ---------------
-{
-  const bad = new Set<string>();
-  for (const a of allAnchors) {
-    if (!a.sponsored && isSponsoredHref(a.href)) bad.add(a.href);
-  }
-  for (const href of bad) problems.push(`[paid placement should be sponsored] ${href}`);
 }
 
 // ---- Report ---------------------------------------------------------------
