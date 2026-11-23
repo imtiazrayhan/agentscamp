@@ -6,6 +6,8 @@ export const site = {
     "Guides, an AI tool directory, and a plain-language glossary for developers, founders, marketers, designers, and analysts, plus installable Claude Code skills.",
   /** Square brand mark used for schema.org Organization.logo (served at /icon.svg). */
   logo: "/icon.svg",
+  /** Inbox (on Resend) that the /contact form delivers to. */
+  contactEmail: "contact@agentscamp.com",
   /**
    * Authoritative profiles for schema.org `sameAs` (entity reconciliation / E-E-A-T).
    * Empty: there is no X profile, and the repo is deliberately not surfaced.

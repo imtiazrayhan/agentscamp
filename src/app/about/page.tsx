@@ -131,8 +131,9 @@ export default function AboutPage() {
 
         <h2>Contact</h2>
         <p>
-          For corrections and editorial questions, email{" "}
-          <a href="mailto:irayhan.asif@gmail.com">irayhan.asif@gmail.com</a>.
+          For corrections and editorial questions, use the{" "}
+          <Link href="/contact">contact form</Link> or email{" "}
+          <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
         </p>
       </div>
     </article>

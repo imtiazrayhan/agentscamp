@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   add("", latestDate(all));
   add("/how-to-use");
   add("/about");
+  add("/contact");
   add("/topics", latestDate(all));
 
   // Type listing pages.

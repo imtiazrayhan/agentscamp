@@ -1,3 +1,31 @@
+# Contact form (/contact) via Resend — 2026-11-23 — PUSHED TO MASTER
+
+Goal: a /contact page whose form emails contact@agentscamp.com (a Resend inbox) through the
+Resend API, with the submitter's address as Reply-To.
+
+## Plan
+- Server Action (src/app/contact/actions.ts) validates with zod, drops honeypot hits, POSTs
+  to https://api.resend.com/emails with plain fetch (no SDK dependency). Needs
+  RESEND_API_KEY; sender defaults to noreply@agentscamp.com (CONTACT_FROM_EMAIL overrides).
+- Client form with useActionState; inline success state; per-field errors.
+- Link it: footer, sitemap, About page's Contact section (replaces the personal Gmail).
+
+## Done
+- src/app/contact/{page.tsx,ContactForm.tsx,actions.ts,topics.ts}; site.contactEmail in
+  src/lib/site.ts; Contact link in the footer; /contact in the sitemap; About's Contact
+  section now points to the form and contact@ instead of the personal Gmail.
+- Verified: typecheck, eslint, `next build` (/contact prerendered static). On `next start`,
+  no-JS form POSTs: bad input → per-field errors with the input kept; honeypot → success
+  screen, nothing sent; valid input with a fake key → reached Resend, logged
+  `401 API key is invalid`, showed the retry/email fallback message.
+
+## Blocked / next
+- Owner added RESEND_API_KEY to Vercel (2026-11-23). Sender is noreply@agentscamp.com, so
+  agentscamp.com must be a verified sending domain in Resend; otherwise set
+  CONTACT_FROM_EMAIL to an address on a verified domain.
+- Still to confirm after deploy: a real delivery to the inbox, and the in-browser (JS)
+  submit path.
+
 # Markdown for agents: content negotiation + split llms.txt — 2026-11-22 — DONE
 
 Found: Claude Code's fetch sends `Accept: text/markdown, text/html, */*` (UA

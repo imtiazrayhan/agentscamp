@@ -145,6 +145,7 @@ export function Footer() {
             </p>
             <ul className="mt-3 space-y-0.5">
               <TextLink href="/about">About &amp; editorial standards</TextLink>
+              <TextLink href="/contact">Contact</TextLink>
             </ul>
           </div>
         </div>
