@@ -1,4 +1,4 @@
-# SEO/AEO/GEO structure fixes (code + layout audit) — 2026-11-24 — IN PROGRESS
+# SEO/AEO/GEO structure fixes (code + layout audit) — 2026-11-24 — DONE (branch, not pushed)
 
 Audit of templates, metadata/JSON-LD, crawl surface and built HTML. Branch
 `seo-structure-fixes`, one commit per group. Owner decisions: numbered listing page URLs;
@@ -28,9 +28,26 @@ glossary `<title>` = "What Is {Term}?".
 - E: /glossary uses `listingSeo.glossary` (description, intro, visible FAQ + FAQPage);
   h2 above the card grids (collections + listings); home canonical moved from the layout
   to the home page (404 no longer canonicalizes to /); robots.ts /raw comment corrected.
+- Verification fix-ups: TOC now built from the remark parse (a regex fence toggle had
+  desynced it); `packaging-and-sharing-skills` had a nested ``` fence that rendered four
+  sections as code — outer fence now ````; 4 short command/agent category descriptions
+  expanded to 110–160; collection titles over 57 chars also drop the brand suffix.
 
-## Next
-- Verify: validate, lint, build, scratchpad HTML checks (links, h1, TOC ids, lengths, JSON-LD).
+## Verified
+- validate, lint, `next build` pass. Built-HTML check over 1,493 pages: 0 broken internal
+  links, exactly one h1 everywhere, 0 nested anchors, 0 TOC ids without a target, every
+  JSON-LD block parses, all 1,061 detail entities have `image`, 223 `lastReviewed`, 0
+  descriptions over 160, 0 duplicate titles, 404 has no canonical.
+- Chrome (playwright-core): /tools page links + Back/Forward, filter on /tools/page/2
+  (client paging, clear returns to page 2), sort uses ?sort&page, /guides/page/13 renders
+  9 cards; no console errors or hydration warnings.
+
+## Owner follow-ups
+- Push/merge `seo-structure-fixes`; after deploy, Rich Results Test on a guide, a tool,
+  and a glossary page; resubmit sitemap in GSC (34 new /<type>/page/N URLs).
+- 16 guide titles still exceed 70 chars without the brand (need `seoTitle`), e.g.
+  best-vector-database-2026 (103), agent-frameworks-2026 (102); tools/miro description 96.
+- Author `sameAs` profile URLs; confirm byline on the 29 author-less guides.
 
 # Contact form (/contact) via Resend — 2026-11-23 — LIVE
 

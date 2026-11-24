@@ -1,4 +1,7 @@
 import GithubSlugger from "github-slugger";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
 
 export interface TocItem {
   depth: number;
@@ -6,24 +9,38 @@ export interface TocItem {
   id: string;
 }
 
-/** Extract h2/h3 headings + ids (matching rehype-slug's github-slugger ids). */
+interface MdNode {
+  type: string;
+  depth?: number;
+  value?: string;
+  children?: MdNode[];
+}
+
+const parser = unified().use(remarkParse).use(remarkGfm);
+
+// The heading's rendered text, as rehype-slug sees it (raw HTML is dropped).
+const textOf = (node: MdNode): string =>
+  node.type === "html" ? "" : (node.value ?? (node.children ?? []).map(textOf).join(""));
+
+/**
+ * h2/h3 headings + ids, read from the same markdown parse the page renders, so
+ * code fences and inline links can't desync the TOC from the page. Every
+ * heading is slugged in document order, as rehype-slug does, so duplicate-text
+ * suffixes (-1, -2) line up too.
+ */
 export function extractToc(markdown: string): TocItem[] {
   const slugger = new GithubSlugger();
-  const lines = markdown.split("\n");
   const out: TocItem[] = [];
-  let inFence = false;
-  for (const line of lines) {
-    if (/^\s*(```|~~~)/.test(line)) {
-      inFence = !inFence;
-      continue;
+  const walk = (node: MdNode) => {
+    if (node.type === "heading") {
+      const text = textOf(node).trim();
+      const id = slugger.slug(text);
+      if (node.depth === 2 || node.depth === 3)
+        out.push({ depth: node.depth, text, id });
+      return;
     }
-    if (inFence) continue;
-    const m = /^(#{2,3})\s+(.+?)\s*#*\s*$/.exec(line);
-    if (!m) continue;
-    // rehype-slug slugs the rendered text, where `[label](url)` is just `label`.
-    const raw = m[2].replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1");
-    const text = raw.replace(/[*_`]/g, "").trim();
-    out.push({ depth: m[1].length, text, id: slugger.slug(raw) });
-  }
+    node.children?.forEach(walk);
+  };
+  walk(parser.parse(markdown) as MdNode);
   return out;
 }

@@ -139,7 +139,10 @@ export function buildPageMetadata(opts: {
   image?: string;
 }): Metadata {
   return {
-    title: opts.title,
+    title:
+      opts.title.length > MAX_TITLE - BRAND_SUFFIX
+        ? { absolute: opts.title }
+        : opts.title,
     description: opts.description,
     alternates: {
       canonical: opts.path,

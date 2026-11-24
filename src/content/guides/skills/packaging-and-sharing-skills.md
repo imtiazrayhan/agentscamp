@@ -71,7 +71,7 @@ This is the step people skip, and it's why shared skills break. A skill that wor
 
 The fix is to keep every supporting file *inside* the skill or plugin and reference it with a variable. Use `${CLAUDE_SKILL_DIR}` to point at the skill's own directory regardless of where it's installed:
 
-```yaml
+````yaml
 ---
 name: codebase-visualizer
 description: Generate an interactive tree view of the repo. Use when exploring a new codebase.
@@ -83,7 +83,7 @@ Run the bundled script from the project root:
 ```bash
 python3 ${CLAUDE_SKILL_DIR}/scripts/visualize.py .
 ```
-```
+````
 
 That same skill now resolves correctly whether it's installed personally, committed to a project, or shipped inside a plugin. For files referenced from a plugin's `hooks` or `mcpServers` config, use `${CLAUDE_PLUGIN_ROOT}` instead — it points at the plugin's installed root. **Portability is just discipline about paths.**
 

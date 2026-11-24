@@ -56,17 +56,17 @@ const CATEGORY_OVERRIDES: Record<string, string> = {
   "skill/analytics":
     "Skills for analysts — dataset first looks, chart choice, analysis memos, SQL explanations, spreadsheet audits — that run on claude.ai, Claude Code, and Cowork.",
   "command/product":
-    "Slash commands for product work in Claude Code: draft a PRD, cut an MVP scope.",
+    "Slash commands for product work in Claude Code: draft a PRD from rough notes, cut it to an MVP scope, and validate an interview scorecard before it is used.",
   "command/marketing":
     "Slash commands for marketing work in Claude Code: repurpose content, check a draft against your brand voice.",
   "command/design":
-    "Slash commands for design work in Claude Code: critique a screen, extract design tokens.",
+    "Slash commands for design work in Claude Code: critique a UI screenshot against a fixed checklist, and extract design tokens from a stylesheet or theme.",
   "command/analytics":
-    "Slash commands for analytics work in Claude Code: profile a dataset, define a metric.",
+    "Slash commands for analytics work in Claude Code: profile a new dataset, write a precise metric definition, and count labeled feedback with code.",
   "agent/product":
     "Subagents for founders: a technical co-founder that reviews AI-built apps for the risks that bite non-technical owners.",
   "agent/marketing":
-    "Subagents for marketers: an editor that fixes voice and flags every unsourced claim.",
+    "Subagents for marketers: an editor that fixes voice and flags every unsourced claim, an SEO reviewer, and reviewers for captions, translations, and speech.",
   "agent/design":
     "Subagents for designers: a design-systems librarian that keeps tokens, components, and Figma in sync.",
   "agent/analytics":
