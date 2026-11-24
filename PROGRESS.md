@@ -1,4 +1,4 @@
-# Contact form (/contact) via Resend — 2026-11-23 — PUSHED TO MASTER
+# Contact form (/contact) via Resend — 2026-11-23 — LIVE
 
 Goal: a /contact page whose form emails contact@agentscamp.com (a Resend inbox) through the
 Resend API, with the submitter's address as Reply-To.
@@ -23,8 +23,10 @@ Resend API, with the submitter's address as Reply-To.
 - Owner added RESEND_API_KEY to Vercel (2026-11-23). Sender is noreply@agentscamp.com, so
   agentscamp.com must be a verified sending domain in Resend; otherwise set
   CONTACT_FROM_EMAIL to an address on a verified domain.
-- Still to confirm after deploy: a real delivery to the inbox, and the in-browser (JS)
-  submit path.
+- Deployed (81652b8, live ~9 min after push). A no-JS submit on agentscamp.com/contact
+  showed the success screen, which only happens when Resend accepts the send (2xx), so the
+  key and sender domain work. Owner to confirm the "Deploy check" email reached the inbox.
+- Not tested: the in-browser (JS) submit path (same Server Action).
 
 # Markdown for agents: content negotiation + split llms.txt — 2026-11-22 — DONE
 
