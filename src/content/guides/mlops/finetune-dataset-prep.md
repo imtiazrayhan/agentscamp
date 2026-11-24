@@ -1,5 +1,6 @@
 ---
 title: "Preparing a Fine-Tuning Dataset: Cleaning, Synthetic Data, and Eval Splits"
+seoTitle: "Fine-Tuning Dataset Prep: Cleaning, Synthetic Data, Eval Splits"
 description: "The dataset is the model. How to build a fine-tuning dataset that works — format, curation, cleaning, synthetic augmentation, and a leak-free eval split."
 author: "Imtiaz Rayhan"
 date: 2026-06-04

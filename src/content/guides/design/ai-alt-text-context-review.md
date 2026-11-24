@@ -1,6 +1,7 @@
 ---
 description: Draft image text alternatives from actual image evidence and page purpose, then review informative,
   decorative and functional uses before publishing.
+author: Imtiaz Rayhan
 date: '2026-09-27'
 reviewed: '2026-10-07'
 topics:

@@ -1,6 +1,7 @@
 ---
 description: Build a cross-source entity crosswalk that preserves both record keys, unresolved candidates and
   cardinality decisions without silently joining or merging data.
+author: Imtiaz Rayhan
 date: '2026-09-19'
 reviewed: '2026-10-07'
 topics:

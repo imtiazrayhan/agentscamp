@@ -1,5 +1,6 @@
 ---
 description: "Resolve disputed text labels by preserving each response, source excerpt and task-rule version rather than accepting the model or majority automatically."
+author: "Imtiaz Rayhan"
 date: "2026-10-01"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

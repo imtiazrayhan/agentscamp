@@ -1,5 +1,6 @@
 ---
 description: "Turn approved survey questions and routing rules into an explicit branch table, with stable IDs and unresolved paths before an AI form builder runs."
+author: "Imtiaz Rayhan"
 date: "2026-09-10"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

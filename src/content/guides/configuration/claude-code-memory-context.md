@@ -1,5 +1,6 @@
 ---
 title: "Managing Claude Code Memory & Context: CLAUDE.md, /compact, and Auto-Memory"
+seoTitle: "Claude Code Memory & Context: CLAUDE.md, /compact, Auto-Memory"
 description: "How Claude Code remembers — every CLAUDE.md scope and load order, path-scoped rules, the auto-memory system, and the context commands that keep sessions sharp."
 author: "Imtiaz Rayhan"
 date: 2026-06-11

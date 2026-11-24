@@ -1,6 +1,7 @@
 ---
 title: "Build an Interview Scorecard with AI from Job Evidence"
 description: "Build an interview scorecard with AI using approved job tasks, observable competencies, shared questions, rating anchors, and human rubric review."
+author: "Imtiaz Rayhan"
 date: "2026-08-09"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

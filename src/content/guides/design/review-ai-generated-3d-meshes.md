@@ -1,6 +1,7 @@
 ---
 description: Evaluate an AI-generated mesh against a named target app and supplied asset requirements, using
   real inspection reports and human view checks.
+author: Imtiaz Rayhan
 date: '2026-09-04'
 reviewed: '2026-10-07'
 topics:

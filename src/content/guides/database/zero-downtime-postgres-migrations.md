@@ -1,5 +1,6 @@
 ---
 title: "Zero-Downtime Postgres Migrations: The Expand-Contract Playbook for 2026"
+seoTitle: "Zero-Downtime Postgres Migrations: Expand-Contract Playbook"
 description: "How to change a live Postgres schema without downtime or broken deploys — the expand-contract pattern, safe column changes, batched backfills, and CONCURRENTLY."
 author: "Imtiaz Rayhan"
 date: 2026-06-04

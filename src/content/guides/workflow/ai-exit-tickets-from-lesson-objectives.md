@@ -1,5 +1,6 @@
 ---
 description: Draft short AI-assisted exit tickets from taught material, map each prompt to a learning objective, and review the answer key before classroom use.
+author: Imtiaz Rayhan
 date: "2026-09-10"
 reviewed: '2026-10-07'
 topics:

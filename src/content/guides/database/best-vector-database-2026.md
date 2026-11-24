@@ -1,5 +1,6 @@
 ---
 title: "Best Vector Database in 2026: pgvector vs Pinecone vs Qdrant vs Weaviate vs Milvus vs Chroma vs LanceDB"
+seoTitle: "Best Vector Database in 2026: pgvector vs Pinecone vs Qdrant"
 description: "A decision guide to vector databases — embedded, server, or managed; whether you already run Postgres; and which fits your scale, filtering, and RAG needs."
 author: "Imtiaz Rayhan"
 date: 2026-06-04

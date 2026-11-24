@@ -1,6 +1,7 @@
 ---
 title: "Prepare a Vendor Contract Review Packet with AI"
 description: "Prepare a vendor contract review packet with AI that preserves clause evidence, conditions, obligation dates, missing documents, and reviewer questions."
+author: "Imtiaz Rayhan"
 date: "2026-10-02"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

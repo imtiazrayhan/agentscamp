@@ -1,6 +1,7 @@
 ---
 description: Check an AI texture set in its actual target material setup, preserving map roles, UV information
   and viewer evidence before approving the asset.
+author: Imtiaz Rayhan
 date: '2026-08-25'
 reviewed: '2026-10-07'
 topics:

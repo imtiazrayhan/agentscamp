@@ -1,5 +1,6 @@
 ---
 description: Map an approved script into AI-assisted storyboard shots with beat IDs, visual constraints, continuity checks and a human review before production.
+author: Imtiaz Rayhan
 date: "2026-09-08"
 reviewed: '2026-10-07'
 topics:

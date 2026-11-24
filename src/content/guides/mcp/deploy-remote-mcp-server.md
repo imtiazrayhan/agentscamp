@@ -1,5 +1,6 @@
 ---
 title: "Deploying a Remote MCP Server: Stateless, Streamable HTTP, and Horizontal Scaling"
+seoTitle: "Deploying a Remote MCP Server: Streamable HTTP and Scaling"
 description: "Take an MCP server from local stdio to a remote, multi-user HTTP service — Streamable HTTP, stateless vs. stateful sessions, OAuth, and horizontal scaling."
 author: "Imtiaz Rayhan"
 date: 2026-06-04

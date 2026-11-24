@@ -1,6 +1,7 @@
 ---
 title: "AI Literature Review Workflow: Screen, Extract, and Verify"
 description: "Use AI for a literature review with explicit eligibility criteria, study-level evidence tables, source locations, and checks for missing or conflicting data."
+author: "Imtiaz Rayhan"
 date: "2026-10-06"
 reviewed: "2026-10-06"
 topics: ["ai-at-work", "workflow-prompting"]

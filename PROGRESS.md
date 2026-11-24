@@ -45,9 +45,12 @@ glossary `<title>` = "What Is {Term}?".
 ## Owner follow-ups
 - Push/merge `seo-structure-fixes`; after deploy, Rich Results Test on a guide, a tool,
   and a glossary page; resubmit sitemap in GSC (34 new /<type>/page/N URLs).
-- 16 guide titles still exceed 70 chars without the brand (need `seoTitle`), e.g.
-  best-vector-database-2026 (103), agent-frameworks-2026 (102); tools/miro description 96.
-- Author `sameAs` profile URLs; confirm byline on the 29 author-less guides.
+- Author `sameAs` profile URLs.
+
+## Owner follow-ups done (2026-11-24)
+- `seoTitle` on the 16 guides whose titles passed 70 chars (now 49–65; 0 pages over 70).
+- `author: Imtiaz Rayhan` on the 29 author-less guides (297/297 guides bylined).
+- Miro `seoDescription` rewritten (96 → 156 chars). Rebuilt + HTML checks clean.
 
 # Contact form (/contact) via Resend — 2026-11-23 — LIVE
 

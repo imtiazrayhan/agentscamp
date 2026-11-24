@@ -1,5 +1,6 @@
 ---
 description: Review AI-generated captions against recorded speech, speaker changes and meaningful sounds, then check a separate timing file before publication.
+author: Imtiaz Rayhan
 date: "2026-10-05"
 reviewed: '2026-10-07'
 topics:

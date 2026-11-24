@@ -1,6 +1,7 @@
 ---
 description: Separate duplicate-record candidate generation from human match decisions, retaining source keys
   and field evidence before any merge.
+author: Imtiaz Rayhan
 date: '2026-08-17'
 reviewed: '2026-10-07'
 topics:

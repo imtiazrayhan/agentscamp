@@ -1,6 +1,7 @@
 ---
 description: Review a chart-description draft against the frozen source table, actual visual observations and
   its implemented page placement.
+author: Imtiaz Rayhan
 date: '2026-08-30'
 reviewed: '2026-10-07'
 topics:

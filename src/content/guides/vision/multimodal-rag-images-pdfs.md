@@ -1,5 +1,6 @@
 ---
 title: "Multimodal RAG over PDFs, Scans & Charts: Two Approaches That Actually Work"
+seoTitle: "Multimodal RAG over PDFs, Scans & Charts: Two Approaches"
 description: "RAG over visual documents — PDFs, scans, charts — where text-only extraction loses tables and layout. Parse-then-text vs embed-the-page-image, with trade-offs."
 author: "Imtiaz Rayhan"
 color: "green"

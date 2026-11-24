@@ -1,6 +1,7 @@
 ---
 title: "Create an AI Project Handoff Another Teammate Can Use"
 description: "Create a project handoff with AI that preserves source files, current decisions, open questions, owners, and an acceptance check for the next teammate."
+author: "Imtiaz Rayhan"
 date: "2026-10-06"
 reviewed: "2026-10-06"
 topics: ["ai-at-work", "workflow-prompting"]

@@ -1,5 +1,6 @@
 ---
 description: "Evaluate asset discovery with a small set of known examples, expected exclusions and reviewed results before relying on natural-language catalog search."
+author: "Imtiaz Rayhan"
 date: "2026-09-23"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

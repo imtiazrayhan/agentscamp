@@ -1,5 +1,6 @@
 ---
 title: "Using Vision-Language Models for OCR, Documents, and Video Understanding"
+seoTitle: "Vision-Language Models for OCR, Documents, and Video"
 description: "How to use vision-language models for OCR, documents, and video: how they differ from traditional OCR, their failure modes, and getting reliable output."
 author: "Imtiaz Rayhan"
 date: 2026-06-04

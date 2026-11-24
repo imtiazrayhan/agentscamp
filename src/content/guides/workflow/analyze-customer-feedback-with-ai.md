@@ -1,6 +1,7 @@
 ---
 title: "Analyze Customer Feedback with AI: Themes You Can Check"
 description: "Analyze customer feedback with AI using a source register, a reviewed codebook, distinct customer counts, and examples that preserve context."
+author: "Imtiaz Rayhan"
 date: "2026-10-06"
 reviewed: "2026-10-06"
 topics: ["ai-at-work", "workflow-prompting"]

@@ -1,5 +1,6 @@
 ---
 description: Compare an AI-cleaned voice recording with the original using timed listening notes, intelligibility checks and a clear keep, retry or rerecord decision.
+author: Imtiaz Rayhan
 date: "2026-08-14"
 reviewed: '2026-10-07'
 topics:

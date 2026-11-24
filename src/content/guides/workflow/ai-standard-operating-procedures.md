@@ -1,6 +1,7 @@
 ---
 title: "Create Standard Operating Procedures with AI from a Real Workflow"
 description: "Create an SOP with AI from captured steps, explicit prerequisites, exception paths, and a teammate walkthrough that checks the procedure."
+author: "Imtiaz Rayhan"
 date: "2026-08-24"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

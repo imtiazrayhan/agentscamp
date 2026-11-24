@@ -1,6 +1,7 @@
 ---
 title: "Review AI Localization with a Glossary and Source-Target Checks"
 description: "Review AI-translated copy with a source-target register, approved terminology, protected placeholders, contextual checks, and qualified language review."
+author: "Imtiaz Rayhan"
 date: "2026-09-02"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

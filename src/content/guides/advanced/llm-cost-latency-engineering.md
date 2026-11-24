@@ -1,5 +1,6 @@
 ---
 title: "LLM Cost and Latency Engineering: Caching, Right-Sizing, and p95 Budgets"
+seoTitle: "LLM Cost & Latency Engineering: Caching, Right-Sizing, Budgets"
 description: "A practical playbook for cutting LLM cost and tail latency — caching, model right-sizing, prompt trimming, and enforced p95 budgets — without losing quality."
 author: "Imtiaz Rayhan"
 date: 2026-06-04

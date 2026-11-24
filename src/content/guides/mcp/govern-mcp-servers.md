@@ -1,5 +1,6 @@
 ---
 title: "Connecting and Governing MCP Servers: Registries, Gateways, and Tool Sprawl"
+seoTitle: "Governing MCP Servers: Registries, Gateways, and Tool Sprawl"
 description: "As MCP servers multiply, discovery, trust, and tool sprawl become the problem. How registries, gateways, and curation keep a growing fleet secure and usable."
 author: "Imtiaz Rayhan"
 date: 2026-06-04

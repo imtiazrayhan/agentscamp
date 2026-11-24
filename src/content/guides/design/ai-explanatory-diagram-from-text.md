@@ -1,5 +1,6 @@
 ---
 description: "Choose a diagram that preserves the relationships in approved text, then inspect labels, arrows and the exported visual before reuse."
+author: "Imtiaz Rayhan"
 date: "2026-10-03"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

@@ -1,5 +1,6 @@
 ---
 title: "Human-in-the-Loop AI Workflows: Approval Gates That Keep Agents Safe and Trusted"
+seoTitle: "Human-in-the-Loop AI Workflows: Approval Gates for Agents"
 description: "How to design human-in-the-loop into agent workflows — when to require approval, gate patterns, confidence escalation, review UX, and feedback loops."
 author: "Imtiaz Rayhan"
 color: "green"

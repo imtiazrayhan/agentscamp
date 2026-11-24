@@ -1,5 +1,6 @@
 ---
 description: "Review AI-suggested asset tags against a supplied vocabulary, original asset versions and human visual observations before changing a catalog."
+author: "Imtiaz Rayhan"
 date: "2026-08-23"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

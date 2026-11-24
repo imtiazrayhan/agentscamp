@@ -1,6 +1,7 @@
 ---
 title: "Build an RFP Compliance Matrix with AI and Evidence"
 description: "Build an RFP compliance matrix with AI that maps every requirement to source text, approved evidence, response locations, owners, and unresolved gaps."
+author: "Imtiaz Rayhan"
 date: "2026-09-29"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

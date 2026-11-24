@@ -1,5 +1,6 @@
 ---
 description: Review OCR text beside source scans, preserve exact wording and document uncertain characters in a correction ledger before producing a corrected copy.
+author: Imtiaz Rayhan
 date: "2026-08-15"
 reviewed: '2026-10-07'
 topics:

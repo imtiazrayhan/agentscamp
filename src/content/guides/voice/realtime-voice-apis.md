@@ -1,5 +1,6 @@
 ---
 title: "Realtime Voice Agents: Build on LiveKit, Buy Vapi, or Pipeline with Pipecat"
+seoTitle: "Realtime Voice Agents: LiveKit vs Vapi vs Pipecat"
 description: "The three ways to ship a realtime voice agent in 2026 — open infrastructure, managed platform, or OSS pipeline — and how speech-to-speech models fit in."
 author: "Imtiaz Rayhan"
 date: 2026-06-11

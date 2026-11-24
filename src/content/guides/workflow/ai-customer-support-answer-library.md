@@ -1,6 +1,7 @@
 ---
 title: "Build an AI Customer Support Answer Library You Can Check"
 description: "Build an AI support answer library with source-backed answer cards, eligibility limits, escalation rules, and checked customer-question test cases."
+author: "Imtiaz Rayhan"
 date: "2026-10-05"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

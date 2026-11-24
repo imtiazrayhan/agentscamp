@@ -1,5 +1,6 @@
 ---
 title: "Best LLM & RAG Evaluation Tools in 2026: DeepEval vs RAGAS vs LangSmith vs Phoenix vs promptfoo"
+seoTitle: "Best LLM & RAG Eval Tools in 2026: DeepEval vs RAGAS vs LangSmith"
 description: "A decision guide to the LLM eval landscape — code-first frameworks vs. eval-and-observability platforms, open-source vs. hosted, and which fits your stack."
 author: "Imtiaz Rayhan"
 date: 2026-06-03

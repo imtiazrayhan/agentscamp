@@ -1,5 +1,6 @@
 ---
 description: "Prepare a small supervised text-labeling batch with separate model suggestions and human responses, using stable record IDs and an approved task specification."
+author: "Imtiaz Rayhan"
 date: "2026-08-12"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

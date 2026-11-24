@@ -1,5 +1,6 @@
 ---
 description: "Turn a bounded document set into a reviewed concept hierarchy with evidence for each branch and visible unresolved relationships."
+author: "Imtiaz Rayhan"
 date: "2026-09-19"
 reviewed: "2026-10-07"
 topics: ["ai-at-work", "workflow-prompting"]

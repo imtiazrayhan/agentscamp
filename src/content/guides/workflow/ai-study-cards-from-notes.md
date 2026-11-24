@@ -1,5 +1,6 @@
 ---
 description: Turn approved notes into checked AI study cards with one learning target, source quotes, unresolved questions and a learner review before practice.
+author: Imtiaz Rayhan
 date: "2026-09-03"
 reviewed: '2026-10-07'
 topics:
