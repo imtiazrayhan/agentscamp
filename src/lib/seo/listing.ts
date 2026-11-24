@@ -187,6 +187,17 @@ export const listingSeo: Record<ContentTypeId, ListingSeo> = {
   },
 };
 
+/**
+ * Cards per listing page: a multiple of both grid widths (sm:2, lg:3). Page 1 is
+ * the listing itself; pages 2..n are prerendered at /[base]/page/[n] so every
+ * item is one real link away from its type listing.
+ */
+export const LISTING_PAGE_SIZE = 24;
+
+export function listingPageCount(itemCount: number): number {
+  return Math.max(1, Math.ceil(itemCount / LISTING_PAGE_SIZE));
+}
+
 /** Meta description with the live item count interpolated. */
 export function listingDescription(type: ContentTypeId, count: number): string {
   return listingSeo[type].seoDescription.replace("{count}", String(count));

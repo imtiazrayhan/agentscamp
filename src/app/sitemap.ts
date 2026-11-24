@@ -14,6 +14,8 @@ import {
   categoryCollection,
   toolAlternativesCollection,
 } from "@/lib/seo/collections";
+import { listingPageCount } from "@/lib/seo/listing";
+import { listingPageHref } from "@/lib/content/paths";
 import { site } from "@/lib/site";
 
 /**
@@ -37,9 +39,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   add("/contact");
   add("/topics", latestDate(all));
 
-  // Type listing pages.
+  // Type listing pages, plus their numbered pages (/[base]/page/[n]). Adding an
+  // item reshuffles every page of a sorted list, so pages share its lastModified.
   for (const def of contentTypeList) {
-    add(def.basePath, latestDate(getContentByType(def.id)));
+    const items = getContentByType(def.id);
+    add(def.basePath, latestDate(items));
+    if (def.id === "glossary") continue; // one A–Z page, no pagination
+    for (let n = 2; n <= listingPageCount(items.length); n++) {
+      add(listingPageHref(def.basePath, n), latestDate(items));
+    }
   }
 
   // Category landings for the categorized types (flat types have none).

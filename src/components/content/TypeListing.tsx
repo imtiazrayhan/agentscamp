@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getContentByType, latestDate } from "@/lib/content";
 import { contentTypes } from "@/lib/content/registry";
 import { collectionGraph, jsonLdHtml } from "@/lib/seo/jsonld";
-import { listingSeo } from "@/lib/seo/listing";
+import {
+  LISTING_PAGE_SIZE,
+  listingPageCount,
+  listingSeo,
+} from "@/lib/seo/listing";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { listingPageHref } from "@/lib/content/paths";
 import { titleCaseLabel } from "@/lib/format";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { ListingView, type SortKey } from "./ListingView";
@@ -15,10 +22,6 @@ import { PageHeader } from "./PageHeader";
 // Category facets become indexable (and so worth crawl-linking) at >=2 items,
 // matching MIN_INDEXABLE in lib/seo/collections.
 const MIN_LINKABLE = 2;
-
-// Every listing paginates at the same size: a multiple of both grid widths
-// (sm:2, lg:3), and it stops /tools shipping all 180 cards at once.
-const PAGE_SIZE = 24;
 
 /**
  * Guides are a feed, so they lead with the newest. The catalog types were
@@ -48,10 +51,43 @@ function sortForListing<T extends { title: string; date?: string; updated?: stri
   );
 }
 
-export function TypeListing({ type }: { type: ContentTypeId }) {
+const SORT_PHRASE: Record<SortKey, string> = {
+  newest: "newest first",
+  title: "A–Z",
+  "reading-time": "quickest read first",
+};
+
+/** Static params for /[base]/page/[n] — pages 2..n (page 1 is the listing). */
+export function listingPageParams(type: ContentTypeId): { n: string }[] {
+  const pages = listingPageCount(getContentByType(type).length);
+  return Array.from({ length: pages - 1 }, (_, i) => ({ n: String(i + 2) }));
+}
+
+/** Metadata for listing page `page` (>= 2): self-canonical, never the page-1 copy. */
+export function listingPageMetadata(type: ContentTypeId, page: number): Metadata {
+  const def = contentTypes[type];
+  const count = getContentByType(type).length;
+  const pages = listingPageCount(count);
+  return buildPageMetadata({
+    title: `${listingSeo[type].seoTitle}, Page ${page}`,
+    description: `Page ${page} of ${pages} of AgentsCamp's ${count} ${def.label.toLowerCase()}, ${SORT_PHRASE[SORTS[type].default]}. ${def.description}`,
+    path: listingPageHref(def.basePath, page),
+    ...(type === "guide" ? { feed: "/guides/feed.xml" } : {}),
+  });
+}
+
+export function TypeListing({
+  type,
+  page = 1,
+}: {
+  type: ContentTypeId;
+  /** 1 = the listing itself; >= 2 renders /[base]/page/[n]. */
+  page?: number;
+}) {
   const def = contentTypes[type];
   const seo = listingSeo[type];
   const sortConfig = SORTS[type];
+  const first = page === 1;
   // Sort ONCE, then feed the same order to both collectionGraph and the grid —
   // the ItemList positions previously described the raw loader order while the
   // page rendered something else.
@@ -87,15 +123,26 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
       href: `/tools/pricing/${pricing}`,
     }));
 
-  const crumbs = [{ label: "Home", href: "/" }, { label: def.label }];
+  // Page 1 describes the whole list (and carries the FAQ); page n describes
+  // only the cards it renders.
+  const slice = first
+    ? all
+    : all.slice((page - 1) * LISTING_PAGE_SIZE, page * LISTING_PAGE_SIZE);
+  const crumbs = first
+    ? [{ label: "Home", href: "/" }, { label: def.label }]
+    : [
+        { label: "Home", href: "/" },
+        { label: def.label, href: def.basePath },
+        { label: `Page ${page}` },
+      ];
   const graph = collectionGraph({
-    path: def.basePath,
-    name: seo.seoTitle,
+    path: listingPageHref(def.basePath, page),
+    name: first ? seo.seoTitle : `${seo.seoTitle}, Page ${page}`,
     description: def.description,
-    items: all,
+    items: slice,
     crumbs,
-    lastModified: latestDate(all),
-    faq: seo.faq,
+    lastModified: latestDate(slice),
+    ...(first ? { faq: seo.faq } : {}),
   });
 
   return (
@@ -105,13 +152,18 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
         dangerouslySetInnerHTML={{ __html: jsonLdHtml(graph) }}
       />
       <Breadcrumbs items={crumbs} />
-      <PageHeader title={def.label} lead={def.description}>
+      <PageHeader
+        title={first ? def.label : `${def.label}, page ${page}`}
+        lead={def.description}
+      >
         {/* Answer-engine explainer copy — kept, but set apart so the header
-            stops reading as two stacked grey paragraphs. */}
-        <p className="measure mt-4 text-base leading-relaxed text-muted-foreground">
-          {seo.intro}
-        </p>
-        {seo.startHere && (
+            stops reading as two stacked grey paragraphs. Page 1 only. */}
+        {first && (
+          <p className="measure mt-4 text-base leading-relaxed text-muted-foreground">
+            {seo.intro}
+          </p>
+        )}
+        {first && seo.startHere && (
           <p className="mt-4 text-sm">
             New here? Start with{" "}
             <Link
@@ -173,11 +225,13 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
       </PageHeader>
       <ListingView
         items={items}
-        pageSize={PAGE_SIZE}
+        pageSize={LISTING_PAGE_SIZE}
         sorts={sortConfig.options}
         defaultSort={sortConfig.default}
+        initialPage={page}
+        basePath={def.basePath}
       />
-      <FaqSection faq={seo.faq} />
+      {first && <FaqSection faq={seo.faq} />}
     </div>
   );
 }

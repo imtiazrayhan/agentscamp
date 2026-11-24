@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import type { ReactNode } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -21,17 +23,30 @@ function pageWindow(page: number, total: number): (number | "…")[] {
   return out;
 }
 
+/**
+ * With `hrefFor`, every control is a real link (crawlable, path-based pages);
+ * without it, buttons call `onPageChange` (client paging of filtered results).
+ */
 export function Pagination({
   page,
   totalPages,
   onPageChange,
+  hrefFor,
 }: {
   page: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+  hrefFor?: (page: number) => string;
 }) {
   if (totalPages <= 1) return null;
   const pages = pageWindow(page, totalPages);
+  // Disabled prev/next stay buttons: a disabled link is not a thing.
+  const buttonProps = (p: number, disabled = false) =>
+    hrefFor && !disabled
+      ? { asChild: true as const }
+      : { onClick: () => onPageChange(p), disabled };
+  const inner = (p: number, children: ReactNode, disabled = false) =>
+    hrefFor && !disabled ? <Link href={hrefFor(p)}>{children}</Link> : children;
 
   return (
     <nav
@@ -41,12 +56,17 @@ export function Pagination({
       <Button
         variant="outline"
         size="sm"
-        onClick={() => onPageChange(page - 1)}
-        disabled={page <= 1}
+        {...buttonProps(page - 1, page <= 1)}
         aria-label="Previous page"
       >
-        <ChevronLeft />
-        <span className="sr-only sm:not-sr-only">Previous</span>
+        {inner(
+          page - 1,
+          <>
+            <ChevronLeft />
+            <span className="sr-only sm:not-sr-only">Previous</span>
+          </>,
+          page <= 1,
+        )}
       </Button>
 
       <ul className="flex items-center gap-1">
@@ -67,9 +87,9 @@ export function Pagination({
                 className={cn("size-9", p === page && "pointer-events-none")}
                 aria-label={`Page ${p}`}
                 aria-current={p === page ? "page" : undefined}
-                onClick={() => onPageChange(p)}
+                {...buttonProps(p)}
               >
-                {p}
+                {inner(p, p)}
               </Button>
             </li>
           ),
@@ -79,12 +99,17 @@ export function Pagination({
       <Button
         variant="outline"
         size="sm"
-        onClick={() => onPageChange(page + 1)}
-        disabled={page >= totalPages}
+        {...buttonProps(page + 1, page >= totalPages)}
         aria-label="Next page"
       >
-        <span className="sr-only sm:not-sr-only">Next</span>
-        <ChevronRight />
+        {inner(
+          page + 1,
+          <>
+            <span className="sr-only sm:not-sr-only">Next</span>
+            <ChevronRight />
+          </>,
+          page >= totalPages,
+        )}
       </Button>
     </nav>
   );

@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Pagination } from "./Pagination";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { listingPageHref } from "@/lib/content/paths";
 
 export type SortKey = "newest" | "title" | "reading-time";
 
@@ -54,22 +55,35 @@ function sortItems(items: CardItem[], sort: SortKey): CardItem[] {
  * every ContentCard link out of guides.html. Reading `window.location.search`
  * and writing through the History API (which the App Router patches) keeps the
  * cards in the static HTML. Same approach as SearchResults.tsx.
+ *
+ * Unfiltered, default-sorted browsing is paged by the URL path instead
+ * (/guides, /guides/page/2, …): each page is prerendered with `initialPage` and
+ * the pagination renders real links, so crawlers reach every card. Filtering or
+ * re-sorting switches to client paging in `?page=`.
  */
 export function ListingView({
   items,
   pageSize = 24,
   sorts,
   defaultSort,
+  initialPage = 1,
+  basePath,
 }: {
   items: CardItem[];
   pageSize?: number;
   sorts: SortKey[];
   defaultSort: SortKey;
+  /** The page this route prerenders (path-based paging). */
+  initialPage?: number;
+  /** Listing base path; enables link pagination when browsing unfiltered. */
+  basePath?: string;
 }) {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>(defaultSort);
+  // Page within filtered / re-sorted results; browsing uses `initialPage`.
   const [page, setPage] = useState(1);
   const hydrated = useRef(false);
+  const browsing = !query.trim() && sort === defaultSort;
 
   const readUrl = useCallback(() => {
     const p = new URLSearchParams(window.location.search);
@@ -102,7 +116,7 @@ export function ListingView({
       const p = new URLSearchParams();
       if (query) p.set("q", query);
       if (sort !== defaultSort) p.set("sort", sort);
-      if (page > 1) p.set("page", String(page));
+      if (!browsing && page > 1) p.set("page", String(page));
       const qs = p.toString();
       const url = `${window.location.pathname}${qs ? `?${qs}` : ""}`;
       if (url === `${window.location.pathname}${window.location.search}`) return;
@@ -113,7 +127,7 @@ export function ListingView({
     if (!typing) return write();
     const t = setTimeout(write, 200);
     return () => clearTimeout(t);
-  }, [query, sort, page, defaultSort]);
+  }, [query, sort, page, defaultSort, browsing]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -129,7 +143,8 @@ export function ListingView({
   }, [items, query, sort]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
-  const current = Math.min(page, totalPages);
+  const current = Math.min(browsing ? initialPage : page, totalPages);
+  const linkPaging = browsing && basePath !== undefined;
   const visible = filtered.slice((current - 1) * pageSize, current * pageSize);
   const rangeStart = filtered.length === 0 ? 0 : (current - 1) * pageSize + 1;
   const rangeEnd = rangeStart + visible.length - 1;
@@ -191,6 +206,9 @@ export function ListingView({
             <Pagination
               page={current}
               totalPages={totalPages}
+              hrefFor={
+                linkPaging ? (p) => listingPageHref(basePath, p) : undefined
+              }
               onPageChange={(p) => {
                 setPage(p);
                 if (typeof window !== "undefined")

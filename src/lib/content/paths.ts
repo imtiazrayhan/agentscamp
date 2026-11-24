@@ -27,3 +27,8 @@ export function hrefFor(
   if (flatTypes.has(type)) return `${basePaths[type]}/${slug}`;
   return `${basePaths[type]}/${category}/${slug}`;
 }
+
+/** Listing page `n` of a type: page 1 is the bare listing, the rest /[base]/page/[n]. */
+export function listingPageHref(basePath: string, n: number): string {
+  return n <= 1 ? basePath : `${basePath}/page/${n}`;
+}

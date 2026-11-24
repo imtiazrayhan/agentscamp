@@ -10,8 +10,12 @@ glossary `<title>` = "What Is {Term}?".
   stripped); links moved out of 11 headings in 3 guides (nested `<a>`) + validator error for
   links in headings; `jsonLdHtml()` escapes `<` in all 11 JSON-LD emitters.
 
+- B: numbered listing pages `/<type>/page/N` (34 pages: guides 12, tools 10, skills 6,
+  agents 3, commands 3), self-canonical, page-1-only intro/FAQ; pagination renders real
+  links while browsing unfiltered (filter/sort keeps client `?page=`); in sitemap.
+  Verified in build: every item appears exactly once across its type's pages.
+
 ## Next
-- B: crawlable numbered listing pages (`/<type>/page/N`) + sitemap.
 - C: meta description clipping for installables, long-title brand drop, glossary titles.
 - D: JSON-LD image + lastReviewed, Published/Updated/Reviewed dates, byline anchor,
   breadcrumb rule for single-item categories.
