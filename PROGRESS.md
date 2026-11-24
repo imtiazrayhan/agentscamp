@@ -1,4 +1,4 @@
-# SEO/AEO/GEO structure fixes (code + layout audit) — 2026-11-24 — DONE (branch, not pushed)
+# SEO/AEO/GEO structure fixes (code + layout audit) — 2026-11-24 — PUSHED
 
 Audit of templates, metadata/JSON-LD, crawl surface and built HTML. Branch
 `seo-structure-fixes`, one commit per group. Owner decisions: numbered listing page URLs;
@@ -43,11 +43,12 @@ glossary `<title>` = "What Is {Term}?".
   9 cards; no console errors or hydration warnings.
 
 ## Owner follow-ups
-- Push/merge `seo-structure-fixes`; after deploy, Rich Results Test on a guide, a tool,
-  and a glossary page; resubmit sitemap in GSC (34 new /<type>/page/N URLs).
+- After deploy: Rich Results Test on a guide, a tool, and a glossary page; resubmit the
+  sitemap in GSC (34 new /<type>/page/N URLs).
 - Author `sameAs` profile URLs.
 
 ## Owner follow-ups done (2026-11-24)
+- `seo-structure-fixes` fast-forwarded into master and pushed (d4f4e56..1090dc5).
 - `seoTitle` on the 16 guides whose titles passed 70 chars (now 49–65; 0 pages over 70).
 - `author: Imtiaz Rayhan` on the 29 author-less guides (297/297 guides bylined).
 - Miro `seoDescription` rewritten (96 → 156 chars). Rebuilt + HTML checks clean.
