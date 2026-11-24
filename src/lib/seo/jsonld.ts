@@ -102,23 +102,19 @@ export function breadcrumbsFor(item: ContentItem): Crumb[] {
     crumbs.push({ label: item.title });
     return crumbs;
   }
-  if (item.type === "tool") {
-    // Only link the tool-category facet when it is indexable (>= 2 tools, matching
-    // collections' MIN_INDEXABLE); otherwise an indexable page's breadcrumb would
-    // point at a noindex facet. Single-tool categories simply drop the crumb.
-    const count = getContentByType("tool").filter(
-      (t) => t.category === item.category,
-    ).length;
-    if (count >= 2) {
-      crumbs.push({
-        label: titleCaseLabel(item.category),
-        href: `/tools/category/${item.category}`,
-      });
-    }
-  } else {
+  // Only link the category page when it is indexable (>= 2 items, matching
+  // collections' MIN_INDEXABLE); otherwise an indexable page's breadcrumb would
+  // point at a noindex page. Single-item categories simply drop the crumb.
+  const count = getContentByType(item.type).filter(
+    (i) => i.category === item.category,
+  ).length;
+  if (count >= 2) {
     crumbs.push({
       label: titleCaseLabel(item.category),
-      href: `${def.basePath}/${item.category}`,
+      href:
+        item.type === "tool"
+          ? `/tools/category/${item.category}`
+          : `${def.basePath}/${item.category}`,
     });
   }
   crumbs.push({ label: item.title });
@@ -150,7 +146,11 @@ function dateFields(item: ContentItem): Node {
 function authorNode(item: ContentItem): Node {
   const author = (item as GuideItem).author;
   if (author && author !== site.name)
-    return { "@type": "Person", name: author, url: `${site.url}/about` };
+    return {
+      "@type": "Person",
+      name: author,
+      url: `${site.url}/about#who-writes-this`,
+    };
   return { "@id": ORG_ID };
 }
 
@@ -192,6 +192,9 @@ function primaryEntity(item: ContentItem, path: string): Node {
     description: item.description,
     ...(item.summary ? { abstract: item.summary } : {}),
     mainEntityOfPage: { "@id": pageId(path) },
+    // The per-item card from the colocated opengraph-image route (served
+    // without its ?hash too) — Article and software rich results want an image.
+    image: abs(item.image ?? `${path}/opengraph-image`),
     ...(item.keywords.length ? { keywords: item.keywords.join(", ") } : {}),
     // schema.org `audience` is a CreativeWork property, so declaring it here
     // covers TechArticle, SoftwareApplication, DefinedTerm and SoftwareSourceCode
@@ -224,7 +227,6 @@ function primaryEntity(item: ContentItem, path: string): Node {
         ? { citation: g.sources.map((source) => source.url) }
         : {}),
       publishingPrinciples: `${site.url}/about#editorial-standards`,
-      ...(item.image ? { image: abs(item.image) } : {}),
     };
   }
 
@@ -241,7 +243,6 @@ function primaryEntity(item: ContentItem, path: string): Node {
       ...(sameAs.length ? { sameAs } : {}),
       ...(t.license ? { license: t.license } : {}),
       ...dateFields(item),
-      ...(item.image ? { image: abs(item.image) } : {}),
       // Truthful only: a genuinely free tool. Never open-source (which has cost
       // models), never a fabricated aggregateRating (manual-action risk).
       ...(t.pricing === "free"
@@ -278,7 +279,6 @@ function primaryEntity(item: ContentItem, path: string): Node {
     programmingLanguage: { "@type": "ComputerLanguage", name: "Markdown" },
     author: { "@id": ORG_ID },
     ...dateFields(item),
-    ...(item.image ? { image: abs(item.image) } : {}),
   };
 }
 
@@ -297,6 +297,8 @@ export function graphFor(item: ContentItem): Node {
     mainEntity: { "@id": entity["@id"] },
     inLanguage: locale,
     ...dateFields(item),
+    // A verification pass that changed nothing: not dateModified (see `reviewed`).
+    ...(item.reviewed ? { lastReviewed: item.reviewed } : {}),
   };
 
   const nodes: Node[] = [

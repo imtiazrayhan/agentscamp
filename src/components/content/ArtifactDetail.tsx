@@ -6,7 +6,7 @@ import { InstallActions } from "./InstallActions";
 import { FaqSection } from "./FaqSection";
 import { FiledUnder } from "./FiledUnder";
 import { contentTypes } from "@/lib/content/registry";
-import { titleCaseLabel, formatDate } from "@/lib/format";
+import { titleCaseLabel, formatDate, pageDates } from "@/lib/format";
 import { breadcrumbsFor, graphFor, jsonLdHtml } from "@/lib/seo/jsonld";
 import type { ContentItem } from "@/lib/content/types";
 import { KeyTakeaways } from "./ArticleBoxes";
@@ -41,7 +41,7 @@ export function ArtifactDetail({
     item.type === "tool"
       ? `/tools/category/${item.category}`
       : `${def.basePath}/${item.category}`;
-  const updated = item.updated ?? item.date;
+  const dates = pageDates(item);
   // Glossary entries are short definitions: no spec sheet, single column.
   const withRail = item.type !== "glossary";
 
@@ -85,9 +85,18 @@ export function ArtifactDetail({
         lead={item.description}
       >
         {/* With a rail, the type's facts and date live in its spec sheet. */}
-        {!withRail && updated && (
+        {!withRail && dates.date && (
           <p className="mt-4 text-xs text-muted-foreground">
-            Updated <time dateTime={updated}>{formatDate(updated)}</time>
+            {dates.label}{" "}
+            <time dateTime={dates.date}>{formatDate(dates.date)}</time>
+            {dates.reviewed && (
+              <>
+                {" · Reviewed "}
+                <time dateTime={dates.reviewed}>
+                  {formatDate(dates.reviewed)}
+                </time>
+              </>
+            )}
           </p>
         )}
 

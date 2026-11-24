@@ -20,10 +20,13 @@ glossary `<title>` = "What Is {Term}?".
   grammar overrides (a/an, "What Are", casing) — 0 duplicate titles; `/for`, `/tools`,
   `/commands` descriptions under 160. Left for owner: 16 guide titles over 70 on their own,
   16 short (<110) descriptions (see docs/seo-aeo-geo-audit-2026-11.md).
+- D: every detail entity's JSON-LD carries `image` (its opengraph-image route; curl'd
+  200 image/png without the ?hash for all 6 types); WebPage `lastReviewed` from
+  `reviewed`; pages say "Published" unless `updated` is set, plus "Reviewed" when newer
+  (`pageDates()` in lib/format); byline + Person url → /about#who-writes-this; breadcrumbs
+  drop single-item category crumbs for every type (was tools only).
 
 ## Next
-- D: JSON-LD image + lastReviewed, Published/Updated/Reviewed dates, byline anchor,
-  breadcrumb rule for single-item categories.
 - E: /glossary hub SEO copy + FAQ, h2 above grids, home-only canonical, robots comment.
 - Verify: validate, lint, build, scratchpad HTML checks (links, h1, TOC ids, lengths, JSON-LD).
 

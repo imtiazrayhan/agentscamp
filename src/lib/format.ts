@@ -50,6 +50,25 @@ export function formatDate(iso: string): string {
   });
 }
 
+/**
+ * The dates a page shows. "Updated" is reserved for a recorded editorial
+ * revision (`updated`); otherwise the date is the publish date. `reviewed` (a
+ * verification pass that changed nothing) shows only when it is newer.
+ */
+export function pageDates(item: {
+  date?: string;
+  updated?: string;
+  reviewed?: string;
+}): { label: "Updated" | "Published"; date?: string; reviewed?: string } {
+  const date = item.updated ?? item.date;
+  return {
+    label: item.updated ? "Updated" : "Published",
+    date,
+    reviewed:
+      item.reviewed && date && item.reviewed > date ? item.reviewed : undefined,
+  };
+}
+
 export function titleCaseLabel(slug: string): string {
   return slug
     .split(/[-_\s]+/)

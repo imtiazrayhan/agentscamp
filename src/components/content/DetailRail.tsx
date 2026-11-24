@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { Toc } from "./Toc";
 import { extractToc } from "@/lib/toc";
 import { externalLinkProps } from "@/lib/utils";
-import { formatDate } from "@/lib/format";
+import { formatDate, pageDates } from "@/lib/format";
 import type { ContentItem } from "@/lib/content/types";
 
 const host = (url: string) => new URL(url).hostname.replace(/^www\./, "");
@@ -170,7 +170,7 @@ export function DetailRail({
   alternativesHref?: string;
 }) {
   const toc = item.body ? extractToc(item.body) : [];
-  const updated = item.updated ?? item.date;
+  const dates = pageDates(item);
 
   return (
     <aside className="mb-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mb-0">
@@ -187,9 +187,16 @@ export function DetailRail({
             ) : (
               <InstallableFacts item={item} />
             )}
-            {updated && (
-              <Fact label="Updated">
-                <time dateTime={updated}>{formatDate(updated)}</time>
+            {dates.date && (
+              <Fact label={dates.label}>
+                <time dateTime={dates.date}>{formatDate(dates.date)}</time>
+              </Fact>
+            )}
+            {dates.reviewed && (
+              <Fact label="Reviewed">
+                <time dateTime={dates.reviewed}>
+                  {formatDate(dates.reviewed)}
+                </time>
               </Fact>
             )}
           </dl>

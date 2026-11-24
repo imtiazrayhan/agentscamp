@@ -65,7 +65,6 @@ export function GuideDetail({
 }) {
   const toc = item.body ? extractToc(item.body) : [];
   const withToc = toc.length >= 2;
-  const updated = item.updated ?? item.date;
 
   return (
     <article>
@@ -84,7 +83,9 @@ export function GuideDetail({
       >
         <ArticleMeta
           author={item.author}
-          updated={updated}
+          date={item.date}
+          updated={item.updated}
+          reviewed={item.reviewed}
           readingTime={item.readingTime}
           cornerstone={item.depth === "cornerstone"}
         />
