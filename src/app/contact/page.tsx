@@ -5,6 +5,7 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { Panel } from "@/components/ui/panel";
 import { PageHeader } from "@/components/content/PageHeader";
 import { ContactForm } from "./ContactForm";
+import { jsonLdHtml } from "@/lib/seo/jsonld";
 
 const title = "Contact";
 const description =
@@ -33,7 +34,7 @@ export default function ContactPage() {
     <article className="mx-auto measure">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
 
       <PageHeader

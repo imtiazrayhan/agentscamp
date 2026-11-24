@@ -41,25 +41,25 @@ At one end, you specify the agent's behavior explicitly as a state machine; at t
 
 ## The frameworks
 
-### [LangGraph](/tools/langgraph) — control and durability
+### LangGraph — control and durability
 
-Model the agent as an explicit graph of nodes and edges over shared state. You get persistence (**checkpointing**), **human-in-the-loop** interrupts, branching, and resumable runs — the properties production agents need. The cost is more wiring up front. Best when reliability and debuggability matter more than time-to-first-demo.
+[LangGraph](/tools/langgraph) has you model the agent as an explicit graph of nodes and edges over shared state. You get persistence (**checkpointing**), **human-in-the-loop** interrupts, branching, and resumable runs — the properties production agents need. The cost is more wiring up front. Best when reliability and debuggability matter more than time-to-first-demo.
 
-### [CrewAI](/tools/crewai) — role-based crews
+### CrewAI — role-based crews
 
-Describe agents by role and goal, assign tasks, and let the "crew" collaborate. The fastest way to a working multi-agent prototype, with **Flows** available when you need more deterministic, event-driven control. Best for collaborative workflows you want running quickly.
+In [CrewAI](/tools/crewai) you describe agents by role and goal, assign tasks, and let the "crew" collaborate. The fastest way to a working multi-agent prototype, with **Flows** available when you need more deterministic, event-driven control. Best for collaborative workflows you want running quickly.
 
-### [AutoGen / AG2](/tools/autogen) — agents as conversation
+### AutoGen / AG2 — agents as conversation
 
-Agents (and humans) solve tasks by exchanging messages, including group chats and a code-executing agent for generate-run-debug loops. Flexible and great for prototyping and research. (Note the naming: Microsoft's AutoGen and the community AG2 fork.)
+In [AutoGen / AG2](/tools/autogen), agents (and humans) solve tasks by exchanging messages, including group chats and a code-executing agent for generate-run-debug loops. Flexible and great for prototyping and research. (Note the naming: Microsoft's AutoGen and the community AG2 fork.)
 
-### [OpenAI Agents SDK](/tools/openai-agents-sdk) — a minimal standard loop
+### OpenAI Agents SDK — a minimal standard loop
 
-A small, provider-agnostic framework: the agent loop plus handoffs, guardrails, sessions, and built-in tracing. Few primitives, learned fast. Best when you want a clean standard loop without a heavy abstraction.
+The [OpenAI Agents SDK](/tools/openai-agents-sdk) is a small, provider-agnostic framework: the agent loop plus handoffs, guardrails, sessions, and built-in tracing. Few primitives, learned fast. Best when you want a clean standard loop without a heavy abstraction.
 
-### [Claude Agent SDK](/tools/claude-agent-sdk) — batteries included on Claude
+### Claude Agent SDK — batteries included on Claude
 
-Anthropic's first-party toolkit for building agents on Claude, with native tool use, MCP, and subagents. The most complete path if you're committed to Claude.
+The [Claude Agent SDK](/tools/claude-agent-sdk) is Anthropic's first-party toolkit for building agents on Claude, with native tool use, MCP, and subagents. The most complete path if you're committed to Claude.
 
 ## How to choose
 

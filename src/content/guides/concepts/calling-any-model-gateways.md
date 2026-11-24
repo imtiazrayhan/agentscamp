@@ -40,17 +40,17 @@ Hardwiring one provider's SDK into your app is a decision you'll regret the firs
 
 The three popular choices solve overlapping problems at different layers — that's the key to choosing.
 
-### [Vercel AI SDK](/tools/vercel-ai-sdk) — the TypeScript app toolkit
+### Vercel AI SDK — the TypeScript app toolkit
 
-Provider-agnostic calls plus streaming, structured output, tool calling, and UI hooks, in your application code. You get the "swap models freely" benefit and the building blocks for AI features. It's where your app *talks* to models — not an org-wide control plane. Best when you're building the app in TypeScript.
+The [Vercel AI SDK](/tools/vercel-ai-sdk) gives you provider-agnostic calls plus streaming, structured output, tool calling, and UI hooks, in your application code. You get the "swap models freely" benefit and the building blocks for AI features. It's where your app *talks* to models — not an org-wide control plane. Best when you're building the app in TypeScript.
 
-### [LiteLLM](/tools/litellm) — library or self-hosted proxy
+### LiteLLM — library or self-hosted proxy
 
-Call 100+ models through one OpenAI-format interface as a **library**, or run its **proxy** as a self-hosted **gateway** with central keys, fallback, caching, cost tracking, and rate limits. Best when you want to **own** the gateway — for data control, custom policy, or on-prem.
+[LiteLLM](/tools/litellm) lets you call 100+ models through one OpenAI-format interface as a **library**, or run its **proxy** as a self-hosted **gateway** with central keys, fallback, caching, cost tracking, and rate limits. Best when you want to **own** the gateway — for data control, custom policy, or on-prem.
 
-### [OpenRouter](/tools/openrouter) — hosted router
+### OpenRouter — hosted router
 
-A **managed** gateway: hundreds of models behind one API key and one bill, with routing and automatic fallback, and **no infrastructure to run**. Best when you want multi-provider access and resilience without operating a proxy.
+[OpenRouter](/tools/openrouter) is a **managed** gateway: hundreds of models behind one API key and one bill, with routing and automatic fallback, and **no infrastructure to run**. Best when you want multi-provider access and resilience without operating a proxy.
 
 ## How to choose
 

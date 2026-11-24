@@ -1,7 +1,7 @@
 import { ContentGrid } from "./ContentGrid";
 import { ContentCard } from "./ContentCard";
 import { Breadcrumbs } from "./Breadcrumbs";
-import { collectionGraph, type Crumb } from "@/lib/seo/jsonld";
+import { collectionGraph, type Crumb, jsonLdHtml } from "@/lib/seo/jsonld";
 import { latestDate } from "@/lib/content";
 import type { ContentItem } from "@/lib/content/types";
 import { PageHeader } from "./PageHeader";
@@ -37,7 +37,7 @@ export function CollectionView({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
+          __html: jsonLdHtml(
             collectionGraph({
               path,
               name: title,

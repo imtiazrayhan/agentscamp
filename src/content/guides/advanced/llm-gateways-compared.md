@@ -44,17 +44,17 @@ Once more than one app talks to an LLM, you start wanting a single place to hand
 
 ## The three, by shape
 
-### [Portkey](/tools/portkey) — gateway + LLMOps control plane
+### Portkey — gateway + LLMOps control plane
 
-The most platform-complete option. An **open-source (MIT) routing gateway** — 1,600+ models, retries, fallbacks, load balancing, and both **simple and semantic caching** — paired with a **freemium hosted control plane** for observability, prompt management, virtual keys, budgets, guardrails, and governance — the [LLMOps](/glossary/llmops) layer on top of the raw gateway. Best when you want caching and cost control as a managed, batteries-included service. (Palo Alto Networks completed its acquisition of Portkey on May 29, 2026 — unlike Helicone's, a continuity move: it becomes the gateway in PANW's AI-security platform and stays actively developed.)
+[Portkey](/tools/portkey) is the most platform-complete option. An **open-source (MIT) routing gateway** — 1,600+ models, retries, fallbacks, load balancing, and both **simple and semantic caching** — paired with a **freemium hosted control plane** for observability, prompt management, virtual keys, budgets, guardrails, and governance — the [LLMOps](/glossary/llmops) layer on top of the raw gateway. Best when you want caching and cost control as a managed, batteries-included service. (Palo Alto Networks completed its acquisition of Portkey on May 29, 2026 — unlike Helicone's, a continuity move: it becomes the gateway in PANW's AI-security platform and stays actively developed.)
 
-### [LiteLLM](/tools/litellm) — open-source library or self-hosted proxy
+### LiteLLM — open-source library or self-hosted proxy
 
-Call 100+ models through one OpenAI-format interface as a **library**, or run its **proxy** as a self-hosted gateway with central keys, fallbacks, caching, cost tracking, and rate limits. Best when you want to **own** the gateway end-to-end — for data control, custom policy, or on-prem — with no third party in the request path. (It's also the unified-access layer covered in [Calling Any Model](/guides/concepts/calling-any-model-gateways).)
+[LiteLLM](/tools/litellm) lets you call 100+ models through one OpenAI-format interface as a **library**, or run its **proxy** as a self-hosted gateway with central keys, fallbacks, caching, cost tracking, and rate limits. Best when you want to **own** the gateway end-to-end — for data control, custom policy, or on-prem — with no third party in the request path. (It's also the unified-access layer covered in [Calling Any Model](/guides/concepts/calling-any-model-gateways).)
 
-### [Helicone](/tools/helicone) — observability-first, one-line proxy
+### Helicone — observability-first, one-line proxy
 
-Famous for the lowest-friction on-ramp: change your base URL and your calls are logged, traced, and analyzed, with proxy-level **caching** and great cost/latency visibility. Open source (Apache-2.0) and self-hostable.
+[Helicone](/tools/helicone) is famous for the lowest-friction on-ramp: change your base URL and your calls are logged, traced, and analyzed, with proxy-level **caching** and great cost/latency visibility. Open source (Apache-2.0) and self-hostable.
 
 > [!WARNING]
 > **Helicone's 2026 status:** Mintlify [acquired Helicone](https://www.helicone.ai/blog/joining-mintlify) in March 2026, and it's now in **maintenance mode** — security and bug fixes only, no new features or roadmap, with migration assistance for customers. The open-source proxy still works and self-hosts fine, so existing users aren't stranded, but for a **new** project weigh that it's no longer actively developed.

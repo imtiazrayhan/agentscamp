@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getContentByType, latestDate } from "@/lib/content";
 import { contentTypes } from "@/lib/content/registry";
-import { collectionGraph } from "@/lib/seo/jsonld";
+import { collectionGraph, jsonLdHtml } from "@/lib/seo/jsonld";
 import { listingSeo } from "@/lib/seo/listing";
 import { titleCaseLabel } from "@/lib/format";
 import { Breadcrumbs } from "./Breadcrumbs";
@@ -102,7 +102,7 @@ export function TypeListing({ type }: { type: ContentTypeId }) {
     <div>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(graph) }}
       />
       <Breadcrumbs items={crumbs} />
       <PageHeader title={def.label} lead={def.description}>

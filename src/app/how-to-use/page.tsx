@@ -3,7 +3,7 @@ import { proseClasses } from "@/components/ui/prose";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { faqPageGraph } from "@/lib/seo/jsonld";
+import { faqPageGraph, jsonLdHtml } from "@/lib/seo/jsonld";
 import { FaqSection } from "@/components/content/FaqSection";
 import { PageHeader } from "@/components/content/PageHeader";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
@@ -52,7 +52,7 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqPageGraph("/how-to-use", faq)),
+          __html: jsonLdHtml(faqPageGraph("/how-to-use", faq)),
         }}
       />
       <Breadcrumbs

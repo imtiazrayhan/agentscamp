@@ -7,7 +7,7 @@ import { FaqSection } from "./FaqSection";
 import { FiledUnder } from "./FiledUnder";
 import { contentTypes } from "@/lib/content/registry";
 import { titleCaseLabel, formatDate } from "@/lib/format";
-import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
+import { breadcrumbsFor, graphFor, jsonLdHtml } from "@/lib/seo/jsonld";
 import type { ContentItem } from "@/lib/content/types";
 import { KeyTakeaways } from "./ArticleBoxes";
 import { PageHeader } from "./PageHeader";
@@ -49,7 +49,7 @@ export function ArtifactDetail({
     <article>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(graphFor(item)) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(graphFor(item)) }}
       />
       <Breadcrumbs items={breadcrumbsFor(item)} />
 
@@ -69,7 +69,9 @@ export function ArtifactDetail({
             <Link href={def.basePath} className="hover:text-foreground">
               {def.singular}
             </Link>
-            {item.type !== "tool" && item.category && (
+            {/* Tools link their category from the rail; glossary's "term" is a
+                pseudo-category with no page. */}
+            {item.type !== "tool" && item.type !== "glossary" && item.category && (
               <>
                 {" · "}
                 <Link href={categoryHref} className="hover:text-foreground">

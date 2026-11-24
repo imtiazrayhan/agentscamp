@@ -10,7 +10,7 @@ import { ArticleMeta } from "./ArticleMeta";
 import { FiledUnder } from "./FiledUnder";
 import { StepsAtAGlance, KeyTakeaways } from "./ArticleBoxes";
 import { extractToc } from "@/lib/toc";
-import { breadcrumbsFor, graphFor } from "@/lib/seo/jsonld";
+import { breadcrumbsFor, graphFor, jsonLdHtml } from "@/lib/seo/jsonld";
 import { canonicalUrl } from "@/lib/seo/artifact";
 import type { GuideItem, ContentItem } from "@/lib/content/types";
 import { sectionHeading } from "@/components/ui/typography";
@@ -71,7 +71,7 @@ export function GuideDetail({
     <article>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(graphFor(item)) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(graphFor(item)) }}
       />
       <Breadcrumbs items={breadcrumbsFor(item)} />
 

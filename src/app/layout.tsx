@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { site } from "@/lib/site";
-import { siteGraph } from "@/lib/seo/jsonld";
+import { siteGraph, jsonLdHtml } from "@/lib/seo/jsonld";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { PromoBar } from "@/components/layout/PromoBar";
@@ -85,7 +85,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
         />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SearchProvider>

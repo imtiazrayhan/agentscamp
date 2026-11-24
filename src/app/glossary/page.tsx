@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getContentByType } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { glossaryHubGraph } from "@/lib/seo/jsonld";
+import { glossaryHubGraph, jsonLdHtml } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { PageHeader } from "@/components/content/PageHeader";
@@ -36,7 +36,7 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(glossaryHubGraph(items, DESCRIPTION)),
+          __html: jsonLdHtml(glossaryHubGraph(items, DESCRIPTION)),
         }}
       />
       <Breadcrumbs

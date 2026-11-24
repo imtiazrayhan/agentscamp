@@ -25,6 +25,14 @@ const LOGO_ID = `${site.url}/#logo`;
 
 type Node = Record<string, unknown>;
 
+/**
+ * Serialize a graph for `<script type="application/ld+json">`. `<` is escaped so
+ * a `</script>` inside any description or FAQ answer can't end the tag early.
+ */
+export function jsonLdHtml(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
 const abs = (path: string) => `${site.url}${path}`;
 const pageId = (path: string) => `${abs(path)}#webpage`;
 const crumbId = (path: string) => `${abs(path)}#breadcrumb`;

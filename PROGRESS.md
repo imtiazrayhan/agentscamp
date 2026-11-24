@@ -1,3 +1,23 @@
+# SEO/AEO/GEO structure fixes (code + layout audit) — 2026-11-24 — IN PROGRESS
+
+Audit of templates, metadata/JSON-LD, crawl surface and built HTML. Branch
+`seo-structure-fixes`, one commit per group. Owner decisions: numbered listing page URLs;
+glossary `<title>` = "What Is {Term}?".
+
+## Done
+- A: glossary eyebrow no longer links the 404 `/glossary/term` (157 pages); body `# `
+  renders as h2 (3 skills had two h1s); TOC ids slug the rendered heading text (link syntax
+  stripped); links moved out of 11 headings in 3 guides (nested `<a>`) + validator error for
+  links in headings; `jsonLdHtml()` escapes `<` in all 11 JSON-LD emitters.
+
+## Next
+- B: crawlable numbered listing pages (`/<type>/page/N`) + sitemap.
+- C: meta description clipping for installables, long-title brand drop, glossary titles.
+- D: JSON-LD image + lastReviewed, Published/Updated/Reviewed dates, byline anchor,
+  breadcrumb rule for single-item categories.
+- E: /glossary hub SEO copy + FAQ, h2 above grids, home-only canonical, robots comment.
+- Verify: validate, lint, build, scratchpad HTML checks (links, h1, TOC ids, lengths, JSON-LD).
+
 # Contact form (/contact) via Resend — 2026-11-23 — LIVE
 
 Goal: a /contact page whose form emails contact@agentscamp.com (a Resend inbox) through the

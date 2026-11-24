@@ -80,16 +80,22 @@ function markdownLinksAndHeadings(body: string) {
   const tree = unified().use(remarkParse).parse(body) as MarkdownNode;
   const links: { url: string; text: string }[] = [];
   const headings = new Set<string>();
+  const linkedHeadings: string[] = [];
   const slugger = new GithubSlugger();
+  const hasLink = (node: MarkdownNode): boolean =>
+    node.type === "link" || (node.children ?? []).some(hasLink);
   const visit = (node: MarkdownNode) => {
     if (node.type === "link" && node.url) {
       links.push({ url: node.url, text: nodeText(node) });
     }
-    if (node.type === "heading") headings.add(slugger.slug(nodeText(node)));
+    if (node.type === "heading") {
+      headings.add(slugger.slug(nodeText(node)));
+      if (hasLink(node)) linkedHeadings.push(nodeText(node));
+    }
     for (const child of node.children ?? []) visit(child);
   };
   visit(tree);
-  return { links, headings };
+  return { links, headings, linkedHeadings };
 }
 
 function internalUrl(raw: string, from: string): URL | null {
@@ -364,6 +370,11 @@ function run() {
 
   const exportSuffix = /\.(?:md|agent\.md|cursor\.mdc|cline\.md|windsurf\.md|continue\.md)$/;
   for (const item of all) {
+    // Headings render wrapped in an anchor (rehype-autolink-headings "wrap"),
+    // so a link inside one nests <a> in <a>. Link from the next paragraph.
+    for (const heading of markdown.get(item.href)?.linkedHeadings ?? []) {
+      err(`${contentId(item)} has a link inside heading "${heading}"`);
+    }
     for (const link of markdown.get(item.href)?.links ?? []) {
       let url: URL | null;
       try {

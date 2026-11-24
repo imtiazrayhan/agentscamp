@@ -5,6 +5,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { site } from "@/lib/site";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { PageHeader } from "@/components/content/PageHeader";
+import { jsonLdHtml } from "@/lib/seo/jsonld";
 
 const title = "About & Editorial Standards";
 const description =
@@ -34,7 +35,7 @@ export default function AboutPage() {
     <article className="mx-auto measure">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
 
       <PageHeader

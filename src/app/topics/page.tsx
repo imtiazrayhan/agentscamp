@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { topics, getByTopic } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { hubGraph } from "@/lib/seo/jsonld";
+import { hubGraph, jsonLdHtml } from "@/lib/seo/jsonld";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
 import { Panel } from "@/components/ui/panel";
 import { PageHeader } from "@/components/content/PageHeader";
@@ -28,7 +28,7 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
+          __html: jsonLdHtml(
             hubGraph({
               path: "/topics",
               name: "Topics",

@@ -63,6 +63,8 @@ const processor = unified()
     jsx: prod.jsx,
     jsxs: prod.jsxs,
     components: {
+      // The page header owns the only <h1>; a body `# ` renders one level down.
+      h1: (props: ComponentProps<"h1">) => <h2 {...props} />,
       a: Anchor,
       pre: Pre as unknown as (props: ComponentProps<"pre">) => ReactNode,
       table: Table,
