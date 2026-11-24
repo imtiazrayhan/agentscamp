@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import type { ContentItem, GuideItem } from "@/lib/content/types";
+import type {
+  ContentItem,
+  GlossaryItem,
+  GuideItem,
+} from "@/lib/content/types";
 import { titleCaseLabel } from "@/lib/format";
 import { site } from "@/lib/site";
 
@@ -15,8 +19,8 @@ import { site } from "@/lib/site";
  * declares `images` — doing so would silently kill all 7 per-item generators.
  */
 export function buildMetadata(item: ContentItem): Metadata {
-  const title = item.seoTitle ?? item.title;
-  const description = item.seoDescription ?? item.description;
+  const title = pageTitle(item);
+  const description = metaDescription(item);
   const isArticle = item.type === "guide";
   const author = (item as GuideItem).author ?? site.name;
   const authorMetadata = {
@@ -25,7 +29,9 @@ export function buildMetadata(item: ContentItem): Metadata {
   };
 
   return {
-    title,
+    // The layout template appends " — AgentsCamp" (13 chars); a title that would
+    // pass 70 with it goes out bare instead of being cut off in results.
+    title: title.length > MAX_TITLE - BRAND_SUFFIX ? { absolute: title } : title,
     description,
     // `alternates` replaces the layout's wholesale, so the RSS autodiscovery
     // link must be re-declared here or it only exists on `/`.
@@ -62,6 +68,48 @@ export function buildMetadata(item: ContentItem): Metadata {
       description,
     },
   };
+}
+
+const MAX_TITLE = 70;
+const BRAND_SUFFIX = 13; // " — AgentsCamp", from the root layout's title template
+const MAX_DESCRIPTION = 160;
+
+/**
+ * The `<title>` text. Glossary entries answer "what is X?" searches, and the
+ * question also keeps a term distinct from a same-named tool or guide.
+ * `seoTitle` overrides (e.g. to add an article: "What Is a Context Window?").
+ */
+function pageTitle(item: ContentItem): string {
+  if (item.seoTitle) return item.seoTitle;
+  if (item.type === "glossary") return `What Is ${(item as GlossaryItem).term}?`;
+  return item.title;
+}
+
+/**
+ * The meta description, at most 160 chars. For agents, skills and commands
+ * `description` is the installable artifact's delegation text (often 300+
+ * chars) and must not be shortened at the source, so the SERP copy is the
+ * leading whole sentences that fit, else a word-boundary cut.
+ */
+export function metaDescription(item: ContentItem): string {
+  return item.seoDescription ?? clipDescription(item.description);
+}
+
+// Bing flags descriptions under ~100 chars, so whole sentences must reach this.
+const MIN_SENTENCES = 110;
+const ABBREVIATION = /\b(?:vs|e\.g|i\.e|etc|approx)\.$/i;
+
+export function clipDescription(text: string): string {
+  if (text.length <= MAX_DESCRIPTION) return text;
+  let sentences = "";
+  for (const m of text.matchAll(/[.!?](?=\s|$)/g)) {
+    const upTo = text.slice(0, m.index + 1);
+    if (upTo.length > MAX_DESCRIPTION) break;
+    if (!ABBREVIATION.test(upTo)) sentences = upTo;
+  }
+  if (sentences.length >= MIN_SENTENCES) return sentences;
+  const cut = text.slice(0, MAX_DESCRIPTION - 1);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,;:(—–-]+$/, "")}…`;
 }
 
 /**

@@ -18,6 +18,7 @@ related:
 - agent:caption-reviewer
 summary: Automatic captioning uses speech recognition to produce timed text for media; human review checks meaning, speaker cues and meaningful sounds.
 term: Automatic captioning
+seoTitle: "What Is Automatic Captioning?"
 ---
 
 **Automatic captioning uses [speech recognition](/glossary/speech-to-text) to create timed text for recorded or live media.** Captions convey speech and meaningful non-speech sound in sync with the media. Automatic output needs checking and correction because even a missing word can change meaning. [W3C's caption guidance](https://www.w3.org/WAI/media/av/captions/) explains that review need and distinguishes open captions, which stay visible, from closed captions, which viewers can toggle.

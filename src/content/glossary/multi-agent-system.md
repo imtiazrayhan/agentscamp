@@ -1,5 +1,6 @@
 ---
 term: "Multi-Agent System"
+seoTitle: "What Is a Multi-Agent System?"
 description: "A multi-agent system is several AI agents working on one task, often a lead agent delegating to parallel subagents, trading extra tokens for breadth."
 date: 2026-11-12
 topics: ["ai-agents-systems", "architecture"]

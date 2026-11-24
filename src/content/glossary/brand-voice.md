@@ -1,5 +1,6 @@
 ---
 term: "Brand Voice (in AI prompting)"
+seoTitle: "What Is Brand Voice in AI Prompting?"
 description: "Brand voice, in AI prompting, is the documented tone, vocabulary, and style rules a model is given so every draft sounds like one company, not the model."
 date: 2026-09-10
 topics: ["ai-at-work", "workflow-prompting"]

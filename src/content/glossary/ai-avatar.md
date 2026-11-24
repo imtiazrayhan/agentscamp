@@ -1,5 +1,6 @@
 ---
 term: "AI Avatar"
+seoTitle: "What Is an AI Avatar?"
 description: "An AI avatar is a synthetic on-screen presenter, a stock actor or a person modelled from footage or a photo, that speaks any script you type with lip sync."
 date: 2026-11-16
 topics: ["multimodal-ai", "ai-at-work"]

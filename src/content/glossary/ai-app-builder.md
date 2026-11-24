@@ -1,5 +1,6 @@
 ---
 term: "AI App Builder"
+seoTitle: "What Is an AI App Builder?"
 description: "An AI app builder is a tool that generates a working application from a natural-language description, usually with hosting and a backend included."
 date: 2026-09-10
 topics: ["ai-at-work"]

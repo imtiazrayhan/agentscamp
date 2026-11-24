@@ -1,5 +1,6 @@
 ---
 term: "Knowledge Cutoff"
+seoTitle: "What Is a Knowledge Cutoff?"
 description: "A knowledge cutoff is the date a model's training data ends, so it has no built-in knowledge of any event, release, or fact that came after it."
 summary: "A knowledge cutoff is the date a model's training data ends, after which it knows nothing on its own. Ask about something newer and it does not stay silent, it answers from a stale snapshot, confidently, which is a common source of hallucination. The cutoff is not the release date either, since models ship months after their data froze."
 date: 2026-06-17

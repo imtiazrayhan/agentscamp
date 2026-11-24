@@ -1,5 +1,6 @@
 ---
 term: "Agentic Browser"
+seoTitle: "What Is an Agentic Browser?"
 description: "An agentic browser is a web browser or extension with a built-in AI assistant that can read the pages you have open and act in them: click, type and fill forms."
 date: 2026-10-15
 topics: ["ai-at-work", "ai-agents-systems"]

@@ -1,5 +1,6 @@
 ---
 term: "Tool Poisoning (MCP)"
+seoTitle: "What Is MCP Tool Poisoning?"
 description: "Tool poisoning is an MCP attack in which malicious instructions hidden in a tool's description steer the model without the user seeing them."
 date: 2026-10-11
 topics: ["ai-safety-security", "mcp"]

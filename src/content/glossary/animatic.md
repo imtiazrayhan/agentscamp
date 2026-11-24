@@ -19,6 +19,7 @@ related:
 - agent:storyboard-continuity-reviewer
 summary: An animatic is a timed preview of storyboard frames, often with audio, used to review pacing before production; AI-generated frames remain drafts.
 term: Animatic
+seoTitle: "What Is an Animatic?"
 ---
 
 **An animatic is a timed preview of storyboard frames, often accompanied by audio, used to review a sequence's pacing before production.** A storyboard arranges frames; an animatic assigns durations so the sequence can be watched over time. [Boords' concepts documentation](https://boords.com/docs/concepts) describes this relationship.

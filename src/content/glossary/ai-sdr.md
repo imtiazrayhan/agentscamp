@@ -1,5 +1,6 @@
 ---
 term: "AI SDR"
+seoTitle: "What Is an AI SDR?"
 description: "An AI SDR is software that runs sales development work such as prospecting, outreach, and follow-up, with autonomy that varies enormously between vendors."
 date: 2026-09-10
 topics: ["ai-at-work", "ai-agents-systems"]

@@ -117,7 +117,7 @@ export const listingSeo: Record<ContentTypeId, ListingSeo> = {
   tool: {
     seoTitle: "AI Coding Tools Directory",
     seoDescription:
-      "A curated directory of {count} AI coding tools — editors, CLIs, agents, MCP servers, and SDKs for AI-assisted development. Compare features, pricing, and alternatives.",
+      "A curated directory of {count} AI coding tools — editors, CLIs, agents, MCP servers, and SDKs for AI-assisted development. Compare pricing and alternatives.",
     intro:
       "A curated directory of tools for AI-assisted development: AI code editors, CLI agents, MCP servers, model and agent SDKs, and supporting infrastructure. Each entry links to the official site and source, with pricing and alternatives so you can compare at a glance.",
     faq: [
@@ -142,7 +142,7 @@ export const listingSeo: Record<ContentTypeId, ListingSeo> = {
   command: {
     seoTitle: "Claude Code Slash Commands",
     seoDescription:
-      "Browse {count} free Claude Code slash commands — reusable prompts you trigger with /name to automate repeatable workflows. Copy-paste install into ~/.claude/commands.",
+      "Browse {count} free Claude Code slash commands — reusable prompts you trigger with /name to automate workflows. Copy-paste install into ~/.claude/commands.",
     intro:
       "Slash commands are reusable prompts you invoke with /name. Each is a Markdown file you drop into ~/.claude/commands — automate repeatable workflows like reviews, commits, and refactors with a single keystroke.",
     faq: [

@@ -1,5 +1,6 @@
 ---
 term: "AI Overviews"
+seoTitle: "What Are AI Overviews?"
 description: "AI Overviews are Google's AI-generated summaries at the top of Search results, with source links; AI Mode is the fuller conversational version."
 date: 2026-09-10
 topics: ["ai-at-work"]

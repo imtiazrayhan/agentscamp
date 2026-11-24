@@ -1,5 +1,6 @@
 ---
 term: "Cursor Rules"
+seoTitle: "What Are Cursor Rules?"
 description: "Cursor rules are persistent instructions for Cursor's AI agent: project rules as .cursor/rules/*.mdc files with frontmatter, plus User Rules and Team Rules."
 date: 2026-10-14
 topics: ["workflow-prompting"]

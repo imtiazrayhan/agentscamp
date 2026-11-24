@@ -1,5 +1,6 @@
 ---
 term: "MCP Gateway"
+seoTitle: "What Is an MCP Gateway?"
 description: "An MCP gateway is a proxy between AI agents and the MCP servers they call, giving one endpoint with central auth, tool allowlists and audit logging."
 date: 2026-11-19
 topics: ["mcp", "ai-safety-security"]

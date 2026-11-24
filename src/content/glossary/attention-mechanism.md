@@ -1,5 +1,6 @@
 ---
 term: "Attention Mechanism"
+seoTitle: "What Is the Attention Mechanism?"
 description: "Attention lets a model weigh how relevant every other token is to each token, building a context-aware representation as a weighted blend of their values."
 summary: "Attention computes, for each token, how relevant every other token is, then rebuilds that token as a weighted blend of the others, so meaning comes from context rather than position. Each token emits a query, exposes a key, and offers a value, and real models run several heads in parallel. The cost is quadratic in sequence length."
 date: 2026-06-17

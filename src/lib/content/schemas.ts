@@ -98,7 +98,7 @@ const siteFields = {
   reviewed: z.coerce.date().optional(),
 
   // --- SEO/AEO/GEO additions (optional escape hatches; templates cover the rest) ---
-  seoTitle: z.string().max(70).optional(), // override the <title> (template still appends brand)
+  seoTitle: z.string().max(70).optional(), // override the <title> (brand appended only while the result stays <= 70 chars)
   seoDescription: z.string().max(160).optional(), // override the meta/OG description
   keywords: z.array(z.string()).default([]), // feeds JSON-LD keywords ONLY (never <meta keywords>)
   image: z.string().optional(), // custom OG image path (else one is generated)

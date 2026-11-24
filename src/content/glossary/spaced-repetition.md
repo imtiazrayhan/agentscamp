@@ -17,6 +17,7 @@ related:
 - agent:study-card-reviewer
 summary: Spaced repetition schedules reviews over time using recall feedback; AI can draft the cards, while the learner still checks their answers.
 term: Spaced repetition
+seoTitle: "What Is Spaced Repetition?"
 ---
 
 **Spaced repetition is a practice method that schedules reviews across time rather than presenting the same material in one continuous session.** A learner attempts recall and provides feedback about difficulty; a scheduler can use that feedback to choose later reviews. [RemNote's introduction](https://help.remnote.com/en/articles/6022755-getting-started-with-spaced-repetition) describes this recall-and-rating loop.

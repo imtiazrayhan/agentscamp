@@ -18,6 +18,7 @@ related:
 - agent:speech-cleanup-reviewer
 summary: Speech enhancement reduces unwanted noise or artifacts in recorded speech; AI-processed audio still needs comparison with the original for intelligibility.
 term: Speech enhancement
+seoTitle: "What Is Speech Enhancement?"
 ---
 
 **Speech enhancement processes existing speech to reduce unwanted noise or artifacts and improve clarity.** Adobe describes its AI Enhance Speech feature in those terms and separates it from Mic Check, which addresses setup before recording. [Adobe's introduction](https://podcast.adobe.com/guides/what-is-enhance-speech) explains the distinction.

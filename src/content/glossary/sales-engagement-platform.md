@@ -1,5 +1,6 @@
 ---
 term: "Sales Engagement Platform"
+seoTitle: "What Is a Sales Engagement Platform?"
 description: "A sales engagement platform is the system reps work out of: it sequences emails, calls, and tasks across channels and logs every touch back into the CRM."
 date: 2026-09-10
 topics: ["ai-at-work", "workflow-prompting"]

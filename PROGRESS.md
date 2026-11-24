@@ -14,9 +14,14 @@ glossary `<title>` = "What Is {Term}?".
   agents 3, commands 3), self-canonical, page-1-only intro/FAQ; pagination renders real
   links while browsing unfiltered (filter/sort keeps client `?page=`); in sitemap.
   Verified in build: every item appears exactly once across its type's pages.
+- C: `metaDescription()` fits installables' long artifact `description` to 110–160 chars
+  (whole sentences, else word cut) — 211 pages, 0 over 160; titles over 57 chars drop the
+  brand suffix (127 pages); glossary `<title>` = "What Is {Term}?" with 55 `seoTitle`
+  grammar overrides (a/an, "What Are", casing) — 0 duplicate titles; `/for`, `/tools`,
+  `/commands` descriptions under 160. Left for owner: 16 guide titles over 70 on their own,
+  16 short (<110) descriptions (see docs/seo-aeo-geo-audit-2026-11.md).
 
 ## Next
-- C: meta description clipping for installables, long-title brand drop, glossary titles.
 - D: JSON-LD image + lastReviewed, Published/Updated/Reviewed dates, byline anchor,
   breadcrumb rule for single-item categories.
 - E: /glossary hub SEO copy + FAQ, h2 above grids, home-only canonical, robots comment.

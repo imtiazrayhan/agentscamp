@@ -1,5 +1,6 @@
 ---
 term: "Structured Interview"
+seoTitle: "What Is a Structured Interview?"
 description: "A structured interview uses predetermined job-related questions and shared evaluation standards so interviewers collect comparable evidence from candidates."
 date: "2026-10-04"
 reviewed: "2026-10-07"

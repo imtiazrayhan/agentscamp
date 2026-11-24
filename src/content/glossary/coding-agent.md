@@ -1,5 +1,6 @@
 ---
 term: "Coding Agent"
+seoTitle: "What Is a Coding Agent?"
 description: "An AI coding agent is a tool that takes a software task and works through it on its own: reading the codebase, editing files, running commands and tests."
 date: 2026-10-05
 topics: ["ai-agents-systems", "coding-languages"]

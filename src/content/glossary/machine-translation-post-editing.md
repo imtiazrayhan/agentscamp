@@ -1,5 +1,6 @@
 ---
 term: "Machine Translation Post-editing"
+seoTitle: "What Is Machine Translation Post-Editing?"
 description: "Machine translation post-editing is human revision of machine-translated text against the source, context, terminology, and agreed quality requirements."
 date: "2026-08-14"
 reviewed: "2026-10-07"

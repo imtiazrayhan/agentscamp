@@ -1,5 +1,6 @@
 ---
 term: "Compliance Matrix"
+seoTitle: "What Is a Compliance Matrix?"
 description: "An RFP compliance matrix maps each buyer requirement to its source, response location, evidence, owner, and reviewed status throughout a proposal."
 date: "2026-08-15"
 reviewed: "2026-10-07"

@@ -1,5 +1,6 @@
 ---
 term: "Claude Plugins"
+seoTitle: "What Are Claude Plugins?"
 description: "Claude Plugins are installable bundles of skills, slash commands, sub-agents, and MCP connectors that set up Claude Code or Claude Cowork for a role or team."
 date: 2026-09-10
 topics: ["ai-at-work"]

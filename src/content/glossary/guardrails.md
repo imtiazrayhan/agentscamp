@@ -1,5 +1,6 @@
 ---
 term: "Guardrails"
+seoTitle: "What Are Guardrails?"
 description: "Guardrails are programmatic checks around an LLM — validating inputs and outputs in code — enforcing safety and format rules a prompt alone can't guarantee."
 summary: "Guardrails are deterministic code wrapped around a model that validates what goes in and what comes out, which is the difference between asking for a rule and enforcing it. Everything inside the model is probabilistic, and rails sit outside that uncertainty. They layer at three chokepoints: input, output, and tool execution."
 date: 2026-06-11

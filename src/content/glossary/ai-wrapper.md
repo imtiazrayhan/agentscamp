@@ -1,5 +1,6 @@
 ---
 term: "AI Wrapper"
+seoTitle: "What Is an AI Wrapper?"
 description: "An AI wrapper is a product whose core function is a prompt and interface around a third-party model API, such as Claude or GPT, rather than its own model."
 date: 2026-09-10
 topics: ["ai-at-work", "llm-app-dev"]

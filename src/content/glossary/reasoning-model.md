@@ -1,5 +1,6 @@
 ---
 term: "Reasoning Model"
+seoTitle: "What Is a Reasoning Model?"
 description: "A reasoning model is an LLM trained to think before answering — generating internal reasoning tokens it can spend adaptively on hard problems."
 summary: "A reasoning model generates internal thinking tokens that work the problem before it answers, and reinforcement learning taught it that the deliberation should change the conclusion rather than narrate it. That makes test-time compute a dial, and thinking tokens are billed as output, so match it to the task."
 date: 2026-06-11

@@ -1,5 +1,6 @@
 ---
 term: "AI Connectors"
+seoTitle: "What Are AI Connectors?"
 description: "AI connectors are the integrations that let an assistant like Claude read and act in tools such as Google Drive, Slack, and Notion; in Claude, MCP servers."
 date: 2026-09-10
 topics: ["ai-at-work", "mcp"]

@@ -1,5 +1,6 @@
 ---
 term: "AI Data Analyst"
+seoTitle: "What Is an AI Data Analyst?"
 description: "An AI data analyst is a tool that takes a data question, writes and runs the code or SQL to answer it, and returns a chart or summary you still have to check."
 date: 2026-09-10
 topics: ["ai-at-work", "data-ml"]

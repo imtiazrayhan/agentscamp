@@ -1,5 +1,6 @@
 ---
 term: "Semantic Layer"
+seoTitle: "What Is a Semantic Layer?"
 description: "A semantic layer defines business metrics, dimensions, and joins once, so every query and every AI agent computes the same number the same way."
 date: 2026-09-10
 topics: ["ai-at-work", "data-ml"]

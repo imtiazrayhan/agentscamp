@@ -17,6 +17,7 @@ related:
 - agent:exit-ticket-reviewer
 summary: Formative assessment gathers feedback during learning so teachers and learners can adjust next steps; an AI draft still needs educator review.
 term: Formative assessment
+seoTitle: "What Is Formative Assessment?"
 ---
 
 **Formative assessment gathers feedback during learning so teachers and learners can adjust what happens next.** It often has low or no point value. Summative assessment evaluates learning at the end of a unit against a standard, although that feedback may later inform learning too. [Carnegie Mellon's overview](https://www.cmu.edu/teaching/assessment/basics/formative-summative.html) explains the distinction by purpose and use.

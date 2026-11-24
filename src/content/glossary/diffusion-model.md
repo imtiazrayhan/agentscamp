@@ -1,5 +1,6 @@
 ---
 term: "Diffusion Model"
+seoTitle: "What Is a Diffusion Model?"
 description: "A diffusion model generates an image by starting from random noise and removing it step by step, guided by a prompt, until a coherent picture remains."
 date: 2026-09-10
 topics: ["multimodal-ai", "data-ml"]

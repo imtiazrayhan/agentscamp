@@ -1,5 +1,6 @@
 ---
 term: "AI Gateway (LLM Gateway)"
+seoTitle: "What Is an AI Gateway (LLM Gateway)?"
 description: "An AI gateway is a proxy between your apps and model providers that centralizes keys, routing, fallback, caching, rate limits, logging and cost tracking."
 date: 2026-11-13
 topics: ["llm-app-dev", "mlops-ai-infra"]

@@ -1,5 +1,6 @@
 ---
 term: "Design Tokens"
+seoTitle: "What Are Design Tokens?"
 description: "Design tokens are named values for a design system's decisions — color, spacing, type, radius — stored once and referenced everywhere instead of hardcoded."
 date: 2026-09-10
 topics: ["ai-at-work", "multimodal-ai"]
