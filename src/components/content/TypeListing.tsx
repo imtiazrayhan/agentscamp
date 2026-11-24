@@ -223,6 +223,10 @@ export function TypeListing({
           </nav>
         )}
       </PageHeader>
+      {/* The cards are h3s; without this they sit under "Browse by pricing". */}
+      <Eyebrow as="h2" className="mb-4">
+        All {def.label.toLowerCase()}
+      </Eyebrow>
       <ListingView
         items={items}
         pageSize={LISTING_PAGE_SIZE}

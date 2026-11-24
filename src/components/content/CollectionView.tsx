@@ -5,6 +5,18 @@ import { collectionGraph, type Crumb, jsonLdHtml } from "@/lib/seo/jsonld";
 import { latestDate } from "@/lib/content";
 import type { ContentItem } from "@/lib/content/types";
 import { PageHeader } from "./PageHeader";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { contentTypes } from "@/lib/content/registry";
+
+/** "64 guides", "1 tool", "355 items" — the grid's heading. */
+function countLabel(items: ContentItem[]): string {
+  const n = items.length;
+  const types = new Set(items.map((i) => i.type));
+  if (types.size !== 1) return `${n} ${n === 1 ? "item" : "items"}`;
+  const def = contentTypes[items[0].type];
+  const plural = def.id === "glossary" ? "terms" : def.label;
+  return `${n} ${(n === 1 ? def.singular : plural).toLowerCase()}`;
+}
 
 /**
  * Server-rendered collection page (category / topic / facet landings). Emits the
@@ -54,11 +66,17 @@ export function CollectionView({
         {intro}
       </PageHeader>
       {list ?? (
-        <ContentGrid>
-          {items.map((item) => (
-            <ContentCard key={item.href} item={item} showType={mixedTypes} />
-          ))}
-        </ContentGrid>
+        <>
+          {/* Keeps the outline h1 > h2 > h3: cards are h3s. */}
+          <Eyebrow as="h2" className="mb-4">
+            {countLabel(items)}
+          </Eyebrow>
+          <ContentGrid>
+            {items.map((item) => (
+              <ContentCard key={item.href} item={item} showType={mixedTypes} />
+            ))}
+          </ContentGrid>
+        </>
       )}
     </div>
   );

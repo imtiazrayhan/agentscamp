@@ -3,23 +3,27 @@ import Link from "next/link";
 import { getContentByType } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { glossaryHubGraph, jsonLdHtml } from "@/lib/seo/jsonld";
+import { listingSeo, listingDescription } from "@/lib/seo/listing";
 import { Breadcrumbs } from "@/components/content/Breadcrumbs";
+import { FaqSection } from "@/components/content/FaqSection";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { PageHeader } from "@/components/content/PageHeader";
 
-const DESCRIPTION =
-  "Plain-language definitions of the AI and LLM-engineering terms that matter — RAG, MCP, agents, fine-tuning, guardrails, and more — each linked to the deeper guide.";
+const seo = listingSeo.glossary;
 
-export const metadata: Metadata = buildPageMetadata({
-  title: "AI Glossary",
-  description: DESCRIPTION,
-  path: "/glossary",
-});
+export function generateMetadata(): Metadata {
+  return buildPageMetadata({
+    title: seo.seoTitle,
+    description: listingDescription("glossary", getContentByType("glossary").length),
+    path: "/glossary",
+  });
+}
 
 export default function Page() {
   const items = [...getContentByType("glossary")].sort((a, b) =>
     a.title.localeCompare(b.title),
   );
+  const description = listingDescription("glossary", items.length);
 
   // Group A–Z by first character of the display term.
   const groups = new Map<string, typeof items>();
@@ -36,7 +40,7 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: jsonLdHtml(glossaryHubGraph(items, DESCRIPTION)),
+          __html: jsonLdHtml(glossaryHubGraph(items, description, seo.faq)),
         }}
       />
       <Breadcrumbs
@@ -45,7 +49,11 @@ export default function Page() {
       <PageHeader
         title="AI Glossary"
         lead={`${items.length} AI and LLM-engineering terms, defined precisely — answer first, with the deeper guide linked.`}
-      />
+      >
+        <p className="measure mt-4 text-base leading-relaxed text-muted-foreground">
+          {seo.intro}
+        </p>
+      </PageHeader>
 
       <nav aria-label="Jump to letter" className="mb-8 flex flex-wrap gap-2">
         {letters.map((l) => (
@@ -82,6 +90,8 @@ export default function Page() {
           </section>
         ))}
       </div>
+
+      <FaqSection faq={seo.faq} />
     </div>
   );
 }

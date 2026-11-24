@@ -25,10 +25,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name} — ${site.tagline}`, template: `%s — ${site.name}` },
   description: site.description,
-  alternates: {
-    canonical: "/",
-    types: { "application/rss+xml": `${site.url}/feed.xml` },
-  },
+  // No `alternates` here: a canonical set in the layout is inherited by every
+  // route that doesn't declare its own (the 404 pointed at the home page).
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,

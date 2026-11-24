@@ -25,9 +25,11 @@ glossary `<title>` = "What Is {Term}?".
   `reviewed`; pages say "Published" unless `updated` is set, plus "Reviewed" when newer
   (`pageDates()` in lib/format); byline + Person url → /about#who-writes-this; breadcrumbs
   drop single-item category crumbs for every type (was tools only).
+- E: /glossary uses `listingSeo.glossary` (description, intro, visible FAQ + FAQPage);
+  h2 above the card grids (collections + listings); home canonical moved from the layout
+  to the home page (404 no longer canonicalizes to /); robots.ts /raw comment corrected.
 
 ## Next
-- E: /glossary hub SEO copy + FAQ, h2 above grids, home-only canonical, robots comment.
 - Verify: validate, lint, build, scratchpad HTML checks (links, h1, TOC ids, lengths, JSON-LD).
 
 # Contact form (/contact) via Resend — 2026-11-23 — LIVE

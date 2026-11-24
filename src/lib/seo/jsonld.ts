@@ -354,27 +354,32 @@ export function collectionGraph(opts: {
     breadcrumbNode(crumbs, crumbId(path)),
     itemList,
   ];
-  // Tie the visible listing FAQ into the same connected graph (AEO/GEO). Only
-  // emitted alongside the rendered <FaqSection>, never hidden-only markup.
-  if (faq?.length) {
-    nodes.push({
-      "@type": "FAQPage",
-      "@id": entityId(path, "faqpage"),
-      isPartOf: { "@id": pageId(path) },
-      mainEntity: faq.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    });
-  }
+  if (faq?.length) nodes.push(hubFaqNode(path, faq));
   return { "@context": "https://schema.org", "@graph": nodes };
+}
+
+/**
+ * Ties a hub page's visible FAQ into its connected graph (AEO/GEO). Only
+ * emitted alongside the rendered <FaqSection>, never hidden-only markup.
+ */
+function hubFaqNode(path: string, faq: { q: string; a: string }[]): Node {
+  return {
+    "@type": "FAQPage",
+    "@id": entityId(path, "faqpage"),
+    isPartOf: { "@id": pageId(path) },
+    mainEntity: faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
 }
 
 /** @graph for the /glossary hub: CollectionPage + DefinedTermSet + every term. */
 export function glossaryHubGraph(
   items: ContentItem[],
   description: string,
+  faq: { q: string; a: string }[] = [],
 ): Node {
   const path = "/glossary";
   const setId = `${site.url}/glossary#set`;
@@ -408,6 +413,7 @@ export function glossaryHubGraph(
           url: canonicalUrl(i),
         })),
       },
+      ...(faq.length ? [hubFaqNode(path, faq)] : []),
     ],
   };
 }

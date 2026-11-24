@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   getCountsByType,
@@ -21,6 +22,7 @@ import { CopyButton } from "@/components/content/CopyButton";
 import { getColorClasses, cn } from "@/lib/utils";
 import { Panel } from "@/components/ui/panel";
 import { Badge } from "@/components/ui/badge";
+import { site } from "@/lib/site";
 
 // The CLI is a secondary path — it lives in the strip at the bottom of the page.
 const CLI_CMD = "npx agentscamp add skills/dependency-audit";
@@ -88,6 +90,13 @@ function BentoTile({
     </Panel>
   );
 }
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    types: { "application/rss+xml": `${site.url}/feed.xml` },
+  },
+};
 
 export default function Home() {
   const counts = getCountsByType();
