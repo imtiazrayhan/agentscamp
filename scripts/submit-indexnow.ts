@@ -34,12 +34,41 @@ import { site } from "../src/lib/site";
 
 const ENDPOINT = "https://api.indexnow.org/indexnow";
 const CONTENT_PREFIX = "src/content/";
-// Direct source→route edits we can resolve precisely (component-level changes
-// that ripple across many pages are not tracked here — use --all for those).
+// Direct source→route edits we can resolve precisely. Sitewide SEO/metadata
+// changes (tracked by SITEWIDE_SEO_PREFIXES below) refresh the main hub URLs;
+// use --all if a template edit affects every detail page.
 const STATIC_FILE_ROUTES: Record<string, string> = {
   "src/app/page.tsx": "",
   "src/app/how-to-use/page.tsx": "/how-to-use",
+  "src/app/about/page.tsx": "/about",
+  "src/app/contact/page.tsx": "/contact",
+  "src/app/topics/page.tsx": "/topics",
+  "src/app/for/page.tsx": "/for",
+  "src/app/glossary/page.tsx": "/glossary",
 };
+
+const SITEWIDE_SEO_FILES = [
+  "src/lib/seo/",
+  "src/lib/site.ts",
+  "src/app/layout.tsx",
+  "src/components/layout/Footer.tsx",
+];
+
+const HUB_PATHS = [
+  "",
+  "/guides",
+  "/tools",
+  "/glossary",
+  "/agents",
+  "/skills",
+  "/commands",
+  "/topics",
+  "/for",
+  "/about",
+  "/llms.txt",
+  "/feed.xml",
+  "/guides/feed.xml",
+];
 
 const args = new Set(process.argv.slice(2));
 const dryRun = args.has("--dry-run");
@@ -75,8 +104,8 @@ function resolveKey(): string {
 function allLivePaths(): string[] {
   // sitemap() emits `${site.url}${path}`, so the home page slices to "".
   const paths = sitemap().map((e) => e.url.slice(site.url.length));
-  // Submittable but deliberately not in the sitemap (not an HTML page).
-  return [...paths, "/feed.xml"];
+  // Submittable discovery endpoints deliberately omitted from the HTML sitemap.
+  return [...paths, "/feed.xml", "/guides/feed.xml", "/llms.txt"];
 }
 
 function gitRefExists(ref: string): boolean {
@@ -117,6 +146,8 @@ function changedPaths(files: string[], live: Set<string>): Set<string> {
   const out = new Set<string>();
   const affectedListings = new Set<string>();
   let contentChanged = false;
+  let guidesChanged = false;
+  let sitewideSeoChanged = false;
 
   for (const file of files) {
     if (file.startsWith(CONTENT_PREFIX)) {
@@ -129,18 +160,34 @@ function changedPaths(files: string[], live: Set<string>): Set<string> {
         const parts = rel.split("/");
         affectedListings.add(`/${parts[0]}`); // e.g. /agents
         if (parts.length === 3) affectedListings.add(`/${parts[0]}/${parts[1]}`);
+        if (parts[0] === "guides") guidesChanged = true;
+        // Tool edits also affect their /alternatives page when indexable.
+        if (parts[0] === "tools" && parts.length === 2) {
+          const altsPath = `${urlPath}/alternatives`;
+          if (live.has(altsPath)) out.add(altsPath);
+        }
       }
     } else if (file in STATIC_FILE_ROUTES) {
       out.add(STATIC_FILE_ROUTES[file]);
+    } else if (SITEWIDE_SEO_FILES.some((p) => file.startsWith(p))) {
+      sitewideSeoChanged = true;
     }
   }
 
-  // The home page (featured/recent) and the type listings render the changed
-  // items, so refresh those too.
+  // The home page (featured/recent), RSS feeds, and affected type listings
+  // render the changed items, so refresh those too.
   if (contentChanged) {
     out.add("");
+    out.add("/feed.xml");
+    if (guidesChanged) out.add("/guides/feed.xml");
     for (const listing of affectedListings) {
       if (live.has(listing)) out.add(listing);
+    }
+  }
+
+  if (sitewideSeoChanged) {
+    for (const hub of HUB_PATHS) {
+      if (live.has(hub)) out.add(hub);
     }
   }
 

@@ -24,6 +24,7 @@ name: Tamr
 url: https://www.tamr.com/
 pricing: enterprise
 category: data
+alternativeTo: ["dedupe"]
 os:
 - Web
 seoDescription: Evaluate Tamr with source-preserving pilot cases, unresolved venue candidates, named reviewers

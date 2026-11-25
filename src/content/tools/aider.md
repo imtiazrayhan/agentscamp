@@ -46,3 +46,5 @@ Add files to the chat, request a change, then review the diff and the auto-commi
 ## Good to know
 
 Aider is free and open source (Apache-2.0), but you supply your own model API key, so usage costs depend on the provider and model you choose.
+
+For a head-to-head comparison with Anthropic's terminal agent, read [Aider vs Claude Code](/guides/comparisons/aider-vs-claude-code), see how it fits the wider terminal field in [AI Coding Agents in 2026](/guides/prompting/ai-coding-agents-cli-2026), or browse [Aider alternatives](/tools/aider/alternatives).

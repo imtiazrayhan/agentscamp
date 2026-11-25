@@ -12,6 +12,7 @@ name: "SurveyMonkey"
 url: "https://www.surveymonkey.com/"
 pricing: "freemium"
 category: "workflow"
+alternativeTo: ["typeform"]
 os: ["Web"]
 seoDescription: "Evaluate a SurveyMonkey form using approved routes, known response cases and the chosen account’s actual availability."
 ---

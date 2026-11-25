@@ -58,3 +58,5 @@ Replit runs entirely in the browser (plus a mobile app), so there is nothing to 
 
 > [!WARNING]
 > Credits are a shared pool covering Agent runs, hosting, database compute, and data transfer — and on Core they expire each billing cycle rather than rolling over. Replit uses effort-based pricing per checkpoint: simple edits are cheap, but complex multi-component builds cost proportionally more, so real monthly spend depends heavily on how much you build and how ambitious your prompts are.
+
+Compare Replit Agent against [Bolt](/tools/bolt), [Lovable](/tools/lovable), and [v0](/tools/v0), or browse [Replit Agent alternatives](/tools/replit-agent/alternatives) to weigh hosted full-stack builders by pricing and export control.

@@ -12,7 +12,7 @@ topics: ["ai-at-work", "ai-agents-systems"]
 audience: ["sales"]
 tags: ["gong", "revenue-intelligence", "conversation-intelligence", "mcp", "forecasting"]
 featured: false
-alternativeTo: ["fireflies"]
+alternativeTo: ["fireflies", "fathom", "granola", "otter-ai", "outreach"]
 sameAs: ["https://www.gong.io/pricing", "https://mcp.gong.io/mcp"]
 related: ["guide:claude-for-sales-teams", "guide:best-ai-sales-tools-2026", "tool:fireflies", "tool:outreach", "tool:nooks", "glossary:revenue-intelligence", "glossary:conversation-intelligence"]
 keywords: ["Gong", "Gong pricing", "Gong MCP server", "revenue intelligence", "conversation intelligence", "Gong Agents"]

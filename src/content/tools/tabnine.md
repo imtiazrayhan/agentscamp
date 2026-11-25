@@ -52,3 +52,5 @@ Tabnine works in VS Code, JetBrains IDEs (IntelliJ, PyCharm, WebStorm, GoLand, R
 
 > [!NOTE]
 > The air-gapped and on-premises deployment options are the reason most teams choose Tabnine over a cloud-only assistant. If full code isolation is not a requirement for you, a simpler cloud tool may be a closer fit.
+
+See how Tabnine compares to [GitHub Copilot](/tools/github-copilot), [Continue](/tools/continue), and [Cody](/tools/cody) in [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026), or browse [Tabnine alternatives](/tools/tabnine/alternatives).

@@ -73,3 +73,5 @@ Playwright MCP is free and open source under Apache-2.0; you run it locally via 
 
 > [!WARNING]
 > A browser agent can navigate to and act on any site it is pointed at. Run it against your own apps and trusted URLs, pass `--isolated` to run untrusted pages in an ephemeral profile (the default profile is persistent and retains your login state), and use `--allowed-origins` / `--blocked-origins` to limit which origins it can request — note these are best-effort filters, not a hard security boundary, and do not affect redirects.
+
+Configure it with [Adding MCP Servers to Claude Code](/guides/mcp/claude-code-mcp-setup), compare it with other browser automation servers in [The Best MCP Servers in 2026](/guides/mcp/best-mcp-servers-2026), or browse [Playwright MCP alternatives](/tools/playwright-mcp/alternatives).

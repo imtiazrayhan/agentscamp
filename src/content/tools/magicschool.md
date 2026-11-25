@@ -21,10 +21,9 @@ title: MagicSchool
 url: https://www.magicschool.ai
 pricing: freemium
 category: assistant
+alternativeTo: ["chatgpt", "claude", "gemini", "notebooklm"]
 os:
 - Web
-alternativeTo:
-- chatgpt
 ---
 
 MagicSchool offers education-specific AI drafting tools for lesson plans, worksheets, quizzes, and rubrics. Educators can shape inputs around a subject, grade, and instructional goal. [Its tool directory](https://www.magicschool.ai/magic-tools) describes these surfaces.

@@ -25,6 +25,7 @@ name: Dedupe
 url: https://docs.dedupe.io/
 pricing: open-source
 category: data
+alternativeTo: ["tamr"]
 repo: https://github.com/dedupeio/dedupe
 license: MIT
 os: []

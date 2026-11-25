@@ -3,6 +3,7 @@ title: "vLLM vs Ollama: Local Convenience or Serving Throughput? (2026)"
 description: "vLLM vs Ollama compared — developer-friendly local runtime vs high-throughput production inference engine. Concurrency, hardware, and when to graduate."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-25
 color: "green"
 topics: ["mlops-ai-infra"]
 audience: ["developers"]
@@ -50,6 +51,28 @@ vLLM vs Ollama looks like a versus and is really a **graduation path**. Both ser
 | Setup | One command | Serving config & provisioning |
 | Scale-out | Single node | Tensor/pipeline parallel, multi-GPU |
 | API | OpenAI-compatible | OpenAI-compatible |
+
+## Why concurrency changes everything
+
+For a single developer sending one prompt at a time, token generation is bound by GPU memory bandwidth — Ollama and vLLM feel roughly similar on the same card. The moment 10, 50, or 200 requests arrive together, naive serving stalls on two bottlenecks that vLLM was built to eliminate:
+
+- **KV-cache fragmentation:** every in-flight request reserves [KV cache](/glossary/kv-cache) proportional to its context length. Pre-allocating contiguous memory wastes huge chunks of VRAM and caps concurrency early. vLLM's **PagedAttention** stores KV blocks like virtual memory pages, packing far more active sequences onto the same GPU.
+- **Batch starvation:** static batching waits for the longest output in a batch to finish before starting new requests. vLLM's **continuous batching** swaps finished requests out and new requests in at every token step, keeping tensor cores busy while cutting tail latency (`p95` time-to-first-token).
+
+## Hardware and quantization trade-offs
+
+Your target hardware often picks the runtime for you:
+
+- **Laptops, Apple Silicon, and CPU-only boxes → Ollama.** Ollama's GGUF ecosystem (`Q4_K_M`, `Q5_K_M`, `Q8_0`) runs smoothly on unified memory (Mac Studio / MacBook Pro) and consumer NVIDIA GPUs with zero driver gymnastics.
+- **Linux servers with NVIDIA/AMD datacenter GPUs → vLLM.** vLLM shines on L40S, A100, H100, and H200 nodes with FP16/BF16, FP8, AWQ, or GPTQ weights, prefix caching (`--enable-prefix-caching`) for shared system prompts, and tensor parallelism (`--tensor-parallel-size`) when a 70B+ model spans multiple GPUs.
+
+## Graduating from Ollama to vLLM cleanly
+
+Because both expose an OpenAI-compatible `/v1/chat/completions` endpoint, application code barely changes — keep `OPENAI_BASE_URL` and `MODEL_NAME` in environment variables from day one. When moving to vLLM, plan three concrete steps:
+
+1. **Swap artifact formats:** replace your Ollama GGUF tag with the matching Hugging Face model repo (or quantized FP8/AWQ checkpoint) and pin the exact revision.
+2. **Enable prefix caching if you share long system prompts or tool schemas:** it cuts prefill latency and boosts effective throughput for agent loops.
+3. **Load-test with your real prompt/output distribution:** synthetic short prompts hide KV-cache pressure; replay realistic context lengths and concurrent users, tracking `p95` TTFT and inter-token latency (ITL) before cutting traffic over.
 
 ## How to actually choose
 

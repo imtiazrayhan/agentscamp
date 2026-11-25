@@ -3,6 +3,7 @@ title: "RAG vs Long Context: Do Million-Token Windows Kill Retrieval?"
 description: "Million-token context windows promised the end of RAG. The honest 2026 answer: long context changed where retrieval starts paying, not whether it does."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-25
 color: "green"
 topics: ["rag-retrieval"]
 audience: ["ai-engineers"]
@@ -36,6 +37,27 @@ Every context-window leap re-asks the question: with a million [tokens](/glossar
 **Attention.** "Fits" ≠ "is used well." Needle-in-haystack scores are near-perfect; *synthesis* across a packed window is not — mid-context content measurably underperforms, and distractor-rich windows degrade hard reasoning. A focused 8K context still beats a 500K one containing the same answer somewhere — the core claim of [context engineering](/guides/prompting/context-engineering), unrepealed.
 
 **Governance.** Retrieval is where per-user permissions, tenancy, and audit live ("retrieve only documents this user may see"). A stuffed prompt has no row-level security.
+
+## Quick decision matrix
+
+| Signal | Favor Long Context | Favor RAG (or Hybrid) |
+| --- | --- | --- |
+| Corpus size | Fits comfortably in <200K–300K tokens | Millions of tokens or growing continuously |
+| Update cadence | Static per session or updated infrequently | Documents change hourly or per transaction |
+| Access control | Single permission scope for the whole pack | Per-user / per-tenant ACLs required |
+| Query volume | Low-to-moderate volume on a shared prefix | High QPS where per-token cost compounds |
+| Task shape | Whole-document synthesis, cross-referencing | Targeted lookup, citations across many files |
+| Latency target | Multi-second TTFT is acceptable | Sub-second to ~1s TTFT matters |
+
+## Prompt caching: what it solves and what it does not
+
+[Prompt caching](/glossary/prompt-caching) is the main reason long context beats small-scale RAG today — when the same static document pack sits at the front of the prompt across many queries, cached input tokens are heavily discounted and prefill latency drops.
+
+Caching stops saving you in three common production situations:
+
+1. **Prefix churn:** editing even one document near the top of the stuffed corpus invalidates the cache downstream, forcing a full-price prefill.
+2. **Low hit-rate / short TTL:** if each user queries a different document once every twenty minutes, cache entries expire before reuse and you pay full uncached input rates every call.
+3. **Per-user authorization:** if User A and User B have slightly different allowed subsets of a shared workspace, they cannot share the same cached prefix — you either rebuild caches per user or fall back to retrieval with ACL filtering.
 
 ## Where long context honestly won
 

@@ -12,6 +12,7 @@ name: "Argilla"
 url: "https://docs.argilla.io/"
 pricing: "open-source"
 category: "data"
+alternativeTo: ["label-studio"]
 repo: "https://github.com/argilla-io/argilla"
 license: "Apache-2.0"
 os: ["Web"]

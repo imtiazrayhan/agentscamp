@@ -22,10 +22,9 @@ title: Adobe Podcast
 url: https://podcast.adobe.com
 pricing: freemium
 category: voice
+alternativeTo: ["descript", "elevenlabs", "veed"]
 os:
 - Web
-alternativeTo:
-- descript
 ---
 
 Adobe Podcast provides browser recording, transcription, and text-based editing. Its Enhance Speech feature filters unwanted noise and artifacts in existing speech; Adobe says results depend on how audible the original speech is and the background noise. It does not translate speech or generate it across languages. [Adobe's Podcast FAQ](https://helpx.adobe.com/podcast/adobe-podcast-faq.html) describes these capabilities and limits.

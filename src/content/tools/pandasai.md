@@ -13,7 +13,7 @@ topics: ["ai-at-work", "data-ml"]
 audience: ["analysts"]
 tags: ["python", "pandas", "text-to-sql", "open-source", "dataframes"]
 featured: false
-alternativeTo: ["vanna"]
+alternativeTo: ["vanna", "julius", "deepnote", "hex"]
 sameAs: ["https://github.com/sinaptik-ai/pandas-ai", "https://docs.pandas-ai.com", "https://pypi.org/project/pandasai/"]
 related: ["guide:claude-for-data-analysis", "guide:best-ai-tools-for-data-analysts-2026", "guide:best-text-to-sql-tools-2026", "tool:vanna", "tool:julius", "glossary:code-execution", "glossary:text-to-sql"]
 keywords: ["PandasAI", "chat with dataframe", "pandas AI", "natural language data analysis", "PandasAI license"]

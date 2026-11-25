@@ -12,7 +12,7 @@ topics: ["ai-at-work", "workflow-prompting", "multimodal-ai"]
 audience: ["marketers"]
 tags: ["video", "short-form", "repurposing", "clipping", "social-media", "mcp"]
 featured: false
-alternativeTo: ["descript"]
+alternativeTo: ["descript", "veed", "runway", "luma"]
 sameAs: ["https://help.opus.pro"]
 related: ["guide:claude-code-for-marketers", "guide:best-ai-tools-for-marketers-2026", "tool:descript", "skill:content-repurposer", "command:repurpose", "guide:claude-code-mcp-setup"]
 keywords: ["Opus Clip", "OpusClip", "AI video clipping", "long to short video", "Opus Clip pricing"]

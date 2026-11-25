@@ -3,6 +3,7 @@ title: "Best Speech-to-Text APIs in 2026"
 description: "The STT field, honestly ranked — Deepgram and AssemblyAI's hosted duel, Whisper as the open baseline, Cartesia Ink for latency — and how to pick by workload."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-25
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra"]
 audience: ["ai-engineers"]
@@ -43,6 +44,29 @@ related: ["tool:deepgram", "tool:assemblyai", "tool:whisper", "tool:cartesia", "
 **Batch + understanding → [AssemblyAI](/tools/assemblyai).** Universal-3 Pro's *promptability* — steer transcription with context and keyterms — is the accuracy story of 2026, and the platform around it (summarization, sentiment, speaker ID, translation, PII redaction in 50+ languages) turns audio archives into queryable, compliant data. When transcription is the input to analysis, this stack is the shortcut.
 
 **Self-hosted → [Whisper](/tools/whisper).** MIT weights, ~99 languages, and an ecosystem (faster-whisper, whisper.cpp) that runs it from datacenter to laptop. The honest 2026 status: no new generation since turbo, so hosted models lead on accuracy and features — but nothing touches it when audio can't leave your infrastructure or volume makes per-hour pricing sting.
+
+## Streaming vs batch: different architectures, different failure modes
+
+Picking the right API starts with separating **streaming** from **batch** pipelines:
+
+- **Streaming STT** sends 20–100ms audio frames over a persistent WebSocket and receives *interim* hypotheses followed by *final* utterances. Here, **endpointing** (deciding when a speaker finished a thought versus paused to breathe) matters as much as word error rate (WER). Aggressive endpointing cuts users off mid-sentence; conservative endpointing adds awkward half-second silences to every turn.
+- **Batch STT** uploads a finished recording (or URL) and optimizes for accuracy, speaker diarization, punctuation, and downstream intelligence (summaries, topics, compliance redaction). Latency is measured in seconds-per-hour-of-audio rather than milliseconds, so you can afford heavier models and second-pass alignment.
+
+## Accuracy levers that actually move WER
+
+Most teams blame the base model when the real accuracy gains sit in audio prep and configuration:
+
+- **Domain vocabulary and keyterm prompting:** product names, medical/legal jargon, and customer names cause a disproportionate share of painful errors. Promptable models (such as AssemblyAI's Universal-3 Pro) and keyterm boosting features often cut domain-specific errors far more than switching base providers.
+- **Telephony vs wideband audio:** 8kHz narrowband phone calls with background noise behave completely differently from clean 48kHz podcast mics. Always pass the native encoding without redundant lossy re-compression, and verify whether your provider offers a dedicated telephony acoustic model.
+- **Speaker diarization on overlapping speech:** cross-talk in sales calls and support recordings is where diarization breaks down. If you have dual-channel (stereo) call recordings — agent on channel 0, customer on channel 1 — use **multichannel transcription** instead of mono diarization; it eliminates speaker-attribution errors completely.
+
+## Self-hosting Whisper: the real trade-offs
+
+Running `faster-whisper` or `whisper.cpp` looks cheap on paper, so account for the operational checklist upfront:
+
+- **Voice Activity Detection (VAD) is mandatory:** raw Whisper famously hallucinates repeated phrases ("Thank you for watching", subtitles) during silent stretches. Always run Silero VAD or WebRTC VAD ahead of inference.
+- **GPU utilization vs latency:** batching long recordings maximizes GPU utilization for archive jobs, whereas realtime streaming requires dedicated capacity that sits idle during off-peak hours.
+- **Diarization is a separate pipeline:** Whisper does not identify speakers natively; you will need a companion model (such as pyannote) and alignment logic if you need speaker labels.
 
 ## How to actually choose
 

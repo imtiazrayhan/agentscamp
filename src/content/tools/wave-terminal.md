@@ -33,3 +33,5 @@ Beyond running commands, Wave can preview images, markdown, audio, video, HTML, 
 **Wave AI** is a context-aware assistant with access to your terminal output, widgets, and filesystem, so it can explain errors, suggest commands, and read or edit files in context. It is provider-agnostic and uses a bring-your-own-key approach: connect cloud models from OpenAI, Anthropic (Claude), Gemini, Azure, or Perplexity, or run local models through Ollama and LM Studio. You can call it from the UI or via the `wsh ai` command, and it integrates with Claude Code workflows.
 
 Wave is licensed under **Apache-2.0** and keeps your data on-device, with no required cloud account to use the terminal. It is a strong fit for developers who want a modern, graphical terminal with built-in AI without giving up an open-source, self-hostable stack.
+
+For an alternative AI-enabled terminal, compare [Warp](/tools/warp); to run local models inside Wave AI, see [Best Tools for Running LLMs Locally](/guides/comparisons/best-local-llm-tools-2026) or pair it with [Installing Claude Code](/guides/getting-started/installing-claude-code).

@@ -3,6 +3,7 @@ title: "Best Text-to-Speech APIs in 2026"
 description: "The TTS APIs worth building on — ElevenLabs for quality and breadth, Cartesia Sonic for realtime latency — and how to choose for agents vs produced audio."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-25
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra"]
 tags: ["tts", "voice", "best-of", "comparison"]
@@ -42,6 +43,30 @@ audience: ["ai-engineers", "marketers"]
 **[Cartesia](/tools/cartesia)** attacks from the latency end: Sonic's state-space architecture was built streaming-first, with vendor-claimed sub-100ms model latency and ~190ms end-to-end — numbers that translate directly into conversational naturalness. Sonic 3.5 added 42 languages and emotion/laughter controls, narrowing the expressiveness gap while keeping the speed thesis. For [voice agents](/guides/voice/build-a-voice-agent), it's the specialist pick.
 
 **The integrated options** matter when pipeline simplicity beats peak quality: Deepgram's Aura rides shotgun with its STT for one-vendor agent stacks, and the platform layers — [LiveKit Inference](/tools/livekit), [Vapi](/tools/vapi), [AssemblyAI's Voice Agent API](/tools/assemblyai) — make TTS a config field rather than an integration.
+
+## Latency budgets for live voice agents
+
+In a live conversation, users judge the **total turn delay**, not the TTS model in isolation. Every turn stacks four stages:
+
+1. **Endpointing and [STT](/glossary/speech-to-text):** detecting that the caller stopped speaking and emitting the final transcript.
+2. **LLM time-to-first-token:** generating the opening phrase of the reply.
+3. **TTS time-to-first-audio (TTFA):** synthesizing the first playable audio frame over a streaming WebSocket.
+4. **Network and playback buffering:** jitter buffers, telephony transcoding (e.g., 8kHz μ-law), and regional hops.
+
+Because those stages add up, a TTS provider that looks "only" 250ms slower in a standalone demo often pushes a voice agent over the ~700–800ms conversational comfort threshold where callers start saying "hello?" or talking over the bot. Always connect to the TTS WebSocket **ahead of time** (or stream LLM tokens directly into a persistent TTS session) so TLS and handshake overhead never land inside a turn, and test from the region where your telephony or WebRTC media servers actually terminate.
+
+## Quality, pronunciation, and edge cases
+
+Produced audio and customer-facing agents fail in predictable places that polished vendor demos hide:
+
+- **Numbers, currencies, and acronyms:** phone numbers, order IDs, ISO dates, and ticker symbols frequently get read digit-by-digit or mispronounced unless normalized in text before synthesis.
+- **Barge-in and truncation:** voice agents must stop audio playback immediately when a user interrupts and track *how much of the text was actually spoken* so the LLM conversation history stays truthful.
+- **Voice stability on long generations:** some expressive models drift in pace, pitch, or accent over multi-paragraph narration; test 2–3 minute continuous passages, not 8-second clips.
+- **Multilingual code-switching:** if your users mix brand names or technical terms into a non-English language, test those exact mixed sentences across candidates — language count on a marketing page rarely predicts code-switching quality.
+
+## Architecture and switching without lock-in
+
+Treat TTS as a **thin, swappable adapter** behind a small interface (`synthesizeStream(textStream, voiceId) -> audioFrames`). Store voice IDs in configuration rather than hardcoding them in prompts or business logic, and log per-turn `ttfa_ms`, total synthesis time, and audio format alongside your LLM traces. When a provider ships a faster model or changes pricing, a thin wrapper lets you shadow-test or route a percentage of traffic without rewriting your agent loop.
 
 ## How to actually choose
 

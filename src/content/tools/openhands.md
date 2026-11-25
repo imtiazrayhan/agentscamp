@@ -43,3 +43,5 @@ OpenHands began as **OpenDevin**, a community response to Cognition's proprietar
 ## Status and licensing
 
 The project was renamed from OpenDevin to OpenHands in 2024 and is maintained by the OpenHands company (formerly All Hands AI), led by CEO Robert Brennan, Chief Scientist Graham Neubig, and Chief AI Officer Xingyao Wang. The core repository is MIT-licensed; the hosted OpenHands Cloud is a separate commercial offering. OpenHands Cloud is a managed SaaS with a free individual tier and paid enterprise/self-hosted plans.
+
+Compare OpenHands with [SWE-agent](/tools/swe-agent) and [Devin](/tools/devin), read [Best Claude Code Alternatives](/guides/comparisons/best-claude-code-alternatives-2026) for the broader autonomous agent field, or browse [OpenHands alternatives](/tools/openhands/alternatives).

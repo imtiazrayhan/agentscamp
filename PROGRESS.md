@@ -1,4 +1,19 @@
-# GEO & SEO Quick Wins (Markdown twins, Schema, Hubs, Entity Signals) — 2026-11-25 — VERIFIED
+# SEO/GEO Growth Wave: Alternatives, Thin Guides, Tool Links & IndexNow — 2026-11-25 — PUSHED
+
+Goal: unlock high-intent `/tools/[slug]/alternatives` pages, deepen the thinnest flagship guides, add contextual body links to all 25 zero-link flagship tools, and fix IndexNow deploy coverage.
+
+## Done
+- **#3 Tool Alternatives (`src/content/tools/*.md`, 25 files):** wired verified, same-job `alternativeTo` links across 25 tools (`abbyy-finereader-pdf`, `adobe-podcast`, `boords`, `chrome-devtools-mcp`, `claude-for-excel`, `deepl`, `dovetail`, `elicit`, `glean`, `gong`, `magicschool`, `miro`, `napkin-ai`, `opus-clip`, `pandasai`, `qwen3-vl`, `ragas`, `relume`, `remnote`, plus 1:1 sibling pairs `argilla`/`label-studio`, `dedupe`/`tamr`, `surveymonkey`/`typeform`), flipping **19** `/tools/[slug]/alternatives` pages from `noindex` into the index and sitemap (225 → 244 indexable alternatives pages; sitemap = 1,471 URLs).
+- **#4 Thin Guides & Internal Linking (`src/content/guides/**` + `src/content/tools/*.md`):**
+  - Deepened the 5 thinnest flagship guides (`best-tts-apis-2026` 776w, `qdrant-vs-pinecone` 855w, `best-stt-apis-2026` 789w, `rag-vs-long-context` 698w, `vllm-vs-ollama` 781w) with concrete architecture trade-offs, decision matrices, failure modes, and `updated: 2026-11-25`.
+  - Added tailored contextual in-body internal links to all **25** flagship tools that previously had 0 body links (`aider`, `amp`, `baseten`, `cline`, `coderabbit`, `cody`, `continue`, `figma-mcp`, `gemini-cli`, `goose`, `kilo-code`, `lovable`, `marker`, `openhands`, `playwright-mcp`, `replit-agent`, `swe-agent`, `tabby`, `tabnine`, `v0`, `void`, `warp`, `wave-terminal`, `windsurf`, `zed`) — bringing 0-body-link tools from 25 down to 0.
+- **#5 IndexNow Automation (`scripts/submit-indexnow.ts`):** added `/about`, `/contact`, `/topics`, `/for`, `/glossary` to static route tracking; included `/tools/[slug]/alternatives` whenever a tool changes; added `/guides/feed.xml` and `/llms.txt` to discovery endpoints; and added hub-URL refresh when sitewide SEO/layout/site files change.
+
+## Verified
+- `npm run validate` (1,061 items, 0 errors, 47 pre-existing warnings), `npm run lint` (0 errors), `npx next build` (4,079/4,079 static pages).
+- Built HTML & `sitemap.xml` confirmed all 19 unlocked `/alternatives` pages are indexable and in the sitemap, all 5 deepened guides carry `updated: 2026-11-25`, and `npm run indexnow -- --dry-run` tracks changed tools, alternatives, guides, feeds, and hubs.
+
+# GEO & SEO Quick Wins (Markdown twins, Schema, Hubs, Entity Signals) — 2026-11-25 — PUSHED
 
 Goal: close the highest-impact technical SEO & AI-discoverability leaks left after the 2026-11-24 structure pass.
 

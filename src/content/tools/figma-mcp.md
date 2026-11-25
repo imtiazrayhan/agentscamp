@@ -58,3 +58,5 @@ Paste a Figma frame URL (or select a frame in the desktop app) and ask for the c
 ## Good to know
 
 The server is hosted and closed-source (the GitHub presence is a usage guide, not the implementation), free during a beta that was still running as of September 2026, with usage-based pricing signposted, and only clients in Figma's MCP Catalog may connect — Claude Code is among them. The popular community alternative, **Framelink** (`figma-developer-mcp`, MIT), reads designs via a Figma REST token with no seat requirements — read-only, but a fine fallback if the official server's plan gating bites.
+
+For an end-to-end setup walkthrough, follow [Figma to Code with Claude Code and the Figma MCP Server](/guides/design/figma-to-code-with-claude) and [Adding MCP Servers to Claude Code](/guides/mcp/claude-code-mcp-setup), or see [The Best MCP Servers in 2026](/guides/mcp/best-mcp-servers-2026).

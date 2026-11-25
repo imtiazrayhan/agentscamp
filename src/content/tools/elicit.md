@@ -12,7 +12,7 @@ url: "https://elicit.com/"
 pricing: "freemium"
 category: "assistant"
 os: ["Web"]
-alternativeTo: ["notebooklm"]
+alternativeTo: ["notebooklm", "perplexity", "claude", "chatgpt"]
 ---
 
 Elicit is an academic-research option to evaluate when your deliverable needs a selection record and a study evidence table. Begin with a question and eligibility criteria so you can judge whether the resulting papers answer the intended question.

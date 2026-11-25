@@ -40,3 +40,5 @@ Tabby is aimed at teams and organizations that want Copilot-style assistance but
 Licensing is split: the bulk of the codebase is Apache-2.0, while enterprise-edition code under the repository's `ee/` directory carries separate terms. Pricing follows a free Community tier (up to 5 users) with paid Team and Enterprise tiers for larger deployments and added administration, security, and support features.
 
 As of September 2026, development has visibly slowed: the last stable release was v0.32.0 in January 2026, and the VS Code extension has not been updated since April 2025.
+
+For self-hosted and enterprise IDE assistants, compare Tabby with [Continue](/tools/continue) and [Tabnine](/tools/tabnine) in [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026), or browse [Tabby alternatives](/tools/tabby/alternatives).

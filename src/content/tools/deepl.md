@@ -11,6 +11,7 @@ related: ["guide:ai-localization-review-workflow", "glossary:machine-translation
 url: "https://www.deepl.com/en/translator"
 pricing: "freemium"
 category: "marketing"
+alternativeTo: ["chatgpt", "claude", "gemini"]
 os: ["Web"]
 ---
 

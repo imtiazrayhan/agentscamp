@@ -49,3 +49,5 @@ The editor supports a wide range of models — frontier APIs such as Claude, Ope
 Compared with Cursor and Windsurf, Void trades polished hosted infrastructure and managed model routing for transparency, direct provider connections, and the option to keep everything local. Against Zed, it offers the broad VS Code extension ecosystem rather than a from-scratch editor.
 
 Note on status: active development is paused. The voideditor/void GitHub repository was archived by its owner on June 2, 2026 and is now read-only, and the README states the project is deprecated and no longer accepting contributions. The most recent build remains functional, but new features and security patches are not being shipped by the core team.
+
+Because Void is archived, developers looking for an active AI editor should compare [Cursor](/tools/cursor), [Zed](/tools/zed), and [Devin Desktop (formerly Windsurf)](/tools/windsurf), or explore [Void alternatives](/tools/void/alternatives).

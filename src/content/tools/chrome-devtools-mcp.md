@@ -13,7 +13,7 @@ color: "yellow"
 topics: ["mcp"]
 tags: ["mcp", "chrome", "browser", "debugging", "performance", "automation"]
 featured: false
-alternativeTo: ["playwright-mcp"]
+alternativeTo: ["playwright-mcp", "browserbase", "stagehand", "browser-use"]
 sameAs:
   - "https://www.npmjs.com/package/chrome-devtools-mcp"
 related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "tool:playwright-mcp", "agent:performance-engineer", "agent:accessibility-auditor", "agent:debugger"]

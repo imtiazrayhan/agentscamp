@@ -54,3 +54,5 @@ The assistant can reference open buffers and project files, propose multi-file e
 ## Good to know
 
 Zed is open source (GPL-3.0 and Apache-2.0, depending on component) and free to download. It reached version 1.0 in April 2026 and runs natively on macOS, Linux, and Windows. Collaboration and some hosted AI features rely on Zed's cloud services, and bring-your-own API keys are supported for AI providers. As of September 2026, Zed's AI plans are Personal ($0, with 2,000 accepted edit predictions), Pro ($10/month, with unlimited edit predictions, $5 of tokens included, and usage-based billing beyond that), and Business ($30 per seat per month, adding org-wide model policies and data governance controls).
+
+Compare Zed against [Cursor](/tools/cursor) and [Devin Desktop (formerly Windsurf)](/tools/windsurf) in [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026), or browse [Zed alternatives](/tools/zed/alternatives).

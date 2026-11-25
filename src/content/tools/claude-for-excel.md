@@ -12,7 +12,7 @@ audience: ["developers", "founders", "marketers"]
 tags: ["claude", "excel", "microsoft-365", "spreadsheets", "add-in", "financial-models"]
 featured: false
 related: ["tool:claude", "tool:claude-cowork", "tool:microsoft-copilot", "tool:claude-for-chrome", "guide:claude-plans-compared-2026", "guide:claude-document-skills", "guide:claude-skills-on-claude-ai-and-api"]
-alternativeTo: ["microsoft-copilot"]
+alternativeTo: ["microsoft-copilot", "julius", "hex", "deepnote"]
 os: ["Web", "Windows", "macOS"]
 sameAs: ["https://marketplace.microsoft.com/en-us/product/office/WA200010725"]
 summary: "Claude for Excel is an add-in that puts Claude inside your workbook: ask how a number is derived and get cell-level citations, change assumptions without breaking formulas, trace #REF! and #DIV/0 errors, populate templates, or build a model from a description. Generally available on Pro, Max, Team, and Enterprise for Excel on web, Windows, and Mac."

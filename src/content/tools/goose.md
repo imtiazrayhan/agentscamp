@@ -58,3 +58,5 @@ Goose is free and open source under the Apache-2.0 license. You supply your own 
 
 > [!NOTE]
 > Stewardship of Goose has moved to the Agentic AI Foundation (AAIF) under the Linux Foundation. The canonical repository is now `aaif-goose/goose`; the old `block/goose` URL redirects there. The project is community-governed rather than Block-only.
+
+Compare Goose against other open-source terminal agents in [AI Coding Agents in 2026](/guides/prompting/ai-coding-agents-cli-2026) and [Best Claude Code Alternatives](/guides/comparisons/best-claude-code-alternatives-2026), or browse [Goose alternatives](/tools/goose/alternatives).

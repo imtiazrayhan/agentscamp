@@ -53,3 +53,5 @@ Cline proposes edits and commands; you approve each before it runs.
 ## Good to know
 
 Cline is free and open source (Apache-2.0), though its JetBrains plugin is not open-sourced. Usage costs depend on the API, local hardware, or Cline-provided inference you use.
+
+For a direct look at Cline alongside its open-source IDE forks, read [Cline vs Kilo Code vs Roo Code](/guides/comparisons/cline-vs-kilo-code-vs-roo-code), compare [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026), or browse [Cline alternatives](/tools/cline/alternatives).

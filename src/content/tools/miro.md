@@ -12,6 +12,7 @@ name: "Miro"
 url: "https://miro.com/"
 pricing: "freemium"
 category: "design"
+alternativeTo: ["canva", "napkin-ai", "figma-make"]
 os: ["Web"]
 seoDescription: "Miro is a collaborative whiteboard whose AI drafts editable diagrams and mind maps. How to test it as a team review surface for a source-backed concept map."
 ---

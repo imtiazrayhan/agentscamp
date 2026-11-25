@@ -35,3 +35,5 @@ Packaging happens through **Truss**, Baseten's open-source (MIT) framework. You 
 Dedicated deployments **autoscale on traffic** — configurable min/max replicas, concurrency targets, and **scale-to-zero** so idle deployments cost nothing. Baseten supports multi-region and multi-cloud replicas for high availability, plus per-deployment dashboards covering request volume, latency, GPU utilization, and logs. Alongside dedicated deployments, it offers pre-optimized Model APIs for quick evaluation and training that lands directly on inference-ready infrastructure.
 
 Billing is **usage-based GPU compute**, metered per minute a replica runs across hardware tiers (from T4 up to B200), making cost track actual serving time rather than a flat seat fee.
+
+Compare Baseten against other dedicated and serverless hosts in [Best LLM Inference Providers in 2026](/guides/comparisons/best-llm-inference-providers-2026), read [Self-Host vs API](/guides/mlops/self-host-vs-api-llm) to model unit economics, or review [Baseten alternatives](/tools/baseten/alternatives).

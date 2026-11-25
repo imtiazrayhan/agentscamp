@@ -12,7 +12,7 @@ url: "https://www.glean.com/"
 pricing: "enterprise"
 category: "assistant"
 os: ["Web"]
-alternativeTo: ["microsoft-copilot"]
+alternativeTo: ["microsoft-copilot", "perplexity", "claude", "chatgpt"]
 ---
 
 Consider Glean when your handoff problem begins with finding the evidence. Before evaluating a company-wide search service, name the records your team needs, the systems where they live, and the people who must be able to inspect them.

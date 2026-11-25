@@ -12,6 +12,7 @@ name: "Napkin AI"
 url: "https://www.napkin.ai/"
 pricing: "freemium"
 category: "design"
+alternativeTo: ["canva", "gamma", "miro"]
 os: ["Web"]
 seoDescription: "Evaluate Napkin AI with a bounded comparison brief, a relationship ledger and export inspection at delivery size."
 ---

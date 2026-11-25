@@ -22,10 +22,9 @@ title: ABBYY FineReader PDF
 url: https://pdf.abbyy.com
 pricing: paid
 category: platform
+alternativeTo: ["mistral-ocr", "llamaparse", "docling", "reducto", "unstructured"]
 os:
 - Windows
-alternativeTo:
-- mistral-ocr
 ---
 
 ABBYY FineReader PDF uses AI-based OCR to digitize scans and make document text searchable or editable. Recognition produces a text version of pictured characters; checking that text against the source image is a separate review action. [ABBYY's product overview](https://pdf.abbyy.com/) describes the OCR capability.

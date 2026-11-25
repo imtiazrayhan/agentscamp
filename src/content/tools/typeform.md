@@ -12,6 +12,7 @@ name: "Typeform"
 url: "https://www.typeform.com/"
 pricing: "freemium"
 category: "workflow"
+alternativeTo: ["surveymonkey"]
 os: ["Web"]
 seoDescription: "Use a small approved route packet to review a Typeform form draft, its account limits and actual preview paths."
 ---

@@ -11,6 +11,7 @@ related: ["guide:analyze-customer-feedback-with-ai", "glossary:thematic-analysis
 url: "https://dovetail.com/"
 pricing: "freemium"
 category: "analytics"
+alternativeTo: ["fathom", "granola", "otter-ai", "notebooklm"]
 os: ["Web"]
 ---
 

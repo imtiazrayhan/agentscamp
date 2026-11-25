@@ -12,6 +12,7 @@ name: "Label Studio"
 url: "https://labelstud.io/"
 pricing: "open-source"
 category: "data"
+alternativeTo: ["argilla"]
 repo: "https://github.com/HumanSignal/label-studio"
 license: "Apache-2.0"
 os: ["Web"]

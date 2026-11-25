@@ -55,3 +55,5 @@ Cody is available in VS Code, JetBrains, Visual Studio (experimental), the web a
 
 > [!WARNING]
 > If you are an individual developer, Cody is no longer the product to reach for. When it ended Cody Free and Pro in 2025, Sourcegraph pointed solo users to **Amp** (ampcode.com), which has been an independent company since December 2025; Cody continues as the IDE assistant supported on Sourcegraph Enterprise. Enterprise is sold through sales on an annual contract that scales with team size.
+
+Individual developers migrating off discontinued Cody Free/Pro tiers should compare [Amp](/tools/amp), [Continue](/tools/continue), and [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026), or browse [Cody alternatives](/tools/cody/alternatives).

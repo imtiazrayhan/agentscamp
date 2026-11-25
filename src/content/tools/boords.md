@@ -23,10 +23,9 @@ title: Boords
 url: https://boords.com
 pricing: freemium
 category: design
+alternativeTo: ["canva", "gamma", "runway"]
 os:
 - Web
-alternativeTo:
-- canva
 ---
 
 Boords organizes storyboard planning around scripts and frames. Its Import Script feature uses AI to turn a supplied script or shot list into storyboard structure, dialogue or action descriptions, shot suggestions, and image prompts. Write with AI starts from a description, while a blank board supports manual planning. Optional character references can guide generated frames. [Boords' creation documentation](https://boords.com/docs/creating-storyboards) describes those approaches.

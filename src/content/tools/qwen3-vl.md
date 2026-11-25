@@ -14,7 +14,7 @@ topics: ["multimodal-ai", "mlops-ai-infra", "data-ml"]
 audience: ["ai-engineers"]
 tags: ["vision-language-model", "multimodal", "ocr", "open-weights", "qwen"]
 featured: false
-alternativeTo: []
+alternativeTo: ["mistral-ocr", "docling", "marker", "gemini"]
 summary: "Qwen3-VL is the vision-language model series from Alibaba's Qwen team: it reads images, documents, and video alongside text for OCR, visual reasoning, spatial grounding, and agentic use. Open-weights under Apache-2.0 (dense 2B–32B plus 30B-A3B and 235B-A22B MoE variants, Instruct and Thinking editions) on Hugging Face and ModelScope — a strong open VLM you can self-host."
 related: ["guide:vlm-ocr-documents", "skill:multimodal-document-extractor", "guide:self-host-vs-api-llm", "agent:llm-inference-engineer"]
 faq:

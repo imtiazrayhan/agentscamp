@@ -12,7 +12,7 @@ topics: ["ai-at-work", "multimodal-ai"]
 audience: ["designers"]
 tags: ["relume", "wireframing", "sitemap", "webflow", "component-library"]
 featured: false
-alternativeTo: ["framer-ai"]
+alternativeTo: ["framer-ai", "figma-make", "v0", "lovable", "stitch"]
 sameAs: ["https://www.relume.io", "https://www.relume.ai/pricing"]
 related: ["tool:framer-ai", "tool:canva", "tool:figma-mcp", "guide:claude-design-guide", "guide:best-ai-tools-for-designers-2026", "guide:maintain-a-design-system-with-claude-code"]
 keywords: ["Relume", "AI sitemap generator", "AI wireframes", "Relume Webflow library", "Relume React components"]

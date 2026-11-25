@@ -56,3 +56,5 @@ models:
 
 > [!NOTE]
 > Continue is open-source (Apache 2.0) and free to install, but you supply your own model access. Running hosted models incurs provider API costs; local models avoid that but require capable hardware.
+
+See how Continue stacks up against commercial IDE assistants in [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026), pair it with local runtimes from [Best Tools for Running LLMs Locally](/guides/comparisons/best-local-llm-tools-2026), or compare [Continue alternatives](/tools/continue/alternatives).

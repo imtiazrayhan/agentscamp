@@ -21,10 +21,9 @@ title: RemNote
 url: https://www.remnote.com
 pricing: freemium
 category: assistant
+alternativeTo: ["notebooklm", "elicit", "chatgpt", "claude"]
 os:
 - Web
-alternativeTo:
-- notebooklm
 ---
 
 RemNote brings notes, AI card drafting, and repeated recall practice into a study workflow. Its AI generator can turn selected or pasted text into flashcards or a multiple-choice quiz. Users can choose source sections, card types, detail, language, and instructions, then inspect the preview and deselect drafts before saving. Generated cards remain editable, and the source text can be retained. [RemNote's generation help](https://help.remnote.com/en/articles/10102901-generating-flashcards-with-ai) documents these controls.

@@ -50,3 +50,5 @@ It is aimed at researchers and engineers who want a transparent, hackable agent 
 Compared with alternatives: Devin is a closed, hosted commercial agent, whereas SWE-agent is fully open and self-hosted. OpenHands (formerly OpenDevin) is a broader open-source agent platform with a richer UI and ecosystem, while SWE-agent is more research-focused and minimal. Aider is an interactive pair-programming CLI rather than an autonomous issue-solver.
 
 Notable recent status: the maintainers have released mini-swe-agent, a roughly 100-line agent that reaches comparable SWE-bench scores with far less configuration, and now recommend it for most users going forward. Per the official docs, SWE-agent itself is in maintenance mode while active development focuses on mini-swe-agent. The project is hosted under the dedicated `SWE-agent` GitHub organization, and the license remains MIT.
+
+Compare SWE-agent with [OpenHands](/tools/openhands) and [Devin](/tools/devin), see how autonomous coding agents fit into [AI Coding Agents in 2026](/guides/prompting/ai-coding-agents-cli-2026), or browse [SWE-agent alternatives](/tools/swe-agent/alternatives).

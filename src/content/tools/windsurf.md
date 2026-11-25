@@ -52,3 +52,5 @@ devin-desktop .
 ## Good to know
 
 Devin Desktop is freemium: a free tier exists, with paid plans adding higher usage limits and access to more capable models — Cognition says plans and pricing carried over unchanged from Windsurf. It runs on macOS, Windows, and Linux. Legacy Cascade stayed available through July 2026; Devin Local is now the agent. Because it is a separate editor rather than an extension, adopting it means switching IDEs rather than adding to an existing one.
+
+Read [Cursor vs Windsurf (Devin Desktop)](/guides/comparisons/cursor-vs-windsurf) and [Cursor vs Claude Code vs GitHub Copilot vs Windsurf](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026) for side-by-side trade-offs, or browse [Windsurf alternatives](/tools/windsurf/alternatives).
