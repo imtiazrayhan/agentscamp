@@ -3,6 +3,7 @@ title: "How RAG Actually Works: Ingestion, Chunking, Retrieval & Reranking"
 description: "A clear, practical walkthrough of the retrieval-augmented generation pipeline — what each stage does, where it fails, and how the pieces fit together."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
+image: "/images/guides/how-rag-works-architecture.png"
 color: "green"
 topics: ["rag-retrieval"]
 tags: ["rag", "retrieval", "embeddings", "concepts"]
@@ -52,7 +53,7 @@ RAG is a pipeline of stages, and **a failure in an early stage cannot be repaire
 
 ## The pipeline, stage by stage
 
-![Seven-stage RAG architecture diagram showing offline ingestion (ingest, chunk, embed, index) feeding online query retrieval (hybrid retrieve, rerank, grounded answer)](/images/guides/how-rag-works-architecture.svg)
+![Seven-stage RAG architecture diagram showing offline ingestion (ingest, chunk, embed, index) feeding online query retrieval (hybrid retrieve, rerank, grounded answer)](/images/guides/how-rag-works-architecture.png)
 
 ### Ingestion
 

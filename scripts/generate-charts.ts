@@ -9,7 +9,9 @@
  *   npx tsx scripts/generate-charts.ts
  */
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 import { OG_SURFACE, OG_ACCENT_INK } from "../src/lib/palette";
 
 const OUT_DIR = path.join(process.cwd(), "public", "images", "guides");
@@ -477,16 +479,51 @@ function buildMultiAgentSvg(): string {
 </svg>`;
 }
 
+const CHROME_BIN =
+  process.env.CHROME_PATH ??
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+
 const files: [string, string][] = [
-  ["mcp-token-overhead-benchmark.svg", buildMcpBenchmarkSvg()],
-  ["mcp-stack-comparison.svg", buildMcpStackSvg()],
-  ["skills-vs-agents-vs-commands.svg", buildSkillsAgentsCommandsSvg()],
-  ["how-rag-works-architecture.svg", buildRagArchitectureSvg()],
-  ["multi-agent-orchestration-patterns.svg", buildMultiAgentSvg()],
+  ["mcp-token-overhead-benchmark", buildMcpBenchmarkSvg()],
+  ["mcp-stack-comparison", buildMcpStackSvg()],
+  ["skills-vs-agents-vs-commands", buildSkillsAgentsCommandsSvg()],
+  ["how-rag-works-architecture", buildRagArchitectureSvg()],
+  ["multi-agent-orchestration-patterns", buildMultiAgentSvg()],
 ];
 
-for (const [name, svg] of files) {
-  const dest = path.join(OUT_DIR, name);
-  fs.writeFileSync(dest, svg, "utf8");
-  console.log(`Wrote ${path.relative(process.cwd(), dest)} (${(Buffer.byteLength(svg) / 1024).toFixed(1)} KB)`);
+const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "agentscamp-charts-"));
+const userDataDir = path.join(tmpDir, "chrome-profile");
+
+try {
+  for (const [slug, svg] of files) {
+    const w = Number(/width="(\d+)"/.exec(svg)?.[1] ?? 1200);
+    const h = Number(/height="(\d+)"/.exec(svg)?.[1] ?? 630);
+    const htmlPath = path.join(tmpDir, `${slug}.html`);
+    const outPng = path.join(OUT_DIR, `${slug}.png`);
+    fs.writeFileSync(
+      htmlPath,
+      `<!doctype html><html><body style="margin:0;padding:0;background:${S.background};overflow:hidden;">${svg}</body></html>`,
+      "utf8",
+    );
+    execFileSync(
+      CHROME_BIN,
+      [
+        "--headless=new",
+        "--disable-gpu",
+        "--hide-scrollbars",
+        `--user-data-dir=${userDataDir}`,
+        "--force-device-scale-factor=2",
+        `--window-size=${w},${h}`,
+        `--screenshot=${outPng}`,
+        `file://${htmlPath}`,
+      ],
+      { stdio: "pipe" },
+    );
+    const kb = (fs.statSync(outPng).size / 1024).toFixed(1);
+    console.log(
+      `Wrote ${path.relative(process.cwd(), outPng)} (${w}x${h}@2x, ${kb} KB)`,
+    );
+  }
+} finally {
+  fs.rmSync(tmpDir, { recursive: true, force: true });
 }

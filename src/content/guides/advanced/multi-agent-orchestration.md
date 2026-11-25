@@ -5,6 +5,7 @@ author: "Imtiaz Rayhan"
 date: 2026-06-03
 updated: 2026-11-22
 depth: cornerstone
+image: "/images/guides/multi-agent-orchestration-patterns.png"
 color: "green"
 topics: ["workflow-prompting", "architecture"]
 audience: ["developers", "ai-engineers"]
@@ -56,7 +57,7 @@ That's the whole thesis. The patterns below are different ways of arranging that
 
 ## Context isolation is the actual product
 
-![Four multi-agent orchestration patterns: fan-out, sequential gated pipeline, orchestrator-worker, and verify/critic in a fresh context](/images/guides/multi-agent-orchestration-patterns.svg)
+![Four multi-agent orchestration patterns: fan-out, sequential gated pipeline, orchestrator-worker, and verify/critic in a fresh context](/images/guides/multi-agent-orchestration-patterns.png)
 
 Every subagent in Claude Code runs in its **own context window** and returns only a summary to its caller. Little else crosses the boundary — not the parent's conversation (unless the subagent is a fork, which inherits it), not sibling agents' work, not the raw tool output the subagent generated to reach its answer.
 
