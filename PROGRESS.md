@@ -1,3 +1,12 @@
+# Flagship Guide Charts & Architecture Diagrams — 2026-11-25 — VERIFIED
+
+Goal: add publication-grade editorial visuals (0 → 5 original charts/diagrams + 2× shareable PNGs) to the MCP Token Overhead Benchmark and top cornerstone guides.
+
+## Done
+- `scripts/generate-charts.ts`: generates 5 editorial SVGs aligned with `src/lib/palette.ts` (`mcp-token-overhead-benchmark.svg` + `.png`, `mcp-stack-comparison.svg` + `.png`, `skills-vs-agents-vs-commands.svg`, `how-rag-works-architecture.svg`, `multi-agent-orchestration-patterns.svg`). Data-driven MCP chart reads directly from `docs/benchmarks/mcp-token-overhead-2026-11.json`.
+- Embedded visuals in `mcp-server-token-overhead-benchmark.md` (plus `image: "/images/guides/mcp-token-overhead-benchmark.png"` for JSON-LD `TechArticle.image`), `skills-vs-agents-vs-commands.md`, `how-rag-works.md`, and `multi-agent-orchestration.md`.
+- Visually inspected all 5 rendered 2× PNGs via headless Chrome; fixed median-line layering, card text wrapping, and track-label spacing before final verification.
+
 # Study #1: MCP Server Token Overhead Benchmark + CLI v0.12.0 & Mirror Sync — 2026-11-25 — PUSHED
 
 Goal: run and publish AgentsCamp's first reproducible link-magnet benchmark study, bump `agentscamp` CLI to `0.12.0`, and sync the `awesome-agentscamp` mirror repo (`agentscamp-library`).

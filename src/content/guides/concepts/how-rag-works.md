@@ -52,6 +52,8 @@ RAG is a pipeline of stages, and **a failure in an early stage cannot be repaire
 
 ## The pipeline, stage by stage
 
+![Seven-stage RAG architecture diagram showing offline ingestion (ingest, chunk, embed, index) feeding online query retrieval (hybrid retrieve, rerank, grounded answer)](/images/guides/how-rag-works-architecture.svg)
+
 ### Ingestion
 
 You load the source material and clean it. Messy formats are where this gets hard — PDFs, scans, and tables rarely come as clean text, so most teams reach for a parser like [LlamaParse](/tools/llamaparse), [Unstructured](/tools/unstructured), or [Docling](/tools/docling) to turn raw files into chunk-ready markdown or JSON. The unglamorous part matters: stripping navigation, repeated headers/footers, and boilerplate prevents that text from later dominating retrieval and crowding out real answers.

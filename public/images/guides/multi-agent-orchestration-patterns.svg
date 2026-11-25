@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-labelledby="title desc">
+  <title id="title">Four Multi-Agent Orchestration Patterns</title>
+  <desc id="desc">Four architectural patterns for coordinating isolated AI agents: Fan-out, Sequential Pipeline, Orchestrator-Worker, and Verify/Critic.</desc>
+  <rect width="1200" height="620" rx="16" fill="#0c0a09" />
+  <rect x="0.75" y="0.75" width="1198.5" height="618.5" rx="15.5" fill="none" stroke="#44403c" stroke-width="1.5" />
+
+  <text x="40" y="42" fill="#86efac" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.4">MULTI-AGENT ARCHITECTURE · CONTEXT ISOLATION PATTERNS</text>
+  <text x="40" y="76" fill="#e7e5e4" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.4">Four Multi-Agent Orchestration Patterns</text>
+  <text x="40" y="98" fill="#a8a29e" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14">Each box runs in its own clean context window and passes back only a structured summary.</text>
+
+  <!-- Pattern 1: Fan-out -->
+  <rect x="36" y="120" width="552" height="214" rx="12" fill="#1c1917" stroke="#44403c" />
+  <text x="58" y="148" fill="#7dd3fc" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700">1 · FAN-OUT (PARALLEL SLICES)</text>
+  
+    <rect x="58" y="206" width="94" height="34" rx="7" fill="#0c0a09" stroke="#7dd3fc" stroke-width="1.5" />
+    <text x="105" y="228" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Parent</text>
+  
+  
+    <rect x="214" y="162" width="128" height="32" rx="7" fill="#0c0a09" stroke="#5eead4" stroke-width="1.5" />
+    <text x="278" y="183" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Perf Audit</text>
+  
+  
+    <rect x="214" y="207" width="128" height="32" rx="7" fill="#0c0a09" stroke="#5eead4" stroke-width="1.5" />
+    <text x="278" y="228" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">A11y Audit</text>
+  
+  
+    <rect x="214" y="252" width="128" height="32" rx="7" fill="#0c0a09" stroke="#5eead4" stroke-width="1.5" />
+    <text x="278" y="273" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Sec Audit</text>
+  
+  
+    <rect x="410" y="206" width="152" height="34" rx="7" fill="#0c0a09" stroke="#86efac" stroke-width="1.5" />
+    <text x="486" y="228" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Merged Report</text>
+  
+  <path d="M 152 223 L 214 178 M 152 223 L 214 223 M 152 223 L 214 268" stroke="#7dd3fc" stroke-width="1.6" />
+  <path d="M 342 178 L 410 223 M 342 223 L 410 223 M 342 268 L 410 223" stroke="#86efac" stroke-width="1.6" />
+  <text x="58" y="314" fill="#a8a29e" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13">Best for independent read/analysis slices that share no mutable state.</text>
+
+  <!-- Pattern 2: Pipeline -->
+  <rect x="612" y="120" width="552" height="214" rx="12" fill="#1c1917" stroke="#44403c" />
+  <text x="634" y="148" fill="#86efac" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700">2 · SEQUENTIAL PIPELINE (GATED STAGES)</text>
+  
+    <rect x="634" y="206" width="110" height="36" rx="7" fill="#0c0a09" stroke="#86efac" stroke-width="1.5" />
+    <text x="689" y="229" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Research</text>
+  
+  
+    <rect x="786" y="206" width="110" height="36" rx="7" fill="#0c0a09" stroke="#86efac" stroke-width="1.5" />
+    <text x="841" y="229" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Design</text>
+  
+  
+    <rect x="938" y="206" width="110" height="36" rx="7" fill="#0c0a09" stroke="#86efac" stroke-width="1.5" />
+    <text x="993" y="229" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Build</text>
+  
+  
+    <rect x="1082" y="206" width="62" height="36" rx="7" fill="#0c0a09" stroke="#86efac" stroke-width="1.5" />
+    <text x="1113" y="229" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Test</text>
+  
+  <path d="M 744 224 L 786 224 M 896 224 L 938 224 M 1048 224 L 1082 224" stroke="#86efac" stroke-width="2" />
+  <text x="765" y="196" text-anchor="middle" fill="#fcd34d" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10">gate</text>
+  <text x="917" y="196" text-anchor="middle" fill="#fcd34d" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10">gate</text>
+  <text x="1065" y="196" text-anchor="middle" fill="#fcd34d" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10">gate</text>
+  <text x="634" y="314" fill="#a8a29e" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13">Each stage receives only the approved artifact from the prior stage, not raw chatter.</text>
+
+  <!-- Pattern 3: Orchestrator-Worker -->
+  <rect x="36" y="356" width="552" height="214" rx="12" fill="#1c1917" stroke="#44403c" />
+  <text x="58" y="384" fill="#fcd34d" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700">3 · ORCHESTRATOR-WORKER (DYNAMIC PLAN)</text>
+  
+    <rect x="208" y="404" width="206" height="36" rx="7" fill="#0c0a09" stroke="#fcd34d" stroke-width="1.5" />
+    <text x="311" y="427" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Orchestrator (no Edit)</text>
+  
+  
+    <rect x="72" y="482" width="134" height="34" rx="7" fill="#0c0a09" stroke="#c4b5fd" stroke-width="1.5" />
+    <text x="139" y="504" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Worker A</text>
+  
+  
+    <rect x="244" y="482" width="134" height="34" rx="7" fill="#0c0a09" stroke="#c4b5fd" stroke-width="1.5" />
+    <text x="311" y="504" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Worker B</text>
+  
+  
+    <rect x="416" y="482" width="134" height="34" rx="7" fill="#0c0a09" stroke="#c4b5fd" stroke-width="1.5" />
+    <text x="483" y="504" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Worker C</text>
+  
+  <path d="M 270 440 L 139 482 M 311 440 L 311 482 M 352 440 L 483 482" stroke="#fcd34d" stroke-width="1.6" />
+  <text x="58" y="550" fill="#a8a29e" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13">Strip Edit/Write from the coordinator so it plans, dispatches, and verifies only.</text>
+
+  <!-- Pattern 4: Verify / Critic -->
+  <rect x="612" y="356" width="552" height="214" rx="12" fill="#1c1917" stroke="#44403c" />
+  <text x="634" y="384" fill="#fda4af" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700">4 · VERIFY / CRITIC (FRESH CONTEXT CHECK)</text>
+  
+    <rect x="642" y="434" width="132" height="38" rx="7" fill="#0c0a09" stroke="#7dd3fc" stroke-width="1.5" />
+    <text x="708" y="458" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Author Agent</text>
+  
+  
+    <rect x="826" y="434" width="128" height="38" rx="7" fill="#0c0a09" stroke="#a8a29e" stroke-width="1.5" />
+    <text x="890" y="458" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Diff + Spec</text>
+  
+  
+    <rect x="1004" y="434" width="134" height="38" rx="7" fill="#0c0a09" stroke="#fda4af" stroke-width="1.5" />
+    <text x="1071" y="458" text-anchor="middle" fill="#e7e5e4" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="600">Fresh Critic</text>
+  
+  <path d="M 774 453 L 826 453 M 954 453 L 1004 453" stroke="#fda4af" stroke-width="2" />
+  <path d="M 1071 472 L 1071 504 L 708 504 L 708 472" fill="none" stroke="#fda4af" stroke-width="1.5" stroke-dasharray="5 4" />
+  <text x="890" y="498" text-anchor="middle" fill="#fda4af" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11">revise on defect (no shared bias)</text>
+  <text x="634" y="550" fill="#a8a29e" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13">Critic sees only the artifact and spec — never the author's rationalizations.</text>
+
+  <text x="1164" y="600" text-anchor="end" fill="#78716c" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11">agentscamp.com/guides/advanced/multi-agent-orchestration</text>
+</svg>

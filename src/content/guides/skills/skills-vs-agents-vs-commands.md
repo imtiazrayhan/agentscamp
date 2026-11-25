@@ -59,6 +59,8 @@ This guide draws the lines clearly, gives you a decision table, and walks throug
 
 ## Two mechanisms, three invocation patterns
 
+![Architecture comparison of Claude Code subagents, skills, and slash commands across trigger mechanism, context window isolation, tool access, and ideal use cases](/images/guides/skills-vs-agents-vs-commands.svg)
+
 Everything lives under `.claude/` (project-local) or `~/.claude/` (personal, follows you everywhere). There are two real mechanisms — subagents and skills — and the third "slash command" pattern is just a skill you trigger by name.
 
 ```text

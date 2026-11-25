@@ -6,6 +6,7 @@ author: "Imtiaz Rayhan"
 date: 2026-11-25
 reviewed: 2026-11-25
 depth: "cornerstone"
+image: "/images/guides/mcp-token-overhead-benchmark.png"
 color: "green"
 topics: ["mcp", "workflow-prompting", "architecture"]
 audience: ["developers", "ai-engineers"]
@@ -77,6 +78,8 @@ On **November 25, 2026**, we ran a live, reproducible JSON-RPC benchmark against
 
 ## Full benchmark results (16 live MCP servers)
 
+![Horizontal bar chart showing upfront tools/list token overhead across 16 live MCP servers, from 172 tokens for Ref Context MCP to 7,143 tokens for Supabase MCP](/images/guides/mcp-token-overhead-benchmark.svg)
+
 Sorted from highest to lowest `o200k_base` token overhead, measured live on **November 25, 2026**. `% of 200K` shows how much of a 200,000-token [context window](/glossary/context-window) that single server occupies before prompt one.
 
 | Server | Version | Transport | Tools | `o200k` Tokens | `cl100k` Tokens | Avg / Tool | % of 200K | Heaviest Single Tool |
@@ -139,6 +142,8 @@ Both official browser servers are heavy because browser control requires dozens 
 Mounting both simultaneously — common on frontend repos — consumes **10,864 tokens (5.43% of 200K)** before a single page opens. Pick Playwright when you need cross-browser flows and UI automation; mount Chrome DevTools specifically when debugging console errors, network traces, or performance profiles.
 
 ### 4. What a realistic 5-server stack actually costs
+
+![Side-by-side comparison of three real-world MCP server stacks and average tokens per tool across verbose versus lean servers](/images/guides/mcp-stack-comparison.svg)
 
 One server rarely hurts. Stacking five popular servers in user scope does:
 
