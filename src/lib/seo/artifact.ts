@@ -1,5 +1,6 @@
 import type { ContentItem } from "@/lib/content/types";
 import { contentTypes } from "@/lib/content/registry";
+import { titleCaseLabel } from "@/lib/format";
 import { site } from "@/lib/site";
 
 /**
@@ -86,9 +87,48 @@ export function toMarkdownFile(item: ContentItem): string {
   }
 
   const parts: string[] = [`# ${item.title}`, "", `> ${item.description}`];
+
+  const meta: string[] = [];
+  if (item.type === "guide" && item.author) meta.push(`Author: ${item.author}`);
+  if (item.date) meta.push(`Published: ${item.date}`);
+  if (item.updated) meta.push(`Updated: ${item.updated}`);
+  if (item.reviewed) meta.push(`Reviewed: ${item.reviewed}`);
+  if (meta.length) parts.push("", meta.join(" | "));
+
+  if (item.type === "tool") {
+    const toolMeta: string[] = [
+      `Category: ${titleCaseLabel(item.category)}`,
+      `Pricing: ${titleCaseLabel(item.pricing)}`,
+      `Website: ${item.url}`,
+    ];
+    if (item.repo) toolMeta.push(`Repository: ${item.repo}`);
+    if (item.license) toolMeta.push(`License: ${item.license}`);
+    parts.push("", toolMeta.join(" | "));
+  }
+
   if (item.summary) parts.push("", item.summary);
-  if (item.type === "tool") parts.push("", `Website: ${item.url}`);
+
+  if (item.keyTakeaways.length) {
+    parts.push("", "## Key takeaways", "");
+    for (const point of item.keyTakeaways) parts.push(`- ${point}`);
+  }
+
+  if (item.type === "guide" && item.howtoSteps.length) {
+    parts.push("", "## Steps at a glance", "");
+    item.howtoSteps.forEach((step, idx) => {
+      parts.push(`${idx + 1}. **${step.name}:** ${step.text}`);
+    });
+  }
+
   if (item.body) parts.push("", item.body);
+
+  if (item.faq.length) {
+    parts.push("", "## Frequently asked questions");
+    for (const entry of item.faq) {
+      parts.push("", `### ${entry.q}`, "", entry.a);
+    }
+  }
+
   if (item.type === "guide" && item.sources.length) {
     parts.push("", "## Sources and further reading", "");
     for (const sourceItem of item.sources) {

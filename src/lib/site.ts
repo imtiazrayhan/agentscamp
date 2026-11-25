@@ -8,12 +8,16 @@ export const site = {
   logo: "/icon.svg",
   /** Inbox (on Resend) that the /contact form delivers to. */
   contactEmail: "contact@agentscamp.com",
+  /** Official X handle used in Twitter cards and footer/about entity links. */
+  xHandle: "@agentscamp",
   /**
    * Authoritative profiles for schema.org `sameAs` (entity reconciliation / E-E-A-T).
-   * Empty: there is no X profile, and the repo is deliberately not surfaced.
-   * jsonld.ts omits the property entirely when this is empty.
+   * The GitHub repo is deliberately not surfaced; X and the npm CLI package are.
    */
-  sameAs: [] as string[],
+  sameAs: [
+    "https://x.com/agentscamp",
+    "https://www.npmjs.com/package/agentscamp",
+  ] as string[],
 } as const;
 
 /**

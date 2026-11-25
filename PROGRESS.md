@@ -1,3 +1,17 @@
+# GEO & SEO Quick Wins (Markdown twins, Schema, Hubs, Entity Signals) — 2026-11-25 — VERIFIED
+
+Goal: close the highest-impact technical SEO & AI-discoverability leaks left after the 2026-11-24 structure pass.
+
+## Done
+- `src/lib/seo/artifact.ts`: enriched `toMarkdownFile()` for editorial types (`guide`, `tool`, `glossary`) with author/dates, tool metadata (`Category`, `Pricing`, `Website`, `Repository`, `License`), `## Key takeaways`, `## Steps at a glance`, and `## Frequently asked questions`, keeping installable `.md` twins unchanged as valid drop-in artifacts.
+- `src/lib/seo/jsonld.ts`: mapped non-developer tool categories to Google-supported `SoftwareApplication.applicationCategory` values (`DesignApplication`, `BusinessApplication`, `BrowserApplication`, `MultimediaApplication`, `UtilitiesApplication`; dev tools remain `DeveloperApplication`).
+- `src/lib/seo/collections.ts`: filled `TOPIC_OVERRIDES` for all 15 `/topics/[slug]` hubs (110–160 chars), added missing `sales`/`comparisons`/`deals` category overrides and `sales`/`voice` tool-category overrides, broadened default guide category fallback, and updated `toolPricingCollection` (`"{Pricing} AI Tools"`) + `toolAlternativesCollection` (`"AI tools"` instead of `"AI coding tools"`).
+- `src/lib/site.ts`, `src/app/layout.tsx`, `src/lib/seo/metadata.ts`, `src/components/layout/Footer.tsx`, `src/app/about/page.tsx`: wired `xHandle: "@agentscamp"` (`twitter:site` across layout/detail/collection metadata), added `https://x.com/agentscamp` and `https://www.npmjs.com/package/agentscamp` to `site.sameAs`, linked X visibly in the footer and `/about`, fixed stale `"official profile linked below"` copy on `/about`, and aligned `authorMetadata.url` with `/about#who-writes-this`.
+
+## Verified
+- `npm run validate` (1,061 items, 0 errors), `npm run lint` (0 errors), `npx next build` (4,079/4,079 static pages).
+- Built-HTML/body verification: editorial `.md` twins include metadata + takeaways + steps + FAQ while installable `.md` files remain valid YAML artifacts; `llms-full.txt` = 7.23 MB; all 262 tools emit category-matched `applicationCategory`; all checked topic/pricing/sales/voice/alternatives descriptions are 110–160 chars with 0 stale "AI coding" copy; `sameAs`, `twitter:site=@agentscamp`, and `/about` links verified.
+
 # SEO/AEO/GEO structure fixes (code + layout audit) — 2026-11-24 — PUSHED
 
 Audit of templates, metadata/JSON-LD, crawl surface and built HTML. Branch

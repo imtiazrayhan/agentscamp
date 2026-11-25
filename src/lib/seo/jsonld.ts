@@ -184,6 +184,22 @@ function howtoNode(item: ContentItem, path: string): Node | null {
   };
 }
 
+/**
+ * Google-supported SoftwareApplication.applicationCategory values per tool
+ * category. Everything developer-oriented defaults to DeveloperApplication.
+ */
+const TOOL_APP_CATEGORY: Record<string, string> = {
+  design: "DesignApplication",
+  marketing: "BusinessApplication",
+  sales: "BusinessApplication",
+  analytics: "BusinessApplication",
+  automation: "BusinessApplication",
+  workflow: "BusinessApplication",
+  browser: "BrowserApplication",
+  voice: "MultimediaApplication",
+  assistant: "UtilitiesApplication",
+};
+
 /** The primary entity node for an item (its real-world "thing"). */
 function primaryEntity(item: ContentItem, path: string): Node {
   const url = canonicalUrl(item);
@@ -238,7 +254,8 @@ function primaryEntity(item: ContentItem, path: string): Node {
       "@id": entityId(path, "software"),
       ...common,
       url: t.url, // the official external site
-      applicationCategory: "DeveloperApplication",
+      applicationCategory:
+        TOOL_APP_CATEGORY[t.category] ?? "DeveloperApplication",
       ...(t.os.length ? { operatingSystem: t.os.join(", ") } : {}),
       ...(sameAs.length ? { sameAs } : {}),
       ...(t.license ? { license: t.license } : {}),

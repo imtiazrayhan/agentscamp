@@ -25,7 +25,7 @@ export function buildMetadata(item: ContentItem): Metadata {
   const author = (item as GuideItem).author ?? site.name;
   const authorMetadata = {
     name: author,
-    ...(author === site.name ? { url: "/about" } : {}),
+    url: author === site.name ? "/about" : "/about#who-writes-this",
   };
 
   return {
@@ -64,6 +64,7 @@ export function buildMetadata(item: ContentItem): Metadata {
     },
     twitter: {
       card: "summary_large_image",
+      site: site.xHandle,
       title,
       description,
     },
@@ -158,6 +159,7 @@ export function buildPageMetadata(opts: {
     },
     twitter: {
       card: "summary_large_image",
+      site: site.xHandle,
       title: opts.title,
       description: opts.description,
     },

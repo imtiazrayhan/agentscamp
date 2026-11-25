@@ -47,6 +47,12 @@ const CATEGORY_OVERRIDES: Record<string, string> = {
     "Guides for designers: Claude Design, Figma-to-code with Claude Code, design-system upkeep, and the AI design tools that fit a working stack.",
   "guide/analytics":
     "Guides for data and analytics teams: Claude for Excel, text-to-SQL, notebooks with Claude Code, and checking an AI analysis before trusting it.",
+  "guide/sales":
+    "Guides for sales and revenue teams: Claude for sales, the official sales plugin, sourced prospect research, and the AI sales tools worth paying for.",
+  "guide/comparisons":
+    "Side-by-side AI tool comparisons and roundups — coding agents, models, RAG parsers, search APIs, and work tools compared on trade-offs and real fit.",
+  "guide/deals":
+    "Verified discounts, free tiers, and promo programs for AI tools, coding agents, and developer platforms — updated as offers change.",
   "skill/product":
     "Skills for founders and product people — PRDs, scope cuts, interview synthesis, competitor teardowns — that run on claude.ai, Claude Code, and Cowork.",
   "skill/marketing":
@@ -55,6 +61,8 @@ const CATEGORY_OVERRIDES: Record<string, string> = {
     "Skills for designers — briefs, critiques, tokens, component specs, UX copy — that run on claude.ai, Claude Code, and Cowork.",
   "skill/analytics":
     "Skills for analysts — dataset first looks, chart choice, analysis memos, SQL explanations, spreadsheet audits — that run on claude.ai, Claude Code, and Cowork.",
+  "skill/sales":
+    "Skills for sales and revenue teams — prospect research, account briefs, CRM hygiene, and outreach checks — that run on claude.ai, Claude Code, and Cowork.",
   "command/product":
     "Slash commands for product work in Claude Code: draft a PRD from rough notes, cut it to an MVP scope, and validate an interview scorecard before it is used.",
   "command/marketing":
@@ -63,6 +71,8 @@ const CATEGORY_OVERRIDES: Record<string, string> = {
     "Slash commands for design work in Claude Code: critique a UI screenshot against a fixed checklist, and extract design tokens from a stylesheet or theme.",
   "command/analytics":
     "Slash commands for analytics work in Claude Code: profile a new dataset, write a precise metric definition, and count labeled feedback with code.",
+  "command/sales":
+    "Slash commands for sales work in Claude Code: research an account, audit outreach copy, and check deliverability before a sequence goes live.",
   "agent/product":
     "Subagents for founders: a technical co-founder that reviews AI-built apps for the risks that bite non-technical owners.",
   "agent/marketing":
@@ -71,10 +81,42 @@ const CATEGORY_OVERRIDES: Record<string, string> = {
     "Subagents for designers: a design-systems librarian that keeps tokens, components, and Figma in sync.",
   "agent/analytics":
     "Subagents for analysts: a reviewer that checks an analysis for methodological errors before it ships.",
+  "agent/sales":
+    "Subagents for sales teams: research and review agents that check prospect facts, CRM notes, and outbound drafts before anything reaches a buyer.",
 };
 
 const TOPIC_OVERRIDES: Record<string, string> = {
-  // `${topicSlug}`: "custom intro description"
+  // `${topicSlug}`: "custom intro description" (110-160 chars)
+  "coding-languages":
+    "Guides, agents, skills, tools, and commands for AI-assisted coding — language specialists, editors, and workflows for shipping software with AI agents.",
+  "review-qa":
+    "AI code review, testing, debugging, and QA resources — guides, skills, subagents, and tools for catching bugs and raising test coverage before merge.",
+  "devops-infra":
+    "DevOps, CI/CD, containers, and platform engineering with AI — guides, skills, and agents for GitHub Actions, sandboxing, observability, and reliable deploys.",
+  "data-ml":
+    "Data engineering, analytics, SQL, and machine learning resources — guides, tools, and skills for notebooks, data pipelines, and trustworthy AI analysis.",
+  architecture:
+    "System design, refactoring, API design, and software architecture with AI — guides, skills, and subagents for keeping complex codebases maintainable.",
+  "workflow-prompting":
+    "Prompt engineering, context management, CLAUDE.md setup, and AI workflows — guides, skills, and commands for getting reliable output from LLMs.",
+  "rag-retrieval":
+    "Retrieval-augmented generation (RAG), embeddings, chunking, vector databases, and document parsing — guides, tools, and skills for grounded AI apps.",
+  "llm-evals":
+    "LLM evaluation, benchmarks, hallucination testing, and observability — guides, tools, and skills for measuring model quality before shipping to users.",
+  "ai-agents-systems":
+    "Designing and running AI agent systems — tool use, orchestration, subagents, sandboxing, and production frameworks across guides, tools, and skills.",
+  "llm-app-dev":
+    "Building production LLM applications — structured outputs, provider fallbacks, caching, streaming, and SDKs covered across guides, tools, and skills.",
+  "mlops-ai-infra":
+    "LLM inference providers, GPU hosting, fine-tuning, and AI infrastructure — guides, tools, and comparisons for serving models fast and affordably.",
+  "ai-safety-security":
+    "AI security, prompt injection defense, guardrails, PII redaction, and safe agent execution — guides, skills, and auditing agents for production teams.",
+  mcp:
+    "Model Context Protocol (MCP) servers, clients, setup guides, and build patterns — connect Claude Code, Cursor, and AI agents to external tools and data.",
+  "multimodal-ai":
+    "Voice AI, speech-to-text, text-to-speech, vision models, and multimodal document extraction — guides, API comparisons, and tools for audio and visual AI.",
+  "ai-at-work":
+    "Practical AI for founders, marketers, designers, sales, and analysts — guides, tool comparisons, and ready-to-use skills for everyday non-engineering work.",
 };
 
 // Tool categories outside the developer stack (role-path expansion) get their
@@ -95,6 +137,10 @@ const TOOL_CATEGORY_OVERRIDES: Record<string, (n: number) => string> = {
     `${n} AI analytics tools — notebooks, text-to-SQL, chat-first analysis — compared on what each does, how it's priced, and where it fits an analyst's stack.`,
   browser: (n) =>
     `${n} AI browsers with built-in assistants and agent modes — what each can do on a page, how memory and privacy work, and which fits everyday work.`,
+  sales: (n) =>
+    `${n} AI sales and revenue tools — prospecting, enrichment, conversation intelligence, and outbound workflows — compared on pricing and fit.`,
+  voice: (n) =>
+    `${n} AI voice, speech-to-text, and text-to-speech tools and APIs — latency, voice quality, pricing models, and where each fits in production.`,
 };
 
 export interface Collection {
@@ -118,7 +164,9 @@ export function categoryCollection(
   const title = `${label} ${def.label}`;
   const description =
     CATEGORY_OVERRIDES[`${type}/${category}`] ??
-    `Explore ${items.length} curated ${label.toLowerCase()} ${def.label.toLowerCase()} for building with AI coding agents — what each one does, when to use it, and how to add it to your workflow.`;
+    (type === "guide"
+      ? `Explore ${items.length} practical ${label.toLowerCase()} guides on AgentsCamp — clear explanations, trade-offs, and hands-on workflows for working with AI.`
+      : `Explore ${items.length} curated ${label.toLowerCase()} ${def.label.toLowerCase()} for building with AI coding agents — what each one does, when to use it, and how to add it to your workflow.`);
   return {
     title,
     description,
@@ -235,8 +283,8 @@ export function toolPricingCollection(pricing: string): Collection | null {
   if (!items.length) return null;
   const label = titleCaseLabel(pricing);
   return {
-    title: `${label} AI Coding Tools`,
-    description: `${label} AI coding tools — ${items.length} curated editors, agents, CLIs, and MCP servers with notes on what each does best and how it fits your development stack.`,
+    title: `${label} AI Tools`,
+    description: `${label} AI tools — ${items.length} curated assistants, coding agents, MCP servers, design, marketing, and data tools with notes on strengths and fit.`,
     items,
     crumbs: [{ label: "Home", href: "/" }, toolsCrumb, { label }],
     noindex: items.length < MIN_INDEXABLE,
@@ -270,7 +318,7 @@ export function toolAlternativesCollection(
   return {
     tool,
     title: `${tool.title} Alternatives`,
-    description: `${alts.length} alternatives to ${tool.title} — free and paid AI coding tools covering similar jobs, with pricing and standout strengths.`,
+    description: `${alts.length} alternatives to ${tool.title} — free and paid AI tools covering similar jobs, with pricing, trade-offs, and standout strengths.`,
     items: alts,
     crumbs: [
       { label: "Home", href: "/" },

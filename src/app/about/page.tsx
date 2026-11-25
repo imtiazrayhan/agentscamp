@@ -90,8 +90,9 @@ export default function AboutPage() {
           Material revisions receive an updated date. A changed date should reflect
           a real editorial change, not an automated build or cosmetic deployment.
           If you find an outdated claim, broken example, attribution problem, or
-          security concern, contact AgentsCamp through the official profile linked
-          below and include the page URL plus the evidence for the correction.
+          security concern, use the <Link href="/contact">contact form</Link> or
+          email linked below and include the page URL plus the evidence for the
+          correction.
         </p>
 
         <h3>AI-assisted work</h3>
@@ -131,8 +132,17 @@ export default function AboutPage() {
         <h2>Contact</h2>
         <p>
           For corrections and editorial questions, use the{" "}
-          <Link href="/contact">contact form</Link> or email{" "}
-          <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.
+          <Link href="/contact">contact form</Link>, email{" "}
+          <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>, or
+          follow updates on{" "}
+          <a
+            href="https://x.com/agentscamp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            X ({site.xHandle})
+          </a>
+          .
         </p>
       </div>
     </article>

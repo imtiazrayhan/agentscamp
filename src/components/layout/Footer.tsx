@@ -146,6 +146,9 @@ export function Footer() {
             <ul className="mt-3 space-y-0.5">
               <TextLink href="/about">About &amp; editorial standards</TextLink>
               <TextLink href="/contact">Contact</TextLink>
+              <TextLink href="https://x.com/agentscamp" vouch>
+                X ({site.xHandle})
+              </TextLink>
             </ul>
           </div>
         </div>
