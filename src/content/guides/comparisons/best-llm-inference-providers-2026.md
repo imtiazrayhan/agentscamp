@@ -1,6 +1,6 @@
 ---
 title: "The Best LLM Inference Providers in 2026: Groq vs Together vs Fireworks vs Baseten and More"
-description: "Groq, Cerebras, Together AI, Fireworks AI, Baseten, Modal, fal and Replicate compared by workload, with 2026 ownership changes and OpenAI compatibility."
+description: "Groq, fal, Cerebras, Together AI, Fireworks AI, Baseten, Modal and Replicate compared on latency, serverless GPU compute, custom deployments and compatibility."
 seoTitle: "Best LLM Inference Providers (2026): Groq Alternatives Compared"
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
@@ -11,27 +11,27 @@ topics: ["mlops-ai-infra", "llm-app-dev"]
 audience: ["ai-engineers"]
 tags: ["comparison", "best-of", "inference", "llm-api", "open-models", "gpu"]
 keywords: ["groq alternatives", "groq competitors", "together ai alternatives", "fireworks ai alternatives", "baseten alternatives", "replicate alternatives", "fal alternatives", "best llm inference providers"]
-summary: "The right LLM inference provider depends on workload: Groq and Cerebras for speed on a few open models, Together AI and Fireworks AI for broad catalogues with fine-tuning, Baseten and Modal for your own models on dedicated GPUs, and fal or Replicate (Cloudflare-owned since December 2025) for media generation. Most LLM hosts here are OpenAI-compatible."
+summary: "The right inference provider depends on workload: Groq and Cerebras for speed on a few open models, fal for generative media plus autoscaling custom vLLM/SGLang servers and dedicated H100 compute, Together AI and Fireworks AI for broad catalogues with fine-tuning, Baseten and Modal for custom deployments, and Replicate (Cloudflare-owned) for long-tail media."
 keyTakeaways:
-  - "Choose by workload, not leaderboard: speed (Groq, Cerebras), catalogue and fine-tuning (Together AI, Fireworks AI), your own models on dedicated GPUs (Baseten, Modal), or generative media (fal, Replicate)."
+  - "Choose by workload, not leaderboard: speed (Groq, Cerebras), generative media plus autoscaling custom servers and GPU compute (fal), catalogue and fine-tuning (Together AI, Fireworks AI), or custom model endpoints (Baseten, Modal)."
   - "NVIDIA licensed Groq's inference technology in December 2025 rather than buying the company. Groq stays independent and GroqCloud keeps running, but its Llama models are now enterprise-only."
   - "Cerebras publishes the highest speeds here, about 3,000 tokens per second for GPT OSS 120B as of September 2026, on a two-model public catalogue. It went public in May 2026 and powers OpenAI's Ultrafast tier."
   - "Cloudflare closed its acquisition of Replicate on December 1, 2025. The API is unchanged, and Replicate's models are moving onto Cloudflare infrastructure and AI Gateway."
-  - "OpenAI compatibility is common but partial: Groq and Cerebras document unsupported parameters, Fireworks and Baseten also speak Anthropic's Messages API, and Modal has one only if you deploy your own server."
+  - "OpenAI compatibility is common but varies by model: Groq and Cerebras document unsupported parameters, Fireworks and Baseten also speak Anthropic's Messages API, and Modal and fal Serverless expose one when you deploy your own vLLM or SGLang server."
   - "Put a router or gateway in front of whichever provider you adopt, so a rate limit, outage or price change becomes a config edit rather than a rewrite."
 faq:
   - q: "What are the best Groq alternatives?"
-    a: "Cerebras is the closest match on speed; its pricing page lists GPT OSS 120B at about 3,000 tokens per second as of September 2026. For a broader open-model catalogue with fine-tuning, use Together AI or Fireworks AI, and for your own models on dedicated GPUs, use Baseten or Modal."
+    a: "Cerebras is the closest match on speed; its pricing page lists GPT OSS 120B at about 3,000 tokens per second as of September 2026. For a broader open-model catalogue with fine-tuning, use Together AI or Fireworks AI, and for deploying your own vLLM or SGLang server on autoscaling or dedicated GPUs, use fal, Baseten or Modal."
   - q: "Are there free alternatives to Groq?"
     a: "Groq itself has a rate-limited free plan. Cerebras offers a free trial with credits, Fireworks and Baseten give new accounts starting credits, and Modal's Starter plan includes monthly free credits. Hugging Face Inference Providers passes provider rates through with no markup, but as of November 2026 free Hugging Face accounts get no monthly inference credits, so you buy credits or use a PRO or Team plan."
   - q: "What are the best alternatives to Together AI?"
-    a: "Fireworks AI is the most direct alternative, with a large open-model catalogue, serverless and dedicated deployments, and SFT, DPO and reinforcement fine-tuning. Baseten suits teams that want their own models on dedicated GPUs, and Groq or Cerebras suit workloads where latency matters more than catalogue breadth."
+    a: "Fireworks AI is the most direct alternative, with a large open-model catalogue, serverless and dedicated deployments, and SFT, DPO and reinforcement fine-tuning. Baseten, fal Serverless and Modal suit teams running their own open-weight servers on dedicated or autoscaling GPUs, and Groq or Cerebras suit workloads where latency matters more than catalogue breadth."
   - q: "Did NVIDIA acquire Groq?"
     a: "No. In December 2025 Groq signed a non-exclusive licensing agreement with NVIDIA for its inference technology, and its founder, president and other team members joined NVIDIA. Groq continues as an independent company and says GroqCloud continues to operate without interruption."
   - q: "What happened to Replicate?"
     a: "Cloudflare acquired Replicate; the deal was announced in November 2025 and closed on December 1, 2025. Replicate says its API is not changing and the brand carries on, and by April 2026 the team had merged into Cloudflare's AI Platform team while its models move onto Cloudflare infrastructure and AI Gateway."
   - q: "What are the best alternatives to fal and Replicate?"
-    a: "For generative media, fal and Replicate are each other's closest alternative: fal for a curated set of 1,000+ production media models billed per output, and Replicate, now part of Cloudflare, for a much larger catalogue billed per second of hardware. To host your own media model on GPUs you control, use Modal or Baseten."
+    a: "For generative media, fal and Replicate are each other's closest alternative: fal for a curated set of 1,000+ production media models billed per output, and Replicate, now part of Cloudflare, for a much larger catalogue billed per second of hardware. For running your own Dockerized vLLM, SGLang or media server on autoscaling GPUs or dedicated H100 instances, fal competes directly with Modal and Baseten."
 sources:
   - title: "Groq and NVIDIA non-exclusive inference technology licensing agreement"
     url: "https://groq.com/newsroom/groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale"
@@ -45,6 +45,15 @@ sources:
   - title: "Groq OpenAI compatibility"
     url: "https://console.groq.com/docs/openai"
     publisher: "Groq"
+  - title: "Migrate an external Docker server to fal Serverless"
+    url: "https://fal.ai/docs/documentation/development/migrate-external-docker-server"
+    publisher: "fal"
+  - title: "fal Serverless machine types"
+    url: "https://fal.ai/docs/documentation/deployment/machine-types"
+    publisher: "fal"
+  - title: "fal Compute dedicated H100 instances"
+    url: "https://fal.ai/docs/documentation/compute/index"
+    publisher: "fal"
   - title: "Cerebras Inference models overview"
     url: "https://inference-docs.cerebras.ai/models/overview"
     publisher: "Cerebras"
@@ -84,10 +93,10 @@ sources:
   - title: "OpenRouter FAQ"
     url: "https://openrouter.ai/docs/faq"
     publisher: "OpenRouter"
-related: ["tool:groq", "tool:cerebras", "tool:together-ai", "tool:fireworks-ai", "tool:baseten", "tool:modal", "tool:fal", "tool:replicate", "tool:openrouter", "guide:llm-api-pricing-2026", "guide:self-host-vs-api-llm", "guide:llm-gateways-compared"]
+related: ["tool:groq", "tool:fal", "tool:cerebras", "tool:together-ai", "tool:fireworks-ai", "tool:baseten", "tool:modal", "tool:replicate", "tool:openrouter", "guide:llm-api-pricing-2026", "guide:self-host-vs-api-llm", "guide:llm-gateways-compared"]
 ---
 
-The best LLM inference provider in 2026 depends on the workload you're serving. For the lowest latency on open models, use [Groq](/tools/groq) or [Cerebras](/tools/cerebras); for the broadest open-model catalogue with fine-tuning, [Together AI](/tools/together-ai) or [Fireworks AI](/tools/fireworks-ai); for your own models on dedicated GPUs, [Baseten](/tools/baseten) or [Modal](/tools/modal); and for image, video and audio generation, [fal](/tools/fal) or [Replicate](/tools/replicate), which Cloudflare has owned since December 2025. Most of the LLM hosts speak an OpenAI-compatible API, so you can keep two in play behind a router and switch on speed, price or availability.
+The best LLM inference provider in 2026 depends on the workload you're serving. For the lowest latency on open models, use [Groq](/tools/groq) or [Cerebras](/tools/cerebras); for generative media plus autoscaling custom deployments (including your own vLLM or SGLang Docker server) and dedicated H100 compute, use [fal](/tools/fal); for the broadest managed open-model catalogue with fine-tuning, [Together AI](/tools/together-ai) or [Fireworks AI](/tools/fireworks-ai); for your own models on dedicated or programmable GPUs, [Baseten](/tools/baseten) or [Modal](/tools/modal); and for long-tail open media models, [Replicate](/tools/replicate), which Cloudflare has owned since December 2025. Most of the LLM hosts speak an OpenAI-compatible API, so you can keep two in play behind a router and switch on speed, price or availability.
 
 *Last reviewed: November 2026.*
 
@@ -98,12 +107,12 @@ Prices change often; each tool page lists current pricing, and the [LLM API pric
 | Provider | Hardware | Billing model | OpenAI-compatible | Fine-tuning | Best for |
 | --- | --- | --- | --- | --- | --- |
 | [Groq](/tools/groq) | LPU; NVIDIA hardware planned | Per token; free plan | Mostly | Serves LoRA adapters, enterprise only | Fast GPT-OSS and Whisper |
+| [fal](/tools/fal) | NVIDIA GPUs (H100, H200, B200) | Per output (media); per second (Serverless); hourly (Compute) | Only via your own server (vLLM/SGLang) | LoRA training; full SSH training on Compute | Media APIs, autoscaling custom servers, dedicated H100s |
 | [Cerebras](/tools/cerebras) | Wafer-scale WSE-3T | Per token; free trial | For common workflows | Enterprise services | Highest published tokens/sec |
 | [Together AI](/tools/together-ai) | NVIDIA GPUs | Per token, reserved, dedicated, clusters | Yes | LoRA and full; SFT, DPO | Broad catalogue plus fine-tuning |
 | [Fireworks AI](/tools/fireworks-ai) | NVIDIA GPUs | Per token, batch, per GPU-second | Yes, plus Anthropic API | SFT, DPO, RFT | Customized open models at scale |
 | [Baseten](/tools/baseten) | NVIDIA GPUs | Per-token Model APIs; per-minute GPUs | Yes, plus Anthropic API | Training product | Your own models, autoscaled |
 | [Modal](/tools/modal) | NVIDIA GPUs and CPUs | Per-second compute | Only via your own server | You run it | Custom code, batch, sandboxes |
-| [fal](/tools/fal) | GPUs | Per output; GPU by hour or second | Not an LLM host | LoRA training | Image and video features |
 | [Replicate](/tools/replicate) (Cloudflare) | GPUs | Per second of hardware | Not verified | Fine-tunes | The long tail of open models |
 
 ## Pick by workload
@@ -116,9 +125,9 @@ Both built their own inference silicon and publish per-model speeds; the catch i
 
 These are the general-purpose [open-weight](/glossary/open-weights) clouds: large catalogues, per-token serverless, dedicated capacity when traffic steadies, and fine-tunes served on the same platform. Choose Together AI for more ways to buy capacity and fine-tunes you can download. Choose Fireworks AI if you'll run reinforcement fine-tuning or want Anthropic-compatible clients.
 
-### Dedicated or custom deployments: Baseten or Modal
+### Dedicated or custom deployments: fal, Baseten or Modal
 
-Choose Baseten for a managed, autoscaling production endpoint for your own or open models, with per-token Model APIs for popular ones. Choose Modal when the model is one part of a larger Python job and you're happy to deploy the inference server yourself.
+Choose [fal](/tools/fal) when you want to drop an existing vLLM or SGLang Docker server straight onto autoscaling H100, H200 or B200 GPUs with scale-to-zero, or spin up dedicated H100 SXM instances with SSH alongside a media-model stack. Choose Baseten for a managed, SOC 2/HIPAA-compliant production endpoint with per-token Model APIs for popular open models. Choose Modal when the model is one part of a larger Python job and you're happy to deploy the inference server yourself.
 
 ### Generative media: fal or Replicate
 
@@ -139,6 +148,17 @@ In December 2025 Groq signed a non-exclusive licensing agreement with NVIDIA for
 The API is "mostly compatible" with OpenAI's client libraries at `https://api.groq.com/openai/v1`, minus `logprobs`, `logit_bias`, `top_logprobs`, `messages[].name` and `n` above 1. The free plan is rate-limited per model; the Developer plan adds higher limits plus Batch and Flex processing. Groq doesn't fine-tune: enterprise customers can serve externally trained LoRA adapters on Llama 3.1 8B only.
 
 **Verdict:** a low-friction start for fast inference, especially GPT-OSS and Whisper, with a free plan to prove the latency gain. If you relied on Groq's Llama models, check your plan: they're enterprise-only now.
+
+### fal: generative media, serverless autoscaling, and GPU compute
+
+[fal](https://fal.ai) ([tool profile](/tools/fal)) is best known for generative media, offering 1,000+ image, video, audio and 3D models behind one API with SDKs for Python, JavaScript, Swift, Kotlin/Java and Dart. Model APIs bill per output (per image or per second of video), its homepage says the fal Inference Engine is "up to 10x faster", and the platform also ships LoRA training (such as FLUX LoRA) alongside Agent, Sandbox and Workflows products.
+
+Beyond its media gallery, fal runs two infrastructure tiers for open-weight LLMs and custom models:
+
+- **fal Serverless (custom deployments and autoscaling):** Using Direct Server Mode ([external Docker server docs](https://fal.ai/docs/documentation/development/migrate-external-docker-server)), you can deploy an existing Dockerized **vLLM** or **SGLang** server directly without rewriting your HTTP wrapper — declare `exposed_port = 8000`, `min_concurrency`, `max_concurrency` and `keep_alive` in `pyproject.toml`, then ship with `fal deploy`. Replicas scale down to zero when idle and bill per second of active execution across NVIDIA **H100 SXM** (80 GB), **H200 SXM** (141 GB) and **B200** (192 GB) [machine types](https://fal.ai/docs/documentation/deployment/machine-types), including multi-GPU configurations and automatic GPU fallback lists (for example `["GPU-H200", "GPU-B200"]`).
+- **fal Compute (dedicated GPUs with SSH):** For persistent serving, long-running fine-tuning or batch pipelines that need predictable dedicated hardware, [fal Compute](https://fal.ai/docs/documentation/compute/index) provisions continuous `1xH100-SXM` (80 GB VRAM, 1 TB SSD) and `8xH100-SXM` (640 GB VRAM, 8 TB SSD) instances with full root SSH access and optional InfiniBand multi-node networking within the same sector, billed at fixed hourly rates.
+
+**Verdict:** the production default for media features and a strong option when you want one platform for both generative media APIs and autoscaling custom vLLM/SGLang or dedicated H100 workloads. Because fal does not currently publish a managed per-token LLM API, treat its LLM path as bring-your-own-server (like Modal) — deploy vLLM or SGLang on fal Serverless or fal Compute for an OpenAI-compatible endpoint, or pair it with a per-token host below if you want managed chat endpoints out of the box.
 
 ### Cerebras: wafer-scale speed, small menu
 
@@ -178,12 +198,6 @@ Fine-tuning is the center of gravity: SFT and DPO priced per training token, rei
 
 **Verdict:** the choice when the model sits inside a larger Python workload, such as batch embedding, evaluation, RL loops or agent sandboxes, and you want per-second GPUs without Kubernetes. For plain tokens from a popular open model, a per-token host is less work.
 
-### fal: generative media at production speed
-
-[fal](/tools/fal), a "generative media platform for developers", offers 1,000+ image, video, audio and 3D models behind one API, with SDKs for Python, JavaScript, Swift, Kotlin/Java and Dart. Model APIs bill per output (per image, per second of video); GPU compute bills per hour and serverless per second. Its homepage says the fal Inference Engine is "up to 10x faster", and it supports private or fine-tuned deployments, LoRA training such as FLUX LoRA, and newer Agent, Sandbox and Workflows products.
-
-**Verdict:** the production default for media features: curated models, per-output billing that maps to product usage, and mobile SDKs. It isn't an LLM host, so pair it with one of the providers above.
-
 ### Replicate: the long tail, now part of Cloudflare
 
 [Replicate](/tools/replicate) runs community and official image, video, audio and language models behind one API; Cloudflare cites 50,000+ models and fine-tunes. You package your own with Cog (Apache-2.0), and billing is per second of hardware, from CPU to H100.
@@ -197,13 +211,14 @@ Cloudflare announced the acquisition in November 2025 and closed it on December 
 | Provider | Base URL | Notes |
 | --- | --- | --- |
 | Groq | `https://api.groq.com/openai/v1` | Mostly compatible; no logprobs, logit_bias or n above 1 |
+| fal Serverless | Your own deployment | Deploy your own vLLM or SGLang Docker server via Direct Server Mode |
 | Cerebras | `https://api.cerebras.ai/v1` | n must be 1; base64 images only |
 | Together AI | `https://api.together.ai/v1` | Chat, vision, images, TTS, embeddings |
 | Fireworks AI | See its docs | Anthropic SDK base: `https://api.fireworks.ai/inference` |
 | Baseten Model APIs | `https://inference.baseten.co/v1` | Also Anthropic-compatible |
 | Hugging Face router | `https://router.huggingface.co/v1` | Routes to partner providers |
 | Modal | Your own deployment | For example, a vLLM server |
-| fal, Replicate | Not applicable | fal isn't an LLM host; Replicate unverified |
+| Replicate | Not verified | Per-second hardware billing; OpenAI compatibility unverified |
 
 Compatible rarely means identical: test the parameters your code actually sends, especially tool calling with structured output and image inputs, before you swap a base URL.
 
@@ -230,7 +245,7 @@ Compatible rarely means identical: test the parameters your code actually sends,
 
 - **Latency is the product:** Cerebras if your model is on its list, otherwise Groq.
 - **You need many open models and will fine-tune:** Together AI for flexible capacity, Fireworks AI for reinforcement fine-tuning and Anthropic-compatible clients.
-- **You have your own model:** Baseten for a managed endpoint, Modal for code-first control.
+- **You have your own model or vLLM/SGLang container:** fal Serverless for scale-to-zero Docker servers on H100–B200 (or fal Compute for dedicated H100s with SSH), Baseten for a managed endpoint, Modal for Python-first control.
 - **You generate images, video or audio:** fal for production, Replicate (Cloudflare-owned since December 2025) for breadth.
 - **You want several of them:** a router such as [OpenRouter](/tools/openrouter) or a self-hosted gateway, compared in [LiteLLM vs OpenRouter](/guides/comparisons/litellm-vs-openrouter).
 
