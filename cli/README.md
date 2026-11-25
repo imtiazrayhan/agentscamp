@@ -1,8 +1,8 @@
 # agentscamp
 
-> 263 ready-to-use Claude Code agents, skills, and slash commands — installable in one command.
+> 345 ready-to-use Claude Code agents, skills, and slash commands — installable in one command.
 
-[AgentsCamp](https://agentscamp.com) is a curated, format-validated directory of AI coding artifacts. This CLI bundles the full catalog and installs items straight into your `.claude/` directory.
+[AgentsCamp](https://agentscamp.com) is a curated, format-validated hub for AI guides, tools, and Claude Code artifacts. This zero-dependency CLI bundles the full installable catalog and writes items straight into your `.claude/` directory.
 
 ## Quick start
 
@@ -14,10 +14,10 @@ npx agentscamp
 
 ```
 What do you want to install?
-❯ Everything            263 items
-  Agents only          58
-  Skills only          90
-  Commands only        50
+❯ Everything            345 items
+  Agents only           89
+  Skills only          168
+  Commands only         88
   Pick individual items…
   Cancel
 ```
@@ -29,9 +29,9 @@ npx agentscamp --all
 ```
 
 ```
-Installing 263 items into ~/.claude …
-✓ 65 agents, 130 skills, 61 commands installed
-263 installed · ~/.claude
+Installing 345 items into ~/.claude …
+✓ 89 agents, 168 skills, 88 commands installed
+345 installed · ~/.claude
 ```
 
 ## Commands
@@ -69,11 +69,19 @@ These are Claude Code's standard locations — agents get delegated to automatic
 
 ## What's inside
 
-- **65 agents** — specialized subagents for development, data/AI, infra, security, and more → [browse agents](https://agentscamp.com/agents)
-- **130 skills** — on-demand capabilities for testing, databases, refactoring, releases → [browse skills](https://agentscamp.com/skills)
-- **61 commands** — reusable slash commands for planning, review, git, scaffolding → [browse commands](https://agentscamp.com/commands)
+- **89 agents** — specialized subagents for development, data/AI, infra, security, product, marketing, and analytics → [browse agents](https://agentscamp.com/agents)
+- **168 skills** — on-demand `SKILL.md` capabilities for testing, databases, refactoring, RAG, releases, and more → [browse skills](https://agentscamp.com/skills)
+- **88 commands** — reusable slash commands for planning, review, git, scaffolding, and profiling → [browse commands](https://agentscamp.com/commands)
 
 Every item has a full page with docs, examples, and related picks at [agentscamp.com](https://agentscamp.com).
+
+## Popular guides & directories on AgentsCamp
+
+- [Best Claude Skills in 2026](https://agentscamp.com/guides/skills/best-claude-skills-2026) — curated skills by job
+- [Best MCP Servers in 2026](https://agentscamp.com/guides/mcp/best-mcp-servers-2026) — coding, docs, database, and browser MCP servers
+- [Best Claude Code Alternatives in 2026](https://agentscamp.com/guides/comparisons/best-claude-code-alternatives-2026) — CLI, IDE, and open-source comparisons
+- [AI Tools Directory](https://agentscamp.com/tools) — 260+ AI tools with pricing and `/alternatives` comparisons
+- [Machine-readable index (`llms.txt`)](https://agentscamp.com/llms.txt) — clean Markdown twins for every page
 
 ## How it works
 

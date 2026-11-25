@@ -205,6 +205,14 @@ ${countRows}
 
 ${contentTypeList.map((d) => `- **[${d.label}](${PLURAL[d.id]}.md)** — ${d.tagline}`).join("\n")}
 
+## Popular starting points on ${site.name}
+
+- [Best Claude Skills in 2026](${site.url}/guides/skills/best-claude-skills-2026)
+- [The Best MCP Servers in 2026](${site.url}/guides/mcp/best-mcp-servers-2026)
+- [Best Claude Code Alternatives in 2026](${site.url}/guides/comparisons/best-claude-code-alternatives-2026)
+- [AI Coding Statistics (2026)](${site.url}/guides/concepts/ai-coding-statistics-2026)
+- [Start here by role](${site.url}/for) · [llms.txt](${site.url}/llms.txt) · [RSS feed](${site.url}/feed.xml) · [X (${site.xHandle})](https://x.com/agentscamp)
+
 ## About
 
 [${site.name}](${site.url}) is ${site.description.charAt(0).toLowerCase() + site.description.slice(1)} Browse, search, and read the full guides on the site — this repo mirrors the installable library for git-native distribution.

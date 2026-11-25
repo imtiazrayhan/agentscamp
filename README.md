@@ -4,13 +4,21 @@
 
 ## What's on the site
 
-- **Guides** — tutorials and deep-dives, from first principles to advanced workflows → [agentscamp.com/guides](https://agentscamp.com/guides)
-- **Tools** — a curated directory of AI coding tools, editors, agents, and MCP servers, with pricing and alternatives → [agentscamp.com/tools](https://agentscamp.com/tools)
-- **Glossary** — AI and LLM-engineering terms, defined precisely → [agentscamp.com/glossary](https://agentscamp.com/glossary)
-- **Topics** — cross-cutting collections across every content type → [agentscamp.com/topics](https://agentscamp.com/topics)
-- **Agents, skills, and commands** — installable Claude Code artifacts in the real on-disk format. Every page has copy/download actions and the exact install path → [/agents](https://agentscamp.com/agents) · [/skills](https://agentscamp.com/skills) · [/commands](https://agentscamp.com/commands)
+- **Guides (297)** — tutorials, benchmarks, and head-to-head comparisons across coding agents, RAG, MCP, evals, voice, and AI at work → [agentscamp.com/guides](https://agentscamp.com/guides)
+- **Tools (262)** — a curated AI tool directory with pricing, workflows, and `/alternatives` pages → [agentscamp.com/tools](https://agentscamp.com/tools)
+- **Glossary (157)** — plain-language AI and LLM-engineering definitions → [agentscamp.com/glossary](https://agentscamp.com/glossary)
+- **Role paths & topics** — curated starting points by role ([/for](https://agentscamp.com/for)) and cross-type collections ([/topics](https://agentscamp.com/topics))
+- **Agents (89), skills (168), and commands (88)** — installable Claude Code artifacts in the real on-disk format, with copy/download actions and exact install paths → [/agents](https://agentscamp.com/agents) · [/skills](https://agentscamp.com/skills) · [/commands](https://agentscamp.com/commands)
 
-Every page has a clean Markdown twin at the same URL plus `.md`; the whole hub is machine-readable at [/llms.txt](https://agentscamp.com/llms.txt) and [/llms-full.txt](https://agentscamp.com/llms-full.txt). Follow new additions via [/feed.xml](https://agentscamp.com/feed.xml) or the guides-only [/guides/feed.xml](https://agentscamp.com/guides/feed.xml).
+### Popular starting points
+
+- [AI Coding Agents & Claude Code Alternatives (2026)](https://agentscamp.com/guides/comparisons/best-claude-code-alternatives-2026)
+- [Best Claude Skills in 2026](https://agentscamp.com/guides/skills/best-claude-skills-2026)
+- [The Best MCP Servers in 2026](https://agentscamp.com/guides/mcp/best-mcp-servers-2026)
+- [AI Coding Statistics (2026)](https://agentscamp.com/guides/concepts/ai-coding-statistics-2026)
+- [Start here by role](https://agentscamp.com/for) — developers, AI engineers, DevOps, security, founders, marketers, designers, analysts, and sales
+
+Every page has a clean Markdown twin at the same URL plus `.md` (or via `Accept: text/markdown`); the whole hub is machine-readable at [/llms.txt](https://agentscamp.com/llms.txt) and [/llms-full.txt](https://agentscamp.com/llms-full.txt). Follow updates on [X (@agentscamp)](https://x.com/agentscamp), [/feed.xml](https://agentscamp.com/feed.xml), or [/guides/feed.xml](https://agentscamp.com/guides/feed.xml).
 
 ## npm CLI (optional)
 

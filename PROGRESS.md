@@ -1,3 +1,16 @@
+# Off-Site Distribution Surfaces & Playbook (#2) — 2026-11-25 — VERIFIED
+
+Goal: refresh AgentsCamp's third-party distribution surfaces (GitHub README, npmjs.com CLI README, `awesome-agentscamp` mirror generator) and document the concrete off-site authority, benchmark, outreach, and `@agentscamp` X launch plan.
+
+## Done
+- `cli/README.md`: updated stale catalog counts (263 / 58-90-50 / 65-130-61 → **345 installables**: 89 agents, 168 skills, 88 commands) and added flagship guide + `/tools` + `/llms.txt` links for npmjs.com distribution.
+- `README.md`: added live counts across all 1,061 resources, a "Popular starting points" block, `Accept: text/markdown` note, and `@agentscamp` X link.
+- `scripts/build-mirror-repo.ts`: added flagship guides, `/for`, `/llms.txt`, `/feed.xml`, and `@agentscamp` X link to the generated `awesome-agentscamp` mirror README.
+- `docs/offsite-distribution-playbook.md` (local-only): complete playbook covering npm v0.12.0 publish + `awesome-*` PRs, 3 reproducible link-magnet benchmark studies (MCP token overhead, AI search domain citations via `ai-visibility.ts`, web search API benchmark), 20 indie/MCP maintainer outreach targets + template, and a 2-week `@agentscamp` X / Reddit / Show HN / Dev.to canonical syndication calendar.
+
+## Verified
+- `npm run lint`, `npm run cli:build`, `cli/scripts/verify-bundle.mjs`, and `npm run mirror:build` all passed cleanly.
+
 # SEO/GEO Growth Wave: Alternatives, Thin Guides, Tool Links & IndexNow — 2026-11-25 — PUSHED
 
 Goal: unlock high-intent `/tools/[slug]/alternatives` pages, deepen the thinnest flagship guides, add contextual body links to all 25 zero-link flagship tools, and fix IndexNow deploy coverage.
