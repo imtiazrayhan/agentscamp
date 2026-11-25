@@ -42,7 +42,7 @@ Voice agents crossed the production threshold — a billion-plus calls on the ma
 
 **Assemble with [Pipecat](/tools/pipecat)** when the pipeline *is* your differentiation. The open-source Python framework composes voice flows from interchangeable pieces — any [STT](/guides/voice/best-stt-apis-2026), any LLM, any [TTS](/guides/voice/best-tts-apis-2026), custom logic between stages — without also adopting a media-server worldview. It pairs naturally with LiveKit or other transports underneath.
 
-**Buy [Vapi](/tools/vapi)** when shipping beats owning. Assistant = prompt + model + voice + tools; attach a number; live. Turn-taking (vendor-claimed sub-600ms), interruptions, telephony, and multi-agent Squads come managed, at a platform fee per minute plus model costs (BYO keys pass through at cost). The 2026 traction — a $50M Series B, Amazon Ring routing all inbound calls through it — says the buy side is no toy. ([Cartesia Line](/tools/cartesia) plays the same posture, vertically integrated on Cartesia's models.)
+**Buy [Vapi](/tools/vapi)** when shipping beats owning. Assistant = prompt + model + voice + tools; attach a number; live. Turn-taking (vendor-claimed sub-600ms), interruptions, telephony, and multi-agent Squads come managed, at a platform fee per minute plus model costs (BYO keys pass through at cost). The 2026 traction — a $50M Series B as of June 2026, Amazon Ring routing all inbound calls through it — says the buy side is no toy. ([Cartesia Line](/tools/cartesia) plays the same posture, vertically integrated on Cartesia's models.)
 
 ## What actually decides quality
 

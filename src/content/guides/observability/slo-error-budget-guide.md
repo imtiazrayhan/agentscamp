@@ -193,5 +193,6 @@ Use the [SLO Definer](/skills/observability/slo-definer) to produce the initial 
 
 ## Continue exploring
 
+- [Distributed Tracing with OpenTelemetry: End-to-End Request Visibility](/guides/observability/distributed-tracing-opentelemetry) — Follow slow or failing requests across services, queues, and LLM calls once an error-budget alert fires.
 - [Incident Responder](/agents/infrastructure-devops/incident-responder) — Use this agent during a live production incident to restore service fast and learn from it — triage and severity, mitigation-first action (roll back, fail over, shed load),…
 - [sre-engineer](/agents/infrastructure-devops/sre-engineer) — Use this agent to make reliability measurable: SLIs/SLOs and error budgets, observability, symptom-based alerting, incident response, and capacity.

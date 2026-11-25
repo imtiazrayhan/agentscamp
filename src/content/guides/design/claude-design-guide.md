@@ -3,7 +3,7 @@ title: "Claude Design: The Complete Guide (2026)"
 description: "What Claude Design makes, how it ingests your design system, the three editing modes, every export and handoff, and where it stops. Written for designers."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
-updated: 2026-09-10
+reviewed: 2026-09-10
 depth: cornerstone
 color: "green"
 topics: ["ai-at-work", "multimodal-ai"]

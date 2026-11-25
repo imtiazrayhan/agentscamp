@@ -3,6 +3,7 @@ title: "LangChain vs LlamaIndex in 2026: Agents or Data?"
 description: "The classic framework confusion resolved — LangChain's agent loop and ecosystem vs LlamaIndex's data-and-documents depth — and when you'd genuinely use both."
 author: "Imtiaz Rayhan"
 date: 2026-06-12
+updated: 2026-11-25
 color: "green"
 topics: ["ai-agents-systems", "rag-retrieval"]
 audience: ["developers"]
@@ -44,13 +45,45 @@ related: ["tool:langchain", "tool:llamaindex", "tool:langgraph", "guide:agent-fr
 | | LangChain | LlamaIndex |
 | --- | --- | --- |
 | Center of gravity | Agent orchestration | Data → model pipeline |
-| Signature API | create_agent + middleware | Indexes + query engines |
-| RAG | Capable, assembled | Native depth |
-| Agents | Core identity (LangGraph runtime) | Credible, document-focused |
-| Document parsing | Via integrations | LlamaParse (the specialist) |
-| Commercial layer | LangSmith (observability) | LlamaCloud (documents) |
-| Languages | Python + JS | Python (+ TS sibling) |
+| Signature API | `create_agent` + middleware on LangGraph | Indexes, retrievers, query engines, Workflows |
+| RAG | Capable, assembled from integrations | Native depth (chunking, reranking, query routing) |
+| Agents | Core identity (durable graph runtime) | Credible, strongest on document-heavy workflows |
+| Document parsing | Via third-party loaders | LlamaParse (purpose-built layout & table OCR) |
+| Commercial layer | LangSmith (tracing, evals, deployment) | LlamaCloud (managed parse, extract, index) |
+| Languages | Python + JS/TS | Python (+ TypeScript sibling) |
+
+## Orchestration vs retrieval under the hood
+
+The practical difference shows up on week three of a production build, not in the five-line quickstart:
+
+- **Where LangChain + LangGraph wins:** durable execution. When an agent pauses for human approval before issuing a refund, retries a flaky external API, branches across specialist sub-agents, or streams token-by-token state snapshots to a UI, LangGraph's checkpointer and typed state graph solve problems you would otherwise rebuild by hand. LangChain 1.0's middleware hooks also keep cross-cutting concerns — PII redaction, token summarization, model fallback — out of individual prompts.
+- **Where LlamaIndex wins:** retrieval quality over ugly enterprise files. Real knowledge bases are full of multi-column PDFs, financial tables, slide decks, and Confluence exports where naive fixed-size chunking destroys meaning. LlamaIndex's ingestion pipeline — combining LlamaParse, hierarchical or semantic node parsers, hybrid dense+BM25 retrieval, metadata filters, and reranking postprocessors — gives you tuned retrieval primitives without stitching six libraries together.
+
+## When neither framework is the right answer
+
+Before picking either, verify you actually need a framework. If your app calls one model with structured JSON output and two deterministic tools, the provider's native SDK (or a thin 80-line loop) is faster to debug, easier to upgrade, and carries zero abstraction tax. Frameworks earn their keep once you have multi-step durable state, human-in-the-loop checkpoints, or multi-stage retrieval over heterogeneous documents.
+
+## Composing both cleanly
+
+When a system genuinely has both problems — complex agent control flow *and* tricky enterprise documents — keep a sharp boundary between them. Let LlamaIndex own the offline ingestion pipeline and expose a single typed retrieval function; register that function as a tool inside your LangChain/LangGraph agent:
+
+```python
+from langchain.tools import tool
+
+@tool
+def search_policy_docs(query: str) -> str:
+    """Search indexed compliance and policy PDFs with citations."""
+    response = policy_query_engine.query(query)
+    return str(response)
+```
+
+That seam gives each framework the job it was designed for. You can evaluate and tune LlamaIndex retrieval metrics (recall, rerank precision) independently from LangGraph's agent trajectory, tool-call reliability, and approval gates.
+
+## Production caveats to plan for
+
+- **Pin versions deliberately.** LlamaIndex ships rapidly on 0.x packages split across `llama-index-core` and provider plugins; lock exact versions in production and upgrade on a cadence. LangChain 1.0 stabilized its core surface, while legacy chains moved to `langchain-classic`.
+- **Instrument token spend early.** Both frameworks can hide multiple LLM calls inside a single `.invoke()` or `.query()` (query expansion, reranking, synthesis, retries). Wire tracing from day one — LangSmith, Langfuse, or OpenTelemetry — so every loop's latency and cost is visible.
 
 ## How to actually choose
 
-Name the hard problem. If your sleepless nights are *orchestration* — tool reliability, human gates, durable runs — that's LangChain's lane, and [the agent-framework field guide](/guides/concepts/agent-frameworks-2026) covers its rivals. If they're *data* — parsing hostile PDFs, chunking, retrieval quality — that's LlamaIndex's lane, and [How RAG Actually Works](/guides/concepts/how-rag-works) is the map it implements. If you genuinely have both, compose: LlamaIndex query engine as a tool inside a LangChain agent is boring, supported, and correct — the best kind of architecture decision.
+Name the hard problem. If your sleepless nights are *orchestration* — tool reliability, human gates, durable runs — that's LangChain's lane, and [the agent-framework field guide](/guides/concepts/agent-frameworks-2026) (plus [LangGraph vs CrewAI](/guides/comparisons/langgraph-vs-crewai)) covers its rivals. If they're *data* — parsing hostile PDFs, chunking, retrieval quality, or [GraphRAG](/guides/concepts/graph-rag) — that's LlamaIndex's lane, and [How RAG Actually Works](/guides/concepts/how-rag-works) is the map it implements. If you genuinely have both, compose: a LlamaIndex query engine as a tool inside a LangChain agent is boring, supported, and correct — the best kind of architecture decision.

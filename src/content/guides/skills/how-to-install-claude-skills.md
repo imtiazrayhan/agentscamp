@@ -106,7 +106,7 @@ For a *set* of skills — your team's whole workflow — three tiers:
 ## Beyond Claude Code
 
 - **claude.ai** — zip the skill folder, upload under **Settings → Customize → Skills**, and make sure code execution is on under **Settings → Capabilities**. Available on all plans; Team/Enterprise admins can enable skills workspace-wide.
-- **Claude API** — upload to the `/v1/skills` endpoint and attach by `skill_id` to Messages requests via the code-execution container. Code and beta headers in [Claude Skills on claude.ai and the API](/guides/skills/claude-skills-on-claude-ai-and-api).
+- **Claude API** — upload to the `/v1/skills` endpoint and attach by `skill_id` to Messages requests via the code-execution container. Code and beta headers (as of November 2026) in [Claude Skills on claude.ai and the API](/guides/skills/claude-skills-on-claude-ai-and-api).
 - **Other tools** — since Agent Skills became an open standard (agentskills.io), the same SKILL.md installs into GitHub Copilot, Cursor, VS Code, Gemini CLI, and more — each tool documents its own skills directory.
 
 Surfaces don't sync: each one needs its own copy of the skill.

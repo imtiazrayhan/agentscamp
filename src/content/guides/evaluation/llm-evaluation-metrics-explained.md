@@ -52,7 +52,7 @@ BLEU, ROUGE, and exact-match all reward **surface overlap with a reference strin
 - A correct paraphrase that shares few words scores low (false negative).
 - A fluent [hallucination](/glossary/hallucination) that reuses the question's vocabulary scores high (false positive).
 
-Exact-match is binary and brutal: "$1,200.00" vs "1200 dollars" is a miss. These metrics are fine for genuinely templated outputs and as a cheap sanity check, but they correlate poorly with human judgment on free-form generation. Do not ship a chat or summarization feature gated on ROUGE alone.
+Exact-match is binary and brutal: `"$1,200.00"` vs `"1200 dollars"` is a miss. These metrics are fine for genuinely templated outputs and as a cheap sanity check, but they correlate poorly with human judgment on free-form generation. Do not ship a chat or summarization feature gated on ROUGE alone.
 
 One classic metric is deliberately absent here: [perplexity](/glossary/perplexity) measures how well a model *intrinsically* predicts text, which is useful for comparing base models and quantization trade-offs — but it says nothing about whether your feature's output is correct, so it has no place in a task-quality eval.
 

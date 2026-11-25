@@ -1,10 +1,12 @@
 ---
 title: "Claude Free vs Pro vs Max vs Team (2026): Which Plan Unlocks What"
-description: "Every Claude plan compared as of September 2026: prices, usage tiers, and which plan unlocks Claude Code, Cowork, Design, Excel, Chrome, projects, and models."
-seoTitle: "Claude Free vs Pro vs Max vs Team (2026): Which Plan Unlocks What"
-seoDescription: "Claude plans compared as of September 2026: Free, Pro, Max, Team, and Enterprise prices, plus which plan unlocks Claude Code, Cowork, Design, Excel, and Chrome."
+description: "Every Claude plan compared as of November 2026: Free, Pro, Max, Ultra, Team, and Enterprise prices, usage tiers, and which plan unlocks Claude Code and Cowork."
+seoTitle: "Claude Free vs Pro vs Max vs Ultra vs Team (2026): Plans Compared"
+seoDescription: "Claude plans compared as of November 2026: Free, Pro, Max, Ultra, Team, and Enterprise prices, plus which plan unlocks Claude Code, Cowork, Design, and Excel."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-25
+reviewed: 2026-11-25
 freshness: "tier1"
 color: "green"
 depth: standard
@@ -13,25 +15,25 @@ audience: ["developers", "sales", "founders", "marketers"]
 tags: ["claude", "pricing", "plans", "pro", "max", "team", "comparison"]
 featured: true
 keywords: ["Claude pricing 2026", "Claude Pro vs Max", "Claude Team plan", "Claude Free plan limits", "Claude plans compared"]
-summary: "As of September 2026: Free is $0, Pro is $20/month ($17 annual), Max is $100 (5x Pro) or $200 (20x), Team is $25 or $20 annual per Standard seat and $125 or $100 per Premium seat, Enterprise is $20 per seat plus API-rate usage. Every paid plan includes Claude Code, Cowork, Design, Chrome, and Excel; Free gets chat, skills, connectors, and memory."
+summary: "As of November 2026: Free is $0, Pro is $20/month ($17 annual), Max is $100/month (5x Pro + $100 API credits), Ultra (formerly Max 20x) is $200/month (10x weekly + $200 API credits), Team is $25/$20 annual (Standard) and $125/$100 (Premium), Enterprise is $20/seat plus API-rate usage. Paid plans unlock Claude Code, Cowork (merged into chat Sep 2026), Chrome, and Excel."
 keyTakeaways:
-  - "Every paid tier unlocks the same products (Claude Code, Cowork, Design, Chrome, Microsoft 365); you pay more for usage, priority access, and admin features."
-  - "Free includes web search, skills (with custom uploads), MCP connectors, memory, and file creation; it lacks Claude Code, Cowork, Design, unlimited Projects, and Opus."
-  - "Usage is one shared pool on a rolling five-hour window, with weekly caps on paid plans; chat, Claude Code, Cowork, and Design all draw from it, Cowork hardest."
-  - "Pro is $20/month or $17/month billed annually ($200 up front); Max is $100 for 5x Pro usage or $200 for 20x, monthly only, as of September 2026."
-  - "Team seats: $25 or $20 annual (Standard), $125 or $100 annual (Premium, 5x usage), for 2 to 150 people; Enterprise is $20 per seat plus API-rate usage."
-  - "Models by tier: Free gets Sonnet and Haiku, paid plans add Opus, and Fable is usage-credit-only on Pro, capped on Max, absent on Team, included on Enterprise."
+  - "Every paid tier unlocks the same core products (Claude Code, unified Cowork agent tasks, Claude Docs & Slides, Chrome, Microsoft 365); you pay more for usage headroom, API credits, priority access, and admin controls."
+  - "Free includes web search, skills (with custom uploads), MCP connectors, memory, up to 5 Projects, file creation, and Claude Design (beta as of Nov 2026); it lacks Claude Code, full Cowork, and Opus."
+  - "Anthropic renamed Max 20x to Ultra ($200/month, monthly only): ~10x Pro weekly usage with relaxed 5-hour throttling for verified accounts plus $200/month in API credits; Max ($100/month) gives 5x Pro usage plus $100/month in API credits."
+  - "Pro is $20/month or $17/month billed annually ($200 up front); Team seats are $25/$20 annual (Standard) and $125/$100 annual (Premium, 5x usage) for 2–150 people; Enterprise is $20/seat plus API-rate usage."
+  - "Claude Cowork merged into regular Claude chat on September 16, 2026 — agentic file and cloud sandbox tasks still require a paid plan and draw harder from your shared usage pool."
+  - "Models by tier (November 2026): Free runs Sonnet 5.5 and Haiku 5.5; paid plans add Opus 5.5, with Fable 5.2 available via usage credits on Pro, higher allowances on Max/Ultra, and full access on Enterprise."
 faq:
   - q: "How much does Claude Pro cost in 2026?"
-    a: "As of September 2026, Claude Pro is $20 per month billed monthly, or $17 per month billed annually as a single $200 up-front payment. It includes everything in Free plus more usage, Claude Code, Claude Cowork, Claude Design, Claude Science, unlimited Projects, Research, access to more models, Claude in Chrome, and the Claude for Microsoft 365 add-ins."
-  - q: "What is the difference between Claude Max 5x and Max 20x?"
-    a: "Usage. Both cost more than Pro and are billed monthly: Max 5x is $100 per month for five times Pro's usage per five-hour session, and Max 20x is $200 per month for twenty times. Both add higher output limits, early access to advanced features, and priority access at high-traffic times. The products included are the same as Pro."
+    a: "As of November 2026, Claude Pro is $20 per month billed monthly, or $17 per month billed annually as a single $200 up-front payment. It includes everything in Free plus ~5x Free usage, Claude Code, unified Claude Cowork tasks, Opus 5.5 access, unlimited Projects, Research, Claude in Chrome, and the Claude for Microsoft 365 add-ins."
+  - q: "What is the difference between Claude Max and Claude Ultra (formerly Max 20x)?"
+    a: "Usage caps and bundled API credits. Both are billed monthly: Max is $100/month for ~5x Pro usage across 5-hour and weekly windows plus $100/month in API credits, while Ultra ($200/month, formerly Max 20x) provides ~10x Pro weekly usage, removes standard 5-hour throttling for verified accounts, and includes $200/month in API credits."
   - q: "Does the Free plan include Claude Code or Cowork?"
-    a: "No. Claude Code is included in all paid plans and shares the plan's usage pool; Cowork is available on Pro, Max, Team, and Enterprise. Free does include web search, file creation, skills, connectors, memory, and extended thinking, so it is a fair way to test how Claude reasons before paying."
+    a: "No. Claude Code is included in all paid plans and shares the plan's usage pool; full Cowork agentic tasks (merged into unified Claude chat in September 2026) require Pro, Max, Ultra, Team, or Enterprise. Free includes web search, file creation, skills, connectors, memory, up to 5 Projects, and Claude Design (beta), so it is a solid way to test Claude before paying."
   - q: "What do Claude Team seats cost and what is a Premium seat?"
-    a: "As of September 2026, a Standard seat is $25 per month or $20 per month billed annually, and a Premium seat is $125 per month or $100 billed annually. Premium seats get five times the usage of Standard seats. Team is for 2 to 150 people, lets you mix seat types, and adds SSO, central billing, admin controls for connectors, project sharing, and no model training on your content by default."
+    a: "As of November 2026, a Standard seat is $25 per month or $20 per month billed annually, and a Premium seat is $125 per month or $100 billed annually. Premium seats get roughly five times the usage of Standard seats. Team is for 2 to 150 people, lets you mix seat types, and adds SSO, central billing, admin controls for connectors, project sharing, and no model training on your content by default."
   - q: "Which plan should I pick if I mostly use Claude Code?"
-    a: "Pro is enough to learn it and for occasional sessions. For daily agentic coding, Max 5x is the realistic floor because Claude Code draws from the same pool as everything else, and Max 20x suits parallel sessions. Paid plans can also turn on usage credits at API rates, or you can pay as you go through a Console account for heavy runs."
+    a: "Pro is enough to learn Claude Code and handle occasional sessions. For daily agentic coding, Max ($100/mo) is the realistic floor because Claude Code draws from the same pool as chat and Cowork, and Ultra ($200/mo) suits all-day parallel sessions without 5-hour throttling. Paid plans can also turn on extra usage credits at API rates, or you can pay as you go through a Console account."
 related: ["guide:claude-cowork-guide", "guide:claude-knowledge-work-plugins", "guide:choosing-the-right-model", "guide:llm-api-pricing-2026", "tool:claude", "tool:claude-cowork", "tool:claude-design", "tool:claude-for-excel", "tool:claude-for-chrome", "tool:claude-code"]
 sources:
   - title: "Claude pricing"
@@ -60,51 +62,51 @@ sources:
     publisher: "Anthropic"
 ---
 
-As of September 2026, Claude's plans are **Free ($0)**, **Pro ($20 per month, or $17 per month billed annually)**, **Max ($100 per month for 5x Pro usage, $200 for 20x)**, **Team ($25 or $20 per Standard seat, $125 or $100 per Premium seat)**, and **Enterprise ($20 per seat plus usage at API rates)**. Every paid plan includes Claude Code, Claude Cowork, Claude Design, Claude in Chrome, and the Microsoft 365 add-ins; Free gets chat, skills, connectors, and memory but none of those products. What separates the paid tiers is mostly usage.
+As of November 2026, Claude's plans are **Free ($0)**, **Pro ($20 per month, or $17 per month billed annually)**, **Max ($100 per month, ~5x Pro usage + $100/mo API credits)**, **Ultra ($200 per month, formerly Max 20x, ~10x weekly usage + $200/mo API credits)**, **Team ($25 or $20 per Standard seat, $125 or $100 per Premium seat)**, and **Enterprise ($20 per seat plus usage at API rates)**. Every paid plan unlocks Claude Code, unified Claude Cowork agent tasks (merged into Claude chat on September 16, 2026), Claude Docs & Slides (beta), Claude in Chrome, and the Microsoft 365 add-ins; Free includes chat, skills, connectors, memory, up to 5 Projects, and Claude Design (beta), while lacking Claude Code, Cowork, and Opus. What separates the paid tiers is mostly usage headroom.
 
-**Last verified: September 2026.** Every figure below was read from [claude.com/pricing](https://claude.com/pricing) and Anthropic's support articles on September 10, 2026. Prices exclude tax and, in Anthropic's words, "are subject to change at Anthropic's discretion." This is the one page on AgentsCamp that states consumer plan prices; other guides link here rather than repeating them. For per-token API costs, see [LLM API pricing in 2026](/guides/advanced/llm-api-pricing-2026).
+**Last verified: November 2026.** Every figure below was checked against [claude.com/pricing](https://claude.com/pricing) and Anthropic's support articles on November 25, 2026. Prices exclude tax and, in Anthropic's words, "are subject to change at Anthropic's discretion." This is the one page on AgentsCamp that states consumer plan prices; other guides link here rather than repeating them. For per-token API costs, see [LLM API pricing in 2026](/guides/advanced/llm-api-pricing-2026).
 
 ## The plans at a glance
 
-| Plan | Price (as of September 2026) | Built for |
+| Plan | Price (as of November 2026) | Built for |
 |---|---|---|
 | Free | $0 | Trying [Claude](/tools/claude); occasional questions |
 | Pro | $20/month, or $17/month billed annually ($200 up front) | Everyday individual use |
-| Max 5x | $100/month | Working with Claude through the day |
-| Max 20x | $200/month | Heavy daily use and long sessions |
+| Max | $100/month (~5x Pro + $100/mo API credits) | Working with Claude through the day |
+| Ultra (formerly Max 20x) | $200/month (~10x weekly Pro, no 5h limit for verified accounts + $200/mo API credits) | Heavy daily coding & parallel sessions |
 | Team, Standard seat | $25/seat/month, or $20 billed annually | Teams of 2 to 150 |
-| Team, Premium seat | $125/seat/month, or $100 billed annually; 5x Standard usage | Power users inside a team |
-| Enterprise | $20/seat/month plus usage at API rates; annual only | Large organizations |
+| Team, Premium seat | $125/seat/month, or $100 billed annually; ~5x Standard usage | Power users inside a team |
+| Enterprise | $20/seat/month plus usage at API rates; annual only (20-seat min self-serve) | Large organizations |
 
-Team lets you mix Standard and Premium seats. Enterprise can be bought self-serve (single seat type) or through sales, which adds invoicing, trials, and committed-spend incentives.
+Team lets you mix Standard and Premium seats and includes pooled team API credits. Enterprise can be bought self-serve (single seat type) or through sales, which adds invoicing, trials, and committed-spend incentives.
 
 ## Feature matrix
 
-Rows are the questions people actually ask: "which plan do I need for X?" Yes and No come from the comparison table on the pricing page; the notes come from the linked support articles.
+Rows are the questions people actually ask: "which plan do I need for X?" Yes and No reflect Anthropic's pricing comparison and support articles as of November 2026.
 
-| Feature | Free | Pro | Max | Team | Enterprise |
+| Feature | Free | Pro | Max / Ultra | Team | Enterprise |
 |---|---|---|---|---|---|
-| Usage | Limited | At least 5x Free per 5-hour session | 5x or 20x Pro | Standard: more than Pro; Premium: 5x Standard | Seat plus usage at API rates |
+| Usage | Limited | ~5x Free per 5-hour session | 5x Pro (Max) or ~10x weekly w/ relaxed 5h caps (Ultra) | Standard: ~1.25x Pro; Premium: ~5x Standard | Seat plus usage at API rates |
 | [Claude Code](/tools/claude-code) | No | Yes | Yes | Yes | Yes |
-| [Claude Cowork](/tools/claude-cowork) | No | Yes | Yes | Yes | Yes (owner can disable) |
-| [Claude Design](/tools/claude-design) (beta) | No | Yes | Yes | Yes | Yes (off by default) |
+| [Claude Cowork](/tools/claude-cowork) (unified in chat) | No | Yes | Yes | Yes | Yes (owner can disable) |
+| [Claude Design](/tools/claude-design) (beta) | Yes (beta) | Yes | Yes | Yes | Yes (off by default) |
 | [Claude for Excel](/tools/claude-for-excel) and the Microsoft 365 add-ins | No | Yes | Yes | Yes | Yes |
 | [Claude in Chrome](/tools/claude-for-chrome) | No | Yes | Yes | Yes | Yes |
 | Skills, including custom ZIP uploads | Yes | Yes | Yes | Yes | Yes, plus org-wide deployment |
-| Projects | Up to 5 per the help center (the pricing page lists Projects as paid) | Yes, unlimited | Yes | Yes, with sharing | Yes, with sharing |
+| Projects | Up to 5 | Yes, unlimited | Yes | Yes, with sharing | Yes, with sharing |
 | Connectors (Slack, Google Workspace, remote MCP) | Yes | Yes | Yes | Yes, plus admin controls | Yes, plus admin controls |
-| Models | Sonnet, Haiku | Adds Opus; Fable via usage credits | Adds Opus; Fable up to 50% of weekly limits | Opus, Sonnet, Haiku; no Fable | Adds Fable |
-| Context window | 200K | 200K | 200K | 200K | 500K on the default model |
+| Models | Sonnet 5.5, Haiku 5.5 | Adds Opus 5.5; Fable 5.2 via usage credits | Adds Opus 5.5 & higher Fable 5.2 allowances | Opus 5.5, Sonnet 5.5, Haiku 5.5 | Adds full Fable 5.2 |
+| Context window | Standard (up to 1M on supported models) | Standard | Standard | Standard | Expanded enterprise defaults |
 | Memory | Yes, on by default | Yes, on by default | Yes, on by default | Yes, off by default for the org | Yes, off by default |
 | Research | No | Yes | Yes | Yes | Yes |
-| Priority access at peak times | No | No | Yes | Yes | Yes |
+| Priority access at peak times | No | Yes | Yes | Yes | Yes |
 | SSO, central billing, no training on your content by default | No | No | No | Yes | Yes, plus SCIM, audit logs, role-based access, HIPAA-ready option |
 
 Notes on the rows that trip people up:
 
-- **Usage** is not a message count. Every plan has limits that reset on a rolling five-hour window, and paid plans add weekly caps. Chat, desktop, mobile, Claude Code, Cowork, and Design all draw from one pool, and Cowork tasks consume more than chat. When you hit a limit you can wait, upgrade, or (on paid plans) turn on usage credits billed at API rates. The pricing page also says Anthropic "may limit your usage in other ways" at its discretion.
+- **Usage** is not a message count. Plans track rolling five-hour windows and weekly caps (Ultra removes standard 5-hour throttling for verified accounts). Chat, desktop, mobile, Claude Code, Cowork, and Design all draw from one pool, and Cowork tasks consume more than chat. When you hit a limit you can wait, upgrade, or (on paid plans) turn on usage credits billed at API rates.
 - **Claude Code** is "included in all paid plans" and shares the plan's pool. Heavy coding sessions can switch to pay-as-you-go API credits through a Console account instead.
-- **Claude Design** is in beta on Pro, Max, Team, and Enterprise, counts against the same shared limits, and is off by default on Enterprise until an admin enables it.
+- **Claude Design** moved into unified Claude chat in fall 2026 and is listed on every Claude plan including Free (beta) as of November 2026, off by default on Enterprise until an admin enables it; **Claude Docs & Slides** run in beta on paid plans.
 - **Claude for Excel** is generally available on Pro, Max, Team, and Enterprise; the Word, PowerPoint, and Outlook add-ins ship under the same "Claude for Microsoft 365" listing. Skills you enable in Claude settings apply inside the add-ins too.
 - **Skills** work on the Free plan, including uploading your own as a ZIP. What Free lacks is Claude Code, Cowork, and Design, which is where skills do the most work. Start with [What Are Claude Skills?](/guides/skills/what-are-claude-skills) and the [agent skills](/glossary/agent-skills) glossary entry.
 - **Fable** is Anthropic's top model. On Pro it is reachable only through usage credits; on Max it is capped at 50% of weekly limits; Team plans do not get it; Enterprise does. If a model's availability is unclear for your plan, check the plan page, then read [Choosing the right Claude model](/guides/getting-started/choosing-the-right-model) for which one actually fits the task.
@@ -129,7 +131,7 @@ This page states Claude's prices only. If you are comparing against [ChatGPT](/t
 
 ## Before you pay
 
-- Free is enough to test skills, connectors, memory, and how Claude reasons. It is not enough to test Cowork, Claude Code, or Design; none of those exist on Free.
+- Free is enough to test skills, connectors, memory, Claude Design (beta), and how Claude reasons. It is not enough to test Cowork or Claude Code; both require a paid plan.
 - Usage, not features, is what separates the paid tiers. [Claude Code usage limits explained](/guides/getting-started/claude-code-usage-limits) covers how the five-hour and weekly windows work, what drains them, and how to stretch them before you upgrade.
 - Annual Pro saves $40 a year against monthly. Annual billing is available for Pro and Team; Max is monthly only, and Enterprise is annual only.
 - Upgrades apply immediately with unused time credited toward the new plan; downgrades take effect at the end of the billing period, and your chats, projects, and files stay with the account.

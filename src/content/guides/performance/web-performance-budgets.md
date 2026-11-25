@@ -185,6 +185,7 @@ Use the [Web Vitals Optimizer](/skills/performance/web-vitals-optimizer) to diag
 
 ## Continue exploring
 
+- [Core Web Vitals Optimization Guide: Fix LCP, CLS, and INP From Field Data](/guides/performance/core-web-vitals-optimization-guide) — Diagnose and fix the underlying LCP, CLS, and INP bottlenecks that blow past your budgets.
 - [accessibility-auditor](/agents/quality-security/accessibility-auditor) — Use this agent to audit web UI against WCAG 2.2 AA — semantics, keyboard, ARIA, contrast, forms, and motion.
 - [SLOs and Error Budgets: A Practical Reliability Guide](/guides/observability/slo-error-budget-guide) — Define user-centered SLIs and SLOs, calculate error budgets, create burn-rate alerts, set release policy, and keep reliability targets meaningful.
 - [Find N+1 Queries](/commands/perf/find-n-plus-one) — Scan code read-only for N+1 query patterns — loops that query per iteration and handlers that fan out per-row — and report each with a location, why it is N+1, and the concrete…

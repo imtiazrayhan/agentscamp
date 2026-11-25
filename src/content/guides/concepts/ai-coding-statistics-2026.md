@@ -4,20 +4,21 @@ description: "How much code AI writes, who uses the tools, and what it does to q
 author: "Imtiaz Rayhan"
 date: 2026-07-01
 freshness: "tier1"
-updated: 2026-09-01
+updated: 2026-11-25
+reviewed: 2026-11-25
 color: "green"
 topics: ["coding-languages", "ai-agents-systems"]
 audience: ["ai-engineers"]
 tags: ["statistics", "ai-coding", "data", "adoption", "research"]
 featured: true
-summary: "The sourced numbers, September 2026: Google says 75% of new code is AI-generated; 84% of developers use or plan AI tools (Stack Overflow); GitHub Copilot hit 50M users; Claude Code passed $2.5B run-rate; SpaceX closed its $60B all-stock Cursor acquisition on August 14; and the METR RCT found experienced devs 19% slower. Every figure dated and sourced."
+summary: "The sourced numbers, November 2026: Stack Overflow's 2026 survey shows 80%+ daily AI tool use with coding agents (66%) passing chatbots (63%); GitHub Octoverse 2026 puts 40%+ of formal PRs as agent-started; Google reports 75% of new code is AI-generated; Copilot hit 50M users; SpaceX closed its $60B Cursor deal; and DORA 2026 plus the METR RCT show ROI depends on verification."
 keyTakeaways:
-  - "The code-share headline: Google reports 75% of its new code is AI-generated and engineer-approved (April 2026, up from ~25% in late 2024); Microsoft reported 20–30% a year earlier."
-  - "Adoption is near-saturation: 84% of developers use or plan AI tools (Stack Overflow, 49k respondents), 90% of tech professionals use AI at work (DORA), 85% regularly (JetBrains) — the question moved from whether to how."
-  - "Agents crossed the chasm in 2025–26: 31% of developers used them (SO 2025), 55% of engineers regularly (Pragmatic Engineer 2026, senior-skewed sample), with Claude Code the most-used and most-loved tool in that survey — and Microsoft says 1 in 3 GitHub pull requests now involves an agent (July 2026)."
-  - "The productivity evidence is genuinely mixed: DORA 2025 found AI adoption finally correlating with delivery throughput (but still hurting stability); the METR RCT found experienced devs 19% SLOWER while believing they were faster."
-  - "Trust lags usage: 46% of developers distrust AI output accuracy (up from 31% in 2024); the top frustration is AI answers that are 'almost right, but not quite' (66%), with debugging AI-generated code close behind (45%)."
-  - "The category's biggest deal yet is done: SpaceX completed its all-stock acquisition of Cursor (Anysphere) on August 14, 2026 at a $60B implied equity value, per its SEC 8-K — two months after the June 16 announcement."
+  - "The code-share headline: Google reports 75% of its new code is AI-generated and engineer-approved (April 2026, up from ~25% in late 2024); GitHub Octoverse 2026 reports over 40% of formal pull requests now start with an AI agent."
+  - "Daily usage is now the norm: Stack Overflow's 2026 Developer Survey shows >80% of developers using AI tools daily (~73% coding assistants/agents daily), with 31% of daily AI users spending 4+ hours/day."
+  - "Agents surpassed chatbots in 2026: Stack Overflow 2026 shows coding assistants and agents (66%) overtaking general-purpose chatbots (63%) for the first time, with 67% generating code in familiar areas and 61% debugging — yet only 20% trust AI for production ops."
+  - "The productivity evidence remains nuanced: DORA 2026 frames AI as an organizational amplifier with a real J-curve verification tax before ROI shows up; the METR RCT found experienced devs 19% slower on early-2025 tools while believing they were faster."
+  - "Review — not writing — is the new bottleneck: trust lags adoption, GitClear measured rising code duplication across 623M changes, and LinearB benchmarks show AI-generated PRs waiting longer in human review queues."
+  - "The category's biggest deal closed in August 2026: SpaceX completed its all-stock acquisition of Cursor (Anysphere) on August 14, 2026 at a $60B implied equity value, per its SEC 8-K."
 faq:
   - q: "What percentage of code is written by AI in 2026?"
     a: "The best-sourced datapoint: Google's CEO stated in April 2026 that 75% of the company's new code is AI-generated and approved by engineers — up from 'more than 25%' in late 2024 and 'well over 30%' in early 2025. Microsoft reported 20–30% in April 2025. Industry-wide there's no single credible figure; one external analysis cited by Anthropic put Claude Code alone at ~4% of all public GitHub commits by February 2026."
@@ -30,22 +31,23 @@ faq:
 related: ["guide:claude-vs-gpt-vs-gemini-coding", "guide:vibe-coding-guide", "guide:ai-coding-agents-cli-2026", "guide:best-claude-code-agents-skills", "guide:mcp-ecosystem-statistics", "guide:ai-engineer-roadmap-2026", "guide:testing-ai-generated-code"]
 ---
 
-AI-coding statistics are mostly laundered guesses — numbers that trace to an SEO listicle citing another listicle. This page is the opposite: **every figure below is dated, sourced, and labeled** (primary / survey / reported), verified September 1, 2026, and refreshed on a cadence. Numbers we couldn't trace are omitted.
+AI-coding statistics are mostly laundered guesses — numbers that trace to an SEO listicle citing another listicle. This page is the opposite: **every figure below is dated, sourced, and labeled** (primary / survey / reported), verified November 25, 2026, and refreshed on a cadence. Numbers we couldn't trace are omitted.
 
 ## How much code does AI write?
 
 - **75% of new code at Google** is AI-generated and engineer-approved — Sundar Pichai, Cloud Next, **April 2026** *(primary)*. The trajectory: >25% (Oct 2024) → "more than 30%" (Apr 2025) → ~50% (fall 2025) → 75%.
+- **Over 40% of formal GitHub pull requests** now start with an AI agent rather than a human opening the first draft — **GitHub Octoverse 2026**, **fall 2026** *(primary)*, accelerating past Microsoft's July 2026 figure of 1 in 3 PRs involving an agent.
 - **20–30% of code in Microsoft's repos** "written by software" — Satya Nadella, **April 2025** *(reported)*.
 - **~4% of all public GitHub commits** authored by Claude Code, per an external analysis cited in Anthropic's Series G announcement, **February 2026** *(primary, second-hand analysis)*.
-- Context for scale: GitHub logged **nearly 1 billion commits in 2025** (+25% YoY), with **1.1M+ public repos importing an LLM SDK** (+178% YoY) — Octoverse, **October 2025** *(primary)*.
+- Context for scale: GitHub logged **nearly 1 billion commits in 2025** (+25% YoY), with **1.1M+ public repos importing an LLM SDK** (+178% YoY) — Octoverse, **October 2025** *(primary)*; Octoverse **2026** kept TypeScript #1 overall with Rust surging over 160%.
 
 ## Who's using the tools
 
-- **84%** of developers use or plan to use AI tools (76% in 2024); **51%** of professional developers use them **daily** — Stack Overflow Developer Survey, 49,000+ respondents, **July 2025** *(survey)*. (The 2026 survey opened June 23; results were not yet published at our September 1 check — "2026 survey" numbers circulating online are 2025 figures relabeled.)
-- **90%** of tech professionals use AI at work (+14 pts YoY), median **2 hours/day** with AI — DORA, ~5,000 surveyed, **September 2025** *(survey)*.
+- **Over 80% of developers** use AI tools in daily work (~73% using coding assistants or agents daily), and **31% of daily AI users spend 4+ hours/day** with them — **Stack Overflow Developer Survey 2026** *(survey)*. For the first time, **coding assistants and agents (66%) surpassed general-purpose chatbots (63%)**. Usage stays concentrated close to the code: **67%** generate code in familiar areas and **61%** debug with AI, while only **20%** trust AI to deploy or operate production systems. (Baseline from SO 2025: 84% using or planning AI tools, 51% daily, 46% distrusting accuracy, 66% frustrated by "almost right" answers.)
+- **90%** of tech professionals use AI at work (+14 pts YoY), median **2 hours/day** with AI — DORA, ~5,000 surveyed, **September 2025** *(survey)*; DORA's **2026** guidance shifted focus from raw adoption to measuring net ROI after verification rework.
 - **85%** regularly use AI tools; 68% expect AI proficiency to become a job requirement — JetBrains State of the Developer Ecosystem, 24,534 devs, **October 2025** *(survey)*.
-- **Agents specifically:** 31% of developers used AI agents in 2025 (SO); by early 2026, **55%** of engineers used agents regularly — 63.5% among staff+ — Pragmatic Engineer survey, 906 respondents, *(survey; self-selected, senior-skewed sample)*.
-- **Trust lags:** 46% distrust AI output accuracy (31% in 2024); the top frustration is AI output that's "almost right, but not quite" (66%), with time spent **debugging AI-generated code** close behind (45%) — SO 2025. The [verification stack](/guides/testing/testing-ai-generated-code) exists for a reason.
+- **Agents specifically:** 31% of developers used AI agents in 2025 (SO 2025); by early 2026, **55%** of engineers used agents regularly — 63.5% among staff+ — Pragmatic Engineer survey, 906 respondents *(survey; self-selected, senior-skewed sample)*; and Stack Overflow 2026 confirmed agents/coding assistants overtaking standalone chat.
+- **Multi-model switching is standard:** platform telemetry in 2026 shows over **60%** of active power users switching across multiple model families depending on whether the task is planning, drafting, or debugging. The [verification stack](/guides/testing/testing-ai-generated-code) exists because trust still lags speed.
 
 ## The tool race, by sourced metric
 
@@ -57,7 +59,7 @@ AI-coding statistics are mostly laundered guesses — numbers that trace to an S
 
 ## What it does to productivity and quality
 
-The honest section. **For:** DORA 2025 found AI adoption *positively associated with delivery throughput* for the first time (a reversal from 2024), and >80% of practitioners perceive productivity gains *(survey)*. **Against:** the METR randomized controlled trial — the only RCT on experienced developers and real tasks — measured them **19% slower** with early-2025 tools, while they believed they were ~20% faster (**July 2025**, *primary*; a **February 2026** follow-up on late-2025 tools found point estimates tilting toward a modest speedup, but with confidence intervals crossing zero — METR calls it only very weak evidence). **Quality:** GitClear's analyses — 211M changed lines through 2024, and a June 2026 follow-up over 623M changes — find code duplication rising sharply in the AI era (block duplication up 81% from 2023 to 2026 year-to-date; refactoring down to 3.8% of changes) *(primary, vendor research — affiliation disclosed)*; DORA still finds AI adoption *negatively* associated with delivery stability.
+The honest section. **For:** DORA 2025 found AI adoption *positively associated with delivery throughput* for the first time (a reversal from 2024), and >80% of practitioners perceive productivity gains *(survey)*. **The 2026 nuance:** DORA's **2026** research and ROI guidance explicitly frames AI as an **organizational amplifier** — magnifying strong CI/testing practices while exposing weak ones — and warns teams to budget for a "J-curve" verification tax before net ROI appears *(primary)*. **Against:** the METR randomized controlled trial — the only RCT on experienced developers and real tasks — measured them **19% slower** with early-2025 tools, while they believed they were ~20% faster (**July 2025**, *primary*; a **February 2026** follow-up on late-2025 tools found point estimates tilting toward a modest speedup, but with confidence intervals crossing zero — METR calls it only very weak evidence). **Quality & review bottleneck:** GitClear's analyses — 211M changed lines through 2024, and a June 2026 follow-up over 623M changes — find code duplication rising sharply in the AI era (block duplication up 81% from 2023 to 2026 year-to-date; refactoring down to 3.8% of changes) *(primary, vendor research — affiliation disclosed)*; LinearB's 2026 benchmarks show AI-generated PRs waiting longer in human review queues, shifting the bottleneck from code generation to code review.
 
 The synthesis this page stands behind: **adoption is real and enormous; measured productivity is conditional** — on task, skill, and above all on the [verification practices](/guides/workflow/ai-code-review-workflow) that separate speed from [slop](/glossary/ai-slop).
 

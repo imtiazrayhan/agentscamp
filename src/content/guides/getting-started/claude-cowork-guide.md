@@ -5,6 +5,8 @@ seoTitle: "What Is Claude Cowork? The Non-Developer's Guide (2026)"
 seoDescription: "Claude Cowork explained for non-developers: what it does with your files and apps, how it differs from chat and Claude Code, plans, platforms, and safety."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-25
+reviewed: 2026-11-25
 freshness: "tier1"
 color: "green"
 depth: standard
@@ -16,7 +18,7 @@ keywords: ["Claude Cowork", "Claude desktop agent", "Cowork vs Claude Code", "Co
 summary: "Claude Cowork is Claude as a desktop agent: you connect a folder or an app, describe the outcome, and it works through the steps itself, creating files, filling forms, and asking before anything risky. It is included on every paid Claude plan (not Free), runs in Claude Desktop on macOS and Windows plus web and mobile, and extends with plugins and connectors."
 keyTakeaways:
   - "Cowork is Claude Code's agent loop pointed at knowledge work: folders, documents, spreadsheets, the browser, and connected apps, with no terminal."
-  - "Research preview on macOS for Max on January 12, 2026; generally available on macOS and Windows April 9, 2026; web and mobile cloud sessions July 7, 2026."
+  - "Research preview on macOS for Max on January 12, 2026; generally available on macOS and Windows April 9, 2026; web and mobile cloud sessions July 7, 2026; merged directly into unified Claude chat on September 16, 2026."
   - "Plans: Pro, Max, Team, and Enterprise include it; Free does not. Cowork tasks draw from the same usage pool as chat and Claude Code, and use more of it."
   - "Connectors reach apps over MCP with three approval modes (Manual, Auto, Skip); plugins bundle skills and connectors per role, installed via Customize > Plugins."
   - "Safety is structural: work runs in an isolated VM or cloud sandbox, Claude only sees folders you connect, and permanent deletion always needs an explicit Allow."
@@ -29,7 +31,7 @@ faq:
   - q: "How is Cowork different from Claude Code?"
     a: "Same agentic architecture, different workspace. Claude Code runs in a terminal or IDE against a code repository and is built for developers. Cowork runs in the Claude Desktop app, on the web, and on mobile against your folders, documents, browser, and connected business apps, and is built for people who do not write code."
   - q: "What platforms does Cowork run on?"
-    a: "Claude Desktop for macOS and Windows gives the full experience, including local folder access, the built-in browser, and computer use. Web at claude.ai and the iOS and Android apps run cloud sessions, in beta as of September 2026, which reach local files and the browser only through an open desktop app. The Chrome side panel also opens a Cowork session on Max and Team plans, rolling out to Pro."
+    a: "Claude Desktop for macOS and Windows gives the full experience, including local folder access, the built-in browser, and computer use. Following Anthropic's September 16, 2026 merge of Cowork into unified Claude chat, web at claude.ai and the iOS/Android apps automatically spin up cloud sandbox sessions when a task needs background execution (as of November 2026), reaching local files and the browser through an open desktop app."
   - q: "Is Cowork safe to give access to my files?"
     a: "It sees only the folders you connect, runs its work in an isolated VM on desktop or a temporary cloud sandbox, requires explicit permission before permanently deleting any file, and asks before accessing each application when computer use is on. Anthropic recommends manual approval for tasks that touch sensitive files or accounts and giving Claude access only to sites you trust."
 related: ["guide:claude-knowledge-work-plugins", "guide:claude-plans-compared-2026", "guide:what-is-claude-code", "tool:claude-cowork", "tool:claude", "glossary:claude-cowork", "glossary:claude-plugins", "glossary:ai-connectors"]
@@ -60,8 +62,8 @@ howtoSteps:
     text: "Download the Claude Desktop app for macOS or Windows from claude.com. Cowork's local folder access, built-in browser, and computer use all run through the desktop app, even when you start a task from the web or your phone."
   - name: "Sign in with a paid plan"
     text: "Sign in with a Pro, Max, Team, or Enterprise account. Cowork is not on the Free plan. On Team and Enterprise, an organization owner may need to enable it under Organization settings."
-  - name: "Select Cowork and connect a folder"
-    text: "In the message box, select Cowork in the bottom-left corner. Create a project with Use an existing folder and pick the folder Claude should work in. Claude reads and writes only inside folders you connect."
+  - name: "Connect a folder in a Claude thread"
+    text: "Since September 16, 2026, Cowork is merged directly into regular Claude chat (no separate mode switcher). Create a project or thread with Use an existing folder and pick the folder Claude should work in; Claude reads and writes only inside folders you connect."
   - name: "Add a connector or a plugin"
     text: "Open the Customize menu in the left sidebar. Under Connectors, authorize the apps the task needs (Gmail, Google Drive, Slack, Notion, and others) and set each one's approval mode. Under Plugins, browse the Knowledge Work marketplace and install a role plugin if one fits."
   - name: "Run a task with a clear brief"
@@ -74,13 +76,13 @@ Claude Cowork is the version of Claude that does the work instead of describing 
 
 This guide is for people who do not write code: what Cowork is, how it differs from Claude chat and Claude Code, which plans and platforms include it, how plugins and connectors extend it, how its permission model works, and a worked example you can copy.
 
-**Last verified: September 2026**, against Anthropic's support articles, release notes, and product page.
+**Last verified: November 2026**, against Anthropic's support articles, release notes, and product page.
 
 ## What Cowork is
 
-Anthropic's own description is the cleanest: Cowork "brings Claude Code's agentic capabilities to knowledge work beyond coding." You "describe an outcome, step away, and come back to finished work." Under the hood it uses the same agentic architecture as Claude Code, the developer tool, but there is no terminal. You start it from the same message box as a normal chat by selecting **Cowork** in the bottom-left corner.
+Anthropic's own description is the cleanest: Cowork "brings Claude Code's agentic capabilities to knowledge work beyond coding." You "describe an outcome, step away, and come back to finished work." Under the hood it uses the same agentic architecture as Claude Code, the developer tool, with no terminal. On **September 16, 2026**, Anthropic merged Cowork and standard Claude chat into a single unified experience — there is no longer a separate Cowork mode switcher in the message box; Claude dynamically decides whether to answer in chat or spin up an agentic background task in a local VM or cloud sandbox (rolling out across Pro, Max, Team, and Enterprise, with existing tasks, projects, connectors, and skills carried over).
 
-[Claude Cowork](/tools/claude-cowork) moved from experiment to product quickly:
+[Claude Cowork](/tools/claude-cowork) moved from experiment to unified product quickly:
 
 - **January 12, 2026**: research preview on Claude Desktop, macOS only, for the Max plan; Pro followed four days later.
 - **January 30, 2026**: plugin support, with eleven open-source role plugins (seventeen Anthropic-built plugins in the repo as of September 2026).
@@ -88,6 +90,7 @@ Anthropic's own description is the cleanest: Cowork "brings Claude Code's agenti
 - **April 9, 2026**: generally available on macOS and Windows through Claude Desktop.
 - **July 7, 2026**: web and mobile, with sessions running in the cloud (beta).
 - **August 25, 2026**: memory works across chat and Cowork in the cloud.
+- **September 16, 2026**: Cowork merged directly into Claude chat ("one Claude"), eliminating the separate mode toggle and letting any paid conversation run agentic cloud or local tasks.
 
 The glossary entry for [Claude Cowork](/glossary/claude-cowork) has the one-paragraph version.
 
@@ -110,7 +113,7 @@ In [regular Claude](/tools/claude) you are the runtime: you ask, read the answer
 
 **Plans.** Cowork is included on Pro, Max, Team, and Enterprise. It is not on the Free plan. On Team and Enterprise it is on by default, but organization owners can turn it off, and Enterprise defaults to *off* for cloud sessions until an admin enables them. Prices and everything else each plan unlocks live on [Claude plans compared](/guides/getting-started/claude-plans-compared-2026).
 
-**Platforms**, as of September 2026:
+**Platforms**, as of November 2026:
 
 - **Claude Desktop for macOS and Windows**: the full experience, including local folder access, the built-in browser, and computer use.
 - **Web (claude.ai) and iOS/Android**: cloud sessions, in beta for Pro, Max, and Team, and on Enterprise where the admin enables them. Local files, local connectors, the browser, and computer use still route through the desktop app, which has to be open and online.

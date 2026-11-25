@@ -3,6 +3,7 @@ title: "The Best Claude Code Agents, Skills & Commands to Install First"
 description: "A curated starter kit from the AgentsCamp library — the subagents, skills, and slash commands that pay off immediately, by workflow."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-25
 color: "green"
 topics: ["workflow-prompting"]
 tags: ["claude-code", "agents", "skills", "commands", "best-of", "starter-kit"]
@@ -47,9 +48,40 @@ The fastest upgrade to a stock Claude Code setup isn't a prompt trick — it's i
 
 The library also extends Claude Code itself: [hook-writer](/skills/workflow/hook-writer) turns "always run prettier after edits" into an [enforced hook](/guides/configuration/claude-code-hooks); [claude-settings-auditor](/skills/workflow/claude-settings-auditor) reviews a repo's checked-in config before you trust it; [plugin-scaffolder](/skills/workflow/plugin-scaffolder) packages your setup for the team; [setup-claude-ci](/commands/workflow/setup-claude-ci) wires the [GitHub Action](/guides/advanced/claude-code-ci-github-actions).
 
+## Starter stacks by role
+
+If you want a ready-made five-item loadout instead of picking one by one, match your daily work:
+
+| Role | Agents (subagents) | Skills & commands |
+| --- | --- | --- |
+| **Full-stack / Frontend** | `code-reviewer`, `react-specialist`, `typescript-pro` | `conventional-commits`, `/create-pr`, `/write-tests` |
+| **Backend / Data** | `code-reviewer`, `python-pro` or `sql-pro`, `debugger` | `test-scaffolder`, `/explain-error`, `/create-pr` |
+| **Platform / DevOps** | `terraform-specialist`, `security-auditor` | `secret-scanner`, `hook-writer`, `/setup-claude-ci` |
+| **Solo builder** | `code-reviewer`, `debugger`, `system-architect` | `conventional-commits`, `readme-generator`, `/create-pr` |
+
+Notice the shared spine: every loadout keeps `code-reviewer` and a clean git loop, then swaps only one or two domain specialists. If you are unsure whether a recurring task belongs in a subagent, a skill, or a slash command, see [Skills vs Agents vs Commands](/guides/skills/skills-vs-agents-vs-commands).
+
+## Why installing too many hurts performance
+
+It is tempting to copy twenty agents and forty skills on day one. Resist it. Claude Code reads every installed subagent's `description` and every skill's metadata to decide when to delegate or load instructions:
+
+1. **Routing ambiguity:** Three overlapping review agents (`code-reviewer`, `pr-reviewer`, `quality-checker`) compete for the same prompts and produce inconsistent handoffs.
+2. **Context overhead:** Just like loading too many MCP servers eats your window before you type a word (see our [MCP server token overhead benchmark](/guides/mcp/mcp-server-token-overhead-benchmark)), bloated extension directories add baseline prompt tokens to every turn.
+3. **Maintenance drift:** Unused files silently go stale when your stack or test runner changes.
+
+Keep an active set of five to eight items. If an agent or skill has not fired in two weeks, remove it from `.claude/` — you can always re-add it later.
+
 ## Install once, then make them yours
 
-Mechanics in one breath: agents are files in `~/.claude/agents/`, skills are `~/.claude/skills/<name>/SKILL.md`, commands are `~/.claude/commands/` — use a repo's `.claude/` instead to share with the team, and start a new session to load. ([Full walkthrough](/guides/getting-started/getting-started-with-agents).) Then treat every install as a draft: tighten the `description` so delegation fires when *you'd* want it, restrict `tools` to the job, and rewrite house rules into the body. The library's real product isn't the files — it's working examples of [the craft](/guides/getting-started/writing-a-custom-agent), pre-installed.
+Mechanics in one breath: agents are files in `~/.claude/agents/`, skills are `~/.claude/skills/<name>/SKILL.md`, commands are `~/.claude/commands/` — use a repo's `.claude/` instead to share with the team, and start a new session to load. ([Full walkthrough](/guides/getting-started/getting-started-with-agents).) If you prefer one-line terminal installation over copy-pasting files, every item also installs via the optional CLI (`npx agentscamp add agents/code-reviewer` for project scope, or `-g` for `~/.claude/`).
+
+Then treat every installed file as a draft and spend five minutes tuning three things:
+
+- **Tighten `description`:** name the exact trigger ("Use after editing SQL migrations or Prisma schemas") so delegation fires reliably.
+- **Restrict `tools`:** give read-only reviewers `Read`, `Grep`, and `Glob` (no `Edit` or `Bash`) so a review pass cannot unexpectedly mutate files.
+- **Add house rules:** paste your real test command (`npm test`, `pytest -q`), linter, and branch naming convention into the body so Claude stops guessing.
+
+The library's real value isn't static templates — it's working examples of [the craft](/guides/getting-started/writing-a-custom-agent) you can fork into your team's workflow, paired with the habits in [Claude Code Tips](/guides/getting-started/claude-code-tips).
 
 ## Continue exploring
 

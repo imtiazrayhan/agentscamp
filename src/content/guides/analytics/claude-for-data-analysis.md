@@ -3,7 +3,7 @@ title: "Claude for Data Analysis: The Complete 2026 Guide"
 description: "The four surfaces where Claude touches data, what the code execution sandbox really is, how an AI analysis fails silently, and the checks that catch it."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
-updated: 2026-09-10
+reviewed: 2026-09-10
 depth: cornerstone
 color: "green"
 topics: ["ai-at-work", "data-ml", "coding-languages"]

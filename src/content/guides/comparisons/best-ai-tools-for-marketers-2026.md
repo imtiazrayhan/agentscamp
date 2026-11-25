@@ -5,6 +5,8 @@ seoTitle: "Best AI Tools for Marketers in 2026 (Writing, SEO, Video, Agents)"
 seoDescription: "22 AI tools marketers use in 2026, sorted into assistants, writing, SEO, research, decks, video, and automation, with pricing model, best-for, and verdicts."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-25
+reviewed: 2026-11-25
 freshness: "tier1"
 color: "green"
 depth: standard
@@ -29,7 +31,7 @@ faq:
   - q: "Surfer or Clearscope?"
     a: "Both score a draft against the pages that rank for a keyword and both now track how often a brand appears in AI answers. Surfer ships more tooling around the editor (audits, topical maps, AI writing, a WordPress plugin, an MCP server on Pro and above). Clearscope is simpler, prices by report volume with unlimited users, and leans into answer-engine optimization. The full comparison is on this site."
   - q: "Which of these tools are free?"
-    a: "Claude, ChatGPT, Gemini, Perplexity, Gemini Notebook, Gamma, Descript, OpusClip, ElevenLabs, Firecrawl, and Zapier Agents all have a free tier, and Exa gives new accounts free credits. Jasper, Surfer, and Clearscope offer trials on paid plans. Claude Cowork and Claude Design need a paid Claude plan. Microsoft 365 Copilot and Lindy are paid per user. n8n is open-source to self-host. Each tool page carries current plans."
+    a: "Claude, ChatGPT, Gemini, Perplexity, Gemini Notebook, Gamma, Descript, OpusClip, ElevenLabs, Firecrawl, and Zapier Agents all have a free tier, and Exa gives new accounts free credits. Jasper, Surfer, and Clearscope offer trials on paid plans. As of November 2026, Claude Design is listed on every Claude plan including Free (beta), while full Claude Cowork capabilities require a paid Claude plan. Microsoft 365 Copilot and Lindy are paid per user. n8n is open-source to self-host. Each tool page carries current plans."
   - q: "How often is this list updated?"
     a: "Monthly. The 'Last reviewed' line near the top shows the most recent pass. Tools are added when they earn a place in a marketing stack and removed when they stop being maintained or get folded into something else."
 sources:
@@ -109,7 +111,7 @@ The best AI tools for marketers in 2026 are the ones that map to a job you run e
 
 When the recurring job is finding and reusing media, start with [reviewed asset metadata](/guides/marketing/ai-digital-asset-metadata) and a [known-example asset search test](/guides/marketing/ai-asset-search-acceptance-test). These workflows help you assess whether a catalog returns the intended asset version.
 
-*Last reviewed: September 2026.*
+*Last reviewed: November 2026.*
 
 ## The summary table
 
@@ -127,12 +129,12 @@ When the recurring job is finding and reusing media, start with [reviewed asset 
 | [Clearscope](/tools/clearscope) | SEO | Paid (trial) | Simple content reports with unlimited users |
 | [Firecrawl](/tools/firecrawl) | Research | Freemium (credits) | Turning any site into clean text for an agent |
 | [Exa](/tools/exa) | Research | Pay as you go (free credits) | Semantic web search built for AI |
-| [Claude Design](/tools/claude-design) | Decks and visuals | Paid Claude plans | On-brand decks, one-pagers, landing pages |
+| [Claude Design](/tools/claude-design) | Decks and visuals | Every Claude plan, including Free (beta) | On-brand decks, one-pagers, landing pages |
 | [Gamma](/tools/gamma) | Decks and visuals | Freemium (credits) | Fast presentations, documents, and web pages |
 | [Descript](/tools/descript) | Video and audio | Freemium | Editing video and podcasts by editing the transcript |
 | [OpusClip](/tools/opus-clip) | Video and audio | Freemium | Cutting long video into captioned short clips |
 | [ElevenLabs](/tools/elevenlabs) | Video and audio | Freemium (credits) | Voiceovers, voice clones, and dubbing |
-| [Claude Cowork](/tools/claude-cowork) | Automation and CRM | Paid Claude plans | Multi-file content tasks with a human checkpoint |
+| [Claude Cowork](/tools/claude-cowork) | Automation and CRM | Paid Claude plans (merged into Claude chat Sep 2026) | Multi-file content tasks with a human checkpoint |
 | [HubSpot Breeze](/tools/hubspot-breeze) | Automation and CRM | Included with HubSpot, credits for agents | Agents that act inside your CRM |
 | [Zapier Agents](/tools/zapier-agents) | Automation and CRM | Freemium (activities) | Actions across the SaaS you already use |
 | [Lindy](/tools/lindy) | Automation and CRM | Paid per user | Standing routines inside Slack |
@@ -184,11 +186,11 @@ Perplexity and Gemini Notebook, above, cover research by hand. These two are for
 
 ## Decks and visuals
 
-**[Claude Design](/tools/claude-design).** Anthropic Labs' tool for decks, one-pagers, and landing pages that use your design system, with PPTX, PDF, HTML, and Canva export. In beta, included with paid Claude plans.
+**[Claude Design](/tools/claude-design).** Anthropic Labs' tool for decks, one-pagers, and landing pages that use your design system, with PPTX, PDF, HTML, and Canva export — integrated directly into Claude chat and listed on every Claude plan including Free (beta) as of November 2026.
 
 **[Gamma](/tools/gamma).** Presentations, documents, and web pages from an outline in minutes, on a credit system with a free tier whose credits do not refresh.
 
-**Verdict:** Claude Design if you are on a paid Claude plan and the deck has to match the product (it is still in beta); Gamma if you want the fastest path from outline to something presentable.
+**Verdict:** Claude Design if you already use Claude and the deck has to match the product (still in beta); Gamma if you want the fastest path from outline to something presentable.
 
 ## Video and audio: the repurposing chain
 
@@ -202,7 +204,7 @@ Perplexity and Gemini Notebook, above, cover research by hand. These two are for
 
 ## Automation and CRM: running the program
 
-**[Claude Cowork](/tools/claude-cowork).** An agent that works on your files and connected apps from the Claude apps, with permission modes, scheduled tasks, and an open-source marketing plugin. Paid Claude plans only. The [Claude marketing plugin guide](/guides/marketing/claude-marketing-plugin-guide) covers the plugin.
+**[Claude Cowork](/tools/claude-cowork).** Claude's agentic capability for working on your files and connected apps — merged directly into unified Claude chat on September 16, 2026 — with permission modes, scheduled tasks, and an open-source marketing plugin. Paid Claude plans only. The [Claude marketing plugin guide](/guides/marketing/claude-marketing-plugin-guide) covers the plugin.
 
 **[HubSpot Breeze](/tools/hubspot-breeze).** HubSpot's AI layer: Breeze Assistant, prebuilt agents for content, prospecting, service, and data, and an agent builder. Included with HubSpot's seat-based tiers; agents draw down HubSpot Credits.
 

@@ -26,7 +26,7 @@ related: ["tool:claude-code", "tool:gemini-cli", "guide:claude-code-vs-codex-cli
 audience: ["developers"]
 ---
 
-Claude Code and Gemini CLI both put an agent in your terminal, but they sit on opposite sides of an old trade: **first-party stability and depth versus open-source reach and a free tier**. As of mid-2026 that trade comes with a wrinkle — Google has folded Gemini CLI's consumer service into a different tool.
+Claude Code and Gemini CLI both put an agent in your terminal, but they sit on opposite sides of an old trade: **first-party stability and depth versus open-source reach and a free tier**. As of June 2026 that trade comes with a wrinkle — Google has folded Gemini CLI's consumer service into a different tool.
 
 ## The short answer
 

@@ -3,7 +3,8 @@ title: "Claude Code for Non-Developers and Founders: The Complete 2026 Guide"
 description: "What Claude Code actually is in plain language, why non-developers use it, how permissions and CLAUDE.md work, and the first three tasks a founder should try."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
-updated: 2026-09-10
+updated: 2026-11-25
+reviewed: 2026-11-25
 depth: cornerstone
 color: "green"
 topics: ["ai-at-work", "workflow-prompting", "coding-languages"]
@@ -103,7 +104,7 @@ Anthropic now ships several surfaces that all run the same models, and the most 
 | Files moved, summarized, or produced across the apps on your desktop | [Claude Cowork](/tools/claude-cowork) | Works in the folders and tools you choose, with a built-in browser and scheduled runs |
 | Software, a data analysis, or anything that lives as files in a folder | Claude Code | It edits, runs, and verifies inside the folder itself |
 
-Cowork is the surface most founders have not tried: Claude working directly in folders and apps you pick, on macOS and Windows (with cloud sessions on web and mobile in beta), and the surface Anthropic's knowledge-work plugins were built for first. If the job is "go through these forty PDFs and build me a tracker," Cowork is the tool, and our [Claude Cowork guide](/guides/getting-started/claude-cowork-guide) walks through it. If the job is "build me the tracker as a small web app I can share," that is Claude Code.
+Cowork is the surface most founders have not tried: Claude working directly in folders and apps you pick, on macOS and Windows (merged into unified Claude chat in September 2026, with cloud sessions on web and mobile in beta as of November 2026), and the surface Anthropic's knowledge-work plugins were built for first. If the job is "go through these forty PDFs and build me a tracker," Cowork is the tool, and our [Claude Cowork guide](/guides/getting-started/claude-cowork-guide) walks through it. If the job is "build me the tracker as a small web app I can share," that is Claude Code.
 
 The longer map, including Claude Design, Claude for Excel, and Claude in Chrome, is [Claude for Founders: Which Claude Product for Which Job](/guides/founders/claude-for-founders).
 

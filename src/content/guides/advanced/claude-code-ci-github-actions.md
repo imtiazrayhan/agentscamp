@@ -114,7 +114,7 @@ Tuning happens through `claude_args`, which forwards the same CLI flags you prov
 It can also load plugins and MCP servers (`plugins:`, `plugin_marketplaces:` inputs), run [skills](/guides/skills/writing-your-first-skill) with `prompt: "/skill-name"`, and authenticate via **Bedrock or Vertex** (`use_bedrock` / `use_vertex` with OIDC) instead of a static key.
 
 > [!NOTE]
-> Upgrading from the beta? `@beta` became `@v1`, `direct_prompt` is now `prompt`, and `mode` is gone (auto-detected). `max_turns`/`model` moved into `claude_args`.
+> Upgrading from the 2025 beta (verified November 2026)? `@beta` became `@v1`, `direct_prompt` is now `prompt`, and `mode` is gone (auto-detected). `max_turns`/`model` moved into `claude_args`.
 
 ## The safety model for unattended runs
 

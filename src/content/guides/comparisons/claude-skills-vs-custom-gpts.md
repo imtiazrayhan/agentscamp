@@ -19,7 +19,7 @@ keyTakeaways:
   - "OpenAI's direction is telling twice over: Workspace Agents (April 2026) succeed GPTs for organizations, and Codex adopted the Agent Skills standard outright."
 faq:
   - q: "Are Custom GPTs being discontinued?"
-    a: "Not for individuals — GPTs and the GPT Store remain live as of mid-2026. For organizations, OpenAI introduced Workspace Agents in April 2026 as 'an evolution of GPTs' (business plans, research preview) with a promised GPT-to-agent conversion path and an unspecified eventual deprecation for org GPTs. No sunset has been published for individual GPTs."
+    a: "Not for individuals — GPTs and the GPT Store remain live as of July 2026. For organizations, OpenAI introduced Workspace Agents in April 2026 as 'an evolution of GPTs' (business plans, research preview) with a promised GPT-to-agent conversion path and an unspecified eventual deprecation for org GPTs. No sunset has been published for individual GPTs."
   - q: "Can I use a Custom GPT through the OpenAI API?"
     a: "No — GPTs remain a ChatGPT-surface feature with no API endpoint, which matters if you want the same behavior in an app. Claude skills upload to /v1/skills and attach to API requests; OpenAI's new Workspace Agents can be API-triggered, but that's the successor product, not GPTs."
   - q: "Which is better for a team's internal workflows?"

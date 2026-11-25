@@ -1,3 +1,26 @@
+# Freshness Sweep (47 → 0 Warnings), 5 Thin Guides & 3 Single-Guide Categories — 2026-11-25 — VERIFIED
+
+Goal: clear all 47 content-validator freshness/hygiene warnings with genuinely verified November 2026 facts, deepen the next 5 thin comparison guides, and unlock the 3 single-guide `noindex` guide categories (`api`, `observability`, `performance`).
+
+## Done
+- **Freshness & Hygiene Sweep (47 → 0 warnings across 44 files):**
+  - Refreshed all 18 overdue Tier-1 money pages + 6 `reviewed < updated` roundups against live November 2026 vendor pricing, model releases, and ecosystem changes:
+    - `llm-api-pricing-2026` & `llm-context-windows-compared`: updated to Claude 5.5 / Fable 5.2 (1M flat across Fable/Opus/Sonnet, Haiku 5.5 at $0.10/$0.50 ≤100K), OpenAI GPT-6 (6.2 Astra/Sol, 6.1 Terra, 6 Luna, 1.05M ctx), Google Gemini 4 (Argon/Carbon/Neon/Hydrogen) + 3.8/3.7 Flash, DeepSeek V4.1 Flash, Mistral Large 4 ($0.70/$2.10), Grok 4.6.
+    - `claude-plans-compared-2026`, `claude-cowork-guide`, `claude-knowledge-work-plugins`, `best-ai-tools-for-{founders,designers,marketers,data-analysts}-2026`, `best-ai-sales-tools-2026`: updated for Claude Ultra ($200/mo, formerly Max 20x), Sep 16 Cowork-into-Claude merge, Claude Design Free+in-chat availability, Clari→Salesloft consolidation, and Salesforce Claudeforce mid-Sep beta (37 sales skills).
+    - `cursor-vs-claude-code-vs-copilot-vs-windsurf-2026`, `best-claude-code-alternatives-2026`, `best-github-copilot-alternatives-2026`, `ai-coding-agents-cli-2026`, `claude-vs-gpt-vs-gemini-coding`: updated for Cursor X Subscription tiers, GitHub Copilot Sep 28 unified experience + lifetime chat retention, OpenCode Go/PayGo tiers, and GPT-6/Claude 5.5/Gemini 4 coding lineups.
+    - `ai-coding-statistics-2026`, `mcp-ecosystem-statistics`, `best-mcp-servers-2026`, `best-open-source-llms-2026`, `best-web-search-apis-for-ai-agents-2026`, `best-llm-inference-providers-2026`, `best-llm-observability-tools-2026`, `best-chatgpt-alternatives-2026`: added Stack Overflow 2026, GitHub Octoverse 2026, DORA 2026 findings; official MCP Registry 65k+ listings & Smithery Oct 31 proxy shutdown; Mistral Large 4 late-Oct open weights release; Perplexity Sonar Sep 27 retirement → Agent API (preserving Context.dev #1, ChatLLM, and fal placements).
+  - Cleared all 21 remaining hygiene warnings (`updated === date` → `reviewed` on 4 cornerstones; month-dated 4 vague as-of dates including `tool/qodo`; dated 8 beta/preview claims; backticked/dated 7 dollar figures).
+- **Deepened 5 Thin Comparison Guides (`updated: 2026-11-25`):** `v0-vs-lovable` (1,322w total), `litellm-vs-openrouter` (1,266w), `langchain-vs-llamaindex` (1,300w), `ollama-vs-lm-studio` (1,289w), `best-claude-code-agents-skills` (1,200w).
+- **Unlocked 3 Single-Guide `noindex` Categories (`guides/api`, `guides/observability`, `guides/performance`):** added 3 evergreen companion guides (`api-rate-limiting-design.md`, `distributed-tracing-opentelemetry.md`, `core-web-vitals-optimization-guide.md`) with bidirectional links from their sibling guides (`idempotency-keys-api-design`, `slo-error-budget-guide`, `web-performance-budgets`).
+
+## Verified
+- `npm run validate`: 1,065 items valid, **0 error(s), 0 warning(s)** (down from 47 warnings).
+- `npm run lint` & `npm run typecheck`: clean.
+- `scripts/build-search-index.ts`: wrote 1,065 records to `public/search-index.json`.
+- `npx next build`: 4,091/4,091 static pages built cleanly.
+- `npx tsx scripts/check-external-links.ts`: 1,499 pages, 11,988 off-site anchors, OK.
+- Built HTML & `sitemap.xml` (1,478 URLs, +6): confirmed `/guides/api`, `/guides/observability`, `/guides/performance` all have `noindex: false` and appear in sitemap alongside all 3 new companion guides; refreshed Tier-1 guides emit `2026-11-25` + `lastReviewed` in JSON-LD.
+
 # Flagship Guide Charts & Architecture Diagrams — 2026-11-25 — VERIFIED
 
 Goal: add publication-grade editorial visuals (0 → 5 original charts/diagrams + 2× shareable PNGs) to the MCP Token Overhead Benchmark and top cornerstone guides.

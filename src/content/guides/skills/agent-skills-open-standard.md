@@ -22,7 +22,7 @@ faq:
   - q: "What is the Agent Skills standard?"
     a: "An open specification for the skill format Anthropic developed — a folder with a SKILL.md whose frontmatter (name, description) tells an agent when to load it and whose Markdown body is the procedure to follow. Published at agentskills.io in December 2025, with the spec on GitHub, so any agent product can implement it."
   - q: "Which tools support SKILL.md today?"
-    a: "The official showcase lists 44 clients as of mid-2026. The big ones: Claude Code and claude.ai, GitHub Copilot (cloud agent, code review, CLI, and agent mode in VS Code and JetBrains), VS Code, Cursor, Gemini CLI, OpenAI Codex, plus Goose, OpenHands, Letta, JetBrains Junie, Spring AI, Amp, OpenCode, and Roo Code among others."
+    a: "The official showcase lists 44 clients as of July 2026. The big ones: Claude Code and claude.ai, GitHub Copilot (cloud agent, code review, CLI, and agent mode in VS Code and JetBrains), VS Code, Cursor, Gemini CLI, OpenAI Codex, plus Goose, OpenHands, Letta, JetBrains Junie, Spring AI, Amp, OpenCode, and Roo Code among others."
   - q: "Where do I put skills so every tool finds them?"
     a: "The cross-tool convention is .agents/skills/ in the repo (personal: ~/.agents/skills/) — Copilot, VS Code, Cursor, Codex, and Gemini CLI all read it. Several tools also read .claude/skills/ for compatibility, so existing Claude Code setups often work in other tools unchanged."
   - q: "Do Claude-specific fields like allowed-tools work in other tools?"

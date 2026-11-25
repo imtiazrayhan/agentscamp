@@ -20,7 +20,7 @@ related: ["tool:coderabbit", "tool:greptile", "guide:best-ai-code-review-tools-2
 summary: "Qodo (formerly CodiumAI) is the quality-first AI code platform: Qodo 2.0 (February 2026) brought multi-agent PR review enforcing your rules and standards, alongside IDE plugins, the Qodo Command CLI, the Aware codebase-context engine, and the open-source Cover test-generation tool. Freemium with a real free tier; broadest git-platform coverage in the category."
 faq:
   - q: "What is Qodo Merge, and is PR-Agent the free version?"
-    a: "Qodo Merge is the platform's PR-review product, descended from the popular open-source PR-Agent. But as of early 2026, PR-Agent is no longer Qodo's: the company donated it to the community (now The-PR-Agent/pr-agent, Apache-2.0, community-governed). Qodo's own free tier is the Developer plan — don't conflate the two."
+    a: "Qodo Merge is the platform's PR-review product, descended from the popular open-source PR-Agent. But as of June 2026, PR-Agent is no longer Qodo's: the company donated it to the community (now The-PR-Agent/pr-agent, Apache-2.0, community-governed). Qodo's own free tier is the Developer plan — don't conflate the two."
   - q: "Is Qodo free?"
     a: "There's a real free tier: the Developer plan includes PR review and the IDE plugin with a monthly credit allowance. Teams runs per-seat (with more PRs and credits), and Enterprise adds the multi-repo context engine, agentic CLI workflows, SSO, and on-prem/air-gapped deployment."
   - q: "Which platforms and IDEs does Qodo support?"

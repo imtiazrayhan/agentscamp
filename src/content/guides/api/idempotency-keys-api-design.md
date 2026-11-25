@@ -187,4 +187,5 @@ Use the [Idempotency Designer](/skills/api/idempotency-designer) for an implemen
 
 ## Continue exploring
 
+- [API Rate Limiting Design: Algorithms, Distributed State & LLM Quotas](/guides/api/api-rate-limiting-design) — Pair idempotent retries with token-bucket rate limits, atomic Redis state, and standard 429 backoff headers.
 - [api-architect](/agents/core-development/api-architect) — Use this agent to design APIs — resource modeling, versioning, pagination, error contracts, REST vs GraphQL.

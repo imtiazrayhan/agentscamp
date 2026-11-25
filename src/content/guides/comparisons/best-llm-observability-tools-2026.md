@@ -5,8 +5,8 @@ seoTitle: "Best LLM Observability Tools 2026: Langfuse & LangSmith Alternatives"
 seoDescription: "The best Langfuse and LangSmith alternatives in 2026: Braintrust, Arize Phoenix, Helicone and AgentOps compared on self-hosting, OpenTelemetry and status."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
-updated: "2026-11-22"
-reviewed: "2026-09-11"
+updated: "2026-11-25"
+reviewed: "2026-11-25"
 color: "green"
 topics: ["mlops-ai-infra", "llm-evals", "ai-agents-systems"]
 audience: ["ai-engineers", "devops"]
@@ -78,7 +78,7 @@ related: ["tool:langfuse", "tool:langsmith", "tool:braintrust", "tool:arize-phoe
 
 **[Langfuse](/tools/langfuse) is the best default LLM observability tool for most teams in 2026**: its MIT core self-hosts for free, it ingests OpenTelemetry natively, and it has kept shipping since ClickHouse acquired it in January 2026. Choose [LangSmith](/tools/langsmith) on LangChain or LangGraph, [Braintrust](/tools/braintrust) when evals already gate your releases, and [Arize Phoenix](/tools/arize-phoenix) for a free, source-available tracer you run yourself. This page covers production tracing, cost and agent debugging; offline eval frameworks such as DeepEval and promptfoo are compared in [the LLM eval tools roundup](/guides/evaluation/best-llm-eval-tools-2026).
 
-*Last reviewed: September 2026.*
+*Last reviewed: November 2026.*
 
 Two familiar names need a warning up front: [Helicone](/tools/helicone) has been in maintenance mode since Mintlify acquired it in March 2026, and [AgentOps](/tools/agentops) has not shipped an SDK release since August 2025. Prices change often; each tool page lists current pricing.
 

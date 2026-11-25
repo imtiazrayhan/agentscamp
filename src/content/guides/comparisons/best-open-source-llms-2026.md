@@ -1,24 +1,24 @@
 ---
 title: "Best Open-Source LLMs in 2026: The Open-Weight Families Compared"
-description: "The open-weight LLM families current in October 2026, from DeepSeek and Qwen to Gemma 4 and Muse, with sizes, context, the exact licence and where to run them."
+description: "The open-weight LLM families current in November 2026, from DeepSeek, Mistral Large 4, and Qwen to Gemma 4 and Muse, with sizes, context, and exact licences."
 seoTitle: "Best Open-Source LLMs in 2026 (Open-Weight Models Compared)"
-seoDescription: "Every major open-weight LLM family as of October 2026: release dates, total and active parameters, context, the licence on the model card, and how to run each."
+seoDescription: "Every major open-weight LLM family as of November 2026: release dates, total and active parameters, context, the licence on the model card, and how to run each."
 author: "Imtiaz Rayhan"
 date: 2026-10-20
-updated: 2026-11-22
-reviewed: 2026-10-20
+updated: 2026-11-25
+reviewed: 2026-11-25
 color: "green"
 depth: standard
 topics: ["mlops-ai-infra"]
 audience: ["ai-engineers", "developers"]
 tags: ["comparison", "open-source", "open-weights", "llm", "best-of"]
 keywords: ["best open source llm 2026", "open weight models 2026", "deepseek v4.1 license", "qwen3.8 license", "gemma 4 apache 2.0", "run open source llm locally"]
-summary: "As of October 2026 the strongest open-weight LLMs are DeepSeek V4.1-Flash (MIT), Qwen3.8 (Apache-2.0 at 27B, a custom licence at 2.4T), GLM-5.3 and GLM-5.3-Flash, Kimi K3, Meta's Muse line, Mistral Small 4 and Medium 3.5, gpt-oss, Gemma 4 (Apache-2.0), Nemotron 3.5 and Granite 4.2. The licence, not the parameter count, now decides which one you can ship."
+summary: "As of November 2026 the strongest open-weight LLMs are DeepSeek V4.1-Flash (MIT), Mistral Large 4 (open weights released late October 2026), Qwen3.8 (Apache-2.0 at 27B, custom at 2.4T), GLM-5.3 and GLM-5.3-Flash, Kimi K3, Meta's Muse line, gpt-oss, Gemma 4 (Apache-2.0), Nemotron 3.5 and Granite 4.2. The licence, not parameter count, now decides which one you can ship."
 keyTakeaways:
   - "Fully permissive and frontier-scale: DeepSeek V4.1-Flash is MIT, Gemma 4 is the first Gemma under Apache-2.0, and Qwen3.8-27B, Mistral Small 4, gpt-oss and Granite 4.2 are Apache-2.0."
-  - "Licences are tightening at the top: GLM-5.3 left MIT for a custom licence, Kimi K3 has its own licence, Qwen's 2.4T flagship is no longer Apache, and MiniMax M3 is non-commercial by default."
+  - "Licences are tightening at the top: Mistral Large 4 (1.05T / 52B active) shipped open weights in late October 2026 under a modified MIT license restricting managed MaaS; GLM-5.3, Kimi K3, and Qwen3.8-2.4T also carry custom licences, and MiniMax M3 is non-commercial by default."
   - "Meta has moved off the Llama brand: Llama 4 (April 2025) is the last Llama, and the 2026 open weights are Muse Glimmer 30B (Apache-2.0) and the gated Muse Spark Open 816B-A42B."
-  - "Three names in launch posts are not downloadable as of October 2026: Mistral Large 4 (preview API, weights promised by end of month), DeepSeek V4.1-Pro and Qwen3.7-Plus."
+  - "Two names in launch posts remain non-downloadable as of November 2026: DeepSeek V4.1-Pro and Qwen3.7-Plus (Mistral Large 4 weights shipped at the end of October)."
   - "Vendor benchmark numbers are self-reports on different harnesses; Kimi K3 scores 77.8 on ProgramBench on its own card and 17.5 on DeepSeek's and Z.ai's. Compare within one table only."
   - "Run GGUF checkpoints with Ollama, llama.cpp, LM Studio or Jan, and native safetensors weights with vLLM or SGLang; vLLM's GGUF path is an experimental external plugin."
 faq:
@@ -77,7 +77,7 @@ sources:
     publisher: "IBM"
 related: ["tool:ollama", "tool:vllm", "tool:sglang", "tool:open-webui", "tool:llama-cpp", "tool:lm-studio", "glossary:open-weights", "glossary:gguf", "glossary:mixture-of-experts", "guide:best-local-llm-tools-2026", "guide:self-host-vs-api-llm", "guide:choosing-the-right-model"]
 ---
-"Open source LLM" is what people search for; "open weights" is what they get, and in 2026 the gap between the two is the story. Every family below publishes a downloadable checkpoint on [Hugging Face](/tools/hugging-face), but the licence on the card now runs from Apache-2.0 and MIT through custom community licences with revenue clauses to non-commercial terms. This page lists the families current as of October 2026, what each vendor claims on its own model card, and the licence exactly as the card states it. Benchmark figures are vendor self-reports on different harnesses, never compared across vendors here; dates are the vendor's where a dated post exists and Hugging Face's otherwise.
+"Open source LLM" is what people search for; "open weights" is what they get, and in 2026 the gap between the two is the story. Every family below publishes a downloadable checkpoint on [Hugging Face](/tools/hugging-face), but the licence on the card now runs from Apache-2.0 and MIT through custom community licences with revenue clauses to non-commercial terms. This page lists the families current as of November 2026, what each vendor claims on its own model card, and the licence exactly as the card states it. Benchmark figures are vendor self-reports on different harnesses, never compared across vendors here; dates are the vendor's where a dated post exists and Hugging Face's otherwise.
 
 ## The open-weight families at a glance
 
@@ -90,14 +90,14 @@ related: ["tool:ollama", "tool:vllm", "tool:sglang", "tool:open-webui", "tool:ll
 | MiniMax M3 | MiniMax-M3 (2026-06-12, HF) | about 428B / 23B | 1M | `other`, "MiniMax Community License" (non-commercial by default) | text, image, video | [MiniMaxAI](https://huggingface.co/MiniMaxAI) |
 | Meta Muse | Muse Spark Open 816B-A42B (2026-10-15, card); Muse Glimmer 30B (August 2026, card) | 816B / 42B; 29.6B dense | 1M at inference; 131,072+ | Spark Open: `other`, "Muse Model License" (gated); Glimmer: `apache-2.0` | Spark Open text, image, video, audio; Glimmer text + image | [meta-models](https://huggingface.co/meta-models) |
 | Meta Llama 4 | Llama 4 Scout and Maverick (2025-04-05, card) | 109B / 17B; 400B / 17B | 10M; 1M | `other`, "Llama 4 Community License Agreement" (gated) | text + image | [meta-llama](https://huggingface.co/meta-llama) |
-| Mistral AI | Mistral Medium 3.5 (2026-05-22, vendor); Mistral Small 4 (2026-03-16) | 128B dense; 119B / 6.5B | 256k | Medium 3.5: `other`, "Modified MIT License"; Small 4: `apache-2.0` | text + image | [mistralai](https://huggingface.co/mistralai) |
+| Mistral AI | Mistral Large 4 (open weights late Oct 2026); Medium 3.5 (2026-05-22); Small 4 (2026-03-16) | Large 4: 1.05T / 52B; Medium 3.5: 128B dense; Small 4: 119B / 6.5B | 256k+ | Large 4: Mistral Ecosystem Open-Weight License (modified MIT, MaaS restricted); Medium 3.5: Modified MIT; Small 4: `apache-2.0` | native multimodal (Large 4); text + image | [mistralai](https://huggingface.co/mistralai) |
 | OpenAI gpt-oss | gpt-oss-120b and gpt-oss-20b (2025-08-04, HF) | 117B / 5.1B; 21B / 3.6B | 131,072 (config.json) | `apache-2.0` | text only | [openai](https://huggingface.co/openai) |
 | Google Gemma 4 | E2B, E4B, 26B A4B, 31B (2026-03-31 release log, blogs 2026-04-02); 12B (2026-06-03) | 30.7B dense; 25.2B / 3.8B; 11.95B | 256K (12B, 26B, 31B); 128K (E2B, E4B) | `apache-2.0` | text + image (audio on E2B, E4B, 12B) | [google](https://huggingface.co/google) |
 | NVIDIA Nemotron 3.5 | Super VL 120B-A12B and Bolt 74B-A9B (2026-10-15, card) | 120B / 12B; 74B / 9B | up to 1M; up to 256K | `openmdw-1.1` ("OpenMDW License Agreement v1.1") | text, image, video | [nvidia](https://huggingface.co/nvidia) |
 | IBM Granite 4.2 | Granite 4.2 3B, 8B, 30B (2026-08-25, card) | dense 3B, 8B, 30B | 128K native, extension to 512K | `apache-2.0` | text | [ibm-granite](https://huggingface.co/ibm-granite) |
 | Ai2 OLMo | Olmo 3.1 32B Think and Instruct (2025-12-12, blog) | 32B dense | 65,536 | `apache-2.0` (weights, data, code) | text | [allenai](https://huggingface.co/allenai) |
 
-Not downloadable as of October 2026: Mistral Large 4 (preview API since October 6, 2026; weights promised by end of month), DeepSeek V4.1-Pro (named, no repository) and Qwen3.7-Plus (hosted only; no `Qwen/Qwen3.7*` repository exists).
+Not downloadable as of November 2026: DeepSeek V4.1-Pro (named, no repository) and Qwen3.7-Plus (hosted only; no `Qwen/Qwen3.7*` repository exists). Mistral Large 4's open weights dropped in late October 2026.
 
 ## DeepSeek V4 and V4.1
 
@@ -125,7 +125,7 @@ Llama 4 Scout and Maverick (April 5, 2025) remain the last models branded Llama,
 
 ## Mistral Small 4, Medium 3.5 and Large 4
 
-Mistral's assistant is [Mistral Vibe](/tools/mistral-vibe), formerly Le Chat. Mistral Small 4 (March 16, 2026) unifies "Magistral for reasoning, Pixtral for multimodal, and Devstral for agentic coding, into a single, versatile model": 119B total, 6.5B active, 256k context, text and image input, Apache-2.0. Mistral Medium 3.5 (May 22, 2026) is a dense 128B model "released as open weights, under a modified MIT license," which Mistral says "scores 77.6% on SWE-Bench Verified." Mistral Large 4, "a 1 trillion-parameter natively multimodal model with 52 billion active parameters," launched as a preview API on October 6, 2026 with the line "Weights drop end of this month"; as of October 2026 no repository exists and the licence is not stated by the vendor.
+Mistral's assistant is [Mistral Vibe](/tools/mistral-vibe), formerly Le Chat. Mistral Small 4 (March 16, 2026) unifies "Magistral for reasoning, Pixtral for multimodal, and Devstral for agentic coding, into a single, versatile model": 119B total, 6.5B active, 256k context, text and image input, Apache-2.0. Mistral Medium 3.5 (May 22, 2026) is a dense 128B model "released as open weights, under a modified MIT license," which Mistral says "scores 77.6% on SWE-Bench Verified." Mistral Large 4 ("Le Chonk"), a 1.05-trillion-parameter natively multimodal MoE model with 52 billion active parameters, launched as a preview API on October 6, 2026 and released its open weights in late October 2026 following additional RL targeting agentic coding and cybersecurity, under the **Mistral Ecosystem Open-Weight License** (a modified MIT licence permitting broad commercial use while restricting managed model-as-a-service hosting).
 
 ## gpt-oss (OpenAI)
 

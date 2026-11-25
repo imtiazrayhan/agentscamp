@@ -5,7 +5,8 @@ seoTitle: "Best Claude Code Alternatives (2026): Free, Open-Source & Paid"
 seoDescription: "Codex CLI, OpenCode, Cursor, Devin, Kiro and 13 more Claude Code alternatives, picked by reason: cost, open source, local models, IDE, or cloud agents."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
-reviewed: "2026-09-11"
+updated: "2026-11-25"
+reviewed: "2026-11-25"
 color: "green"
 depth: "cornerstone"
 freshness: "tier1"
@@ -86,7 +87,7 @@ related: ["tool:codex-cli", "tool:opencode", "tool:aider", "tool:cline", "tool:k
 
 The best Claude Code alternative for most developers in 2026 is OpenAI's [Codex CLI](/tools/codex-cli): open source under Apache-2.0, included even in ChatGPT's Free and Go plans, and able to run local models. The right replacement still depends on why you're leaving [Claude Code](/tools/claude-code), so the picks below are sorted by reason, every product gets a verdict, and a dated changelog shows what moved in 2026.
 
-*Last reviewed: September 2026.*
+*Last reviewed: November 2026.*
 
 Prices change often; each tool page lists current pricing. For what Claude's own plans include, see [Claude plans compared](/guides/getting-started/claude-plans-compared-2026).
 
@@ -94,7 +95,7 @@ Prices change often; each tool page lists current pricing. For what Claude's own
 
 | Tool | Type | Open source? | Models | Best for |
 |---|---|---|---|---|
-| [Codex CLI](/tools/codex-cli) | CLI, IDE, desktop, cloud | Yes (Apache-2.0) | GPT-5.6; local via `--oss` | Closest like-for-like swap |
+| [Codex CLI](/tools/codex-cli) | CLI, IDE, desktop, cloud | Yes (Apache-2.0) | GPT-6 / GPT-5.6; local via `--oss` | Closest like-for-like swap |
 | [OpenCode](/tools/opencode) | Terminal, desktop | Yes (MIT) | 75+ providers; local | Open source, any model |
 | [Aider](/tools/aider) | Terminal | Yes (Apache-2.0) | Almost any; local | Commit-per-edit workflow |
 | [goose](/tools/goose) | Desktop, CLI | Yes (Apache-2.0) | 15+ providers; local | Code and non-code tasks |

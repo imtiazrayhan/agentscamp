@@ -4,7 +4,8 @@ description: "The three frontier model families compared for real coding work �
 author: "Imtiaz Rayhan"
 date: 2026-06-11
 freshness: "tier1"
-updated: 2026-09-01
+updated: 2026-11-25
+reviewed: 2026-11-25
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -27,7 +28,7 @@ faq:
 related: ["tool:claude-code", "tool:codex-cli", "tool:gemini-cli", "tool:antigravity", "guide:choosing-the-right-model", "guide:claude-code-vs-codex-cli", "guide:agent-frameworks-2026"]
 ---
 
-The honest version of this comparison starts with a confession: **all three families write excellent code**, the benchmark gaps are narrow and perishable, and anyone declaring a permanent winner is selling something. What *doesn't* shift monthly is each family's posture — what it's optimized for, what's built around it, and how it fails. That's worth comparing.
+*Last reviewed: November 2026.* The honest version of this comparison starts with a confession: **all three families write excellent code**, the benchmark gaps are narrow and perishable, and anyone declaring a permanent winner is selling something. What *doesn't* shift monthly is each family's posture — what it's optimized for, what's built around it, and how it fails. That's worth comparing.
 
 ## The short answer
 
@@ -37,11 +38,11 @@ The honest version of this comparison starts with a confession: **all three fami
 
 ## Posture, not leaderboards
 
-**Claude (Anthropic)** built its coding reputation on *agentic discipline*: models that sustain long multi-step tasks, make careful scoped edits, verify their own work, and recover from errors — the qualities that matter when an agent runs for an hour, not a prompt. The ecosystem is the moat: Claude Code, the Agent SDK, MCP's birthplace. Blind code-review comparisons and small-company adoption surveys through 2025–26 repeatedly favored it for exactly this work. Its tiers (Haiku 4.5 / Sonnet 5 / Opus 5, with Fable 5 above them) map cleanly to task difficulty — [the tier guide](/guides/getting-started/choosing-the-right-model).
+**Claude (Anthropic)** built its coding reputation on *agentic discipline*: models that sustain long multi-step tasks, make careful scoped edits, verify their own work, and recover from errors — the qualities that matter when an agent runs for an hour, not a prompt. The ecosystem is the moat: Claude Code, the Agent SDK, MCP's birthplace. Blind code-review comparisons and developer adoption surveys through 2025–26 repeatedly favored it for exactly this work. As of November 2026, its 1M-context lineup (**Haiku 5.5 / Sonnet 5.5 / Opus 5.5**, with **Fable 5.2** above them) maps cleanly to task difficulty — see [the tier guide](/guides/getting-started/choosing-the-right-model).
 
-**GPT (OpenAI)** is the ubiquity play with frontier reasoning at the top: the o-series lineage made test-time reasoning mainstream (it's legacy now, with shutdowns scheduled through December 2026), the GPT-5.6 Sol/Terra/Luna line carries the broad work, and Codex (CLI and cloud) is a credible first-party agent family — running on the mainline models since the dedicated Codex models retired in July 2026. Whatever tool, library, or platform you touch, GPT integration came first. If your stack is OpenAI-shaped — or you lean hard on its reasoning tiers — the gravity is real.
+**GPT (OpenAI)** is the ubiquity play with frontier reasoning at the top: the o-series lineage made test-time reasoning mainstream (now legacy, with shutdowns running through December 2026), while the **GPT-6 generation** (**GPT-6.2 Astra / Sol**, **GPT-6.1 Terra**, **GPT-6 Luna**, succeeding GPT-5.6) carries the broad coding and reasoning work as of November 2026, and Codex (CLI, desktop, and cloud) is a credible first-party agent family running on the mainline models since dedicated Codex models retired in July 2026. Whatever tool, library, or platform you touch, GPT integration came first. If your stack is OpenAI-shaped — or you lean hard on its reasoning tiers — the gravity is real.
 
-**Gemini (Google)** competes on scale and integration: million-token-class context as standard, strong native multimodality, aggressive price-performance at the flash end, and the Google platform — Cloud, Workspace, and now Antigravity as the agentic front door (which absorbed [Gemini CLI](/tools/gemini-cli)'s free, Pro, and Ultra service as of June 18, 2026). For context-monster tasks and Google-native shops, it's the natural pick — and for the terminal agents specifically, [Claude Code vs Gemini CLI](/guides/comparisons/claude-code-vs-gemini-cli) goes head-to-head.
+**Gemini (Google)** competes on scale and integration: million-token-class context across the entire **Gemini 4** lineup (**Argon / Carbon / Neon / Hydrogen**) and **Gemini 3.8/3.7 Flash**, strong native multimodality, aggressive price-performance at the workhorse and flash ends, and the Google platform — Cloud, Workspace, and Antigravity as the agentic front door (which absorbed [Gemini CLI](/tools/gemini-cli)'s free, Pro, and Ultra service as of June 18, 2026). For context-monster tasks and Google-native shops, it's the natural pick — and for the terminal agents specifically, [Claude Code vs Gemini CLI](/guides/comparisons/claude-code-vs-gemini-cli) goes head-to-head.
 
 ## How to actually choose
 

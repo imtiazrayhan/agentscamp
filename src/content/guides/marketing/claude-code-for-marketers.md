@@ -3,7 +3,7 @@ title: "Claude Code for Marketers: The Complete 2026 Guide"
 description: "Why a marketer would open a terminal agent, when claude.ai or Cowork is the better tool, a CLAUDE.md for a content repo, five workflows, and what goes wrong."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
-updated: 2026-09-10
+reviewed: 2026-09-10
 depth: cornerstone
 color: "green"
 topics: ["ai-at-work", "workflow-prompting"]

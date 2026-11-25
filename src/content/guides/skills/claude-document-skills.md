@@ -48,7 +48,7 @@ The difference is visible in the output. Without the skill, "make me a budget sp
 | claude.ai (web/desktop) | **Always active** — nothing to install; code execution on |
 | Claude API | Attach by `skill_id` via the `container` parameter |
 | Managed Agents | Add to the agent's `skills` list (`{"type": "anthropic", "skill_id": "xlsx"}`) |
-| Claude Code | Available in beta; also installable from the public anthropics/skills repo |
+| Claude Code | Available in beta (as of November 2026); also installable from the public anthropics/skills repo |
 
 On the API, a request looks like this (both betas required):
 

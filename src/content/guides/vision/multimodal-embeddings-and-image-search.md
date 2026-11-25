@@ -84,7 +84,7 @@ Plenty of image-search demos look great and fail in production. Three reasons do
 
 **Domain shift.** General models are trained on web images and captions. Point one at chest X-rays, satellite imagery, semiconductor wafers, or your specific product catalog and recall can collapse, because the visual distribution and vocabulary are nothing like the training data. This is the single most common cause of "it worked in the demo, it's bad on our data." The fix is to **evaluate on a labeled slice of your real corpus first** — build a small set of query→correct-result pairs and measure recall@k and MRR before you commit. Severe shift is the signal to fine-tune an open model or switch providers.
 
-**Modality mismatch in content.** Image embeddings capture overall *appearance*, not the *text printed inside* an image. A model will happily tell you two invoices look alike while being useless at "find the invoice for $4,210.55." If the meaning your users search for is words or numbers on the page, raw image embeddings are the wrong tool.
+**Modality mismatch in content.** Image embeddings capture overall *appearance*, not the *text printed inside* an image. A model will happily tell you two invoices look alike while being useless at `find the invoice for $4,210.55`. If the meaning your users search for is words or numbers on the page, raw image embeddings are the wrong tool.
 
 ## When to caption-then-embed with a VLM instead
 

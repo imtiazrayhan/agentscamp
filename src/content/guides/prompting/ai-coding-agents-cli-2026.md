@@ -6,7 +6,8 @@ seoDescription: "OpenCode, Cline, Aider, Codex CLI, and more open-source or CLI 
 author: "Imtiaz Rayhan"
 date: 2026-06-03
 freshness: "tier1"
-updated: 2026-09-11
+updated: 2026-11-25
+reviewed: 2026-11-25
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -45,7 +46,7 @@ sources:
 related: ["tool:opencode", "tool:cline", "tool:aider", "tool:codex-cli", "tool:roo-code", "tool:continue", "tool:gemini-cli", "tool:antigravity", "tool:goose", "tool:cursor", "tool:windsurf", "tool:claude-code"]
 ---
 
-The proprietary AI editors — [Cursor](/tools/cursor), [Windsurf](/tools/windsurf), [GitHub Copilot](/tools/github-copilot) — are the most polished way to get AI into your day. But a large and fast-growing tier of **open-source and CLI [coding agents](/glossary/coding-agent)** wins on a different axis: **control.** You bring your own model (or run one locally), your code goes only where you choose, and you can script the agent into CI. This guide compares that tier and helps you decide when it's the right call. For the proprietary editors head-to-head, see [Cursor vs Claude Code vs Copilot vs Windsurf](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026).
+*Last reviewed: November 2026.* The proprietary AI editors — [Cursor](/tools/cursor), [Windsurf](/tools/windsurf), [GitHub Copilot](/tools/github-copilot) — are the most polished way to get AI into your day. But a large and fast-growing tier of **open-source and CLI [coding agents](/glossary/coding-agent)** wins on a different axis: **control.** You bring your own model (or run one locally), your code goes only where you choose, and you can script the agent into CI. This guide compares that tier and helps you decide when it's the right call. For the proprietary editors head-to-head, see [Cursor vs Claude Code vs Copilot vs Windsurf](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026).
 
 ## Why pick an open-source / CLI agent
 
@@ -69,9 +70,9 @@ For a head-to-head of these extensions, including where Roo Code users should go
 
 ### In your terminal (CLI agents)
 
-- **[OpenCode](/tools/opencode)** — the **most-starred open-source coding agent** (~207k GitHub stars as of September 2026) and the category's breakout. A genuinely polished terminal TUI that's fully **provider-agnostic** — 75+ providers including local models — loads your **language servers** for symbol-level context, runs **parallel sessions**, and can sign in with an existing **GitHub Copilot or ChatGPT subscription** instead of an API key.
-- **[Aider](/tools/aider)** — a terminal pair-programmer that's **git-native**: it edits files on disk and **commits each change** with a descriptive message, so every step is reviewable and `git revert`-able. It builds a repo map for context and is **model-agnostic** — see [Aider vs Claude Code](/guides/comparisons/aider-vs-claude-code) for the head-to-head. Development has slowed: the last release (0.86.2) shipped February 12, 2026.
-- **[Codex CLI](/tools/codex-cli)** — OpenAI's open-source, Rust-based terminal agent with a **two-layer security model** (sandbox modes plus approval policies). Network is off by default, the default sandbox (workspace-scoped writes or read-only) depends on the folder's trust setting, and it supports **model switching** and **MCP**, plus a headless `codex exec` for CI. Unlike Aider, it **doesn't auto-commit** — it leaves staging to you.
+- **[OpenCode](/tools/opencode)** — the **most-starred open-source coding agent** (~207k GitHub stars as of September 2026) and the category's breakout. A polished MIT-licensed terminal TUI (plus desktop app and IDE extensions) that's fully **provider-agnostic** — 75+ providers including local models — loads your **language servers** for symbol-level context, runs **parallel sessions**, and accepts BYOK, existing **GitHub Copilot or ChatGPT subscriptions**, prepaid PayGo (formerly Zen) credits, or flat OpenCode Go ($10/mo) / Go Plus ($40/mo) tiers (as of November 2026).
+- **[Aider](/tools/aider)** — a terminal pair-programmer that's **git-native**: it edits files on disk and **commits each change** with a descriptive message, so every step is reviewable and `git revert`-able. It builds a repo map for context and is **model-agnostic** — see [Aider vs Claude Code](/guides/comparisons/aider-vs-claude-code) for the head-to-head. Development slowed substantially in 2026 (last release 0.86.2 shipped February 12, 2026).
+- **[Codex CLI](/tools/codex-cli)** — OpenAI's open-source, Rust-based terminal agent with a **two-layer security model** (sandbox modes plus approval policies). Network is off by default, the default sandbox (workspace-scoped writes or read-only) depends on the folder's trust setting, and it supports **model switching** and **MCP**, plus a headless `codex exec` for CI. Included with ChatGPT Plus ($20/mo), Pro ($100–$500/mo), or Business/Enterprise plans — or usable via raw OpenAI API key (as of November 2026). Unlike Aider, it **doesn't auto-commit** — it leaves staging to you.
 - **[Gemini CLI](/tools/gemini-cli)** — Google's open-source terminal agent, long notable for a **generous free tier**, large context windows, and MCP support. **Sunset (June 2026):** as of June 18, 2026 it stopped serving requests for free, AI Pro, and Ultra users, with Google folding the effort into [Antigravity](/tools/antigravity) and its closed-source Antigravity CLI (paid API keys and enterprise Gemini Code Assist licenses keep access, and the repo stays open source).
 - **[Goose](/tools/goose)** — an open-source, extensible agent that runs **locally** (CLI and desktop), BYO-model and MCP-first, aimed at developers who want an on-machine autonomous agent. Block contributed it to the Agentic AI Foundation as a founding project (announced December 2025) and completed the move in April 2026; the repo now lives at `aaif-goose/goose`.
 

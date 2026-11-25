@@ -4,12 +4,13 @@ description: "The MCP servers actually worth connecting in 2026 — Context7, Gi
 author: "Imtiaz Rayhan"
 date: 2026-07-01
 freshness: "tier1"
-updated: 2026-09-11
+updated: 2026-11-25
+reviewed: 2026-11-25
 color: "green"
 topics: ["mcp", "architecture"]
 tags: ["mcp", "comparison", "best-of", "tools", "agents"]
 featured: true
-summary: "With 11,000+ public MCP servers, the shortlist matters more than the catalog. The 2026 picks: Context7 for current library docs, GitHub MCP for the dev loop, Chrome DevTools or Playwright for a real browser, Serena for symbol-level code intelligence, Exa and Firecrawl for web data — plus official vendor servers (Figma, Linear, Notion, Sentry, Supabase, Stripe, Cloudflare) where your stack lives."
+summary: "With 65,000+ listings in the official MCP Registry as of November 2026, the shortlist matters more than the catalog. Top picks: Context7 (or Ref) for current library docs, GitHub MCP for the dev loop, Chrome DevTools or Playwright for a browser, Serena for symbol-level code intelligence, Exa and Firecrawl for web data, plus official vendor servers."
 keyTakeaways:
   - "Start with three: Context7 (kills hallucinated APIs), GitHub MCP (the dev loop), and a browser server (Chrome DevTools MCP to debug, Playwright MCP to automate). Add vendor servers only where your stack actually lives."
   - "Prefer official hosted remotes with OAuth — Linear, Notion, Sentry, Stripe, Figma, Supabase, Cloudflare all run their own servers now; nothing to install or update."
@@ -29,7 +30,7 @@ related: ["guide:claude-code-mcp-setup", "guide:mcp-vs-a2a", "guide:govern-mcp-s
 audience: ["developers", "ai-engineers"]
 ---
 
-The MCP ecosystem spans 11,000+ public servers and landed under the Linux Foundation — which means the catalog is no longer the problem; **the shortlist is.** This is ours: the servers that earn a slot in real 2026 workflows, organized by what they're for, with the honest caveats. (New to the mechanics? [Adding MCP Servers to Claude Code](/guides/mcp/claude-code-mcp-setup) covers transports, scopes, and auth.)
+*Last reviewed: November 2026.* The official MCP Registry now lists 65,000+ server entries across 32,600+ distinct repositories under the Linux Foundation — which means the catalog is no longer the problem; **the shortlist is.** This is ours: the servers that earn a slot in real 2026 workflows, organized by what they're for, with the honest caveats. (New to the mechanics? [Adding MCP Servers to Claude Code](/guides/mcp/claude-code-mcp-setup) covers transports, scopes, and auth.)
 
 ## The default three
 
@@ -37,7 +38,7 @@ If you connect nothing else, connect these:
 
 **[Context7](/tools/context7)** — the most-adopted server in the ecosystem (~62k stars), for one reason: it ends hallucinated APIs. Two tools resolve a library and inject its **current, version-specific docs** into context. Every coding agent benefits, every day.
 
-**[GitHub MCP Server](/tools/github-mcp-server)** — GitHub's official server makes the development loop agent-native: issues, PRs, Actions runs, and security findings become readable and updatable. Twenty-two toolsets (as of September 2026), each mountable read-only; free hosted remote.
+**[GitHub MCP Server](/tools/github-mcp-server)** — GitHub's official server makes the development loop agent-native: issues, PRs, Actions runs, and security findings become readable and updatable. Twenty-two toolsets (verified November 2026), each mountable read-only; free hosted remote.
 
 **A real browser** — two strong picks with different jobs. **[Chrome DevTools MCP](/tools/chrome-devtools-mcp)** (Google, ~52k stars) is the *debugger*: console with source maps, network inspection, performance traces with insights. **[Playwright MCP](/tools/playwright-mcp)** (Microsoft, ~37k stars) is the *automator*: cross-browser flows and testing. Frontend-heavy teams run both.
 

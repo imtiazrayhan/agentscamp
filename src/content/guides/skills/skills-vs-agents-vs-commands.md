@@ -43,7 +43,7 @@ faq:
   - q: "When should I use a subagent instead of a skill?"
     a: "When the work has a noisy middle and a clean summary — running a test suite, sweeping logs, auditing files. The subagent churns through hundreds of lines in its own window and hands back three sentences. If you're really just teaching Claude a procedure and don't need isolation, that's a skill (which can still opt into a forked context with context: fork)."
   - q: "How do I make a skill run only when I type it?"
-    a: "Set disable-model-invocation: true in its frontmatter. Without it, Claude may auto-load the skill whenever it judges the task relevant; with it, the skill fires only on its /name. Skills also take arguments — $0 for the first (substitution is 0-indexed), $ARGUMENTS for all — plus an argument-hint, which makes them feel like CLI subcommands for your repo."
+    a: "Set disable-model-invocation: true in its frontmatter. Without it, Claude may auto-load the skill whenever it judges the task relevant; with it, the skill fires only on its /name. Skills also take arguments — `$0` for the first (substitution is 0-indexed), `$ARGUMENTS` for all — plus an argument-hint, which makes them feel like CLI subcommands for your repo."
   - q: "Does a subagent see my conversation so far?"
     a: "No, and this is the most common surprise. A subagent starts with its own system prompt, the delegation message Claude writes for it, the CLAUDE.md hierarchy, and a git status snapshot — but not your conversation history, not the files you've already read, and not skills you've already invoked. That blank slate is exactly what keeps its noise out of your thread, and it's why a vague delegation produces a vague result."
   - q: "Can a subagent use my skills?"

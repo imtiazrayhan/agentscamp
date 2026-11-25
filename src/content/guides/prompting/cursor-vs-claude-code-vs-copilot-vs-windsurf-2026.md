@@ -4,7 +4,8 @@ description: "A practical, opinionated comparison of the four mainstream AI codi
 author: "Imtiaz Rayhan"
 date: 2026-06-03
 freshness: "tier1"
-updated: 2026-09-01
+updated: 2026-11-25
+reviewed: 2026-11-25
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -29,7 +30,7 @@ faq:
 related: ["tool:cursor", "tool:claude-code", "tool:github-copilot", "tool:windsurf", "guide:what-is-claude-code", "guide:choosing-the-right-model", "guide:installing-claude-code"]
 ---
 
-If you're choosing an AI coding tool in 2026, the headline features have converged: every serious option now offers inline completion, a chat panel, and an autonomous **agent mode** that edits multiple files and runs commands. So the question is no longer "which one has an agent" — it's **where the tool runs, how much autonomy it takes, how it handles your codebase as context, and how it charges you.** This guide compares the four most widely used: **Cursor** (a SpaceX company since its $60B all-stock acquisition closed on August 14, 2026), **Claude Code**, **GitHub Copilot**, and **Windsurf** (now Devin Desktop).
+*Last reviewed: November 2026.* If you're choosing an AI coding tool in 2026, the headline features have converged: every serious option now offers inline completion, a chat panel, and an autonomous **agent mode** that edits multiple files and runs commands. So the question is no longer "which one has an agent" — it's **where the tool runs, how much autonomy it takes, how it handles your codebase as context, and how it charges you.** This guide compares the four most widely used as of November 2026: **Cursor** (a SpaceX company since its $60B all-stock acquisition closed on August 14, 2026), **Claude Code**, **GitHub Copilot**, and **Windsurf** (now Devin Desktop).
 
 ## The fastest way to decide: form factor
 
@@ -71,11 +72,12 @@ If model flexibility matters to you, the three editors give you a dial Claude Co
 
 Claude Code is the most extensible for power users: **MCP servers, skills and custom slash commands, subagents, and hooks** turn it into a programmable workflow, not just an assistant. Cursor, Windsurf, and Cline-style tools also support **MCP** for connecting external tools and data, and Cursor added a reviewed **plugin marketplace** in early 2026 (Atlassian, Datadog, GitLab, and more). Copilot extends through its editor ecosystem and extensions.
 
-### Pricing model
+### Pricing model (as of November 2026)
 
-- **Copilot** — subscription seats (with a limited free tier; free for verified students and popular OSS maintainers), with usage-based AI Credits billing on top since June 2026.
-- **Cursor** and **Windsurf** — freemium: a free tier plus paid plans that raise limits and unlock premium models; Cursor also lets you bring your own API keys for chat models.
-- **Claude Code** — requires a paid Anthropic plan (Claude Pro/Max) or API usage, so cost scales with how much agentic work you run.
+- **Copilot** — subscription seats backed by **GitHub AI Credits** (since June 2026) and the unified github.com/mobile/cloud-agent Copilot experience (launched September 28, 2026): Free ($0), Pro ($10/mo), Pro+ ($39/mo), Max ($100/mo), Business ($19/user/mo), and Enterprise ($39/user/mo), plus free access for verified students and popular OSS maintainers.
+- **Cursor** — transitioned new sign-ups to **The X Subscription** tiers in October 2026: Free ($0), Plus ($8/mo, centered on Grok models), Premium ($30/mo, required to access third-party Claude/GPT/Gemini models at API rates), Super ($100/mo), and Ultra ($200/mo); legacy Pro ($20) and Pro+ ($60) remain active for existing subscribers, and BYOK works for chat models.
+- **Windsurf (Devin Desktop)** — freemium token-quota plans: Free ($0), Pro ($20/mo), Max ($200/mo), and Teams ($80/mo base + $40/seat).
+- **Claude Code** — bundled into paid Anthropic subscriptions — Pro ($20/mo or $17/mo annual), Max ($100/mo), Ultra ($200/mo, formerly Max 20x), and Team — or billed pay-as-you-go via the Anthropic API, so cost scales directly with agentic usage.
 
 > [!TIP]
 > Pricing and model availability change often. Treat the model above (seat-based vs. usage-based) as the durable difference, and check each product's current page before committing a team.

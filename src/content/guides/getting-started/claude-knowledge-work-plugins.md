@@ -5,6 +5,8 @@ seoTitle: "Anthropic Knowledge-Work Plugins: Every Role Plugin Explained"
 seoDescription: "Every Anthropic knowledge-work plugin for Claude Cowork and Claude Code cataloged: skills and connectors per role, exact install commands, and how to fork one."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-25
+reviewed: 2026-11-25
 freshness: "tier1"
 color: "green"
 depth: standard
@@ -57,7 +59,7 @@ sources:
     publisher: "Anthropic"
 ---
 
-Anthropic's `knowledge-work-plugins` repository is a set of open-source, Apache-2.0 licensed plugins that turn Claude into a specialist for a job: sales, finance, legal, marketing, HR, design, engineering, and more. Each one is a folder of Markdown skills plus a JSON file of connector definitions, built for [Claude Cowork](/tools/claude-cowork) and also loadable in [Claude Code](/tools/claude-code). This guide catalogs every Anthropic-built plugin in the repo as of September 2026, gives the exact install commands, and shows how to fork one for your team.
+*Last reviewed: November 2026.* Anthropic's `knowledge-work-plugins` repository is a set of open-source, Apache-2.0 licensed plugins that turn Claude into a specialist for a job: sales, finance, legal, marketing, HR, design, engineering, and more. Each one is a folder of Markdown skills plus a JSON file of connector definitions, built for [Claude Cowork](/tools/claude-cowork) (merged directly into unified Claude chat in September 2026) and also loadable in [Claude Code](/tools/claude-code). This guide catalogs every Anthropic-built plugin from our September 2026 repo snapshot, gives the exact install commands, and shows how to fork one for your team.
 
 It is deliberately *not* the developer guide. For the plugin format itself (manifests, hooks, LSP servers, marketplaces) read [Claude Code Plugins: Install, Use, and Build Your Own](/guides/configuration/claude-code-plugins). This page is about the role plugins Anthropic ships; the glossary entry on [Claude plugins](/glossary/claude-plugins) covers the term.
 

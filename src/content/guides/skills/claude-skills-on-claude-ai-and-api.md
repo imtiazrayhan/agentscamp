@@ -56,7 +56,7 @@ Anthropic's **document skills** — Word (`docx`), Excel (`xlsx`), PowerPoint (`
 
 ## The Messages API: skills + code execution
 
-On the API, skills attach to a request through the `container` parameter, and they execute inside the code-execution tool's sandbox. Two beta headers are required together:
+On the API, skills attach to a request through the `container` parameter, and they execute inside the code-execution tool's sandbox. Two beta headers are required together (as of November 2026):
 
 ```python
 response = client.beta.messages.create(

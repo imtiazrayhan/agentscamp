@@ -50,7 +50,7 @@ keywords:
   - "vector database sharding"
 ---
 
-**Vector search at scale is a three-way trade-off between recall, latency, and memory — you can tune any two, and the third moves.** At a few hundred thousand vectors almost any approach works. At tens of millions to billions, the choices you make about the approximate nearest neighbour (ANN) index, quantization, and sharding decide whether queries return in 10ms or 10s, and whether a replica costs $50/month or $5,000.
+**Vector search at scale is a three-way trade-off between recall, latency, and memory — you can tune any two, and the third moves.** At a few hundred thousand vectors almost any approach works. At tens of millions to billions, the choices you make about the approximate nearest neighbour (ANN) index, quantization, and sharding decide whether queries return in 10ms or 10s, and whether a replica costs tens of dollars per month or thousands.
 
 This guide is about the engineering past the toy demo: how to keep recall high while keeping latency and the RAM bill bounded. For picking the [vector database](/glossary/vector-database) engine itself, see [Best Vector Database 2026](/guides/database/best-vector-database-2026).
 

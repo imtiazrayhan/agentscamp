@@ -77,7 +77,7 @@ The body uses tools that `allowed-tools` doesn't pre-approve. Two subtleties: th
 ## Symptom 6: it works in Claude Code but not elsewhere
 
 - **claude.ai:** code execution must be enabled (Settings → Capabilities), and the uploaded ZIP must contain the skill *folder* with SKILL.md inside. Surfaces don't sync — claude.ai never sees your filesystem skills.
-- **Claude API:** the container has **no network access and no runtime package installs** — a skill that fetches URLs or pip-installs works locally and fails there. Also check both beta headers and the 8-skills-per-request cap. Details in [Skills on claude.ai and the API](/guides/skills/claude-skills-on-claude-ai-and-api).
+- **Claude API:** the container has **no network access and no runtime package installs** — a skill that fetches URLs or pip-installs works locally and fails there. Also check both beta headers (as of November 2026) and the 8-skills-per-request cap. Details in [Skills on claude.ai and the API](/guides/skills/claude-skills-on-claude-ai-and-api).
 - **Agent SDK:** `allowed-tools` frontmatter is ignored; tool permissions come from the SDK's own `allowedTools` option.
 
 > [!TIP]

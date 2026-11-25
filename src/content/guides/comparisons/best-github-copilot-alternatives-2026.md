@@ -5,7 +5,8 @@ seoTitle: "The Best GitHub Copilot Alternatives in 2026 (Free and Paid)"
 seoDescription: "Cursor, Cline, Kilo Code, Tabnine, Zed, Kiro and more GitHub Copilot alternatives, with free options, self-hosted picks and a clear verdict for each."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
-reviewed: "2026-09-11"
+updated: "2026-11-25"
+reviewed: "2026-11-25"
 color: "green"
 depth: "cornerstone"
 freshness: "tier1"
@@ -88,7 +89,7 @@ related: ["tool:github-copilot", "tool:cursor", "tool:windsurf", "tool:kiro", "t
 
 The best GitHub Copilot alternative for most developers in 2026 is [Cursor](/tools/cursor) if you'll switch editors, and [Cline](/tools/cline) if you won't: it's free, open source, and runs in VS Code and JetBrains with any model. Pick [Tabnine](/tools/tabnine) when code can't leave your network, and [Claude Code](/tools/claude-code) or [Codex CLI](/tools/codex-cli) when you want a terminal agent rather than autocomplete.
 
-*Last reviewed: September 2026.*
+*Last reviewed: November 2026.*
 
 Prices change often; each tool page lists current pricing.
 
@@ -98,7 +99,7 @@ Prices change often; each tool page lists current pricing.
 
 - **Billing.** Since June 1, 2026, every plan bills in GitHub AI Credits. Completions and next-edit suggestions stay unlimited on paid plans, but chat, agents and the CLI consume credits depending on the model, and a new Max plan sits at the top.
 - **Access.** On April 20, 2026, GitHub paused Pro, Pro+ and Student sign-ups and removed Opus models from Pro. Individual sign-ups began reopening on June 17, and Business and Enterprise on September 3.
-- **Policy.** An August 28, 2026 changelog moves Copilot Chat on github.com and GitHub Mobile, plus the cloud agent, to a single "unified Copilot experience", on by default once it launches no earlier than September 28, and says github.com chat data will be kept for the life of the account instead of 28 days. Business and Enterprise admins are asked to review the new policy before then.
+- **Policy.** Starting September 28, 2026, GitHub rolled out its "unified Copilot experience" merging Copilot Chat on github.com, GitHub Mobile, and the cloud agent under one default policy — extending github.com chat data retention from 28 days to the life of the account and moving default code review effort to Balanced. Business and Enterprise admins should verify their org policy settings.
 - **Deployment.** "Copilot is not currently available for GitHub Enterprise Server."
 
 > [!TIP]

@@ -4,8 +4,8 @@ seoTitle: "Best Web Search APIs for AI Agents (2026): Tavily Alternatives"
 description: "Context.dev, Tavily, Exa, Brave, Parallel, Jina Reader and Firecrawl compared on search, extraction, answers, index ownership, and official MCP servers."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
-updated: "2026-11-22"
-reviewed: "2026-09-11"
+updated: "2026-11-25"
+reviewed: "2026-11-25"
 color: "green"
 topics: ["ai-agents-systems", "rag-retrieval"]
 audience: ["ai-engineers"]
@@ -86,7 +86,7 @@ related: ["tool:context-dev", "tool:tavily", "tool:exa", "tool:brave-search-api"
 
 Most agents need two web APIs, not one: a search API that returns ranked results and an extractor that turns pages into clean text. You can buy those separately or get both from one vendor. [Context.dev](/tools/context-dev) does both on one key, searching the web and scraping any URL into Markdown or schema-shaped JSON, and [Tavily](/tools/tavily), owned by Nebius since February 2026, is the established one-key default. [Exa](/tools/exa), the [Brave Search API](/tools/brave-search-api) and [Parallel](/tools/parallel) are the strongest choices if you want results from an independent index, while [Jina Reader](/tools/jina-reader) and [Firecrawl](/tools/firecrawl) win when the job is extraction.
 
-*Last reviewed: September 2026.*
+*Last reviewed: November 2026.*
 
 Prices change often; each tool page lists current pricing.
 
@@ -258,7 +258,7 @@ Firecrawl's `/search` returns titles, descriptions and URLs, and `scrapeOptions`
 Four more APIs come up in the same evaluations:
 
 - **SerpApi** returns structured results pages from Google, Bing and other engines as JSON, with no index of its own. Google sued SerpApi in December 2025, and SerpApi says its service is unchanged.
-- **The Perplexity Sonar API** is being replaced. Perplexity's docs say Sonar Chat Completions is now the Agent API, and Sonar is supported until September 27, 2026. A separate Search API returns raw ranked results from Perplexity's own index.
+- **The Perplexity Sonar API** was retired on September 27, 2026 and replaced by Perplexity's **Agent API** (asynchronous Sonar jobs and legacy `/v1/sonar` endpoints ended support). A separate Search API returns raw ranked results from Perplexity's own index.
 - **Linkup** returns search results, sourced answers or structured output from its own index plus data partners, and has a hosted MCP server.
 - **The You.com API** says its index is operated by You.com, not resold, and offers search, contents, answer and research endpoints with a hosted MCP server.
 
@@ -272,7 +272,7 @@ Four more APIs come up in the same evaluations:
 - **April 29, 2026:** Parallel raised a Series B led by Sequoia Capital.
 - **May 2026:** Context.dev added web search (May 16), Parallel launched Index by Parallel, which compensates content owners (May 19), and Exa raised a Series C led by a16z (May 20).
 - **July and August 2026:** Parallel added Turbo mode (July 13), the Responses API (July 21), free monthly credits (July) and Fast mode (August 21).
-- **As of September 2026:** Firecrawl calls `/agent` the successor to `/extract`, and Perplexity supports Sonar until September 27, 2026.
+- **September 2026:** Firecrawl named `/agent` the successor to `/extract`, and Perplexity retired its legacy Sonar Chat Completions API on September 27, 2026 in favor of the Agent API.
 - **October 2026:** Context.dev raised a seed round led by General Catalyst.
 
 ## How to evaluate on your own workload
