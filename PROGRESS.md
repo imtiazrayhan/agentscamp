@@ -1,4 +1,18 @@
-# Off-Site Distribution Surfaces & Playbook (#2) — 2026-11-25 — VERIFIED
+# Study #1: MCP Server Token Overhead Benchmark + CLI v0.12.0 & Mirror Sync — 2026-11-25 — PUSHED
+
+Goal: run and publish AgentsCamp's first reproducible link-magnet benchmark study, bump `agentscamp` CLI to `0.12.0`, and sync the `awesome-agentscamp` mirror repo (`agentscamp-library`).
+
+## Done
+- `scripts/benchmark-mcp-tokens.ts`: zero-dep MCP JSON-RPC 2.0 (`initialize` → `tools/list`) probe over stdio (`npx`/`uvx`) and Streamable HTTP + exact `tiktoken` (`o200k_base` & `cl100k_base`) tokenization.
+- Measured **16 live MCP servers** (183 tools total, 2026-11-25) and archived raw data to `docs/benchmarks/mcp-token-overhead-2026-11.json` (41.5× spread: Ref Context 172 tokens → Supabase MCP 7,143 tokens; median 1,295 tokens/server; 5-server stack = 21,272 tokens / 10.6% of 200K; top 10 individual tools = 6,698 tokens).
+- Published cornerstone guide `src/content/guides/mcp/mcp-server-token-overhead-benchmark.md` (with `howtoSteps`, 5 FAQs, 6 takeaways, 6 primary sources, full 16-server table, top-10 tool table, stack math, and reproducible methodology), cross-linked from `best-mcp-servers-2026.md`, `claude-code-mcp-setup.md`, `README.md`, and `scripts/build-mirror-repo.ts`.
+- Bumped `cli/package.json` to `0.12.0` (345 bundled installables) and rebuilt `mirror/` (`agentscamp-library`, 1,062 items).
+
+## Verified
+- `npm run prebuild` (1,062 valid items, 0 errors, 0 new warnings), `npm run lint`, `npm run typecheck`, `npm run cli:build` (`verify-bundle: OK`, 345 items), `npm run mirror:build` (1,062 items), `npx next build` (4,082/4,082 static pages).
+- Verified built HTML, `TechArticle` + `FAQPage` + `HowTo` JSON-LD, enriched `.md` twin, and `sitemap.xml` entry.
+
+# Off-Site Distribution Surfaces & Playbook (#2) — 2026-11-25 — PUSHED
 
 Goal: refresh AgentsCamp's third-party distribution surfaces (GitHub README, npmjs.com CLI README, `awesome-agentscamp` mirror generator) and document the concrete off-site authority, benchmark, outreach, and `@agentscamp` X launch plan.
 

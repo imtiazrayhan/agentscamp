@@ -207,6 +207,7 @@ ${contentTypeList.map((d) => `- **[${d.label}](${PLURAL[d.id]}.md)** — ${d.tag
 
 ## Popular starting points on ${site.name}
 
+- [MCP Server Context-Token Overhead Benchmark (16 Servers Measured)](${site.url}/guides/mcp/mcp-server-token-overhead-benchmark)
 - [Best Claude Skills in 2026](${site.url}/guides/skills/best-claude-skills-2026)
 - [The Best MCP Servers in 2026](${site.url}/guides/mcp/best-mcp-servers-2026)
 - [Best Claude Code Alternatives in 2026](${site.url}/guides/comparisons/best-claude-code-alternatives-2026)

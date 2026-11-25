@@ -4,7 +4,7 @@
 
 ## What's on the site
 
-- **Guides (297)** — tutorials, benchmarks, and head-to-head comparisons across coding agents, RAG, MCP, evals, voice, and AI at work → [agentscamp.com/guides](https://agentscamp.com/guides)
+- **Guides (298)** — tutorials, benchmarks, and head-to-head comparisons across coding agents, RAG, MCP, evals, voice, and AI at work → [agentscamp.com/guides](https://agentscamp.com/guides)
 - **Tools (262)** — a curated AI tool directory with pricing, workflows, and `/alternatives` pages → [agentscamp.com/tools](https://agentscamp.com/tools)
 - **Glossary (157)** — plain-language AI and LLM-engineering definitions → [agentscamp.com/glossary](https://agentscamp.com/glossary)
 - **Role paths & topics** — curated starting points by role ([/for](https://agentscamp.com/for)) and cross-type collections ([/topics](https://agentscamp.com/topics))
@@ -12,6 +12,7 @@
 
 ### Popular starting points
 
+- [MCP Server Context-Token Overhead Benchmark (16 Servers Measured)](https://agentscamp.com/guides/mcp/mcp-server-token-overhead-benchmark)
 - [AI Coding Agents & Claude Code Alternatives (2026)](https://agentscamp.com/guides/comparisons/best-claude-code-alternatives-2026)
 - [Best Claude Skills in 2026](https://agentscamp.com/guides/skills/best-claude-skills-2026)
 - [The Best MCP Servers in 2026](https://agentscamp.com/guides/mcp/best-mcp-servers-2026)
