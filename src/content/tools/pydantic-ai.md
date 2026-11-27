@@ -2,6 +2,7 @@
 name: "Pydantic AI"
 description: "Type-safe agent framework from the Pydantic team: validated structured outputs, dependency injection, durable execution, 'that FastAPI feeling.'"
 date: 2026-06-11
+updated: 2026-11-27
 url: "https://ai.pydantic.dev"
 pricing: "open-source"
 category: "sdk"
@@ -19,12 +20,12 @@ sameAs:
   - "https://pydantic.dev/docs/ai/overview/"
   - "https://pypi.org/project/pydantic-ai/"
 related: ["guide:agent-frameworks-2026", "tool:langchain", "glossary:structured-output", "guide:production-tool-calling", "tool:langgraph", "tool:instructor"]
-summary: "Pydantic AI (MIT, ~18k stars, v1 GA September 2025) brings the Pydantic team's type discipline to agents: outputs validated against your models so errors move from runtime to write-time, type-safe dependency injection for tools, the broadest model-agnostic provider list, durable execution via Temporal/DBOS/Prefect/Restate, and MCP/A2A interop."
+summary: "Pydantic AI (MIT, ~21k GitHub stars, V2 stable since June 2026) brings the Pydantic team's type discipline to agents: outputs validated against your models so errors move from runtime to write-time, type-safe dependency injection for tools, a model-agnostic provider list, durable execution via Temporal/DBOS/Prefect/Restate, and MCP and AG-UI support."
 faq:
   - q: "What makes Pydantic AI different from LangChain or CrewAI?"
     a: "Type safety as the organizing principle. Agents declare typed dependencies and typed outputs; Pydantic validates everything, so a schema mismatch is a write-time error, not a 3am production surprise. It deliberately feels like FastAPI — plain Python, explicit wiring, no DSL — where LangChain optimizes for ecosystem breadth and CrewAI for multi-agent metaphors."
   - q: "Is Pydantic AI production-ready?"
-    a: "v1 went GA in September 2025 with an explicit stability pledge (no breaking changes for at least six months; v1 supported well past any v2), and the durable-execution integrations — Temporal, DBOS, Prefect, Restate — exist precisely for production: crash recovery and resumable long-running agents. The release cadence is fast (100+ minors since GA), so pin versions regardless."
+    a: "V1 went GA in September 2025, and V2, the current stable line, shipped on June 23, 2026. The version policy rules out intentional breaking changes in minor releases and promises V1 security fixes for at least six months after V2. The durable-execution integrations — Temporal, DBOS, Prefect, Restate — exist precisely for production: crash recovery and resumable long-running agents. The release cadence is fast (85 stable V2 releases from June to late November 2026), so pin versions regardless."
   - q: "Which model providers does it support?"
     a: "Essentially all of them: OpenAI, Anthropic, Gemini, Bedrock, Azure, Groq, Mistral, Cohere, DeepSeek, Ollama, OpenRouter, Together, Hugging Face, LiteLLM and more — model-agnostic is a core design goal, not an adapter afterthought."
 ---
@@ -37,7 +38,7 @@ Pydantic AI is what happens when the team whose validation library underpins hal
 - **Dependency injection** — typed deps flow into tools and prompts (the FastAPI pattern), making agents testable and explicit about what they touch.
 - **Model-agnostic, genuinely** — the broadest provider matrix in the category, swappable without rewrites.
 - **Durable execution** — first-class Temporal, DBOS, Prefect, and Restate integrations: agents that survive crashes and resume mid-run.
-- **Standards interop** — MCP, A2A, and AG-UI support, plus built-in human-in-the-loop tool approval.
+- **Standards interop** — MCP and AG-UI support, plus built-in human-in-the-loop tool approval. A2A moved out of the core package in V2 and now lives in `fasta2a`.
 - **Observability without lock-in** — OpenTelemetry-native tracing (Pydantic Logfire is the polished home, any OTel backend works) and Pydantic Evals alongside.
 
 ## In an AI-assisted workflow
@@ -54,4 +55,4 @@ The natural adopters: Python teams already living in Pydantic/FastAPI idioms, an
 
 ## Good to know
 
-MIT, Python-only (no JS), v1.x with a fast minor cadence — pin versions even under the stability pledge. Logfire is the commercial sibling, optional by design since the telemetry is plain OTel. Against the field's other postures — LangChain's ecosystem, LangGraph's explicit graphs, CrewAI's crews — see [Agent Frameworks in 2026](/guides/concepts/agent-frameworks-2026).
+MIT, Python-only (no JS), V2.x with a fast minor cadence — pin versions even under the stability pledge. Logfire is the commercial sibling, optional by design since the telemetry is plain OTel. Against the field's other postures — LangChain's ecosystem, LangGraph's explicit graphs, CrewAI's crews — see [Agent Frameworks in 2026](/guides/concepts/agent-frameworks-2026).
