@@ -3,7 +3,8 @@ title: "Claude Design: The Complete Guide (2026)"
 description: "What Claude Design makes, how it ingests your design system, the three editing modes, every export and handoff, and where it stops. Written for designers."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
-reviewed: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 depth: cornerstone
 color: "green"
 topics: ["ai-at-work", "multimodal-ai"]
@@ -13,9 +14,9 @@ featured: true
 seoTitle: "Claude Design: The Complete Guide (2026)"
 seoDescription: "Claude Design explained: what it makes, plans and status, design-system import, the /design-sync handoff to Claude Code, exports, limits, and how it compares."
 keywords: ["claude design", "claude design guide", "anthropic claude design", "claude design vs figma", "design-sync claude code"]
-summary: "Claude Design is Anthropic's visual workspace: you describe a prototype, deck, or landing page, Claude builds it on a canvas from your design system, and you refine it by chatting, commenting, or dragging. Launched as a research preview on April 17, 2026, it is in beta on Pro, Max, Team, and Enterprise, exporting to PDF, PPTX, HTML, and Canva."
+summary: "Claude Design is Anthropic's visual workspace: you describe a prototype, deck, or landing page, Claude builds it on a canvas from your design system, and you refine it by chatting, commenting, or dragging. Launched as a research preview on April 17, 2026, it now comes with every Claude plan, Free included, and exports to PDF, PPTX, HTML, and Canva."
 keyTakeaways:
-  - "Claude Design launched as a research preview on April 17, 2026 and is in beta on Pro, Max, Team, and Enterprise as of September 2026. Not on Free."
+  - "Claude Design launched as a research preview on April 17, 2026 and, as of November 2026, comes with every plan, Free included."
   - "It runs at claude.ai/design or in the Claude Desktop sidebar. Web and desktop only, with no mobile version."
   - "Your design system comes in from a GitHub repo, uploaded design files, raw uploads, or a local codebase through the /design-sync command in Claude Code."
   - "Three editing modes: chat for structural changes, inline comments for one element, and direct canvas editing with live knobs for spacing, color, and layout."
@@ -45,7 +46,7 @@ faq:
   - q: "What is Claude Design?"
     a: "Claude Design is a visual workspace from Anthropic where you collaborate with Claude to produce designs, interactive prototypes, presentations, and one-pagers. You describe what you want, Claude builds it on a canvas using your design system, and you refine it through chat, inline comments, or direct editing on the canvas."
   - q: "Which plans include Claude Design, and is it still a research preview?"
-    a: "It launched as a research preview on April 17, 2026. As of September 2026 the product page and help center describe it as beta on Pro, Max, Team, and Enterprise, included with the subscription. Enterprise organizations are off by default and need an admin to enable it in Organization settings. Free is not on the list."
+    a: "It launched as a research preview on April 17, 2026. As of November 2026 Anthropic's product page says Claude Design comes with every plan, Free included, and marks only Claude Sheets, Whiteboards, and Motion as beta. In organizations Design is on by default, except HIPAA-enabled ones and those with organization-wide zero data retention."
   - q: "Can Claude Design read my Figma file?"
     a: "Not directly. As of September 2026 the documented design-system sources are GitHub repositories, uploaded design files, raw file uploads, and a local codebase synced with the design-sync command in Claude Code. Figma appears in the design plugin's connectors and in Figma's own MCP server, which is the route when you want an agent to read a live Figma file."
   - q: "What can I export from Claude Design?"
@@ -55,7 +56,7 @@ faq:
 related: ["tool:claude-design", "guide:claude-code-for-designers", "guide:claude-design-vs-figma-make", "guide:maintain-a-design-system-with-claude-code", "guide:claude-design-plugin-guide", "guide:which-claude-plan-for-designers", "guide:best-ai-tools-for-designers-2026", "tool:claude-code"]
 ---
 
-Claude Design is Anthropic's visual workspace. You describe a prototype, a deck, or a landing page, Claude builds it on a canvas using your design system, and you refine it by talking to it, commenting on an element, or dragging things around. It launched as a research preview on April 17, 2026 and is in beta on Pro, Max, Team, and Enterprise as of September 2026. This guide is the mechanics, from a developer's side of the handoff: what it makes, how it learns your system, every export path, and where it stops.
+Claude Design is Anthropic's visual workspace. You describe a prototype, a deck, or a landing page, Claude builds it on a canvas using your design system, and you refine it by talking to it, commenting on an element, or dragging things around. It launched as a research preview on April 17, 2026 and, as of November 2026, comes with every Claude plan, Free included. This guide is the mechanics, from a developer's side of the handoff: what it makes, how it learns your system, every export path, and where it stops.
 
 ## What Claude Design is, and what it makes
 
@@ -67,9 +68,9 @@ The tool page on this site, [Claude Design](/tools/claude-design), is the short 
 
 ## Status, plans, and where to open it
 
-Claude Design shipped from Anthropic Labs, the group that incubates experimental products on top of [Claude](/tools/claude). At launch it ran on Claude Opus 4.7, which Anthropic called "our most capable vision model." The status has moved once already: research preview at launch on April 17, 2026, and beta as of September 2026, with the product page still saying "It's early, and we're shipping improvements often." Expect the export list and the editing controls to keep changing.
+Claude Design shipped from Anthropic Labs, the group that incubates experimental products on top of [Claude](/tools/claude). At launch it ran on Claude Opus 4.7, which Anthropic called "our most capable vision model." The status has moved twice: research preview at launch on April 17, 2026, beta through September 2026, and by November 2026 a standard feature on every plan with no beta label on the product page. Expect the export list and the editing controls to keep changing.
 
-Availability, as of September 2026: beta on Pro, Max, Team, and Enterprise, included with the subscription. Enterprise is off by default and needs an admin to turn it on in Organization settings. Free is not on the list. Which tier is the right one for your situation is a separate question, worked through in [Which Claude Plan Should a Designer Pay For?](/guides/design/which-claude-plan-for-designers), with the current figures on the [plans comparison](/guides/getting-started/claude-plans-compared-2026).
+Availability, as of November 2026: Claude Design comes with every plan, Free included, and its work counts toward your plan's usage limits. In organizations it is on by default, except HIPAA-enabled ones and those with organization-wide zero data retention. Which tier is the right one for your situation is a separate question, worked through in [Which Claude Plan Should a Designer Pay For?](/guides/design/which-claude-plan-for-designers), with the current figures on the [plans comparison](/guides/getting-started/claude-plans-compared-2026).
 
 You open it at claude.ai/design in a browser or from the Claude Desktop sidebar. There is no mobile version. Usage is not metered separately: Anthropic's help center says Design counts toward the same usage limits as the rest of Claude, so a long canvas session takes from the same pool as chat, [Cowork](/tools/claude-cowork), and Claude Code.
 

@@ -17,7 +17,7 @@ related:
 - tool:adobe-podcast
 - glossary:speech-enhancement
 - skill:speech-cleanup-review-sheet
-summary: Compare an AI-cleaned voice recording with the original using timed listening notes, intelligibility checks and a clear keep, retry or rerecord decision.
+summary: Keep the original file untouched, pick timed windows around risky words, and record what a listener heard in both versions. Each window gets one decision, use-processed, keep-original, retry, re-record or pending, with a reason. Quieter background does not justify acceptance if a word changed, and a listener reviews the assembled master at its joins.
 title: Review AI Speech Cleanup Against the Original
 depth: standard
 sources:

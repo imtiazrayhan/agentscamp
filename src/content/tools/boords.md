@@ -17,7 +17,7 @@ related:
 - guide:ai-storyboard-from-script
 - glossary:animatic
 - agent:storyboard-continuity-reviewer
-summary: Boords uses AI to turn scripts into storyboard structure and image prompts, with frame notes and timed animatic previews for production planning.
+summary: Covers Import Script and Write with AI for building storyboard structure, shot suggestions and image prompts, and how frame notes and animatics carry timing. Suggests a trial with a short approved script that reviews beat coverage and continuity separately before the director judges pacing. Free and paid tiers are available.
 name: Boords
 title: Boords
 url: https://boords.com

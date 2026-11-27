@@ -3,12 +3,14 @@ title: "Defending Against Prompt Injection: A Practical Guide for LLM Apps"
 description: "Prompt injection can't be solved at the model layer — so you defend in depth: trust boundaries, least privilege, human approval, guardrails, and red-teaming."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["ai-safety-security"]
 audience: ["developers", "security"]
 tags: ["prompt-injection", "security", "llm", "guardrails", "ai-safety"]
 featured: true
-summary: "Prompt injection works because an LLM can't separate instructions from data — it's all tokens, with no model-layer fix. Defense means limiting blast radius: treat external content as untrusted, give the model least privilege, require human approval for high-impact actions, and layer guardrails. Indirect injection (via retrieved docs and tool output) is the dangerous variant."
+summary: "Prompt injection works because an LLM can't separate instructions from data, and no model-layer fix exists. Defend by limiting blast radius: treat external content as untrusted, grant least privilege, require human approval for high-impact actions, and layer guardrails. Indirect injection (via retrieved docs and tool output) is the dangerous variant."
 keyTakeaways:
   - "Prompt injection exploits a fundamental gap: LLMs don't separate trusted instructions from untrusted data — everything in the context is just tokens the model may follow."
   - "It can't be fully prevented at the model layer today. Defense is depth: assume an injection can land, and design so it can't do much damage."
@@ -62,7 +64,7 @@ Treat retrieved, tool, user, and web content as **untrusted data**, never as tru
 
 ### 4. Input and output guardrails
 
-Layer scanners that catch known injection patterns on the way in and **validate outputs** on the way out — schema conformance, policy checks, PII/secret leakage, off-topic or unsafe content. Tools like [LLM Guard](/tools/llm-guard) and [NeMo Guardrails](/tools/nemo-guardrails) implement these as input/output rails. Treat them as defense in depth, not a wall: they raise the cost of an attack, they don't end it.
+Layer scanners that catch known injection patterns on the way in and **validate outputs** on the way out — schema conformance, policy checks, PII/secret leakage, off-topic or unsafe content. [NeMo Guardrails](/tools/nemo-guardrails) implements these as input/output rails; [LLM Guard](/tools/llm-guard) packaged them as scanners, but Protect AI archived that project in July 2026 and it is unmaintained. Treat them as defense in depth, not a wall: they raise the cost of an attack, they don't end it.
 
 ### 5. Keep secrets out of reach
 

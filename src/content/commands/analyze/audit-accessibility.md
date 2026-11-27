@@ -1,12 +1,14 @@
 ---
 description: "Audit a component or page for accessibility against WCAG — semantics, names, keyboard, ARIA, contrast, forms, motion."
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 argument-hint: "<file, component, or page to audit>"
 allowed-tools: "Read, Grep, Glob"
 title: "Audit Accessibility"
 color: "purple"
 topics: ["review-qa"]
-related: ["command:review-pr", "command:find-bug", "command:security-scan"]
+related: ["command:review-pr", "command:find-bug", "command:security-scan", "agent:accessibility-auditor", "skill:accessibility-regression-auditor"]
 featured: false
 summary: "Read-only command that audits a component or page against WCAG: it reads the markup and checks semantic HTML, accessible names, keyboard operability, correct (and non-redundant) ARIA, contrast risks, form labeling, and motion concerns — then reports findings grouped by severity, each with location, user impact, and a concrete fix that prefers native elements over ARIA."
 audience: ["designers"]
@@ -17,6 +19,8 @@ Audit `$ARGUMENTS` for accessibility. Read the markup, reason about how a keyboa
 ## Scope
 
 `$ARGUMENTS` is the thing to audit — a component file (`components/Modal.tsx`), a page/route, or a directory of views. Audit the rendered markup and the props that shape it, not the styling system in the abstract.
+
+This command is the quick static pass over one target. For a full WCAG 2.2 AA audit of a page or flow with every finding tied to a success criterion, use the [accessibility-auditor](/agents/quality-security/accessibility-auditor) agent. To check what a pull request changed against its base branch and get a regression test, use the [accessibility-regression-auditor](/skills/testing/accessibility-regression-auditor) skill.
 
 If `$ARGUMENTS` is empty, do not guess. Ask one focused question: *"Which file, component, or page should I audit for accessibility?"*
 

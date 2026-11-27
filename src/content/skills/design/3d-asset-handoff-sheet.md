@@ -7,7 +7,7 @@ audience: ["designers", "developers"]
 tags: ["3d-assets", "3d-asset-handoff-sheet"]
 featured: false
 related: ["guide:review-ai-generated-3d-meshes", "guide:review-ai-pbr-texture-imports", "tool:meshy"]
-summary: "Build a 3D asset handoff sheet from supplied export metadata, target-app technical reports and human viewer notes, preserving mesh/UV/material versions and untested checks."
+summary: "Returns a sheet with a header plus geometry, UV and material, viewer and decision rows for one asset package and target app. Each requirement gets a status of met, not_met, untested or conflict, tied to a report or viewer note. The skill reads text reports only, so checks without a report are marked untested and the named owners decide acceptance."
 name: "3d-asset-handoff-sheet"
 title: "3D Asset Handoff Sheet"
 allowed-tools: "Read, Glob, Grep"

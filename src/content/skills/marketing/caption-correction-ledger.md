@@ -7,7 +7,7 @@ audience: ["marketers"]
 tags: ["video", "transcription", "quality-assurance"]
 featured: false
 related: ["guide:review-ai-captions-before-publishing", "agent:caption-reviewer", "command:check-caption-timing"]
-summary: "Build a caption correction ledger from supplied caption text and verified listening notes, preserving cue IDs, original wording, proposed wording, timing, evidence and unresolved decisions. Use after automatic transcription and before a human approves edits; do not translate, clip or publish media."
+summary: "Supply the media version, cues with timestamps, verified listening notes and a reviewer. You get one row per decision with cue ID, timing, original line, smallest supported repair, evidence origin, issue type and status, plus a playback checklist. Supported repairs are marked needs-human-approval; unheard words and disputed names stay unresolved."
 name: "caption-correction-ledger"
 title: "Caption Correction Ledger"
 version: "1.0.0"

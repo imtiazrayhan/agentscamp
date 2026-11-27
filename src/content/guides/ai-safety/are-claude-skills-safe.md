@@ -3,6 +3,8 @@ title: "Are Claude Skills Safe? A Security Review Checklist"
 description: "Skills are an instruction supply chain: what can go wrong with third-party SKILL.md files, and the review checklist before installing or distributing one."
 author: "Imtiaz Rayhan"
 date: 2026-07-18
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "red"
 topics: ["ai-safety-security", "workflow-prompting"]
 tags: ["skills", "security", "claude-code", "supply-chain", "prompt-injection"]
@@ -10,7 +12,7 @@ featured: false
 seoTitle: "Are Claude Skills Safe? A Security Review Checklist"
 seoDescription: "Claude skills run instructions and scripts with your session's permissions. The threat model for third-party SKILL.md files, plus a pre-install checklist."
 keywords: ["claude skills safe", "claude skills security", "skill.md security", "claude code skills risk"]
-summary: "A skill is instructions Claude follows and code it may run, executing with your session's permissions — which makes third-party skills a supply chain, and installing one an act of trust. The realistic risks: malicious or manipulated instructions, over-broad tool grants, bundled scripts, and quiet exfiltration. All four are reviewable in minutes with the checklist here."
+summary: "A skill is instructions Claude follows and code it may run, executing with your session's permissions — which makes third-party skills a supply chain, and installing one an act of trust. The realistic risks: malicious instructions, over-broad tool grants, bundled scripts, and quiet exfiltration. All four are reviewable in minutes with the checklist here."
 keyTakeaways:
   - "The correct mental model: installing a skill is installing a dependency whose payload is instructions. Claude follows the body; bundled scripts are real code."
   - "Skills don't bypass your permission model — tools still run under your settings. But allowed-tools removes the friction that would otherwise make you look, exactly where you should look hardest."
@@ -38,9 +40,9 @@ Skills are the most benign-looking thing you can install — a Markdown file —
 
 **1. Malicious or manipulated instructions.** The skill body steers a model that holds your tools. A hostile body can instruct Claude to read files it shouldn't, include their contents in something that leaves the machine (a commit, a PR description, a web request), soften what a review skill reports, or take "adjacent" actions you didn't ask for. This is the skills-flavored version of prompt injection — except you *installed* the injection and it loads whenever its description matches.
 
-**2. Over-broad tool grants.** `allowed-tools` can't exceed your permission settings, but it pre-approves — the skill's tools run without the prompt that would have made you look. A skill whose job needs `Read` and `Grep` but ships with bare `Bash` pre-approved has claimed the exact head-room an attacker (or a buggy body) would want.
+**2. Over-broad tool grants.** `allowed-tools` can't exceed your permission settings, but it pre-approves — the skill's tools run without the prompt that would have made you look. A skill whose job needs `Read` and `Grep` but ships with bare `Bash` pre-approved has claimed the exact head-room an attacker (or a buggy body) would want. Workspace trust does not gate this: Claude Code applies a project skill's `allowed-tools` even in a `-p` run in a folder you have never trusted, so read the skills checked into a repository before you run Claude Code there.
 
-**3. Bundled scripts.** Anything next to the SKILL.md is real code the body can run. A ten-line "helper" script is the least-read, most-capable part of a skill — the natural home for the actual payload in a hostile one.
+**3. Bundled scripts and load-time commands.** Anything next to the SKILL.md is real code the body can run. A ten-line "helper" script is the least-read, most-capable part of a skill — the natural home for the actual payload in a hostile one. Two things run without Claude deciding anything: a `` !`command` `` line in the body (dynamic context injection) is executed by Claude Code before the model sees the skill, checked against your permission rules but never prompting, and a `hooks` block in the frontmatter registers hooks that keep running for the rest of the session. `PreToolUse` hooks do not fire for those injected commands; a `PreSkillShellCommand` hook does.
 
 **4. Update drift.** A skill that was clean when reviewed can change: a plugin update, a re-synced repo, an upstream marketplace edit. Instructions are behavior; changed instructions are changed behavior, silently.
 
@@ -52,7 +54,7 @@ Five checks, in the order that catches the most:
 
 1. **Read the body as if it were a shell script.** What does it instruct, and where does it stop? Look hardest at anything touching credentials, git remotes, network access, deletion, or "send/post/publish" verbs. A well-built skill states its boundary ("writing the file is the whole job"); a missing boundary on a side-effecting procedure is itself a flag.
 2. **Audit `allowed-tools` against the procedure.** Every grant should map to a numbered step. Prefer scoped forms (`Bash(git diff:*)`) over blanket ones; treat bare `Bash` on a skill that doesn't obviously need arbitrary commands as a rewrite-before-install.
-3. **Open every bundled file.** Scripts, "templates", reference docs — the payload surface is the whole folder, not just SKILL.md.
+3. **Open every bundled file.** Scripts, "templates", reference docs — the payload surface is the whole folder, not just SKILL.md. Search the body for `` !` `` lines and the frontmatter for a `hooks` key while you are there: both run commands that Claude never chose to run.
 4. **Check the invocation mode fits the risk.** Destructive or costly procedures (deploys, mass edits, anything irreversible) should carry `disable-model-invocation: true` so only a deliberate `/name` runs them — auto-invocation plus a broad description is how a casual sentence fires a dangerous runbook. (Field semantics in the [reference](/guides/skills/skill-md-reference).)
 5. **Know your source and pin it.** Public, readable sources (the [library](/skills), anthropics/skills) beat opaque ZIPs; plugin installs should pin versions so review-time behavior is run-time behavior.
 
@@ -63,6 +65,7 @@ For a repo you've just cloned, run [claude-settings-auditor](/skills/workflow/cl
 - **Skills enter via PR.** A SKILL.md diff is a behavior diff for every engineer's agent; review it with the same seriousness as CI config.
 - **One distribution path.** Project `.claude/skills/` for repo-scoped procedures, a versioned [plugin](/guides/skills/packaging-and-sharing-skills) for cross-repo sets, enterprise managed settings for org-wide — and discourage ad-hoc personal installs of unreviewed third-party skills on work machines.
 - **Re-review on update.** Treat plugin version bumps like dependency bumps: diff the skills, not just the changelog.
+- **Take the grant away centrally if you need to.** Setting `allowManagedPermissionRulesOnly` in managed settings makes Claude Code ignore `allowed-tools` in project and personal skills (Claude Code v2.1.282 or later), so their tools go through your managed rules and the normal permission prompt. `/status` lists the skills whose grant was ignored.
 - **Least-privilege by default.** House style for your own skills: scoped `allowed-tools`, explicit boundaries, `disable-model-invocation` on anything destructive. The [skill-auditor](/skills/workflow/skill-auditor) skill checks an existing folder against exactly these rules.
 
 ## The honest summary

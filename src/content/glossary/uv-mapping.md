@@ -1,8 +1,9 @@
 ---
-description: Understand why a 3D handoff keeps mesh, surface-layout and texture versions together before approving
-  their actual target appearance.
+description: UV mapping assigns each point on a 3D model's surface a 2D texture coordinate, which decides where
+  the details of an image land on the mesh.
 date: '2026-09-20'
-reviewed: '2026-10-07'
+updated: '2026-11-27'
+reviewed: '2026-11-27'
 topics:
 - ai-at-work
 - workflow-prompting
@@ -20,8 +21,8 @@ related:
 summary: A fictional lantern texture illustrates the need to preserve asset pairing information and viewer
   evidence when surface placement changes.
 term: UV Mapping
-seoDescription: Understand UV mapping through a fictional lantern handoff, paired asset versions and observed
-  texture alignment in the target application.
+seoDescription: UV mapping ties a 3D model's surface to 2D texture coordinates. A lantern example shows why mesh,
+  UV layout and texture versions stay paired.
 ---
 
 UV mapping associates surface positions with texture coordinates, determining where image details appear on a model.

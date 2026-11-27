@@ -3,6 +3,8 @@ name: "mutation-test-runner"
 title: "Mutation Test Runner"
 description: "Measure whether a test suite actually catches bugs by running mutation testing — introduce small faults into the code and check which ones a test kills versus which slip through silently. Use when line coverage is high but bugs still ship, when you suspect tests assert weakly, or to find the exact assertions a suite is missing."
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 allowed-tools: "Read, Grep, Glob, Bash"
 user-invocable: true
 version: "1.0.0"
@@ -38,7 +40,7 @@ Line coverage tells you a line ran during a test. It does not tell you the test 
    - Python: **mutmut** (`mutmut run`, config in `setup.cfg`/`pyproject.toml`) or **cosmic-ray** for larger suites.
    - Java/Kotlin: **PIT** (`pitest`, Maven/Gradle plugin). Go: **go-mutesting** or **gremlins**. Ruby: **mutant**. C#: **Stryker.NET**.
    - If no tool is installed, recommend the standard one for the stack and stop there — do not silently add a dev dependency.
-2. **Scope the run to changed code — this is mandatory, not an optimization.** Mutation testing re-runs the full suite once per mutant, so a repo can take hours. Target the diff or a single package: Stryker `--mutate "src/pricing/**/*.ts"` (or `--since main` on recent versions), mutmut `--paths-to-mutate src/billing/`, PIT `targetClasses` set to the changed package. State the chosen paths up front so the run is reproducible.
+2. **Scope the run to changed code — this is mandatory, not an optimization.** Mutation testing re-runs the full suite once per mutant, so a repo can take hours. Target the diff or a single package: Stryker `--mutate "src/pricing/**/*.ts"` (StrykerJS has no `--since`; add `--incremental` to reuse results from the previous run, and on Stryker.NET use `--since:main`), mutmut `--paths-to-mutate src/billing/`, PIT `targetClasses` set to the changed package. State the chosen paths up front so the run is reproducible.
 3. **Run and collect the surviving mutants, not the summary number.** Execute the tool and read its detailed report (Stryker's `mutation.html`/`--reporter json`, mutmut `mutmut results` + `mutmut show <id>`, PIT's `mutations.xml`). For each survivor capture: file, line, the original code, and the exact mutation that lived (e.g. `boundary: changed >= to >` or `removed call to logAudit()`).
 4. **Triage each survivor: real gap or equivalent mutant.** An **equivalent mutant** changes the code without changing observable behavior — e.g. `i <= n-1` vs `i < n`, reordering commutative operations, mutating a value that's overwritten before use. These *cannot* be killed by any test; mark them `equivalent — ignore` with a one-line reason and move on. Everything else is a genuine gap: a behavior your tests don't constrain.
 5. **For each real survivor, name the assertion that would kill it.** This is the payoff. A survived `changed > to >=` on a discount threshold means no test exercises the exact boundary — propose "`applyDiscount(qty=10)` where the rule is `qty > 10`: assert no discount at exactly 10." A survived `removed call to audit()` means nothing asserts the side effect — propose "assert `auditLog` received one entry after `transfer()`." Write the input and the expected behavior, not "add a test for line 42."

@@ -4,7 +4,8 @@ seoTitle: "MCP Server Token Overhead Benchmark: 16 Servers Measured (2026)"
 description: "We probed 16 real MCP servers over stdio and HTTP to measure exact tools/list context-window token overhead — from 172 tokens (Ref) to 7,143 tokens (Supabase)."
 author: "Imtiaz Rayhan"
 date: 2026-11-25
-reviewed: 2026-11-25
+updated: 2026-11-27
+reviewed: 2026-11-27
 depth: "cornerstone"
 image: "/images/guides/mcp-token-overhead-benchmark.png"
 color: "green"
@@ -19,7 +20,7 @@ keyTakeaways:
   - "Browser automation is a 1.76× gap: Chrome DevTools MCP (33 tools, 6,924 tokens) costs 2,984 more upfront tokens than Playwright MCP (25 tools, 3,940 tokens)."
   - "A typical 5-server stack (Supabase + Chrome DevTools + GitHub + Repomix + Context7) consumes 21,272 tokens — 10.6% of a 200K context window — before your first message, built-in tools, or CLAUDE.md."
   - "One single tool schema can dwarf entire servers: Supabase's create_notebook alone costs 1,263 tokens, more than Context7, DeepWiki, Cloudflare Docs, and Ref combined."
-  - "Keep per-project .mcp.json lean, use read-only or scoped toolsets where supported, and disable idle servers with /mcp or on-demand tool loading."
+  - "Keep per-project .mcp.json lean, use read-only or scoped toolsets where supported, and disable idle servers with /mcp. Claude Code's tool search, on by default, already defers MCP schemas until a tool is needed."
 howtoSteps:
   - name: "Audit your active MCP servers"
     text: "Run claude mcp list (or inspect /mcp inside a session) to see every server currently loading tool definitions into your workspace."
@@ -64,7 +65,7 @@ sources:
 related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "guide:context-engineering", "guide:mcp-ecosystem-statistics", "tool:supabase-mcp", "tool:chrome-devtools-mcp", "tool:playwright-mcp", "tool:context7", "tool:repomix", "tool:deepwiki-mcp", "tool:gitmcp", "tool:ref-tools"]
 ---
 
-Every [MCP](/glossary/model-context-protocol) server you connect injects its full `tools/list` JSON schema into the model's context window before you type your first word. Everyone working with [Claude Code](/tools/claude-code), [Cursor](/tools/cursor), or [Codex CLI](/tools/codex-cli) feels that tax when four or five servers are active at once — yet most advice stops at vague warnings ("don't connect too many servers").
+In a harness that loads tools upfront, every [MCP](/glossary/model-context-protocol) server you connect injects its full `tools/list` JSON schema into the model's context window before you type your first word. Claude Code no longer does this by default: its tool search loads only tool names and server instructions at session start and defers each definition until Claude needs it, so there the figures below are what a schema costs once it is pulled in, or on every turn if tool search is off or unsupported. Everyone working with [Claude Code](/tools/claude-code), [Cursor](/tools/cursor), or [Codex CLI](/tools/codex-cli) feels that tax when four or five servers are active at once — yet most advice stops at vague warnings ("don't connect too many servers").
 
 On **November 25, 2026**, we ran a live, reproducible JSON-RPC benchmark against **16 real MCP servers** (12 local `stdio` servers via `npx`/`uvx` and 4 keyless Streamable HTTP remote servers) covering **183 total tools**, and tokenized their exact `tools/list` payloads with `tiktoken` (`o200k_base` and `cl100k_base`).
 
@@ -192,7 +193,7 @@ If you maintain an MCP server (or build internal servers for your engineering te
 1. **Scope heavy servers to projects, not user global config.** Keep user scope (`~/.claude.json`) reserved for lightweight, daily utilities under ~1,200 tokens. Put database, cloud, and browser servers in each repo's `.mcp.json` (see [Adding MCP Servers to Claude Code](/guides/mcp/claude-code-mcp-setup)) so backend repos never pay 6,924 tokens for Chrome DevTools.
 2. **Mount scoped toolsets and read-only modes.** Many platform servers let you restrict exposed tools via URL parameters or flags — for example, Supabase's `read_only=true` or GitHub MCP's per-toolset filters — cutting both context bloat and blast radius at once.
 3. **Avoid overlapping built-in tools.** If you already run Claude Code or Codex CLI, you already have native file editing, grep, and git via bash. Mounting reference Filesystem MCP (2,926 tokens) + Git MCP (1,451 tokens) adds **4,377 redundant tokens** on top of tools your agent already has.
-4. **Use on-demand tool loading when available.** Harnesses that support deferred MCP tool search load only compact tool names upfront and pull full parameter schemas on demand — especially valuable when a team requires 50+ tools across multiple vendor servers.
+4. **Use on-demand tool loading when available.** Harnesses that support deferred MCP tool search (Claude Code enables it by default) load only compact tool names upfront and pull full parameter schemas on demand — especially valuable when a team requires 50+ tools across multiple vendor servers.
 5. **Audit tool bloat when building your own MCP server.** Keep descriptions concise, fold closely related actions into cohesive parameters instead of 30 near-duplicate tools, and check your serialized `tools/list` size in CI (see [Building an MCP Server](/guides/advanced/building-an-mcp-server)).
 
 ## Methodology and reproducibility

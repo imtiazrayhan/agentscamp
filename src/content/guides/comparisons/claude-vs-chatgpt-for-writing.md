@@ -5,7 +5,8 @@ seoTitle: "Claude vs ChatGPT for Writing and Marketing Copy (2026)"
 seoDescription: "Claude vs ChatGPT for marketing copy in 2026: Projects vs Projects, skills vs GPTs, document skills vs Work mode, Cowork vs Work, and which to pick per job."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
-updated: 2026-10-06
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -16,7 +17,7 @@ keywords: ["claude vs chatgpt for writing", "claude vs chatgpt marketing", "clau
 summary: "Verdict first: Claude for long-form writing where the voice has to hold, finished documents, and delegated multi-file work in Cowork; ChatGPT for volume and variety in short copy, images in the same chat, and teams already on it. Both have Projects. The real differences are skills vs GPTs, document skills vs Work mode, and brand-voice enforcement."
 keyTakeaways:
   - "Both have Projects with files and instructions (Claude's on every plan per the help center; ChatGPT's add project-only memory). Neither is the differentiator."
-  - "Voice control: Claude skills are portable folders that apply in chat, Cowork, and Office add-ins on any plan; custom GPTs live in ChatGPT and are paid to build."
+  - "Voice control: Claude skills are portable folders that apply in chat, Cowork, and Office add-ins on any plan; custom GPTs live in ChatGPT, are paid to build, and retire on December 11, 2026 in favor of plugins."
   - "Documents: Claude's document skills produce a real .docx, .pptx, .xlsx, or PDF via code execution; ChatGPT Work returns files on paid plans above Go."
   - "Research grounding: both search the web; Claude reaches your files via MCP connectors, ChatGPT via plugins and a browser. Perplexity beats both on citations."
   - "Agentic work: Cowork works in a folder you point it at, with permission modes and schedules; ChatGPT Work runs in managed cloud or locally on desktop."
@@ -25,7 +26,7 @@ faq:
   - q: "Is Claude or ChatGPT better for writing marketing copy?"
     a: "Claude for long-form and anything where a house voice has to hold across many pieces, because skills and Projects give you more voice control on every plan. ChatGPT for short copy at volume, where you want twenty variants and an image in the same chat. On raw prose quality they are close; the difference is the system around the model."
   - q: "What is the difference between Claude skills and custom GPTs?"
-    a: "A skill is a folder of instructions that loads into whatever Claude session you are already in when the task matches; it works on every Claude plan, in Cowork, and in the Office add-ins, and the same format runs in other tools. A custom GPT is a packaged chatbot you visit inside ChatGPT; creating one needs a paid plan. Skills compose (several active at once); GPTs silo (one per conversation)."
+    a: "A skill is a folder of instructions that loads into whatever Claude session you are already in when the task matches; it works on every Claude plan, in Cowork, and in the Office add-ins, and the same format runs in other tools. A custom GPT is a packaged chatbot you visit inside ChatGPT; creating one needs a paid plan, and OpenAI has scheduled custom GPTs to retire on December 11, 2026, with creators migrating them to plugins. Skills compose (several active at once); GPTs silo (one per conversation)."
   - q: "Can both produce a finished Word document or slide deck?"
     a: "Yes. Claude's document skills build real .docx, .pptx, .xlsx, and PDF files through code execution and are on by default when code execution is enabled. ChatGPT Work creates and edits documents, spreadsheets, and presentations, accepts .docx, .xlsx, and .pptx as inputs, and supports templates; OpenAI lists it as rolling out to paid plans, excluding Free and Go."
   - q: "How do Cowork and ChatGPT Work compare?"
@@ -69,7 +70,7 @@ Claude for writing where the voice has to hold across many pieces, for finished 
 | | Claude | ChatGPT |
 | --- | --- | --- |
 | Context per initiative | Projects: files, instructions, project memory (five on Free per help center) | Projects: files, instructions, project-only memory |
-| Reusable voice or format | Skills (uploadable folders, any plan) | Custom GPTs (paid to build), memory |
+| Reusable voice or format | Skills (uploadable folders, any plan) | Custom GPTs (paid to build; retiring Dec 11, 2026, replaced by plugins), memory |
 | Finished documents | Document skills: `.docx`, `.pptx`, `.xlsx`, PDF | Work mode: documents, decks, spreadsheets (paid, above Go) |
 | Inside Office | Claude for Word, PowerPoint, Excel, Outlook add-ins (paid plans) | ChatGPT for PowerPoint and Excel add-ins |
 | Research grounding | Web search, MCP connectors, Cowork browser | Web search, built-in browser, plugins |
@@ -82,7 +83,7 @@ Both tools give you a Project: a workspace with uploaded files, custom instructi
 
 For shared files, project instructions, and checking what teammates can access, use the [ChatGPT Projects vs Claude Projects team guide](/guides/comparisons/chatgpt-projects-vs-claude-projects).
 
-The difference is what sits above the Project. Claude has skills: a folder with a SKILL.md you upload as a ZIP on any plan, which Claude applies automatically when the task matches, in chat, in Cowork, and in the Microsoft 365 add-ins. ChatGPT has custom GPTs: a packaged assistant with instructions, files, and optional actions that lives inside ChatGPT and needs a paid plan to build. Skills compose, so a voice skill and a format skill can both fire on one draft; a conversation happens inside one GPT. [Claude Skills vs custom GPTs](/guides/comparisons/claude-skills-vs-custom-gpts) goes row by row.
+The difference is what sits above the Project. Claude has skills: a folder with a SKILL.md you upload as a ZIP on any plan, which Claude applies automatically when the task matches, in chat, in Cowork, and in the Microsoft 365 add-ins. ChatGPT has custom GPTs: a packaged assistant with instructions, files, and optional actions that lives inside ChatGPT and needs a paid plan to build. OpenAI's help center says custom GPTs "are scheduled to retire on Dec 11, 2026" and that creators can migrate them to plugins, so do not start a new voice setup on a GPT today. Skills compose, so a voice skill and a format skill can both fire on one draft; a conversation happens inside one GPT. [Claude Skills vs custom GPTs](/guides/comparisons/claude-skills-vs-custom-gpts) goes row by row.
 
 ## Document creation
 

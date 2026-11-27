@@ -3,13 +3,15 @@ name: "circular-dependency-breaker"
 description: "Detect and break a circular import — map the exact cycle with a real tool, then break the right edge by extracting the shared piece into a leaf module, inverting a layering dependency, merging two falsely-split modules, or (last resort) deferring an import. Use when you hit an import cycle error, an undefined-on-import or 'cannot access before initialization' bug, or a bundler/linter flags a cycle."
 title: "Circular Dependency Breaker"
 date: 2026-06-17
-allowed-tools: "Read, Grep, Glob, Edit"
+updated: 2026-11-27
+reviewed: 2026-11-27
+allowed-tools: "Read, Grep, Glob, Edit, Bash"
 user-invocable: true
 version: "1.0.0"
 color: "cyan"
 topics: ["coding-languages"]
 audience: ["developers"]
-related: ["skill:extract-module", "skill:dead-code-finder", "skill:type-coverage-improver"]
+related: ["skill:extract-module", "skill:dead-code-finder", "skill:type-coverage-improver", "skill:monorepo-boundary-auditor"]
 featured: false
 summary: "Cycles cause order-dependent, partially-initialized-module bugs that look random — and the import graph, not the stack trace, is where the real bug lives. This skill maps the exact cycle with a tool, then breaks the right edge: extract the shared piece into a leaf, invert the dependency, merge falsely-split modules, or defer an import — and proves the cycle is gone."
 ---

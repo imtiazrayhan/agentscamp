@@ -4,16 +4,18 @@ description: "How to scope tools and permissions so an agent reaches for the rig
 seoDescription: "How to scope an AI coding agent's tools and permissions so it reaches for the right tool and can't do damage — allowlists, scoping rules, and safe defaults."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 audience: ["developers", "ai-engineers"]
 featured: false
 related: ["guide:writing-a-custom-agent", "guide:building-an-mcp-server", "guide:prompt-patterns", "guide:claude-code-settings-permissions", "guide:claude-code-hooks"]
-summary: "An agent's toolset is its job description written in capabilities. Start from zero and grant the minimum; remove Edit/Write so a reviewer physically can't mutate code; pick one sharp tool per capability instead of three overlapping ones; name tools so the model routes correctly; scope MCP servers and credentials to least privilege; and gate the irreversible with hooks, not polite prompts."
+summary: "An agent's toolset is its job description written in capabilities. Start from zero and grant the minimum; remove Edit/Write so a reviewer can't mutate code; keep one sharp tool per capability; name tools so the model routes correctly; scope MCP servers and credentials to least privilege; and gate the irreversible with hooks and deny rules, not prompts."
 keyTakeaways:
   - "Capability is the real boundary: a tool the agent doesn't have is the only constraint that can't be argued around — enforcement, not persuasion."
   - "Read-only by default, and not just for safety: capability shapes behavior — strip the write tools and the same prompt produces analysis instead of unreviewed 'helpful' edits."
-  - "Bash in the allowlist is the full shell. The toolset alone doesn't make it read-only — that takes a PreToolUse hook on its commands, or a permission mode like plan."
+  - "Bash in the allowlist is the full shell. The toolset alone doesn't make it read-only — that takes a PreToolUse hook on its commands, scoped Bash deny rules in settings, or a permission mode like plan."
   - "Overlapping tools breed inconsistency: give an agent three ways to search and it picks differently every run. One sharp tool per capability keeps behavior legible."
   - "For MCP, the credential defines the blast radius, not the prompt — connect only the servers each agent needs, on least-privilege, read-scoped tokens."
 faq:
@@ -22,7 +24,7 @@ faq:
   - q: "Does removing Edit and Write make an agent safe?"
     a: "It guarantees the agent cannot call those tools — no prompt injection or confusion conjures a tool outside the allowlist. But if the agent also holds Bash, it still has a full shell (including sed -i or rm). Pair the trimmed toolset with a PreToolUse hook that gates write-shaped shell commands for actual read-only enforcement."
   - q: "How do I make Bash read-only for an agent?"
-    a: "You can't through the tools allowlist — Bash is all-or-nothing there. Enforce it one layer down: a PreToolUse hook that inspects each command and blocks writes, or run the agent in a read-only permission mode like plan. The toolset removes the editing tools; the hook constrains the shell."
+    a: "You can't through the tools allowlist — Bash is all-or-nothing there, and a scoped entry like Bash(git push *) in a subagent's disallowedTools removes the whole tool rather than the one command. Enforce it one layer down: a PreToolUse hook that inspects each command and blocks writes, scoped Bash deny rules in permissions.deny (they apply to subagents too), or a permission mode like plan, where Claude explores with read-only shell commands and doesn't edit your source files."
   - q: "Which MCP servers should an agent get?"
     a: "Only the ones its job touches, with credentials scoped to that job — a release-notes agent gets GitHub read access, never the production database server. Many servers offer read-only modes or roles; use them. And treat MCP output as untrusted input: never wire an untrusted server to an agent holding write or deploy tools."
 ---
@@ -42,7 +44,7 @@ Safer: with no `Edit` or `Write` tool, the agent *physically cannot* call them t
 Sharper: capability shapes behavior. An agent that can edit code will, under pressure, start editing — it'll "helpfully" fix the bug it was asked to *describe*, and now you have an unreviewed change instead of a clean diagnosis. Strip the write tools and the same prompt produces analysis, because analysis is the only thing the agent *can* produce. The constraint does the work the prompt was struggling to.
 
 > [!NOTE]
-> `Bash` in the `tools` field is the **full shell** — the allowlist alone does *not* restrict it to read-only commands. Without an extra gate, an agent granted `Bash` can run *any* command, including `rm`, `git push`, or a shelled-out `sed -i`. What the restricted toolset *does* guarantee is that the agent cannot call the `Edit` or `Write` tools — so any file mutation has to go through the shell, if at all. To actually enforce read-only shell behavior, add a `PreToolUse` hook that inspects each `Bash` command and blocks write operations before they execute (or run the agent in a permission mode like `plan`). The toolset and the hook are different layers: one removes the editing tools, the other constrains the shell.
+> `Bash` in the `tools` field is the **full shell** — the allowlist alone does *not* restrict it to read-only commands. Without an extra gate, an agent granted `Bash` can run *any* command, including `rm`, `git push`, or a shelled-out `sed -i`. What the restricted toolset *does* guarantee is that the agent cannot call the `Edit` or `Write` tools — so any file mutation has to go through the shell, if at all. To actually enforce read-only shell behavior, add a `PreToolUse` hook that inspects each `Bash` command and blocks write operations before they execute (or run the agent in a permission mode like `plan`, where Claude explores with read-only shell commands and doesn't edit your source files). For a known list of forbidden commands, a scoped deny rule such as `Bash(git push *)` under `permissions.deny` in your settings also works, and it applies to the main conversation and to subagents. Don't put that pattern in a subagent's `disallowedTools`: an entry with a specifier there still removes the whole `Bash` tool. The toolset and the hook are different layers: one removes the editing tools, the other constrains the shell.
 
 ## A few sharp tools beat many overlapping ones
 
@@ -114,7 +116,7 @@ Blast radius is the worst thing an agent can do in a single bad turn. Your goal 
 - **Default to read-only; escalate per task.** Most agents should never hold write or destructive tools. Grant them to the one agent whose job is to make the change, and nowhere else.
 - **Separate observe from act.** Keep investigation in read-only agents and mutation in a separate, narrowly-scoped agent. The handoff (a diff, a plan, a summary) becomes a natural review checkpoint.
 - **Gate the irreversible.** Force-push, `DROP`, `rm -rf`, deploy, and anything that spends money or touches customers ideally shouldn't be reachable from a routine agent's toolset at all. Where the agent still needs a shell, gate the dangerous commands with a `PreToolUse` hook — a prompt that *asks* the agent to confirm first is persuasion the model can talk itself out of; a hook that blocks the command is enforcement it can't.
-- **Scope `Bash` deliberately.** `Bash` is the widest tool there is — granting it hands the agent the full shell, not a curated subset. If an agent has it, lean on dedicated tools (`Read`, `Grep`, `Glob`, `Edit`) for everything those already cover so `Bash` isn't the path of least resistance, and use a `PreToolUse` hook to allow- or deny-list the commands it may actually run. The `tools` allowlist alone won't do that for you.
+- **Scope `Bash` deliberately.** `Bash` is the widest tool there is — granting it hands the agent the full shell, not a curated subset. If an agent has it, lean on dedicated tools (`Read`, `Grep`, `Glob`, `Edit`) for everything those already cover so `Bash` isn't the path of least resistance, and use a `PreToolUse` hook or scoped `Bash(...)` deny rules in `permissions.deny` to control the commands it may actually run. The `tools` allowlist alone won't do that for you.
 
 ```yaml
 # Read-only investigator: observes everything, changes nothing.

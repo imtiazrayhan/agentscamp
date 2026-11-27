@@ -5,8 +5,8 @@ seoTitle: "Best RAG Frameworks in 2026 (LlamaIndex, LangChain, DSPy)"
 seoDescription: "LlamaIndex, LangChain, LangGraph, DSPy, Dify and Mastra compared for RAG in 2026, with a verdict each and the parsing, chunking and reranking layer underneath."
 author: "Imtiaz Rayhan"
 date: 2026-06-17
-updated: 2026-09-11
-reviewed: 2026-09-11
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["rag-retrieval"]
 audience: ["developers"]
@@ -15,7 +15,7 @@ featured: false
 keywords: ["best rag frameworks", "llamaindex vs langchain", "rag framework 2026", "dspy rag", "rag pipeline framework"]
 summary: "Start with LlamaIndex if retrieval and documents are the hard part, LangChain when RAG is one piece of a larger agent, DSPy when you would rather optimize the pipeline than hand-tune prompts, Dify when a visual knowledge pipeline beats writing one, and Mastra if your stack is TypeScript. Then spend your real time on parsing, chunking, reranking and evaluation, which move answer quality far more."
 keyTakeaways:
-  - "LlamaIndex is the data-centric pick, and the company's centre of gravity has moved to document processing — LlamaParse, LlamaCloud and the new open-source LiteParse."
+  - "LlamaIndex is the data-centric pick, and the company's centre of gravity has moved to document processing — LlamaParse (the platform formerly called LlamaCloud) and the new open-source LiteParse."
   - "LangChain 1.x is now an agent framework first: create_agent is a configurable harness running on LangGraph, with the largest integration ecosystem behind it."
   - "DSPy 3.x compiles prompts against a metric instead of hand-tuning them, with GEPA and MIPROv2 as the current optimizers and real production users."
   - "Dify is the visual option: a Knowledge Pipeline that extracts, cleans, chunks and indexes, self-hostable under a source-available licence."
@@ -65,7 +65,7 @@ sources:
     url: "https://cohere.com/rerank"
     publisher: "Cohere"
   - title: "Ragas repository"
-    url: "https://github.com/explodinggradients/ragas"
+    url: "https://github.com/vibrantlabsai/ragas"
     publisher: "Ragas"
 related: ["tool:llamaindex", "tool:langchain", "tool:langgraph", "tool:dspy", "tool:dify", "guide:how-rag-works", "guide:langchain-vs-llamaindex", "guide:best-vector-database-2026", "guide:agentic-rag", "guide:choosing-embeddings-2026"]
 ---
@@ -91,7 +91,7 @@ A RAG framework is the wiring between your documents and your model: it loads an
 
 **If retrieval quality is what makes or breaks your app, [LlamaIndex](/tools/llamaindex) is still the default.** It remains the toolkit that takes indexing and querying most seriously: pluggable loaders, several index types, query engines, routers, and a deep bench of retrieval strategies beyond plain vector search, all under an MIT licence.
 
-What has changed is where the company's weight sits. LlamaIndex now presents itself as a document-intelligence business: [LlamaParse](/tools/llamaparse) for parsing, extraction and indexing, LlamaCloud as the hosted platform, Workflows for pipelines, and a newer open-source local parser, LiteParse, for teams who want the parsing to stay on their own machines. Parsing has a free monthly credit allowance with paid plans above it.
+What has changed is where the company's weight sits. LlamaIndex now presents itself as a document-intelligence business: [LlamaParse](/tools/llamaparse), the hosted platform formerly called LlamaCloud, for parsing, extraction and indexing, Workflows for pipelines, and a newer open-source local parser, LiteParse, for teams who want the parsing to stay on their own machines. Parsing has a free monthly credit allowance with paid plans above it.
 
 **Verdict:** choose it when the sentence "the model keeps missing the relevant context" describes your problem, and especially when your corpus is PDFs rather than clean text. The trade is that you are adopting an ecosystem whose commercial centre is parsing, which is fine if parsing is your bottleneck and noise if it is not.
 

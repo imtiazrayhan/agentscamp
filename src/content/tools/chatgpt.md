@@ -1,9 +1,9 @@
 ---
 name: "ChatGPT"
 description: "OpenAI's general-purpose AI assistant for chat, research, and finished documents, with Projects, memory, plugins, and a Work mode for multi-step tasks."
-seoDescription: "ChatGPT for founders and marketers: plans as of September 2026, Projects, memory, plugins, GPTs vs Workspace Agents, and where it fits next to Claude."
+seoDescription: "ChatGPT for founders and marketers: plans as of September 2026, Projects, memory, plugins, the Dec 2026 GPT retirement, and how it compares to Claude."
 date: 2026-09-10
-updated: 2026-11-22
+updated: 2026-11-27
 url: "https://chatgpt.com"
 pricing: "freemium"
 category: "assistant"
@@ -16,16 +16,16 @@ os: ["Web", "macOS", "Windows", "Linux", "iOS", "Android"]
 alternativeTo: ["claude", "gemini", "perplexity"]
 related: ["tool:claude", "tool:gemini", "tool:perplexity", "tool:microsoft-copilot", "guide:claude-skills-vs-custom-gpts", "guide:claude-plans-compared-2026", "guide:claude-vs-gpt-vs-gemini-coding"]
 keywords: ["ChatGPT", "ChatGPT plans", "ChatGPT Projects", "ChatGPT Work", "custom GPTs", "Workspace Agents"]
-summary: "ChatGPT is OpenAI's general-purpose assistant. In 2026 it has three modes: Chat for questions and drafts, Work for multi-step tasks that end in a document, deck, or spreadsheet, and Codex for developers. Projects, memory, plugins, and GPTs carry context between chats. Plans run from Free and Go through Plus, Pro, Business, and Enterprise."
+summary: "ChatGPT is OpenAI's general-purpose assistant. It has three modes: Chat for questions and drafts, Work for multi-step tasks that end in a document, deck, or spreadsheet, and Codex for developers. Projects, memory, and plugins carry context between chats; GPTs retire December 11, 2026. Plans run from Free and Go through Plus, Pro, Business, and Enterprise."
 faq:
   - q: "How much does ChatGPT cost in 2026?"
     a: "As of September 2026, OpenAI lists Free at $0, Go at $8 per month, Plus at $20 per month, Pro in three usage tiers from $100 per month (as of November 2026, including a $500 Pro 500 tier added September 29, 2026), and Business at $20 per user per month billed annually for two or more users ($25 monthly). Enterprise and Edu are quoted by sales. Higher tiers raise usage limits and add models, and every paid tier can top up with ChatGPT credits."
   - q: "What is the difference between custom GPTs and Workspace Agents?"
-    a: "A custom GPT is a saved persona with instructions, files, and optionally connected apps or custom actions, and it lives inside ChatGPT. Workspace Agents are reusable agents that a Business or Enterprise workspace can build, publish, share, and schedule with shared connections, and they can be triggered from outside ChatGPT through the Workspace Agents API. GPTs suit personal or team helpers; Workspace Agents suit governed, repeatable processes."
+    a: "Custom GPTs are on the way out: OpenAI's help center schedules their retirement for December 11, 2026 (February 28, 2027 for FedRAMP workspaces and approved Enterprise deferrals) and migrates creators to plugins. Until then a custom GPT is a saved persona with instructions, files, and optionally connected apps or custom actions, and it lives inside ChatGPT. Workspace Agents are reusable agents that a Business or Enterprise workspace can build, publish, share, and schedule with shared connections, and they can be triggered from outside ChatGPT through the Workspace Agents API. Plugins take over the personal or team helper role; Workspace Agents suit governed, repeatable processes."
   - q: "What is ChatGPT Work?"
     a: "Work is a toggle in ChatGPT for tasks with a defined outcome. Instead of a chat reply, ChatGPT plans the task, gathers context from your files, projects, plugins, and the web, and produces a reviewable result such as a document, presentation, spreadsheet, or PDF. On the web it runs in a managed cloud environment; in the desktop app it can also work locally with your files and browser."
   - q: "Is ChatGPT a good alternative to Claude for non-developers?"
-    a: "They cover similar ground for founders, marketers, and analysts: long-form drafting, research, file analysis, and finished documents. ChatGPT has the broadest consumer feature set (image generation, voice, plugins, GPTs, Sites). Claude is the stronger pick when you want careful long-document work, Cowork-style delegated tasks on your own files, or Skills that also run in Claude Code. Many teams run both and let the task decide."
+    a: "They cover similar ground for founders, marketers, and analysts: long-form drafting, research, file analysis, and finished documents. ChatGPT has the broadest consumer feature set (image generation, voice, plugins, Sites). Claude is the stronger pick when you want careful long-document work, Cowork-style delegated tasks on your own files, or Skills that also run in Claude Code. Many teams run both and let the task decide."
 ---
 
 ChatGPT is OpenAI's general-purpose AI assistant and the product most people compare everything else against, including [Claude](/tools/claude). It answers questions, drafts and edits text, analyzes files, generates images, and, in its 2026 form, carries larger tasks through to a finished document or spreadsheet you can download.
@@ -38,7 +38,7 @@ It is aimed at anyone who works in language and files: founders writing plans an
 - **Projects** — keep related chats, uploaded files, instructions, and sources together so every chat in a project starts with the same context. Chat and Work chats can share one project.
 - **Memory and personalization** — ChatGPT carries useful context across chats; you manage it under Settings > Personalization, and the desktop app has a separate local memory store.
 - **Plugins and skills** — a plugin bundles skills with MCP servers, connecting services such as Google Drive, GitHub, or Slack. Skills are reusable workflow instructions you can build with `@skill-creator` and share with teammates.
-- **GPTs and Workspace Agents** — custom GPTs remain the lightweight way to package instructions and files. Workspace Agents are governed, shareable, schedulable agents for Business and Enterprise workspaces, triggerable from other systems through an API. See [Claude Skills vs custom GPTs](/guides/comparisons/claude-skills-vs-custom-gpts) for how Claude's equivalent compares.
+- **Plugins, GPTs and Workspace Agents** — custom GPTs are scheduled to retire on December 11, 2026, when GPTs and their pages become inaccessible; OpenAI is migrating creators to plugins, which bundle reusable instructions, reference files, and connected apps, so build new helpers as plugins. Workspace Agents are governed, shareable, schedulable agents for Business and Enterprise workspaces, triggerable from other systems through an API. See [Claude Skills vs custom GPTs](/guides/comparisons/claude-skills-vs-custom-gpts) for how Claude's equivalent compares.
 - **Web, browser, and files** — web search, a built-in browser for research, image generation, interactive visualizations, hosted Sites, and scheduled tasks that rerun a prompt on a schedule.
 
 ## In a founder or marketer workflow

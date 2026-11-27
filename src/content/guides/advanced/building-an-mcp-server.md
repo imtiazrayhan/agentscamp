@@ -3,12 +3,14 @@ title: "Building an MCP Server"
 description: "An accurate introduction to the Model Context Protocol: server anatomy, transports, and connecting a tool to Claude Code."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["mcp", "architecture"]
 audience: ["developers", "ai-engineers"]
 related: ["guide:building-multi-step-workflows", "tool:claude-agent-sdk", "guide:claude-code-mcp-setup", "guide:deploy-remote-mcp-server", "tool:fastmcp", "tool:mcp-inspector"]
 featured: false
-summary: "An MCP server exposes three primitives — tools (model-called functions), resources (read-only data by URI), and prompts (user-invoked templates) — over JSON-RPC via two transports: stdio for local child processes, Streamable HTTP for remote services that own their auth. Define each tool as name + typed schema + handler, register it with claude mcp add, and verify with /mcp."
+summary: "An MCP server exposes three primitives — tools (model-called functions), resources (read-only data by URI), and prompts (user-invoked templates) — over JSON-RPC via two transports: stdio for local child processes, Streamable HTTP for remote services. Define each tool as name + typed schema + handler, register it with claude mcp add, and verify with /mcp."
 howtoSteps:
   - name: "Pick the right primitive"
     text: "Tools are model-controlled functions (the workhorse — default here), resources are application-controlled read-only data behind a URI, prompts are user-invoked templates. The deciding question is who's in control of triggering it."
@@ -17,7 +19,7 @@ howtoSteps:
   - name: "Define the tool: name, schema, handler"
     text: "A verb-object name (search_issues, not query_jira_api_v2), a typed input schema with a one-line description per field, and a handler that returns concise, model-ready results — filtered fields, not a 5,000-line JSON dump."
   - name: "Register it with Claude Code"
-    text: "claude mcp add weather -- node /path/to/server.js for stdio (options like --env and --scope go before the server name), or claude mcp add --transport http <name> <url> for remote. --scope project commits it to a shared .mcp.json."
+    text: "claude mcp add weather -- node /path/to/server.js for stdio (Claude Code's own options such as --env and --scope go before the -- separator), or claude mcp add --transport http <name> <url> for remote. --scope project commits it to a shared .mcp.json."
   - name: "Verify the connection"
     text: "claude mcp list shows configured servers with status; /mcp inside a session shows live connections, each server's tools, and OAuth prompts. A server that's added but not connected has shipped nothing yet."
   - name: "Tune descriptions as routing signals"
@@ -30,7 +32,7 @@ faq:
   - q: "Should my MCP server use stdio or Streamable HTTP?"
     a: "stdio if it runs on the user's machine for one user — simplest setup, lifecycle tied to the client, no network surface. Streamable HTTP once the server is remote, shared, or deployed centrally — at which point it's a public API and you own auth (OAuth), input validation, and per-token scoping."
   - q: "How do I connect a custom MCP server to Claude Code?"
-    a: "Register it with claude mcp add: for stdio, claude mcp add my-server -- <command to launch it> (env vars via --env, options before the name); for remote, claude mcp add --transport http my-server <url>. Then confirm it actually connected with /mcp — its tools appear to the model namespaced as mcp__<server>__<tool>."
+    a: "Register it with claude mcp add: for stdio, claude mcp add my-server -- <command to launch it> (env vars via --env, placed before the -- separator); for remote, claude mcp add --transport http my-server <url>. Then confirm it actually connected with /mcp — its tools appear to the model namespaced as mcp__<server>__<tool>."
 ---
 
 A model is only as capable as the things it can reach. Out of the box it can reason about your prompt, but it can't query your database, hit your internal API, or read the ticket you're describing. The **Model Context Protocol (MCP)** is the open standard that closes that gap: instead of hard-wiring every integration into every client, you write one server that exposes capabilities, and any MCP-compatible client — Claude Code, the Claude desktop app, IDE plugins — can use it. Write the integration once, plug it in everywhere.
@@ -39,12 +41,12 @@ This guide covers what MCP actually is, the three things a server exposes, the t
 
 ## What MCP is
 
-MCP is a client–server protocol. An **MCP client** lives inside the model's host application (Claude Code is a client). An **MCP server** is a separate process you write that advertises a set of capabilities. The two speak JSON-RPC 2.0 over a transport, performing a capability handshake on connect so the client learns exactly what the server offers.
+MCP is a client–server protocol. An **MCP client** lives inside the model's host application (Claude Code is a client). An **MCP server** is a separate process you write that advertises a set of capabilities. The two speak JSON-RPC 2.0 over a transport, and the client learns exactly what the server offers by asking it. In the current spec revision (`2026-07-28`) that is the `server/discover` call plus the list methods (`tools/list`, `resources/list`, `prompts/list`), and every request carries its own protocol version and client capabilities. Earlier revisions did the same job with a one-time `initialize` handshake per connection, which the newer revision removed to make the protocol stateless.
 
 The design goal is decoupling. Before MCP, every tool integration was bespoke glue between one model app and one service. MCP replaces that N×M problem with a single interface: your server doesn't know or care which client connects, and the client doesn't know how your server is implemented. That's what makes a server you build for yourself trivially shareable with anyone else running an MCP client.
 
 > [!NOTE]
-> MCP is an open specification, not an Anthropic-only feature. Servers you write work with any compliant client. The spec is versioned by date — each release is a date stamp — and the SDK handles version negotiation for you.
+> MCP is an open specification, not an Anthropic-only feature. Servers you write work with any compliant client. The spec is versioned by date — each release is a date stamp, the latest being `2026-07-28` — and the SDK handles version negotiation for you. The spec also defines how newer and older implementations detect each other and fall back to the handshake. SDKs adopt new revisions on their own schedules, so check which revisions yours supports.
 
 ## Server anatomy: tools, resources, prompts
 
@@ -71,7 +73,7 @@ A server has to talk to the client over some channel. MCP defines two standard t
 
 **stdio** — The client launches your server as a child process and exchanges JSON-RPC messages over stdin/stdout. This is the default for local servers: there are no ports, no auth, and no network. The server's lifecycle is tied to the client. Reach for stdio for anything that runs on the same machine as the user — a wrapper around local files, git, or a CLI.
 
-**Streamable HTTP** — The server runs as an independent HTTP service the client connects to over the network, with streaming for server-initiated messages. Use it for remote servers, anything shared by multiple users, or a capability you deploy centrally. Because it's network-exposed, **you own authentication and authorization** — MCP supports OAuth-based auth for this case.
+**Streamable HTTP** — The server runs as an independent HTTP service the client connects to over the network. Each message is an HTTP POST to a single MCP endpoint, and the reply comes back as a JSON object or as an SSE stream scoped to that request. (The older HTTP+SSE transport is deprecated; do not build new servers on it.) Use it for remote servers, anything shared by multiple users, or a capability you deploy centrally. Because it's network-exposed, **you own authentication and authorization** — MCP supports OAuth-based auth for this case.
 
 | Pick | When |
 |------|------|
@@ -112,6 +114,37 @@ The pieces that matter:
 
 A real server registers several such tools, plus any resources and prompts, then starts listening on its transport. That's the whole job.
 
+### The same shape in a real SDK
+
+Here is that structure in the official Python SDK (`mcp` 2.x on PyPI, Python 3.10+), where the type hints are the input schema and the docstring is the description. Install it with `uv add "mcp[cli]"` or `pip install "mcp[cli]"`, then create `server.py`:
+
+```python
+from mcp.server import MCPServer
+
+mcp = MCPServer("Demo")
+
+
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers."""
+    return a + b
+
+
+@mcp.resource("greeting://{name}")
+def greeting(name: str) -> str:
+    """Greet someone by name."""
+    return f"Hello, {name}!"
+```
+
+That is the SDK's own quickstart: one tool and one templated resource, with no hand-written JSON Schema. Try it before you connect a client:
+
+```bash
+uv run mcp dev server.py                              # open it in the MCP Inspector
+uv run mcp run server.py --transport streamable-http  # serve it at http://localhost:8000/mcp
+```
+
+Older tutorials use a `FastMCP` class; that is the 1.x API, so check which major version you have installed before copying one. The other official SDKs (TypeScript, C#, Go, Rust, Ruby, Java and more) follow the same name, schema and handler pattern in their own idioms.
+
 ## Connecting it to Claude Code
 
 Once your server runs, register it with the `claude mcp add` command. The exact form depends on transport.
@@ -122,11 +155,13 @@ For a **local stdio** server, give the command Claude Code should launch:
 claude mcp add weather -- node /path/to/weather-server/index.js
 ```
 
-Everything after `--` is the command and its arguments. Claude Code spawns that process and speaks MCP over its stdio. Pass environment variables the server needs with `--env`. All options (`--transport`, `--env`, `--scope`, `--header`) must come *before* the server name, or the CLI consumes the name as part of the option's value:
+Everything after `--` is the command and its arguments. Claude Code spawns that process and speaks MCP over its stdio. Pass environment variables the server needs with `--env`, after the server name and before `--`:
 
 ```bash
-claude mcp add --env GITHUB_TOKEN=ghp_xxx github -- node ./github-server.js
+claude mcp add github --env GITHUB_TOKEN=ghp_xxx -- node ./github-server.js
 ```
+
+`--env` accepts several `KEY=value` pairs, so a server name placed directly after it is read as another pair and rejected. If you prefer options first, put a different option between them, as in `claude mcp add --env GITHUB_TOKEN=ghp_xxx --transport stdio github -- node ./github-server.js`.
 
 For a **remote HTTP** server, give the URL and transport:
 
@@ -134,7 +169,9 @@ For a **remote HTTP** server, give the URL and transport:
 claude mcp add --transport http linear https://mcp.linear.app/mcp
 ```
 
-By default a server is added at the local (per-project) scope. Use `--scope user` to make it available across all your projects, or `--scope project` to commit it to a shared `.mcp.json` your team checks in. The first time a teammate uses a project-scoped server from `.mcp.json`, Claude Code prompts them to approve it before its tools become available; running `claude mcp reset-project-choices` clears those approval choices. Useful management commands:
+The Python server from the previous section, started with `--transport streamable-http`, registers the same way: `claude mcp add --transport http demo http://localhost:8000/mcp`.
+
+By default a server is added at the local scope: private to you and loaded only in the project where you added it. Use `--scope user` to make it available across all your projects, or `--scope project` to commit it to a shared `.mcp.json` your team checks in. The first time a teammate uses a project-scoped server from `.mcp.json`, Claude Code prompts them to approve it before its tools become available; running `claude mcp reset-project-choices` clears those approval choices. Useful management commands:
 
 ```bash
 claude mcp list              # show configured servers and connection status

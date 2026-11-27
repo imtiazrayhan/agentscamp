@@ -17,7 +17,7 @@ related:
 - tool:abbyy-finereader-pdf
 - glossary:optical-character-recognition
 - skill:ocr-correction-ledger
-summary: Review OCR text beside source scans, preserve exact wording and document uncertain characters in a correction ledger before producing a corrected copy.
+summary: Freeze the scan and raw OCR text, then record each proposed repair as an exact Unicode code-point span with its source region, status and reviewer. Unreadable characters stay unresolved, and nothing is replaced globally. A companion checker validates spans and overlaps, but a reviewer confirms each reading before repairs go into a separate corrected copy.
 title: Review OCR Text Against the Original Scan
 depth: standard
 sources:

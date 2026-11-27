@@ -3,17 +3,18 @@ title: "Best Text-to-Speech APIs in 2026"
 description: "The TTS APIs worth building on — ElevenLabs for quality and breadth, Cartesia Sonic for realtime latency — and how to choose for agents vs produced audio."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
-updated: 2026-11-25
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra"]
 tags: ["tts", "voice", "best-of", "comparison"]
 featured: false
-summary: "Two leaders cover most 2026 TTS decisions: ElevenLabs for voice quality, variety, and cloning across 70+ languages — the produced-audio default — and Cartesia Sonic for conversation-grade streaming latency (vendor-claimed sub-100ms model time), the realtime-agent specialist. Decide by use: latency rules conversations; expressiveness rules content."
+summary: "Two leaders cover most 2026 TTS decisions: ElevenLabs for voice quality, variety, and cloning across 90+ languages on its Eleven v4 models — the produced-audio default — and Cartesia Sonic for conversation-grade streaming latency (vendor-claimed sub-100ms model time), the realtime-agent specialist. Decide by use: latency rules conversations; expressiveness rules content."
 keyTakeaways:
   - "Name the job first: produced audio (narration, content, dubbing) optimizes expressiveness; live agents optimize time-to-first-audio — different winners."
-  - "ElevenLabs is the quality/breadth benchmark — voices, cloning, 70+ languages, and a wide audio product surface."
-  - "Cartesia Sonic is the latency play: state-space models built streaming-first, with emotion controls arriving without sacrificing the speed thesis."
-  - "Stack gravity matters: Deepgram (Aura) and the platform bundles (LiveKit Inference, Vapi, AssemblyAI's agent API) trade peak quality for one-vendor pipelines."
+  - "ElevenLabs is the quality/breadth benchmark — voices, cloning, 90+ languages on Eleven v4, and a wide audio product surface."
+  - "Cartesia Sonic is the latency play: state-space models built streaming-first, with Sonic 3.6 adding expressiveness and 44 languages without sacrificing the speed thesis."
+  - "Stack gravity matters: Deepgram (Flux TTS) and the platform bundles (LiveKit Inference, Vapi, AssemblyAI's agent API) trade peak quality for one-vendor pipelines."
   - "Prices and voices churn — run a bake-off on YOUR scripts (latency percentiles + blind listening) before committing; switching TTS is cheap, so revisit yearly."
 faq:
   - q: "What's the best TTS API overall in 2026?"
@@ -32,17 +33,17 @@ audience: ["ai-engineers", "marketers"]
 
 | API | Pick it for | Shape |
 | --- | --- | --- |
-| [ElevenLabs](/tools/elevenlabs) | Quality, variety, cloning, 70+ languages | The produced-audio default |
+| [ElevenLabs](/tools/elevenlabs) | Quality, variety, cloning, 90+ languages | The produced-audio default |
 | [Cartesia](/tools/cartesia) (Sonic) | Realtime agents; lowest-latency streaming | The conversation specialist |
-| [Deepgram](/tools/deepgram) (Aura) | One-vendor agent stacks with their STT | The integrated play |
+| [Deepgram](/tools/deepgram) (Flux TTS) | One-vendor agent stacks with their STT | The integrated play |
 
 ## The two leaders
 
-**[ElevenLabs](/tools/elevenlabs)** is the benchmark everyone else gets compared to: the largest voice catalog, instant and professional cloning, expressive delivery, and language breadth (70+), wrapped in a product surface that grew past TTS into a full audio platform. If the artifact is *audio people sit with* — audiobooks, videos, dubbing — this is the default, and its streaming modes are credible for agents too.
+**[ElevenLabs](/tools/elevenlabs)** is the benchmark everyone else gets compared to: the largest voice catalog, instant and professional cloning, expressive delivery, and language breadth (90+ on the current Eleven v4 and v4 Turbo models), wrapped in a product surface that grew past TTS into a full audio platform. If the artifact is *audio people sit with* — audiobooks, videos, dubbing — this is the default, and its streaming modes are credible for agents too.
 
-**[Cartesia](/tools/cartesia)** attacks from the latency end: Sonic's state-space architecture was built streaming-first, with vendor-claimed sub-100ms model latency and ~190ms end-to-end — numbers that translate directly into conversational naturalness. Sonic 3.5 added 42 languages and emotion/laughter controls, narrowing the expressiveness gap while keeping the speed thesis. For [voice agents](/guides/voice/build-a-voice-agent), it's the specialist pick.
+**[Cartesia](/tools/cartesia)** attacks from the latency end: Sonic's state-space architecture was built streaming-first, with vendor-claimed sub-100ms model latency and ~190ms end-to-end — numbers that translate directly into conversational naturalness. Sonic 3.6, the current model, speaks 44 languages and varies pacing and intonation from the transcript alone, narrowing the expressiveness gap while keeping the speed thesis. For [voice agents](/guides/voice/build-a-voice-agent), it's the specialist pick.
 
-**The integrated options** matter when pipeline simplicity beats peak quality: Deepgram's Aura rides shotgun with its STT for one-vendor agent stacks, and the platform layers — [LiveKit Inference](/tools/livekit), [Vapi](/tools/vapi), [AssemblyAI's Voice Agent API](/tools/assemblyai) — make TTS a config field rather than an integration.
+**The integrated options** matter when pipeline simplicity beats peak quality: Deepgram's Flux TTS (the older Aura-2 remains available) rides shotgun with its STT for one-vendor agent stacks, and the platform layers — [LiveKit Inference](/tools/livekit), [Vapi](/tools/vapi), [AssemblyAI's Voice Agent API](/tools/assemblyai) — make TTS a config field rather than an integration.
 
 ## Latency budgets for live voice agents
 

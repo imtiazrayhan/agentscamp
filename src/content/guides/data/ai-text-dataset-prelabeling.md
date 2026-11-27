@@ -8,7 +8,7 @@ audience: ["ai-engineers", "analysts"]
 tags: ["text-annotation", "ai-text-dataset-prelabeling"]
 featured: false
 related: ["guide:adjudicate-ai-assisted-text-labels", "tool:label-studio", "skill:annotation-task-spec-builder", "command:check-annotation-batch"]
-summary: "Prepare a small supervised text-labeling batch with separate model suggestions and human responses, using stable record IDs and an approved task specification."
+summary: "Fix a versioned single-label task spec, freeze raw text with stable record IDs, and store each model suggestion with its model, prompt and rule versions. Reviewers respond independently on a calibration set, and wrong predictions are kept, not overwritten. Disputed rows go to adjudication, and only records accepted under the owner's policy are exported."
 title: "Prelabel a Text Dataset with AI Without Replacing Review"
 depth: "standard"
 sources: [{"title": "Integrate Label Studio into your ML pipeline", "url": "https://labelstud.io/guide/ml.html", "publisher": "HumanSignal"}, {"title": "Annotate datasets", "url": "https://docs.argilla.io/latest/how_to_guides/annotate/", "publisher": "Argilla"}]

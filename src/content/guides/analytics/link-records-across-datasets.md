@@ -20,8 +20,7 @@ related:
 - glossary:record-linkage
 - agent:entity-match-reviewer
 - command:check-entity-match-ledger
-summary: Build a cross-source entity crosswalk that preserves both record keys, unresolved candidates and cardinality
-  decisions without silently joining or merging data.
+summary: Define each dataset's grain and the allowed cardinality, then build a candidate crosswalk with both qualified keys, evidence, conflicts and a decision state. The owner marks pairs match, different or unresolved. Hand off the accepted crosswalk, unresolved queue, unmatched inventory and decision history, then test the join for fan-out and dropped rows.
 title: Link Records Across Datasets with AI-Assisted Review
 depth: standard
 sources:

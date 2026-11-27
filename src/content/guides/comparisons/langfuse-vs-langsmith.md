@@ -3,7 +3,7 @@ title: "Langfuse vs LangSmith: LLM Observability Compared (2026)"
 description: "Langfuse vs LangSmith — open-source self-hostable observability vs LangChain's first-party platform. Tracing, evals, prompt management, and which to adopt."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
-updated: "2026-09-11"
+updated: "2026-11-27"
 color: "green"
 topics: ["llm-evals"]
 audience: ["developers"]
@@ -39,9 +39,9 @@ sources:
   - title: "LangChain pricing"
     url: "https://www.langchain.com/pricing"
     publisher: "LangChain"
-  - title: "Helicone Joins Mintlify"
-    url: "https://www.helicone.ai/blog/joining-mintlify"
-    publisher: "Helicone"
+  - title: "Mintlify acquires Helicone"
+    url: "https://www.mintlify.com/blog/mintlify-acquires-helicone"
+    publisher: "Mintlify"
 related: ["tool:langfuse", "tool:langsmith", "guide:best-llm-eval-tools-2026", "guide:write-llm-evals", "agent:llm-observability-engineer", "glossary:llm-as-judge"]
 ---
 

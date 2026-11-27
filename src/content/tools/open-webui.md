@@ -2,8 +2,10 @@
 name: "Open WebUI"
 title: "Open WebUI"
 description: "Self-hosted AI workspace that fronts Ollama and any OpenAI-compatible API with chat, RAG, MCP tools, agents and enterprise auth, via pip, Docker or Kubernetes."
-seoDescription: "Open WebUI in October 2026: the self-hosted chat and RAG workspace for Ollama and OpenAI-compatible APIs, its branding-clause license, MCP, and alternatives."
+seoDescription: "Open WebUI in November 2026: the self-hosted chat and RAG workspace for Ollama and OpenAI-compatible APIs, its branding-clause license, MCP, and alternatives."
 date: 2026-10-06
+updated: 2026-11-27
+reviewed: 2026-11-27
 url: "https://openwebui.com"
 pricing: "open-source"
 category: "platform"
@@ -23,10 +25,10 @@ sameAs:
   - "https://x.com/OpenWebUI"
 related: ["tool:lm-studio", "tool:jan", "tool:anythingllm", "tool:ollama", "tool:sglang", "guide:best-local-llm-tools-2026", "guide:best-open-source-llms-2026", "glossary:model-context-protocol"]
 keywords: ["Open WebUI", "Open WebUI license", "Open WebUI vs LM Studio", "self-hosted ChatGPT alternative", "Ollama web UI", "Open WebUI MCP"]
-summary: "Open WebUI is a self-hosted, browser-based AI workspace (chat, RAG, tools, agents, admin and RBAC) that fronts Ollama and any OpenAI-compatible API. About 156,000 GitHub stars as of October 2026; latest release v0.12.3. Free to run with the branding intact: the license is BSD-3-Clause text plus a branding clause, so it is permissive but not OSI-approved."
+summary: "Open WebUI is a self-hosted, browser-based AI workspace (chat, RAG, tools, agents, admin and RBAC) that fronts Ollama and any OpenAI-compatible API. About 159,700 GitHub stars as of November 2026; latest release v0.13.5. Free to run with the branding intact: the license is BSD-3-Clause text plus a branding clause, so it is permissive but not OSI-approved."
 faq:
   - q: "Is Open WebUI free?"
-    a: "Yes for internal use with the original branding intact, which the enterprise page lists as Standard Use at no charge. White-labeling, rebranding or enterprise-only features such as Terminals need an enterprise license, and there is no public price list: openwebui.com/pricing returned a 404 when we checked on 2026-10-21. Enterprise pricing is quote-based."
+    a: "Yes for internal use with the original branding intact, which the enterprise page lists as Standard Use at no charge. White-labeling, rebranding or enterprise-only offerings such as Terminals and Tether need an enterprise license, and there is no public price list: openwebui.com/pricing returned a 404 when we checked on 2026-11-27. Enterprise pricing is quote-based."
   - q: "Is Open WebUI open source?"
     a: "The full source is on GitHub, but the license is the Open WebUI License: BSD-3-Clause text plus a fourth branding clause, added in v0.6.6 (April 2025). You may not alter or remove the Open WebUI branding unless your deployment stays under 50 end users in any rolling 30-day period, you have written permission from the copyright holder, or you hold an enterprise license. It is not OSI-approved, and GitHub's API reports the license as Other. Contributions up to v0.6.5 remain under plain BSD-3-Clause."
   - q: "Open WebUI vs LM Studio?"
@@ -37,7 +39,7 @@ faq:
 
 Open WebUI is the web front end most teams reach for when they want a ChatGPT-style workspace they host themselves. It is a Python server you run with pip, Docker or Kubernetes, and it speaks to [Ollama](/tools/ollama) and to any OpenAI-compatible API, so the same interface can sit in front of a local model, a self-hosted serving engine or a cloud provider. The README calls it a "powerful, provider-agnostic interface for both local and cloud-based models", and the homepage adds Anthropic to the list of things you can connect.
 
-The scale is unusual for a self-hosted tool: about 156,000 GitHub stars as of October 2026, with the homepage claiming "338M+ downloads" and "518K+ community members". Releases are frequent; v0.12.3 landed on 2026-10-16.
+The scale is unusual for a self-hosted tool: about 159,700 GitHub stars as of November 2026, with the homepage claiming "498M+ downloads" and "544K+ community members". Releases are frequent; v0.13.5 landed on 2026-11-25.
 
 ## Highlights
 
@@ -52,11 +54,14 @@ The scale is unusual for a self-hosted tool: about 156,000 GitHub stars as of Oc
 
 ## In an AI-assisted workflow
 
-The quickest path is pip (Python 3.11) or the Docker image; both serve the UI on port 8080.
+The quickest path is pip (Python 3.12) or the Docker image; pip serves the UI on port 8080, and the Docker command below maps it to port 3000.
 
 ```bash
 pip install open-webui
 open-webui serve                      # http://localhost:8080
+
+# or with uv, no install step (macOS/Linux):
+DATA_DIR=~/.open-webui uvx --python 3.12 open-webui@latest serve
 
 # or Docker, talking to an Ollama on the host:
 docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway \
@@ -78,10 +83,10 @@ MCP servers are added under Admin Settings, External Tools, with the type set to
 
 **License.** The project started MIT, moved to BSD-3-Clause, then added the branding clause in commit 60d84a3a (2025-04-18), shipped as v0.6.6; the docs say "The original BSD-3 license continues to apply for all contributions made to the codebase up to and including release v0.6.5." The copyright holder became "Open WebUI Inc." on 2025-12-03, the CLA was re-worded on 2026-02-28 to grant Open WebUI Inc. a perpetual, irrevocable license to use, sublicense and commercialize contributions, and the license text was reorganised on 2026-04-14 (shipped with v0.9.0) with the 50-user threshold and the enterprise exception unchanged. The docs' framing: "Want to use Open WebUI for free? Just keep the branding."
 
-**Pricing.** There is no public price list. The enterprise page shows two rows, Standard Use (internal use with original branding intact) at no charge and Enterprise Use (white-labeling, rebranding or enterprise-exclusive features such as Terminals) requiring an enterprise license, and notes that enterprise licenses are "available exclusively to registered entities and organizations". Enterprise pricing is quote-based.
+**Pricing.** There is no public price list. The enterprise page shows two rows, Standard Use (internal use with original branding intact) at no charge and Enterprise Use (white-labeling, rebranding, changes to the original branding, or enterprise-exclusive offerings such as Terminals and Tether) requiring an enterprise license, and notes that enterprise licenses are "available exclusively to registered entities and organizations". Enterprise pricing is quote-based.
 
-**2026 releases.** v0.7.0 (January) added native function calling with built-in tools; v0.8.0 (February) an analytics dashboard, experimental Skills and prompt version control; v0.9.0 (April) the official desktop app, scheduled chat automations and a calendar workspace; v0.10.0 (June) shared folders, automatic context compaction for long chats, external knowledge bases and webhooks; v0.11.0 (July) a redesigned interface and sub-agents; v0.12.0 (October) Realtime voice calls, two-factor sign-in, nested groups and tool search for large tool sets, followed by end-to-end encrypted channel chats in v0.12.3.
+**2026 releases.** v0.7.0 (January) added native function calling with built-in tools; v0.8.0 (February) an analytics dashboard, experimental Skills and prompt version control; v0.9.0 (April) the official desktop app, scheduled chat automations and a calendar workspace; v0.10.0 (June) shared folders, automatic context compaction for long chats, external knowledge bases and webhooks; v0.11.0 (July) a redesigned interface and sub-agents; v0.12.0 (October) Realtime voice calls, two-factor sign-in, nested groups and tool search for large tool sets, followed by end-to-end encrypted channel chats in v0.12.3; v0.13.0 (November 3) a tabbed workspace for files, terminals, artifacts and previews plus a Desktop tab for computer use through Open Terminal; v0.13.4 (November 17) Tether, which exposes models, MCP servers and a sandboxed terminal from your own computer and replaces Direct Connections; and v0.13.5 (November 25) folder workspaces that read an `AGENTS.md` or `CLAUDE.md` file as project instructions.
 
-**Platforms.** Self-hosted web app and PWA on Linux, macOS and Windows; the separate desktop app (AGPL-3.0, about 3,000 stars as of October 2026) runs on macOS, Windows and Linux. There is no native iOS or Android app.
+**Platforms.** Self-hosted web app and PWA on Linux, macOS and Windows; the separate desktop app (AGPL-3.0) runs on macOS, Windows and Linux. There is no native iOS or Android app.
 
 Against the alternatives: [LM Studio](/tools/lm-studio) and [Jan](/tools/jan) are desktop-first apps for one person exploring local models, while Open WebUI is a server for a team, with admin controls, plugins and enterprise auth. [AnythingLLM](/tools/anythingllm) is the closest rival in shape, also self-hosted via Docker with MCP support, but it is MIT-licensed and ships a free desktop app plus a hosted cloud; Open WebUI has the broader enterprise surface (LDAP, SCIM 2.0, nested groups) and a custom license with a branding clause.

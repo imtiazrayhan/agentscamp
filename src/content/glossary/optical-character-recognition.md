@@ -16,7 +16,7 @@ related:
 - guide:review-ocr-text-against-scans
 - tool:abbyy-finereader-pdf
 - agent:ocr-fidelity-reviewer
-summary: Optical character recognition converts text pictured in a scan or image into machine-readable characters; recognition output still needs source checks.
+summary: Defines OCR as the narrow character-conversion task, separate from a vision-language model's broader abilities and from interpreting or modernizing a document. A flyer example shows a single-span correction confirmed against the enlarged source region while a torn word stays unresolved. A checker can validate spans, but only a human confirms the reading.
 term: Optical character recognition (OCR)
 seoTitle: "What Is Optical Character Recognition (OCR)?"
 ---

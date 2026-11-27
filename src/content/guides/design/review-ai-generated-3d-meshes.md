@@ -19,8 +19,7 @@ related:
 - tool:meshy
 - glossary:uv-mapping
 - skill:3d-asset-handoff-sheet
-summary: Evaluate an AI-generated mesh against a named target app and supplied asset requirements, using real
-  inspection reports and human view checks.
+summary: Write an acceptance brief naming the target app, export format and owner-set limits, then import the exact export and collect a technical report plus human notes from agreed views. A lantern example shows a mesh that passes the silhouette check but fails its triangle budget. The owner records accept, fix, reject or unresolved per requirement.
 title: Review AI-Generated 3D Meshes Before Asset Handoff
 depth: standard
 sources:

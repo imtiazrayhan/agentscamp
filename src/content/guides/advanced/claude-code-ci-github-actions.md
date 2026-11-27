@@ -3,7 +3,8 @@ title: "Running Claude Code in CI: Headless Mode & GitHub Actions"
 description: "Claude Code without the terminal — claude -p flags, JSON and structured output, safe permission scoping, and the official GitHub Action responding to @claude."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
-updated: 2026-11-22
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 audience: ["developers", "ai-engineers", "devops"]
@@ -28,7 +29,7 @@ howtoSteps:
   - name: "Or write the workflow by hand"
     text: "Add a job using anthropics/claude-code-action@v1 with anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}. Give it a prompt input for automatic runs, or omit it to respond to @claude mentions."
   - name: "Tune with claude_args"
-    text: "The action forwards CLI flags via claude_args (e.g. \"--max-turns 10 --model claude-sonnet-4-6\"), and can load plugins and MCP servers — same knobs as local headless runs."
+    text: "The action forwards CLI flags via claude_args (e.g. \"--max-turns 10 --model claude-sonnet-5-5\"), and can load plugins and MCP servers — same knobs as local headless runs."
 faq:
   - q: "How do I run Claude Code in GitHub Actions?"
     a: "Use the official action: anthropics/claude-code-action@v1. The fastest setup is running claude /install-github-app locally — it installs the GitHub App, stores your ANTHROPIC_API_KEY secret, and creates the workflow. After that, commenting @claude on an issue or PR triggers it, or you can give the action a prompt to run on any workflow event."
@@ -108,7 +109,7 @@ Tuning happens through `claude_args`, which forwards the same CLI flags you prov
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: "Review this PR for security issues and comment your findings"
-          claude_args: "--max-turns 12 --model claude-sonnet-4-6"
+          claude_args: "--max-turns 12 --model claude-sonnet-5-5"
 ```
 
 It can also load plugins and MCP servers (`plugins:`, `plugin_marketplaces:` inputs), run [skills](/guides/skills/writing-your-first-skill) with `prompt: "/skill-name"`, and authenticate via **Bedrock or Vertex** (`use_bedrock` / `use_vertex` with OIDC) instead of a static key.

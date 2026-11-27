@@ -7,7 +7,7 @@ audience: ["marketers"]
 tags: ["video", "transcription", "quality-assurance"]
 featured: false
 related: ["guide:review-ai-captions-before-publishing", "skill:caption-correction-ledger", "command:check-caption-timing"]
-summary: "Review supplied caption text, timing and human listening notes against a named media version. Flag uncertain words, speaker/sound omissions and timing conflicts in an issue ledger; never claim to hear inaccessible audio, rewrite the source media or certify accessibility compliance."
+summary: "Returns a cue-level ledger for a frozen media cut, with each flagged cue's original line, timing, proposed text, evidence source and status. Repairs backed by listening notes are marked needs-human-approval and uncertain words stay unresolved. It states when audio was not heard and leaves playback checks to a listener."
 name: "caption-reviewer"
 title: "Caption Reviewer"
 model: "sonnet"

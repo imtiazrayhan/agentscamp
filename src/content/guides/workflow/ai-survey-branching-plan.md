@@ -8,7 +8,7 @@ audience: ["founders", "analysts", "designers"]
 tags: ["survey-routing", "ai-survey-branching-plan"]
 featured: false
 related: ["guide:test-ai-survey-logic", "tool:typeform", "glossary:skip-logic", "skill:survey-path-test-builder"]
-summary: "Turn approved survey questions and routing rules into an explicit branch table, with stable IDs and unresolved paths before an AI form builder runs."
+summary: "Assign question, choice and ending IDs that do not depend on display wording, then list one destination for every permitted choice. Check for unreachable questions, loops and undefined handling of unanswered or Other responses before prompting the form builder. Covers finite single-choice routing, with a worked workshop form."
 title: "Plan AI Survey Branching Before Building the Form"
 depth: "standard"
 sources: [{"title": "Use Typeform AI", "url": "https://help.typeform.com/hc/en-us/articles/42053773420948-Use-Typeform-AI", "publisher": "Typeform"}, {"title": "Logic Jumps", "url": "https://www.typeform.com/developers/create/logic-jumps/", "publisher": "Typeform"}, {"title": "Skip Logic", "url": "https://help.surveymonkey.com/en/surveymonkey/create/skip-logic/", "publisher": "SurveyMonkey"}]

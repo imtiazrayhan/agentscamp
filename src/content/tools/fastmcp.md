@@ -16,7 +16,7 @@ audience: ["ai-engineers"]
 tags: ["mcp", "python", "sdk", "open-source"]
 featured: false
 related: ["guide:building-an-mcp-server", "agent:mcp-server-engineer", "tool:mcp-inspector", "guide:deploy-remote-mcp-server", "skill:mcp-server-scaffolder"]
-alternativeTo: ["claude-agent-sdk", "smithery", "mcp-inspector"]
+alternativeTo: []
 summary: "FastMCP is a Pythonic framework for building Model Context Protocol servers and clients: decorate plain functions with @mcp.tool, @mcp.resource, or @mcp.prompt and it generates a compliant server, deriving schemas from type hints and docstrings. Version 1.0 was folded into the official MCP Python SDK; standalone 3.x adds auth, deployment, and composition."
 faq:
   - q: "What is FastMCP?"

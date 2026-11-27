@@ -5,7 +5,7 @@ seoTitle: "Portkey vs Helicone vs LiteLLM: Best LLM Gateway for Cost Tracking"
 seoDescription: "Portkey, Helicone, and LiteLLM compared on caching, per-provider cost tracking, and observability, with each one's 2026 status and self-hosted vs hosted fit."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
-updated: 2026-11-22
+updated: 2026-11-27
 color: "green"
 topics: ["devops-infra"]
 audience: ["developers", "ai-engineers"]
@@ -46,7 +46,7 @@ Once more than one app talks to an LLM, you start wanting a single place to hand
 
 ### Portkey — gateway + LLMOps control plane
 
-[Portkey](/tools/portkey) is the most platform-complete option. An **open-source (MIT) routing gateway** — 1,600+ models, retries, fallbacks, load balancing, and both **simple and semantic caching** — paired with a **freemium hosted control plane** for observability, prompt management, virtual keys, budgets, guardrails, and governance — the [LLMOps](/glossary/llmops) layer on top of the raw gateway. Best when you want caching and cost control as a managed, batteries-included service. (Palo Alto Networks completed its acquisition of Portkey on May 29, 2026 — unlike Helicone's, a continuity move: it becomes the gateway in PANW's AI-security platform and stays actively developed.)
+[Portkey](/tools/portkey) is the most platform-complete option. An **open-source (MIT) routing gateway** — 1,600+ models, retries, fallbacks, load balancing, and both **simple and semantic caching** — paired with a **freemium hosted control plane** for observability, prompt management, virtual keys, budgets, guardrails, and governance — the [LLMOps](/glossary/llmops) layer on top of the raw gateway. Best when you want caching and cost control as a managed, batteries-included service. (Palo Alto Networks completed its acquisition of Portkey on May 29, 2026 — unlike Helicone's, a continuity move: it becomes the gateway in PANW's AI-security platform and stays actively developed. It is now sold as **Prisma AIRS AI Gateway**, and as of November 2026 `portkey.ai/pricing` redirects to a Palo Alto Networks contact form; the docs still describe a free managed plan with 10k requests per month.)
 
 ### LiteLLM — open-source library or self-hosted proxy
 
@@ -57,7 +57,7 @@ Once more than one app talks to an LLM, you start wanting a single place to hand
 [Helicone](/tools/helicone) is famous for the lowest-friction on-ramp: change your base URL and your calls are logged, traced, and analyzed, with proxy-level **caching** and great cost/latency visibility. Open source (Apache-2.0) and self-hostable.
 
 > [!WARNING]
-> **Helicone's 2026 status:** Mintlify [acquired Helicone](https://www.helicone.ai/blog/joining-mintlify) in March 2026, and it's now in **maintenance mode** — security and bug fixes only, no new features or roadmap, with migration assistance for customers. The open-source proxy still works and self-hosts fine, so existing users aren't stranded, but for a **new** project weigh that it's no longer actively developed.
+> **Helicone's 2026 status:** Mintlify [acquired Helicone](https://www.mintlify.com/blog/mintlify-acquires-helicone) in March 2026, and it's now in **maintenance mode** — security and bug fixes only, no new features or roadmap, with migration assistance for customers. The open-source proxy still works and self-hosts fine, so existing users aren't stranded, but for a **new** project weigh that it's no longer actively developed. As of November 2026, a banner on helicone.ai also says "Helicone is now part of Experiential Labs. Details to come soon," so its ownership is changing again.
 
 ## Caching & cost control, head to head
 

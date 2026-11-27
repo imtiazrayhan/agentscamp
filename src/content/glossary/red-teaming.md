@@ -4,6 +4,8 @@ seoTitle: "What Is AI Red-Teaming?"
 description: "AI red-teaming is adversarial testing — attacking your model or agent with jailbreaks, injections, and misuse scenarios to find failures before users do."
 summary: "Red-teaming means playing the attacker against your own system: jailbreak attempts, prompt injection through every content channel it reads, exfiltration probes, and tool-abuse scenarios for agents. It complements evals, which measure expected behavior; findings become fixes and then regression tests."
 date: 2026-06-12
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["ai-safety-security"]
 audience: ["developers", "security"]
 tags: ["red-teaming", "security", "safety", "testing"]
@@ -19,4 +21,4 @@ faq:
 
 Borrowed from security practice, it became standard at two levels. **Model-level** red-teaming (the labs' discipline) probes frontier models for dangerous capabilities and policy bypasses pre-release. **Application-level** red-teaming — the kind every team shipping LLM features owns — attacks the *system*: can [prompt injection](/glossary/prompt-injection) ride in through retrieved documents or fetched pages? Can a [jailbreak](/glossary/jailbreak) defeat the persona? Can an agent's tools be steered into exfiltration or destructive calls — the scenarios the [OWASP agentic top 10](/guides/ai-safety/owasp-agentic-top-10) catalogs?
 
-The discipline that separates it from poking around: coverage across every untrusted input channel, escalation from obvious to creative attacks, and **findings → fixes → regression tests** so resilience compounds instead of resetting. Tooling automates the grind (promptfoo's adversarial suites, scanners like LLM Guard for the runtime side), and the [red-team-llm](/commands/review/red-team-llm) command packages the workflow for any app in reach.
+The discipline that separates it from poking around: coverage across every untrusted input channel, escalation from obvious to creative attacks, and **findings → fixes → regression tests** so resilience compounds instead of resetting. Tooling automates the grind (promptfoo's adversarial suites, guardrail libraries like NeMo Guardrails for the runtime side), and the [red-team-llm](/commands/review/red-team-llm) command packages the workflow for any app in reach.

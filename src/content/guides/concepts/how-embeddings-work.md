@@ -8,6 +8,8 @@ tags: ["embeddings", "vectors", "semantic-search", "rag", "concepts"]
 related: ["glossary:embedding", "glossary:cosine-similarity", "glossary:vector-database", "guide:choosing-embeddings-2026", "guide:how-rag-works"]
 featured: false
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 summary: "An embedding turns text or images into a vector positioned so that semantic similarity becomes geometric closeness. Search, RAG, clustering, and dedup all reduce to comparing those vectors. The non-negotiable rules: queries and documents must use the same model, vectors should be normalized, and changing models means re-embedding everything."
 keyTakeaways:
   - "An embedding maps content to a fixed-length vector where 'similar meaning' becomes 'close in space.'"
@@ -62,7 +64,7 @@ Rule of thumb: normalize your vectors (if the model doesn't already) and use cos
 
 A 1536-dimension embedding has 1536 numbers, but no single dimension corresponds to a human concept like "is about sports." Meaning is distributed across the whole vector — it's the overall geometry that carries information, not individual axes.
 
-So more dimensions ≠ smarter. They give the model more room to encode nuance, but they also cost more to store and are slower to search. Plenty of 768-dim models beat 3072-dim ones on real retrieval benchmarks. Treat dimension as a **cost and latency knob**, and judge quality separately on benchmarks. Some models use Matryoshka representation learning, which lets you truncate the vector (e.g. 1536 → 512) with only modest quality loss — a cheap way to shrink your index.
+So more dimensions ≠ smarter. They give the model more room to encode nuance, but they also cost more to store and are slower to search. A smaller, better-trained model can outrank a larger one on retrieval benchmarks, so dimension count is not a quality score. Treat dimension as a **cost and latency knob**, and judge quality separately on benchmarks. Some models use Matryoshka representation learning, which lets you truncate the vector (e.g. 1536 → 512) with only modest quality loss — a cheap way to shrink your index.
 
 ## How embedding models are trained (high level)
 

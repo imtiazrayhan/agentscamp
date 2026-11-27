@@ -1,3 +1,23 @@
+# Content Quality Audit & Improvement Wave (403 Pages) — 2026-11-28 — VERIFIED (uncommitted)
+
+Goal: audit all 1,066 content files for thin, weak, stale or wrong pages, then fix them with facts re-verified against primary sources.
+
+## Done
+- **Audit:** metrics on every file plus a blind full read of 387 pages (flagged pages mixed with random controls). Report and per-page CSV in `docs/content-audit-2026-11-28.md` / `.csv`.
+- **Improvement wave (27 writer batches, each in its own worktree):** 100 thin June tool pages rebuilt to the current standard (dated pricing, install steps, limits, alternatives), 40 confirmed thin/stale guides deepened or corrected, 36 unrevised June guides freshness-checked, 6 workflow-essay tool pages rewritten as product profiles, 7 glossary entries rewritten as real definitions, 13 commands/skills/agents made concrete, 37 family installables given proper summaries and when-to-use framing, tool-grant mismatches fixed.
+- **Consistency pass (5 agents):** stale facts the writers found on other pages were re-verified at the source and propagated to 91 more pages. No writer report was found false.
+- **Hygiene:** all 63 `summary == description` duplicates replaced with real summaries.
+- Medians on changed pages: tools 459 → 927 words, guides 1,018 → 1,562. Tool pages under 600 words: 145 → 35.
+
+## Verified
+- `npm run validate`: 1,066 items, 0 errors, 0 warnings. `npm run lint`: clean. `npm run build`: passes; external-link policy OK.
+- Code snippets were assembled from vendor docs and not executed.
+
+## Next / open
+- Not committed. After commit: bump and publish the CLI (66 installables changed), re-run `npm run mirror:build`.
+- Owner checks listed in `docs/content-audit-2026-11-28/handoffs/` (LanceDB Cloud status, Cohere Rerank prices, ~20 pages still listing Claude plans without Ultra, `src/content/tools/claude.md` loading as `CLAUDE.md` on case-insensitive disks).
+- ~70 unread "evidence-ledger" family pages left as is by owner decision.
+
 # Freshness Sweep (47 → 0 Warnings), 5 Thin Guides & 3 Single-Guide Categories — 2026-11-25 — VERIFIED
 
 Goal: clear all 47 content-validator freshness/hygiene warnings with genuinely verified November 2026 facts, deepen the next 5 thin comparison guides, and unlock the 3 single-guide `noindex` guide categories (`api`, `observability`, `performance`).

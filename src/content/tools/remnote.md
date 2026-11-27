@@ -15,7 +15,7 @@ related:
 - guide:ai-study-cards-from-notes
 - glossary:spaced-repetition
 - agent:study-card-reviewer
-summary: RemNote combines notes, AI-generated flashcards and quizzes, and spaced review, with a preview step for checking cards against the source.
+summary: Covers how RemNote's AI generator turns selected or pasted text into flashcards or a multiple-choice quiz that you preview, deselect and edit before saving. Includes a small first-set trial with a three-part acceptance check for each card, and how recall ratings drive later reviews. Free and paid tiers, with credit-metered AI features.
 name: RemNote
 title: RemNote
 url: https://www.remnote.com

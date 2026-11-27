@@ -3,7 +3,8 @@ title: "Claude Code for Marketers: The Complete 2026 Guide"
 description: "Why a marketer would open a terminal agent, when claude.ai or Cowork is the better tool, a CLAUDE.md for a content repo, five workflows, and what goes wrong."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
-reviewed: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 depth: cornerstone
 color: "green"
 topics: ["ai-at-work", "workflow-prompting"]
@@ -100,7 +101,7 @@ The difference between the last two is what is left behind. Cowork returns docum
 
 ## Setup in plain language
 
-Two routes: the desktop app (download, sign in, click the Code tab) or the terminal (one install line, then type `claude` inside a folder). Both need a Pro, Max, or Team subscription; the free plan does not include Claude Code. The current install commands are in [Installing Claude Code](/guides/getting-started/installing-claude-code) and this guide will not repeat them.
+Two routes: the desktop app (download, sign in, click the Code tab) or the terminal (one install line, then type `claude` inside a folder). Both need a Pro, Max, Ultra, or Team subscription; the free plan does not include Claude Code. The current install commands are in [Installing Claude Code](/guides/getting-started/installing-claude-code) and this guide will not repeat them.
 
 Two things matter more than the commands. You start Claude Code *inside a folder*, and that folder is the boundary of what it can see and change. Make one for your content, put your posts, exports, and style guide in it, and start there, never in your home directory. And in Manual mode it asks before every file edit and most commands; read the proposal before you press Enter. The permission tiers, the auto mode paid plans default to later, and the deny rules that hold regardless of what Claude decides are explained in the founders pillar, [Claude Code for Non-Developers](/guides/founders/claude-code-for-non-developers); read that section first.
 
@@ -233,7 +234,7 @@ Claude Code is not a writing assistant in the sense [Jasper](/tools/jasper) and 
 
 ## Plans and usage
 
-There is no separate Claude Code fee; it is included with Pro, Max, and Team, and Anthropic's support docs are explicit that "your usage of all different Claude product surfaces (claude.ai, Claude Code, Claude Desktop) counts towards the same usage limit." Two things marketers do burn that pool faster than chat: long sessions over many files, and connectors, which the same article calls "token-intensive." Which tier fits a solo content marketer, a small team, or an agency is in [Which Claude Plan Should a Marketer Pay For?](/guides/marketing/which-claude-plan-for-marketers); the figures live on the plans page it links to.
+There is no separate Claude Code fee; it is included with Pro, Max, Ultra, and Team, and Anthropic's support docs are explicit that "your usage of all different Claude product surfaces (claude.ai, Claude Code, Claude Desktop) counts towards the same usage limit." Two things marketers do burn that pool faster than chat: long sessions over many files, and connectors, which the same article calls "token-intensive." Which tier fits a solo content marketer, a small team, or an agency is in [Which Claude Plan Should a Marketer Pay For?](/guides/marketing/which-claude-plan-for-marketers); the figures live on the plans page it links to.
 
 ## Where to go next
 

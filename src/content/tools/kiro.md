@@ -3,6 +3,8 @@ name: "Kiro"
 title: "Kiro"
 description: "AWS's agentic IDE and CLI that turns a prompt into a spec of requirements, design and tasks, then checks the code against it with property-based tests."
 date: "2026-09-11"
+updated: 2026-11-27
+reviewed: 2026-11-27
 url: "https://kiro.dev"
 pricing: "freemium"
 category: "ide"
@@ -72,7 +74,7 @@ That spec, tasks, implement loop is the one our [spec-driven development guide](
 | [Google Antigravity](/tools/antigravity) | Desktop app plus `agy` CLI | Free Individual plan |
 | Claude Code | Terminal, IDE, web | Anthropic's first-party agent |
 
-Cursor is the closer rival for editor-first work. Antigravity is Google's answer, with a free Individual plan whose models include Claude Sonnet and Opus 4.6. Kiro's distinct bet is structure: the spec, not the chat, is the unit of work.
+Cursor is the closer rival for editor-first work. Antigravity is Google's answer, with a free Individual plan; the Claude Sonnet 4.6 and Opus 4.6 options on that plan are scheduled for removal on November 30, 2026. Kiro's distinct bet is structure: the spec, not the chat, is the unit of work.
 
 ## Good to know
 

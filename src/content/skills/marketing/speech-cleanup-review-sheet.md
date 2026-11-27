@@ -7,7 +7,7 @@ audience: ["marketers"]
 tags: ["audio", "voice", "review"]
 featured: false
 related: ["guide:review-ai-speech-cleanup", "agent:speech-cleanup-reviewer", "command:check-audio-review-sheet"]
-summary: "Build a timed original-versus-processed speech cleanup review sheet from supplied listener observations, preserving variant IDs, intelligibility concerns, decisions and reviewer evidence. Use after processing a recording; do not transcribe, synthesize voices, edit audio or publish a master."
+summary: "Supply variant IDs, recording duration, timed notes on both versions and a named listener. The sheet lists each segment with start and end milliseconds, original and processed observations kept separate, the listener's decision, reason and a listened flag. Windows missing either observation stay pending, and without any notes you get an empty template."
 name: "speech-cleanup-review-sheet"
 title: "Speech Cleanup Review Sheet"
 version: "1.0.0"

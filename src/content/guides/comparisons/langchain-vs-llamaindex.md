@@ -3,7 +3,7 @@ title: "LangChain vs LlamaIndex in 2026: Agents or Data?"
 description: "The classic framework confusion resolved — LangChain's agent loop and ecosystem vs LlamaIndex's data-and-documents depth — and when you'd genuinely use both."
 author: "Imtiaz Rayhan"
 date: 2026-06-12
-updated: 2026-11-25
+updated: 2026-11-27
 color: "green"
 topics: ["ai-agents-systems", "rag-retrieval"]
 audience: ["developers"]
@@ -13,7 +13,7 @@ summary: "They're complements that compete at the edges. LangChain 1.0 narrowed 
 keyTakeaways:
   - "Ask what your hard problem is: orchestrating an agent (LangChain) or getting messy data to a model well (LlamaIndex). The frameworks' centers of gravity never really overlapped."
   - "LangChain 1.0 (Oct 2025) is a different product than its reputation: legacy chains exiled to langchain-classic, the core now create_agent + middleware on the LangGraph runtime."
-  - "LlamaIndex's depth is the data path — connectors, chunking, indexes, query engines — and its 2026 commercial story is documents: LlamaParse OCR and LlamaCloud pipelines."
+  - "LlamaIndex's depth is the data path — connectors, chunking, indexes, query engines — and its 2026 commercial story is documents: the LlamaParse platform (formerly LlamaCloud) for OCR, parsing, extraction and indexing."
   - "Both do both (LangChain has retrievers; LlamaIndex has agents and workflows) — the edges blur; the depth doesn't."
   - "Using both is normal, not failure: LlamaIndex as the retrieval/query engine inside a LangChain/LangGraph agent is a standard production pattern."
 faq:
@@ -38,7 +38,7 @@ related: ["tool:langchain", "tool:llamaindex", "tool:langgraph", "guide:agent-fr
 
 **LangChain** answered its bloat discourse with the 1.0 reset (October 2025): the sprawling chain zoo moved to `langchain-classic`, leaving a focused core — `create_agent`, a production tool-calling loop on the LangGraph runtime, with middleware (human-in-the-loop approval, summarization, PII redaction) and normalized content blocks across providers. Its durable advantages: the largest integration ecosystem in AI, true provider-agnosticism, and the graduated stack (LangChain → LangGraph → LangSmith).
 
-**LlamaIndex** stayed loyal to its founding question — *how does my data reach the model well?* — with connectors, chunking and node parsing, index types, and query engines that compose retrieval with synthesis, plus document agents and event-driven Workflows. Its company, meanwhile, found the commercial center in **documents**: LlamaParse's agentic OCR (complex tables, layouts, handwriting) and LlamaCloud's managed parse/extract/index pipelines. The framework remains MIT and active (deliberately 0.x — pin versions); the headline product is document intelligence. For the wider field — Haystack, DSPy, and the rest of the RAG-framework landscape — see [Best RAG Frameworks in 2026](/guides/comparisons/best-rag-frameworks-2026).
+**LlamaIndex** stayed loyal to its founding question — *how does my data reach the model well?* — with connectors, chunking and node parsing, index types, and query engines that compose retrieval with synthesis, plus document agents and event-driven Workflows. Its company, meanwhile, found the commercial center in **documents**: LlamaParse, the platform formerly called LlamaCloud, with agentic OCR (complex tables, layouts, handwriting) and managed parse/extract/index pipelines. The framework remains MIT and available (deliberately 0.x — pin versions), but its README now says the company's "primary focus has shifted towards LlamaParse", and the TypeScript port, LlamaIndex.TS, is deprecated and no longer maintained. For the wider field — Haystack, DSPy, and the rest of the RAG-framework landscape — see [Best RAG Frameworks in 2026](/guides/comparisons/best-rag-frameworks-2026).
 
 ## Dimension by dimension
 
@@ -49,8 +49,8 @@ related: ["tool:langchain", "tool:llamaindex", "tool:langgraph", "guide:agent-fr
 | RAG | Capable, assembled from integrations | Native depth (chunking, reranking, query routing) |
 | Agents | Core identity (durable graph runtime) | Credible, strongest on document-heavy workflows |
 | Document parsing | Via third-party loaders | LlamaParse (purpose-built layout & table OCR) |
-| Commercial layer | LangSmith (tracing, evals, deployment) | LlamaCloud (managed parse, extract, index) |
-| Languages | Python + JS/TS | Python (+ TypeScript sibling) |
+| Commercial layer | LangSmith (tracing, evals, deployment) | LlamaParse platform, formerly LlamaCloud (managed parse, extract, index) |
+| Languages | Python + JS/TS | Python (LlamaIndex.TS is deprecated) |
 
 ## Orchestration vs retrieval under the hood
 

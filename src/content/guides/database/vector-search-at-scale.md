@@ -14,6 +14,8 @@ related:
   - "glossary:embedding"
 featured: false
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 summary: "Vector search at scale is a three-way trade-off between recall, latency, and memory. HNSW gives fast, accurate in-memory search; IVF-PQ trades recall for a fraction of the RAM; flat is exact but linear. Pick the index for your recall target, quantize to fit RAM, shard for throughput, and measure recall against exact neighbours — not vibes."
 keyTakeaways:
   - "Recall, latency, and memory form a triangle — you tune two and the third moves. Decide your recall floor first."
@@ -23,7 +25,7 @@ keyTakeaways:
   - "Filtered search is where naive pipelines fall apart — pre-filtering breaks the graph, post-filtering breaks recall."
 faq:
   - q: "HNSW or IVF-PQ for a billion vectors?"
-    a: "If the index fits in RAM and you need high recall at low latency, HNSW. At a billion vectors that usually means hundreds of GB of RAM per replica, so most teams move to IVF-PQ (or DiskANN-style on-disk graphs) to compress vectors and keep memory bounded, accepting a small recall hit they recover with rescoring."
+    a: "If the index fits in RAM and you need high recall at low latency, HNSW. At a billion vectors that means terabytes of RAM per replica for full-precision vectors (about 6 TB of float32 at 1536 dimensions, before graph edges), so most teams move to IVF-PQ (or DiskANN-style on-disk graphs) to compress vectors and keep memory bounded, accepting a small recall hit they recover with rescoring."
   - q: "How do I actually measure recall?"
     a: "Take a held-out set of a few thousand query vectors, compute exact nearest neighbours with a flat (brute-force) search, then run your ANN index and report recall@k — the fraction of true neighbours your index returns. Tune index parameters until recall@10 clears your floor (often 0.95+), then optimize latency."
   - q: "Does a smaller embedding dimension help at scale?"

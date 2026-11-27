@@ -3,6 +3,8 @@ title: "9 Best Claude Skills for Prompt Engineering"
 description: "Compare Claude skills for prompt rewrites, regression harnesses, output schemas, tool definitions, prompt caching, PII redaction, and CLAUDE.md memory."
 author: "Imtiaz Rayhan"
 date: "2026-10-08"
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting", "llm-app-dev"]
 audience: ["ai-engineers", "developers"]
@@ -68,11 +70,11 @@ When an agent picks the wrong tool or passes malformed arguments, [tool-definiti
 
 ## 5. prompt-cache-optimizer: order the prompt for the cache
 
-Providers cache the longest common prefix of a prompt, so one varying token near the top busts the cache for every call. [prompt-cache-optimizer](/skills/performance/prompt-cache-optimizer) first confirms how the target provider caches (automatic prefix caching or explicit breakpoints, minimum length, cache window), then reorders the prompt static first and dynamic last: system prompt, instructions, few-shot examples, tool definitions, and shared context at the top, per-request input at the end. It hunts for cache-busters in the preamble (a timestamp, a request ID, a per-user name, shuffled example order), sets breakpoints where supported, adds response or semantic caching at a gateway such as [Portkey](/tools/portkey) or [Helicone](/tools/helicone) with a TTL, and measures cached versus uncached tokens, cost, and time-to-first-token before and after. Tools are Read, Grep, Glob, Edit, Write, and Bash.
+Providers cache the longest common prefix of a prompt, so one varying token near the top busts the cache for every call. [prompt-cache-optimizer](/skills/performance/prompt-cache-optimizer) first confirms how the target provider caches (automatic prefix caching or explicit breakpoints, minimum length, cache window), then reorders the prompt static first and dynamic last: system prompt, instructions, few-shot examples, tool definitions, and shared context at the top, per-request input at the end. It hunts for cache-busters in the preamble (a timestamp, a request ID, a per-user name, shuffled example order), sets breakpoints where supported, adds response or semantic caching at a gateway such as [Portkey](/tools/portkey) or [LiteLLM](/tools/litellm) with a TTL, and measures cached versus uncached tokens, cost, and time-to-first-token before and after. Tools are Read, Grep, Glob, Edit, Write, and Bash.
 
 ## 6. prompt-pii-redactor: redact before the prompt leaves
 
-Every prompt sent to a hosted model leaves your environment, and every logged request may persist it. [prompt-pii-redactor](/skills/security/prompt-pii-redactor) puts a redaction layer at that boundary: it enumerates the categories that matter (direct identifiers, government and financial IDs, API keys), detects them with regex and validators plus NER for free-form PII ([LLM Guard](/tools/llm-guard) is one option), and chooses per category between irreversible masking and reversible tokenization, with the vault that restores originals kept server-side. It applies the same redaction to logs and traces, tests for misses and over-redaction, and states the residual risk. Tools are Read, Grep, Glob, Bash, Write, and Edit.
+Every prompt sent to a hosted model leaves your environment, and every logged request may persist it. [prompt-pii-redactor](/skills/security/prompt-pii-redactor) puts a redaction layer at that boundary: it enumerates the categories that matter (direct identifiers, government and financial IDs, API keys), detects them with regex and validators plus NER for free-form PII (it points at a PII-detection library for this; [LLM Guard](/tools/llm-guard), the one it used to name, is now archived), and chooses per category between irreversible masking and reversible tokenization, with the vault that restores originals kept server-side. It applies the same redaction to logs and traces, tests for misses and over-redaction, and states the residual risk. Tools are Read, Grep, Glob, Bash, Write, and Edit.
 
 ## 7. agent-memory-designer: write the prompt Claude Code reads every turn
 

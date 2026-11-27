@@ -2,7 +2,8 @@
 description: "Compare recognized named placeholders in a source-target translation CSV with Python, preserving token multiplicity and flagging blank targets. Supports exact {name}, {{name}}, and %(name)s/%(name)d forms; does not validate full ICU, HTML, positional placeholders, or translation meaning."
 title: "Check Translation Tokens"
 date: "2026-09-26"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["marketers", "designers"]
 tags: ["check-translation-tokens", "knowledge-work"]
@@ -11,7 +12,20 @@ related: ["guide:ai-localization-review-workflow", "glossary:machine-translation
 seoDescription: "Check named placeholder preservation and blank targets in paired translations, including repeated-token counts, with local Python."
 argument-hint: "<translations.csv>"
 allowed-tools: "Read, Write, Bash(python3 *)"
+summary: "Check Translation Tokens compares the named placeholders in each source string with those in its translation and flags any that were dropped, renamed, added or repeated a different number of times, plus translations left blank. It runs local Python on a three-column CSV, covers {name}, {{name}} and %(name)s/%(name)d only, and does not judge meaning."
 ---
+
+## What it checks and when to run it
+
+Run this on translated UI or email strings before they ship. A translator or a model that turns `{code}` into `{otp}`, or drops one of two `{name}` tokens, produces copy that reads fine and then breaks at runtime: a blank where the customer's name should be, or a literal `{otp}` on screen. This command finds those mismatches string by string. Token order may differ between languages; spelling and count may not.
+
+It expects one CSV with one row per string:
+
+```csv
+string_id,source,target
+```
+
+Export it from your translation spreadsheet or string catalog; the [localization review workflow](/guides/marketing/ai-localization-review-workflow) describes the source-target register this fits into. Two fixtures with literal expected output, one clean and one with mismatches, follow the checker code.
 
 Compare recognized named placeholders in one local source-target translation CSV. Supply one POSIX-quoted path and use Python 3.10 or later. Supported token forms are exactly `{name}`, `{{name}}`, `%(name)s` and `%(name)d`, with ASCII letter/underscore first and letters/digits/underscore thereafter. This is a lexical comparison, not complete localization validation.
 
@@ -154,10 +168,51 @@ Expected stdout JSON (exit 0):
 }
 ```
 
+### Fixture with mismatches
+
+L3 loses one of two `{name}` tokens, L4 renames `{code}` to `{otp}`, and L5 has no translation:
+
+```csv
+string_id,source,target
+L3,"{name}, thanks. See you soon, {name}.","Gracias, {name}. Hasta pronto."
+L4,Your code is {code},Su código es {otp}
+L5,Continue,
+```
+
+Expected stdout JSON (exit 2):
+
+```json
+{
+  "checked_strings": 3,
+  "placeholder_mismatches": 2,
+  "blank_target_ids": [
+    "L5"
+  ],
+  "findings": [
+    {
+      "string_id": "L3",
+      "missing": {
+        "{name}": 1
+      },
+      "extra": {}
+    },
+    {
+      "string_id": "L4",
+      "missing": {
+        "{code}": 1
+      },
+      "extra": {
+        "{otp}": 1
+      }
+    }
+  ]
+}
+```
+
 ## Edges and human review
 
-In the passing example below, reordered names and the supported mustache/percent forms match. A repeated `{name}` reduced to one has missing counter `{"{name}":1}`. `{code}` changed to `{otp}` reports both counters; an empty translation for Continue adds its ID to `blank_target_ids`. A duplicate L1 or malformed CSV width is invalid input, not a translation finding.
+In the passing fixture above, reordered names and the supported mustache and percent forms match. In the second fixture, the repeated `{name}` reduced to one has a missing count of 1, `{code}` changed to `{otp}` reports one missing and one extra token, and the empty translation for L5 appears in `blank_target_ids` without a token finding because its source has no placeholder. A duplicate string ID or malformed CSV width is invalid input (exit 1), not a translation finding.
 
-The independent unchanged-ICU fixture passes the narrow substring comparison; it demonstrates the limitation, not ICU validation. Human bilingual review must still verify meaning, negation, conditions, quantities, terminology and cultural context. The script neither translates nor repairs text.
+An ICU plural string copied unchanged into the target, not shown here, passes the narrow substring comparison; that demonstrates the limitation, not ICU validation. Human bilingual review must still verify meaning, negation, conditions, quantities, terminology and cultural context. The script neither translates nor repairs text.
 
 Use the [localization review workflow](/guides/marketing/ai-localization-review-workflow), read [machine translation post-editing](/glossary/machine-translation-post-editing) for the human review context, and send paired evidence plus actual output to [Localization Copy Reviewer](/agents/marketing/localization-copy-reviewer).

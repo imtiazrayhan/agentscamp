@@ -16,7 +16,7 @@ related:
 - guide:review-ocr-text-against-scans
 - glossary:optical-character-recognition
 - agent:ocr-fidelity-reviewer
-summary: ABBYY FineReader PDF applies AI-based OCR to scans and PDFs, with a Windows OCR Editor for checking recognized text against the source image.
+summary: Explains how the Windows OCR Editor's Text and Verification views flag low-confidence characters and show the enlarged source word, then outlines a first trial on a short scan. You keep the original image and raw OCR and log each repair in a correction ledger. Paid subscriptions with trial access; the Mac product is separate.
 name: ABBYY FineReader PDF
 title: ABBYY FineReader PDF
 url: https://pdf.abbyy.com

@@ -3,25 +3,27 @@ title: "How to Build a Voice Agent: The STT → LLM → TTS Pipeline"
 description: "How to build a real-time voice agent: the STT → LLM → TTS pipeline, the latency budget that makes or breaks it, and how to wire each stage."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra", "llm-app-dev"]
 audience: ["ai-engineers"]
 tags: ["voice", "speech-to-text", "text-to-speech", "real-time", "agents"]
 featured: false
-summary: "A voice agent is a real-time loop: speech-to-text transcribes the user, an LLM picks the reply, and text-to-speech speaks it back. What separates a usable agent from a frustrating one is the latency budget — every stage adds delay, and the round trip must feel conversational. This guide covers the pipeline, the providers per stage, turn-taking, and engineering the latency."
+summary: "A voice agent is a real-time loop: speech-to-text transcribes the user, an LLM picks the reply, and text-to-speech speaks it back. What separates a usable agent from a frustrating one is the latency budget — every stage adds delay, and the round trip must feel conversational. Stream every stage and get turn-taking right."
 keyTakeaways:
   - "A voice agent is a real-time STT → LLM → TTS loop: transcribe speech, reason over the text, speak the reply — usually wired together by an orchestration framework."
   - "Latency is the product. Each stage adds delay; the felt round trip must be conversational (roughly sub-second to first audio) or users talk over it and give up."
   - "Stream everything — partial transcripts, streamed LLM tokens, and streaming TTS — so audio starts before the full reply is generated; never let one stage fully finish before the next begins."
   - "Turn-taking is the hard part: voice-activity detection, endpointing, and barge-in (letting the user interrupt) matter as much as model quality."
-  - "Use specialized providers per stage — e.g. Deepgram for STT, an LLM via your gateway, ElevenLabs or Deepgram Aura for TTS — and a framework like Pipecat to orchestrate the real-time pipeline."
+  - "Use specialized providers per stage — e.g. Deepgram for STT, an LLM via your gateway, ElevenLabs or Deepgram Aura-2 for TTS — and a framework like Pipecat to orchestrate the real-time pipeline."
 howtoSteps:
   - name: "Capture and transcribe the user (STT)"
     text: "Stream microphone audio to a streaming speech-to-text service (e.g. Deepgram). Use interim/partial transcripts so you can react early, and voice-activity detection plus endpointing to decide when the user has actually finished speaking — getting endpointing right is half the battle."
   - name: "Decide the reply (LLM)"
     text: "Send the finalized transcript to an LLM and stream the tokens back. Keep the prompt and context tight — every input token is latency here — and route the call through your gateway so you can right-size the model and add fallback. This is the text middle of the loop."
   - name: "Speak the reply (TTS)"
-    text: "Feed the streaming LLM tokens into a streaming text-to-speech service (e.g. ElevenLabs or Deepgram Aura) so audio begins playing before the full reply is generated. Time-to-first-byte of the TTS dominates perceived responsiveness, so prefer low-latency voices/models."
+    text: "Feed the streaming LLM tokens into a streaming text-to-speech service (e.g. ElevenLabs or Deepgram Aura-2) so audio begins playing before the full reply is generated. Time-to-first-byte of the TTS dominates perceived responsiveness, so prefer low-latency voices/models."
   - name: "Orchestrate the pipeline"
     text: "Use a real-time framework like Pipecat to manage the pipeline, the audio transport (WebRTC/WebSocket), and the streaming hand-offs between STT, LLM, and TTS. Building this plumbing by hand is where most projects stall; a framework gives you the composable loop and the integrations."
   - name: "Handle turn-taking and interruptions"
@@ -36,7 +38,7 @@ faq:
   - q: "What latency do I need for a natural voice agent?"
     a: "As a rule of thumb, aim for the agent to start replying within roughly a second of the user finishing. Natural conversation has gaps of only a couple hundred milliseconds, and once the silence stretches much past a second the exchange starts to feel broken — people repeat themselves, interrupt, or give up. That budget has to cover endpointing (deciding the user stopped), the LLM's time-to-first-token, and the TTS's time-to-first-byte combined. The main levers are streaming every stage (so audio starts before the reply is complete), using low-latency STT/TTS models, keeping the LLM prompt small and the model right-sized, and minimizing network hops between services."
   - q: "Should I use one provider or separate STT/LLM/TTS providers?"
-    a: "Both work. Single-vendor voice-agent APIs (Deepgram's Voice Agent API, ElevenLabs' conversational agents, and others) bundle the stages for the simplest setup and tightly-tuned latency. Composing best-of-breed providers per stage — for example a specialized STT, your own choice of LLM via a gateway, and a premium TTS voice — gives you more control over quality, cost, and model choice at the price of orchestrating the pipeline yourself (which is exactly what a framework like Pipecat is for). Start bundled to validate the experience, then unbundle the stage that's holding you back."
+    a: "Both work. Single-vendor voice-agent APIs (Deepgram's Voice Agent API, ElevenLabs' ElevenAgents, and others) bundle the stages for the simplest setup and tightly-tuned latency. Composing best-of-breed providers per stage — for example a specialized STT, your own choice of LLM via a gateway, and a premium TTS voice — gives you more control over quality, cost, and model choice at the price of orchestrating the pipeline yourself (which is exactly what a framework like Pipecat is for). Start bundled to validate the experience, then unbundle the stage that's holding you back."
   - q: "Do I need a framework like Pipecat?"
     a: "Not strictly, but it saves enormous effort. The hard parts of a voice agent — real-time audio transport, streaming hand-offs between STT/LLM/TTS, turn-taking, and barge-in — are generic plumbing you'd otherwise build and debug yourself. An open-source framework like Pipecat provides that composable real-time pipeline plus integrations with dozens of STT/LLM/TTS providers, so you focus on the agent's behavior instead of the streaming infrastructure. For a quick prototype against a single bundled provider you can skip it; for anything custom or production-grade it's usually worth it."
 related: ["agent:voice-agent-engineer", "tool:pipecat", "tool:deepgram", "tool:elevenlabs", "guide:calling-any-model-gateways", "guide:llm-cost-latency-engineering", "guide:self-host-vs-api-llm"]
@@ -50,9 +52,11 @@ Three stages, in a loop, ideally all streaming:
 
 - **Speech-to-text (STT)** — transcribe the incoming audio, streaming partial results. A specialized provider like [Deepgram](/tools/deepgram) gives you low-latency streaming transcription with voice-activity detection and endpointing.
 - **LLM** — take the transcript (plus history) and generate the reply, streamed token by token. This is an ordinary LLM call — route it through your gateway so you can right-size the model and add fallback (see [Calling Any Model](/guides/concepts/calling-any-model-gateways)).
-- **Text-to-speech (TTS)** — turn the reply into audio as the tokens arrive, so playback starts before the reply is finished. [ElevenLabs](/tools/elevenlabs) and Deepgram's Aura are common choices.
+- **Text-to-speech (TTS)** — turn the reply into audio as the tokens arrive, so playback starts before the reply is finished. [ElevenLabs](/tools/elevenlabs) and Deepgram's Aura-2 are common choices.
 
 The non-negotiable principle: **stream everything**. If you wait for STT to fully finish before calling the LLM, then wait for the whole LLM reply before starting TTS, the delays stack into something unusable. Overlap the stages.
+
+The alternative to this cascade is a **speech-to-speech (realtime) model** that takes audio in and returns audio out in one hop, such as OpenAI Realtime, Gemini Live, or AWS Nova Sonic. You give up per-stage control (your own STT, a text transcript you can inspect before the reply, a specific TTS voice) in exchange for fewer hops. The cascade stays the easier one to debug and to swap parts in, which is why it is the pattern taught here; Pipecat runs both.
 
 ## Latency is the product
 
@@ -66,12 +70,39 @@ The levers, in rough order of impact: stream every stage; use low-latency STT/TT
 A natural conversation isn't just fast — it has rhythm. Three mechanics matter as much as model quality:
 
 - **Voice-activity detection (VAD)** — knowing when the user is speaking versus silent.
-- **Endpointing** — deciding the user has actually *finished*, not just paused. Too eager and you cut them off; too patient and the agent feels slow.
+- **Endpointing** — deciding the user has actually *finished*, not just paused. Too eager and you cut them off; too patient and the agent feels slow. A fixed silence timeout is the crude version. Model-based turn detection is the better one: Deepgram's Flux STT builds end-of-turn detection into the transcription model (and emits an early `EagerEndOfTurn` event so you can start the LLM sooner), and Pipecat ships a built-in Smart Turn model that sits on top of VAD.
 - **Barge-in** — when the user starts talking while the agent is speaking, immediately stop the TTS and the in-flight LLM call. Without barge-in, the agent steamrolls the user and the illusion breaks.
 
 ## Orchestrate it with a framework
 
-Building real-time audio transport, streaming hand-offs, and turn-taking by hand is where most voice projects stall. An open-source framework like [Pipecat](/tools/pipecat) gives you the composable STT → LLM → TTS pipeline, WebRTC/WebSocket transports, and integrations with dozens of providers — so you build the agent's behavior, not the plumbing. You can prototype against a single bundled voice-agent API first, then unbundle the stage that's limiting you. The [best voice agent platforms](/guides/comparisons/best-voice-agent-platforms-2026) roundup compares those bundled options, from [Vapi](/tools/vapi) and [Retell AI](/tools/retell-ai) to [Bland AI](/tools/bland-ai).
+Building real-time audio transport, streaming hand-offs, and turn-taking by hand is where most voice projects stall. An open-source framework like [Pipecat](/tools/pipecat) gives you the composable STT → LLM → TTS pipeline, WebRTC/WebSocket transports, and integrations with dozens of providers — so you build the agent's behavior, not the plumbing. You can prototype against a single bundled voice-agent API first, then unbundle the stage that's limiting you.
+
+The quickest way to hear the loop working is Pipecat's own quickstart, which scaffolds a browser-based bot (Python 3.11+ and `uv` required; it uses Deepgram for STT, OpenAI for the LLM and Cartesia for TTS, so you need those three API keys):
+
+```bash
+uv tool install "pipecat-ai[cli]"
+pipecat init quickstart
+cd pipecat-quickstart
+cp .env.example .env   # add DEEPGRAM_API_KEY, OPENAI_API_KEY, CARTESIA_API_KEY
+uv sync
+uv run bot.py          # then open http://localhost:7860/client
+```
+
+The generated `bot.py` is the whole architecture in seven lines. Each processor hands frames to the next, and swapping a provider means changing one service object, not the pipeline:
+
+```python
+pipeline = Pipeline([
+    transport.input(),     # Receive audio from browser
+    stt,                   # Speech-to-text (Deepgram)
+    user_aggregator,       # Add user message to context
+    llm,                   # Language model (OpenAI)
+    tts,                   # Text-to-speech (Cartesia)
+    transport.output(),    # Send audio back to browser
+    assistant_aggregator,  # Add bot response to context
+])
+```
+
+Voice-activity detection is attached to the user aggregator (`SileroVADAnalyzer()` in the quickstart), which is where the turn-taking settings above get tuned. The [best voice agent platforms](/guides/comparisons/best-voice-agent-platforms-2026) roundup compares those bundled options, from [Vapi](/tools/vapi) and [Retell AI](/tools/retell-ai) to [Bland AI](/tools/bland-ai).
 
 ## Putting it together
 

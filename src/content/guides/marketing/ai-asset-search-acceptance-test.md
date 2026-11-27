@@ -8,7 +8,7 @@ audience: ["marketers", "designers"]
 tags: ["asset-catalog", "ai-asset-search-acceptance-test"]
 featured: false
 related: ["guide:ai-digital-asset-metadata", "tool:bynder", "skill:asset-metadata-review-ledger", "glossary:digital-asset-management"]
-summary: "Evaluate asset discovery with a small set of known examples, expected exclusions and reviewed results before relying on natural-language catalog search."
+summary: "Write each case before searching, with the query, filters, expected asset IDs, exclusions and an acceptance rule. Run it in the named workspace and role, recording result order, misses and the file selected. Sort failures into metadata, filter, permission or ranking causes, then rerun the same cases after approved tag changes. Results cover that task only."
 title: "Test AI Asset Search with Known Asset Examples"
 depth: "standard"
 sources: [{"title": "Bynder Digital Asset Management", "url": "https://www.bynder.com/en/products/digital-asset-management/", "publisher": "Bynder"}]

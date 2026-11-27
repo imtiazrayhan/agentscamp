@@ -1,19 +1,26 @@
 ---
 description: "Check entity-match-ledger.json for source-linked evidence values, duplicate pairs, reviewer presence and contradictory match groups without merging records."
 date: "2026-09-19"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["analysts", "developers"]
 tags: ["entity-matching", "check-entity-match-ledger"]
 featured: false
 related: ["guide:ai-duplicate-record-review", "guide:link-records-across-datasets", "skill:entity-match-candidate-ledger"]
-summary: "Check entity-match-ledger.json for source-linked evidence values, duplicate pairs, reviewer presence and contradictory match groups without merging records."
+summary: "Check Entity Match Ledger audits a list of reviewed record pairs before any merge. It confirms each pair's quoted field values match the records, no pair is listed twice, every match or different decision names a reviewer and evidence, and no group of matches contains a pair also marked different. It never merges records or decides identity."
 title: "Check Entity Match Ledger"
 model: "inherit"
 allowed-tools: "Bash(python3:*)"
 argument-hint: "No arguments; reads the fixed JSON basename in a confirmed working directory."
 seoDescription: "Check entity-match-ledger.json for source-linked evidence values, duplicate pairs, reviewer presence and contradictory match groups without merging records."
 ---
+
+## What it checks and when to run it
+
+Run this during deduplication or cross-source record linkage, after reviewers have decided which candidate pairs are the same entity and before anything is merged. Review ledgers go wrong quietly: evidence copied from the wrong record, the same pair decided twice, or A matched to B and B to C while A and C are marked different. This command surfaces those inconsistencies so the data owner can adjudicate them. Unresolved pairs are allowed and stay unresolved.
+
+It reads `entity-match-ledger.json` from the confirmed working directory, limited to 500 records and 500 pairs. Its top-level keys are `version`, `records` and `pairs`; the full schema and a complete fixture follow. [Entity Match Candidate Ledger](/skills/analytics/entity-match-candidate-ledger) builds a ledger in this shape, and the [duplicate-record workflow](/guides/analytics/ai-duplicate-record-review) and [cross-source linkage workflow](/guides/analytics/link-records-across-datasets) describe the review it belongs to.
 
 Check only `entity-match-ledger.json` in the confirmed working directory. Require the named data owner, source snapshots and entity/grain/matching-rule revisions as companion context. This checks ledger consistency; it never merges records or establishes identity.
 
@@ -37,7 +44,16 @@ Unresolved pairs may have an empty reviewer and empty evidence. Supplied evidenc
 ## Fictional input and known result
 
 ```json
-{"version":1,"records":[{"id":"A:A17","source":"A-v3","fields":{"name":"North Hall","address":"10 Oak Road"}},{"id":"B:B04","source":"B-v2","fields":{"name":"N Hall","address":"10 Oak Road"}}],"pairs":[{"left":"A:A17","right":"B:B04","decision":"unresolved","reviewer":"","evidence":[{"field":"address","leftValue":"10 Oak Road","rightValue":"10 Oak Road"}]}]}
+{
+  "version": 1,
+  "records": [
+    {"id": "A:A17", "source": "A-v3", "fields": {"name": "North Hall", "address": "10 Oak Road"}},
+    {"id": "B:B04", "source": "B-v2", "fields": {"name": "N Hall", "address": "10 Oak Road"}}
+  ],
+  "pairs": [
+    {"left": "A:A17", "right": "B:B04", "decision": "unresolved", "reviewer": "", "evidence": [{"field": "address", "leftValue": "10 Oak Road", "rightValue": "10 Oak Road"}]}
+  ]
+}
 ```
 
 Expected exit 0, stdout `{"ok":true,"issues":[]}`. This explicitly leaves the pair unresolved. If `leftValue` becomes `12 Oak Road`, expected exit 1 and stdout `{"ok":false,"issues":[{"code":"evidence_mismatch","at":"pairs/0"}]}`. Correct evidence through owner review, not a source rewrite.
@@ -191,7 +207,7 @@ Stdout is one compact JSON object and stderr is empty for handled outcomes:
 | 1 | Detected contract findings | `{"ok":false,"issues":[{"code":"…","at":"…"}]}` |
 | 2 | Missing, unsafe, malformed or schema-invalid input | `{"ok":false,"issues":[{"code":"input","at":"$"}]}` |
 
-Issue locations use the literal fields/index strings shown below, not a full JSON Pointer. Multiple findings can be reported. Return the exit and exact JSON inline with the input revision supplied by the user, any scope limits, and the named owner question. Do not rewrite the input, reinterpret a nonzero exit as approval, or autonomously perform the downstream action.
+Issue locations use the literal field and index strings listed in the next paragraph (for example `pairs/0`, where the number is a zero-based array index), not a full JSON Pointer. Multiple findings can be reported. Return the exit and exact JSON inline with the input revision supplied by the user, any scope limits, and the named owner question. Do not rewrite the input, reinterpret a nonzero exit as approval, or autonomously perform the downstream action.
 
 Entity findings are `duplicate_record` at `records/i`; `self_or_duplicate_pair`, `unknown_record`, `evidence_mismatch`, `unreviewed_decision` or `contradictory_match_group` at `pairs/i`. Reverse-order pairs count as duplicates. The program compares supplied original values and groups match relations transitively. A `different` pair inside a match-connected group is contradictory; preserve all decisions for owner adjudication. Unknown-record pairs are flagged and skipped for field/group processing.
 

@@ -1,9 +1,10 @@
 ---
 name: "Google Antigravity"
 title: "Google Antigravity"
-description: "Google's agentic development platform — an agent-first IDE and Manager surface where multiple agents work across editor, terminal, and browser, on Gemini 3."
+description: "Google's agentic development platform: a desktop app, IDE, IDE extensions, the agy CLI and a Python SDK for running Gemini-powered agents in parallel."
 date: 2026-06-11
-updated: "2026-09-11"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 url: "https://antigravity.google"
 pricing: "freemium"
 category: "ide"
@@ -19,44 +20,69 @@ sameAs:
   - "https://en.wikipedia.org/wiki/Google_Antigravity"
   - "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/"
 related: ["tool:gemini-cli", "tool:cursor", "tool:windsurf", "tool:claude-code", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026"]
-summary: "Google Antigravity is Google's agentic development platform: an agent-first IDE plus a Manager surface that oversees multiple agents across editor, terminal, and browser. It launched with Gemini 3 in November 2025; I/O 2026 added a desktop app, CLI, and SDK. Its free Individual plan is generally available; it replaced Gemini CLI's free tier in June 2026."
+summary: "Google Antigravity is Google's agentic development platform: a desktop app for managing parallel agents, an agent-first IDE, IDE extensions, the agy terminal CLI and a Python SDK. The $0 individual plan is generally available with a weekly quota and Gemini 4 Hydrogen; Google AI Pro and Ultra add Gemini 4 Neon and Carbon, Orchestrator and higher limits."
 faq:
   - q: "Is Google Antigravity free?"
-    a: "Yes, for individuals. As of September 2026 the $0 Individual plan is labeled Generally Available, with basic weekly rate limits; Google AI Pro and Ultra subscriptions add more generous limits plus a flexible AI credit pool, and organizations pay consumption-based API pricing through Google Cloud. Check antigravity.google/pricing for current terms."
-  - q: "Is Antigravity replacing Gemini CLI?"
-    a: "Yes. Google announced at I/O 2026 (May 19, 2026) that it was unifying its developer-agent efforts into Antigravity, and as of June 18, 2026 Gemini CLI stopped serving requests for free, Google AI Pro, and Ultra users (enterprise Gemini Code Assist licenses and paid API keys keep access). The Antigravity CLI is the designated migration path."
+    a: "Yes, for individuals. As of November 2026 the $0 plan is labeled Generally Available and covers the app, CLI, IDE extensions and Python SDK, with parallel background agents, subagents, browser use and scheduled tasks on a baseline quota refreshed weekly. Google AI Pro and Ultra raise the quota and refresh it every 5 hours. Gemini Enterprise seats for organizations start at $30 per seat per month."
+  - q: "Which models does Antigravity include?"
+    a: "As of November 2026 the free plan includes Gemini 4 Hydrogen, with Gemini 3.8 Flash, Claude Sonnet 4.6, Claude Opus 4.6 and GPT-OSS-120b listed for removal on November 30, 2026. Google AI Pro adds Gemini 4 Neon, Carbon and Argon, Orchestrator, and Claude Sonnet 5.5 and Opus 5.5 on non-trial subscriptions. Ultra has the same top models with the highest quotas."
+  - q: "How do I install the Antigravity CLI?"
+    a: "On macOS or Linux run curl -fsSL https://antigravity.google/cli/install.sh | bash, which puts the agy binary in ~/.local/bin. On Windows the docs give curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd. Check it with agy --version, then run agy in a project directory to open the terminal UI."
   - q: "Is Antigravity open source?"
-    a: "No. Unlike Gemini CLI (Apache-2.0), Antigravity is proprietary — free for individuals, but the IDE and CLI ship without source. Only the Python SDK is open (Apache-2.0). The closed-source CLI has drawn criticism from former Gemini CLI contributors."
+    a: "Only partly. The Python SDK repository, google-antigravity/antigravity-sdk-python, is Apache-2.0. The antigravity-cli repository on GitHub carries no licence that GitHub detects, and the app and IDE are proprietary downloads. That is a change from Gemini CLI, which was Apache-2.0."
 ---
 
-Google Antigravity is Google's **agentic development platform**, launched alongside Gemini 3 in November 2025. It pairs an agent-first IDE with a **Manager surface** — a mission-control view where you spawn, orchestrate, and observe multiple agents working asynchronously across different workspaces. Agents don't just edit code: they act **across the editor, the terminal, and a browser**, and report back with **Artifacts** — task lists, implementation plans, screenshots, and browser recordings you can verify instead of reading raw logs.
+Google Antigravity is Google's **agentic development platform**, launched alongside Gemini 3 in November 2025. It began as an agent-first IDE with a manager view for supervising several agents at once, and has since become a family of five products that share one agent harness: the **Antigravity App**, the **Antigravity IDE**, **IDE Extensions**, the **Antigravity CLI** (`agy`) and a Python **SDK**.
 
-At I/O 2026 (May 19, 2026), Google expanded it from an IDE into a product family — **Antigravity 2.0** added a standalone desktop app, the **Antigravity CLI** for terminal-first work, and an SDK for custom agent behaviors. It is also the designated successor to [Gemini CLI](/tools/gemini-cli): as of June 18, 2026, Gemini CLI's free, Pro, and Ultra service stopped, and Google points those users to Antigravity CLI.
+Agents act across the editor, the terminal and a browser, and report back with **Artifacts** such as plans, task lists, screenshots and browser recordings that you can check without reading raw logs. Antigravity is also where Google sends former [Gemini CLI](/tools/gemini-cli) users: Google unified its developer agents into Antigravity at I/O 2026 and stopped serving Gemini CLI for free, Pro and Ultra accounts in June 2026, and the docs include a Gemini CLI migration guide.
 
 ## Highlights
 
-- **Manager surface** — run several agents in parallel on different tasks and supervise them from one board, rather than babysitting a single chat.
-- **Browser-using agents** — agents can drive a browser to verify the UI they just built, attaching screenshots and recordings as evidence.
-- **Artifacts over logs** — plans, task lists, and recordings designed for human verification of agent work.
-- **Gemini models, plus others** — launched with Gemini 3 Pro; as of September 2026 the agent models include Gemini 3.8, 3.7, and 3.6 Flash, Gemini 3.1 Pro, Claude Sonnet and Opus 4.6, and gpt-oss-120b, and the agent harness is co-optimized with newer Gemini releases.
-- **A whole product family** — IDE, desktop app, terminal CLI sharing the same Core Agent Engine, and a Python SDK (Apache-2.0).
+- **Antigravity App.** Google calls it a command center for managing multiple local agents in parallel: group conversations into Projects, work across several workspaces, and automate routine tasks with scheduled messages.
+- **Antigravity IDE.** The full agentic IDE, with the agent manager, artifacts and codebase understanding.
+- **Antigravity CLI.** A terminal-first surface for running coding agents, executing shell commands and managing background subagents.
+- **Browser use.** Agents can drive a browser to verify what they built; it is included on the free plan.
+- **Orchestrator.** Pairs a top-tier planner model with a faster executor model in the same conversation. Pro and Ultra let you pick both models.
+- **Thinking levels.** Low, Medium and High on most adjustable Gemini models, with an Extra level on Gemini 4 Neon and Gemini 4 Hydrogen (`--effort xhigh` in the CLI).
+- **Python SDK.** Apache-2.0, for prototyping custom agents and running evaluations on the Antigravity harness.
 
 ## In an AI-assisted workflow
 
-The IDE and desktop app install from the site; the CLI is one line:
+The app and IDE install from antigravity.google; the CLI is one line:
 
 ```bash
-# Antigravity CLI (terminal surface)
+# macOS / Linux: installs agy to ~/.local/bin
 curl -fsSL https://antigravity.google/cli/install.sh | bash
+agy --version
 
-# IDE / desktop app: download from https://antigravity.google/download
+mkdir agy-demo && cd agy-demo
+agy                      # interactive TUI in the current directory
 ```
 
-Coming from Gemini CLI, the CLI keeps the concepts you've built around — agent skills, hooks, subagents, and extensions (as plugins) — and can export terminal sessions to the Antigravity 2.0 desktop app, with settings synced between the two.
+Coming from Gemini CLI, the migration guide converts extensions into Antigravity plugins, turns legacy custom commands into skills, and reformats MCP configuration.
 
 > [!TIP]
-> Antigravity's distinctive bet is *verification*: agents produce screenshots and browser recordings of what they did. Lean into it — ask for browser-verified evidence on UI tasks instead of trusting the diff alone.
+> Antigravity's distinctive bet is verification. On UI work, ask the agent for a browser recording or screenshot of the result and review that Artifact, not just the diff.
+
+## Pricing
+
+As of November 2026, antigravity.google/pricing lists four routes.
+
+| Plan | Cost | Quota and models |
+| --- | --- | --- |
+| Individual | $0/month, generally available | Baseline agent quota refreshed weekly; Gemini 4 Hydrogen |
+| Google AI Pro | Your Google AI Pro subscription | Quota refreshed every 5 hours plus higher weekly limits; Gemini 4 Neon, Carbon and Argon, Orchestrator, `/boost`, Remote Control, optional AI credit overages |
+| Google AI Ultra | Your Google AI Ultra subscription | Highest quotas; full access to third-party partner models |
+| Business (Google Cloud) | Gemini Enterprise Standard/Plus from $30 per seat/month, or pay-as-you-go with a $0 seat fee | Consumption-based API pricing, spend caps, central admin controls |
+
+The pricing page does not quote dollar figures for Pro and Ultra; those are Google AI subscriptions, priced on Google's own subscription pages. Pro and Ultra require a personal Google Account, so a Google Workspace login has to use a personal account, a Google Cloud project, or Gemini Enterprise.
 
 ## Good to know
 
-Antigravity runs on macOS, Windows, and Linux and is **proprietary** — free for individuals on a generally available plan, with paid Google AI subscriptions adding higher usage limits. The closed source is a real change from Gemini CLI's Apache-2.0 openness and has drawn criticism from contributors; weigh it if open tooling matters to your team ([OpenCode](/tools/opencode) and [Codex CLI](/tools/codex-cli) are the open terminal-agent alternatives). Expect pricing, limits, and the model lineup to keep shifting.
+The model list moves fast. As of November 2026 Google's own tables mark Gemini 3.8 Flash, Gemini 4 Argon, Claude Sonnet 4.6, Claude Opus 4.6 and GPT-OSS-120b for removal on November 30, 2026, which leaves the free plan with Gemini 4 Hydrogen. Check the model table before you build a workflow around a specific model.
+
+Quotas are not published as numbers. Google says rate limits vary by plan, trial status and task complexity, and that free trials may get lower quotas and fewer models.
+
+Antigravity is mostly closed source. Only the Python SDK has an open licence, which matters if you moved from the Apache-2.0 Gemini CLI. It runs on macOS, Windows and Linux.
+
+Alternatives: [Cursor](/tools/cursor) is the comparable multi-agent editor, now built around Grok and Composer models; [Claude Code](/tools/claude-code) is a terminal-first agent on Anthropic's models; [OpenCode](/tools/opencode) and [Codex CLI](/tools/codex-cli) are the open-source terminal agents to consider if licence matters to your team.

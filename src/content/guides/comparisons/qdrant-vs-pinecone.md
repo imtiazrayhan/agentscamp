@@ -3,7 +3,8 @@ title: "Qdrant vs Pinecone: Which Vector Database? (2026)"
 description: "Qdrant vs Pinecone compared — open-source control vs fully managed serverless, filtering and hybrid search, cost shape, and which fits your RAG stack."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
-updated: 2026-11-25
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["rag-retrieval"]
 audience: ["developers"]
@@ -47,7 +48,7 @@ Qdrant vs Pinecone is the open-vs-managed question wearing a vector-database cos
 | Model | Open source (Apache-2.0) + optional cloud | Proprietary, managed serverless only |
 | Ops burden | Yours (or their cloud) | ~None |
 | Filtering | Filterable HNSW, strong at high selectivity | Good metadata filtering |
-| Hybrid search | Built-in (dense + sparse) | Supported |
+| Hybrid search | Built-in (dense + sparse, fused in one query) | Full-text, dense and sparse fields in one index; one scoring type per search, fused client-side |
 | Memory control | Quantization knobs, on-disk options | Abstracted away |
 | Cost shape | Infra-priced (or cloud tiers) | Usage-metered |
 | Lock-in | Low | Real |
@@ -58,7 +59,7 @@ In real RAG apps, pure nearest-neighbor search is rare — almost every query fi
 
 - **Qdrant's filterable HNSW** adds extra graph edges for payload-indexed fields so high-selectivity filters (where only 1–5% of vectors match) do not collapse recall or force slow brute-force fallbacks. For multi-tenant SaaS, Qdrant lets you pack thousands of tenants into one collection with a tenant payload index instead of maintaining one index per customer.
 - **Pinecone namespaces** give clean logical isolation per tenant with zero index tuning, which keeps small and medium SaaS deployments simple. Metadata filtering works reliably out of the box, though you have fewer low-level knobs to tune graph traversal when a single namespace grows very large with highly selective filters.
-- **Hybrid retrieval (dense + sparse):** Qdrant supports named vectors (dense embeddings plus sparse BM25/SPLADE vectors) with built-in Reciprocal Rank Fusion (RRF) inside a single collection. Pinecone supports sparse-dense vectors as well, making both capable of catching exact product SKUs, error codes, and proper nouns that pure semantic search misses.
+- **Hybrid retrieval (dense + sparse):** Qdrant supports named vectors (dense embeddings plus sparse BM25/SPLADE vectors) with built-in Reciprocal Rank Fusion (RRF) inside a single collection. Pinecone's Documents API puts full-text (BM25), dense-vector and sparse-vector fields in one index, but a document search ranks by one scoring type per request: you either filter and then rank in one call, or run separate searches and merge them client-side with RRF (the combined sparse-dense query belongs to the legacy vectors API). Both can catch exact product SKUs, error codes, and proper nouns that pure semantic search misses.
 
 ## Memory, quantization, and cost shape
 

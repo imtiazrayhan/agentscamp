@@ -1,18 +1,25 @@
 ---
 description: "Check survey-paths.json for complete single-choice routes, cycles, reachable nodes and expected test paths without editing the file or contacting a form service."
 date: "2026-08-23"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["founders", "analysts", "developers"]
 tags: ["survey-routing", "check-survey-paths"]
 featured: false
 related: ["guide:test-ai-survey-logic", "skill:survey-path-test-builder", "guide:ai-survey-branching-plan"]
-summary: "Check survey-paths.json for complete single-choice routes, cycles, reachable nodes and expected test paths without editing the file or contacting a form service."
+summary: "Check Survey Paths tests a branching survey on paper before it is built. Given the questions, choices, endings and routing rules as JSON, it confirms every choice leads somewhere, nothing loops or is unreachable, and each test case's answers produce the path the owner expects. It runs local Python and never contacts a form service."
 title: "Check Survey Paths"
 model: "inherit"
 allowed-tools: "Bash(python3:*)"
 argument-hint: "No arguments; reads the fixed JSON basename in a confirmed working directory."
 ---
+
+## What it checks and when to run it
+
+Run this after planning a survey's skip logic and before building it in a form tool. Branching surveys break in predictable ways: a choice with no destination, a question nobody can reach, a route that loops back on itself, or a respondent type that lands on the wrong ending. Describe the routing once as data, add the paths you expect for a few sample respondents, and this command reports every place the rules and the expectations disagree, including routes that no test case exercises.
+
+It reads `survey-paths.json` from the confirmed working directory. Its top-level keys are `version`, `start`, `questions`, `endings`, `transitions` and `cases`; the full schema and a complete fixture follow. [Survey Path Test Builder](/skills/product/survey-path-test-builder) returns a packet in this shape from approved question IDs and routing rules, and the [survey test workflow](/guides/workflow/test-ai-survey-logic) covers the preview in the real form tool that still has to happen afterwards.
 
 Check only `survey-paths.json` in the confirmed working directory. Require a named survey owner and the approved specification revision as companion context. The file models finite acyclic single-choice navigation; it does not emulate a form platform.
 
@@ -39,7 +46,26 @@ Require the supplied approved expectations; do not replace them with paths obser
 Save this owner-approved workshop-v3 packet as the fixed basename:
 
 ```json
-{"version":1,"start":"Q1","questions":[{"id":"Q1","choices":["yes","no"]},{"id":"Q2","choices":["morning","evening"]}],"endings":["E-no","E-done"],"transitions":[{"question":"Q1","choice":"yes","to":"Q2"},{"question":"Q1","choice":"no","to":"E-no"},{"question":"Q2","choice":"morning","to":"E-done"},{"question":"Q2","choice":"evening","to":"E-done"}],"cases":[{"id":"C1","answers":{"Q1":"yes","Q2":"morning"},"expectedPath":["Q1","Q2","E-done"]},{"id":"C2","answers":{"Q1":"yes","Q2":"evening"},"expectedPath":["Q1","Q2","E-done"]},{"id":"C3","answers":{"Q1":"no"},"expectedPath":["Q1","E-no"]}]}
+{
+  "version": 1,
+  "start": "Q1",
+  "questions": [
+    {"id": "Q1", "choices": ["yes", "no"]},
+    {"id": "Q2", "choices": ["morning", "evening"]}
+  ],
+  "endings": ["E-no", "E-done"],
+  "transitions": [
+    {"question": "Q1", "choice": "yes", "to": "Q2"},
+    {"question": "Q1", "choice": "no", "to": "E-no"},
+    {"question": "Q2", "choice": "morning", "to": "E-done"},
+    {"question": "Q2", "choice": "evening", "to": "E-done"}
+  ],
+  "cases": [
+    {"id": "C1", "answers": {"Q1": "yes", "Q2": "morning"}, "expectedPath": ["Q1", "Q2", "E-done"]},
+    {"id": "C2", "answers": {"Q1": "yes", "Q2": "evening"}, "expectedPath": ["Q1", "Q2", "E-done"]},
+    {"id": "C3", "answers": {"Q1": "no"}, "expectedPath": ["Q1", "E-no"]}
+  ]
+}
 ```
 
 Expected exit 0, stdout `{"ok":true,"issues":[]}`. If C3’s expected ending is changed to `E-done`, expected exit 1 and stdout `{"ok":false,"issues":[{"code":"case_path_mismatch","at":"cases/2"}]}`. Preserve the approved expectation while investigating the mismatch.
@@ -231,7 +257,7 @@ Stdout is one compact JSON object and stderr is empty for handled outcomes:
 | 1 | Detected contract findings | `{"ok":false,"issues":[{"code":"…","at":"…"}]}` |
 | 2 | Missing, unsafe, malformed or schema-invalid input | `{"ok":false,"issues":[{"code":"input","at":"$"}]}` |
 
-Issue locations use the literal fields/index strings shown below, not a full JSON Pointer. Multiple findings can be reported. Return the exit and exact JSON inline with the input revision supplied by the user, any scope limits, and the named owner question. Do not rewrite the input, reinterpret a nonzero exit as approval, or autonomously perform the downstream action.
+Issue locations use the literal field and index strings listed in the next paragraph (for example `cases/2`, where the number is a zero-based array index), not a full JSON Pointer. Multiple findings can be reported. Return the exit and exact JSON inline with the input revision supplied by the user, any scope limits, and the named owner question. Do not rewrite the input, reinterpret a nonzero exit as approval, or autonomously perform the downstream action.
 
 Survey findings are `duplicate_question_or_choice` at `questions/i`; `duplicate_ending` at `endings/i`; `unknown_start` at `start`; `duplicate_transition`, `unknown_choice` or `unknown_target` at `transitions/i`; `missing_transition` or `cycle` at `transitions`; `unreachable_node` at `questions`; `duplicate_case`, `case_cannot_finish` or `case_path_mismatch` at `cases/i`; and `untested_transition` at `cases`. The program checks cycles across all components, reachability from the start, exact case paths and transition coverage. It does not support multiselect, scoring, randomization, answer expressions, platform conditions or unanswered steps unless the owner represents an explicit choice.
 

@@ -5,6 +5,8 @@ seoTitle: "Best AI Writing Tools in 2026: Compared by Job"
 seoDescription: "Jasper, Copy.ai, Claude, ChatGPT, Gemini, and Microsoft 365 Copilot compared for long-form, ad copy, email, and docs-native writing, with a verdict per job."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -66,7 +68,7 @@ The best AI writing tool in 2026 is whichever one fits the job in front of you, 
 | Tool | Kind | Pricing model | Voice control | Best for |
 | --- | --- | --- | --- | --- |
 | [Claude](/tools/claude) | Assistant | Freemium | Projects plus uploadable skills | Long-form, brand voice, finished documents |
-| [ChatGPT](/tools/chatgpt) | Assistant | Freemium | Projects, custom GPTs, memory | Volume and variety in short copy |
+| [ChatGPT](/tools/chatgpt) | Assistant | Freemium | Projects, plugins (custom GPTs retire Dec 11, 2026), memory | Volume and variety in short copy |
 | [Gemini](/tools/gemini) | Assistant | Freemium | Gems | Drafting inside Google Docs |
 | [Microsoft 365 Copilot](/tools/microsoft-copilot) | Assistant | Paid per user | Prompts grounded in tenant data | Drafting inside Word and Outlook |
 | [Jasper](/tools/jasper) | Marketing platform | Paid per seat (trial) | Jasper IQ: voices, style guide, audiences | Governed content at team scale |
@@ -76,7 +78,7 @@ The best AI writing tool in 2026 is whichever one fits the job in front of you, 
 
 **[Claude](/tools/claude).** Anthropic's assistant, with three things that matter for writing. Projects hold a brief, a style guide, and instructions so every chat starts with them; Anthropic's help center lists them on every plan, with Free capped at five. Skills are folders of instructions you upload as a ZIP on any plan, and Claude applies them automatically in chat, in Cowork, and in the Microsoft 365 add-ins. And Anthropic's [document skills](/guides/skills/claude-document-skills) produce a real `.docx`, `.pptx`, `.xlsx`, or PDF through code execution, so "write the whitepaper" ends in a file rather than a wall of Markdown.
 
-**[ChatGPT](/tools/chatgpt).** OpenAI's assistant, with Projects, memory, custom GPTs, and a Work mode that plans a task and returns a document, presentation, or spreadsheet. Work supports `.docx`, `.xlsx`, and `.pptx` inputs and templates that pair a reference file with reusable instructions; OpenAI's help center lists it as rolling out to paid plans, excluding Free and Go. [Claude vs ChatGPT for writing](/guides/comparisons/claude-vs-chatgpt-for-writing) is the head-to-head.
+**[ChatGPT](/tools/chatgpt).** OpenAI's assistant, with Projects, memory, plugins (the replacement for custom GPTs, which retire on December 11, 2026), and a Work mode that plans a task and returns a document, presentation, or spreadsheet. Work supports `.docx`, `.xlsx`, and `.pptx` inputs and templates that pair a reference file with reusable instructions; OpenAI's help center lists it as rolling out to paid plans, excluding Free and Go. [Claude vs ChatGPT for writing](/guides/comparisons/claude-vs-chatgpt-for-writing) is the head-to-head.
 
 **[Gemini](/tools/gemini).** Google's assistant, and the one that lives inside Docs. Gems are saved assistants with instructions and reference files, Canvas is the drafting surface, and on the paid Google AI plans Gemini sits inside Gmail, Docs, Sheets, and Slides to draft, rewrite, and summarize in place.
 

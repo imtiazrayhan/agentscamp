@@ -3,6 +3,8 @@ title: "Which Claude Plan Should a Marketer Pay For?"
 description: "A decision guide by situation: solo content marketer, a small team sharing brand context, heavy Cowork and Claude Design use, or an agency. No prices."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -10,21 +12,21 @@ audience: ["marketers"]
 tags: ["claude", "plans", "pricing", "marketers", "cowork", "team-plan"]
 featured: false
 seoTitle: "Which Claude Plan Should a Marketer Pay For? (2026)"
-seoDescription: "Pro, Max 5x, Max 20x, or Team: which Claude plan fits a solo content marketer, a team sharing brand context, heavy Cowork and Design use, or an agency."
+seoDescription: "Pro, Max, Ultra, or Team: which Claude plan fits a solo content marketer, a team sharing brand context, heavy Cowork and Design use, or an agency."
 keywords: ["which claude plan", "claude plan for marketers", "claude pro vs max marketing", "claude team plan marketing", "claude cowork plan"]
-summary: "Start on Pro: it includes Claude Code, Cowork, and Claude Design and covers a solo content marketer. Move to Max 5x when scheduled Cowork runs and long Claude Code sessions hit the five-hour limit more than occasionally. Go to Team the day a second person needs the brand project, with Premium seats for the heavy users. Agencies want Team's per-member limits."
+summary: "Start on Pro: it includes Claude Code, Cowork, and Claude Design and covers a solo content marketer. Move to Max when scheduled Cowork runs and long Claude Code sessions hit the five-hour limit more than occasionally. Go to Team the day a second person needs the brand project, with Premium seats for the heavy users. Agencies want Team's per-member limits."
 keyTakeaways:
-  - "Every paid plan includes Claude Code, Cowork, and Claude Design (still in beta); the tiers differ in usage per five-hour session and per week, not in which surfaces open."
+  - "Every paid plan includes Claude Code and Cowork, and Claude Design is on every plan including Free; the tiers differ in usage per five-hour session and per week, not in which surfaces open."
   - "Usage is one pool: Anthropic says activity across claude.ai, Claude Code, and Claude Desktop counts against the same limit, and connectors are token-intensive."
-  - "Solo content marketer: Pro. Heavy Cowork or Design use: Max 5x, then 20x if it keeps running out. Two or more people: Team, with Premium seats for heavy users."
+  - "Solo content marketer: Pro. Heavy Cowork or Design use: Max, then Ultra if it keeps running out. Two or more people: Team, with Premium seats for heavy users."
   - "Team needs at least two members, applies limits per member, and adds shared Projects with view or edit rights, admin tools, spend controls, and connectors."
   - "Pick the model per task, not per plan: the fastest tier for bulk rewrites and tagging, the middle for most drafting, the top for the piece that matters."
 sources:
   - title: "How do usage and length limits work?"
     url: "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work"
     publisher: "Anthropic"
-  - title: "Use Claude Code with your Pro or Max plan"
-    url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan"
+  - title: "Use Claude Code with your Pro, Max, or Ultra plan"
+    url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-max-or-ultra-plan"
     publisher: "Anthropic"
   - title: "What is the Max plan?"
     url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
@@ -40,9 +42,9 @@ sources:
     publisher: "Anthropic"
 faq:
   - q: "Does the free plan include Cowork or Claude Code?"
-    a: "No. Skills and chat are on Free, and Anthropic's help center lists Projects there too, capped at five, though the pricing page files Projects under the paid plans. Claude Code, Cowork, and Claude Design need Pro, Max, Team, or Enterprise. A marketer who only wants to draft in chat with a brand Project can stay on Free; anyone who wants a folder or a page worked on needs a paid plan."
+    a: "No. Skills and chat are on Free, and Anthropic's help center lists Projects there too, capped at five, though the pricing page files Projects under the paid plans. Claude Design, Slides, and Docs also come with every plan, Free included, as of November 2026. Claude Code and Cowork need Pro, Max, Ultra, Team, or Enterprise. A marketer who only wants to draft in chat with a brand Project can stay on Free; anyone who wants a folder worked on needs a paid plan."
   - q: "Should a solo marketer start on Pro or Max?"
-    a: "Pro. It includes every surface. The difference is how much you get per five-hour session, and Anthropic's own guidance is to move to Max 5x when you consistently hit limits and to Max 20x when 5x is not enough. Scheduled Cowork tasks and connector-heavy sessions are what push a marketer there."
+    a: "Pro. It includes every surface. The difference is how much you get per five-hour session, and Max gives five times Pro's usage, and Ultra (formerly Max 20x) gives ten times Pro's weekly usage with no five-hour limit on verified accounts. Scheduled Cowork tasks and connector-heavy sessions are what push a marketer there."
   - q: "Is the Team plan worth it for two marketers?"
     a: "Yes if you want one shared brand Project with edit rights, one bill, and per-member limits so one person's batch job does not drain the other's afternoon. It requires at least two members and lets you mix Standard and Premium seats. If you only want two accounts and no sharing, two Pro subscriptions are simpler."
   - q: "Which Claude model should a marketer use?"
@@ -50,13 +52,13 @@ faq:
 related: ["guide:claude-code-for-marketers", "guide:claude-for-marketing-teams", "guide:claude-plans-compared-2026", "guide:choosing-the-right-model", "guide:which-claude-plan-for-founders", "tool:claude", "tool:claude-cowork"]
 ---
 
-The plan question is simpler than the pricing page makes it look, because every paid Claude plan opens the same doors. Pro, Max, and Team all include Claude Code, Cowork, and Claude Design (in beta as of September 2026); what changes is how much you can do per five-hour session and per week, and on Team, who administers it. So the decision is a usage forecast plus a sharing question. This guide walks it by situation, names the plan, and points to the page that holds the numbers, which move too often to repeat here.
+The plan question is simpler than the pricing page makes it look, because every paid Claude plan opens the same doors. Pro, Max, Ultra, and Team all include Claude Code, Cowork, and Claude Design (Design is on Free too, as of November 2026); what changes is how much you can do per five-hour session and per week, and on Team, who administers it. So the decision is a usage forecast plus a sharing question. This guide walks it by situation, names the plan, and points to the page that holds the numbers, which move too often to repeat here.
 
 ## How limits work
 
 Two facts from Anthropic's support docs shape everything below. Usage is one pool: "your usage of all different Claude product surfaces (claude.ai, Claude Code, Claude Desktop) counts towards the same usage limit." A long Cowork run in the morning means less chat in the afternoon. And what burns usage fastest is documented: "the length and complexity of your conversations, the features you use, which Claude model you're chatting with, and the effort level you've selected." The same article singles out two things marketers do constantly. Long conversations "that trigger automatic context management consume more of your usage limit," and "tools and connectors are token-intensive."
 
-The tiers are multipliers on that pool. Pro is the base. Max 5x "provides five times more usage per session than the Pro plan," Max 20x twenty times. On Team, Standard seats get "1.25x more usage per session than the Pro plan," Premium seats 6.25x, and "usage limits on Team plans are per-member, rather than applied to the team as a whole." Those multipliers are the whole difference between the tiers as of September 2026; the dollar figures behind them are in [Claude plans compared (2026)](/guides/getting-started/claude-plans-compared-2026).
+The tiers are multipliers on that pool. Pro is the base. Max "includes five times the Pro plan's usage every five hours and every week." Ultra, the plan formerly called Max 20x, "includes 10 times the Pro plan's usage every week and has no five-hour limit, for verified accounts." On Team, Standard seats "include 1.25x the Pro plan's per-session usage allowance," Premium seats 6.25x, and "usage limits on Team plans are per-member, rather than applied to the team as a whole." Those multipliers are the main difference between the tiers as of November 2026; the dollar figures behind them are in [Claude plans compared (2026)](/guides/getting-started/claude-plans-compared-2026).
 
 ## By situation
 
@@ -70,7 +72,7 @@ The tiers are multipliers on that pool. Pro is the base. Max 5x "provides five t
 
 ### Heavy Cowork and Claude Design use
 
-**Max 5x, then 20x if it keeps running out.** A scheduled Cowork task every morning over a large folder, connectors enabled, plus Claude Design sessions that iterate on a deck for an hour, is the most usage-intensive pattern a solo marketer runs. Anthropic frames the path exactly this way: Max 5x "if you consistently hit limits," 20x "if you're on the Max 5x plan" and still hit them. Max also carries "priority access" to new models and features. Start at 5x and let the reset warnings tell you whether you need 20x. If the heavy user is one person on a team, a Premium Team seat is the equivalent move.
+**Max, then Ultra if it keeps running out.** A scheduled Cowork task every morning over a large folder, connectors enabled, plus Claude Design sessions that iterate on a deck for an hour, is the most usage-intensive pattern a solo marketer runs. Max multiplies Pro's session and weekly allowance by five; Ultra goes to ten times Pro's weekly usage and removes the five-hour limit on verified accounts. Start on Max and let the reset warnings tell you whether you need Ultra. If the heavy user is one person on a team, a Premium Team seat is the equivalent move.
 
 ### Agency
 
@@ -94,4 +96,4 @@ The current names, where each sits, and which ones are gated to particular plans
 
 ## The short answer
 
-Start on Pro. Go to Team the day a second person needs the brand Project, with Premium seats for the heavy users. Go to Max 5x if you are solo and scheduled Cowork runs or long Claude Code sessions keep hitting the five-hour limit, and 20x only when 5x keeps running out. Push unattended jobs to API credits. Choose the model per task. The numbers live in [Claude plans compared (2026)](/guides/getting-started/claude-plans-compared-2026), the workflows in [Claude Code for Marketers](/guides/marketing/claude-code-for-marketers), and the rest of the toolkit at the [marketers hub](/for/marketers).
+Start on Pro. Go to Team the day a second person needs the brand Project, with Premium seats for the heavy users. Go to Max if you are solo and scheduled Cowork runs or long Claude Code sessions keep hitting the five-hour limit, and Ultra only when Max keeps running out. Push unattended jobs to API credits. Choose the model per task. The numbers live in [Claude plans compared (2026)](/guides/getting-started/claude-plans-compared-2026), the workflows in [Claude Code for Marketers](/guides/marketing/claude-code-for-marketers), and the rest of the toolkit at the [marketers hub](/for/marketers).

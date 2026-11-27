@@ -7,7 +7,7 @@ audience: ["designers", "marketers"]
 tags: ["design", "video", "planning"]
 featured: false
 related: ["guide:ai-storyboard-from-script", "skill:storyboard-shot-brief", "command:check-storyboard-coverage"]
-summary: "Review storyboard frames or shot descriptions against an approved script and supplied continuity constraints. Flag omitted beats, changed actions, prop/character drift and timing assumptions in a shot-level report; do not rewrite the approved script, generate images or grant production approval."
+summary: "Install this Read-only reviewer to get a shot-level report before a director accepts a storyboard. It maps each shot to a script beat and excerpt, tracks props and action order across shots, and treats durations as proposals. Each finding lists the issue, proposed repair and decision owner; unreadable frames are labeled unverified."
 name: "storyboard-continuity-reviewer"
 title: "Storyboard Continuity Reviewer"
 model: "sonnet"

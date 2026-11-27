@@ -3,6 +3,7 @@ title: "Self-Host vs API: When Does Running Your Own LLM Actually Pay Off?"
 description: "The real economics of self-hosting an LLM vs. calling a hosted API — GPU utilization, privacy, latency, and the hidden ops costs that decide the crossover."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+reviewed: 2026-11-27
 color: "green"
 topics: ["mlops-ai-infra"]
 audience: ["ai-engineers"]

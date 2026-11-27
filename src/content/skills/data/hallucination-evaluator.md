@@ -7,6 +7,8 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["llm-evals"]
 audience: ["ai-engineers"]
 related: ["skill:llm-eval-suite-scaffolder", "skill:llm-as-judge-scorer", "skill:agent-trajectory-evaluator"]
@@ -29,7 +31,7 @@ summary: "Confident and fluent is not the same as grounded. This skill measures 
 
 2. **Decompose each answer into atomic claims.** A claim is a single, independently checkable assertion ("The policy refund window is 30 days"). Split compound sentences, drop hedges and meta-commentary, and keep pronoun referents resolved so each claim stands alone. Score faithfulness *per claim*, not per answer — a 4-sentence answer with one unsupported sentence is 75% grounded, and that granularity is what lets you find the specific failure.
 
-3. **Check each claim for entailment against the source.** For each atomic claim, label it `supported` / `not_supported` / `contradicted` using one of two checkers: (a) an NLI/entailment model (premise = the retrieved chunks, hypothesis = the claim), or (b) an **LLM-judge with the source in its context** — for the judge, default to the latest, most capable Claude model (`claude-opus-4-8`, or `claude-fable-5` for the hardest cases). Pin the judge to faithfulness: *"Using ONLY the provided source, is this claim supported? Quote the supporting span or answer not_supported. Do not use outside knowledge."* The judge grades entailment, which is checkable — never open-world truth.
+3. **Check each claim for entailment against the source.** For each atomic claim, label it `supported` / `not_supported` / `contradicted` using one of two checkers: (a) an NLI/entailment model (premise = the retrieved chunks, hypothesis = the claim), or (b) an **LLM-judge with the source in its context** — for the judge, default to the current Claude Opus model (`claude-opus-5-5` as of November 2026, or `claude-fable-5-2` for the hardest cases). Pin the judge to faithfulness: *"Using ONLY the provided source, is this claim supported? Quote the supporting span or answer not_supported. Do not use outside knowledge."* The judge grades entailment, which is checkable — never open-world truth.
 
 4. **Build a labeled eval set that includes the should-abstain cases.** Collect (question, retrieved context, answer) triples and hand-label the grounded/ungrounded claims. Crucially, include questions whose answer **is not in the context** — there the correct behavior is to abstain ("I don't know" / "the source doesn't say"), and answering anyway is the exact hallucination you most want to catch. An eval set without should-abstain cases will pass a model that confidently invents answers whenever retrieval comes up empty.
 

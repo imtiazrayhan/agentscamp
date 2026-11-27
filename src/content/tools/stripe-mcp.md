@@ -18,7 +18,7 @@ sameAs:
   - "https://docs.stripe.com/agents"
   - "https://www.npmjs.com/package/@stripe/mcp"
 related: ["guide:best-mcp-servers-2026", "guide:claude-code-mcp-setup", "agent:backend-developer", "agent:api-architect", "guide:claude-code-settings-permissions"]
-alternativeTo: ["github-mcp-server", "supabase-mcp", "notion-mcp"]
+alternativeTo: []
 summary: "Stripe's official MCP server — hosted at mcp.stripe.com with OAuth, or local via npx @stripe/mcp — lets agents work the Stripe API: create and list customers, products, prices, and invoices, generate payment links, manage subscriptions and refunds, handle disputes, and search Stripe's documentation. Tool availability follows your key's permissions, so a restricted key is the safety mechanism."
 faq:
   - q: "How do I add the Stripe MCP server to Claude Code?"
@@ -27,7 +27,7 @@ faq:
     a: "The day-to-day Stripe surface: account info and balance; create/list customers, products, prices, coupons; create and finalize invoices; payment links; list payment intents; refunds; list/update/cancel subscriptions; dispute handling; plus search_stripe_documentation and resource search/fetch for grounding answers in current Stripe docs."
   - q: "Is the Stripe MCP server safe to use on a live account?"
     a: "The control is the key: a Restricted API Key scoped to read-only (or to specific resources) caps the blast radius regardless of what the model attempts — tool availability literally follows the key's permissions. Start in test mode, use RAKs in live mode, and put ask rules on money-moving tools."
-audience: ["founders"]
+audience: ["developers", "founders"]
 ---
 
 Stripe MCP puts the payments stack within the agent's reach — both halves of it. The **knowledge half**: `search_stripe_documentation` grounds integration work in current Stripe docs instead of training-data memory. The **operations half**: customers, invoices, payment links, subscriptions, refunds, and disputes become tools, with your API key's permissions as the hard boundary.

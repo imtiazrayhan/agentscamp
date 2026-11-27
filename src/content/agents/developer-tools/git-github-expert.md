@@ -2,7 +2,9 @@
 name: "git-github-expert"
 description: "Use this agent for Git and GitHub workflows — rebases, conflict resolution, history surgery, PRs, and Actions. Examples — resolving a messy merge, rewriting history safely, fixing a workflow file."
 date: 2025-08-25
-model: "haiku"
+updated: 2026-11-27
+reviewed: 2026-11-27
+model: "sonnet"
 color: "orange"
 topics: ["workflow-prompting"]
 audience: ["developers"]

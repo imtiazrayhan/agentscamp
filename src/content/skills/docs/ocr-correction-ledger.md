@@ -7,7 +7,7 @@ audience: ["analysts"]
 tags: ["ocr", "document-processing", "source-verification"]
 featured: false
 related: ["guide:review-ocr-text-against-scans", "agent:ocr-fidelity-reviewer", "command:check-ocr-correction-ledger"]
-summary: "Build a proposed OCR correction ledger from a fixed OCR text copy and readable source-page images or human-verified image notes, preserving original spans, Unicode offsets, replacements, locators and unresolved status. Use before a reviewer creates a corrected copy; do not extract business conclusions or alter original scans."
+summary: "Supply frozen OCR text with page IDs, scan evidence or verified image notes, and the offset convention. Each row gets a correction ID, a zero-based code-point span, the exact original substring, the smallest supported replacement, source location and a status of proposed, verified or unresolved. Overlapping spans are flagged and nothing is applied."
 name: "ocr-correction-ledger"
 title: "OCR Correction Ledger"
 version: "1.0.0"

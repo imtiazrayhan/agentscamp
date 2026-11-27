@@ -1,13 +1,14 @@
 ---
 description: "Build a concept-node and relationship table from supplied document passages for one focal question, preserving source locations and contested edges before an AI mind map is drawn."
 date: "2026-09-27"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["analysts", "designers", "founders"]
 tags: ["source-visuals", "source-concept-map-builder"]
 featured: false
 related: ["guide:source-grounded-ai-mind-map", "guide:ai-explanatory-diagram-from-text", "tool:miro"]
-summary: "Build a concept-node and relationship table from supplied document passages for one focal question, preserving source locations and contested edges before an AI mind map is drawn."
+summary: "Mind map prep for documents: this skill reads the passages you supply and returns a table of concepts and a table of relationships, each tied to the sentence that supports it, plus a brief for drawing the map. Use it before asking Miro AI or a chat model for a mind map, so unsupported arrows are caught before they are drawn."
 name: "source-concept-map-builder"
 title: "Source Concept Map Builder"
 allowed-tools: "Read, Glob, Grep"
@@ -16,6 +17,20 @@ version: "1.0.0"
 ---
 
 Build a concept-node and relationship table for one focal question from supplied document passages. Return a drawing brief that an owner can review before arranging a canvas.
+
+## When to use
+
+- Use it before asking an AI tool to draw a mind map or concept map from documents, when the map has to be defensible: every node and every arrow traceable to a passage.
+- Not for brainstorm maps with no source material, for drawing the canvas itself, or for code architecture diagrams.
+- Minimum input: one focal question and the passages, each with a source revision and location:
+
+```text
+focal question: What supports workshop access?
+S2 rev 4, para 3: "Advance booking helps participants reserve accessible seating."
+```
+
+- Only a missing focal question, source revision or passage blocks the table. A missing audience, glossary or document owner is listed as an open input, and the result stays a draft until an owner reviews it.
+- Output: a node table, an edge table and a canvas brief, which the [source-grounded mind-map workflow](/guides/workflow/source-grounded-ai-mind-map) turns into a drawing.
 
 ## Inputs and authority
 

@@ -3,15 +3,17 @@ title: "Multimodal Embeddings and Image Search"
 description: "How multimodal embeddings put images and text in one vector space, and how to build text-to-image and image-to-image search on top of it."
 author: "Imtiaz Rayhan"
 date: 2026-06-20
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "cyan"
 topics: ["multimodal-ai", "rag-retrieval"]
 audience: ["ai-engineers"]
 tags: ["multimodal-embeddings", "image-search", "clip", "vector-search", "retrieval"]
 featured: false
-summary: "Multimodal embeddings map images and text into one shared vector space, so a text query can rank images by meaning and an image can find similar images. Pick a model (CLIP/SigLIP lineage, or modern API models like Voyage and Cohere), embed your images at ingest, store vectors in a vector DB, and search by nearest neighbor. Watch for the modality gap and domain shift."
+summary: "Multimodal embeddings map images and text into one shared vector space, so a text query can rank images by meaning and an image can find similar images. Pick a model (CLIP/SigLIP lineage, or API models from Voyage, Cohere and Google), embed your images at ingest, store the vectors, and search by nearest neighbor. Watch the modality gap and domain shift."
 keyTakeaways:
   - "A shared embedding space means an image and a text caption that mean the same thing land near each other — so one cosine-similarity search handles text-to-image and image-to-image."
-  - "The lineage is CLIP and SigLIP; in 2026 the strongest off-the-shelf options are API models like Voyage and Cohere (single vector for text, images, and full document pages) plus open models like SigLIP 2 and Jina CLIP."
+  - "The lineage is CLIP and SigLIP; in 2026 the main off-the-shelf options are API models from Voyage, Cohere and Google (single vector for text, images, and full document pages) plus open models like SigLIP 2 and Jina CLIP."
   - "Same recipe as text RAG: embed at ingest, store vectors in a vector DB, query with the same model, return nearest neighbors. The only change is what you embed."
   - "The modality gap is real: image and text vectors cluster in separate cones, so an image-to-image hit usually scores higher than the best text-to-image hit. Tune thresholds per query type."
   - "Domain shift is the top failure mode. A general model trained on web photos underperforms on X-rays, satellite tiles, or product catalogs — evaluate on your data before trusting it."
@@ -20,7 +22,7 @@ faq:
   - q: "What is a shared embedding space for images and text?"
     a: "It's a single vector space where a model places both images and text, trained so that an image and a matching description land near each other. Because they share coordinates, you can compare across types: a text query ranks images, or an image finds similar images, all with one nearest-neighbor search."
   - q: "Which multimodal embedding model should I use in 2026?"
-    a: "For a managed API with strong document and image handling, start with Voyage or Cohere's multimodal models — both embed text, images, and whole pages into one vector. If you need to self-host or fine-tune, use the SigLIP 2 or Jina CLIP families. Always benchmark on your own corpus first."
+    a: "For a managed API with strong document and image handling, start with Voyage's voyage-multimodal-3.5, Cohere's Embed 5 or Google's gemini-embedding-2 — all three embed text, images, and whole pages into one vector, and Voyage and Google also take video. If you need to self-host or fine-tune, use SigLIP 2 or Nomic Embed Vision (both Apache-2.0), or Jina CLIP v2 if its non-commercial licence fits. Always benchmark on your own corpus first."
   - q: "Do I need a vector database for image search?"
     a: "For anything beyond a few thousand images, yes. You store one vector per image and run approximate nearest-neighbor search at query time. A managed option like Pinecone or pgvector on Postgres both work — the index doesn't care that the vectors came from images."
   - q: "When should I caption images with a VLM instead of embedding them directly?"
@@ -58,10 +60,35 @@ The idea goes back to **CLIP** (OpenAI, 2021), which proved that contrastive ima
 
 For most teams in 2026, the better starting point is a **managed multimodal embedding API**, because document-heavy retrieval has moved well past raw photo matching:
 
-- **[Voyage AI](/tools/voyage-ai)** — the `voyage-multimodal` family embeds interleaved text and images, including screenshots of PDFs, slides, tables, and figures, into a single vector. The 2026 generation adds video-frame support and Matryoshka (truncatable) dimensions.
-- **Cohere Embed v4** — also vectorizes text, images, and mixed documents into one space, with multilingual support, long context, and Matryoshka dimensions. Available on Cohere, Bedrock, and Azure.
+- **[Voyage AI](/tools/voyage-ai)** — `voyage-multimodal-3.5` embeds interleaved text, images and video, including screenshots of PDFs, slides, tables, and figures, into a single vector. It has a 32,000-token context and a choice of output dimensions (1024 by default, or 256, 512, 2048).
+- **Cohere Embed 5** — `embed-v5.0-pro` and the lighter `embed-v5.0-fast` vectorize text, images, and mixed inputs such as PDF pages into one space, with a 128k-token context, 100+ languages, and Matryoshka dimensions from 256 to 2048. The two tiers share an embedding space, so you can index with Pro and query with Fast. Available on the Cohere API, Microsoft Foundry, and Amazon SageMaker. `embed-v4.0` is the previous generation.
+- **Google Gemini Embedding 2** — `gemini-embedding-2` maps text, images, video, audio and documents into one space, with 3,072 dimensions by default and Matryoshka truncation through `output_dimensionality`. Requests are limited to 6 images and 120 seconds of video.
 
-If you need to self-host, fine-tune, or avoid per-call costs, reach for the open families — **SigLIP 2**, **Jina CLIP v2**, or **Nomic Embed Vision**. They're CLIP-lineage, run on your own GPUs, and are fine-tunable on a domain corpus.
+A minimal text-to-image setup with Voyage looks like this. The same client embeds the images at ingest and the query at search time:
+
+```python
+import voyageai
+from PIL import Image
+
+vo = voyageai.Client()  # reads VOYAGE_API_KEY
+
+# Ingest: one input per image (each input is a list of text and/or images)
+docs = vo.multimodal_embed(
+    [[Image.open("shoe-01.jpg")], [Image.open("shoe-02.jpg")]],
+    model="voyage-multimodal-3.5",
+    input_type="document",
+)
+
+# Query: same model, text only
+query = vo.multimodal_embed(
+    [["red running shoes on a beach"]],
+    model="voyage-multimodal-3.5",
+    input_type="query",
+)
+# Store docs.embeddings in your vector DB; search with query.embeddings[0]
+```
+
+If you need to self-host, fine-tune, or avoid per-call costs, reach for the open families — **SigLIP 2**, **Jina CLIP v2**, or **Nomic Embed Vision**. They're CLIP-lineage, run on your own GPUs, and are fine-tunable on a domain corpus. Check the licence before you ship: SigLIP 2 and Nomic Embed Vision v1.5 are Apache-2.0, while the Jina CLIP v2 weights are CC BY-NC 4.0, so commercial use needs Jina's API or a separate licence.
 
 The durable selection advice is the same as for text models: dimensionality, language coverage, max image resolution, and cost-per-item matter, but **none of it substitutes for benchmarking on your own data**. See [choosing an embedding model in 2026](/guides/concepts/choosing-embeddings-2026) for the framework — it applies to multimodal too.
 

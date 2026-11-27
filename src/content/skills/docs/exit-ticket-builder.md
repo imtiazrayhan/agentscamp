@@ -7,7 +7,7 @@ audience: []
 tags: ["content", "source-grounded", "review"]
 featured: false
 related: ["guide:ai-exit-tickets-from-lesson-objectives", "agent:exit-ticket-reviewer", "command:check-exit-ticket-map"]
-summary: "Draft a short exit ticket from educator-approved learning objectives and taught material, mapping each question to an objective with an answer key and evidence. Use for low-stakes instructional feedback; do not grade student submissions, diagnose needs or invent curriculum standards."
+summary: "Supply objective IDs, the taught passage with source IDs and an educator reviewer. The skill drafts short single-task prompts mapped to objectives, each with the expected answer, exact evidence substring and locator, and a status of needs-review or draft-ready. Objectives without taught evidence are listed as uncovered, and untaught questions are left out."
 name: "exit-ticket-builder"
 title: "Exit Ticket Builder"
 version: "1.0.0"

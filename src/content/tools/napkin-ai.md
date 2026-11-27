@@ -1,7 +1,8 @@
 ---
-description: "Napkin AI turns imported or pasted text into editable visuals for documents and presentations, with export choices that depend on plan."
+description: "Napkin AI turns pasted or imported text into editable visuals. The free plan exports PNG and PDF with Napkin branding; paid plans add PPT and SVG export."
 date: "2026-10-06"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["designers", "marketers", "founders"]
 tags: ["source-visuals", "napkin-ai"]
@@ -37,6 +38,6 @@ Ask the person who will reuse the visual to locate the source for one label and 
 
 ## Plan and workflow fit
 
-The [pricing page](https://www.napkin.ai/pricing/) places PNG and PDF exports in the free plan, with PPT and SVG exports on paid plans. Check the actual account and delivery requirement before assuming the chosen output will remain editable downstream. This profile does not quote a price or promise identical behavior in every receiving application.
+The [pricing page](https://www.napkin.ai/pricing/) places PNG and PDF exports in the free plan, with Napkin branding on the visuals, and PPT and SVG exports on the paid Plus and Pro plans, which also remove the branding. As of November 2026 it lists 500 AI credits a week on the free plan, 10,000 a month on Plus and 30,000 a month on Pro, at roughly one credit per word selected for generation. Check the actual account and delivery requirement before assuming the chosen output will remain editable downstream. This profile does not quote a price or promise identical behavior in every receiving application.
 
 Use a [source-grounded mind map](/guides/workflow/source-grounded-ai-mind-map) when you first need to organize several documents and unresolved concepts. Compare [Miro](/tools/miro) if the reviewing team needs an evolving canvas for relationships. Napkin fits a bounded explanation when the owner can verify its labels, correct misleading visual conventions and review the delivered export. It does not replace evidence review or whole-presentation planning.

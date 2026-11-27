@@ -7,7 +7,7 @@ audience: []
 tags: ["source-grounded", "documents", "review"]
 featured: false
 related: ["guide:ai-study-cards-from-notes", "skill:study-card-builder", "command:check-study-card-map"]
-summary: "Review a draft flashcard set against supplied notes and stated learning targets. Identify unsupported answers, compound questions, duplicate targets and source conflicts in a card-by-card report; do not draft a new set, schedule practice or infer learner ability."
+summary: "Give it approved notes with source IDs, one learning goal and a draft card set. It returns a card-by-card table marking each answer supported or unresolved, with the exact evidence, locator and a proposed repair that keeps the card ID and original wording. Compound questions and duplicate targets are flagged, and missing answers are left blank."
 name: "study-card-reviewer"
 title: "Study Card Reviewer"
 model: "sonnet"

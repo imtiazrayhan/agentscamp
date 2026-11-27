@@ -21,8 +21,7 @@ related:
 - glossary:blocking-record-matching
 - skill:entity-match-candidate-ledger
 - command:check-entity-match-ledger
-summary: Separate duplicate-record candidate generation from human match decisions, retaining source keys and
-  field evidence before any merge.
+summary: Define what one entity is, freeze a snapshot with original keys, and normalize copies while keeping raw values. Candidate pairs carry evidence and a score that only orders the review queue. An owner marks each pair match, different or unresolved, and connected groups are checked for contradictions. Accepted matches become a reversible merge proposal.
 title: Review AI Duplicate-Record Candidates Before Merging
 depth: standard
 sources:

@@ -3,11 +3,13 @@ title: "CLAUDE.md Best Practices"
 description: "How to write a CLAUDE.md that actually helps — what to include, what to leave out, and how to keep it current."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 featured: false
 related: ["guide:what-is-claude-code", "guide:context-engineering"]
-summary: "CLAUDE.md loads into context on every turn, so it should read like onboarding for a fast new engineer: exact build/test commands, conventions a linter can't enforce, a few-line architecture map, and the gotchas that have burned someone — and nothing the model already knows. Target under 200 lines, split by scope, and update it in the same PR that changes reality."
+summary: "CLAUDE.md loads into every session, so it should read like onboarding for a fast new engineer: exact build/test commands, conventions a linter can't enforce, a few-line architecture map, and the gotchas that have burned someone — and nothing the model already knows. Target under 200 lines, split by scope, and update it in the same PR that changes reality."
 keyTakeaways:
   - "The filter for every line: would a sharp engineer get this wrong on their first day despite reading the code? If the code makes it obvious, cut it."
   - "Four categories carry the value: exact commands (with the non-obvious flags), conventions no linter enforces, a terse architecture map, and the landmines."
@@ -92,10 +94,12 @@ Claude Code reads from more than one place, and putting a fact in the wrong scop
 | Location | Scope | Put here |
 |----------|-------|----------|
 | `./CLAUDE.md` or `./.claude/CLAUDE.md` | This project, **committed and shared** | Build commands, architecture, team conventions, gotchas |
-| `./CLAUDE.local.md` | This project, **yours only** (gitignored) | Local paths, personal scratch notes, machine-specific setup |
+| `./CLAUDE.local.md` | This project, **yours only** (add it to `.gitignore`) | Local paths, personal scratch notes, machine-specific setup |
 | `~/.claude/CLAUDE.md` | **Every** project you work on | Your personal style: "prefer named exports," "always run typecheck before committing" |
 
 If Cursor, Codex or Copilot also work in the repository, [AGENTS.md vs CLAUDE.md vs Cursor rules](/guides/configuration/agents-md-vs-claude-md-vs-cursor-rules) covers when a shared AGENTS.md should carry the common instructions; the [CLAUDE.md glossary entry](/glossary/claude-md) has the short definition.
+
+Claude Code v2.1.277 and later also reads `AGENTS.md` directly, with one catch: by default it does so only when there is no `CLAUDE.md`, `.claude/CLAUDE.md` or `CLAUDE.local.md` in the working directory or above it. When both exist it reads the `CLAUDE.md` files only. To get both, put an `@AGENTS.md` import at the top of `CLAUDE.md`, or run `/config` and set **Project instructions** to `claude-md-and-agents-md`. Note that adding a personal `CLAUDE.local.md` to an AGENTS.md-only repo counts as having a CLAUDE.md, and silently stops `AGENTS.md` from loading for you.
 
 The rule of thumb: if it's true for everyone on the team, it goes in the committed project file. If it's true for *you* everywhere, it goes in user memory. If it's true for you *only here*, it goes in the local file.
 
@@ -128,7 +132,7 @@ Keep it honest with a few habits:
 
 - **Update it in the same PR that changes reality.** Renamed the test command, moved a module, added a deploy gotcha? Touch `CLAUDE.md` in the same diff. Treat it like code, because it is.
 - **Let Claude maintain it.** The `/init` command bootstraps a `CLAUDE.md` by scanning the codebase, and you can ask Claude directly: *"Update CLAUDE.md — we switched from Jest to Vitest and the test command is now `pnpm test`."* It edits the file like any other.
-- **Prune on a cadence.** Every month or two, re-read it top to bottom and delete anything no longer true or no longer needed. Files grow by accretion; only deliberate cutting keeps them tight.
+- **Prune on a cadence.** Every month or two, re-read it top to bottom and delete anything no longer true or no longer needed. Files grow by accretion; only deliberate cutting keeps them tight. `/doctor prompt-audit` does a first pass for you: it reports references to files or commands that no longer exist and instructions that contradict each other across your CLAUDE.md files, rules and skills, and proposes edits without applying them.
 
 ## A compact skeleton
 

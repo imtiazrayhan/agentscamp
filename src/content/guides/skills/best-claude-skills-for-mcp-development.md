@@ -3,7 +3,8 @@ title: "7 Best Claude Skills for MCP Server Development"
 description: "Claude skills, commands, and agents for building MCP servers: scaffolding, tool schemas, Inspector testing, safe registration, config audits, code review, and plugins."
 author: "Imtiaz Rayhan"
 date: "2026-11-13"
-reviewed: 2026-11-22
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "cyan"
 depth: standard
 topics: ["mcp"]
@@ -38,7 +39,7 @@ sources:
     url: "https://modelcontextprotocol.io/specification/2026-07-28/server/tools"
     publisher: "Model Context Protocol"
   - title: "Security Best Practices"
-    url: "https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices"
+    url: "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices"
     publisher: "Model Context Protocol"
   - title: "MCP Inspector"
     url: "https://modelcontextprotocol.io/docs/tools/inspector"

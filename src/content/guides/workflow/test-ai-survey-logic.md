@@ -8,7 +8,7 @@ audience: ["founders", "analysts", "designers"]
 tags: ["survey-routing", "test-ai-survey-logic"]
 featured: false
 related: ["guide:ai-survey-branching-plan", "command:check-survey-paths", "tool:surveymonkey", "skill:survey-path-test-builder"]
-summary: "Create complete response-path cases for an AI-built survey, check a local route model, then preview the actual form before collection."
+summary: "Write each test case from the approved branch table first, with the answers supplied, the expected questions in order and the ending. Run the local path checker on the route model, then walk every case through a fresh preview and record what appears. An unexpected question is a failure even when the ending is right, and the owner decides on that draft."
 title: "Test AI Survey Logic with Known Response Paths"
 depth: "standard"
 sources: [{"title": "Use Typeform AI", "url": "https://help.typeform.com/hc/en-us/articles/42053773420948-Use-Typeform-AI", "publisher": "Typeform"}, {"title": "Build Surveys with AI", "url": "https://help.surveymonkey.com/en/surveymonkey/create/build-with-ai/", "publisher": "SurveyMonkey"}, {"title": "Skip Logic", "url": "https://help.surveymonkey.com/en/surveymonkey/create/skip-logic/", "publisher": "SurveyMonkey"}]

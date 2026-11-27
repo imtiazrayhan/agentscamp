@@ -4,6 +4,8 @@ title: "Pipecat"
 description: "An open-source Python framework for real-time voice and multimodal conversational AI — it orchestrates streaming STT, LLM, and TTS into composable pipelines."
 url: "https://pipecat.ai"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 pricing: "open-source"
 category: "voice"
 repo: "https://github.com/pipecat-ai/pipecat"
@@ -16,42 +18,81 @@ audience: ["ai-engineers"]
 tags: ["voice", "real-time", "framework", "open-source", "python"]
 featured: false
 alternativeTo: ["livekit", "vapi"]
-summary: "Pipecat is an open-source Python framework for building real-time voice and multimodal conversational agents. It orchestrates the streaming STT → LLM → TTS loop, the audio transport (WebRTC/WebSocket), and turn-taking into composable pipelines, with integrations across dozens of speech and model providers — so you build the agent's behavior instead of the real-time plumbing."
-related: ["guide:build-a-voice-agent", "agent:voice-agent-engineer", "tool:deepgram", "tool:elevenlabs"]
+summary: "Pipecat is a BSD-2-Clause Python framework for real-time voice and multimodal agents, maintained by Daily and its community. You assemble a pipeline of processors (transport in, speech-to-text, LLM, text-to-speech, transport out) and Pipecat moves audio and text between them as frames. The framework is free; you pay the providers you plug in."
+related: ["guide:build-a-voice-agent", "guide:realtime-voice-apis", "agent:voice-agent-engineer", "tool:livekit", "tool:vapi", "tool:deepgram", "tool:elevenlabs"]
 faq:
-  - q: "What is Pipecat?"
-    a: "Pipecat is an open-source Python framework for real-time voice and multimodal conversational AI. It orchestrates the streaming STT → LLM → TTS loop, manages WebRTC/WebSocket audio transports, and handles turn-taking, interruptions, and voice-activity detection as composable pipelines — so you build the agent's behavior rather than the real-time plumbing."
   - q: "Is Pipecat free?"
-    a: "Yes — open source under BSD-2-Clause. You pay the underlying STT/LLM/TTS providers for usage, and you run the framework yourself, locally or in the cloud."
-  - q: "Which providers does Pipecat work with?"
-    a: "Dozens of STT/LLM/TTS providers, including Deepgram, ElevenLabs, OpenAI, and Anthropic. Each pipeline stage's provider can be swapped without rewriting the loop — that's the point: mix best-of-breed services per stage and keep control over latency, cost, and model choice."
+    a: "Yes. The framework is open source under BSD-2-Clause and you can run it anywhere Python runs. You pay the STT, LLM and TTS providers you connect, plus your own hosting. Pipecat Cloud, the managed deployment service run by Daily, is a separate service with its own pricing."
+  - q: "How do I start a Pipecat project?"
+    a: "Install uv, then run uv tool install \"pipecat-ai[cli]\" and pipecat init quickstart. The CLI scaffolds a bot; uv sync installs dependencies and uv run bot.py starts it locally. To add Pipecat to an existing project, use uv add pipecat-ai and add extras for the services you use."
+  - q: "Which Python versions does Pipecat support?"
+    a: "Python 3.11 through 3.14. The README says Python 3.15 is not supported yet because onnxruntime publishes no wheels for it, and suggests pinning with uv python pin 3.14."
+  - q: "Pipecat vs LiveKit Agents?"
+    a: "Both are open-source frameworks for building the agent yourself. Pipecat is Python-only and transport-agnostic: it can run over Daily, a plain WebSocket, its own SmallWebRTCTransport, or LiveKit. LiveKit Agents supports Python and Node.js and is tied to LiveKit's own WebRTC server, which you self-host or rent as LiveKit Cloud."
 ---
 
-Pipecat is an open-source Python framework for **real-time voice and multimodal conversational AI**. It solves the hard, generic part of a [voice agent](/guides/voice/build-a-voice-agent): orchestrating the streaming STT → LLM → TTS loop, managing the audio transport, and handling turn-taking — all as composable pipelines. You assemble a pipeline from provider-backed components and Pipecat runs the real-time hand-offs, so you focus on the agent's behavior rather than the streaming infrastructure.
+Pipecat is an open-source Python framework for **real-time voice and multimodal conversational AI**, maintained by Daily and its community. It handles the generic, hard part of a [voice agent](/guides/voice/build-a-voice-agent): moving audio and text between streaming speech-to-text, an LLM and text-to-speech, managing the transport, and handling turn-taking and interruptions. You write the agent's behavior and choose the providers.
 
-It's aimed at developers building custom voice agents who want best-of-breed providers per stage instead of a single bundled API — and the control over latency, cost, and model choice that brings.
+The repository is BSD-2-Clause licensed and had about 17.5k GitHub stars as of November 2026. The latest release is v1.17.0, from November 22, 2026.
 
 ## Highlights
 
-- **Composable real-time pipeline** — wire streaming STT, LLM, and TTS into one low-latency loop.
-- **Broad integrations** — works with dozens of STT/LLM/TTS providers (Deepgram, ElevenLabs, OpenAI, Anthropic, and many more).
-- **Transports built in** — WebRTC and WebSocket for browser, phone, and app audio.
-- **Turn-taking & interruptions** — voice-activity detection, endpointing, and barge-in handled in the framework.
-- **Single or multi-agent** — compose one agent or coordinate several with handoff and parallel processing.
+- **Pipelines of processors.** A pipeline is an ordered list of processors. Data flows through it as frames (audio, text, control signals), so swapping a provider means replacing one element.
+- **Many services.** Integrations for speech-to-text (AssemblyAI, Deepgram, Cartesia, ElevenLabs and more), LLMs (Anthropic, OpenAI, AWS, Azure, Cerebras and more), text-to-speech, and speech-to-speech models such as OpenAI Realtime, Gemini Live and AWS Nova Sonic.
+- **Transports.** Daily (WebRTC), FastAPI WebSocket, LiveKit (WebRTC) and SmallWebRTCTransport, plus serializers for Twilio, Telnyx, Plivo, Exotel and Genesys telephony.
+- **Pipecat Flows.** Built-in support for structured conversations with predefined or dynamic paths and state, including flows defined in YAML.
+- **Multi-agent.** Each pipeline is an agent; compose them with handoffs, parallel fan-out or sidecar workers, in one process or distributed.
+- **Client SDKs and RTVI.** Official client SDKs talk to a bot over the RTVI (Real-Time Voice Interaction) protocol, which is enabled by default.
+- **Tooling.** A CLI that scaffolds and deploys projects, the Whisker pipeline debugger, the Tail terminal dashboard, and OpenTelemetry and Sentry hooks.
 
 ## In an AI-assisted workflow
 
-```python
-# a Pipecat pipeline wires the streaming stages into one real-time loop
-from pipecat.pipeline.pipeline import Pipeline
-pipeline = Pipeline([transport.input(), stt, llm, tts, transport.output()])
+Start a project with the CLI:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh    # uv is required
+uv tool install "pipecat-ai[cli]"
+pipecat init quickstart
+uv sync && uv run bot.py
 ```
 
-Swap any stage's provider without rewriting the loop — the pipeline structure stays the same.
+The generated bot builds three services and wires them into a pipeline. This is the shape of it, trimmed from Pipecat's quickstart (the full version also passes voice and model settings):
+
+```python
+import os
+
+from pipecat.services.cartesia.tts import CartesiaTTSService
+from pipecat.services.deepgram.stt import DeepgramSTTService
+from pipecat.services.openai.responses.llm import OpenAIResponsesLLMService
+
+stt = DeepgramSTTService(api_key=os.getenv("DEEPGRAM_API_KEY"))
+llm = OpenAIResponsesLLMService(api_key=os.getenv("OPENAI_API_KEY"))
+tts = CartesiaTTSService(api_key=os.getenv("CARTESIA_API_KEY"))
+
+pipeline = Pipeline([
+    transport.input(),     # audio from the browser or phone
+    stt,                   # speech-to-text
+    user_aggregator,       # add the user's message to the context
+    llm,                   # language model
+    tts,                   # text-to-speech
+    transport.output(),    # audio back to the caller
+    assistant_aggregator,  # add the bot's reply to the context
+])
+```
+
+The `transport` and the two aggregators come from the scaffolded `bot.py`; the aggregators keep the conversation history, and the user aggregator carries the Silero voice-activity detector. Order matters: audio must be transcribed before the LLM sees it, and text synthesized before it is played.
+
+Pipecat also publishes [Claude Code](/tools/claude-code) skills for scaffolding and deploying bots. Add them with `claude plugin marketplace add pipecat-ai/skills`.
 
 > [!TIP]
-> Pipecat shines when you want to mix providers — e.g. Deepgram for STT, your own LLM via a gateway, and ElevenLabs for TTS — and still get tuned turn-taking and barge-in for free. For a single-vendor prototype, a bundled voice-agent API is faster to start.
+> Pipecat pays off when you want a different vendor per stage, for example [Deepgram](/tools/deepgram) for STT, your own LLM behind a gateway, and [ElevenLabs](/tools/elevenlabs) for TTS, while keeping one turn-taking and interruption model. For a single-vendor prototype, a bundled voice-agent API gets you talking faster.
 
 ## Good to know
 
-Pipecat is open source (BSD-2-Clause) and free; you pay the underlying STT/LLM/TTS providers for usage. It's a Python framework you run yourself (locally or in the cloud), with WebRTC/WebSocket transports for getting audio in and out. To pick the providers it orchestrates, compare [Deepgram](/tools/deepgram) (STT) and [ElevenLabs](/tools/elevenlabs) (TTS); the [voice-agent-engineer](/agents/data-ai/voice-agent-engineer) builds and tunes the whole pipeline.
+- **You run it.** Pipecat is a library, so hosting, scaling and monitoring are yours. Pipecat Cloud (signup is at pipecat.daily.co) takes that on: `pcc-deploy.toml` describes the build and the CLI deploys it without a container registry.
+- **Extras are opt-in.** `uv add pipecat-ai` installs only the core. Add an extra per service with `uv add "pipecat-ai[option,...]"`; `pip install` works too.
+- **Python only**, 3.11 through 3.14.
+- **Release pace is fast.** The project reached 1.17 in November 2026. Pin the version and read the changelog when you upgrade.
+- **Latency is the sum of your choices.** The framework adds little; the round trip depends on the STT, LLM and TTS providers and where you host relative to them.
+
+Compared with the alternatives: [LiveKit](/tools/livekit) Agents is the closest open-source rival, adding Node.js support and its own WebRTC server and cloud. [Vapi](/tools/vapi) is a hosted platform where an assistant is configuration plus a phone number, at a per-minute platform fee, with no pipeline code to maintain. The [voice-agent-engineer](/agents/data-ai/voice-agent-engineer) agent can build and tune a Pipecat pipeline, and [Realtime Voice Agents](/guides/voice/realtime-voice-apis) compares the build and buy routes.

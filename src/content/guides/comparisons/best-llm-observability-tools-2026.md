@@ -66,9 +66,6 @@ sources:
   - title: "Phoenix release notes"
     url: "https://arize.com/docs/phoenix/release-notes"
     publisher: "Arize AI"
-  - title: "Helicone is joining Mintlify"
-    url: "https://www.helicone.ai/blog/joining-mintlify"
-    publisher: "Helicone"
   - title: "Mintlify acquires Helicone"
     url: "https://www.mintlify.com/blog/mintlify-acquires-helicone"
     publisher: "Mintlify"
@@ -250,7 +247,7 @@ Pricing counts records, where one span, log or metric is one record. As of Novem
 
 ### Helicone: maintenance mode since March 2026
 
-Mintlify acquired Helicone on March 3, 2026. Helicone says its services "will remain live for the foreseeable future in maintenance mode," with "security updates, new models, bug & performance fixes" continuing and no shutdown date announced. Mintlify says it will "work closely with every customer to support a smooth migration to another platform."
+Mintlify acquired Helicone on March 3, 2026. Helicone said at the time (in a post since removed from its blog) that its services "will remain live for the foreseeable future in maintenance mode," with "security updates, new models, bug & performance fixes" continuing and no shutdown date announced. Mintlify says it will "work closely with every customer to support a smooth migration to another platform." As of November 2026, a banner on helicone.ai reads "Helicone is now part of Experiential Labs. Details to come soon," with no terms or roadmap published.
 
 The repository tells the same story:
 - The last GitHub release dates from August 21, 2025.

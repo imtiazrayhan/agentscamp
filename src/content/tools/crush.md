@@ -3,6 +3,8 @@ name: "Crush"
 title: "Crush"
 description: "Charm's terminal coding agent: nearly any model, including local ones, switched mid-session, with LSP context, MCP and Agent Skills. Source-available (FSL)."
 date: "2026-09-11"
+updated: 2026-11-27
+reviewed: 2026-11-27
 url: "https://github.com/charmbracelet/crush"
 pricing: "free"
 category: "cli"
@@ -73,10 +75,10 @@ Because Crush reads `.claude/skills` and `~/.claude/skills/`, skills you've inst
 | Tool | License | Models | Platforms |
 |---|---|---|---|
 | Crush | FSL-1.1-MIT (source-available) | Nearly any, incl. local | macOS, Linux, Windows, Android, BSDs |
-| OpenCode | MIT | 75+ providers, incl. local | macOS, Linux, Windows (WSL advised) |
+| OpenCode | MIT | 200+ providers, incl. local | macOS, Linux, Windows (WSL advised) |
 | [Aider](/tools/aider) | Apache-2.0 | Almost any LLM, incl. local | Python package |
 
-OpenCode is the closest peer: MIT-licensed, with a desktop app in beta as of September 2026 and optional Zen (pay-as-you-go) and Go (subscription) model access. Crush trades the OSI license for wider OS reach, mid-session model switching and its own optional Hyper provider. Aider is the git-first choice, turning every edit into a commit, though its release cadence has slowed (last PyPI release February 2026).
+OpenCode is the closest peer: MIT-licensed, with a desktop app in beta as of November 2026 and optional OpenCode Console (pay-as-you-go, formerly Zen) and Go (subscription) model access. Crush trades the OSI license for wider OS reach, mid-session model switching and its own optional Hyper provider. Aider is the git-first choice, turning every edit into a commit, though its release cadence has slowed (last PyPI release February 2026).
 
 ## Good to know
 

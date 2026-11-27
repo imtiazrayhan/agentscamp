@@ -1,8 +1,9 @@
 ---
-description: Evaluate Tamr with a bounded mastering pilot that preserves source keys, exposes uncertain candidates
-  and names the owner of each decision.
+description: Tamr is an AI-native master data management platform that resolves entities across source systems into
+  golden records, sold on quoted subscriptions.
 date: '2026-09-14'
-reviewed: '2026-10-07'
+updated: '2026-11-27'
+reviewed: '2026-11-27'
 topics:
 - ai-at-work
 - workflow-prompting
@@ -27,8 +28,8 @@ category: data
 alternativeTo: ["dedupe"]
 os:
 - Web
-seoDescription: Evaluate Tamr with source-preserving pilot cases, unresolved venue candidates, named reviewers
-  and a current scope-specific quote.
+seoDescription: Tamr is an AI-native master data management platform. How to test it with a source-preserving
+  pilot, named reviewers and a scope-specific quote.
 ---
 
 Tamr is worth evaluating when entity identity needs ongoing ownership across several sources. Its [mastering documentation](https://cloud.docs.tamr.com/docs/welcome-to-tamr) describes golden records, persistent IDs, and human curation. A selection decision should focus on whether that operating model fits your team, including how uncertain records reach the right reviewer.
@@ -53,6 +54,6 @@ Budget the work around the subscription as well: source preparation, reviewer ti
 
 ## When the model fits
 
-Tamr merits consideration when mastering is a continuing business process with shared source ownership and a named curation team. A one-off comparison of two small files may justify a simpler review packet first. If your team prefers to build and maintain its own Python matching workflow, compare [Dedupe](/tools/dedupe) as a different operational choice.
+Tamr merits consideration when mastering is a continuing business process with shared source ownership and a named curation team. A one-off comparison of two small files may justify a simpler review packet first. If your team prefers to build and maintain its own Python matching workflow, compare [Dedupe](/tools/dedupe) as a different operational choice. That route is unsupported software you run yourself: as of November 2026 the library's last PyPI release was 3.0.3 in August 2024, and the hosted Dedupe.io service shut down on January 31, 2023.
 
 Choose after reviewing the pilot’s evidence and the current quote. Record limitations alongside accepted behavior, and retain the exact source versions used in the demonstration. This profile makes no accuracy claim for your data; the evidence that matters is whether the chosen process exposes conflicts and supports accountable decisions in your actual use case.

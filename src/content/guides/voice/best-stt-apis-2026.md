@@ -3,13 +3,14 @@ title: "Best Speech-to-Text APIs in 2026"
 description: "The STT field, honestly ranked — Deepgram and AssemblyAI's hosted duel, Whisper as the open baseline, Cartesia Ink for latency — and how to pick by workload."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
-updated: 2026-11-25
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra"]
 audience: ["ai-engineers"]
 tags: ["stt", "speech-to-text", "voice", "best-of", "comparison"]
 featured: false
-summary: "Four answers cover STT in 2026: Deepgram (streaming-first enterprise workhorse), AssemblyAI (promptable Universal-3 Pro plus the understanding stack — summaries, sentiment, PII), Whisper (the open-weights baseline for self-hosting via faster-whisper/whisper.cpp), and Cartesia Ink (the latency newcomer with model-native turn detection). Pick by workload."
+summary: "Four answers cover STT in 2026: Deepgram (streaming-first enterprise workhorse), AssemblyAI (promptable AssemblyAI-STT-3.7 plus the understanding stack — summaries, sentiment, PII), Whisper (the open-weights baseline for self-hosting via faster-whisper/whisper.cpp), and Cartesia Ink (the latency newcomer with model-native turn detection). Pick by workload."
 keyTakeaways:
   - "STT split into workloads: realtime streaming (agents, captions), batch + understanding (calls, meetings, compliance), and self-hosted (privacy, unit cost) — each has a different winner."
   - "Deepgram and AssemblyAI are the hosted duel: Deepgram's identity is streaming speed at enterprise scale; AssemblyAI's is the intelligence layer — promptable transcription plus summaries, sentiment, speaker ID, and redaction."
@@ -18,7 +19,7 @@ keyTakeaways:
   - "Benchmark WER on YOUR audio — accents, jargon, phone-line quality — and watch billing models: one vendor meters streaming by session time, not audio time."
 faq:
   - q: "What's the most accurate speech-to-text API?"
-    a: "On clean English benchmarks the hosted leaders cluster tightly; on YOUR audio they diverge — domain terms, accents, and noise decide it. AssemblyAI's promptable Universal-3 Pro takes a real lead when you can feed it context and keyterms (vendor-cited +45% on domain terms); Deepgram counters with streaming performance. Run both on fifty representative clips before believing anyone's chart."
+    a: "On clean English benchmarks the hosted leaders cluster tightly; on YOUR audio they diverge — domain terms, accents, and noise decide it. AssemblyAI-STT-3.7, which replaced the Universal-3 line in November 2026, takes a prompt describing the audio plus a keyterms list, and that helps most on domain terms; Deepgram counters with streaming performance. Run both on fifty representative clips before believing anyone's chart."
   - q: "Is Whisper good enough to skip the APIs?"
     a: "For privacy-bound, cost-sensitive, or offline workloads — yes, via faster-whisper or whisper.cpp, with VAD to manage its silence-hallucination habit. You give up streaming-grade latency, diarization, and the understanding layers, and accept a model frozen at the turbo generation. It's the right floor, not the frontier."
   - q: "Which STT should a voice agent use?"
@@ -39,9 +40,9 @@ related: ["tool:deepgram", "tool:assemblyai", "tool:whisper", "tool:cartesia", "
 
 ## The picks, by workload
 
-**Realtime agents → [Deepgram](/tools/deepgram) or Ink.** Deepgram built its identity on streaming: low latency, robust endpointing, enterprise scale, with Aura TTS alongside for one-vendor stacks. [Cartesia Ink](/tools/cartesia) is the 2026 challenger — streaming STT with **turn detection emitted by the model itself** (no external VAD), which deletes one of the [voice pipeline's](/guides/voice/build-a-voice-agent) trickiest components; it's English-first at launch.
+**Realtime agents → [Deepgram](/tools/deepgram) or Ink.** Deepgram built its identity on streaming: low latency, robust endpointing, enterprise scale, with Flux TTS alongside for one-vendor stacks; its Flux STT model now does turn detection in the model as well. [Cartesia Ink](/tools/cartesia) is the 2026 challenger — streaming STT with **turn detection emitted by the model itself** (no external VAD), which deletes one of the [voice pipeline's](/guides/voice/build-a-voice-agent) trickiest components; the stable Ink 2 model covers English, French, Hindi, Japanese and Spanish.
 
-**Batch + understanding → [AssemblyAI](/tools/assemblyai).** Universal-3 Pro's *promptability* — steer transcription with context and keyterms — is the accuracy story of 2026, and the platform around it (summarization, sentiment, speaker ID, translation, PII redaction in 50+ languages) turns audio archives into queryable, compliant data. When transcription is the input to analysis, this stack is the shortcut.
+**Batch + understanding → [AssemblyAI](/tools/assemblyai).** *Promptability* — steering transcription with context and keyterms — is the accuracy story of 2026 and carries over to AssemblyAI-STT-3.7, the model that replaced Universal-3 Pro on November 17, 2026, and the platform around it (summarization, sentiment, speaker ID, translation, PII redaction in 50+ languages) turns audio archives into queryable, compliant data. When transcription is the input to analysis, this stack is the shortcut.
 
 **Self-hosted → [Whisper](/tools/whisper).** MIT weights, ~99 languages, and an ecosystem (faster-whisper, whisper.cpp) that runs it from datacenter to laptop. The honest 2026 status: no new generation since turbo, so hosted models lead on accuracy and features — but nothing touches it when audio can't leave your infrastructure or volume makes per-hour pricing sting.
 
@@ -56,7 +57,7 @@ Picking the right API starts with separating **streaming** from **batch** pipeli
 
 Most teams blame the base model when the real accuracy gains sit in audio prep and configuration:
 
-- **Domain vocabulary and keyterm prompting:** product names, medical/legal jargon, and customer names cause a disproportionate share of painful errors. Promptable models (such as AssemblyAI's Universal-3 Pro) and keyterm boosting features often cut domain-specific errors far more than switching base providers.
+- **Domain vocabulary and keyterm prompting:** product names, medical/legal jargon, and customer names cause a disproportionate share of painful errors. Promptable models (such as AssemblyAI-STT-3.7) and keyterm boosting features often cut domain-specific errors far more than switching base providers.
 - **Telephony vs wideband audio:** 8kHz narrowband phone calls with background noise behave completely differently from clean 48kHz podcast mics. Always pass the native encoding without redundant lossy re-compression, and verify whether your provider offers a dedicated telephony acoustic model.
 - **Speaker diarization on overlapping speech:** cross-talk in sales calls and support recordings is where diarization breaks down. If you have dual-channel (stereo) call recordings — agent on channel 0, customer on channel 1 — use **multichannel transcription** instead of mono diarization; it eliminates speaker-attribution errors completely.
 

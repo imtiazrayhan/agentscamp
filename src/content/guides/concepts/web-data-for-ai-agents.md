@@ -3,7 +3,8 @@ title: "Getting Web Data into AI Agents: Search & Scraping APIs Compared"
 description: "The agent web-data layer — Exa for semantic search, Firecrawl for extraction at scale, Tavily for all-in-one, Jina Reader for zero-setup — and how they compose."
 author: "Imtiaz Rayhan"
 date: 2026-06-12
-updated: "2026-09-11"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 color: "green"
 topics: ["ai-agents-systems", "rag-retrieval"]
 tags: ["web-data", "search", "scraping", "agents", "comparison"]
@@ -57,7 +58,7 @@ An agent without web access is frozen at its [training cutoff](/glossary/knowled
 
 **[Exa](/tools/exa)** is search rebuilt for machine consumers: meaning-based retrieval over the web, contents returned as clean text rather than links to render, deep-search profiles when an agent is researching rather than skimming, and Websets for entity-set building. When the question is *"which pages should my agent read?"*, Exa's answer quality is the product.
 
-**[Firecrawl](/tools/firecrawl)** is the extraction workhorse (~179k GitHub stars as of September 2026): `/scrape` renders any page — JavaScript included — to Markdown, `/crawl` walks whole sites with limits, `/extract` returns schema-validated objects from messy pages (Firecrawl now calls `/agent` its successor). It's the step before [chunking](/glossary/rag) in web-fed RAG, and the heavy machinery when fetch volume is the job.
+**[Firecrawl](/tools/firecrawl)** is the extraction workhorse (~211k GitHub stars as of November 2026): `/scrape` renders any page — JavaScript included — to Markdown, `/crawl` walks whole sites with limits, and a JSON format on `/scrape` returns schema-validated objects from messy pages. The older `/extract` endpoint is deprecated and scheduled for removal on December 10, 2026; Firecrawl points single-page extraction to `/scrape` and multi-page or search-driven extraction to `/agent`. It's the step before [chunking](/glossary/rag) in web-fed RAG, and the heavy machinery when fetch volume is the job.
 
 **[Tavily](/tools/tavily)** bets on integration economy: search (with latency as its pitch), extract, crawl, map, and a multi-step research endpoint behind one key and credit pool, with a hosted MCP server making it a one-liner in Claude Code. For agents that need *a bit of everything* without three vendor accounts, it's the pragmatic default. Deciding between the two search specialists? [Exa vs Tavily](/guides/comparisons/exa-vs-tavily) breaks it down, and [the best web search APIs for AI agents](/guides/comparisons/best-web-search-apis-for-ai-agents-2026) covers the wider field, including Brave and Parallel.
 

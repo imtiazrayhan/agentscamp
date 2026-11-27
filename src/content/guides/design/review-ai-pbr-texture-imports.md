@@ -1,9 +1,10 @@
 ---
-description: Check an AI texture set in its actual target material setup, preserving map roles, UV information
-  and viewer evidence before approving the asset.
+title: Review AI PBR Texture Imports Against the Target Material
+description: "Check AI-generated PBR textures on import: color space per map, metallic-roughness channel packing for glTF and Unity, normal map direction, and a Blender test."
 author: Imtiaz Rayhan
 date: '2026-08-25'
-reviewed: '2026-10-07'
+updated: '2026-11-27'
+reviewed: '2026-11-27'
 topics:
 - ai-at-work
 - workflow-prompting
@@ -12,7 +13,11 @@ audience:
 - developers
 tags:
 - 3d-assets
-- review-ai-pbr-texture-imports
+- pbr
+- textures
+- gltf
+- blender
+- normal-maps
 featured: false
 related:
 - guide:review-ai-generated-3d-meshes
@@ -20,9 +25,7 @@ related:
 - glossary:physically-based-rendering
 - glossary:uv-mapping
 - skill:3d-asset-handoff-sheet
-summary: Check an AI texture set in its actual target material setup, preserving map roles, UV information
-  and viewer evidence before approving the asset.
-title: Review AI PBR Texture Imports Against the Target Material
+summary: "Most bad PBR imports come from three settings: a data map read as color, metallic and roughness taken from the wrong channels, or a normal map with its green channel pointing the other way. Check each map's role, color space and channels against the target's convention, then confirm in a lit render before you approve the asset."
 depth: standard
 sources:
 - title: Text to 3D API
@@ -31,73 +34,138 @@ sources:
 - title: glTF 2.0 Specification
   url: https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html
   publisher: Khronos Group
-seoDescription: Check an AI texture set in its actual target material setup, preserving map roles, UV information
-  and viewer evidence before approving the asset.
+- title: glTF 2.0 add-on, Blender Manual
+  url: https://docs.blender.org/manual/en/5.0/addons/import_export/scene_gltf2.html
+  publisher: Blender Foundation
+- title: Mask map and detail map (HDRP)
+  url: https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@17.0/manual/Mask-Map-and-Detail-Map.html
+  publisher: Unity
+- title: Normal map (Bump mapping)
+  url: https://docs.unity3d.com/Manual/StandardShaderMaterialParameterNormalMap.html
+  publisher: Unity
+- title: Texture Asset Editor
+  url: https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-asset-editor-in-unreal-engine
+  publisher: Epic Games
 keyTakeaways:
-- Freeze mesh, UV, and texture versions together before assigning map roles in the target material.
-- Verify chosen-format channel and color-data conventions using exporter and target evidence.
-- Record actual target renders, exact recipe changes, unresolved maps, and a version-specific owner decision.
+- Base color and emissive are sRGB; metallic, roughness, occlusion and normal maps are linear data and must be imported as non-color.
+- glTF packs roughness in green and metallic in blue; Unity HDRP's mask map uses red for metallic, green for occlusion and alpha for smoothness.
+- glTF, Blender and Unity use +Y (OpenGL-style) normal maps; if bumps look dented under a known light, flip the green channel.
+- A filename says what a map was meant to be, not how it is encoded; confirm in a lit render of the real mesh.
+- Record the mesh, UV and texture versions together, because a texture set only fits the UV layout it was made for.
 faq:
 - q: Can filenames prove that metallic and roughness maps are assigned correctly?
-  a: No. Verify the exported role and channel information against the chosen format and target setup, then
-    inspect an actual target render. Keep missing encoding evidence unresolved.
+  a: No. A file called roughness.png may be a single grayscale map, or one channel of a packed image, and nothing in the name says whether the importer read it as color data. Open each file, look at its channels, check the color space setting in the target, and confirm with a lit render.
+- q: Which channel is roughness in a glTF texture?
+  a: Green. The glTF 2.0 specification puts roughness in the G channel and metalness in the B channel of metallicRoughnessTexture, both stored linearly. Occlusion uses the R channel of its own texture, so one image can carry all three, a layout often called ORM.
+- q: How do I tell an OpenGL normal map from a DirectX one?
+  a: Light the surface from a known direction and look at a raised detail such as a rivet. If it looks pressed into the surface, the green channel is inverted for your target. glTF, Blender and Unity expect +Y, the OpenGL style. Unreal Engine's texture editor has a Flip Green Channel setting for maps authored the other way.
+- q: Why does my imported model look washed out or too shiny?
+  a: The usual cause is color space. A roughness or metallic map imported as sRGB gets a gamma curve applied to its values, which shifts every surface toward the wrong roughness. Set those maps to Non-Color in Blender, or turn off the sRGB option in Unity and Unreal.
 ---
 
-A texture folder is not an approved material. The same files can produce different results when map roles, channels, color-data settings, or UV versions differ. Review the exact mesh-and-texture combination in the actual target application, with a documented material recipe and human viewer evidence.
+A folder of textures is not a material. The same four images can render as brushed steel or as wet plastic depending on which channel the engine reads, which color space it assumes, and which way the normal map's green channel points. A generated asset adds one trap: the preview on the generator's site is rendered with the generator's own conventions, so it tells you nothing about how your importer will read the same files.
 
-Begin with the [mesh handoff review](/guides/design/review-ai-generated-3d-meshes) so the geometry version is already identified. This pass checks the material import for that asset; it does not establish the suitability of a different mesh or scene.
+Start from the [mesh handoff review](/guides/design/review-ai-generated-3d-meshes) so the geometry is already accepted. This pass is about the material on that mesh.
 
-## Freeze the asset combination
+## Know the conventions before you import
 
-Register the mesh file, UV layout version, texture-set version, export format, target application and version, and the owner’s appearance brief. Keep original downloads unchanged and inspect a copy. Record any renamed, converted, resized, or repacked file as a derived version.
+These are the settings that decide the result. The glTF rows are from the [Khronos glTF 2.0 specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html).
 
-The [UV mapping term](/glossary/uv-mapping) explains why texture placement depends on the surface coordinates. Do not assume a texture set belongs to a mesh merely because their names share a prefix. Confirm the actual export pairing or preserve it as unresolved.
+| Map | Color space | glTF 2.0 | Unity HDRP mask map |
+| --- | --- | --- | --- |
+| Base color | sRGB | RGB, with optional alpha coverage in A | Separate base map |
+| Metallic | Linear | B channel of `metallicRoughnessTexture` | R channel |
+| Roughness | Linear | G channel of `metallicRoughnessTexture` | Stored as smoothness in A (invert roughness) |
+| Occlusion | Linear | R channel of `occlusionTexture`, may share the same image | G channel |
+| Normal | Linear | Tangent space, +X right, +Y up | +Y, per Unity's manual |
+| Emissive | sRGB | RGB | Separate map |
 
-[Meshy](/tools/meshy) is one source of generated assets. Its [API documentation](https://docs.meshy.ai/en/api/text-to-3d) describes additional PBR maps for enabled refinement tasks. List the files actually returned by your task. An absent map might reflect task options; it is not permission to invent an output or claim a review was performed.
+Three things follow from the table.
 
-## Build a map-role inventory
+**Only base color and emissive are colors.** Everything else is numeric data stored in an image. If the importer treats a roughness map as sRGB, it applies a gamma curve to numbers that were never gamma-encoded, and the whole surface shifts.
 
-Create a table that separates the file from its intended material role. Include the exporter’s evidence for the role, target assignment, channel selection, color-data setting, and any conversion. A filename containing “roughness” is a clue to investigate, not sufficient proof of its encoding.
+**Packing differs between targets.** glTF's layout puts occlusion, roughness and metallic in R, G and B of one image, often called an ORM texture. Unity's HDRP mask map puts metallic in R, occlusion in G, a detail mask in B and smoothness in A. A glTF-style packed texture dropped into an HDRP mask slot gives you occlusion values as metalness, with no error message.
 
-Use the chosen format and target documentation to verify conventions. For glTF, the [Khronos specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html) specifies sRGB base color and linear metallic/roughness data. Record how your target handles that specific format. Do not extend those settings to every importer or image file without evidence.
+**Normal maps have a handedness.** glTF defines the green channel as +Y up, which Unity's manual calls "Y+ normal maps, sometimes known as OpenGL format", and Blender's glTF documentation uses the same. Other pipelines use the opposite direction, usually called DirectX style. Unreal Engine's Texture Editor has a **Flip Green Channel** option for this, and an **sRGB** checkbox that Epic's documentation says to uncheck when channels are used individually as masks.
 
-[Physically based rendering](/glossary/physically-based-rendering) describes the material model, but the presence of a PBR label does not settle assignments. Ask the owner which appearance matters, which maps are required, and whether missing roles may use approved defaults. Keep defaults distinguishable from supplied maps.
+[Physically based rendering](/glossary/physically-based-rendering) covers why the model works this way.
 
-## Import under recorded conditions
+## Inventory what the generator gave you
 
-Open the frozen asset combination in the actual target application. Record importer settings, assigned maps, channels, color-data treatment, material parameters, camera views, and lighting setup. Save warnings alongside the recipe. A generated preview is separate evidence and cannot stand in for this import.
+List the files you actually received and what each one is. [Meshy](/tools/meshy) is a useful example because its [API documentation](https://docs.meshy.ai/en/api/text-to-3d) is explicit: a refine task returns `texture_urls` with a `base_color` map, and `metallic`, `roughness` and `normal` maps only if the task was created with `enable_pbr: true`. An emission map appears only for some model versions. So a missing roughness map may mean the option was off, not that the asset has no roughness variation. Do not fill the gap with a guess; regenerate, or agree a constant value with the asset's owner and write it down.
 
-Inspect the actual rendered or displayed surface. Capture human notes about seams, stretched areas, repeated details, unexpected shininess, or missing texture regions, with view references. State what the viewer observed before proposing a cause. A dark region can have several explanations; text alone cannot diagnose it from a file list.
+Note that these arrive as separate grayscale files, not a packed image, so any packing is something you or your exporter did afterwards.
 
-Use a controlled comparison when investigating. Change one documented setting, reimport or rerender, and record the observed difference. If several settings change together, retain that limitation rather than claiming that one particular adjustment fixed the problem.
+For each file, record:
 
-## Worked example: a fictional lantern material
+| Field | Example |
+| --- | --- |
+| File and version | `lantern_T2_roughness.png` |
+| Intended role | Roughness |
+| Channels that hold data | Grayscale, identical R, G and B |
+| Color space to import as | Non-Color |
+| Where it plugs in | Roughness input, or G of a packed texture |
+| Mesh and UV version it belongs to | `lantern_v3.glb`, UV set 0 |
 
-The following files, notes, and outcomes are invented for teaching. The packet contains mesh v3, its stated UV layout, and texture set T2. A source preview shows an acceptable base color. The target’s material setup expects a documented metallic/roughness channel arrangement, but the draft import recipe copies file names without checking that arrangement.
+The last row matters. A texture set fits the [UV layout](/glossary/uv-mapping) it was generated for. If the mesh was remeshed, decimated or re-unwrapped after texturing, the textures no longer line up, whatever the filenames say.
 
-| Item | Initial record | Missing evidence or action |
+## Walkthrough: check the import in Blender
+
+Blender is a good neutral inspector because it shows the node graph and matches glTF conventions. The steps below follow the glTF 2.0 add-on documentation in the Blender manual.
+
+1. **Import.** `File > Import > glTF 2.0 (.glb/.gltf)`. If you have a mesh and loose texture files instead, import the mesh and build the material by hand in step 3.
+2. **Open the Shading workspace** and select the object. The material appears as a Principled BSDF with Image Texture nodes feeding it.
+3. **Check each Image Texture node's Color Space.** Base color: sRGB. Metallic, roughness, occlusion and normal: Non-Color. This is the setting most often wrong on hand-built materials.
+4. **Check the channel routing.** For a packed glTF texture the image should pass through a Separate Color node (Separate RGB in older versions), with G going to Roughness and B to Metallic. For separate grayscale maps, each plugs straight into its input.
+5. **Check the normal path.** The normal image must go through a Normal Map node set to Tangent Space, then into the Normal input. An image plugged directly into Normal is a common mistake and produces flat or wrong shading.
+6. **Render under a light you control.** Switch the viewport to Rendered, add one strong light from above and to one side, and orbit the model.
+
+A correct graph, written out:
+
+```text
+Image (base_color, sRGB)        -> Principled BSDF: Base Color
+Image (ORM, Non-Color) -> Separate Color
+                          G     -> Principled BSDF: Roughness
+                          B     -> Principled BSDF: Metallic
+Image (normal, Non-Color) -> Normal Map (Tangent Space)
+                                -> Principled BSDF: Normal
+```
+
+## Read the render
+
+Match what you see to a cause, then change one setting and render again.
+
+| What you see | Likely cause | Test |
 | --- | --- | --- |
-| Base-color file | T2 color map assigned | Confirm target setting and actual view |
-| Metallic/roughness file | Packed file named in export | Verify channel roles against chosen format |
-| UV pairing | Mesh v3 and T2 listed | Confirm they belong to the same export |
-| Final appearance | Source preview accepted | Target-view evidence still required |
+| Whole surface too glossy or too matte, evenly | Roughness map read as sRGB | Set Color Space to Non-Color |
+| Painted or plastic areas look like chrome | Metallic taken from the wrong channel, or occlusion read as metallic | Swap the Separate Color outputs; view each channel alone |
+| Shiny where it should be rough, and the reverse | Roughness and smoothness confused, so the map is inverted | Invert the map once and compare |
+| Raised details look dented; lighting seems to come from below | Normal map green channel flipped | Invert G, or use the engine's flip-green option |
+| No surface detail at all | Normal image bypasses the Normal Map node, or strength is 0 | Rebuild the normal path |
+| Colors washed out | Base color imported as Non-Color or Linear | Set to sRGB |
+| Details land in the wrong place, seams cross faces | Textures made for a different UV layout | Re-pair with the matching mesh export |
 
-A draft declaring “PBR materials imported correctly” is unsupported. The reviewer asks for the exporter’s role information and target documentation, records the correct recipe, and requests an actual render. Until the viewer result exists, the appearance remains untested.
+Change one thing at a time. If you fix color space and channel order together and the model looks right, you do not know which one mattered, and the next asset from the same source will cost you the same hour.
 
-Suppose the fictional viewer observes that the rear panel is much shinier than the approved reference. Record the observation and view ID. If a verified channel correction changes that appearance in a second render, record the exact before-and-after settings and the human result. Do not claim the correction succeeded merely because the rewritten recipe looks plausible.
+Preview the three data maps on their own before blaming the engine. A metallic map should be mostly black and white with little gray. A roughness map should have visible variation. A normal map should be predominantly light blue-violet; one that looks like a grayscale image is a bump or height map, not a normal map, and needs a different node.
 
-If the exported channel information is unavailable, keep the role unresolved and ask the asset provider. If T2 belongs to a different UV layout, select the correct paired version and repeat the import. Neither problem is solved by writing a more detailed asset description.
+## Example: a lantern with a chrome back panel
 
-## Review omissions and conflicts explicitly
+This example is illustrative, not a recorded test. A lantern arrives as `lantern_v3.glb` plus four loose maps, and an artist packs occlusion, roughness and metallic into one image for a Unity HDRP project. In the engine the painted back panel renders as polished metal.
 
-Missing maps, incompatible target settings, and inconsistent exporter notes need separate decisions. The owner may authorize a default for a nonessential role, request regeneration, or reject the handoff. Record which choice was made and how it affects the intended appearance.
+The inventory finds the cause without opening a debugger. The packed image is in glTF order: occlusion in R, roughness in G, metallic in B. HDRP's mask map reads R as metallic, so it is using the occlusion values, which are near white on a flat exposed panel, as metalness. Alpha, where HDRP expects smoothness, is empty.
 
-Do not conceal a warning because a front view looks acceptable. Check the agreed views under the recorded conditions, and state which views or material behaviors were not examined. If the brief changes from a static render to another use, request a new acceptance decision for that context.
+The fix is a repack: metallic to R, occlusion to G, inverted roughness to A, imported with **sRGB (Color Texture)** turned off, as Unity's documentation requires for mask maps. One render under the same light confirms the panel is paint again. The recorded change is "mask map repacked from glTF ORM order to HDRP order", which the next person can reuse.
 
-The [3D asset handoff sheet](/skills/design/3d-asset-handoff-sheet) can organize supplied reports and viewer notes. A text-only assistant can compare those documents and identify gaps; it cannot render the material or inspect binary geometry merely by reading their paths.
+## Hand off a recipe someone can repeat
 
-## Hand off a reproducible recipe
+Approval covers one mesh, one UV layout, one texture set and one target. Send these together:
 
-Provide the exact mesh/UV/texture versions, unchanged source files, derived-file history, map-role table, target settings, lighting and view references, warnings, human observations, and owner decision. Include a recheck trigger for any changed mesh, UV layout, texture file, application, or material setting.
+- Mesh file, UV set and texture set, each with a version, plus the untouched original downloads
+- The map inventory, including any map that was missing and what was used in its place
+- Target application and version, and the color space and channel setting for every map
+- Any conversion you made: repacking, inverting roughness, flipping the normal map's green channel
+- Two or three renders with the light direction noted, and which views were not checked
+- What triggers a recheck: a new mesh export, a re-unwrap, a regenerated texture, or a different engine
 
-Acceptance applies to the inspected combination and target environment. The recipient should be able to recreate the setup and understand every unresolved item. Finishing this review means a supported import decision with reproducible evidence, not a universal guarantee that the texture set will look right everywhere.
+The [3D asset handoff sheet](/skills/design/3d-asset-handoff-sheet) skill organizes those notes into one document. It works from the reports and observations you give it; it cannot render the material or open the binary files, so the lit render stays a human step.

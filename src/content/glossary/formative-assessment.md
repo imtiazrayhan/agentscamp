@@ -15,7 +15,7 @@ related:
 - guide:ai-exit-tickets-from-lesson-objectives
 - tool:magicschool
 - agent:exit-ticket-reviewer
-summary: Formative assessment gathers feedback during learning so teachers and learners can adjust next steps; an AI draft still needs educator review.
+summary: Explains how formative assessment differs from summative assessment by purpose and timing, and why it often carries low or no point value. A map-lesson exit ticket shows the rule for AI drafts. A wrong answer key is a draft defect to fix before use, not evidence about learners. The educator interprets responses and chooses the follow-up.
 term: Formative assessment
 seoTitle: "What Is Formative Assessment?"
 ---

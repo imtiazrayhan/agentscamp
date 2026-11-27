@@ -3,6 +3,8 @@ title: "Claude for Founders: Which Claude Product for Which Job"
 description: "A surface map for founders: when to use claude.ai, Claude Design, Cowork, Claude Code, Claude for Excel, and Claude in Chrome, with a job-to-product table."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -43,7 +45,7 @@ sources:
     publisher: "Anthropic"
 faq:
   - q: "Do I need separate subscriptions for Cowork, Claude Code, and Claude Design?"
-    a: "No. Anthropic's pricing page lists Claude Code, Cowork, Claude Design, and Claude for Microsoft 365 as included with Pro, Max, Team, and Enterprise. All of them draw on the same usage limits as claude.ai, so a heavy Claude Code afternoon shows up as less room in chat later that day."
+    a: "No. Anthropic's pricing page lists Claude Code, Cowork, and Claude for Microsoft 365 as included with Pro, Max, Ultra, Team, and Enterprise, and Claude Design on every plan including Free. All of them draw on the same usage limits as claude.ai, so a heavy Claude Code afternoon shows up as less room in chat later that day."
   - q: "What is the difference between Cowork and Claude Code?"
     a: "Cowork is Claude working across the folders and applications on your desktop: read these files, produce this report, fill in this system, on a schedule if you like. Claude Code is Claude working inside one project folder to produce software or a reproducible analysis. If the deliverable is a document or an updated system, Cowork. If it is an app, a script, or a data pipeline, Claude Code."
   - q: "When should a founder use Claude Design instead of asking claude.ai for a deck?"
@@ -86,7 +88,7 @@ What claude.ai is not for: anything that needs to happen *to* your files rather 
 
 ## Claude Design: decks and prototypes that look finished
 
-[Claude Design](/tools/claude-design) is the same conversation pointed at visual output. Anthropic's help center describes it as a way to "create designs, interactive prototypes, presentations, and more by having a conversation with Claude," reachable at claude.ai/design or from the desktop sidebar, available on Pro, Max, Team, and Enterprise, and still in beta as of September 2026.
+[Claude Design](/tools/claude-design) is the same conversation pointed at visual output. Anthropic's help center describes it as a way to "create designs, interactive prototypes, presentations, and more by having a conversation with Claude," reachable at claude.ai/design or from the desktop sidebar, and, as of November 2026, included with every plan, Free too.
 
 Two things make it more than a slide generator. It builds a design system during onboarding from your existing files, so the fourth deck matches the first. And it exports where founders actually need things: PPTX, PDF, standalone HTML, and a handoff to Claude Code when a prototype should become real software. The beta caveats are the ones you would expect: comments occasionally fail to persist, and multi-person editing is unreliable.
 

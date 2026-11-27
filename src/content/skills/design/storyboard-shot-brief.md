@@ -7,7 +7,7 @@ audience: ["designers", "marketers"]
 tags: ["design", "video", "planning"]
 featured: false
 related: ["guide:ai-storyboard-from-script", "agent:storyboard-continuity-reviewer", "command:check-storyboard-coverage"]
-summary: "Convert an approved short script into a shot brief with stable beat IDs, action, dialogue, composition, continuity constraints and proposed duration. Use before storyboard image generation; do not write a new script, create final art or approve a production."
+summary: "Supply an approved script with beat IDs, continuity constraints and a reviewer. You get one row per shot with its beat ID, exact excerpt, action, composition, continuity note and proposed duration in milliseconds, plus omitted beats and open constraints. Composition stays in its own field, and durations remain proposals until the director's animatic review."
 name: "storyboard-shot-brief"
 title: "Storyboard Shot Brief"
 version: "1.0.0"

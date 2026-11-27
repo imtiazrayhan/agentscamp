@@ -4,8 +4,8 @@ description: "The Model Context Protocol by the numbers — SDK downloads, serve
 author: "Imtiaz Rayhan"
 date: 2026-07-01
 freshness: "tier1"
-updated: 2026-11-25
-reviewed: 2026-11-25
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["mcp", "architecture"]
 audience: ["developers", "ai-engineers"]
@@ -50,6 +50,8 @@ Measured directly from registry APIs, **September 1, 2026** *(primary)*:
 | PyPI `fastmcp`, monthly downloads | — | ~85M (down from ~93M in July) | pypistats |
 | Combined core SDKs | ~97M (all SDKs, official figure) | **~523M** (npm+PyPI core alone) | computed |
 
+The same two APIs read again on November 27, 2026: the npm SDK logged **387.5M** downloads for October 28 to November 26, and PyPI's `mcp` package **340.6M** over its last month, about 728M combined.
+
 Roughly a **5x rise in nine months** on the cleanest comparable series — and since the September figure counts only the two core packages, it understates the total. The project's own accounting agrees: the July 28, 2026 spec-release post cites "close to half-a-billion downloads a month" across Tier 1 SDKs, with the TypeScript and Python SDKs each past 1 billion lifetime downloads *(primary)*. One wrinkle: `fastmcp`, the popular Python framework, dipped from ~93M to ~85M over the summer — growth is concentrating in the core packages.
 
 ## How many servers? Name the registry
@@ -67,6 +69,6 @@ The spread is the lesson: "how many MCP servers exist" has no single answer — 
 
 - **modelcontextprotocol/servers**: ~90,000 GitHub stars; the Python SDK ~24,200, TypeScript SDK ~13,300, spec repo ~9,100 *(GitHub API, primary)*.
 - **AAIF membership** beyond the founding eight: **18 Gold members at launch** (including Cisco, Datadog, Docker, IBM, JetBrains, Oracle, Salesforce, SAP, Shopify, Snowflake) and **23 Silver** (including Hugging Face, Uber, Zapier, Pydantic, Elastic), since expanded to 190 (May 18, 2026) and **247 total members** (August 13, 2026 — 57 new: 3 Gold, 33 Silver, 21 Associate) *(Linux Foundation, primary)*. Platinum stays capped at the founding eight.
-- The protocol's sibling under the same roof: [A2A](/guides/mcp/mcp-vs-a2a) for agent-to-agent, donated by Google in mid-2025 — both halves of the agent stack now sit in neutral governance.
+- The protocol's sibling under the same roof: [A2A](/guides/mcp/mcp-vs-a2a) for agent-to-agent, donated by Google to the Linux Foundation in mid-2025 and now listed as an AAIF project alongside MCP — both halves of the agent stack sit in the same neutral foundation.
 
 The arc these numbers trace: MCP won the agent-to-tool layer the way standards win — not by mandate but by **default-ness**, until "does it speak MCP" stopped being a question. The practical guides for living in that ecosystem: [adding servers to Claude Code](/guides/mcp/claude-code-mcp-setup) and [the 2026 server shortlist](/guides/mcp/best-mcp-servers-2026).

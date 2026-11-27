@@ -3,6 +3,8 @@ title: "Skills vs MCP Servers: When to Use Which"
 description: "Skills inject procedure into context; MCP servers expose tools and live data over a protocol. A decision framework, the combine pattern, and examples."
 author: "Imtiaz Rayhan"
 date: 2026-06-20
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "orange"
 topics: ["workflow-prompting", "mcp"]
 tags: ["skills", "mcp", "claude-code", "agents", "decision-guide"]
@@ -12,8 +14,8 @@ keyTakeaways:
   - "A skill is knowledge that loads into context on demand; an MCP server is a capability — tools, resources, and prompts exposed over a protocol the model calls."
   - "The decision: need a NEW capability or LIVE external data, build/install an MCP server. Need Claude to follow YOUR procedure or conventions, write a skill."
   - "They compose: a skill can encode the recipe for orchestrating an MCP server's tools — when to call them, in what order, and how to interpret the results."
-  - "Distribution differs sharply. A skill is a folder of files you drop in; an MCP server is a running process you connect over stdio or HTTP, shipped via npm/PyPI/Docker or the MCP Registry."
-  - "Skills cost almost nothing idle (only metadata loads); MCP tool definitions consume context whenever the server is connected, so connect only the servers a task needs."
+  - "Distribution differs sharply. A skill is a folder of files you drop in; an MCP server is a running process you connect over stdio or HTTP, shipped via npm, PyPI, Docker, or an MCPB bundle and listed in the MCP Registry."
+  - "Skills cost almost nothing idle (only metadata loads). MCP tool definitions cost context whenever a server is connected unless the client defers them: Claude Code's tool search does by default, many other clients load every definition up front."
 faq:
   - q: "What is the difference between a Claude skill and an MCP server?"
     a: "A skill is filesystem-based knowledge: a SKILL.md file (plus optional scripts and references) that loads into the model's context when your task matches its description, shaping HOW Claude does the work. An MCP server is a running process that exposes capabilities — tools to call, resources to read, prompts to reuse — over the Model Context Protocol, giving Claude WHAT it can newly do, including reaching live external systems."
@@ -22,7 +24,7 @@ faq:
   - q: "Can a skill use an MCP server?"
     a: "Yes, and that is the strongest pattern. The MCP server provides the raw tools and data; the skill provides the playbook for using them well — which tool to call first, how to sequence calls, what a good result looks like, and the edge cases to handle. The server is the toolbox, the skill is the instructions for the job."
   - q: "Do skills and MCP servers cost the same in context tokens?"
-    a: "No. A skill's metadata (name and description) is always loaded but tiny; its full instructions enter context only when triggered, and bundled files load only when read. An MCP server's tool definitions are injected into context whenever the server is connected, whether or not you use them — so a dozen connected servers can quietly eat your window. Connect servers per task, not permanently."
+    a: "No. A skill's metadata (name and description) is always loaded but tiny; its full instructions enter context only when triggered, and bundled files load only when read. An MCP server's cost depends on the client. Claude Code turns on tool search by default, so only tool names and server instructions load at session start and full definitions load when Claude needs them. A client without deferral injects every connected server's tool definitions on every request, used or not — there, a dozen connected servers can quietly eat your window, so connect servers per task."
   - q: "Are skills or MCP servers Claude-only?"
     a: "Neither. MCP is an open standard supported across many clients and assistants, so a server you build works beyond Claude. The Agent Skills format (a SKILL.md with name, description, and instructions) has been adopted as an open standard across multiple coding agents too. Both are portable, not locked to one vendor."
 related: ["guide:what-are-claude-skills", "guide:skills-vs-agents-vs-commands", "guide:writing-your-first-skill", "guide:best-mcp-servers-2026", "guide:building-an-mcp-server", "guide:mcp-vs-a2a", "guide:claude-code-skills-best-practices"]
@@ -45,13 +47,15 @@ The upshot: a skill is **knowledge on demand**. It doesn't give Claude new power
 
 ## What an MCP server actually is
 
-The [Model Context Protocol](/guides/mcp/mcp-vs-a2a) is an open JSON-RPC standard — think of it as a USB-C port for AI applications. An MCP server is a separate **running process** that, on connect, negotiates capabilities with the client and declares what it offers across three primitives:
+The [Model Context Protocol](/guides/mcp/mcp-vs-a2a) is an open JSON-RPC standard — think of it as a USB-C port for AI applications. An MCP server is a separate **running process** that tells the client which protocol versions and capabilities it supports and declares what it offers across three primitives:
 
 - **Tools** — functions the model can call to *act*: run a query, create a ticket, send a message, search an index.
 - **Resources** — data the client can *read*: files, database rows, documents, API responses.
 - **Prompts** — reusable, parameterized prompt templates the server surfaces to the user or model.
 
-The client (Claude Code, claude.ai, or any MCP-capable app) discovers these via `tools/list`, `resources/list`, and `prompts/list`, then issues `tools/call` when the model decides to use one. Two transports carry the same payloads: **stdio** for local processes and **Streamable HTTP** for remote servers (the older HTTP+SSE transport was deprecated in 2025).
+The client (Claude Code, claude.ai, or any MCP-capable app) discovers these via `tools/list`, `resources/list`, and `prompts/list`, then issues `tools/call` when the model decides to use one. Two standard transports carry the same payloads: **stdio** for local processes and **Streamable HTTP** for remote servers (the older HTTP+SSE transport was deprecated in 2025).
+
+The current spec revision, 2026-07-28, makes the protocol stateless. The `initialize` handshake and protocol-level sessions are gone: every request carries its protocol version and client capabilities, and a server advertises its own through a mandatory `server/discover` call. Servers and clients built against 2025-11-25 or earlier still open with the handshake, so expect both styles in the wild for a while. None of this changes the skill-versus-server decision; it matters when you build or host a server.
 
 The upshot: an MCP server gives Claude **genuinely new capabilities and live data** it could not otherwise reach. It is the bridge to your systems.
 
@@ -97,9 +101,9 @@ These two live in different worlds operationally, and that drives a lot of the p
 
 **A skill is files.** You drop a folder into `.claude/skills/` (project) or `~/.claude/skills/` (personal), or upload a zip in claude.ai, or ship it through a plugin. There's nothing to run, no port, no auth — it's text and maybe a script. Sharing is git, a zip, or a registry of skills like this one. See [Writing Your First Skill](/guides/skills/writing-your-first-skill) and [Claude Code Skills Best Practices](/guides/skills/claude-code-skills-best-practices) for authoring.
 
-**An MCP server is a process.** Someone has to run it — locally over stdio or hosted over HTTP — and it often needs credentials, network access, and a security review (an MCP server with a token to your systems is a real attack surface). Distribution rides existing package channels: npm/`npx`, PyPI/`uvx`, Docker, the DXT bundle format, and the official MCP Registry for discovery. To pick one or build your own, see [Best MCP Servers (2026)](/guides/mcp/best-mcp-servers-2026) and [Building an MCP Server](/guides/advanced/building-an-mcp-server).
+**An MCP server is a process.** Someone has to run it — locally over stdio or hosted over HTTP — and it often needs credentials, network access, and a security review (an MCP server with a token to your systems is a real attack surface). Distribution rides existing package channels: npm/`npx`, PyPI/`uvx`, Docker, MCPB bundles (`.mcpb`, the format formerly called DXT), and the official MCP Registry for discovery, which is in preview as of November 2026. To pick one or build your own, see [Best MCP Servers (2026)](/guides/mcp/best-mcp-servers-2026) and [Building an MCP Server](/guides/advanced/building-an-mcp-server).
 
-The **context cost** also differs and matters at scale. A skill is nearly free until used — only its small description loads upfront. An MCP server's **tool definitions are injected whenever it's connected**, used or not, so a dozen always-on servers quietly shrink your usable context window. The discipline: keep skills plentiful (they're cheap), but connect MCP servers per task rather than wiring up everything permanently.
+The **context cost** also differs, and how much depends on the client. A skill is nearly free until used — only its small description loads upfront. An MCP server's tool definitions are the expensive part, and clients handle them two ways. Claude Code defers them: tool search is on by default, so only tool names and server instructions load at session start and a tool's full definition loads when Claude searches for it. (Setting `ENABLE_TOOL_SEARCH=false` loads everything upfront again.) A client without deferral **injects every connected server's tool definitions on every request**, used or not, so a dozen always-on servers quietly shrink your usable context window. The discipline: keep skills plentiful (they're cheap), check how your client loads MCP tools, and where it loads them all, connect servers per task rather than wiring up everything permanently. Deferral lowers the token cost, not the security cost; a connected server with a live credential is attack surface either way.
 
 ## The short version
 

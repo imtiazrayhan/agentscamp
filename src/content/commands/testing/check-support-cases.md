@@ -2,7 +2,8 @@
 description: "Validate a local JSONL support-answer testset with Python: unique case IDs, exact fields, answer/clarify/escalate expectations, required answer-card references and sources, and explicit escalation reasons; report counts without running a support bot."
 title: "Check Support Cases"
 date: "2026-09-04"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["founders", "marketers", "sales"]
 tags: ["check-support-cases", "knowledge-work"]
@@ -11,7 +12,20 @@ related: ["guide:ai-customer-support-answer-library", "glossary:ticket-deflectio
 seoDescription: "Validate support-answer testset IDs, fields, card and source references, escalation reasons, and authored behavior counts with local Python."
 argument-hint: "<cases.jsonl>"
 allowed-tools: "Read, Write, Bash(python3 *)"
+summary: "Check Support Cases is a schema lint for a support-answer test set stored as JSONL. It confirms each case has a unique ID, exactly the expected fields, a valid answer, clarify or escalate expectation, and the card, sources or reason that expectation requires, then counts cases by behavior. It never runs a support bot or grades an answer."
 ---
+
+## What it checks and when to run it
+
+This is a schema lint, not a test runner. Run it after writing or editing test cases for a support assistant and before you feed them to whatever evaluates the assistant, so that a typo in a behavior name, a duplicated case ID or an `answer` case with no source fails here instead of skewing a later evaluation.
+
+It expects one JSONL file, one case per line, each with exactly these six fields:
+
+```json
+{"case_id": "...", "question": "...", "expected_behavior": "answer | escalate | clarify", "answer_card_id": "...", "source_refs": ["..."], "escalation_reason": ""}
+```
+
+[Support Answer Card Builder](/skills/docs/support-answer-card-builder) drafts answer cards and synthetic JSONL cases with these fields; the [answer library workflow](/guides/workflow/ai-customer-support-answer-library) covers the review around them. A three-case fixture with literal expected output follows the checker code.
 
 Validate the structure of one local support-case JSONL file. This command counts authored expectations; it does not run a support bot or grade its answers. Supply one POSIX-quoted path. Python 3.10 or later is required.
 
@@ -182,7 +196,7 @@ Expected stdout JSON (exit 0):
 
 ## Edges and human review
 
-The three-case fixture below has one answer, one escalation and one clarification. A Unicode ID with BOM and blank lines is valid. An answer without sources reports `ERROR: Answer case requires card and sources, with no escalation reason: S4`. Repeated JSON keys fail before field validation; repeated S1 case IDs fail rather than being collapsed.
+The three-case fixture above has one answer, one escalation and one clarification. A file with a UTF-8 BOM, blank lines and a non-ASCII case ID is valid. An added `answer` case S4 with an empty `source_refs` array reports `ERROR: Answer case requires card and sources, with no escalation reason: S4`. Repeated JSON keys fail before field validation; repeated S1 case IDs fail rather than being collapsed.
 
 Reviewers must confirm source truth, current applicability and each authored expectation, then separately evaluate the actual support system. This utility provides no evidence of ticket deflection, response accuracy, correct policy or bot behavior. It sends nothing and modifies no source.
 

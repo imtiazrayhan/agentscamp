@@ -4,8 +4,8 @@ description: "A practical, opinionated comparison of the four mainstream AI codi
 author: "Imtiaz Rayhan"
 date: 2026-06-03
 freshness: "tier1"
-updated: 2026-11-25
-reviewed: 2026-11-25
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -24,7 +24,7 @@ faq:
   - q: "Is GitHub Copilot still worth it when agents exist?"
     a: "Yes, if you want AI without changing tools. Copilot now has an agent mode in addition to its inline completions, and it runs inside VS Code, Visual Studio, JetBrains, and Neovim. It's the lowest-friction option for teams already standardized on those editors."
   - q: "Is Windsurf the same as Devin Desktop?"
-    a: "Yes. Cognition AI acquired Windsurf in 2025 and rebranded the standalone editor as Devin Desktop in June 2026; the JetBrains plugin keeps the Windsurf name. In the same update, Devin Local became the default agent for new tabs (the legacy Cascade agent remains selectable), and an Agent Command Center became the default surface with the full IDE behind it."
+    a: "Yes. Cognition AI acquired Windsurf in 2025 and rebranded the standalone editor as Devin Desktop in June 2026; the JetBrains plugin keeps the Windsurf name. In the same update, Devin Local became the default agent for new tabs (the legacy Cascade agent has since been removed from the agent selector), and an Agent Command Center became the default surface with the full IDE behind it."
   - q: "Which one is best for large, multi-file changes?"
     a: "Claude Code and the agent modes in Cursor and Windsurf are all built for multi-file work. Claude Code tends to go furthest autonomously in a repo (running commands, iterating against test output, opening PRs), while Cursor and Windsurf keep that work inside a review-as-you-go editor surface."
 related: ["tool:cursor", "tool:claude-code", "tool:github-copilot", "tool:windsurf", "guide:what-is-claude-code", "guide:choosing-the-right-model", "guide:installing-claude-code"]
@@ -76,7 +76,7 @@ Claude Code is the most extensible for power users: **MCP servers, skills and cu
 
 - **Copilot** — subscription seats backed by **GitHub AI Credits** (since June 2026) and the unified github.com/mobile/cloud-agent Copilot experience (launched September 28, 2026): Free ($0), Pro ($10/mo), Pro+ ($39/mo), Max ($100/mo), Business ($19/user/mo), and Enterprise ($39/user/mo), plus free access for verified students and popular OSS maintainers.
 - **Cursor** — transitioned new sign-ups to **The X Subscription** tiers in October 2026: Free ($0), Plus ($8/mo, centered on Grok models), Premium ($30/mo, required to access third-party Claude/GPT/Gemini models at API rates), Super ($100/mo), and Ultra ($200/mo); legacy Pro ($20) and Pro+ ($60) remain active for existing subscribers, and BYOK works for chat models.
-- **Windsurf (Devin Desktop)** — freemium token-quota plans: Free ($0), Pro ($20/mo), Max ($200/mo), and Teams ($80/mo base + $40/seat).
+- **Windsurf (Devin Desktop)** — freemium token-quota plans: Free ($0), Pro ($20/mo), Max ($200/mo), and Teams ($80/mo flat for up to 100 members).
 - **Claude Code** — bundled into paid Anthropic subscriptions — Pro ($20/mo or $17/mo annual), Max ($100/mo), Ultra ($200/mo, formerly Max 20x), and Team — or billed pay-as-you-go via the Anthropic API, so cost scales directly with agentic usage.
 
 > [!TIP]

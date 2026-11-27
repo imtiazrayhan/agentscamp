@@ -3,6 +3,8 @@ name: "Qwen Code"
 title: "Qwen Code"
 description: "Alibaba Qwen's Apache-2.0 coding agent for the terminal, editor and desktop: OpenAI, Anthropic, Gemini and Qwen APIs, any provider, or local models."
 date: "2026-09-11"
+updated: 2026-11-27
+reviewed: 2026-11-27
 url: "https://qwenlm.github.io/qwen-code-docs/en/users/overview"
 pricing: "open-source"
 category: "cli"
@@ -80,11 +82,11 @@ For a fully local setup, point it at Ollama. Our [guide to open-source and CLI c
 | Tool | License | Models | Local models |
 |---|---|---|---|
 | Qwen Code | Apache-2.0 | OpenAI, Anthropic, Gemini, Qwen APIs | Ollama, vLLM |
-| [OpenCode](/tools/opencode) | MIT | 75+ providers | Ollama, LM Studio |
+| [OpenCode](/tools/opencode) | MIT | 200+ providers | Ollama, LM Studio |
 | Gemini CLI | Apache-2.0 | Gemini only | No |
 | [Codex CLI](/tools/codex-cli) | Apache-2.0 | OpenAI, compatible providers | Ollama, LM Studio via `--oss` |
 
-OpenCode is the closest open-source peer, drawing on 75+ providers and offering an optional pay-as-you-go gateway. Codex CLI suits teams on OpenAI models, and Gemini CLI now serves only paid API-key, Vertex AI and enterprise users. Qwen Code's edge is reach: IDE plugins, a desktop app, chat channels and Agent Arena in one Apache-2.0 package.
+OpenCode is the closest open-source peer, drawing on 200+ providers and offering an optional pay-as-you-go gateway. Codex CLI suits teams on OpenAI models, and Gemini CLI now serves only paid API-key, Vertex AI and enterprise users. Qwen Code's edge is reach: IDE plugins, a desktop app, chat channels and Agent Arena in one Apache-2.0 package.
 
 ## Good to know
 

@@ -1,9 +1,11 @@
 ---
 name: "Trae"
 title: "Trae"
-description: "Trae is an AI-native IDE from ByteDance — a VS Code-style editor with a built-in Builder agent and an autonomous SOLO mode that writes code across a project."
+description: "Trae is an AI IDE from ByteDance with an autonomous SOLO mode, an Agent window for parallel tasks, CUE autocomplete, and dollar-denominated usage plans."
 url: "https://www.trae.ai"
 date: 2026-06-24
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 pricing: "freemium"
 category: "ide"
 os: ["macOS", "Windows", "Linux"]
@@ -14,40 +16,69 @@ audience: ["developers"]
 tags: ["ide", "bytedance", "coding", "agent", "editor"]
 featured: false
 alternativeTo: ["cursor", "windsurf", "zed", "void", "kilo-code"]
-summary: "Trae is an AI-native IDE from ByteDance, built on a fork of VS Code so existing settings and extensions carry over. Its built-in Builder agent plans and edits code across files, while SOLO mode runs as a more autonomous AI engineer that scaffolds whole projects from a prompt. It is freemium: a free tier plus paid plans."
+summary: "Trae is an AI IDE that originated at ByteDance. Its desktop app has an Agent window for running tasks in parallel and an IDE window with a hands-on IDE mode and an autonomous SOLO mode, plus CUE autocomplete. The Free plan is Auto mode only with a one-time usage allowance; paid plans include a monthly dollar balance of model usage."
 related: ["guide:cursor-vs-windsurf", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "guide:ai-coding-agents-cli-2026", "guide:ai-coding-statistics-2026"]
 faq:
-  - q: "What is Trae?"
-    a: "Trae is an AI-native IDE from ByteDance, built on a fork of Visual Studio Code. It pairs a familiar VS Code-style editor with a built-in agent (Builder) and an autonomous SOLO mode that can plan a task, write code across multiple files, and run terminal commands. It bundles access to several frontier models and supports most VS Code extensions and imported settings."
-  - q: "Is Trae free?"
-    a: "Trae is freemium: it offers a free tier and paid plans. The free tier includes model access and agent usage at a capped level, and ByteDance has used a token-based pricing model for the paid tiers. Plans and limits have changed over time, so confirm the current tiers and quotas on the official site."
-  - q: "How does Trae compare to Cursor?"
-    a: "Both are AI-first editors forked from VS Code with an in-editor agent that edits across files. Trae is made by ByteDance and adds SOLO mode for more autonomous, project-scaffolding work, with a free tier that bundles model access; Cursor leans on its in-house Composer models and parallel agents. The right fit depends on pricing, model choice, and data-handling preferences — verify current details on each site."
+  - q: "How much does Trae cost?"
+    a: "As of November 2026, trae.ai/pricing lists Free at $0, Pro at $20 a month, Pro+ at $60 and Ultra at $200. Each paid plan includes a usage balance equal to its price ($20, $60 or $200 a month), unlimited autocomplete and a fast queue, with 10, 15 or 20 concurrent cloud tasks. Enterprise sales go through BytePlus."
+  - q: "What does Trae's free plan include?"
+    a: "As of November 2026 the Free plan is Auto mode only, so you cannot pick a model, with limited usage and limited autocomplete. Trae's pricing FAQ says the free usage balance is a one-time allowance that does not reset monthly, unlike paid plans, which refresh at the start of each subscription period."
+  - q: "Which models does Trae offer?"
+    a: "It depends on your region. As of November 2026 the docs list, outside the U.S., Seed-2.1-Turbo alongside GPT-6 and GPT-5 series models, GLM-5.2, DeepSeek V4, Kimi K3 and Gemini 4 Neon; the U.S. list has GPT, Grok 4.7 and 4.6, Gemini and Kimi models. No Claude model is in either built-in list, though you can add one as a custom model with your own API key."
+  - q: "Does Trae train on my code?"
+    a: "Trae's docs describe a Privacy mode: when it is enabled, Trae does not use your chats, code snippets or AI-generated outputs for data analysis, product optimization or model training, and codebase files remain on your local device. The docs do not say whether it is on by default, so check the setting and read the privacy policy for your region before opening proprietary code."
 ---
 
-Trae is an **AI-native IDE from ByteDance**, built on a fork of Visual Studio Code so existing extensions, themes, keybindings, and settings carry over. It pairs a familiar editor with AI at the center: a built-in **Builder** agent that reads, writes, and runs commands across your project, plus a more autonomous **SOLO mode** positioned as an "AI engineer" that takes a prompt, plans the work, and scaffolds code end to end.
+Trae is an **AI IDE that originated at ByteDance**. It combines a VS Code-compatible editor with agents that plan work, edit across files and run commands, and it is best known for **SOLO mode**, where the AI takes a requirement in natural language or by voice and drives the task from planning through code generation and testing to a running result.
 
-It is aimed at developers who want an agent inside the editor rather than copying context between a browser and their codebase. Trae bundles access to several models and indexes your project so the agent can ground its edits in relevant files instead of just the buffer you have open.
+The product is mid-rename. As of November 2026 the download page still offers two apps, TraeCode (the coding IDE) and TraeWork (a general work assistant), while the docs announce that both have been merged into a single "all-new TRAE" available on desktop, web and mobile. Expect either name depending on where you land.
 
 ## Highlights
 
-- **VS Code-style editor** — forked from VS Code, so most extensions, themes, and settings import directly and the learning curve is mostly the AI layer on top.
-- **Built-in Builder agent** — an in-editor agent that plans multi-step tasks, edits across files, and runs terminal commands, with diffs you review before accepting.
-- **SOLO mode** — a more autonomous "AI engineer" mode that takes a natural-language description and scaffolds a project (frontend, backend, config, and commands) rather than completing one suggestion at a time.
-- **Free tier with model access** — the free plan bundles autocomplete and agent requests against several frontier models, with paid plans raising the limits.
+- **Two windows.** TRAE Desktop has an Agent window, a task workspace for running several agents across projects and handing long tasks to the cloud, and an IDE window centered on the code editor.
+- **IDE mode and SOLO mode.** Inside the IDE window, IDE mode keeps the familiar editor, terminal, debugger and source control for fine-grained control. SOLO mode lets the AI lead: it plans, generates code, tests, previews and summarizes changes.
+- **CUE.** Trae's autocomplete: code completion, multi-line edits, next-edit prediction, smart imports and smart renaming, with import and rename help for Python, TypeScript and Go.
+- **Custom agents.** Define agents with their own prompts, MCP servers and toolsets. A marketplace offers plugins and skills.
+- **Models.** Several built-in models plus custom models through an API key, using either the OpenAI Chat Completions or the Anthropic Messages format.
+- **Developer basics.** VS Code extension support, built-in Git with AI commit messages, AI code review of uncommitted changes or branch diffs, and remote development over Remote SSH or WSL.
+- **Safety controls.** Privacy mode, and sandboxed execution that runs agent-generated commands in a restricted environment with file access controls and high-risk command blocking.
 
 ## In an AI-assisted workflow
 
-A typical loop is to describe a change in Trae's chat panel, let Builder propose edits across the relevant files, then review and accept or reject each diff. For greenfield work, SOLO mode can take a single prompt and scaffold a runnable project that you then refine in the editor. Because Trae is VS Code-based, you can open an existing project, import your settings, and keep your usual extensions while adding the agent. For how this style of editor compares to other agentic IDEs, see [Cursor vs. Windsurf](/guides/comparisons/cursor-vs-windsurf).
+Trae has no install command: download the desktop app from trae.ai/download (macOS 12 or later, Windows 10 and 11, or a `.deb`/`.rpm` package for Linux), sign in, and open a folder.
 
-```bash
-# Trae is a GUI IDE — open a project from its launcher or "Open Folder",
-# then drive Builder/SOLO from the chat panel. There is no CLI install.
+For a change in an existing codebase, stay in IDE mode and give the agent a scoped task:
+
+```text
+Add rate limiting to the POST /login handler in src/routes/auth.ts
+(5 attempts per minute per IP). Reuse the Redis client in src/lib/redis.ts
+and add a test.
 ```
 
+For greenfield work, switch to SOLO mode, and describe the app. If you need a model that is not built in, add it as a custom model: pick the API format, enter the request URL, the model ID and your key.
+
 > [!TIP]
-> Builder and SOLO can run terminal commands and modify files. Review proposed diffs before accepting, especially in repositories with production or shared code.
+> Turn on Privacy mode and sandboxed execution before pointing SOLO at a real repository. SOLO runs commands on its own, and the sandbox is what stops a bad one.
+
+## Pricing
+
+As of November 2026, from trae.ai/pricing:
+
+| Plan | Price | Included |
+| --- | --- | --- |
+| Free | $0 | Auto mode only, limited usage, limited autocomplete, standard queue |
+| Pro | $20/month | Auto plus all models, $20 of usage a month, unlimited autocomplete, fast queue, up to 10 concurrent cloud tasks |
+| Pro+ | $60/month | $60 of usage a month (3x Pro), up to 15 concurrent cloud tasks |
+| Ultra | $200/month | $200 of usage a month (10x Pro), first access to new models, up to 20 concurrent cloud tasks |
+
+"Usage" is a dollar balance consumed as you make AI requests, charged at the per-model token rates in Trae's docs. Paid balances refresh each subscription period. The free balance is a one-time allowance and does not reset. Enterprise customers are directed to BytePlus.
 
 ## Good to know
 
-Trae is proprietary, made by ByteDance, and runs on macOS, Windows, and Linux. It is freemium — a free tier plus paid plans, with a token-based pricing model that ByteDance has revised over time, so confirm the current tiers and quotas on the official site. Because the agent and editor send code and prompts to remote models, review the privacy and telemetry terms before using it on sensitive or proprietary repositories; data-handling considerations come with any cloud-backed AI editor. For broader context on how teams are adopting AI coding tools, see [AI Coding Statistics 2026](/guides/concepts/ai-coding-statistics-2026).
+Model access is regional. The built-in lists differ between the U.S. and everywhere else, and neither includes Claude as of November 2026. If your workflow depends on a specific model, check the list for your region or plan to bring your own key.
+
+Ownership and terms also vary by region. The terms of service served to U.S. visitors as of November 2026 say Trae is operated in the United States by TikTok USDS Joint Venture LLC, working with other service providers. Read the terms and privacy policy shown in your country before using it on proprietary code.
+
+Trae is proprietary. The desktop app runs on macOS, Windows and Linux, with web and mobile clients for starting and monitoring tasks.
+
+Alternatives: [Cursor](/tools/cursor) has a similar Agents Window and its own Grok and Composer models; [Google Antigravity](/tools/antigravity) has a generally available free plan built on Gemini; [Kilo Code](/tools/kilo-code) is open source and runs inside stock VS Code with your own keys. For how agentic editors compare, see [Cursor vs. Windsurf](/guides/comparisons/cursor-vs-windsurf), and for adoption data see [AI Coding Statistics 2026](/guides/concepts/ai-coding-statistics-2026).

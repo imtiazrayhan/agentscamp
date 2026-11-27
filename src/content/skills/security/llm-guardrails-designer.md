@@ -1,16 +1,18 @@
 ---
 name: "llm-guardrails-designer"
-description: "Design input and output guardrails for an LLM app — decide what to check (injection patterns, PII, secrets, policy, schema, leakage, toxicity), place them as input vs. output rails, implement with a library like NeMo Guardrails or LLM Guard, and fail closed. Use when adding a safety/validation layer around an LLM, not relying on the prompt alone."
+description: "Design input and output guardrails for an LLM app — decide what to check (injection patterns, PII, secrets, policy, schema, leakage, toxicity), place them as input vs. output rails, implement with a maintained library like NeMo Guardrails, and fail closed. Use when adding a safety/validation layer around an LLM, not relying on the prompt alone."
 allowed-tools: "Read, Grep, Glob, Bash, Write, Edit"
 user-invocable: true
 version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["ai-safety-security"]
 audience: ["developers", "security"]
 related: ["guide:defending-prompt-injection", "tool:nemo-guardrails", "tool:llm-guard", "skill:prompt-pii-redactor", "agent:prompt-injection-auditor"]
 featured: false
-summary: "Designs the input/output guardrail layer for an LLM app: it decides what to validate (injection, PII, secrets, policy, schema, leakage), places each check as an input or output rail, implements it with a library like NeMo Guardrails or LLM Guard, and fails closed — defense in depth around the model, not a clever system prompt."
+summary: "Designs the input/output guardrail layer for an LLM app: it decides what to validate (injection, PII, secrets, policy, schema, leakage), places each check as an input or output rail, implements it with a maintained library like NeMo Guardrails, and fails closed — defense in depth around the model, not a clever system prompt."
 ---
 
 A guardrail is the validation layer around an LLM that a system prompt can't be: programmatic checks on what goes *into* the model and what comes *out*, enforced in code rather than requested in text. This skill designs that layer — deciding which checks matter for your app, placing them as input or output rails, implementing them with a guardrails library, and making them fail closed — as defense in depth, not a wall.
@@ -26,7 +28,7 @@ A guardrail is the validation layer around an LLM that a system prompt can't be:
 1. **Threat-model the app first.** Identify the untrusted inputs (user, retrieved content, tool output), the sensitive data/actions to protect, and the unacceptable outputs (leaked secrets, policy violations, malformed structure). Guardrails follow the threats — don't add checks with no threat behind them.
 2. **Choose input rails.** On the way in, decide what to scan and reject/sanitize: prompt-injection patterns, PII/secret stripping (often via the [prompt-pii-redactor](/skills/security/prompt-pii-redactor)), banned topics, and input size/token limits. Input rails reduce what reaches the model.
 3. **Choose output rails.** On the way out, validate before the response is trusted: **schema/structure** conformance, **policy** and safety (toxicity, disallowed content), **leakage** (PII, secrets, system-prompt disclosure), and grounding/relevance for RAG. Output rails are your last line before a user or a tool acts on the response.
-4. **Implement with a library, not from scratch.** Use [NeMo Guardrails](/tools/nemo-guardrails) (programmable rails, Colang) or [LLM Guard](/tools/llm-guard) (ready-made input/output scanners) rather than hand-rolling detectors. Match the choice to the stack and the checks you need.
+4. **Implement with a library, not from scratch.** Use [NeMo Guardrails](/tools/nemo-guardrails) (input, output and tool rails on the `Guardrails` class; version 0.25.0 deprecates `LLMRails` and the Colang runtimes, so do not start new work on them) or the guardrail layer of a gateway the app already runs through, such as [LiteLLM](/tools/litellm) or [Portkey](/tools/portkey), rather than hand-rolling detectors. [LLM Guard](/tools/llm-guard) was archived in July 2026 and is unmaintained: keep it only where it is already deployed, and plan its replacement. Match the choice to the stack and the checks you need.
 5. **Fail closed and make it observable.** When a guardrail trips, default to the safe action (block, sanitize, or escalate to a human) rather than passing through. Log every trigger with enough context to tune it — guardrails you can't see are guardrails you can't trust.
 6. **Acknowledge the limits.** State plainly that guardrails are **defense in depth**, not prevention — they raise the cost of an attack and catch known patterns, but they don't replace least privilege and human approval for high-impact actions. Don't let a guardrail create false confidence.
 
@@ -38,4 +40,4 @@ A guardrail is the validation layer around an LLM that a system prompt can't be:
 
 ## Output
 
-A guardrail design and implementation: the threat model it addresses, the input and output rails with what each checks and its fail-closed behavior, the library wiring (NeMo Guardrails or LLM Guard), logging for each trigger, and an explicit statement of what the guardrails do and do not cover — so they're treated as one layer of defense, not the whole defense.
+A guardrail design and implementation: the threat model it addresses, the input and output rails with what each checks and its fail-closed behavior, the library wiring (NeMo Guardrails or the gateway's guardrails), logging for each trigger, and an explicit statement of what the guardrails do and do not cover — so they're treated as one layer of defense, not the whole defense.

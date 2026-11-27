@@ -1,8 +1,10 @@
 ---
 name: "HubSpot Breeze"
 description: "HubSpot's built-in AI: Breeze Assistant in every plan, pre-built Breeze agents for content, prospecting, and support, and a plain-language Agent Builder."
-seoDescription: "HubSpot Breeze for marketers: Breeze Assistant, pre-built agents, Agent Hub and Agent Builder (July 2026), enrichment, and HubSpot Credits as of Sept 2026."
+seoDescription: "HubSpot Breeze for marketers: Breeze Assistant, pre-built agents, Agent Hub and Agent Builder (July 2026), enrichment, and HubSpot Credits as of Nov 2026."
 date: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 url: "https://www.hubspot.com/products/artificial-intelligence"
 pricing: "freemium"
 category: "marketing"
@@ -23,7 +25,7 @@ faq:
   - q: "Is Breeze Copilot the same as Breeze Assistant?"
     a: "Yes. HubSpot's community and knowledge base refer to Breeze Assistant as formerly Copilot. It is included with HubSpot subscriptions at no additional cost and the knowledge base lists it as available on all products and plans, with some features requiring additional subscriptions."
   - q: "How much do HubSpot's AI agents cost?"
-    a: "Agents and several AI features run on HubSpot Credits. As of September 2026 HubSpot prices credits at 0.010 dollars each, sold up front in packs of 1,000 for 10 dollars or pay-as-you-go beyond the monthly allowance included with seats-based plans. HubSpot's example is the Customer Agent at 50 credits (50 cents) per resolved conversation. Data enrichment does not consume credits."
+    a: "Agents and several AI features run on HubSpot Credits. As of November 2026 HubSpot prices credits at 0.010 dollars each, sold up front in packs of 1,000 for 10 dollars or pay-as-you-go beyond the monthly allowance included with seats-based plans. HubSpot's example is the Customer Agent at 50 credits (50 cents) per resolved conversation. Data enrichment does not consume credits."
   - q: "Which HubSpot tiers include Agent Builder?"
     a: "HubSpot's knowledge base (July 2026) lists Agent Builder in the Professional and Enterprise editions of Marketing Hub, Sales Hub, Service Hub, Data Hub, Content Hub, and Smart CRM, with HubSpot Credits required. The Agent Hub product page separately says Agent Hub is included in all Starter, Professional, and Enterprise editions."
 ---
@@ -39,7 +41,7 @@ For a marketer already running on HubSpot, that is the whole argument. The agent
 - **Agent Builder in plain language.** Describe the job to Breeze Assistant and it proposes the goal, tools, and knowledge sources. You then set instructions, actions (HubSpot, default, or MCP tools), knowledge, and inputs, and you can approve each action until you trust it.
 - **Agent Hub for operations.** One place to see which agents are active, check performance, activate the ones you have not turned on, and set run limits that cap credit spend.
 - **Data enrichment and buyer intent.** Enrichment fills company and contact records from HubSpot's dataset, form shortening hides fields it can already fill, and buyer intent flags companies showing signals. Enrichment does not consume credits; buyer intent and smart properties do.
-- **Predictable metering.** HubSpot Credits are $0.010 each as of September 2026, bought in 1,000-credit packs for $10 or pay-as-you-go, with a published rate sheet per agent.
+- **Predictable metering.** HubSpot Credits are $0.010 each as of November 2026, bought in 1,000-credit packs for $10 or pay-as-you-go, with a published rate sheet per agent.
 
 ## In a marketer's workflow
 
@@ -63,6 +65,6 @@ Test runs do not consume credits; published runs do, so set a run limit before y
 
 ## Good to know
 
-Breeze is not a separate product you buy; it is what HubSpot's AI is called across its hubs. The knowledge base lists Breeze Assistant as available on "all products and plans," with additional subscriptions required for certain features. Agent Builder requires Professional or Enterprise, and everything agentic runs on HubSpot Credits: seats-based plans include a monthly allowance, extra credits are $0.010 each (1,000 for $10) or pay-as-you-go as of September 2026, and HubSpot's rate sheet gives per-agent costs such as 50 credits per conversation the Customer Agent resolves. HubSpot's Breeze Intelligence Credits became HubSpot Credits in June 2025, so older pricing articles that mention the old name describe the same pool.
+Breeze is not a separate product you buy; it is what HubSpot's AI is called across its hubs. The knowledge base lists Breeze Assistant as available on "all products and plans," with additional subscriptions required for certain features. Agent Builder requires Professional or Enterprise, and everything agentic runs on HubSpot Credits: seats-based plans include a monthly allowance, extra credits are $0.010 each (1,000 for $10) or pay-as-you-go as of November 2026, and HubSpot's rate sheet gives per-agent costs such as 50 credits per conversation the Customer Agent resolves. HubSpot's Breeze Intelligence Credits became HubSpot Credits in June 2025, so older pricing articles that mention the old name describe the same pool.
 
 The comparison that matters is scope. Breeze is superb when the work is already in HubSpot and weak the moment it is not. [Claude Cowork](/tools/claude-cowork) is the choice when the job is documents, spreadsheets, and files on your own machine; [Zapier Agents](/tools/zapier-agents) and [Lindy](/tools/lindy) are the choices when the trigger or the action lives in a tool HubSpot does not own. [Copy.ai](/tools/copy-ai) overlaps on GTM workflows but brings its own data layer. The [best AI tools for marketers in 2026](/guides/comparisons/best-ai-tools-for-marketers-2026) roundup places them side by side, and the [AI agent](/glossary/ai-agent) entry explains the vocabulary HubSpot is borrowing.

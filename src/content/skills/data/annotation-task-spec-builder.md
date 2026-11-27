@@ -1,13 +1,14 @@
 ---
 description: "Specify the record and annotation-interface contract for an owner-defined supervised text-labeling task: approved label IDs, input text, model suggestions, human response fields and abstain handling."
 date: "2026-09-26"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["ai-engineers", "analysts"]
 tags: ["text-annotation", "annotation-task-spec-builder"]
 featured: false
 related: ["guide:ai-text-dataset-prelabeling", "tool:label-studio", "command:check-annotation-batch"]
-summary: "Specify the record and annotation-interface contract for an owner-defined supervised text-labeling task: approved label IDs, input text, model suggestions, human response fields and abstain handling."
+summary: "Writes the labeling spec for a text-classification task before anyone labels: a label table with definitions and examples, the record format, and an interface checklist that keeps model pre-labels separate from human answers. Use it when setting up annotation in Label Studio or a similar tool. It does not label data or invent labels."
 name: "annotation-task-spec-builder"
 title: "Annotation Task Spec Builder"
 allowed-tools: "Read, Glob, Grep"
@@ -16,6 +17,23 @@ version: "1.0.0"
 ---
 
 Specify one supervised text-labeling task’s record and interface contract from an owner-approved label policy. This job defines the interface; it does not label records or invent a thematic taxonomy.
+
+## When to use
+
+- Use it at the start of a text-labeling project (support messages, reviews, intents) when you need a written guideline and a record format before anyone labels, especially if a model will pre-label records for people to review.
+- Not for inventing the label set, labeling records, or installing an interface. It returns a specification, not a Label Studio XML config.
+- Minimum input: the label policy and who decides. For example:
+
+```text
+task: classify support messages (rule revision v1)   owner: A. Rivera   adjudicator: J. Chen
+labels: request = asks for an action ("Please open later.")
+        statement = reports a fact ("The door was locked.")
+text unit: one complete message          reviewers per record: 2
+abstain: allowed as label "unclear"      model suggestions: hidden until first response
+```
+
+- Missing label definitions or abstention handling return a blocked spec with the exact question for the owner.
+- Next step: the [prelabeling workflow](/guides/data/ai-text-dataset-prelabeling) uses the spec, and [Check Annotation Batch](/commands/review/check-annotation-batch) validates the optional JSON export described under "Return the specification inline".
 
 ## Required policy packet
 

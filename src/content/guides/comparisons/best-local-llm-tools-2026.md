@@ -5,8 +5,8 @@ seoTitle: "Best Local LLM Tools in 2026 (Ollama, LM Studio, Jan, vLLM)"
 seoDescription: "Ollama, LM Studio, Jan, llama.cpp, vLLM and LiteLLM compared: what each is for, licence and pricing model, hardware reality, and a verdict per use case."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
-updated: 2026-09-10
-reviewed: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["mlops-ai-infra"]
 audience: ["developers"]
@@ -102,19 +102,19 @@ The thing to know that was not true a year ago: Ollama also sells hosted inferen
 
 [LM Studio](/tools/lm-studio) remains the most polished way to *explore*: a catalogue with hardware-fit hints, click-to-download, chat, and visible knobs. Under the hood it runs both MLX and llama.cpp, which is why it is unusually strong on Apple Silicon. Its local server is OpenAI-compatible at `http://localhost:1234/v1`, covering models, chat completions, completions, embeddings and the responses endpoint, and the docs cover using MCP through the API.
 
-Two 2026 additions change how you should read it. Bionic is LM Studio's own agent for open models, and the app now offers access to hosted frontier models with zero data retention alongside the local ones. Like Ollama, it has grown a cloud half.
+Two 2026 additions change how you should read it. Bionic is LM Studio's own agent for open models, and the app now offers access to hosted frontier models with zero data retention alongside the local ones. Like Ollama, it has grown a cloud half, with paid Bionic+ and Pro plans above the free tier.
 
 **Verdict:** the best graphical experience in the category, and the pick if you want one app that both explores models and serves them. The cost is that it is closed source and freemium, which is the only reason it is not the flat recommendation over Jan.
 
 ### Jan — the open showroom
 
-[Jan](/tools/jan) is what LM Studio is, under Apache-2.0. It ships a model hub, chat, MCP connectors, and an OpenAI-compatible local server on port 1337, built over llama.cpp, with GPU support on Windows for NVIDIA, AMD and Intel Arc. It is developed by Menlo Research and sits at roughly 44,000 GitHub stars as of September 2026, which is a reasonable proxy for the fact that the open alternative is no longer the compromise choice.
+[Jan](/tools/jan) is what LM Studio is, under Apache-2.0. It ships a model hub, chat, MCP connectors, and an OpenAI-compatible local server on port 1337, built over llama.cpp, with GPU support on Windows for NVIDIA, AMD and Intel Arc. It is developed by Menlo Research and sits at roughly 46,000 GitHub stars as of November 2026, which is a reasonable proxy for the fact that the open alternative is no longer the compromise choice. One caveat: since v0.8.5 (October 2026) the llama.cpp engine ships inside the installer, local models no longer run on Intel Macs, and NVIDIA cards that cannot run CUDA 13 fall back to Vulkan.
 
 **Verdict:** choose Jan over LM Studio whenever the licence matters — audits, redistribution, or simple preference. Choose LM Studio over Jan when the last ten per cent of interface polish and the MLX path matter more. The [head-to-head](/guides/comparisons/ollama-vs-lm-studio) covers the adjacent decision between a desktop app and a headless server.
 
 ### llama.cpp — the engine room
 
-Everything above stands on [llama.cpp](/tools/llama-cpp). Go direct when you want new models and features the day they merge, exact control over backend and quantization, `llama-server` with a minimal footprint, or hardware the wrappers ignore. It is MIT-licensed, sits above 127,000 stars as of September 2026, and lands changes daily.
+Everything above stands on [llama.cpp](/tools/llama-cpp). Go direct when you want new models and features the day they merge, exact control over backend and quantization, a server with a minimal footprint, or hardware the wrappers ignore. Since the v1 releases the commands are `llama cli` and `llama serve`, and the server's documented default address is `127.0.0.1:9931` (older tutorials use `llama-server` on port 8080). It is MIT-licensed, sits above 136,000 stars as of November 2026, and lands changes daily.
 
 **Verdict:** more flags, more power, no hand-holding. The correct answer when a wrapper's ceiling is what is blocking you, and the wrong answer when it is not.
 

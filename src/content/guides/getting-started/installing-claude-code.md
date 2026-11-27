@@ -4,7 +4,8 @@ description: "Install Claude Code, authenticate, start a session in a real proje
 seoDescription: "How to install Claude Code, authenticate, and start your first session in a real project — plus the minimal CLAUDE.md that makes it productive from day one."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
-updated: 2026-09-11
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 featured: false
@@ -14,7 +15,7 @@ howtoSteps:
   - name: "Install the CLI"
     text: "Use the native installer — curl -fsSL https://claude.ai/install.sh | bash on macOS/Linux/WSL, or irm https://claude.ai/install.ps1 | iex in PowerShell on Windows. It has no dependencies and auto-updates. Prefer npm tooling instead? npm install -g @anthropic-ai/claude-code requires Node 22+."
   - name: "Verify and authenticate"
-    text: "Run claude --version to confirm the install, then run claude and complete the one-time browser sign-in. You need a Claude Pro/Max, Team/Enterprise, or Anthropic Console account — the free Claude.ai plan doesn't include Claude Code."
+    text: "Run claude --version to confirm the install, then run claude and complete the one-time browser sign-in. You need a Claude Pro/Max/Ultra, Team/Enterprise, or Anthropic Console account — the free Claude.ai plan doesn't include Claude Code."
   - name: "Start inside a real project"
     text: "cd into an actual repository before launching — Claude Code's context is the directory you start it from. Ask something concrete first ('what does the auth middleware do?') and let it read the code before it changes anything."
   - name: "Create the CLAUDE.md"
@@ -27,7 +28,7 @@ faq:
   - q: "Do I need Node.js for Claude Code?"
     a: "Only if you install via npm. The native installer and Homebrew paths have no Node dependency at all — which also sidesteps the classic npm EACCES permission errors."
   - q: "Is Claude Code free?"
-    a: "The tool itself has no separate price, but it requires a paid account: a Claude Pro or Max subscription, a Team/Enterprise plan, or Anthropic API (Console) billing. The free Claude.ai plan does not include Claude Code access."
+    a: "The tool itself has no separate price, but it requires a paid account: a Claude Pro, Max, or Ultra subscription, a Team/Enterprise plan, or Anthropic API (Console) billing. The free Claude.ai plan does not include Claude Code access."
   - q: "How do I update Claude Code?"
     a: "The native install updates itself in the background; force one immediately with claude update. On the npm path, run npm install -g @anthropic-ai/claude-code@latest — avoid npm update -g, which can silently leave you on a stale version."
   - q: "Why can't Claude Code see my files?"
@@ -108,11 +109,11 @@ You'll be prompted to authenticate in the browser. Which credentials you use dep
 
 | Account type | What you sign in with |
 |--------------|------------------------|
-| Claude subscription (Pro / Max) | Your Claude.ai login — usage draws from your plan |
+| Claude subscription (Pro / Max / Ultra) | Your Claude.ai login — usage draws from your plan |
 | Claude for Work (Team / Enterprise) | Your Claude.ai login — usage draws from your organization's plan |
 | Anthropic API (Console) | Your Console account / API billing |
 
-Claude Code requires a Pro, Max, Team, Enterprise, or Console account; the free Claude.ai plan does **not** include Claude Code access.
+Claude Code requires a Pro, Max, Ultra, Team, Enterprise, or Console account; the free Claude.ai plan does **not** include Claude Code access.
 
 Complete the browser flow, return to the terminal, and the session continues. Credentials are cached locally, so this is a one-time step per machine — later runs start straight into a session.
 

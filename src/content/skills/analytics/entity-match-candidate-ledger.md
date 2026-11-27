@@ -1,13 +1,14 @@
 ---
 description: "Build a field-evidence ledger for proposed duplicate or cross-source record pairs, preserving source keys, original values and match/different/unresolved owner decisions without merging records."
 date: "2026-08-29"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["analysts", "ai-engineers"]
 tags: ["entity-matching", "entity-match-candidate-ledger"]
 featured: false
 related: ["guide:ai-duplicate-record-review", "guide:link-records-across-datasets", "command:check-entity-match-ledger"]
-summary: "Build a field-evidence ledger for proposed duplicate or cross-source record pairs, preserving source keys, original values and match/different/unresolved owner decisions without merging records."
+summary: "Turns a list of suspected duplicate or cross-system record pairs into a review ledger: for each pair, the original field values side by side, the source keys, and a match, different or unresolved decision with its reviewer. Use it after a fuzzy-match pass and before merging anything. It does not find candidates or merge records."
 name: "entity-match-candidate-ledger"
 title: "Entity Match Candidate Ledger"
 allowed-tools: "Read, Glob, Grep"
@@ -16,6 +17,22 @@ version: "1.0.0"
 ---
 
 Build a field-evidence ledger for supplied candidate record pairs. Preserve originals and proposed owner decisions; return an inline review packet without merging records.
+
+## When to use
+
+- Use it when you already have suspected duplicates or cross-system matches (from a fuzzy-match script, a matching library, a spreadsheet filter or a model) and need a reviewable record of the evidence and the decision for each pair before anything is merged.
+- Not for finding candidates, scoring similarity, or merging.
+- Minimum input: one sentence defining what counts as the same entity, the source rows with their keys, and the candidate pairs:
+
+```text
+same entity means: one bookable venue location
+A:A17  name="North Hall"  address="10 Oak Road"    (source A, export v3)
+B:B04  name="N Hall"      address="10 Oak Road"    (source B, export v2)
+candidate pair: A:A17 ~ B:B04
+```
+
+- Only a missing entity definition blocks the packet. A pair with no owner decision yet is recorded as `unresolved` with an empty reviewer.
+- Output: checker-compatible JSON plus a companion table. Validate it with [Check Entity Match Ledger](/commands/review/check-entity-match-ledger), then hand it to the [Entity Match Reviewer](/agents/analytics/entity-match-reviewer).
 
 ## Inputs and limits
 

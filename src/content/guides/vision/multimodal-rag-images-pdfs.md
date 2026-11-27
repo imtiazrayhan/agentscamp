@@ -15,6 +15,8 @@ related:
   - "glossary:vision-language-model"
 featured: false
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 summary: "Text-only PDF extraction silently drops tables, figures, and layout. Two approaches fix this: parse to clean markdown with a layout/OCR model then run normal text RAG, or embed page images with vision embeddings and retrieve regions. Parse-then-text is cheaper and more debuggable; embed-the-image wins on dense visuals you can't reliably transcribe."
 keyTakeaways:
   - "Naive PDF→text loses tables, reading order, figures, and chart values — the information your users actually ask about."
@@ -72,7 +74,7 @@ The failure mode: extraction errors are now baked in. If the VLM misreads a digi
 
 ### Approach 2: Embed the page images directly
 
-Skip transcription. Embed each page image (or cropped region) with a **multimodal embedding model**, store the vectors, and at query time retrieve the image regions whose embeddings best match the query embedding. The model that answers sees the actual pixels.
+Skip transcription. Embed each page image (or cropped region) with a **multimodal embedding model**, store the vectors, and at query time retrieve the image regions whose embeddings best match the query embedding. The model that answers sees the actual pixels. The API options that embed a whole page screenshot into one vector are Voyage's `voyage-multimodal-3.5`, Cohere's `embed-v5.0-pro` and Google's `gemini-embedding-2`; [Multimodal Embeddings and Image Search](/guides/vision/multimodal-embeddings-and-image-search) compares them with the open CLIP-style models.
 
 This wins where transcription is unreliable: dense numeric tables, handwriting, low-quality scans, mixed-language documents, and charts whose meaning lives in the geometry. It also sidesteps the brittle parse step entirely.
 

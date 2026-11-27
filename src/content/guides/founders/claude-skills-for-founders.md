@@ -3,6 +3,8 @@ title: "Claude Skills for Founders: 5 to Upload Today"
 description: "Five Claude skills built for founders (PRD, MVP scope, interview synthesis, competitor teardown, investor update), how to upload them, and a prompt for each."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -21,7 +23,7 @@ keyTakeaways:
   - "In Claude Code the same jobs are one keystroke away as /prd and /scope-mvp; the technical-cofounder agent answers engineering questions you cannot judge alone."
 howtoSteps:
   - name: "Turn on code execution"
-    text: "On claude.ai, open Settings > Capabilities and make sure Code execution and file creation is enabled. Skills require it. On Team and Enterprise plans an owner also has to enable Skills in the organization settings."
+    text: "On claude.ai, open Settings > Capabilities and make sure Code execution and file creation is enabled (the updated Settings layout calls it Create and edit files). Skills require it. On Team plans skills are on by default; on Enterprise an owner has to enable Skills under Organization settings > Plugins & skills."
   - name: "Download the skill folder"
     text: "Open the skill's page on AgentsCamp and save the SKILL.md into a folder named after the skill, for example prd-writer/SKILL.md."
   - name: "Zip the folder"
@@ -44,9 +46,9 @@ faq:
   - q: "Do I need Claude Code to use these skills?"
     a: "No. All five run on claude.ai as a ZIP upload, and in Cowork, because they are pure instructions: no scripts, no network calls, no repository. Claude Code users get the same skills plus two slash commands and an agent that only make sense inside a project folder."
   - q: "Which plans can upload skills?"
-    a: "Anthropic's help center lists skills as available on Free, Pro, Max, Team, and Enterprise, provided code execution and file creation is enabled under Settings > Capabilities. Team and Enterprise owners must also enable Skills at the organization level."
+    a: "As of November 2026 Anthropic's help center lists skills on Free, Pro, Max, Ultra, Team, and Enterprise, provided code execution and file creation is enabled under Settings > Capabilities. Team organizations have skills on by default; Enterprise owners must enable them under Organization settings > Plugins & skills, and can turn off user-created skills."
   - q: "Does a skill uploaded to claude.ai appear in Claude Code?"
-    a: "No. Each surface keeps its own copy. For Claude Code, put the same folder at .claude/skills/<name>/SKILL.md inside a project, or at ~/.claude/skills/<name>/ to make it available everywhere."
+    a: "Yes, in one direction, as of November 2026. Claude Code v2.1.273 or later downloads the skills enabled on your claude.ai account when you sign in with that account, and lists them under claude.ai sync in /skills. Nothing uploads the other way: a skill you save in .claude/skills/<name>/ or ~/.claude/skills/<name>/ stays on your machine until you upload it to claude.ai yourself."
   - q: "Are these skills safe?"
     a: "They are plain Markdown with no bundled code, so the whole skill is the text you can read on its page before uploading. That is the habit to keep for any skill from anywhere: read the SKILL.md, and anything shipped beside it, before you install it."
 related: ["guide:claude-code-for-non-developers", "guide:what-are-claude-skills", "guide:claude-skills-on-claude-ai-and-api", "guide:how-to-install-claude-skills", "skill:prd-writer", "skill:mvp-scope-cutter", "skill:investor-update-writer", "agent:technical-cofounder"]
@@ -60,14 +62,14 @@ A Claude skill is a folder containing a `SKILL.md` file: a few lines of metadata
 
 ## How to upload a skill on claude.ai
 
-Anthropic's help center lists skills as available on Free, Pro, Max, Team, and Enterprise, with one prerequisite: code execution has to be on. The steps, verified against the current article as of September 2026:
+Anthropic's help center lists skills as available on Free, Pro, Max, Ultra, Team, and Enterprise, with one prerequisite: code execution has to be on. The steps, verified against the current article as of November 2026:
 
-1. Open **Settings > Capabilities** and enable **Code execution and file creation**. On Team and Enterprise plans an owner must also enable Skills in the organization settings.
+1. Open **Settings > Capabilities** and enable **Code execution and file creation** (called **Create and edit files** in the updated Settings layout). On Team plans skills are on by default at the organization level; on Enterprise an owner must enable them under **Organization settings > Plugins & skills**.
 2. Put the `SKILL.md` into a folder named after the skill (`prd-writer/SKILL.md`) and zip that folder so the folder is the root of the archive. The most common upload error the article lists is "Missing required skill.md file," which almost always means the ZIP has an extra layer of folder around it.
 3. Go to **Customize > Skills**, click **+**, then **+ Create skill**, then **Upload a skill**, and choose the ZIP.
 4. Toggle the skill on with the switch next to it. Disabled skills are invisible to Claude.
 
-Skills do not sync between surfaces. A skill on claude.ai is not in Claude Code and vice versa; each gets its own copy. The claude.ai and API side, including the `/v1/skills` endpoint for developers, is in [Skills on claude.ai and the API](/guides/skills/claude-skills-on-claude-ai-and-api). The Claude Code side, where a skill is a folder at `.claude/skills/<name>/` in a project or `~/.claude/skills/<name>/` for every project, is in [How to install Claude skills](/guides/skills/how-to-install-claude-skills). If you have never opened Claude Code, the non-developer walkthrough is [Claude Code for Non-Developers and Founders](/guides/founders/claude-code-for-non-developers).
+Syncing runs one way. Skills you enable on claude.ai load in Cowork, and in Claude Code v2.1.273 or later when you sign in with the same account. A skill that exists only as a folder on your machine does not appear on claude.ai until you upload it, and the API keeps its own separate store. The claude.ai and API side, including the `/v1/skills` endpoint for developers, is in [Skills on claude.ai and the API](/guides/skills/claude-skills-on-claude-ai-and-api). The Claude Code side, where a skill is a folder at `.claude/skills/<name>/` in a project or `~/.claude/skills/<name>/` for every project, is in [How to install Claude skills](/guides/skills/how-to-install-claude-skills). If you have never opened Claude Code, the non-developer walkthrough is [Claude Code for Non-Developers and Founders](/guides/founders/claude-code-for-non-developers).
 
 Every skill below is pure instruction. No scripts, no network, no repository. That is deliberate: it means the identical file works in all three places, and it means the whole skill is the text you can read on its page before you upload it.
 

@@ -5,8 +5,8 @@ seoTitle: "Best ChatGPT Alternatives 2026: Claude, Gemini, Perplexity and More"
 seoDescription: "Claude, Gemini, Copilot, Perplexity, Grok, DeepSeek and Mistral Vibe compared as ChatGPT alternatives for writing, research, coding, privacy and free use."
 author: "Imtiaz Rayhan"
 date: "2026-11-21"
-reviewed: "2026-11-25"
-updated: "2026-11-23"
+reviewed: 2026-11-27
+updated: 2026-11-27
 color: "green"
 depth: "cornerstone"
 freshness: "tier1"
@@ -100,7 +100,7 @@ related: ["tool:chatgpt", "tool:claude", "tool:gemini", "tool:microsoft-copilot"
 
 ## What you are replacing: ChatGPT in November 2026
 
-Since the GPT-6 rollout began on October 7, 2026, ChatGPT's Chat tab runs on GPT-6 Sol for Plus, Pro, Business and Enterprise and on GPT-6 Luna for Free and Go, with GPT-6 Astra behind Pro's reasoning option; GPT-6.2 Astra and GPT-6.2 Sol are in preview in Work and Codex as of November 2026. Around the models sit deep research, Projects, scheduled tasks, custom GPTs, always-on agents called dots on Pro and Business Premium, and Space, a pages-and-slides feature that "replaces Library." Plans run Free, Go, Plus, Pro (now with "your choice of 3 usage tiers"), Business, Enterprise and Edu.
+Since the GPT-6 rollout began on October 7, 2026, ChatGPT's Chat tab runs on GPT-6 Sol for Plus, Pro, Business and Enterprise and on GPT-6 Luna for Free and Go, with GPT-6 Astra behind Pro's reasoning option; GPT-6.2 Astra and GPT-6.2 Sol are in preview in Work and Codex as of November 2026. Around the models sit deep research, Projects, scheduled tasks, custom GPTs (retiring December 11, 2026, with plugins as the replacement), always-on agents called dots on Pro and Business Premium, and Space, a pages-and-slides feature that "replaces Library." Plans run Free, Go, Plus, Pro (now with "your choice of 3 usage tiers"), Business, Enterprise and Edu.
 
 Three details matter if you are weighing a switch. Go "may include ads." Free has limited memory and deep research. And for services for individuals, OpenAI says "we may use your content to train our models" unless you opt out; Temporary Chat is excluded, and business products are not trained on by default. If none of that bothers you, ChatGPT remains a strong default, and the [ChatGPT page](/tools/chatgpt) covers it in full. Each alternative below beats it at something specific.
 

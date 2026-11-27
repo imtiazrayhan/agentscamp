@@ -1,7 +1,8 @@
 ---
-description: "Evaluate Miro as a shared review surface for an approved concept hierarchy and its relationship ledger."
+description: "Miro is a collaborative whiteboard with AI diagram and mind-map generation, Mermaid diagrams you can edit as shapes or code, and an MCP server for agents."
 date: "2026-09-25"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["designers", "founders", "analysts"]
 tags: ["source-visuals", "miro"]
@@ -19,7 +20,7 @@ seoDescription: "Miro is a collaborative whiteboard whose AI drafts editable dia
 
 Evaluate Miro when a team needs to inspect and revise the arrangement of a conceptual explanation together. The useful question is whether reviewers can connect each visible relationship to the approved source packet and preserve that evidence as the layout changes. Treat the canvas as a drafting and review surface, with an evidence ledger beside it.
 
-The current [AI help](https://help.miro.com/hc/en-us/articles/28782102127890-Miro-AI-with-Diagrams-and-mindmaps) describes diagram and mind-map generation, including editable board objects and hand-drawn diagram digitization. Browser, desktop and mobile use are listed. Confirm the chosen workspace’s available operations before building the evaluation around them.
+The current [AI help](https://help.miro.com/hc/en-us/articles/28782102127890-Miro-AI-with-Diagrams-and-mindmaps) describes diagram and mind-map generation, including editable board objects and hand-drawn diagram digitization. Browser, desktop and mobile use are listed. Diagrams can also come from code: Miro's [Mermaid help](https://help.miro.com/hc/en-us/articles/7004628130962-Create-Mermaid-diagrams) says pasted Mermaid renders as editable Miro shapes with bi-directional editing, so a visual change updates the code and a code change re-renders the diagram, and that agents connected through Miro MCP can create, read and update those diagrams on a board. Confirm the chosen workspace’s available operations before building the evaluation around them.
 
 ## Proposed concept-map evaluation
 

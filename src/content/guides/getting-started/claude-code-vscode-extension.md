@@ -5,6 +5,8 @@ description: "Install the Claude Code VS Code extension, see what it adds over t
 seoDescription: "Claude Code in VS Code, explained: install the anthropic.claude-code extension, what it adds over the CLI, requirements, JetBrains status, and common fixes."
 author: "Imtiaz Rayhan"
 date: 2026-10-06
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["workflow-prompting", "coding-languages"]
@@ -21,7 +23,7 @@ keyTakeaways:
   - "JetBrains IDEs use a separate plugin that runs the CLI in the IDE terminal and does not bundle it, so you install both pieces."
 howtoSteps:
   - name: "Check the requirements"
-    text: "You need VS Code 1.94.0 or later and an Anthropic account: any paid Claude subscription (Pro, Max, Team or Enterprise) or a Claude Console account. No API key is required. Open the folder in a trusted workspace, because the extension does not work in Restricted Mode."
+    text: "You need VS Code 1.94.0 or later and an Anthropic account: any paid Claude subscription (Pro, Max, Ultra, Team or Enterprise) or a Claude Console account. No API key is required. Open the folder in a trusted workspace, because the extension does not work in Restricted Mode."
   - name: "Install the extension"
     text: "Press Cmd+Shift+X on Mac or Ctrl+Shift+X on Windows and Linux to open the Extensions view, search for Claude Code, and click Install. The listing is Claude Code for VS Code by Anthropic, ID anthropic.claude-code. In Cursor, the same extension installs from the cursor:extension/anthropic.claude-code link."
   - name: "Open the panel and sign in"
@@ -40,7 +42,7 @@ faq:
   - q: "What does the VS Code extension do that the terminal does not?"
     a: "It shows proposed edits as side-by-side diffs you can accept or reject one change at a time, opens plans as a full Markdown document you can comment on before approving, lets you @-mention files with line ranges from your selection, keeps a searchable session history with tabs, supports checkpoints with rewind, and opens an Account and usage dialog with /usage. The CLI keeps the full command and skill set, the ! Bash shortcut and tab completion."
   - q: "What are the requirements for the Claude Code extension?"
-    a: "VS Code 1.94.0 or later, plus an Anthropic account: any paid Claude subscription (Pro, Max, Team or Enterprise) or a Claude Console account. No API key is needed. The extension does not work in VS Code's Restricted Mode, so trust the workspace first."
+    a: "VS Code 1.94.0 or later, plus an Anthropic account: any paid Claude subscription (Pro, Max, Ultra, Team or Enterprise) or a Claude Console account. No API key is needed. The extension does not work in VS Code's Restricted Mode, so trust the workspace first."
   - q: "Is the VS Code extension still in beta as of October 2026?"
     a: "Anthropic announced the native extension as a beta on September 29, 2025, and as of October 2026 no separate general-availability announcement has been published; the current docs carry no beta label and call the extension the recommended way to use Claude Code in VS Code."
   - q: "Is there a Claude Code plugin for JetBrains IDEs?"
@@ -64,8 +66,8 @@ sources:
   - title: "Claude Code CHANGELOG"
     url: "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md"
     publisher: "Anthropic (GitHub)"
-  - title: "Use Claude Code with your Pro or Max plan"
-    url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan"
+  - title: "Use Claude Code with your Pro, Max, or Ultra plan"
+    url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-max-or-ultra-plan"
     publisher: "Anthropic"
 related: ["guide:installing-claude-code", "guide:claude-code-tips", "guide:claude-code-settings-permissions", "guide:claude-code-troubleshooting", "tool:claude-code", "tool:cursor", "guide:claude-code-vs-cursor", "guide:update-claude-code", "guide:claude-code-usage-limits", "guide:claude-code-slash-commands"]
 ---
@@ -82,7 +84,7 @@ Throughout VS Code, a Spark icon marks Claude Code. It appears in the editor too
 
 ## Requirements and install
 
-You need **VS Code 1.94.0 or later** and an Anthropic account: any paid Claude subscription (Pro, Max, Team or Enterprise) or a Claude Console account. No API key is required. The extension does not work in Restricted Mode, so trust the workspace first.
+You need **VS Code 1.94.0 or later** and an Anthropic account: any paid Claude subscription (Pro, Max, Ultra, Team or Enterprise) or a Claude Console account. No API key is required. The extension does not work in Restricted Mode, so trust the workspace first.
 
 Install from the Extensions view (`Cmd+Shift+X` on Mac, `Ctrl+Shift+X` on Windows and Linux), search for "Claude Code", and click **Install**. The docs also give direct links: `vscode:extension/anthropic.claude-code` for VS Code and `cursor:extension/anthropic.claude-code` for Cursor. Then open the panel with the Spark icon or `Cmd+Esc` (`Ctrl+Esc`), sign in, and drag the panel wherever you want it: the secondary sidebar on the right, the primary sidebar on the left, or an editor tab. The `preferredLocation` setting (default `panel`) controls where new sessions open.
 
@@ -143,7 +145,7 @@ More terminal-side shortcuts and habits are in [25 Claude Code tips](/guides/get
 
 ## Cursor, other forks, and JetBrains
 
-The same extension installs in [Cursor](/tools/cursor) through the direct link above, and in other VS Code forks such as Devin Desktop or Kiro from their Extensions view or from the Open VSX registry. For editors that cannot install it, the docs' answer is the CLI in the editor's integrated terminal. Anthropic's help center confirms that a Pro or Max plan covers Claude Code in VS Code, Cursor and other VS Code forks, and in JetBrains IDEs, and that IDE usage counts toward the same shared usage limits. For Cursor's own agent against Claude Code, [Claude Code vs Cursor](/guides/comparisons/claude-code-vs-cursor) is the comparison.
+The same extension installs in [Cursor](/tools/cursor) through the direct link above, and in other VS Code forks such as Devin Desktop or Kiro from their Extensions view or from the Open VSX registry. For editors that cannot install it, the docs' answer is the CLI in the editor's integrated terminal. Anthropic's help center confirms that a Pro, Max, or Ultra plan covers Claude Code in VS Code, Cursor and other VS Code forks, and in JetBrains IDEs, and that IDE usage counts toward the same shared usage limits. For Cursor's own agent against Claude Code, [Claude Code vs Cursor](/guides/comparisons/claude-code-vs-cursor) is the comparison.
 
 JetBrains is different architecture. A dedicated plugin supports IntelliJ IDEA, PyCharm, Android Studio, WebStorm, PhpStorm and GoLand, and "runs the `claude` command in your IDE's integrated terminal and connects to it. It does not bundle its own copy of the CLI, so install both pieces." It adds `Cmd+Esc` (`Ctrl+Esc`) quick launch, opens Claude's changes in the IDE diff viewer, shares the current selection or tab, inserts file references such as `@src/auth.ts#L1-99` with `Cmd+Option+K` (`Alt+Ctrl+K`), and shares diagnostics. One security note from the docs: in `acceptEdits` mode Claude may be able to modify IDE configuration files that the IDE executes automatically.
 

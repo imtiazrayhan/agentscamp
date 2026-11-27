@@ -4,11 +4,13 @@ seoTitle: "Vision-Language Models for OCR, Documents, and Video"
 description: "How to use vision-language models for OCR, documents, and video: how they differ from traditional OCR, their failure modes, and getting reliable output."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["multimodal-ai", "mlops-ai-infra", "data-ml"]
 tags: ["vision-language-model", "ocr", "multimodal", "document-understanding", "video"]
 featured: false
-summary: "Vision-language models read images and text together, so they grasp layout, tables, charts, and handwriting — where traditional OCR only extracts characters. They're powerful on varied documents, but can hallucinate exact values, so you constrain output to a schema and verify critical fields. Covers VLM vs. OCR, document and video understanding, and open vs. proprietary models."
+summary: "Vision-language models read images and text together, so they grasp layout, tables, charts, and handwriting — where traditional OCR only extracts characters. They're powerful on varied documents, but can hallucinate exact values, so you constrain output to a schema and verify critical fields. Open models like Qwen3-VL can be self-hosted."
 keyTakeaways:
   - "VLMs read images and text together, so they handle layout, tables, charts, and handwriting and can answer questions about a document — traditional OCR only extracts characters."
   - "For messy, varied, or semantically rich documents (invoices, forms, mixed layouts), a VLM often beats template-based OCR because it generalizes without per-format rules."
@@ -55,11 +57,11 @@ The [multimodal-document-extractor](/skills/data/multimodal-document-extractor) 
 
 ## Video understanding
 
-Video is the same idea extended over time: sample frames, give the model temporal context, and it can caption, answer questions, detect events, and search within the footage. The practical constraint is tokens — every frame costs context, latency, and money — so you sample at a rate that captures what matters and chunk long videos deliberately rather than feeding every frame.
+Video is the same idea extended over time: sample frames, give the model temporal context, and it can caption, answer questions, detect events, and search within the footage. The practical constraint is tokens — every frame costs context, latency, and money — so you sample at a rate that captures what matters and chunk long videos deliberately rather than feeding every frame. Of the three frontier APIs, only Gemini takes a video file directly (it samples 1 frame per second by default); Claude takes images and PDFs, and OpenAI lists video input as not supported on its flagship GPT model, so with those you extract frames yourself and send them as images.
 
 ## Open vs. proprietary models
 
-Open-weights VLMs like [Qwen3-VL](/tools/qwen3-vl) (Apache-2.0) are strong on many OCR and document tasks and can be **self-hosted** for privacy, cost control at volume, and offline operation. Proprietary frontier VLMs may lead on the hardest reasoning, with zero infrastructure to run. The choice is the usual one — see [Self-Host vs API](/guides/mlops/self-host-vs-api-llm), and for serving an open model the [llm-inference-engineer](/agents/data-ai/llm-inference-engineer). Whatever you pick, decide it by measured accuracy on *your* documents, not a benchmark.
+Open-weights VLMs like [Qwen3-VL](/tools/qwen3-vl) (Apache-2.0) are strong on many OCR and document tasks and can be **self-hosted** for privacy, cost control at volume, and offline operation. Qwen3-VL dates from September 2025; the Qwen3.5 (February 2026) and Qwen3.8 (August 2026) releases are vision-language models in their own right, also under Apache-2.0 (Qwen3.8 lists native image and video understanding), so include one of them in your eval if you are choosing today. Proprietary frontier VLMs may lead on the hardest reasoning, with zero infrastructure to run. The choice is the usual one — see [Self-Host vs API](/guides/mlops/self-host-vs-api-llm), and for serving an open model the [llm-inference-engineer](/agents/data-ai/llm-inference-engineer). Whatever you pick, decide it by measured accuracy on *your* documents, not a benchmark.
 
 ## Continue exploring
 

@@ -4,12 +4,14 @@ seoTitle: "Zero-Downtime Postgres Migrations: Expand-Contract Playbook"
 description: "How to change a live Postgres schema without downtime or broken deploys — the expand-contract pattern, safe column changes, batched backfills, and CONCURRENTLY."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["data-ml"]
 audience: ["developers"]
 tags: ["postgres", "migrations", "database", "zero-downtime", "devops"]
 featured: true
-summary: "You can't take a breaking schema change to a live database in one step without risking downtime or a broken deploy. The expand-contract pattern decomposes every change into backward-compatible steps — expand the schema, backfill and dual-write, migrate reads, then contract — deployed across releases so old and new application code run side by side the whole time."
+summary: "You can't take a breaking schema change to a live database in one step without risking downtime or a broken deploy. The expand-contract pattern decomposes every change into backward-compatible steps — expand the schema, backfill and dual-write, migrate reads, then contract — deployed across releases so old and new application code run side by side."
 keyTakeaways:
   - "Never make a breaking schema change in one step against a live database — decompose it so old and new application code can both run during the rollout."
   - "Expand-contract: (1) expand the schema additively, (2) backfill data in batches, (3) dual-write old+new, (4) migrate reads to the new shape, (5) contract by removing the old — each its own deploy."
@@ -35,7 +37,7 @@ faq:
   - q: "What is the expand-contract migration pattern?"
     a: "Expand-contract (also called expand/migrate/contract or parallel change) splits a breaking schema change into backward-compatible steps spread across releases. First you EXPAND — add the new schema additively without touching the old. Then you migrate — backfill data, dual-write old and new, and switch reads to the new shape. Finally, in a later release, you CONTRACT — remove the old schema once nothing uses it. At no single step is there a schema the currently-deployed code can't handle."
   - q: "How do I add a NOT NULL column to a large table without downtime?"
-    a: "Don't add it as NOT NULL in one step on a big table. Add the column as nullable (and, on modern Postgres, with a non-volatile default, which is cheap). Backfill existing rows in batches. Have the application start writing the column. Then add the NOT NULL constraint safely — add a CHECK (col IS NOT NULL) as NOT VALID, run VALIDATE CONSTRAINT online, then SET NOT NULL, which now skips the table scan because the validated CHECK already proves no NULLs exist (and drop the now-redundant CHECK). This avoids the long exclusive lock and full-table rewrite that a naive ALTER would cause."
+    a: "Don't add it as NOT NULL in one step on a big table. Add the column as nullable (and, on modern Postgres, with a non-volatile default, which is cheap). Backfill existing rows in batches. Have the application start writing the column. Then add the NOT NULL constraint safely — add a CHECK (col IS NOT NULL) as NOT VALID, run VALIDATE CONSTRAINT online, then SET NOT NULL, which now skips the table scan because the validated CHECK already proves no NULLs exist (and drop the now-redundant CHECK). On PostgreSQL 18 and later you can skip the CHECK: add the not-null constraint itself as NOT VALID, then VALIDATE CONSTRAINT. Either way you avoid the full-table scan under an exclusive lock that a naive ALTER would cause."
   - q: "How do I rename a column without breaking the application?"
     a: "Never do an in-place rename on a live system — the moment you rename, the currently-deployed code referencing the old name breaks. Instead: add a new column with the new name, dual-write to both from the application, backfill the new column from the old, switch reads to the new column, and only in a later release drop the old column. It's more steps, but no deploy ever sees a column that suddenly disappeared."
   - q: "Why should I use CREATE INDEX CONCURRENTLY?"
@@ -61,9 +63,9 @@ If you internalize one thing: **add before you remove, and never remove in the s
 
 Make the change additively. Add a new nullable column, a new table, a new index — anything the old code can simply ignore. Crucially, avoid operations that rewrite or long-lock a large table:
 
-- Add columns **nullable** (a *non-volatile* `DEFAULT` is cheap on modern Postgres — stored in the catalog and applied lazily; a *volatile* one like `random()` or `clock_timestamp()` rewrites the table — don't).
+- Add columns **nullable** (a *non-volatile* `DEFAULT` is cheap on every supported Postgres version — stored in the table's metadata and returned when existing rows are read; a *volatile* one like `random()` or `clock_timestamp()` rewrites the table and its indexes — don't).
 - Create indexes with **`CREATE INDEX CONCURRENTLY`** so the build doesn't block writes.
-- Add constraints in two steps: **`ADD CONSTRAINT … NOT VALID`** (fast, skips the full scan) then **`VALIDATE CONSTRAINT`** (online).
+- Add constraints in two steps: **`ADD CONSTRAINT … NOT VALID`** (fast, skips the full scan) then **`VALIDATE CONSTRAINT`** (online: it takes only a `SHARE UPDATE EXCLUSIVE` lock, so reads and writes continue).
 
 After the expand phase, the old application still runs unchanged — you've only added things it doesn't know about.
 
@@ -83,6 +85,20 @@ In a **separate, later release** — after the new path is proven and no deploye
 
 - **Renames.** A rename is a remove-and-add disguised as one step. Do it the long way: add new column → dual-write → backfill → switch reads → drop old. Never `RENAME` in place on a live table.
 - **`NOT NULL` on a big table.** Add the column nullable, backfill, add a `CHECK (col IS NOT NULL) NOT VALID` and `VALIDATE` it, then run `SET NOT NULL` — which now *skips* the table scan because the validated `CHECK` already proves there are no NULLs — and drop the redundant `CHECK`. The naive `ALTER … SET NOT NULL` without that validated check scans the whole table under an exclusive lock.
+
+  ```sql
+  -- Works on every supported version (the orders table is illustrative)
+  ALTER TABLE orders ADD CONSTRAINT orders_region_present
+    CHECK (region IS NOT NULL) NOT VALID;                    -- no table scan
+  ALTER TABLE orders VALIDATE CONSTRAINT orders_region_present;  -- scan, writes continue
+  ALTER TABLE orders ALTER COLUMN region SET NOT NULL;       -- scan skipped
+  ALTER TABLE orders DROP CONSTRAINT orders_region_present;
+
+  -- PostgreSQL 18 and later: the not-null constraint itself can be NOT VALID
+  ALTER TABLE orders ADD CONSTRAINT orders_region_not_null
+    NOT NULL region NOT VALID;
+  ALTER TABLE orders VALIDATE CONSTRAINT orders_region_not_null;
+  ```
 - **Type changes.** Treat like a rename: add a new column of the new type, dual-write/backfill, switch, drop. An in-place `ALTER TYPE` can rewrite and lock the table.
 - **Dropping things eagerly.** Dropping a column or constraint while old code still references it breaks that code. Contract only after the old code is fully gone.
 

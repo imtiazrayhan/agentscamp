@@ -2,7 +2,8 @@
 description: "Check a study evidence CSV against a source registry with code: validate required columns and cells, row IDs, source references, duplicate study/outcome/time-point keys, and allowed status values, then report structural errors without judging research claims."
 title: "Check Evidence Table"
 date: "2026-10-06"
-reviewed: "2026-10-06"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["analysts", "founders"]
 tags: ["check-evidence-table", "knowledge-work"]
@@ -10,8 +11,25 @@ featured: false
 related: ["guide:ai-literature-review-workflow", "skill:research-evidence-extractor", "agent:literature-screening-reviewer", "glossary:evidence-synthesis"]
 seoDescription: "Check an evidence table with code for missing fields, duplicate study keys, invalid statuses, and unknown sources before reviewing research claims."
 argument-hint: "<evidence.csv> <sources.json> [report.md]"
-allowed-tools: "Read, Bash, Write"
+allowed-tools: "Read, Write, Bash(python3 *)"
+summary: "Check Evidence Table validates the structure of a literature-review evidence table: required columns and cells, unique row IDs, no repeated study/outcome/time-point combination, allowed status values, and source IDs that resolve to readable local files in a registry. It runs local Python on a CSV and a JSON registry and does not judge the research."
 ---
+
+## What it checks and when to run it
+
+Run this after extracting study results into a table and before anyone reviews whether the papers support the claims. A reviewer's time is wasted on a table where two rows report the same study, outcome and time point, a row cites a source that is not in the registry, or a "supported" row has no value. This command finds those faults by line number so they are fixed first.
+
+It expects a CSV with these columns and a JSON registry that maps each `source_id` to a text file inside the registry's own directory:
+
+```csv
+row_id,study_id,source_id,location,outcome,value,unit,timepoint,status
+```
+
+```json
+[{"source_id": "R1", "path": "papers/r1.txt"}]
+```
+
+[Research Evidence Extractor](/skills/data/research-evidence-extractor) builds the table from paper text; ask it for these exact column names plus a unique `row_id`. The [literature review workflow](/guides/workflow/ai-literature-review-workflow) shows where the check sits. A fixture with literal expected output follows the checker code.
 
 Check the files named in `$ARGUMENTS`: `<evidence.csv> <sources.json> [report.md]`. This command validates structure and local references with code; it does not decide whether paper text supports a research claim.
 
@@ -150,7 +168,71 @@ if __name__ == '__main__':
         raise SystemExit(1)
 ```
 
-Illustrative fixture: E1/E2 repeat S1/completion/day7; E3 references unknown R9 with missing status; E4 has blank location. With registered readable R1/R2, expect duplicate-study-key, unknown-source, and missing-location respectively. Unique row IDs must not trigger duplicate-row-id.
+## Illustrative fixture
+
+These are invented rows, not real studies. `sources.json` registers R1 and R2, and both `papers/r1.txt` and `papers/r2.txt` exist as readable text files beside it:
+
+```json
+[
+  {"source_id": "R1", "path": "papers/r1.txt"},
+  {"source_id": "R2", "path": "papers/r2.txt"}
+]
+```
+
+`evidence.csv`:
+
+```csv
+row_id,study_id,source_id,location,outcome,value,unit,timepoint,status
+E1,S1,R1,p. 4 table 2,completion,82,percent,day7,supported
+E2,S1,R1,p. 5 para 1,completion,82,percent,day7,supported
+E3,S2,R9,p. 2,completion,,,day7,missing
+E4,S3,R2,,completion,71,percent,day7,supported
+```
+
+E1 and E2 repeat S1/completion/day7, E3 references unknown R9, and E4 has a blank location. Expected stdout JSON (exit 2):
+
+```json
+{
+  "rows": 4,
+  "sources": 2,
+  "errors": 3,
+  "issues": [
+    {
+      "check": "duplicate-study-key",
+      "level": "error",
+      "key": [
+        "S1",
+        "completion",
+        "day7"
+      ],
+      "line": 2,
+      "lines": [
+        2,
+        3
+      ],
+      "row_ids": [
+        "E1",
+        "E2"
+      ]
+    },
+    {
+      "check": "unknown-source",
+      "level": "error",
+      "line": 4,
+      "row_id": "E3"
+    },
+    {
+      "check": "missing-location",
+      "level": "error",
+      "line": 5,
+      "row_id": "E4"
+    }
+  ],
+  "scope": "Structure and readable local references only; source meaning not verified"
+}
+```
+
+Unique row IDs must not trigger duplicate-row-id. E3's blank value and unit are legal because its status is `missing`.
 
 Finish with actual row/source counts, line-numbered issues and affected IDs, report path, and structural pass/fail. A nonblank location is merely a locator: neither an error-free table nor readable source files establish evidence accuracy or complete literature coverage.
 

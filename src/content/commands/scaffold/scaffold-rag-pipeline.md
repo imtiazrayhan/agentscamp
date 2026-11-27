@@ -9,6 +9,8 @@ audience: ["developers", "ai-engineers"]
 related: ["command:add-streaming-endpoint", "skill:agent-memory-designer"]
 featured: false
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 summary: "Scaffolds a Retrieval-Augmented Generation pipeline fitted to the project's stack: an idempotent ingestion half (load, clean, chunk, embed, upsert) and a retrieval half (embed query, vector search, optional rerank, assemble a grounded prompt with source citations). States the chunking, embedding, vector-store, and top-k choices up front and leaves a slot for evaluation."
 faq:
   - q: "What chunking strategy should a RAG pipeline use?"
@@ -44,7 +46,7 @@ Write these decisions at the top of the generated code as a comment block, so th
 - **Embedding model** — use the project's existing provider if one is present; otherwise pick a current general-purpose embedding model and pin the dimension. State it explicitly so ingestion and retrieval can never drift apart.
 - **Vector store** — reuse what's installed; if nothing exists, default to whatever the deployment already runs (e.g. `pgvector` if there's a Postgres, otherwise a local store). Store the chunk text alongside the vector and metadata.
 - **Retrieval** — default top-k of 8-12 candidates, then an optional rerank pass down to the 3-5 chunks actually placed in the prompt.
-- **Generation** — when a generation model is needed (answer synthesis, rerank-by-LLM), default to Anthropic's latest, most capable model: `claude-opus-4-8`.
+- **Generation** — when a generation model is needed (answer synthesis, rerank-by-LLM), default to Anthropic's current Opus model: `claude-opus-5-5` (as of November 2026; check the models page before pinning).
 
 > [!NOTE]
 > Pin the embedding model and dimension in one shared constant imported by both halves. If ingestion embeds with one model and retrieval queries with another, every search silently returns noise — and there's no error to catch it.

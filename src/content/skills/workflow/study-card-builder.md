@@ -7,7 +7,7 @@ audience: []
 tags: ["source-grounded", "documents", "review"]
 featured: false
 related: ["guide:ai-study-cards-from-notes", "agent:study-card-reviewer", "command:check-study-card-map"]
-summary: "Draft source-grounded study flashcards from approved notes for one stated learning goal, with question, answer, exact evidence quote, source locator and unresolved status. Use before learner review; do not generate classroom assessments, final grades or a study schedule."
+summary: "Supply a learning goal, approved notes with source IDs and locators, a maximum card count and a reviewer. You get a table with one learning target per card, a concise answer, an exact evidence quote, locator and status. Duplicate targets are removed, conflicting note versions go to an issue ledger, and missing answers stay blank and unresolved."
 name: "study-card-builder"
 title: "Study Card Builder"
 version: "1.0.0"

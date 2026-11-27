@@ -6,8 +6,8 @@ seoDescription: "OpenCode, Cline, Aider, Codex CLI, and more open-source or CLI 
 author: "Imtiaz Rayhan"
 date: 2026-06-03
 freshness: "tier1"
-updated: 2026-11-25
-reviewed: 2026-11-25
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -70,7 +70,7 @@ For a head-to-head of these extensions, including where Roo Code users should go
 
 ### In your terminal (CLI agents)
 
-- **[OpenCode](/tools/opencode)** — the **most-starred open-source coding agent** (~207k GitHub stars as of September 2026) and the category's breakout. A polished MIT-licensed terminal TUI (plus desktop app and IDE extensions) that's fully **provider-agnostic** — 75+ providers including local models — loads your **language servers** for symbol-level context, runs **parallel sessions**, and accepts BYOK, existing **GitHub Copilot or ChatGPT subscriptions**, prepaid PayGo (formerly Zen) credits, or flat OpenCode Go ($10/mo) / Go Plus ($40/mo) tiers (as of November 2026).
+- **[OpenCode](/tools/opencode)** — the **most-starred open-source coding agent** (~230k GitHub stars as of November 2026) and the category's breakout. A polished MIT-licensed terminal TUI (plus desktop app and IDE extensions) that's fully **provider-agnostic** — 75+ providers including local models — loads your **language servers** for symbol-level context, runs **parallel sessions**, and accepts BYOK, existing **GitHub Copilot or ChatGPT subscriptions**, prepaid OpenCode Console credits (its pay-as-you-go provider, formerly Zen), or flat OpenCode Go ($10/mo) / Go Plus ($40/mo) tiers (as of November 2026).
 - **[Aider](/tools/aider)** — a terminal pair-programmer that's **git-native**: it edits files on disk and **commits each change** with a descriptive message, so every step is reviewable and `git revert`-able. It builds a repo map for context and is **model-agnostic** — see [Aider vs Claude Code](/guides/comparisons/aider-vs-claude-code) for the head-to-head. Development slowed substantially in 2026 (last release 0.86.2 shipped February 12, 2026).
 - **[Codex CLI](/tools/codex-cli)** — OpenAI's open-source, Rust-based terminal agent with a **two-layer security model** (sandbox modes plus approval policies). Network is off by default, the default sandbox (workspace-scoped writes or read-only) depends on the folder's trust setting, and it supports **model switching** and **MCP**, plus a headless `codex exec` for CI. Included with ChatGPT Plus ($20/mo), Pro ($100–$500/mo), or Business/Enterprise plans — or usable via raw OpenAI API key (as of November 2026). Unlike Aider, it **doesn't auto-commit** — it leaves staging to you.
 - **[Gemini CLI](/tools/gemini-cli)** — Google's open-source terminal agent, long notable for a **generous free tier**, large context windows, and MCP support. **Sunset (June 2026):** as of June 18, 2026 it stopped serving requests for free, AI Pro, and Ultra users, with Google folding the effort into [Antigravity](/tools/antigravity) and its closed-source Antigravity CLI (paid API keys and enterprise Gemini Code Assist licenses keep access, and the repo stays open source).
@@ -100,10 +100,10 @@ New to running a model locally or wiring up your own keys? The MCP and configura
 
 ## Continue exploring
 
-- [Scaffold CLI Command](/commands/scaffold/scaffold-cli) — Scaffold a new subcommand for an existing CLI with argument parsing, help text, input validation, and correct exit codes.
-- [graphql-architect](/agents/core-development/graphql-architect) — Use this agent to design GraphQL schemas and resolvers — types, nullability, connections, dataloaders, federation, depth/complexity limits.
-- [Java Pro](/agents/language-specialists/java-pro) — Use this agent for idiomatic, modern Java (17/21+) — records, sealed types, pattern matching, virtual threads and structured concurrency, the Streams API, and JVM/GC performance.
-- [php-pro](/agents/language-specialists/php-pro) — Use this agent for idiomatic, modern PHP 8.3+ — strict types, enums, readonly and promoted properties, Composer/PSR-4 autoloading, and safe PDO data access.
+- [Claude Code vs OpenCode: First-Party vs Open Source (2026)](/guides/comparisons/claude-code-vs-opencode) — Claude Code vs OpenCode — Anthropic's tuned first-party agent vs the most-starred open-source one with 75+ providers. Control vs polish, decided honestly.
+- [OpenHands](/tools/openhands) — Open-source autonomous AI software-development agent (formerly OpenDevin) — writes code, runs commands, and browses the web in a sandbox.
+- [Crush](/tools/crush) — Charm's terminal coding agent: nearly any model, including local ones, switched mid-session, with LSP context, MCP and Agent Skills. Source-available (FSL).
+- [Qwen Code](/tools/qwen-code) — Alibaba Qwen's Apache-2.0 coding agent for the terminal, editor and desktop: OpenAI, Anthropic, Gemini and Qwen APIs, any provider, or local models.
 - [Amp](/tools/amp) — An agentic coding tool built for frontier-model coding, independent since it spun out of Sourcegraph in December 2025.
 - [Kilo Code](/tools/kilo-code) — Open-source (MIT) AI coding agent for VS Code that began as a Roo Code fork and was rebuilt on OpenCode in April 2026.
 - [SWE-agent](/tools/swe-agent) — Open-source autonomous coding agent from Princeton/Stanford that turns an LLM into a software engineer to fix real GitHub issues.

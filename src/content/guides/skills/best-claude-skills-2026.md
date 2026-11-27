@@ -3,6 +3,8 @@ title: "The Best Claude Skills to Install in 2026"
 description: "A skills-only tour of the AgentsCamp library — the Claude Code skills that earn a permanent slot, organized by the job they do."
 author: "Imtiaz Rayhan"
 date: 2026-07-18
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 tags: ["skills", "claude-code", "best-of", "starter-kit", "workflow"]
@@ -22,7 +24,7 @@ faq:
   - q: "How many Claude skills should I install?"
     a: "More than you'd think is fine — unlike subagents, skills are cheap at rest. Only each skill's name and description load at session start; the body loads when a task matches. The real limit is trigger clarity: two skills with overlapping descriptions will misfire, so prefer distinct jobs over near-duplicates."
   - q: "Do these skills work outside Claude Code?"
-    a: "The SKILL.md format is portable: the same folder-plus-frontmatter shape works in Claude Code, on claude.ai as a capability, and on the Claude API via the /v1/skills endpoint and code execution. The library's skills are written for Claude Code's tools but the procedure body carries over with light editing."
+    a: "The SKILL.md format is portable: the same folder-plus-frontmatter shape works in Claude Code, on claude.ai as a ZIP upload under Customize > Skills, and on the Claude API via the /v1/skills endpoint and code execution. Skills you enable on claude.ai also sync down into Claude Code v2.1.273 or later when you sign in with the same account. The library's skills are written for Claude Code's tools, so a skill that runs shell commands or reads a repo needs editing before it is useful on claude.ai or the API."
   - q: "What's the difference between a skill and a subagent?"
     a: "A skill is a procedure loaded into the current conversation — same context, same permissions, just added instructions. A subagent is a separate context window with its own system prompt and tool policy. Encode how-to knowledge as skills; delegate isolated jobs to agents."
 related: ["guide:what-are-claude-skills", "guide:how-to-install-claude-skills", "guide:best-claude-code-agents-skills", "guide:writing-your-first-skill", "skill:conventional-commits", "skill:hook-writer", "skill:secret-scanner", "skill:migration-writer"]
@@ -103,9 +105,9 @@ The compounding tier — each one makes every future session better:
 > [!TIP]
 > Install in one command: `npx agentscamp add skills/conventional-commits` (project scope) or add `-g` for `~/.claude/`. Running bare `npx agentscamp` opens an interactive picker across the whole library.
 
-## How to choose from the other sixty
+## How to choose from the other 138
 
-The full library is at [/skills](/skills) — 90+ skills across twelve categories. The selection rule that holds up: install for friction you've felt twice, and check the new skill's description doesn't overlap one you already have. Overlapping descriptions are the main failure mode — Claude routes by description, and two skills claiming the same job means the wrong one fires half the time. When you outgrow the library versions, [edit them](/guides/skills/claude-code-skills-best-practices) — they're plain Markdown, and the frontmatter `description` is the tuning knob.
+This page names 30 skills. The full library is at [/skills](/skills): 168 skills across seventeen categories as of November 2026, including analytics, design, marketing, product, and sales categories this developer-focused list does not cover. The selection rule that holds up: install for friction you've felt twice, and check the new skill's description doesn't overlap one you already have. Overlapping descriptions are the main failure mode — Claude routes by description, and two skills claiming the same job means the wrong one fires half the time. When you outgrow the library versions, [edit them](/guides/skills/claude-code-skills-best-practices) — they're plain Markdown, and the frontmatter `description` is the tuning knob.
 
 ## Continue exploring
 

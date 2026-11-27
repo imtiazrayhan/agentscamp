@@ -7,6 +7,8 @@ version: "1.0.0"
 color: "cyan"
 title: "Prompt Regression Tester"
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["llm-evals", "workflow-prompting"]
 audience: ["ai-engineers"]
 related: ["command:create-skill", "command:scaffold-rag-pipeline"]
@@ -23,7 +25,7 @@ A prompt edit that "looks fine on a couple of examples" is the single most commo
 
 ## When to use this skill
 - You're about to edit a production prompt and want proof the edit doesn't regress existing behavior.
-- You're migrating models (e.g. `claude-opus-4-7` → `claude-opus-4-8`, or onto a new provider) and need to confirm output quality holds.
+- You're migrating models (e.g. `claude-opus-4-8` → `claude-opus-5-5`, or onto a new provider) and need to confirm output quality holds.
 - A prompt regressed in the past and you want a committed test that would have caught it.
 - You're standing up a new prompt and want defensible coverage before it goes live.
 - Someone "improved" a prompt and you need to confirm it actually improved rather than traded one failure for another.
@@ -46,7 +48,7 @@ A prompt edit that "looks fine on a couple of examples" is the single most commo
 
    Store assertions alongside each case. A single case may carry several. **Reserve an LLM-as-judge only for qualities no code can decide** — tone, helpfulness, faithfulness to a source, "did it refuse appropriately" — and even then express the judge as a rubric with a discrete verdict (`pass`/`fail` or a 1–5 score with a threshold), not a freeform "rate this."
 
-4. **Default to the latest, most capable model for both the system-under-test and the judge.** Use `claude-opus-4-8` (current most-capable Opus; 1M context, adaptive thinking) unless the prompt's production config pins a different model — in which case test *that* model and add `claude-opus-4-8` as a comparison column. For the judge, also default to `claude-opus-4-8`: a weak judge is a noisy judge. Use adaptive thinking (`thinking: {type: "adaptive"}`) for the judge; do not send `temperature`/`top_p`/`budget_tokens` (removed on Opus 4.7/4.8 — they 400). Keep the judge model **separate and named** in the report so a judge swap is never confused with a quality change.
+4. **Default to a current, capable model for both the system-under-test and the judge.** Use `claude-opus-5-5` (Anthropic's recommended starting model as of November 2026; 1M context, adaptive thinking always on; confirm the current ID on Anthropic's models page before pinning it) unless the prompt's production config pins a different model — in which case test *that* model and add `claude-opus-5-5` as a comparison column. For the judge, also default to `claude-opus-5-5`: a weak judge is a noisy judge. Use adaptive thinking (`thinking: {type: "adaptive"}`) for the judge; do not send `budget_tokens` or non-default `temperature`/`top_p` (current Claude models return a 400 for them). Keep the judge model **separate and named** in the report so a judge swap is never confused with a quality change.
 
 5. **Run the set across each variant under test and score every case.** A "variant" is a (prompt, model, params) tuple — typically `baseline` (current production) vs `candidate` (your edit). Iterate the frozen cases, call the real SDK with the exact production config, run each assertion, and record a per-case result: `pass`/`fail`, which assertion failed, and the raw output. Run candidate and baseline in the same invocation so they see identical inputs. Cache or store raw outputs so a re-score (e.g. after fixing an assertion) doesn't require re-generating.
 
@@ -85,8 +87,8 @@ The skill produces a committed, runnable harness:
   ```
 - **A pass/fail + regression report** — printed and written to `evals/report.md`:
   ```
-  Variant: candidate (prompt@HEAD, claude-opus-4-8)  vs  baseline (prompt@main, claude-opus-4-8)
-  Judge: claude-opus-4-8
+  Variant: candidate (prompt@HEAD, claude-opus-5-5)  vs  baseline (prompt@main, claude-opus-5-5)
+  Judge: claude-opus-5-5
 
   42 cases | 39 pass / 3 fail   (baseline: 40 pass / 2 fail)
 

@@ -1,7 +1,10 @@
 ---
-description: Adobe Podcast offers browser recording and editing plus AI Enhance Speech for reducing noise in voice recordings, with free and premium access.
+name: Adobe Podcast
+title: Adobe Podcast
+description: "Adobe Podcast is a browser audio tool: Enhance Speech removes noise and echo from voice recordings, and Studio records, transcribes and edits audio as text."
 date: "2026-09-17"
-reviewed: '2026-10-07'
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics:
 - ai-at-work
 - multimodal-ai
@@ -10,45 +13,82 @@ audience:
 tags:
 - audio
 - voice
-- review
+- podcasting
+- noise-removal
+- transcription
 featured: false
 related:
 - guide:review-ai-speech-cleanup
 - glossary:speech-enhancement
 - agent:speech-cleanup-reviewer
-summary: Adobe Podcast offers browser recording and editing plus AI Enhance Speech for reducing noise in voice recordings, with free and premium access.
-name: Adobe Podcast
-title: Adobe Podcast
+summary: "Adobe Podcast is Adobe's web app for spoken audio. Enhance Speech cleans noise and echo out of a voice recording in one step, and Studio records solo or remote sessions, transcribes them and lets you edit the audio by editing text. The free plan handles 30-minute audio files, and premium limits come with the Adobe Firefly Pro plan."
 url: https://podcast.adobe.com
 pricing: freemium
 category: voice
 alternativeTo: ["descript", "elevenlabs", "veed"]
 os:
 - Web
+color: red
+faq:
+- q: "Is Adobe Podcast Enhance Speech free?"
+  a: "Yes, with limits. As of November 2026, the free plan enhances audio files only, one at a time, up to 30 minutes and 500 MB each, for at most 1 hour a day, with no control over enhancement strength. Video files, bulk upload and the strength controls need the paid plan."
+- q: "How much does Adobe Podcast Premium cost?"
+  a: "As of November 2026, premium features come through the Adobe Firefly Pro plan, listed at $9.99 a month on the Adobe Podcast plans page. It raises Enhance Speech to files of up to 2 hours and 1 GB and 4 hours a day, adds video support and bulk upload, removes Studio download limits, and includes 4,000 Firefly generative credits a month."
+- q: "What file formats does Adobe Podcast export?"
+  a: "Adobe's FAQ lists MP3 and WAV for audio (WAV at 48 kHz, 16-bit), MP4 in 1080p or 720p with H.264 for video and audiograms, and TXT, PDF and DOCX for transcripts."
+- q: "Can Enhance Speech change what a speaker said?"
+  a: "It is not designed to: Adobe says it does not generate or translate speech. But Adobe's FAQ answers users whose output sounded like a different language from the original, and says results depend on how audible the speaker is and how much background noise there is. Compare the processed file with the original before you publish it."
 ---
 
-Adobe Podcast provides browser recording, transcription, and text-based editing. Its Enhance Speech feature filters unwanted noise and artifacts in existing speech; Adobe says results depend on how audible the original speech is and the background noise. It does not translate speech or generate it across languages. [Adobe's Podcast FAQ](https://helpx.adobe.com/podcast/adobe-podcast-faq.html) describes these capabilities and limits.
+[Adobe Podcast](https://podcast.adobe.com) is a web app from Adobe for recording and cleaning up spoken audio. It is best known for one feature, Enhance Speech, which takes a voice recording made on a laptop microphone in an echoing room and returns something close to studio sound. The rest of the app, called Studio, is a browser-based recorder and editor built around the transcript.
 
-Enhance Speech accepts a recording upload and provides a processed download. Mic Check addresses the recording setup before capture. Free access and premium features exist, giving this entry a freemium classification as checked on October 7, 2026. [Adobe's Enhance Speech introduction](https://podcast.adobe.com/guides/what-is-enhance-speech) is the reference.
+## Highlights
 
-## Evaluate the processed copy beside the original
+- **Enhance Speech.** Upload a file and the model removes background noise and echo and evens out the voice. Adobe describes it as language agnostic: it works on the signal and does not transcribe or translate. On the paid plan you can set the balance of speech, music and ambience so the result keeps some of the room.
+- **Studio recording.** Record alone or with remote guests in the browser. Each participant is captured locally as a separate track in 16-bit, 48 kHz WAV and uploaded continuously, so a guest's bad connection does not degrade the recording. Video recording is optional.
+- **Edit audio as text.** Studio transcribes the recording, and deleting words from the transcript cuts the matching audio or video. Speaker detection labels who is talking.
+- **Captions, audiograms and transcripts.** Add captions to video for social posts, turn audio into an audiogram video, and download the transcript as TXT, PDF or DOCX.
+- **Remove music.** Strip a music bed from an audio or video file.
+- **Music library.** Royalty-free intros, outros, transitions and background tracks, ready to drop into a project.
 
-Our suggested trial starts with a preserved original and a distinctly named processed variant. Select a few concern windows, compare the same speech in both, and write down the differences. This is an author-designed review process, not a product test or a promise of recovery.
+Adobe's navigation labels Studio as a beta as of November 2026.
 
-In the fictional neighborhood interview, listener J. Chen hears “the west bench” in the original at 12–17 seconds, but “the wet bench” in the processed copy. At 40–45 seconds, the listener hears quieter traffic with all words retained. The first window calls for keeping the original; the second is a candidate for using the processed version. Neither decision settles the unreviewed recording.
+## In an AI-assisted workflow
 
-The [speech-cleanup guide](/guides/voice/review-ai-speech-cleanup) turns those paired observations into a timed sheet with decisions and pending work. Keep variant IDs and the comparison timeline clear so the next editor can locate the actual speech behind a row.
+The quickest route needs no project:
 
-## Define success as retained speech
+1. Open [podcast.adobe.com/enhance](https://podcast.adobe.com/enhance) and sign in with an Adobe account.
+2. Choose **Choose files** and upload the recording.
+3. Wait for processing, which Adobe says may take several minutes depending on file size.
+4. Listen to the result against the original, then download it.
 
-For your recording, agree on acceptance criteria before comparing. Which words, pronunciations, and environmental sounds matter? Record those priorities in the review sheet. Reduced background noise is useful only in the context of what the listener needs the final recording to preserve.
+Adobe's [Enhance Speech guide](https://podcast.adobe.com/guides/what-is-enhance-speech) covers the steps. For a full episode, start a Studio project instead: record or upload the tracks, let it transcribe, cut by deleting text, then apply enhancement. In Studio, enhancement applies to the whole project, not to one speaker.
 
-The [Speech Cleanup Reviewer](/agents/marketing/speech-cleanup-reviewer) can organize explicitly supplied listener notes. It does not process a file, and text access to a WAV does not mean it can hear the recording. If paired observations are missing, it should return a template or pending row rather than invent an audition.
+Do not skip the listening step. [Speech enhancement](/glossary/speech-enhancement) models reconstruct the voice, and on badly damaged audio they can smooth a mumbled word into a different, clearer one. The [speech cleanup review guide](/guides/voice/review-ai-speech-cleanup) describes an original-versus-processed check for names, numbers and negations, and the [speech cleanup reviewer](/agents/marketing/speech-cleanup-reviewer) agent audits the listening notes you give it. Keep the untouched original file either way.
 
-[Speech enhancement](/glossary/speech-enhancement) is the processing category. Choosing a processed interval is a separate review decision. A structural sheet checker can inspect time bounds and declared fields, but the listener must confirm the audio difference.
+## Pricing
 
-## Keep each next action traceable
+As of November 2026, the [Adobe Podcast plans page](https://podcast.adobe.com/en/plans) compares a free plan with the Adobe Firefly Pro plan, which is how Adobe now sells Podcast's premium features, at $9.99 a month.
 
-When a word changes, retain the original observation and explain the decision. A retry should name the window to compare again. A rerecord decision should identify the phrase needing a new capture. An accepted processed interval should not imply that every other interval has been checked.
+| | Free | Firefly Pro plan |
+| --- | --- | --- |
+| Enhance Speech input | Audio only | Audio and video (MP4, MOV and more) |
+| Max file size | 500 MB | 1 GB |
+| Max duration per file | 30 minutes | 2 hours |
+| Enhanced speech per day | 1 hour | 4 hours |
+| Bulk upload | No | Yes |
+| Adjust enhancement strength | No | Yes |
+| Studio project length | 30 minutes | 2 hours |
+| Studio downloads | 2 projects a day | Unlimited |
+| Original recordings, speaker-separated | No | Yes |
+| Audiograms | Adobe Podcast branding | Custom themes and backgrounds |
 
-Before using an assembled master, listen through the joins and compare affected speech with the preserved original. Keep uploads and editing actions under the user's control. This review approach is most useful when you can compare both versions and retain the evidence for your choices, rather than judging a processed track in isolation.
+Remote recording is unlimited on both plans. The Firefly Pro plan also includes 4,000 generative credits a month for Adobe Firefly and premium features in Adobe Express.
+
+## Good to know
+
+Enhance Speech is a rescue tool, not a reason to stop caring about the microphone. Adobe's [FAQ](https://helpx.adobe.com/podcast/adobe-podcast-faq.html) says results depend on how audible the speaker is and how much noise there is, and that clearer input produces better output. Like other generative enhancers, it can leave a badly degraded voice sounding processed, or clearer than the recording justifies. On the free plan you cannot turn the effect down.
+
+It is also a web-only product. There is no desktop app to install, and Adobe lists it as available worldwide except in China, Cuba, Iran, North Korea, Syria, Crimea and the Donetsk and Luhansk regions. Speaker detection is not supported on education plans.
+
+[Descript](/tools/descript) is the closest alternative: it also edits audio and video through the transcript and has its own cleanup feature, Studio Sound, inside a much larger editor with an AI co-editor, dubbing and clip creation. Pick Descript when you produce video regularly, and Adobe Podcast when you want a quick, cheap fix for a voice track. [VEED](/tools/veed) includes a voice cleaner and noise removal inside a browser video editor aimed at social video. [ElevenLabs](/tools/elevenlabs) solves a different problem: it generates and clones voices, which helps when a line has to be re-voiced instead of repaired.

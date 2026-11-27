@@ -7,7 +7,7 @@ audience: ["marketers", "designers"]
 tags: ["asset-catalog", "asset-metadata-review-ledger"]
 featured: false
 related: ["guide:ai-digital-asset-metadata", "guide:ai-asset-search-acceptance-test", "tool:bynder"]
-summary: "Map AI-suggested media catalog tags to a supplied controlled vocabulary and asset-version evidence, returning accept/reject/unresolved rows without inferring identities or usage rights."
+summary: "Supply asset IDs and versions, candidate tags, the vocabulary revision, existing metadata and verified observations. Each candidate tag gets a row with the canonical proposal, evidence reference, conflict note and a proposed status of accept, reject or unresolved. Tags outside the vocabulary become owner questions, and the owner decision stays blank."
 name: "asset-metadata-review-ledger"
 title: "Asset Metadata Review Ledger"
 allowed-tools: "Read, Glob, Grep"

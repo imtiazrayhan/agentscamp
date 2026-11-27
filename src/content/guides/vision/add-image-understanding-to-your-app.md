@@ -3,6 +3,8 @@ title: "Add Image Understanding to Your App"
 description: "A practical guide to sending images to a vision model and getting reliable, structured results: base64 vs URL, resolution, prompting, cost, and errors."
 author: "Imtiaz Rayhan"
 date: 2026-06-20
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "blue"
 topics: ["multimodal-ai", "llm-app-dev"]
 audience: ["ai-engineers"]
@@ -56,7 +58,7 @@ Every provider accepts an image one of three ways, and the choice is about reach
 - **URL** has the provider's servers fetch the image at request time. That only works for **publicly reachable** images. Authenticated URLs, expiring signed S3 links, and `localhost` all fail, because the provider can't see them. If the image is private, base64 it.
 - **Files API** lets you upload an image once and reference it by id across many calls. Use it when you reuse the same image repeatedly, or when many/large images would blow past request-size limits — referencing by id keeps the payload small and skips re-encoding.
 
-All three providers support the common web formats (JPEG, PNG, GIF, WebP). Animated formats are read as a single frame, not the animation. PDFs are a related case — Claude and Gemini can take a PDF directly and rasterize the pages server-side, while with other stacks you convert pages to images yourself first; either way each page becomes an image and is billed and resized like one.
+Claude and GPT both accept JPEG, PNG, WebP and non-animated GIF (Claude reads only the first frame of an animation). Gemini accepts PNG, JPEG, WebP, HEIC and HEIF. PDFs are a related case: Claude, GPT and Gemini all take a PDF directly as a file input and extract the text and page images server-side, while with open models you usually rasterize pages yourself first. Either way each page costs image tokens on top of its text.
 
 One subtlety worth knowing: when a provider fetches a URL, that fetch happens on *their* network at request time, so it adds latency and a failure mode you don't control. Base64 trades a larger request payload for a fetch you've already done and can retry locally. For an app serving user uploads, that trade almost always favors base64.
 
@@ -65,9 +67,17 @@ One subtlety worth knowing: when a provider fetches a URL, that fetch happens on
 The message content is an **array**, not a string — you interleave image blocks and text in any order, and the model reasons over them jointly. That's how you do before/after comparisons, front-and-back of an ID, or a short sequence of frames. Two rules:
 
 1. **Label your images in the prompt.** "Image 1 is the receipt, Image 2 is the corresponding bank line." Without labels the model can blur details across images.
-2. **Don't over-send.** Each provider caps images per request and total request size, and every image costs tokens and latency. More images is not more context if half of them are irrelevant.
+2. **Don't over-send.** Each provider caps images per request and total request size (the Claude API allows up to 600 images per request, 100 on models with a 200k-token context window; OpenAI allows up to 1,500, Gemini up to 3,600), and every image costs tokens and latency. You will usually hit the request-size or context limit before the image count. More images is not more context if half of them are irrelevant.
 
-Resolution is the single biggest lever you control. Models tokenize images by area (Claude, for instance, charges roughly one visual token per 28×28-pixel patch; GPT tiles high-detail images into 512px tiles; Gemini exposes an explicit `media_resolution` setting) — and crucially, **they downscale anything above their native resolution before processing**. The consequence is unintuitive but freeing: a 4K screenshot and a downscaled copy of it often cost the same *and* convey the same detail, because the extra pixels are thrown away. So:
+Resolution is the single biggest lever you control. Models tokenize images by area — and crucially, **they downscale anything above their native resolution before processing**:
+
+| Provider | How an image becomes tokens | The knob you control |
+| --- | --- | --- |
+| Claude | One visual token per 28×28-pixel patch: `⌈width/28⌉ × ⌈height/28⌉`. Images are downscaled to the model's cap first: 1,568 tokens on standard-tier models, 4,784 tokens and a 2,576 px long edge on Claude 4.7 and later. | Resize before you send; there is no detail parameter. |
+| GPT | Current models cover the image in 32×32-pixel patches, capped by a per-model patch budget, then apply a model multiplier. Older models use 512 px tiles instead. | `detail`: `low`, `high`, `original` or `auto` (supported values vary by model). |
+| Gemini | On Gemini 3 and later, a maximum token budget per image set by resolution level (about 280 tokens at `low`, 1,120 at `high`). | `media_resolution`: `low` to `high`, plus `ultra_high` per item, settable per image on Gemini 3 and later. |
+
+The consequence is unintuitive but freeing: a 4K screenshot and a downscaled copy of it often cost the same *and* convey the same detail, because the extra pixels are thrown away. On Claude, for example, a 3840×2160 image is resized to 1456×819 on a standard-tier model and billed about 1,560 tokens. The caps differ by model, though: the same image on a high-resolution Claude model is kept at 2576×1449 and costs about 4,784 tokens, roughly three times as much. Check which tier your model is on before assuming an upgrade is cost-neutral. So:
 
 > **Crop to the region you care about, then downscale to the smallest size where that region is still legible.** Sending raw 4K images is the most common avoidable cost in a vision app — you pay for pixels the model discards.
 
@@ -80,7 +90,7 @@ This is where vision apps live or die. A VLM is a generative model; given a blur
 - **Transcribe, don't infer.** Tell it explicitly to report only what is visible and to never guess values it can't read.
 - **Ask for evidence.** "For each field, quote the exact text you read it from." This both improves accuracy and gives you something to audit.
 - **Give it an out.** Instruct the model to return `UNKNOWN` (or `null`) for any field that is illegible, cropped, or absent. An honest abstention is worth far more than a confident fabrication — **"say UNKNOWN rather than guess" is the single most valuable line in a vision prompt.**
-- **Be specific about format.** If you need coordinates or bounding boxes, ask for absolute pixel coordinates and state the format; models are unreliable with vague or normalized coordinate requests.
+- **Be specific about format.** If you need coordinates or bounding boxes, ask in the format the model was trained on and state it in the prompt. Claude returns absolute pixel coordinates relative to the image *after* its own resizing, so pre-resize the image yourself or the boxes will be offset. Gemini returns `[ymin, xmin, ymax, xmax]` boxes normalized to 0-1000 that you scale back to your image size. Treat every coordinate as approximate and verify before acting on it.
 
 ## Getting structured output you can trust
 

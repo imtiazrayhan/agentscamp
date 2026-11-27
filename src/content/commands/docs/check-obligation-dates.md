@@ -2,7 +2,8 @@
 description: "Check a human-reviewed obligation CSV against an explicit as-of date with Python: validate calendar dates and status fields, list overdue or due-today open rows, missing owners/dates, and recorded late/future completions. Never infer legal deadlines, breach, or contract status from clauses."
 title: "Check Obligation Dates"
 date: "2026-09-08"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["founders", "sales"]
 tags: ["check-obligation-dates", "knowledge-work"]
@@ -11,7 +12,20 @@ related: ["guide:ai-vendor-contract-review-packet", "glossary:contract-abstracti
 seoDescription: "Check reviewed obligation dates and statuses against an explicit as-of date, listing timing flags and missing owners without legal conclusions."
 argument-hint: "<obligations.csv> <as-of YYYY-MM-DD>"
 allowed-tools: "Read, Write, Bash(python3 *)"
+summary: "Check Obligation Dates reads a human-reviewed obligation register and an as-of date you supply, then lists open obligations that are overdue, due that day, undated or unassigned, plus completions recorded late or in the future. It is date arithmetic on recorded fields in local Python, not a legal reading of the contract."
 ---
+
+## What it checks and when to run it
+
+Run this when you already keep a register of contract obligations with owners and due dates and want a repeatable answer to "what is late or unowned as of this date?", for example before a weekly vendor review. You pass the as-of date explicitly, so the same file and date always give the same result; the script never reads the system clock.
+
+It expects one CSV with this header, dates as `YYYY-MM-DD`:
+
+```csv
+obligation_id,source_ref,owner,due_date,completed_date,status
+```
+
+[Contract Obligation Register](/skills/docs/contract-obligation-register) drafts the register from agreement text and offers a CSV with these columns after a qualified reviewer has confirmed the dates and statuses. Do not run the check on unreviewed extractions: it trusts every date in the file.
 
 Check a human-reviewed operational obligation register against an explicit as-of date. Supply the CSV path followed by `YYYY-MM-DD`, using POSIX-style quoting for paths. Python 3.10 or later is required. The script reads recorded calendar dates; it does not extract deadlines from contract clauses or look up today's date.
 
@@ -207,7 +221,7 @@ Expected stdout JSON (exit 2):
 
 ## Edges and human review
 
-The six-row fixture below uses as-of `2026-10-07`: O1 is overdue, O2 due today, O3 undated/unassigned and O4 recorded complete after due. O5 waits for a trigger and O6 needs review. The independent leap-day fixture accepts 2028-02-29 and has no finding as of 2028-02-28. The nonexistent date 2026-02-29 fails; a complete row without completed_date also fails.
+The six-row fixture above uses as-of `2026-10-07`: O1 is overdue, O2 due today, O3 undated/unassigned and O4 recorded complete after due. O5 waits for a trigger and O6 needs review. In a separate case not shown here, an open row due 2028-02-29 is accepted as a real leap day and has no finding as of 2028-02-28. The nonexistent date 2026-02-29 fails; a complete row without completed_date also fails.
 
 These labels are arithmetic on supplied fields, not breach, enforceability or legally operative deadline determinations. Qualified reviewers confirm dates/statuses and the business owner chooses actions. Do not alter rows, notify owners, infer business-day calculations or select contractual precedence.
 

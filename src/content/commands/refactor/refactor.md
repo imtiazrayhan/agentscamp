@@ -3,12 +3,15 @@ description: "Refactor the target for readability and structure without changing
 seoDescription: "/refactor restructures the target for readability and structure without changing behavior — a Claude Code slash command for safe, incremental cleanup."
 date: 2026-06-03
 argument-hint: "[file or function]"
+allowed-tools: "Read, Grep, Glob, Edit, Write, Bash"
+updated: 2026-11-27
+reviewed: 2026-11-27
 title: "Refactor"
 color: "purple"
 topics: ["review-qa"]
 audience: ["developers"]
 related: ["agent:refactoring-specialist"]
-summary: "A slash command that refactors a file or function for readability and structure without changing behavior: it establishes a passing test baseline, targets concrete issues like vague names, duplication, deep nesting, and dead code, applies small verifiable steps re-running tests after each, and reports what changed and why."
+summary: "Refactors a file or function for readability and structure without changing behavior. It records a passing test baseline, fixes concrete problems such as vague names, duplication, deep nesting, and dead code in small steps, re-runs the tests after each step, and reports what changed, why, and what it left alone."
 ---
 
 Refactor `$ARGUMENTS` to improve readability, structure, and maintainability while keeping observable behavior exactly the same. If `$ARGUMENTS` is empty, ask which file or function to target before making any changes.
@@ -16,19 +19,28 @@ Refactor `$ARGUMENTS` to improve readability, structure, and maintainability whi
 > [!WARNING]
 > This is a behavior-preserving refactor, not a rewrite. Do not add features, change public APIs, alter return values, or modify side effects. If you discover a genuine bug, stop and report it instead of silently "fixing" it.
 
+## When to use
+
+- One file, function, or class works but is hard to read or change, and you want it cleaned up with no behavior change.
+- Not for a single mechanical move: use [/extract-function](/commands/refactor/extract-function) or [/rename-symbol](/commands/refactor/rename-symbol). Not for restructuring across many modules: use the [refactoring-specialist](/agents/developer-tools/refactoring-specialist) agent, which plans the sequence first.
+- Not for fixing bugs or adding features. Those change behavior and belong in their own commit.
+
 ## 1. Establish a baseline
 
 Before touching anything, understand the current behavior and how it is verified.
 
 - Read `$ARGUMENTS` and the code that calls it. Note the public interface: function signatures, exported symbols, and any side effects (I/O, network, mutation, logging).
-- Find the relevant tests. Run them to confirm they pass before you start, so you have a known-good baseline.
+- Find the relevant tests (Grep for the target's name under the test directories). Run them to confirm they pass before you start, so you have a known-good baseline. Take the test, lint, and typecheck commands from the project's manifest or `CLAUDE.md`, not from habit.
+- Check `git status`. If the working tree already has uncommitted changes in the target file, say so and ask before editing, so the refactor diff stays reviewable on its own.
 
 ```bash
 # Adjust to the project's test runner
 npm test            # or: pytest, go test ./..., cargo test
 ```
 
-If there are no tests covering the target, say so. Add a minimal characterization test that captures current behavior before refactoring, or ask the user how to proceed.
+If the baseline run already fails, stop and report the failures: a refactor on a red suite cannot be verified.
+
+If there are no tests covering the target, say so. Add a minimal characterization test that captures current behavior (current outputs for a few representative and edge inputs, even if they look odd) before refactoring, or ask the user how to proceed.
 
 ## 2. Identify what to improve
 
@@ -40,6 +52,8 @@ Look for concrete, well-known issues rather than stylistic preference:
 - **Deep nesting** — guard clauses and early returns can flatten control flow.
 - **Dead code** — unused variables, unreachable branches, stale comments.
 - **Leaky structure** — mixed levels of abstraction in one function.
+
+List the issues you will fix before editing, with line references. Leave alone anything that is only a style preference the project's formatter or linter does not enforce, and do not touch code outside the target except call sites that must change with it.
 
 ## 3. Apply changes in small steps
 
@@ -88,3 +102,19 @@ Report back concisely:
 - **Why** — the readability or structure problem each change addressed.
 - **Verification** — that tests, lint, and types still pass.
 - **Follow-ups** — anything out of scope you noticed (suspected bugs, missing test coverage) listed separately, not acted on.
+
+Use this shape:
+
+```markdown
+## Refactor: <target>
+
+| Change | Where | Problem it fixed |
+| --- | --- | --- |
+| Extracted `validateInput` | `parse.ts:40-72` | `parse` mixed validation with parsing |
+| Replaced nested ifs with guard clauses | `getDiscount` | Three levels of nesting |
+
+Public interface: unchanged (<exports and signatures checked>)
+Verification: `<test command>` <n> passed before, <n> passed after, no assertions edited | lint: pass | types: pass
+Tests added: <characterization tests, or none>
+Not done / follow-ups: <suspected bugs, untested paths, larger restructuring>
+```

@@ -3,6 +3,8 @@ title: "LLM Evaluation Metrics Explained: Which One to Use and When"
 description: "A practical map of LLM and RAG evaluation metrics — why BLEU/ROUGE fail open-ended text, how LLM-as-judge and RAG metrics work, and which to pick per task."
 author: "Imtiaz Rayhan"
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["llm-evals"]
 audience: ["ai-engineers"]
@@ -14,7 +16,7 @@ related:
   - "glossary:eval-dataset"
   - "glossary:grounding"
 featured: false
-summary: "There is no single LLM metric — you pick one that matches the task. Use exact match and F1 for closed tasks like extraction and routing, retrieval metrics (recall@k, MRR, NDCG) for the retriever, RAG metrics (faithfulness, answer relevance, context precision/recall) for grounded answers, and a calibrated LLM-as-judge or human preference for open-ended generation."
+summary: "There is no single LLM metric — you pick one that matches the task. Use exact match and F1 for extraction and routing, retrieval metrics (recall@k, MRR, NDCG) for the retriever, RAG metrics (faithfulness, answer relevance, context precision/recall) for grounded answers, and a calibrated LLM-as-judge or human preference for open-ended generation."
 keyTakeaways:
   - "Match the metric to the task: closed tasks get exact match/F1, retrieval gets recall@k/MRR/NDCG, open generation gets LLM-as-judge or human preference."
   - "BLEU/ROUGE/exact-match reward surface overlap, not meaning — they punish correct paraphrases and miss subtle errors in open-ended text."
@@ -95,7 +97,7 @@ Once retrieval is solid, decompose the answer:
 - **Context precision** — is the retrieved context on-point, or padded with noise that distracts the model?
 - **Context recall** — does the retrieved context contain everything needed to answer fully?
 
-The diagnostic power is in the split: low context recall is a retriever problem; high context recall but low faithfulness is a generation/prompting problem. Tooling like Ragas and DeepEval implement these directly.
+The diagnostic power is in the split: low context recall is a retriever problem; high context recall but low faithfulness is a generation/prompting problem. Tooling like [Ragas](/tools/ragas) and [DeepEval](/tools/deepeval) implement these directly, under slightly different names: Ragas calls answer relevance "response relevancy", and DeepEval says "contextual" precision and recall.
 
 ## Open-ended generation: LLM-as-judge and human preference
 

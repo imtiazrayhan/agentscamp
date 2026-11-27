@@ -1,6 +1,6 @@
 ---
 name: "Kilo Code"
-description: "Open-source AI coding agent for VS Code and JetBrains, begun as a Roo Code fork and rebuilt on OpenCode, with bring-your-own-key and zero model markup."
+description: "Open-source (MIT) AI coding agent for VS Code, JetBrains and the CLI, begun as a Roo Code fork and rebuilt on OpenCode, with 500+ models at provider rates."
 url: "https://kilo.ai/"
 pricing: "freemium"
 category: "extension"
@@ -29,26 +29,71 @@ tags:
   - mcp
 color: blue
 date: 2026-06-17
-updated: "2026-09-11"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 featured: false
-summary: "Kilo Code is an open-source (MIT) AI coding agent for VS Code and JetBrains that began as a Roo Code fork and was rebuilt on OpenCode for its v7 release in April 2026. It supports 500+ models with bring-your-own-key and zero inference markup, plus agents (Code, Plan, Ask, Debug), MCP servers, and inline autocomplete."
+summary: "Kilo Code is an MIT-licensed AI coding agent for VS Code, JetBrains and the terminal. It began as a Roo Code fork and its current v7 line is built on OpenCode. It ships Code, Plan, Ask and Debug agents and routes to 500+ models at provider rates. The agent is free; you pay for inference through your own keys, Kilo Gateway credits, or Kilo Pass."
 faq:
-  - q: "Is Kilo Code free and open source?"
-    a: "Yes. The extension is MIT-licensed and free to install. It uses a freemium model: you can bring your own API key (or local models) and pay the provider's rate with no markup, or use the hosted service which offers a free tier and paid options."
-  - q: "How does Kilo Code relate to Roo Code and Cline?"
-    a: "Kilo Code began in 2025 as a fork of Roo Code, which itself forked Cline. Its current VS Code extension (v7, generally available since April 2026) was rebuilt on the OpenCode server, and the legacy Roo-derived extension and JetBrains plugin reached end of life on July 31, 2026."
-  - q: "Which editors does Kilo Code support?"
-    a: "It ships as a VS Code extension (also on Open VSX) and a JetBrains plugin, with a CLI and cloud agents available through the broader Kilo platform."
+  - q: "Is Kilo Code free?"
+    a: "The agent is free and MIT-licensed. As of November 2026 the individual platform plan is $0 and Teams is $15 per user per month; inference is separate. You can use free models, local models or your own keys at no charge from Kilo, buy Kilo Gateway credits at provider rates with a 5% processing fee on credit purchases, or subscribe to Kilo Pass from $19 a month for bonus credits."
+  - q: "How does Kilo Code relate to Roo Code, Cline and OpenCode?"
+    a: "Kilo Code began in 2025 as a fork of Roo Code, which itself forked Cline. The current product is a different codebase: the README says Kilo CLI is a fork of OpenCode, and the v7 extension is built on it. The legacy Roo-derived VS Code extension and JetBrains plugin reached end of life on July 31, 2026, and that repository is archived."
+  - q: "How do I install the Kilo CLI?"
+    a: "Run npm install -g @kilocode/cli, or curl -fsSL https://kilo.ai/cli/install | bash, or brew install Kilo-Org/tap/kilo on macOS and Linux. Then run kilo in a project directory. For CI, kilo run --auto \"run tests and fix any failures\" runs with no prompts."
+  - q: "What is Kilo Pass?"
+    a: "Kilo Pass is a monthly credit subscription for Kilo Gateway. As of November 2026 the tiers are Starter at $19, Pro at $49 and Expert at $199 a month, and Kilo adds bonus credits on top of what you pay, up to 50%. It is prepaid inference credit, not a flat unlimited plan."
 ---
 
-**Kilo Code is an open-source, MIT-licensed AI coding agent that runs as a VS Code and JetBrains extension; it began as a Roo Code fork and was rebuilt on OpenCode for its v7 release in April 2026.**
+**Kilo Code is an open-source, MIT-licensed AI coding agent that runs in VS Code, JetBrains IDEs and the terminal.** It began in 2025 as a Roo Code fork; the current v7 line is a rebuild on [OpenCode](/tools/opencode), and the README states plainly that Kilo CLI is a fork of OpenCode. The repository had about 28,100 GitHub stars as of November 2026; the latest release that month was v7.8.40.
 
-The extension takes natural-language instructions to generate, refactor, and debug code, run terminal commands, and automate multi-step tasks inside the editor. It organizes work into agents — Code (the default), Plan, Ask, and Debug — and supports custom agents, inline autocomplete, and a Model Context Protocol (MCP) server marketplace for connecting external tools and data. The older Orchestrator mode is deprecated; agents with full tool access now support subagents natively.
+The company behind it, Kilo, sells the parts around the agent: a model gateway, cloud agents, automated code review and team administration. The agent itself costs nothing and works with your own keys.
 
-Kilo Code is model-agnostic: users can choose from 500+ models, switch between them mid-task, and connect their own API keys or local models. The project advertises "zero markup" on inference when using the hosted routing, meaning you pay the model provider's rate. Pricing is freemium — the extension itself is free, there is a free tier with optional paid credits, and bring-your-own-key keeps costs under the user's control.
+## Highlights
 
-For developers comparing options: Kilo Code descends from Roo Code, which forked Cline, but the current extension is rebuilt on OpenCode, and the legacy Roo-derived extension reached end of life on July 31, 2026. Relative to Cursor, the main differentiators are that Kilo Code is open source, runs as an extension inside an existing editor rather than as a separate fork, and avoids markup on model usage.
+- **Four built-in agents.** Code (the default) implements and edits; Plan designs architecture and writes an implementation plan before any code; Ask answers questions about the codebase without touching files; Debug traces issues. You can define custom agents as well.
+- **500+ models, switchable mid-task.** Through Kilo Gateway you pay the model provider's rate with zero markup. Bring-your-own-key and local models through Ollama or LM Studio also work.
+- **Auto Model.** Pick a tier (Frontier, Efficient or Free) and Kilo routes each request to a model for that budget.
+- **Inline autocomplete.** Ghost-text suggestions with tab to accept, alongside the chat agent.
+- **Terminal and browser control.** The agent runs commands and can automate a browser.
+- **Kilo Marketplace.** Install agents, skills, [MCP](/glossary/model-context-protocol) servers and plugins.
+- **Other surfaces.** A cloud agent at app.kilo.ai/cloud and automated pull-request reviews at app.kilo.ai/code-reviews.
 
-Recent status worth noting: the project's primary domain now resolves to kilo.ai (the older kilocode.ai redirects there), reflecting a broader "Kilo" platform that spans the editor extension, a CLI, and cloud agents. The source repository lives at github.com/Kilo-Org/kilocode under the MIT license and has 27,260 GitHub stars (as of September 2026). The company was co-founded by GitLab co-founder Sid Sijbrandij.
+## In an AI-assisted workflow
 
-Read [Cline vs Kilo Code vs Roo Code](/guides/comparisons/cline-vs-kilo-code-vs-roo-code) to see how Kilo Code compares to its upstream siblings, check [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026), or explore [Kilo Code alternatives](/tools/kilo-code/alternatives).
+Install the extension from the VS Code Marketplace or the JetBrains Marketplace, or use the CLI:
+
+```bash
+npm install -g @kilocode/cli
+# or: curl -fsSL https://kilo.ai/cli/install | bash
+# or: brew install Kilo-Org/tap/kilo
+
+kilo                 # interactive session in the current project
+
+# CI: no prompts, auto-approves unless a rule denies the action
+kilo run --auto "run tests and fix any failures"
+```
+
+Start a non-trivial change in Plan, read the plan, then hand it to Code. Use Ask when you only want an explanation, since it cannot edit files.
+
+> [!WARNING]
+> `--auto` approves every permission prompt that a rule does not explicitly deny. Kilo's README says to use it only in trusted environments.
+
+## Pricing
+
+As of November 2026, Kilo splits pricing into three parts.
+
+| Part | What it costs |
+| --- | --- |
+| Platform plan | Individual $0; Teams $15 per user per month; Enterprise custom |
+| Inference | Free models, local models or your own keys: $0 to Kilo. Kilo Gateway: exact provider rates, with a 5% processing fee on credit purchases. Kilo Pass: Starter $19, Pro $49 or Expert $199 a month, with up to 50% bonus credits |
+| Cloud compute | Code Review $0.33 an hour; Cloud Agent $0.60 an hour (Small) or $1.20 an hour (Standard), billed per second |
+
+Teams adds usage analytics, shared custom agents, centralized billing and shared BYOK. Enterprise adds SSO, OIDC and SCIM, audit logs, model and provider limits, and an SLA. Model inference is always charged separately from cloud compute.
+
+## Good to know
+
+"Zero markup" describes token rates. The 5% fee applies when you buy gateway credits, so compare the all-in cost against paying a provider directly with your own key.
+
+If you used Kilo Code before v7, you are on a different product now. The legacy Roo-derived extension and JetBrains plugin reached end of life on July 31, 2026, and Kilo no longer ships updates, bug fixes or security patches for it. That repository is archived; check any custom modes and settings carried over before you rely on them.
+
+Against its relatives: [Cline](/tools/cline) is Apache-2.0, keeps a stricter approve-each-step loop, and offers a flat ClinePass for open-weight models. [Roo Code](/tools/roo-code), Kilo's original upstream, was shut down in May 2026. [Cursor](/tools/cursor) is a closed-source editor with its own models and subscription tiers. Read [Cline vs Kilo Code vs Roo Code](/guides/comparisons/cline-vs-kilo-code-vs-roo-code), check [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026), or explore [Kilo Code alternatives](/tools/kilo-code/alternatives).

@@ -5,8 +5,8 @@ seoTitle: "Best Claude Code Alternatives (2026): Free, Open-Source & Paid"
 seoDescription: "Codex CLI, OpenCode, Cursor, Devin, Kiro and 13 more Claude Code alternatives, picked by reason: cost, open source, local models, IDE, or cloud agents."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
-updated: "2026-11-25"
-reviewed: "2026-11-25"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 color: "green"
 depth: "cornerstone"
 freshness: "tier1"
@@ -154,7 +154,7 @@ Claude Code already integrates with VS Code and JetBrains, so try that first if 
 
 ### If you want async cloud agents
 
-Devin runs tasks in cloud VMs and accepts hand-offs "from the Devin CLI, Claude Code, Codex, Cursor, and more", the others through an open-source Devin Handoff plugin. Codex Web is Codex's cloud side, with GitLab support in beta as of September 2026. Jules gives 15 free tasks a day but has had no changelog entry since March 2026. Amp's remote orbs, Factory's Droid Computers and Kiro's cloud sessions (launched in preview in August 2026) keep working after you close the laptop, and OpenHands Cloud's free tier allows 10 conversations a day.
+Devin runs tasks in cloud VMs and accepts hand-offs "from the Devin CLI, Claude Code, Codex, Cursor, and more", the others through an open-source Devin Handoff plugin. Codex Web is Codex's cloud side, with GitLab support in beta as of September 2026. Jules gives 15 free tasks a day but has had no changelog entry since March 2026. Amp's remote orbs, Factory's Droid Computers and Kiro's cloud sessions (launched in preview in August 2026) keep working after you close the laptop, and OpenHands Cloud runs agents in hosted sandboxes.
 
 **Pick:** Devin for the most complete cloud product; Jules if free matters more than momentum.
 
@@ -273,7 +273,7 @@ Jules works in a Google-hosted VM: connect a GitHub repo, describe a task or lab
 
 ### OpenHands
 
-OpenHands (MIT, now at OpenHands/OpenHands) leads with Agent Canvas, in beta as of September 2026: a self-hosted control center that runs OpenHands, Claude Code, Codex, Gemini or any ACP-compatible agent across local, remote and cloud backends. Models come through LiteLLM, local ones included. OpenHands Cloud's Individual tier is free for 10 conversations a day, with your own key or OpenHands models at cost.
+OpenHands (MIT, now at OpenHands/OpenHands) leads with Agent Canvas: a self-hosted control center that runs OpenHands, Claude Code, Codex, Gemini or any ACP-compatible agent across local, remote and cloud backends. Models come through LiteLLM, local ones included. OpenHands Cloud is the hosted version; the pricing page lists a free open-source tier and self-hosted Teams and Enterprise plans.
 
 **Verdict:** the pick for a self-hosted agent platform that can keep Claude Code in the mix.
 

@@ -5,6 +5,8 @@ description: "How Claude Code usage limits work: the five-hour session limit, we
 seoDescription: "Claude Code usage limits explained: the five-hour session window, weekly caps, the May 2026 doubling, what burns usage, usage credits, and how to use less."
 author: "Imtiaz Rayhan"
 date: 2026-10-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["workflow-prompting"]
@@ -14,14 +16,14 @@ keywords: ["Claude Code usage limits", "Claude Code weekly limit", "Claude Code 
 summary: "Claude Code draws on your Claude plan's shared limits: a session limit that resets every five hours and a weekly limit that resets at a fixed time assigned to your account, shared with claude.ai and IDE use. Anthropic doubled Claude Code's five-hour limits on May 6, 2026. Long sessions, Opus and subagents drain it fastest; /usage shows why."
 keyTakeaways:
   - "Paid plans have two limit types: a session limit that resets every five hours and a weekly limit that resets at a fixed, per-account time. Claude Code, claude.ai, Desktop and IDE use all count against the same pool."
-  - "Allowances are only published as multiples of Pro's per-session allowance (Max 5x and 20x, Team Standard 1.25x, Premium 6.25x); no help page states absolute message or hour figures, and the May 6, 2026 doubling made older numbers stale."
+  - "Allowances are only published as multiples of Pro's per-session allowance (Max 5x, Ultra 10x weekly, Team Standard 1.25x, Premium 6.25x); no help page states absolute message or hour figures, and the May 6, 2026 doubling made older numbers stale."
   - "Usage climbs because every turn re-sends the whole conversation and project context. A one-line question in an all-day session still pays for the whole history, and /compact is itself a large request."
   - "Run /usage (aliases /cost and /stats) for plan bars, attribution by skill, subagent, plugin and MCP server, and recommendations; /status is the Settings status tab."
   - "When you hit a limit: wait for the reset, use a limit reset if one is offered, switch model family if it is an Opus or Sonnet family limit, or turn on usage credits to continue at API rates."
   - "An API key bypasses plan limits entirely, but it bills every token to your Console or cloud account with no hard stop, and the wrap-up allowance and /usage-credits do not apply."
 faq:
   - q: "Does Claude Code have a weekly limit?"
-    a: "Yes. Anthropic's help center says both Pro and Max plans have a five-hour session limit and a weekly limit, shared across Claude and Claude Code; Team seats have a weekly limit per member, and Max plans add a separate weekly limit for Fable models. The weekly limit resets at a fixed day and time assigned to your account, which you can see under Settings > Usage on claude.ai."
+    a: "Yes. Anthropic's help center says Pro and Max plans have a five-hour session limit and a weekly limit, shared across Claude and Claude Code. Ultra (formerly Max 20x) has a weekly limit but no five-hour limit on verified accounts. Team seats have a weekly limit per member, and Max and Ultra add a separate weekly limit for Fable models. The weekly limit resets at a fixed day and time assigned to your account, which you can see under Settings > Usage on claude.ai."
   - q: "Why did I hit my Claude Code limit so fast?"
     a: "Usually one of four things: a long session, because Claude Code sends the full conversation with every request and even cached history still draws usage; Opus on routine work, which costs several times more per turn than Sonnet; subagents, workflows or agent teams, each of which sends its own requests (agent teams use roughly 7x more tokens when teammates run in plan mode); or a cache miss after a break, which reprocesses your whole context. Run /usage and read the attribution and recommendations rows to see which one it was."
   - q: "Can I use an API key instead of my Claude plan in Claude Code?"
@@ -34,8 +36,8 @@ sources:
   - title: "How do usage and length limits work?"
     url: "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work"
     publisher: "Anthropic"
-  - title: "Use Claude Code with your Pro or Max plan"
-    url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan"
+  - title: "Use Claude Code with your Pro, Max, or Ultra plan"
+    url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-max-or-ultra-plan"
     publisher: "Anthropic"
   - title: "What is the Max plan?"
     url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
@@ -76,20 +78,20 @@ related: ["guide:claude-plans-compared-2026", "guide:context-engineering", "guid
 
 Two windows run at once:
 
-- **The five-hour session limit.** It resets every five hours. For Claude Code specifically, the help center says: "Both Pro and Max plans have a five-hour session limit and a weekly limit. Max plans also have a separate weekly limit for Fable. These limits are shared across Claude and Claude Code, meaning all activity in both tools counts against the same limits."
+- **The five-hour session limit.** It resets every five hours. For Claude Code specifically, the help center says: "Pro and Max plans have a five-hour session limit and a weekly limit. Ultra plans have a weekly limit, and verified Ultra accounts don't have a five-hour session limit." It continues: "Max and Ultra plans also have a separate weekly limit for Fable. These limits are shared across Claude and Claude Code, meaning all activity in both tools counts against the same limits."
 - **The weekly limit.** It "applies across all models" and resets "at a fixed time each week that is assigned to your account. Your reset day and time stay the same regardless of when you start using Claude or when your subscription begins, and you receive your full weekly allowance each cycle." The next reset time is shown under Settings > Usage on claude.ai.
 
-Three more rules matter. IDE usage counts toward the same limits, so the [VS Code extension](/guides/getting-started/claude-code-vscode-extension) is not a separate pool. Anthropic reserves discretionary caps: usage may be limited "in other ways, such as weekly and monthly caps or model and feature usage, at our discretion." And Fable has its own rules: on Max and Premium seats up to 50% of weekly usage can go to Fable models, which draw from the regular weekly limit and use it faster; on Pro and Standard seats Fable runs on usage credits.
+Three more rules matter. IDE usage counts toward the same limits, so the [VS Code extension](/guides/getting-started/claude-code-vscode-extension) is not a separate pool. Anthropic reserves discretionary caps: usage may be limited "in other ways, such as weekly and monthly caps or model and feature usage, at our discretion." And Fable has its own rules: on Max, Ultra and Premium seats up to 50% of weekly usage can go to Fable models, which draw from the regular weekly limit and use it faster; on Pro and Standard seats Fable runs on usage credits.
 
 ## What each plan gets
 
-Anthropic publishes allowances only as multiples of the Pro plan's per-session allowance, never as absolute message or hour counts:
+Anthropic publishes allowances only as multiples of the Pro plan's allowance, never as absolute message or hour counts. As of November 2026:
 
 | Plan | Per-session allowance | Weekly limit |
 | --- | --- | --- |
 | Pro | Baseline | Yes, across all models |
-| Max 5x | Five times Pro's | Yes, plus a separate Fable weekly limit |
-| Max 20x | Twenty times Pro's | Yes, plus a separate Fable weekly limit |
+| Max | Five times Pro's | Yes, five times Pro's, plus a separate Fable weekly limit |
+| Ultra (formerly Max 20x) | No five-hour limit on verified accounts | Yes, ten times Pro's, plus a separate Fable weekly limit |
 | Team Standard seat | 1.25 times Pro's | Yes, per member |
 | Team Premium seat | 6.25 times Pro's | Yes, per member |
 | Enterprise, usage-based | No per-seat limits | Billed at API rates |

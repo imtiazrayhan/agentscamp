@@ -7,7 +7,7 @@ audience: ["marketers"]
 tags: ["audio", "voice", "review"]
 featured: false
 related: ["guide:review-ai-speech-cleanup", "skill:speech-cleanup-review-sheet", "command:check-audio-review-sheet"]
-summary: "Review original-versus-processed speech listening notes and a timed cleanup sheet for a supplied recording. Flag lost words, altered pronunciation, missing useful sound and unsupported keep decisions; do not claim to listen through a text-only tool, process audio or select a final master without a listener."
+summary: "Checks whether each keep-original, use-processed, retry, re-record or pending decision on a cleanup sheet follows the paired listening notes. You supply variant IDs, duration, timed observations and a named listener; it returns a segment report of unsupported decisions, conflicting notes and unreviewed intervals. The listener still picks the master."
 name: "speech-cleanup-reviewer"
 title: "Speech Cleanup Reviewer"
 model: "sonnet"

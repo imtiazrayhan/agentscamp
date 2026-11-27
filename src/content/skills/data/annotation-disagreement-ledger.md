@@ -7,7 +7,7 @@ audience: ["ai-engineers", "analysts"]
 tags: ["text-annotation", "annotation-disagreement-ledger"]
 featured: false
 related: ["guide:adjudicate-ai-assisted-text-labels", "agent:annotation-evidence-reviewer", "command:check-annotation-batch"]
-summary: "Build an adjudication ledger from conflicting supervised text-label responses, preserving original reviewer labels, exact excerpts, task-rule versions and unresolved owner decisions."
+summary: "Supply the rule revision, immutable records, original reviewer responses and any model suggestions. The ledger groups responses by record with exact excerpts, the rule locations each reviewer invoked and a question for the adjudicator. Model suggestions sit in their own column, not as a vote. Rows stay unresolved until the adjudicator supplies a decision."
 name: "annotation-disagreement-ledger"
 title: "Annotation Disagreement Ledger"
 allowed-tools: "Read, Glob, Grep"

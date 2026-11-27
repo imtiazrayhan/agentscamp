@@ -5,8 +5,8 @@ seoTitle: "The Best GitHub Copilot Alternatives in 2026 (Free and Paid)"
 seoDescription: "Cursor, Cline, Kilo Code, Tabnine, Zed, Kiro and more GitHub Copilot alternatives, with free options, self-hosted picks and a clear verdict for each."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
-updated: "2026-11-25"
-reviewed: "2026-11-25"
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: "cornerstone"
 freshness: "tier1"
@@ -26,7 +26,7 @@ faq:
   - q: "What is the best alternative to GitHub Copilot?"
     a: "Cursor, if you are willing to switch editors: it is an AI-native VS Code fork with tab completion and parallel agents. If you want to stay in VS Code or JetBrains, Cline is the strongest free, open-source option, and Tabnine is the pick when code cannot leave your network."
   - q: "Is there a free alternative to GitHub Copilot?"
-    a: "Yes. Cline and Kilo Code are free, open-source extensions that work with your own API key or a local model, Zed's Personal plan includes 2,000 accepted edit predictions, and Tabby is free to self-host for up to five users. Cursor, Kiro and Devin Desktop have free tiers, and ChatGPT's Free plan includes Codex."
+    a: "Yes. Cline and Kilo Code are free, open-source extensions that work with your own API key or a local model, Zed's Personal plan is free with your own API keys or external agents, and Tabby is free to self-host for up to five users. Cursor, Kiro and Devin Desktop have free tiers, and ChatGPT's Free plan includes Codex."
   - q: "Is there a free, unlimited alternative to Copilot?"
     a: "Not as a hosted service, because every free cloud tier has a quota. The closest is an open-source tool pointed at a local model, such as Cline or Kilo Code with Ollama or LM Studio, or a self-hosted Tabby server, where your hardware sets the limit. In JetBrains IDEs, the free JetBrains AI tier includes unlimited Mellum code completion and unlimited local models."
   - q: "Can I self-host an AI coding assistant instead of Copilot?"
@@ -66,8 +66,8 @@ sources:
   - title: "Tabnine pricing and deployment"
     url: "https://www.tabnine.com/pricing"
     publisher: "Tabnine"
-  - title: "Tabby pricing"
-    url: "https://www.tabbyml.com/pricing"
+  - title: "Tabby repository"
+    url: "https://github.com/TabbyML/tabby"
     publisher: "TabbyML"
   - title: "Continue has joined Cursor"
     url: "https://continue.dev/"
@@ -109,7 +109,7 @@ Prices change often; each tool page lists current pricing.
 
 | Tool | Type | Open source? | Free option | Best for |
 |---|---|---|---|---|
-| [Cursor](/tools/cursor) (SpaceX, Aug 2026) | AI-native editor | No | Hobby plan | The most complete AI editor |
+| [Cursor](/tools/cursor) (SpaceX, Aug 2026) | AI-native editor | No | Free plan | The most complete AI editor |
 | [Devin Desktop](/tools/windsurf) (ex-Windsurf, Jun 2026) | Editor | No | Free plan | Local and cloud agents |
 | [Kiro](/tools/kiro) | IDE, CLI, web | No | 50 credits a month | Spec-driven development |
 | [Zed](/tools/zed) | Native editor | Yes (GPL-3.0 and Apache-2.0 files) | Personal plan | Bring your own models and agents |
@@ -150,10 +150,10 @@ If your Copilot use has drifted from autocomplete to delegating whole tasks, a t
 These are genuinely free, each with a catch:
 
 - **Cline and Kilo Code:** the tools are free; you pay your model provider or run a local model.
-- **Zed Personal:** 2,000 accepted edit predictions, plus unlimited use with your own API keys or external agents.
+- **Zed Personal:** free, with unlimited use of your own API keys or external agents.
 - **Tabby Community:** free for up to five users, on hardware you run.
 - **Codex:** included in ChatGPT's Free plan.
-- **Free tiers with quotas:** Cursor Hobby (limited agent requests), Kiro Free (50 credits a month), Devin Desktop's Free plan, Amp Hobby (your own keys) and Copilot Free itself.
+- **Free tiers with quotas:** Cursor Free (limited usage), Kiro Free (50 credits a month), Devin Desktop's Free plan, Amp Hobby (your own keys) and Copilot Free itself.
 
 Nothing hosted is free and unlimited. The closest is an open-source tool on a local model, such as Cline or Kilo Code with Ollama or LM Studio, or Zed with a local model, where your hardware sets the limit.
 
@@ -209,7 +209,7 @@ Tabnine is the enterprise-deployment specialist: SaaS, VPC, on-premises or fully
 
 ### Tabby
 
-Tabby is a self-hosted server with VS Code, JetBrains, Vim and Eclipse clients that can use Ollama, vLLM, llama.cpp, LM Studio or hosted APIs. It covers completion, chat and an answer engine, and TabbyML's agent work now lives in a sibling project, Pochi. Content outside `ee/` is Apache-2.0. Development has slowed: the last stable release was v0.32.0 in January 2026, and the VS Code extension was last updated in April 2025.
+Check its status before you commit: as of November 2026 tabbyml.com no longer presents Tabby or its plans, and the repository's last push was June 30, 2026. Tabby is a self-hosted server with VS Code, JetBrains, Vim and Eclipse clients that can use Ollama, vLLM, llama.cpp, LM Studio or hosted APIs. It covers completion, chat and an answer engine, and TabbyML's agent work now lives in a sibling project, Pochi. Content outside `ee/` is Apache-2.0. Development has slowed: the last stable release was v0.32.0 in January 2026, and the VS Code extension was last updated in April 2025.
 
 **Verdict:** the budget self-hosting option for small teams. Check its release pace before you commit.
 

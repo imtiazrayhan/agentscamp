@@ -8,7 +8,7 @@ audience: ["marketers", "designers"]
 tags: ["asset-catalog", "ai-digital-asset-metadata"]
 featured: false
 related: ["guide:ai-asset-search-acceptance-test", "tool:bynder", "glossary:digital-asset-management", "skill:asset-metadata-review-ledger"]
-summary: "Review AI-suggested asset tags against a supplied vocabulary, original asset versions and human visual observations before changing a catalog."
+summary: "Freeze an inventory of asset IDs, versions and existing metadata, and get an owner-approved vocabulary with synonym rules. AI suggestions go into a ledger one field at a time, each accepted, rejected, pending or out of scope. Filenames never set campaign, rights or approval fields. Apply a small pilot with a rollback record and verify the stored values."
 title: "Review AI Digital Asset Metadata with a Controlled Vocabulary"
 depth: "standard"
 sources: [{"title": "Bynder Digital Asset Management", "url": "https://www.bynder.com/en/products/digital-asset-management/", "publisher": "Bynder"}, {"title": "Bynder Pricing", "url": "https://www.bynder.com/en/pricing/", "publisher": "Bynder"}]

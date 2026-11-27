@@ -7,6 +7,8 @@ version: "1.0.0"
 color: "cyan"
 title: "Agent Trajectory Evaluator"
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["llm-evals", "ai-agents-systems"]
 audience: ["ai-engineers"]
 related: ["skill:token-usage-profiler", "skill:contract-test-designer", "skill:mutation-test-runner"]
@@ -56,7 +58,7 @@ Final-answer evals tell you the agent failed; they don't tell you *where*. An ag
    assert len(trajectory) <= task["step_budget"], f"{len(trajectory)} steps > budget"
    assert not any(s["is_error"] for s in trajectory[-2:]), "ended on an error"
    ```
-   Reserve the LLM-judge for the genuinely subjective steps only — "was this reasoning step sound given the prior result?", "was this summary faithful to the tool output?" — and judge **one step at a time** with the step's inputs in context, not the entire run. Default both the agent-under-test and the judge to the latest, most capable Claude model (`claude-opus-4-8`); use a *different* sample or framing for the judge so it isn't grading its own twin, and keep the judge's rubric to one criterion per call.
+   Reserve the LLM-judge for the genuinely subjective steps only — "was this reasoning step sound given the prior result?", "was this summary faithful to the tool output?" — and judge **one step at a time** with the step's inputs in context, not the entire run. Default both the agent-under-test and the judge to the current Claude Opus model (`claude-opus-5-5` as of November 2026); use a *different* sample or framing for the judge so it isn't grading its own twin, and keep the judge's rubric to one criterion per call.
 
 5. **Diff every candidate trajectory against a stored baseline and report the regressions.** This is what catches the silent ones. After a prompt or model change, re-run the fixed eval set and compare trajectory-for-trajectory against the baseline: tools added/removed/reordered, argument changes, step-count delta, new error-recovery loops, latency delta. A change that keeps the final answer correct but adds two steps, introduces a retry loop, or swaps a precise tool for a brute-force one is a **regression** — surface it even though the answer still passes. Promote a candidate to the new baseline only when the diff is empty or every change is reviewed and intended.
 
@@ -69,5 +71,5 @@ Final-answer evals tell you the agent failed; they don't tell you *where*. An ag
 ## Output
 - **Trajectory schema** — the per-step record (decision, tool, args, result, is_error, latency, state) and where each field comes from in your agent loop or event stream.
 - **Per-axis rubric** — the five axes (tool selection, argument correctness, step efficiency, error recovery, goal completion) with the concrete check for each task.
-- **Assertion-vs-judge split** — the deterministic assertions written as code, and the short list of subjective steps routed to a single-criterion LLM-judge (agent and judge both on `claude-opus-4-8`).
+- **Assertion-vs-judge split** — the deterministic assertions written as code, and the short list of subjective steps routed to a single-criterion LLM-judge (agent and judge both on `claude-opus-5-5`).
 - **Baseline-diff regression report** — a per-task diff of the candidate run against the stored baseline (tools reordered/added/removed, arg changes, step-count and latency deltas, new recovery loops), flagging every regression even where the final answer still passes, plus a verdict on whether to promote the candidate to baseline.

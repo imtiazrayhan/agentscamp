@@ -1,36 +1,55 @@
 ---
 title: "GitHub Copilot vs Cursor: Extension or Editor? (2026)"
-description: "GitHub Copilot vs Cursor compared — stay in your editor with an extension, or switch to an AI-first fork? Completion, agents, enterprise fit, and pricing shape."
+description: "GitHub Copilot vs Cursor in November 2026: plan line-ups, how each meters usage, which models are included, editors supported, and instruction file formats."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["coding-languages", "workflow-prompting"]
 audience: ["developers"]
 tags: ["comparison", "github-copilot", "cursor", "versus"]
 featured: false
-summary: "The real choice is form factor. Copilot adds AI to the editors you already use — VS Code, JetBrains, Visual Studio, Neovim — with the lowest friction and the enterprise story (GitHub integration, policy, seats). Cursor asks you to switch editors and pays you back with the category's best inline-edit and completion experience plus deeper agent features."
+summary: "Pick GitHub Copilot if you want AI inside the editor you already use, with Claude, GPT and Gemini models drawn from one monthly credit allowance. Pick Cursor if you will switch editors for its Tab completion and Agents Window, and accept that its new plans include only Cursor's own Grok and Composer models."
 keyTakeaways:
-  - "Copilot is an extension everywhere; Cursor is a destination editor (VS Code fork). That single difference drives almost every other trade-off."
-  - "Cursor's ceiling is higher in-editor: best-in-class tab completion and inline edits, Cursor 3.0 parallel agents, Composer models, plugin marketplace."
-  - "Copilot's floor is unbeatable for teams: no editor migration, GitHub-native (PR summaries, code review, cloud agent on issues), org policy and license posture enterprises already approved."
-  - "Both have agent modes now — autocomplete stopped being the differentiator; where the agent runs and how much you supervise it is."
-  - "Pricing shapes differ less than they used to (both subscription-based with usage components); the migration cost and ecosystem are the real deciders."
+  - "Copilot is an extension for VS Code, Visual Studio, JetBrains IDEs, Vim/Neovim, Xcode, Eclipse and Azure Data Studio, plus a CLI and an app. Cursor is its own editor; outside it, Cursor's agent runs in JetBrains IDEs through ACP."
+  - "Copilot meters paid usage in GitHub AI Credits per month. Cursor's new plans meter a weekly pool that covers Cursor models only."
+  - "Copilot's paid plans include third-party models (Claude, GPT, Gemini, Grok) inside the allowance. On Cursor's new plans those models are billed at API list price from prepaid credit, from the Premium plan up."
+  - "Copilot Free caps inline suggestions at 2,000 completions a month and has no cloud agent. On Business and Enterprise, inline suggestions are unlimited and do not consume credits."
+  - "Ownership matters for procurement: Copilot is GitHub (Microsoft); Cursor has been part of SpaceX since August 2026 and is sold with Grok and X."
 faq:
   - q: "Is Cursor better than Copilot?"
-    a: "In-editor, on raw capability, most heavy users say yes — completion quality, inline edits, and agent depth lead the category. But 'better' assumes you'll switch editors and your org allows it. Copilot wins every scenario where staying in your current editor, JetBrains/Visual Studio coverage, or enterprise procurement matters. Capability vs adoption-cost, not good vs bad."
-  - q: "Can I use Copilot inside Cursor?"
-    a: "Not meaningfully — Cursor replaces Copilot's role with its own completion and agent stack, and Copilot's extension targets Microsoft's VS Code builds. Choose one per editor. (Claude Code, being editor-agnostic, pairs with either.)"
+    a: "It depends on whether you will change editors. Cursor controls the whole editor, so its Tab completion, inline edits and Agents Window are one integrated product. Copilot now has agent mode, a cloud agent and parallel agent sessions in VS Code too, and it works in seven editor families. Neither vendor publishes a like-for-like benchmark, so run both on the same task from your backlog for a week."
+  - q: "Which one includes Claude and GPT models?"
+    a: "Copilot, on paid plans. GitHub's plan tables list Claude, GPT, Gemini and Grok models as available on Pro and above, drawn from your monthly AI credits; Free and Student are limited to auto model selection. Cursor's new plans include only Grok and Composer in the weekly pool, with third-party models charged at API list price from Premium upward."
   - q: "Which is better for a large engineering org?"
-    a: "Copilot, usually, on logistics: seat management, policy controls, IP indemnity posture, GitHub-org integration, and zero editor migration across thousands of developers. Cursor's enterprise motion has matured, and individual teams adopt it bottom-up — but org-wide rollouts still default to Copilot's path of least resistance."
+    a: "Copilot usually wins on logistics. Business and Enterprise add organization-wide policy management, content exclusion, audit logs and organization custom instructions, and nobody has to change editor. Cursor's Teams and Enterprise plans offer SAML/OIDC SSO and team-wide privacy mode, but a rollout still means moving people to a new editor and a new vendor relationship with SpaceX."
+  - q: "Do both support MCP and AGENTS.md?"
+    a: "Yes. GitHub lists Model Context Protocol support on every Copilot plan, and Copilot reads AGENTS.md files alongside its own `.github/copilot-instructions.md`. Cursor has MCP support and reads AGENTS.md alongside `.cursor/rules`. A repository that keeps its conventions in AGENTS.md works with either."
 sources:
-  - title: "GitHub Copilot features"
-    url: "https://docs.github.com/en/copilot/get-started/features"
-    publisher: "GitHub"
   - title: "Plans for GitHub Copilot"
     url: "https://docs.github.com/en/copilot/get-started/plans"
     publisher: "GitHub"
+  - title: "GitHub Copilot in IDEs"
+    url: "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides"
+    publisher: "GitHub"
+  - title: "Adding repository custom instructions for GitHub Copilot"
+    url: "https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions"
+    publisher: "GitHub"
+  - title: "Cursor Models & Pricing"
+    url: "https://cursor.com/docs/models-and-pricing"
+    publisher: "Cursor"
+  - title: "Legacy Cursor plans"
+    url: "https://cursor.com/docs/account/pricing/legacy-cursor-plans"
+    publisher: "Cursor"
+  - title: "Cursor is now a part of SpaceX"
+    url: "https://cursor.com/blog/joining-spacex"
+    publisher: "Cursor"
   - title: "New Cursor Interface (Cursor 3.0)"
     url: "https://cursor.com/changelog/3-0"
+    publisher: "Cursor"
+  - title: "Cursor Rules"
+    url: "https://cursor.com/docs/rules"
     publisher: "Cursor"
   - title: "Void repository"
     url: "https://github.com/voideditor/void"
@@ -38,39 +57,106 @@ sources:
 related: ["tool:github-copilot", "tool:cursor", "guide:cursor-vs-claude-code-vs-copilot-vs-windsurf-2026", "guide:claude-code-vs-cursor", "guide:cursor-vs-windsurf", "tool:cody", "tool:tabby", "tool:tabnine", "tool:void"]
 ---
 
-Copilot versus Cursor is really a question about *where AI should enter your workflow*: as a layer added to the editor you already trust, or as a reason to change editors. Capability differences are real but second-order; the form-factor decision dominates.
+[GitHub Copilot](/tools/github-copilot) adds AI to the editor you already use. [Cursor](/tools/cursor) asks you to move into its editor. That was the whole comparison a year ago. In late 2026 there is a second axis that matters as much: what your subscription actually includes, because the two products now meter usage and bundle models in opposite ways.
 
 ## The short answer
 
-- **You (or your org) won't switch editors** — JetBrains, Visual Studio, Neovim, or just settled VS Code — → **Copilot**, full stop.
-- **You'll trade a migration for the best in-editor AI experience** → **Cursor**.
-- **You're choosing for a large org** → Copilot's procurement/policy/GitHub story usually wins regardless of individual preference.
+- **You will not change editors** (JetBrains, Visual Studio, Xcode, Neovim, or a settled VS Code setup): Copilot.
+- **You will switch for the most integrated completion-plus-agent editor**: Cursor.
+- **You want Claude, GPT and Gemini models inside one flat allowance**: Copilot.
+- **You are happy on Grok and Composer, or already pay for Grok or X**: Cursor's new plans bundle them.
+- **You are buying for an organization**: Copilot Business or Enterprise is the lower-friction rollout.
 
-## What each does best
-
-**Copilot is the lowest-friction AI there is.** Install the extension in the editor you already use; completions start; chat and agent mode are there when wanted. Its moat is breadth and integration: every major editor, plus GitHub-native surfaces — PR summaries, Copilot code review, the cloud agent that takes issues to PRs — and the enterprise apparatus (seats, policies, audit) that makes it the default approved tool in big companies. [Tool profile →](/tools/github-copilot)
-
-**Cursor is the higher ceiling.** As a VS Code fork it owns the whole surface, and it spends that ownership well: tab completion that predicts multi-line edits across the file, natural-language inline changes, @-mention context, and — post-Cursor 3.0 — parallel agents across worktrees and cloud, in-house Composer models, and a plugin marketplace. Your VS Code settings and extensions carry over; the cost is that it's a new app, and org rollouts mean real migration. [Tool profile →](/tools/cursor)
-
-## Dimension by dimension
+## Plans and metering, as of November 2026
 
 | | GitHub Copilot | Cursor |
 | --- | --- | --- |
-| Form factor | Extension (VS Code, JetBrains, VS, Neovim) | Standalone editor (VS Code fork) |
-| Adoption friction | Near zero | Editor switch |
-| Completion/inline edits | Strong | Category-leading |
-| Agent story | Agent mode + Copilot cloud agent on issues/PRs | Cursor 3.0 parallel agents, worktrees/cloud |
-| Models | Multi-provider choice | Multi-provider + in-house Composer |
-| Ecosystem tie-in | GitHub (PRs, reviews, org policy) | Plugin marketplace, MCP |
-| Enterprise posture | Mature, procurement-friendly | Growing, bottom-up adoption |
+| Owner | GitHub (Microsoft) | SpaceX, acquired August 2026 |
+| Individual plans | Free, Student, Pro, Pro+, Max | Free, Plus, Premium, Super, Ultra (The X Subscription) |
+| Organization plans | Business, Enterprise | Teams, Enterprise |
+| Unit of usage | GitHub AI Credits, a monthly allowance (base credits plus a flex allotment) | A weekly usage pool, shared between Cursor and Grok |
+| What the allowance covers | Chat, agents and all listed models; inline suggestions are separate | Cursor's own models only: Grok 4.7, 4.6, 4.5 and Composer 2.5 |
+| Third-party models | Included on paid plans: Claude, GPT, Gemini, Grok and others | Billed at API list price from prepaid credit, Premium and above; not available on Free or Plus |
+| Free tier limits | 2,000 completions a month, auto model selection only, no cloud agent | "Limited" Agent and Chat usage, no third-party models |
+| Inline completions | Capped only on Free; on Business and Enterprise GitHub states they are unlimited and do not consume credits | Tab; the pricing doc does not itemize a cap |
+| Cloud agent | Copilot in the cloud, on every paid plan | Cloud Agents, from Premium |
+| PR review | Copilot code review | Bugbot, from Premium |
+| Older plans | Not applicable | Hobby, Pro, Pro+, Ultra and Teams continue as "legacy Cursor plans" with two monthly pools |
 
-## How to actually choose
+Dollar prices change often and are kept on the [GitHub Copilot](/tools/github-copilot) and [Cursor](/tools/cursor) tool pages. The structural point is this: a Copilot seat buys access to many vendors' models under one meter, while a new Cursor seat buys a lot of Cursor-model usage and treats everyone else's models as a pass-through cost. Cursor's own docs note that the new plans drop the third-party allowance that legacy plans had.
 
-Individuals: try Cursor for a week — if the inline-edit experience hooks you, that's your answer; if it doesn't clear the bar of leaving your setup, Copilot gives you 80% with zero disruption. Teams: weigh the *real* cost of migration (plugins, dotfiles, muscle memory, JetBrains holdouts) against the in-editor capability gap, and remember the two aren't the whole field — a terminal agent like Claude Code pairs with *either* choice and covers the delegation use case both are stretching toward ([Claude Code vs Cursor](/guides/comparisons/claude-code-vs-cursor), [the four-way](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026)). If neither fits, [the best GitHub Copilot alternatives](/guides/comparisons/best-github-copilot-alternatives-2026) covers the rest of the field, including free and self-hosted options.
+## Features, row by row
+
+| | GitHub Copilot | Cursor |
+| --- | --- | --- |
+| Form factor | Extension or plugin, plus Copilot CLI and the Copilot app | Standalone editor, plus Cursor CLI |
+| Editors | VS Code, Visual Studio, JetBrains IDEs, Vim/Neovim, Xcode, Eclipse, Azure Data Studio | Cursor itself; Cursor's agent in JetBrains IDEs via ACP |
+| Extensions | Whatever your editor already has | VS Code extensions from the Open VSX registry, not Microsoft's marketplace |
+| Completion | Inline suggestions and next edit suggestions | Tab: suggestions based on recent edits, surrounding code and linter errors |
+| Local agent | Agent mode; parallel isolated sessions and an Agents window in VS Code | Agents Window: many agents locally, in worktrees, in the cloud, over SSH |
+| Other vendors' agents | Third-party coding agents, in public preview as of November 2026 (Pro and above) | Not documented inside the editor |
+| Bring your own key | Yes, in VS Code | Not on Plus |
+| MCP | Yes, all plans | Yes |
+| Org controls | Policy management, content exclusion, audit logs (Business, Enterprise) | SAML/OIDC SSO, team-wide privacy mode (Teams, Enterprise) |
+
+## The same instruction in each
+
+Both tools read an `AGENTS.md` file. Their native formats differ. Here is a rule scoped to TypeScript files.
+
+Copilot uses a path-specific instructions file, `.github/instructions/typescript.instructions.md`:
+
+```markdown
+---
+applyTo: "**/*.ts,**/*.tsx"
+---
+
+Use named exports, not default exports.
+Keep components under 200 lines.
+```
+
+Repository-wide instructions go in `.github/copilot-instructions.md` with no frontmatter.
+
+Cursor uses a project rule, `.cursor/rules/typescript.mdc`:
+
+```md
+---
+globs: **/*.ts,**/*.tsx
+alwaysApply: false
+---
+
+- Use named exports, not default exports
+- Keep components under 200 lines
+```
+
+The `.mdc` extension is required. Cursor's docs say a plain `.md` file in `.cursor/rules` is ignored. If you plan to trial both tools on one repository, put shared conventions in `AGENTS.md` and keep these files for the scoped rules only.
+
+## Where each one loses
+
+**GitHub Copilot**
+
+- Feature coverage is uneven across editors. GitHub's own docs say "the available features and entry points vary by IDE" and point to a feature matrix, so check it for your editor before you commit a team.
+- Credits are one meter for everything except completions. Base credits are used first, then the flex allotment, and heavy agent use on premium models can exhaust an individual's month.
+- The Free plan is a trial: auto model selection only, a completion cap, code review limited to "Review selection" in VS Code, and no cloud agent.
+- Third-party agents are still in public preview as of November 2026.
+
+**Cursor**
+
+- It is a different application. Extensions come from Open VSX, so some Microsoft-marketplace extensions are missing or replaced by Cursor's own builds.
+- On the new plans, Claude and GPT usage is an extra, variable cost. Teams that standardized on those models should price a real week before switching from a legacy plan, and that switch is permanent.
+- The entry-level Plus plan has no Cloud Agents, Automations, Bugbot, Auto mode or third-party models.
+- Vendor posture changed in 2026. Billing for The X Subscription is managed at grok.com, and some security and procurement teams will want to re-review the vendor.
+
+## How to choose
+
+Individuals: decide on the editor question first. If you would not leave JetBrains, Visual Studio or Xcode, the choice is made. If you are open to moving, use Cursor for a week on real work. The things to notice are how often you accept Tab's suggestions and whether the Agents Window changes how you delegate. Then look at which models you reached for. If the answer is mostly Claude or GPT, compare what that week would cost under each product's metering.
+
+Teams: count three things. First, how many people would have to change editors, and what breaks for them (extensions, debuggers, remote setups). Second, which controls you need on day one: content exclusion, audit logs and organization-wide policy are Copilot Business and Enterprise features. Third, the model mix, since it decides whether Cursor's bundled pool or Copilot's multi-vendor credits is the better deal for you.
+
+Neither choice locks out a terminal agent. Claude Code runs beside either one and takes the long delegated tasks; see [Claude Code vs Cursor](/guides/comparisons/claude-code-vs-cursor) and [the four-way comparison](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026). For Cursor against its closest editor rival, read [Cursor vs Windsurf (Devin Desktop)](/guides/comparisons/cursor-vs-windsurf). If neither fits, [the best GitHub Copilot alternatives](/guides/comparisons/best-github-copilot-alternatives-2026) covers the rest of the field, including free and self-hosted options.
 
 ## Continue exploring
 
-- [Cody](/tools/cody) — Sourcegraph's AI coding assistant for the IDE, grounded in deep codebase context.
-- [Tabby](/tools/tabby) — Self-hosted, open-source AI coding assistant by TabbyML — run your own completion and chat models on your infrastructure, with IDE extensions.
-- [Tabnine](/tools/tabnine) — An AI code completion and chat assistant built around code privacy, self-hosting, and air-gapped enterprise deployment.
-- [Void — Open-Source AI Code Editor (VS Code Fork)](/tools/void) — Open-source AI code editor forked from VS Code, an alternative to Cursor that connects directly to your chosen model with no proprietary backend. The project is now deprecated and its repository archived.
+- [Cody](/tools/cody): Sourcegraph's AI coding assistant for the IDE, grounded in codebase context.
+- [Tabby](/tools/tabby): a self-hosted, open-source coding assistant from TabbyML that runs your own completion and chat models.
+- [Tabnine](/tools/tabnine): a code completion and chat assistant built around privacy, self-hosting and air-gapped deployment.
+- [Void](/tools/void): an open-source VS Code-based AI editor. The project is deprecated and its GitHub repository is archived.

@@ -6,6 +6,8 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["ai-safety-security"]
 audience: ["developers", "security"]
 related: ["skill:llm-guardrails-designer", "tool:llm-guard", "guide:defending-prompt-injection", "skill:secret-scanner"]
@@ -24,7 +26,7 @@ Every prompt you send to a hosted model leaves your environment, and every reque
 ## Instructions
 
 1. **Define what's sensitive here.** Enumerate the categories that matter for this app and jurisdiction: direct identifiers (names, emails, phones, addresses), government/financial IDs (SSN, card numbers), and **secrets** (API keys, tokens, credentials). Don't over-redact data the task genuinely needs — redaction that breaks the use case gets turned off.
-2. **Detect with layered methods.** Combine high-precision pattern/format detection (regex/validators for emails, cards, keys) with NER/model-based detection for free-form PII (names, locations). A library like [LLM Guard](/tools/llm-guard)'s anonymize/secrets scanners covers much of this; match it to your data.
+2. **Detect with layered methods.** Combine high-precision pattern/format detection (regex/validators for emails, cards, keys) with NER/model-based detection for free-form PII (names, locations). A maintained PII-detection library covers much of this; match it to your data. ([LLM Guard](/tools/llm-guard)'s anonymize/secrets scanners did the same job, but that project is archived and no longer maintained, so don't add it to a new build.)
 3. **Choose mask vs. reversible tokenize.** For data the model never needs in the clear, **mask** (irreversible placeholder). For data the response must reference or return, **tokenize reversibly** — replace with a stable placeholder, then re-insert the original in the model's output (a vault/map held only in your environment).
 4. **Apply at the boundary — both directions.** Redact on the request before it leaves for the provider, and de-tokenize on the response if you tokenized. Apply the same redaction to anything written to **logs/traces**, which are an equally common leak.
 5. **Verify and measure.** Test against representative data for both misses (sensitive data that slipped through) and over-redaction (broke the task), and log redaction counts (not the values) so coverage is auditable.

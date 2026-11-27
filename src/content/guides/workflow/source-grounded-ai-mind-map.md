@@ -8,7 +8,7 @@ audience: ["analysts", "designers", "founders"]
 tags: ["source-visuals", "source-grounded-ai-mind-map"]
 featured: false
 related: ["guide:ai-explanatory-diagram-from-text", "tool:miro", "skill:source-concept-map-builder", "guide:ai-document-research-with-citations"]
-summary: "Turn a bounded document set into a reviewed concept hierarchy with evidence for each branch and visible unresolved relationships."
+summary: "Start from a focal question and a source register, then extract a concept ledger with IDs, source locations and qualifiers before drawing. Hierarchy records grouping, and crosslinks get a labeled relationship with evidence. A museum example corrects a draft that implied a false dependency. Deliver the map with its ledgers, a text outline and open questions."
 title: "Build a Source-Grounded AI Mind Map"
 depth: "standard"
 sources: [{"title": "Miro AI with Diagrams and mindmaps", "url": "https://help.miro.com/hc/en-us/articles/28782102127890-Miro-AI-with-Diagrams-and-mindmaps", "publisher": "Miro"}, {"title": "Napkin AI", "url": "https://www.napkin.ai/", "publisher": "Napkin AI"}]

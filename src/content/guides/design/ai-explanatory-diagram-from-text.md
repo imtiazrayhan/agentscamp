@@ -1,75 +1,112 @@
 ---
-description: "Choose a diagram that preserves the relationships in approved text, then inspect labels, arrows and the exported visual before reuse."
+title: "Create an AI Explanatory Diagram from Approved Text"
+description: "Turn an approved paragraph into a diagram with Napkin or Miro AI without adding claims: pick the layout, write a label table, generate, then check every arrow."
 author: "Imtiaz Rayhan"
 date: "2026-10-03"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["designers", "marketers", "founders"]
-tags: ["source-visuals", "ai-explanatory-diagram-from-text"]
+tags: ["diagrams", "infographics", "napkin-ai", "miro", "mermaid", "visual-communication"]
 featured: false
 related: ["guide:source-grounded-ai-mind-map", "tool:napkin-ai", "tool:miro", "guide:ai-presentation-from-report"]
-summary: "Choose a diagram that preserves the relationships in approved text, then inspect labels, arrows and the exported visual before reuse."
-title: "Create an AI Explanatory Diagram from Approved Text"
+summary: "Decide what relationship the paragraph states (comparison, sequence or hierarchy) before you generate anything, then give the tool the text plus a label table. Napkin picks a visual from pasted text; Miro AI writes an editable Mermaid diagram. Review arrows, sizes and icons for claims the text never made, and export at the size it will be read."
 depth: "standard"
-sources: [{"title": "Napkin AI", "url": "https://www.napkin.ai/", "publisher": "Napkin AI"}, {"title": "Miro AI with Diagrams and mindmaps", "url": "https://help.miro.com/hc/en-us/articles/28782102127890-Miro-AI-with-Diagrams-and-mindmaps", "publisher": "Miro"}]
-seoDescription: "Choose a diagram that preserves the relationships in approved text, then inspect labels, arrows and the exported visual before reuse."
-keyTakeaways: ["Choose comparison, sequence or hierarchy from the source relationship before generating a layout.", "Review arrows, relative sizes and icons for unsupported causes, recurrence or quantities.", "Inspect the actual export at delivery size and retain an associated text equivalent and source version."]
-faq: [{"q": "What if an attractive layout implies more than the paragraph says?", "a": "Record the unsupported implication and choose or edit a simpler layout. A cycle, ranking or percentage requires source support; visual appeal is not evidence for adding that relationship."}]
+sources: [{"title": "Napkin AI", "url": "https://www.napkin.ai/", "publisher": "Napkin AI"}, {"title": "Napkin AI pricing", "url": "https://www.napkin.ai/pricing/", "publisher": "Napkin AI"}, {"title": "Miro AI with Diagrams and mindmaps", "url": "https://help.miro.com/hc/en-us/articles/28782102127890-Miro-AI-with-Diagrams-and-mindmaps", "publisher": "Miro"}, {"title": "Create Mermaid diagrams", "url": "https://help.miro.com/hc/en-us/articles/7004628130962-Create-Mermaid-diagrams", "publisher": "Miro"}]
+keyTakeaways: ["Name the relationship in the text (comparison, sequence or hierarchy) before a tool picks a layout for you.", "A label table with one row per box and one row per arrow is the review checklist; build it before generating.", "Loops, unequal box sizes, percentages and icons are where generated diagrams add claims the paragraph never made.", "Miro AI diagrams are Mermaid code you can read and edit; Napkin visuals are edited on the canvas.", "Check the exported file at delivery size and keep a text equivalent with the source version."]
+faq: [{"q": "Should I use Napkin or Miro to turn text into a diagram?", "a": "Use Napkin when you want a polished visual for a document or slide and are happy to choose from layouts it proposes from your pasted text. Use Miro when the diagram is a flowchart or process that a team will keep editing, since Miro AI writes it as Mermaid code on a shared board that you can correct line by line."}, {"q": "What if an attractive layout implies more than the paragraph says?", "a": "Reject it or edit it. A cycle claims that something repeats, a ranking claims an order, a bigger box claims importance and a percentage claims a measurement. Each needs a sentence in the source that supports it. Record the unsupported implication and pick a simpler layout."}, {"q": "Can I export a Napkin diagram as an editable file?", "a": "On the free plan Napkin exports PNG and PDF. Its pricing page lists PowerPoint and SVG export, the editable formats, on the paid Plus and Pro plans, along with removing the Napkin branding that free exports carry."}, {"q": "How do I fix one wrong arrow in a Miro AI diagram?", "a": "Miro AI diagrams are Mermaid-based and edits sync both ways. Open the diagram in focus mode and either reconnect the line on the canvas or open the code panel and change that edge in the Mermaid source. You can also describe the change in the Create with AI sidebar, and Miro edits the existing diagram in place."}]
 ---
 
-A useful explanatory diagram preserves the meaning of an approved paragraph. It can simplify reading, but its labels and visual relationships must remain faithful to the source. The review task is to check what the visual says through arrangement, arrows, quantities and omissions, including what a reader might infer without reading its caption.
+A diagram makes claims that its text never states out loud. An arrow says one thing leads to another, a loop says it happens again, a larger box says it matters more. When you ask an AI tool to turn an approved paragraph into a visual, the words usually survive and the relationships are where things go wrong. The job is to fix the relationships yourself first and let the tool do the drawing.
 
-Work on one bounded explanation at a time. This is different from planning a complete presentation or documenting software architecture. A paragraph about a service does not establish component topology, and a good-looking sequence does not prove that the source described a process. Name the relationship you need to communicate before asking a tool to choose a layout.
+## Decide the relationship before the layout
 
-## Freeze the source paragraph
+Read the paragraph and name the one question the reader needs answered.
 
-Record the paragraph text, version, owner, intended audience and delivery context. Mark exact phrases that must survive, plus qualifications or unresolved points. If the source is still disputed, resolve it with its owner or retain the uncertainty explicitly. Do not use diagram generation as a way to decide which interpretation is correct.
+| The reader asks | Relationship | Layout that fits | Layouts that add a claim |
+| --- | --- | --- | --- |
+| What are my options? | Comparison | Equal parallel columns | Funnel, ranking, cycle |
+| What happens next? | Sequence | Left-to-right or top-down flow | Cycle, unless the text says it repeats |
+| What belongs under this? | Hierarchy | Tree or nested groups | Flow with arrows between siblings |
+| How do the parts split? | Proportion | Chart, only with numbers from the text | Any chart drawn from adjectives |
 
-Choose the communication question: “What are the two options?” differs from “What happens next?” and “What belongs under this topic?” The first suggests comparison, the second sequence, and the third hierarchy. If the material needs a broader conceptual overview before one explanation can be selected, use the [source-grounded mind map workflow](/guides/workflow/source-grounded-ai-mind-map).
+If the paragraph answers more than one of these, make more than one diagram. If you need an overview of a whole document before you can choose a paragraph, start with the [source-grounded mind map workflow](/guides/workflow/source-grounded-ai-mind-map) instead.
 
-Make a label and relationship table. Give each displayed element an ID, approved text, source phrase and role. For every proposed connector, name its meaning and source support. A line can indicate sequence, assistance, membership or contrast; the meaning must not be left to whichever arrow style the generator prefers.
+## Write the label table
 
-## Work through two refill options
-
-This example is fictional. The approved refill-station paragraph reads:
+Freeze the paragraph first: its exact text, version and owner. Then list every box and every connector you expect to see. This example is fictional. The approved paragraph for a refill station reads:
 
 > Visitors may bring their own container or borrow a station container at the desk. Either option uses the refill dispenser. After filling, return to the desk for a refill label. The brief does not provide usage shares or say that visitors repeat this activity.
 
-The audience needs to compare the two container options. The label table could be:
+The reader's question is "what are my options?", so this is a comparison with a short shared sequence after it.
 
-| ID | Label | Source support | Visual role |
+| ID | Label | Source sentence | Role |
 | --- | --- | --- | --- |
-| L1 | Bring your container | First sentence | Left option |
-| L2 | Borrow a station container at the desk | First sentence | Right option |
-| L3 | Use the refill dispenser | Second sentence | Shared instruction |
-| L4 | Return to the desk for a refill label | Third sentence | Shared instruction |
+| L1 | Bring your own container | 1 | Option, left |
+| L2 | Borrow a station container at the desk | 1 | Option, right |
+| L3 | Use the refill dispenser | 2 | Shared step 1 |
+| L4 | Return to the desk for a refill label | 3 | Shared step 2 |
+| C1 | L1 to L3 | 2 ("either option") | Then |
+| C2 | L2 to L3 | 2 ("either option") | Then |
+| C3 | L3 to L4 | 3 ("after filling") | Then |
 
-Use two parallel columns for L1 and L2, followed by a shared instruction area containing L3 and L4. A short connector can indicate that both options lead to the same instructions, provided the caption explains it. Do not make the two columns different sizes in a way that suggests popularity or preference.
+Four boxes, three arrows. Anything else that appears in the draft has no source.
 
-The word “return” describes a return to a location after filling. It does not establish a recurring cycle. A circular diagram would add a claim about repetition. Similarly, a percentage icon beside either option would suggest a measured share that the source does not supply. Reject both even if they make the illustration feel more polished.
+## Generate the draft
 
-## Generate a draft with constraints
+**In Napkin.** [Napkin](/tools/napkin-ai) works from text, not from a prompt. Paste or import the paragraph, select it and click the Autospark icon; Napkin proposes several visuals and you pick one. Every element stays editable afterwards. Because it chooses layouts for you, scan the options for the relationship you named and ignore the rest. The free plan gives a weekly allowance of AI credits, charged at roughly one credit per word you select, so select only the paragraph. Napkin imports PPT, DOC, PDF, HTML and Markdown files.
 
-[Napkin AI](https://www.napkin.ai/) describes turning text into editable visuals. The [Napkin AI profile](/tools/napkin-ai) offers a proposed one-diagram evaluation. [Miro's AI documentation](https://help.miro.com/hc/en-us/articles/28782102127890-Miro-AI-with-Diagrams-and-mindmaps) also describes editable diagrams; the [Miro profile](/tools/miro) covers a canvas review approach.
+**In Miro.** [Miro](/tools/miro) takes a description. Above the creation toolbar choose **Create with AI**, open the Sidekicks library, then **Formats > Diagram or mindmap**, pick a diagram type and describe what you want. Miro's help center lists this for all plans. Give it the constraints, not only the paragraph:
 
-Supply the approved paragraph and label table, then ask for a comparison rather than a general “engaging infographic.” Keep the instruction concrete:
+```text
+Create a flowchart from the text below. Two equal option boxes side by side:
+"Bring your own container" and "Borrow a station container at the desk".
+Both lead to one shared step, "Use the refill dispenser", which leads to
+"Return to the desk for a refill label". Exactly four boxes and three arrows.
+No loop back to the start, no percentages, no extra steps, no ranking.
 
-> Draft two equal option columns using L1 and L2, with shared L3 and L4 instructions below. Preserve the stated sequence within the shared instructions. Do not add recurrence, measured quantities, preference rankings or new steps. Keep a review copy of the IDs and identify any shortened wording.
+[paste the approved paragraph]
+```
 
-This prompt does not guarantee fidelity. It makes the review criteria explicit. If the tool offers several layouts, judge each by those criteria before judging color or style. A simpler layout is preferable when a decorative convention carries an unintended meaning.
+Miro AI writes the result onto the board as an editable Mermaid-based diagram. A faithful version of this example is short enough to read in full:
 
-## Review the semantics before styling
+```mermaid
+flowchart TD
+    L1["Bring your own container"]
+    L2["Borrow a station container at the desk"]
+    L3["Use the refill dispenser"]
+    L4["Return to the desk for a refill label"]
+    L1 --> L3
+    L2 --> L3
+    L3 --> L4
+```
 
-Compare each label with the source phrase. “Borrow at the desk” should not become “free container” because cost was not stated. “Return for a refill label” should not become “return your container,” which changes the action. Have a reviewer describe the diagram in their own words, then compare that description with the approved paragraph.
+That code is hand-written for this guide, not a captured tool output. It is useful as a fallback as well: paste Mermaid code onto a Miro board and Miro renders it as shapes and connectors, so you can skip generation and write the seven lines yourself.
 
-Check connectors separately from labels. A draft can preserve every word while implying that the bring-container option requires borrowing first. Trace each route through the layout and record where a reader might misunderstand it. Repair the relation table or layout without rewriting the approved source to excuse the draft.
+## Check what the draft claims
 
-Keep a discrepancy log with element ID, observed implication, source support, proposed correction and owner decision. If a needed relationship is missing from the text, ask its owner to clarify it. Leave the visual incomplete or marked unresolved until that decision exists; do not invent a likely operational step.
+Compare the draft with the table one row at a time. The typical ways a generated diagram of this paragraph goes wrong:
 
-## Inspect the delivered view
+| What you see | The claim it adds | Fix |
+| --- | --- | --- |
+| An arrow from L4 back to L1 or L2 | Visitors repeat the process. The word "return" means going back to the desk, not starting over. | Delete the edge. In Mermaid, remove the `L4 --> L1` line. |
+| The four boxes arranged in a circle | Same recurrence claim, made by layout alone | Choose a linear or column layout |
+| An arrow from L1 to L2 | You must bring a container before borrowing one | Delete it; the options are alternatives |
+| One option drawn larger or first with a "recommended" tag | A preference the brief does not state | Equal sizes, neutral order |
+| "60%" or a pie icon next to an option | A measured usage share. The brief says there is none. | Remove the figure and the icon |
+| "Free container" as a label | A price. Cost is not mentioned. | Restore the approved wording |
+| A fifth box such as "Enjoy your drink" | A step nobody approved | Delete it |
 
-Export in the format available to the selected account and inspect the actual output at its intended delivery size. A canvas view is not the same as a diagram embedded in a narrow document column or a slide. Check that shared instructions remain associated with both options, captions are readable and connector labels have not been cropped or obscured.
+Then do one check the table cannot do. Hand the diagram, without the paragraph, to someone who has not read it and ask them to say what it tells them. If their account includes anything the paragraph does not, the diagram is saying it. Fix the diagram; do not edit the approved text to match the picture.
 
-Preserve a text equivalent containing the two options and shared instructions. Include the source version and an evidence note with the diagram, or in a clearly associated review record. This makes the explanation inspectable when the visual cannot be viewed and gives future editors a way to recover its intended meaning.
+If the draft exposes a real gap, for example nobody knows whether a borrowed container must be handed back, that is a question for the paragraph's owner. Leave the diagram without that step until they answer.
 
-If the diagram will enter a deck, use the [report-to-presentation workflow](/guides/workflow/ai-presentation-from-report) to connect it to the audience’s decision and surrounding claims. The owner should approve the diagram version, source paragraph, export and remaining limitations together. That approval supports one explanation in its checked context; it does not certify the full deck or establish facts absent from the source.
+## Export and hand off
+
+Export in the format the destination needs and look at that file, not the canvas. Napkin's free plan exports PNG and PDF and puts Napkin branding on the visual; PowerPoint and SVG export are on its paid plans. In Miro the diagram stays live on the board and its Mermaid source can be copied into a document or repository.
+
+At delivery size, check that both option boxes still visibly connect to the shared steps, that no label is cropped or shrunk past reading, and that the diagram still works in grayscale if it may be printed.
+
+Keep three things with the exported file: the paragraph and its version, the label table, and a one-sentence text equivalent ("Two options, bring or borrow a container, both followed by the dispenser and then a refill label at the desk"). The text equivalent doubles as alt text and lets a later editor see what the visual was meant to say.
+
+If the diagram is going into a deck, the [report-to-presentation workflow](/guides/workflow/ai-presentation-from-report) covers fitting it to the slide's claim. Approval of the diagram covers this paragraph in this version, not the slides around it.

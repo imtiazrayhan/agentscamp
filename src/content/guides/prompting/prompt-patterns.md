@@ -1,8 +1,11 @@
 ---
 title: "Prompt Patterns for Coding Agents"
 description: "Practical prompting patterns: chaining, few-shot, context management, tool use, and output structuring."
+seoDescription: "Five prompt patterns for coding agents, each with an example: chaining, few-shot, context management, verify-act-reverify tool use, and structured output."
 author: "Imtiaz Rayhan"
 date: 2026-05-20
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 audience: ["developers", "ai-engineers"]
@@ -43,7 +46,7 @@ Step 3: Implement getSession() and createSession() against the schema from Step 
 Each step is independently checkable. If Step 2 invents a column that doesn't fit your conventions, you fix it before any implementation code exists.
 
 > [!TIP]
-> Encode a reusable chain as a slash command. Files in `.claude/commands/` are plain Markdown prompts; a `.claude/commands/add-feature.md` file becomes `/add-feature` and can lay out the read → design → implement → test sequence once so you never retype it.
+> Encode a reusable chain as a slash command. In Claude Code, a `.claude/skills/add-feature/SKILL.md` file becomes `/add-feature` and can lay out the read → design → implement → test sequence once so you never retype it. Custom commands have been merged into skills, so an older `.claude/commands/add-feature.md` file keeps working and creates the same command; use the skill layout for new work, since it can also carry supporting files.
 
 ## Few-Shot Examples
 

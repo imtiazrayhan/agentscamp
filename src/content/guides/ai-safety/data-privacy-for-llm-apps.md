@@ -13,6 +13,7 @@ related:
   - "skill:llm-guardrails-designer"
 featured: false
 date: 2026-06-17
+reviewed: 2026-11-27
 summary: "Sensitive data leaks at every hop of an LLM app — prompts, logs, traces, vector stores, and third-party providers. Defend it by redacting PII before the model and before logging, turning on zero-data-retention/no-train, enforcing tenant isolation in RAG, and never putting secrets in context the model doesn't need."
 keyTakeaways:
   - "Treat every prompt, log line, and trace as a place data escapes — redact PII before the model call AND before persistence."

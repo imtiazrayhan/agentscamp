@@ -1,13 +1,14 @@
 ---
 description: "Draft purpose-specific still-image text alternatives from supplied verified visual observations and page context, separating short alt text from complex-image long-description needs."
 date: "2026-09-17"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["designers", "marketers"]
 tags: ["image-descriptions", "image-description-draft"]
 featured: false
 related: ["guide:ai-alt-text-context-review", "guide:ai-chart-long-descriptions", "agent:image-description-reviewer"]
-summary: "Draft purpose-specific still-image text alternatives from supplied verified visual observations and page context, separating short alt text from complex-image long-description needs."
+summary: "Supply the page revision, image version, purpose, nearby text and verified observations. The skill returns a proposed short alt, a long description when needed, the evidence basis, unknown details and questions for the page owner. Decorative uses get an explicit empty alt, functional images use the owner-supplied action, and unknown details are omitted."
 name: "image-description-draft"
 title: "Image Description Draft"
 allowed-tools: "Read, Glob, Grep"
@@ -19,7 +20,7 @@ Draft purpose-specific text alternatives for supplied still-image evidence in a 
 
 ## Require the observation packet
 
-Require the named page/content owner; page URL or snapshot ID/revision; image ID/version/hash; image purpose; nearby headings, captions and text; any link/button function; and verified visual observations tied to that exact image. Observations must identify who or what inspected it, when and how. For charts, require the approved source table with units, labels, dates and revision. This skill’s `Read, Glob, Grep` cannot inspect pixels; require supplied human notes or a verified report from an actually supported vision inspection. Never claim you viewed an image through text access.
+Require the named page/content owner; page URL or snapshot ID/revision; image ID/version/hash; image purpose; nearby headings, captions and text; any link/button function; and verified visual observations tied to that exact image. Observations must identify who or what inspected it, when and how. For charts, require the approved source table with units, labels, dates and revision. In Claude Code, `Read` returns PNG, JPEG, GIF and WebP files as visual content (large images are downscaled); `Glob` and `Grep` see only text, and other surfaces may pass no image at all. Treat anything you see through `Read` as an unverified observation: record it as your own, with the file and date, and still require supplied human notes or the owner’s confirmation before it counts as evidence. Never claim you viewed an image you reached only as text.
 
 Image purpose affects the alternative. [W3C’s decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/) provides that context. Complex images may need short identification and a longer description of essential information. [W3C’s complex-image guidance](https://www.w3.org/WAI/tutorials/images/complex/) explains the distinction. Apply the owner’s supplied purpose and evidence; do not declare conformance.
 

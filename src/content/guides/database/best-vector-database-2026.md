@@ -4,12 +4,14 @@ seoTitle: "Best Vector Database in 2026: pgvector vs Pinecone vs Qdrant"
 description: "A decision guide to vector databases — embedded, server, or managed; whether you already run Postgres; and which fits your scale, filtering, and RAG needs."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["data-ml", "rag-retrieval"]
 audience: ["developers"]
 tags: ["vector-database", "rag", "embeddings", "comparison", "tools"]
 featured: true
-summary: "There's no single best vector database — choose by where you run (embedded, self-hosted server, or fully managed), whether you already run Postgres, your scale and filtering needs, and cost. pgvector wins when you already have Postgres; Pinecone for zero-ops managed; Qdrant/Weaviate/Milvus for open-source servers at scale; Chroma/LanceDB for embedded prototyping. Validate recall on your own data."
+summary: "There's no single best vector database — choose by where you run (embedded, self-hosted server, or fully managed), whether you already run Postgres, and your scale. pgvector wins when you already have Postgres; Pinecone for zero-ops managed; Qdrant/Weaviate/Milvus for open-source servers at scale; Chroma/LanceDB for embedded prototyping."
 keyTakeaways:
   - "Pick along three axes: deployment (embedded vs. server vs. managed), scale (millions vs. billions of vectors), and whether your data already lives in Postgres."
   - "Already on Postgres? Start with pgvector — vectors sit next to your relational data with full SQL and transactions, no new system to operate."
@@ -44,24 +46,38 @@ Answer those and the shortlist writes itself.
 
 ### Already on Postgres → pgvector
 
-**[pgvector](/tools/pgvector)** is a Postgres extension that adds a `vector` type and HNSW/IVFFlat indexes. Its superpower isn't raw speed — it's that your embeddings sit **next to your relational data**, filterable with ordinary SQL `WHERE` clauses and consistent inside the same transaction. No second system, no sync pipeline, no separate backup. For most apps up to a few million vectors, that operational simplicity beats a dedicated store. When a single node runs out of room, extensions like `pgvectorscale` push the ceiling higher before you have to leave Postgres at all. If you already run Postgres, **start here and only move when you have a measured reason to.** (To stand one up, see [Scaffold a pgvector Schema & HNSW Index](/commands/db/scaffold-pgvector-schema).)
+**[pgvector](/tools/pgvector)** is a Postgres extension that adds a `vector` type and HNSW/IVFFlat indexes. Its superpower isn't raw speed — it's that your embeddings sit **next to your relational data**, filterable with ordinary SQL `WHERE` clauses and consistent inside the same transaction. No second system, no sync pipeline, no separate backup. For most apps up to a few million vectors, that operational simplicity beats a dedicated store. One limit to check before you commit: HNSW and IVFFlat indexes cover the `vector` type up to 2,000 dimensions and the half-precision `halfvec` type up to 4,000, so a 3,072-dimension embedding has to be stored as `halfvec` or shortened before it can be indexed. When a single node runs out of room, extensions like `pgvectorscale` (a DiskANN-style `StreamingDiskANN` index plus its own binary quantization) push the ceiling higher before you have to leave Postgres at all. If you already run Postgres, **start here and only move when you have a measured reason to.** (To stand one up, see [Scaffold a pgvector Schema & HNSW Index](/commands/db/scaffold-pgvector-schema).)
 
 ### Zero ops, fully managed → Pinecone
 
-**[Pinecone](/tools/pinecone)** is a fully managed, serverless vector database. You never run a node, tune an index, or page yourself at 3am — you call an API and pay for what you use. That's the whole pitch, and it's a good one when engineering time is your scarce resource and "it's someone else's job to keep it up" is worth the per-query cost and the lack of a self-host escape hatch. Best when you want retrieval to be a managed dependency, not infrastructure you own.
+**[Pinecone](/tools/pinecone)** is a fully managed, serverless vector database. You never run a node, tune an index, or page yourself at 3am — you call an API and pay for what you use. That's the whole pitch, and it's a good one when engineering time is your scarce resource and "it's someone else's job to keep it up" is worth the usage-based cost and the lack of a self-host escape hatch. The closest Pinecone gets is BYOC (Bring Your Own Cloud), which runs the data plane in your own AWS, GCP or Azure account while Pinecone keeps managing the control plane, upgrades and scaling; there is still no edition you operate yourself. Best when you want retrieval to be a managed dependency, not infrastructure you own.
 
 ### Open-source servers you control → Qdrant, Weaviate, Milvus
 
 All three are open-source, self-hostable, and offer a managed cloud — the sweet spot when you want control, data residency, or cost-at-scale **and** an off-ramp to hosted.
 
-- **[Qdrant](/tools/qdrant)** — Rust, lean and fast, with excellent payload filtering, hybrid search, and aggressive quantization (scalar/product/binary, on-disk). Starts as one Docker container and shards into a cluster. A great default open-source server.
-- **[Weaviate](/tools/weaviate)** — Go, with a rich module ecosystem, built-in hybrid search, and optional in-database vectorization so it can embed your data for you. Strong when you want batteries included. (Weighing it against the managed option? [Weaviate vs Pinecone](/guides/comparisons/weaviate-vs-pinecone).)
-- **[Milvus](/tools/milvus)** — built from the ground up for **billion-scale**, with a distributed architecture that separates storage and compute and a wide menu of index types. The pick when your scale genuinely justifies the operational weight.
+- **[Qdrant](/tools/qdrant)** — Rust, lean and fast, with excellent payload filtering, hybrid search, and aggressive quantization (scalar, product and binary, with on-disk storage). Starts as one Docker container (`docker run -p 6333:6333 qdrant/qdrant`) and shards into a cluster; Qdrant Cloud is the managed version. A great default open-source server.
+- **[Weaviate](/tools/weaviate)** — Go, with built-in hybrid (vector plus BM25) search, integrations for model providers such as OpenAI, Cohere and Hugging Face, and optional vectorization at import so it can embed your data for you. Weaviate Cloud is the managed version. Strong when you want batteries included. (Weighing it against the managed option? [Weaviate vs Pinecone](/guides/comparisons/weaviate-vs-pinecone).)
+- **[Milvus](/tools/milvus)** — built from the ground up for **billion-scale**, with a distributed, Kubernetes-native architecture that separates storage and compute and a wide menu of index types (HNSW, IVF, FLAT, SCANN, DiskANN). The pick when your scale genuinely justifies the operational weight. It also has a small end: Milvus Lite (`pip install "pymilvus[milvus-lite]"`) runs from a local file for prototypes, and Zilliz Cloud is the managed service.
 
 ### Embedded, no server → Chroma, LanceDB
 
-- **[Chroma](/tools/chroma)** — Python-first, runs in-process, and gets you from `pip install` to a working retrieval demo in minutes. The default for prototypes, notebooks, and small apps; it also runs client-server when you outgrow embedded.
-- **[LanceDB](/tools/lancedb)** — embedded too, but built on the columnar **Lance** format and designed to scale on local disk or object storage (S3) without a server. Handles multimodal data well and bridges "laptop prototype" to "large dataset" without changing systems.
+- **[Chroma](/tools/chroma)** — Python-first, runs in-process, and gets you from `pip install` to a working retrieval demo in minutes. The default for prototypes, notebooks, and small apps. When you outgrow embedded it runs client-server (`chroma run --path <dir>`), there is a JavaScript client (`npm install chromadb`), and Chroma Cloud is a hosted, serverless option.
+- **[LanceDB](/tools/lancedb)** — embedded too, but built on the columnar **Lance** format and designed to scale on local disk or object storage (S3) without a server. Handles multimodal data well and bridges "laptop prototype" to "large dataset" without changing systems. The embedded library is the open-source part; distributed search and indexing are sold as LanceDB Enterprise.
+
+## The seven at a glance
+
+| Database | Written in | Licence | Runs embedded | Self-hosted server | Managed option |
+| --- | --- | --- | --- | --- | --- |
+| pgvector | C (Postgres extension) | PostgreSQL License | No (lives in your Postgres) | Yes | Any managed Postgres that ships the extension |
+| Pinecone | Closed source | Proprietary | No | No | Yes, serverless; BYOC in your cloud account |
+| Qdrant | Rust | Apache-2.0 | No | Yes | Qdrant Cloud |
+| Weaviate | Go | BSD-3-Clause | No | Yes | Weaviate Cloud |
+| Milvus | Go and C++ | Apache-2.0 | Milvus Lite | Yes | Zilliz Cloud |
+| Chroma | Rust | Apache-2.0 | Yes | Yes | Chroma Cloud |
+| LanceDB | Rust | Apache-2.0 | Yes | Not in the open-source library | LanceDB Enterprise |
+
+Licences and languages are as listed on each project's GitHub repository in November 2026.
 
 ## A decision shortcut
 

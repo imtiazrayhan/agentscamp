@@ -1,6 +1,6 @@
 ---
 name: "Tabby"
-description: "Self-hosted, open-source AI coding assistant by TabbyML — run your own completion and chat models on your infrastructure, with IDE extensions."
+description: "Self-hosted, open-source AI coding assistant by TabbyML: run completion and chat models on your own hardware. Development has stalled since early 2026."
 url: "https://www.tabbyml.com/"
 pricing: "open-source"
 category: "extension"
@@ -17,28 +17,62 @@ audience: ["developers"]
 tags: ["self-hosted", "code-completion", "open-source", "copilot-alternative", "on-premises"]
 color: "purple"
 date: 2026-06-17
-updated: "2026-09-11"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 featured: false
-summary: "Tabby is a self-hosted, open-source AI coding assistant and GitHub Copilot alternative. Run code completion and chat models on your own infrastructure, with extensions for VS Code, JetBrains, Vim, and Eclipse. The core is Apache-2.0; a free Community tier covers up to 5 users, with paid Team and Enterprise tiers."
+summary: "Tabby is a self-hosted AI coding assistant from TabbyML: a single server that runs completion and chat models on your own hardware, with extensions for VS Code, IntelliJ-platform IDEs and Vim/Neovim. The core is Apache-2.0 and the free Community licence covers 5 seats. As of November 2026 it looks dormant: the last release is v0.32.0 from January 2026."
 faq:
-  - q: "Is Tabby open source?"
-    a: "Yes. The core of Tabby is licensed under Apache-2.0; enterprise-edition code under the repository's ee/ directory has separate licensing terms. The free Community tier supports up to 5 users."
-  - q: "How is Tabby different from GitHub Copilot?"
-    a: "Tabby is self-hosted, so completion and chat models run on your own infrastructure rather than a vendor cloud. It is self-contained (no external DBMS required), supports consumer-grade GPUs, and exposes an OpenAPI interface for integration."
-  - q: "Which editors does Tabby support?"
-    a: "Tabby ships IDE/editor extensions for VS Code, JetBrains IDEs (IntelliJ), Vim, and Eclipse, connecting to a self-hosted Tabby server typically deployed via Docker."
+  - q: "Is Tabby still maintained?"
+    a: "It looks dormant. As of November 2026 the last stable release is v0.32.0 from January 25, 2026, the last commit to the main branch is from June 30, 2026, and the VS Code extension on the Marketplace was last updated on April 30, 2025. The repository is not archived and the docs are still online, but tabbyml.com no longer presents Tabby."
+  - q: "How much does Tabby cost?"
+    a: "The Community licence is free. Tabby's docs describe three tiers, Community, Team and Enterprise, with the last two paid, and the source code caps Community at 5 seats and Team at 50. As of November 2026 TabbyML publishes no prices: the old pricing URL redirects to a company homepage that does not mention Tabby."
+  - q: "Is Tabby fully open source?"
+    a: "Mostly. The LICENSE file puts everything outside the ee/ directory under Apache-2.0, while the ee/ directory, which holds the web server, admin UI and licence checks, is under a separate licence in ee/LICENSE. GitHub therefore reports the repo's licence as unclassified."
+  - q: "What hardware does Tabby need?"
+    a: "The README says it supports consumer-grade GPUs, and the Docker quick start runs with --gpus all and --device cuda on an NVIDIA card with the NVIDIA Container Toolkit installed. The example pairs the small StarCoder-1B completion model with Qwen2-1.5B-Instruct for chat; larger models need more VRAM."
 ---
 
-**Tabby is a self-hosted, open-source AI coding assistant that lets teams run their own code-completion and chat models on private infrastructure as an alternative to GitHub Copilot.**
+**Tabby is a self-hosted AI coding assistant from TabbyML, described in its README as an open-source and on-premises alternative to GitHub Copilot.** You run one server on your own machine or cluster, it serves a completion model and a chat model, and editor extensions connect to it. No code or prompts leave your network unless you configure an external model.
 
-Built by TabbyML, Tabby is designed to be self-contained: it requires no external DBMS or cloud service and supports consumer-grade GPUs, making it practical to deploy on a single machine or internal server (Docker is the primary install path). It exposes an OpenAPI interface so it can be wired into existing developer infrastructure, including cloud IDEs.
+> [!WARNING]
+> As of November 2026 Tabby shows little sign of active development. The last release is v0.32.0 (January 25, 2026), the main branch has had no commits since June 30, 2026, and tabbyml.com now advertises an agent-improvement service with no mention of Tabby. TabbyML's active repository is Pochi, a separate coding agent. Evaluate Tabby as software you would maintain yourself.
 
-Developers interact with Tabby through editor extensions for VS Code, JetBrains IDEs (IntelliJ), Vim, and Eclipse, which connect to the self-hosted server for inline completion, chat, and context-aware answers. A team-oriented "Answer Engine" indexes repositories and related sources (including GitLab merge requests) so the assistant can draw on internal knowledge.
+The repository had about 34,000 GitHub stars as of November 2026.
 
-Tabby is aimed at teams and organizations that want Copilot-style assistance but need to keep code and prompts on their own infrastructure for privacy, compliance, or cost reasons. Compared with **GitHub Copilot**, which is a hosted SaaS product, Tabby is self-hosted and open source. Compared with **Continue** and **Cody**, which also offer open-source editor assistants and various model backends, Tabby differentiates by shipping its own self-hostable server and model-serving stack rather than primarily acting as a client to third-party model providers.
+## Highlights
 
-Licensing is split: the bulk of the codebase is Apache-2.0, while enterprise-edition code under the repository's `ee/` directory carries separate terms. Pricing follows a free Community tier (up to 5 users) with paid Team and Enterprise tiers for larger deployments and added administration, security, and support features.
+- **Self-contained server.** No external database or cloud service is required; state lives in the mounted data directory.
+- **Your models.** Completion and chat models are chosen with `--model` and `--chat-model` from Tabby's model registry. The docs name CodeLlama, StarCoder and CodeGen among the compatible coding models.
+- **Consumer GPUs.** Built to run on consumer-grade GPUs, with CUDA support through Docker.
+- **OpenAPI interface.** The server exposes a documented HTTP API so you can wire it into a cloud IDE or internal tooling.
+- **Answer Engine.** Introduced in v0.13.0 as a knowledge engine for internal engineering teams; v0.30 added GitLab merge requests as context, and v0.29 added ingesting your own documentation through REST APIs.
+- **Editor extensions.** The docs cover VS Code (Visual Studio Marketplace and Open VSX), the IntelliJ Platform, and Vim/Neovim.
 
-As of September 2026, development has visibly slowed: the last stable release was v0.32.0 in January 2026, and the VS Code extension has not been updated since April 2025.
+## In an AI-assisted workflow
 
-For self-hosted and enterprise IDE assistants, compare Tabby with [Continue](/tools/continue) and [Tabnine](/tools/tabnine) in [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026), or browse [Tabby alternatives](/tools/tabby/alternatives).
+The quickest start is the Docker command from the README, on a machine with an NVIDIA GPU and the NVIDIA Container Toolkit:
+
+```bash
+docker run -it \
+  --gpus all -p 8080:8080 -v $HOME/.tabby:/data \
+  tabbyml/tabby \
+  serve --model StarCoder-1B --device cuda --chat-model Qwen2-1.5B-Instruct
+```
+
+Once it is running, the server is at `http://localhost:8080`; install the editor extension and point it at that URL. On systems with SELinux enabled, the docs say to add `:Z` to the volume mount.
+
+## Pricing
+
+Tabby's docs list three licence tiers: Community, which is free for anyone, and Team and Enterprise, which are paid and unlock additional features. The licence code in the repository caps Community at 5 seats and Team at 50, with Enterprise uncapped. A paid licence is a key you paste into the Subscription page of the admin UI.
+
+As of November 2026 no prices are published. The former pricing page redirects to TabbyML's homepage, which has only a contact link, so ask TabbyML directly whether Team and Enterprise licences are still sold before planning around them.
+
+## Good to know
+
+Licensing is split. Code outside `ee/` is Apache-2.0; the `ee/` directory, which includes the web server and admin UI that most deployments use, has its own terms in `ee/LICENSE`.
+
+Running your own inference means you own capacity planning, model updates and uptime. The small default models are fast but well behind hosted frontier models on quality, and bigger models need bigger GPUs.
+
+The stalled release cadence is the main risk: the VS Code extension has not been updated since April 2025, so editor changes may break it with no fix coming.
+
+For maintained alternatives, [Tabnine](/tools/tabnine) is a commercial assistant aimed at teams, [GitHub Copilot](/tools/github-copilot) is the hosted default, and [Cline](/tools/cline) can be pointed at a model you serve yourself with [Ollama](/tools/ollama) or [vLLM](/tools/vllm). [Continue](/tools/continue), often paired with local models, is itself frozen after its acquisition by Cursor. See [Best GitHub Copilot Alternatives](/guides/comparisons/best-github-copilot-alternatives-2026) or browse [Tabby alternatives](/tools/tabby/alternatives).

@@ -1,8 +1,9 @@
 ---
-description: Evaluate Meshy with a versioned prop pilot, owner-set requirements, real inspection reports and
-  actual target-application viewer evidence.
+description: Meshy is an AI 3D modeling platform that turns images and prompts into 3D assets, with a web app, a REST
+  API and an MCP server for agents.
 date: '2026-09-28'
-reviewed: '2026-10-07'
+updated: '2026-11-27'
+reviewed: '2026-11-27'
 topics:
 - ai-at-work
 - workflow-prompting
@@ -26,8 +27,8 @@ pricing: freemium
 category: design
 os:
 - Web
-seoDescription: Evaluate Meshy with a bounded lantern-prop pilot, preserved exports, real measurements, target
-  renders and a named acceptance owner.
+seoDescription: Meshy is an AI 3D model generator for images and prompts. How to test it with a lantern-prop pilot,
+  measured exports and a named acceptance owner.
 ---
 
 Meshy is an option to evaluate when a visual project needs generated 3D assets rather than only 2D images. Its [Text to 3D API documentation](https://docs.meshy.ai/en/api/text-to-3d) describes preview/refine tasks, model outputs, and additional maps for PBR-enabled refinement. Inspect the files actually returned by the chosen task before planning a handoff.

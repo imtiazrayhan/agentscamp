@@ -3,15 +3,26 @@ description: "Generate tests covering the happy path and edge cases for the give
 seoDescription: "/write-tests generates tests covering the happy path and edge cases for a given target, matching your test framework — a Claude Code slash command."
 date: 2026-06-03
 argument-hint: "[file or function]"
+allowed-tools: "Read, Grep, Glob, Edit, Write, Bash"
+updated: 2026-11-27
+reviewed: 2026-11-27
 title: "Write Tests"
 color: "purple"
 topics: ["review-qa"]
 audience: ["developers"]
 related: ["agent:test-engineer"]
-summary: "A slash command that writes a focused test suite for a file, function, or class: it reads the target and its entry points, matches the project's test framework and conventions, plans deliberate happy-path, edge-case, and error cases, writes independent deterministic tests that mock only true boundaries, then runs the suite and flags real bugs."
+summary: "Writes a focused test suite for a file, function, or class. It reads the target and its entry points, matches the project's test framework and conventions, plans happy-path, edge, and error cases, writes independent deterministic tests that mock only true boundaries, then runs them and reports any real bug it exposed."
 ---
 
 Write a focused, high-value test suite for the target supplied in `$ARGUMENTS`. The target may be a file path (e.g. `src/lib/parse.ts`), a specific function or method (e.g. `parseConfig`), or a class. If `$ARGUMENTS` is empty, ask which file or function to cover before continuing.
+
+## When to use
+
+- A file, function, or class has no tests or thin ones, and you want unit-level coverage of its behavior.
+- Before a refactor, to pin current behavior first.
+- Not for repairing a test that already exists and fails: use [/fix-failing-test](/commands/testing/fix-failing-test). Not for judging the quality of an existing suite: use [/review-tests](/commands/review/review-tests).
+
+This command creates or extends test files only. Do not change the code under test, even to make it easier to test; report that as a finding instead.
 
 ## Understand the Target
 
@@ -21,6 +32,8 @@ Before writing any tests, build an accurate mental model of what you are testing
 2. Identify every public entry point: exported functions, methods, and class constructors.
 3. For each entry point, note inputs, outputs, side effects (I/O, mutations, network, time), and thrown errors.
 4. Detect the existing test framework and conventions instead of inventing your own. Check for `jest`, `vitest`, `mocha`, `pytest`, `go test`, etc. in the manifest and look at a neighboring `*.test.*` / `*_test.*` file for style.
+5. Check whether a test file for the target already exists. If it does, read it and add only the missing cases to it; do not create a second file or duplicate cases.
+6. If the project has no test framework at all, stop and ask which one to add. Do not install one unprompted.
 
 > [!NOTE]
 > Match the project's existing patterns exactly: file naming, import style, assertion library, and mocking approach. A test suite that fits the codebase is worth more than one that follows your personal preference.
@@ -81,9 +94,24 @@ describe("slugify", () => {
 
 ## Verify and Report
 
-1. Run the test suite using the project's test command and confirm every new test passes.
+1. Run only the new or changed test file first, using the project's runner (for example `npx vitest run src/lib/slugify.test.ts`, `npx jest path/to/file.test.ts`, `pytest tests/test_slugify.py`, `go test ./pkg/slug/...`), then the full suite once to confirm nothing else broke.
 2. If a test fails, decide whether it revealed a real bug in the target or a flaw in the test, then fix the appropriate side — do not weaken an assertion just to make it pass.
-3. Report a short summary: the entry points covered, the case categories included, and any behavior that looks like a genuine bug.
+3. Run the new tests a second time. A test that passes once and fails once depends on order, time, or randomness: fix it before reporting.
+4. Report using this shape:
+
+```markdown
+## Tests: <target>
+File: `<test file>` (<created | extended>), framework: <name>
+
+| Entry point | Happy path | Edge cases | Error cases |
+| --- | --- | --- | --- |
+| `parseConfig` | 2 | 4 (empty, max size, unicode, duplicates) | 2 (bad JSON, missing key) |
+
+Result: `<command>` <n> passed, <n> failed
+Mocked boundaries: <network / clock / filesystem, or none>
+Suspected bugs: <input, expected, actual, and the test left failing or skipped with a note>
+Not covered: <paths you could not reach and why>
+```
 
 > [!WARNING]
 > If a test exposes incorrect behavior in the target, surface it explicitly rather than writing the test to match the buggy output. Tests should encode intended behavior, not current behavior.

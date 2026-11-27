@@ -7,16 +7,18 @@ color: "green"
 topics: ["workflow-prompting"]
 tags: ["claude-code", "hooks", "automation", "configuration", "guardrails"]
 featured: true
-summary: "Hooks are commands Claude Code runs automatically at lifecycle events — before a tool call, after an edit, when a session starts or ends. Unlike CLAUDE.md instructions, hooks execute deterministically every time: format after every edit, block writes to protected paths, get a notification when Claude needs input. You configure them per event under the hooks key in settings.json."
+updated: 2026-11-27
+reviewed: 2026-11-27
+summary: "Hooks are commands Claude Code runs automatically at lifecycle events — before a tool call, after an edit, when a session starts or ends. Unlike CLAUDE.md instructions, hooks run every time: format after every edit, block writes to protected paths, ping you when Claude needs input. You configure them per event under the hooks key in settings.json."
 keyTakeaways:
   - "Hooks turn 'please always do X' into 'X happens every time' — they're deterministic commands, not instructions the model might forget."
-  - "PreToolUse and UserPromptSubmit hooks can block: exit code 2 (or a deny decision in JSON output) stops the action and feeds your reason back to Claude."
+  - "PreToolUse and UserPromptSubmit hooks can block: exit code 2 (or a deny decision in JSON output) stops the action and feeds your reason back to Claude. Stop, SubagentStop and PreCompact hooks can block too: exit 2 keeps Claude working or cancels the compaction."
   - "Hooks live under the hooks key in settings.json at user, project, or local scope; a matcher filters which tools trigger them."
   - "A hook receives full context as JSON on stdin (event, tool name, tool input) and can respond with JSON to allow/deny, inject context, or surface a message."
   - "Hooks run with your credentials — treat hook scripts like any code with access to your machine, and review what a repo's checked-in settings register before trusting them."
 howtoSteps:
   - name: "Pick the event"
-    text: "Decide when the hook should fire: PreToolUse to gate an action before it runs, PostToolUse to react after it succeeds, UserPromptSubmit to validate or enrich prompts, Notification or Stop for session-level signals."
+    text: "Decide when the hook should fire: PreToolUse to gate an action before it runs, PostToolUse to react after it succeeds, UserPromptSubmit to validate or enrich prompts, Stop to check the work before Claude finishes, Notification for a ping when it needs you."
   - name: "Write the script"
     text: "Create an executable script that reads the JSON event from stdin, does its work, and exits 0 to continue or 2 to block (for events that support blocking). Keep it fast — hooks run inline with the session."
   - name: "Register it in settings"
@@ -71,12 +73,12 @@ The core events, and whether they can block the action:
 | `PostToolUse` | After a tool call succeeds | No |
 | `PostToolUseFailure` | After a tool call fails | No |
 | `Notification` | When Claude Code sends a notification (e.g. waiting for input) | No |
-| `Stop` | When Claude finishes responding | No |
-| `SubagentStop` | When a subagent finishes | No |
-| `PreCompact` | Before context compaction | No |
+| `Stop` | When Claude finishes responding | **Yes** (exit 2 keeps Claude working) |
+| `SubagentStop` | When a subagent finishes | **Yes** (exit 2 keeps the subagent working) |
+| `PreCompact` | Before context compaction | **Yes** (exit 2 cancels the compaction) |
 | `SessionEnd` | When the session terminates | No |
 
-More specialized events exist — `PermissionRequest`, `FileChanged`, worktree and subagent lifecycle events, and others — and the list grows with the product; the docs' hooks reference is the source of truth for the full set. The two you'll use most are `PreToolUse` (gate things) and `PostToolUse` (react to things).
+More specialized events exist — `PermissionRequest`, `PostToolBatch`, `FileChanged`, `ConfigChange`, `PreModelSwitch`, worktree, task and subagent lifecycle events, and others — and the list grows with the product; the [hooks reference](https://code.claude.com/docs/en/hooks) is the source of truth for the full set and for what exit code 2 does on each event. The two you'll use most are `PreToolUse` (gate things) and `PostToolUse` (react to things).
 
 ## Configuring a hook
 
@@ -101,9 +103,9 @@ Hooks live under the `hooks` key in any settings file — `~/.claude/settings.js
 }
 ```
 
-- **`matcher`** filters which tool triggers the hook — an exact tool name (`Bash`), an alternation (`Edit|Write`), or `*` for everything. MCP tools match by their full name (`mcp__github__create_issue`).
-- **`type: "command"`** is the workhorse. Other handler types exist — prompt and agent hooks that ask a model to evaluate a condition, HTTP hooks that POST the event to a URL — but start with commands.
-- **`timeout`** caps how long the hook may run, in seconds.
+- **`matcher`** filters which tool triggers the hook — an exact tool name (`Bash`), an alternation (`Edit|Write`), or `*` for everything. MCP tools match by their full name (`mcp__github__create_issue`). A matcher containing any character beyond letters, digits, `_`, `-`, spaces, `,` and `|` is treated as an unanchored JavaScript regular expression, so `mcp__github__.*` covers every tool from one server.
+- **`type: "command"`** is the workhorse. Four other handler types exist: `http` hooks that POST the event to a URL, `mcp_tool` hooks that call a tool on a configured MCP server, `prompt` hooks that ask a Claude model for a single-turn decision, and `agent` hooks that spawn a subagent to verify a condition (the docs label agent hooks experimental as of November 2026). Start with commands.
+- **`timeout`** caps how long the hook may run, in seconds. Left out, a command hook gets 600 seconds.
 
 Run `/hooks` in a session to see every registered hook and which settings file it came from, and set `"disableAllHooks": true` to switch them off temporarily.
 
@@ -127,7 +129,7 @@ It answers with its exit code, and optionally with JSON on stdout:
 - **Exit 2** — block, for events that support it. For `PreToolUse` the tool call never runs, and your stderr is shown to Claude as the reason.
 - **Anything else** — non-blocking error; the session continues.
 
-The JSON output unlocks the precise controls: a `PreToolUse` hook can return `"permissionDecision": "allow" | "ask" | "deny"` with a reason, any hook can add `"additionalContext"` for Claude or a `"systemMessage"` for you, and `"continue": false` stops the session outright.
+The JSON output unlocks the precise controls: a `PreToolUse` hook can return `"permissionDecision": "allow" | "ask" | "deny" | "defer"` with a reason inside a `hookSpecificOutput` object, any hook can add `"additionalContext"` for Claude or a `"systemMessage"` for you, and `"continue": false` stops the session outright.
 
 ## Three hooks worth copying
 

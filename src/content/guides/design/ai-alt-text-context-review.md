@@ -21,8 +21,7 @@ related:
 - glossary:alternative-text
 - skill:image-description-draft
 - agent:image-description-reviewer
-summary: Draft image text alternatives from actual image evidence and page purpose, then review informative,
-  decorative and functional uses before publishing.
+summary: Start by recording the asset version, verified observations, nearby text and a purpose note, then give AI that bounded packet and ask for a draft with reasons and an uncertainty list. A worked example shows one photo getting different text as an article image, a decorative header and a linked icon. Finish by checking the rendered page.
 title: Review AI Alt Text in the Context of Its Page
 depth: standard
 sources:

@@ -3,8 +3,8 @@ title: "Claude Code for Non-Developers and Founders: The Complete 2026 Guide"
 description: "What Claude Code actually is in plain language, why non-developers use it, how permissions and CLAUDE.md work, and the first three tasks a founder should try."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
-updated: 2026-11-25
-reviewed: 2026-11-25
+updated: 2026-11-27
+reviewed: 2026-11-27
 depth: cornerstone
 color: "green"
 topics: ["ai-at-work", "workflow-prompting", "coding-languages"]
@@ -54,8 +54,8 @@ sources:
   - title: "Knowledge work plugins (anthropics/knowledge-work-plugins)"
     url: "https://github.com/anthropics/knowledge-work-plugins"
     publisher: "Anthropic"
-  - title: "Use Claude Code with your Pro or Max plan"
-    url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan"
+  - title: "Use Claude Code with your Pro, Max, or Ultra plan"
+    url: "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-max-or-ultra-plan"
     publisher: "Anthropic"
   - title: "How do usage and length limits work?"
     url: "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work"
@@ -70,7 +70,7 @@ faq:
   - q: "What should I put in a CLAUDE.md file?"
     a: "Treat it as a one-page briefing for a new hire: what the project is, which files matter, what it must never touch, and how you want it to behave (for example, always explain a change in one sentence before making it). Anthropic recommends keeping it under 200 lines. Run /init inside Claude Code and it will draft one for you from whatever is already in the folder."
   - q: "How much does Claude Code cost for a founder?"
-    a: "There is no separate Claude Code fee. It is included with Claude Pro, Max, Team, and Enterprise subscriptions, and your Claude Code usage shares the same limits as claude.ai, which reset in five-hour sessions with a weekly cap on top. Heavy or automated use can run instead on pay-as-you-go API credits through the Claude Console. Our plans guide has the current figures."
+    a: "There is no separate Claude Code fee. It is included with Claude Pro, Max, Ultra, Team, and Enterprise subscriptions, and your Claude Code usage shares the same limits as claude.ai, which reset in five-hour sessions with a weekly cap on top. Heavy or automated use can run instead on pay-as-you-go API credits through the Claude Console. Our plans guide has the current figures."
   - q: "Should a founder use Claude Code or an app builder like Lovable?"
     a: "For a first clickable prototype an app builder is faster because hosting, database, and design decisions are made for you. Claude Code wins once you need to own the code, work outside a browser sandbox, analyze data, or hand the project to an engineer. Many founders use both: prototype in a builder, then export to a real repository and continue in Claude Code."
 related: ["guide:claude-for-founders", "guide:build-an-mvp-with-claude-code", "guide:claude-skills-for-founders", "guide:which-claude-plan-for-founders", "guide:what-is-claude-code", "guide:installing-claude-code", "guide:claude-plans-compared-2026", "tool:claude-code"]
@@ -112,7 +112,7 @@ The longer map, including Claude Design, Claude for Excel, and Claude in Chrome,
 
 Two routes. The desktop app is a normal download for macOS and Windows; sign in, click the Code tab, and you are in. The terminal route is one line pasted into a terminal window, then typing `claude`. Anthropic's terminal guide covers opening a terminal for people who never have, and the current install commands live in [Installing Claude Code](/guides/getting-started/installing-claude-code), so this guide will not repeat them.
 
-Two things matter more than the commands. First, you need a Claude subscription (Pro, Max, Team, or Enterprise) or a Console account; the free tier does not include Claude Code. Second, you start it *inside a folder*, and that folder is the boundary of what it can see. Make a fresh folder for your first session. Do not start it in your home directory.
+Two things matter more than the commands. First, you need a Claude subscription (Pro, Max, Ultra, Team, or Enterprise) or a Console account; the free tier does not include Claude Code. Second, you start it *inside a folder*, and that folder is the boundary of what it can see. Make a fresh folder for your first session. Do not start it in your home directory.
 
 ## The permission model: it asks before it acts
 
@@ -200,7 +200,7 @@ It is not free of usage limits; a long session over many files burns through the
 
 ## What it costs, in plain terms
 
-There is no separate Claude Code price. It comes with a Claude Pro, Max, Team, or Enterprise subscription, and Anthropic's support docs are clear that usage "is shared across Claude and Claude Code, meaning all activity in both tools counts against the same usage limits." Those limits work in five-hour sessions with a weekly cap on top; the Max tiers buy more room in each, and the Team plan applies limits per member. If you would rather pay per use, Claude Code also runs on API credits through the Claude Console, which is the right shape for scheduled or automated jobs.
+There is no separate Claude Code price. It comes with a Claude Pro, Max, Ultra, Team, or Enterprise subscription, and Anthropic's support docs are clear that usage "is shared across Claude and Claude Code, meaning all activity in both tools counts against the same usage limits." Those limits work in five-hour sessions with a weekly cap on top; the Max tiers buy more room in each, and the Team plan applies limits per member. If you would rather pay per use, Claude Code also runs on API credits through the Claude Console, which is the right shape for scheduled or automated jobs.
 
 The figures move, so this guide does not repeat them. Current prices and the multipliers between tiers are in [Claude plans compared (2026)](/guides/getting-started/claude-plans-compared-2026), and the founder-specific decision, which plan for which situation, is in [Which Claude plan should a founder pay for?](/guides/founders/which-claude-plan-for-founders).
 

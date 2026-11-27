@@ -4,6 +4,8 @@ seoTitle: "What Are Guardrails?"
 description: "Guardrails are programmatic checks around an LLM — validating inputs and outputs in code — enforcing safety and format rules a prompt alone can't guarantee."
 summary: "Guardrails are deterministic code wrapped around a model that validates what goes in and what comes out, which is the difference between asking for a rule and enforcing it. Everything inside the model is probabilistic, and rails sit outside that uncertainty. They layer at three chokepoints: input, output, and tool execution."
 date: 2026-06-11
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["ai-safety-security"]
 audience: ["developers", "ai-engineers", "security"]
 tags: ["guardrails", "safety", "validation", "llm"]
@@ -19,4 +21,4 @@ faq:
 
 The distinction that matters is *ask versus enforce*. Everything inside the model is probabilistic: instructions usually hold, until a [prompt injection](/glossary/prompt-injection) or an odd input bends them. Guardrails sit outside that uncertainty: an input scanner that strips PII before the model sees it, an output validator that rejects malformed JSON, a policy classifier that blocks disallowed content, a permission gate that stops a dangerous tool call. The model proposes; the rails dispose.
 
-In practice they're layered at three chokepoints — input, output, and around tool/action execution — using a mix of plain validators ([structured-output](/glossary/structured-output) schemas), specialized scanners ([LLM Guard](/tools/llm-guard)), and rule engines ([NeMo Guardrails](/tools/nemo-guardrails)). Agentic systems add a fourth surface: deterministic action gates, which is exactly what [Claude Code hooks](/guides/configuration/claude-code-hooks) implement. Designing the right set for an app — without strangling it — is the [llm-guardrails-designer](/skills/security/llm-guardrails-designer) skill's job.
+In practice they're layered at three chokepoints — input, output, and around tool/action execution — using a mix of plain validators ([structured-output](/glossary/structured-output) schemas), specialized scanners ([LLM Guard](/tools/llm-guard), archived and unmaintained since July 2026), and rule engines ([NeMo Guardrails](/tools/nemo-guardrails)). Agentic systems add a fourth surface: deterministic action gates, which is exactly what [Claude Code hooks](/guides/configuration/claude-code-hooks) implement. Designing the right set for an app — without strangling it — is the [llm-guardrails-designer](/skills/security/llm-guardrails-designer) skill's job.

@@ -4,6 +4,8 @@ seoTitle: "Few-Shot vs Chain-of-Thought vs Structured Prompting (2026)"
 description: "When to reach for few-shot examples, chain-of-thought reasoning, or structured/output-constrained prompting — a 2026 decision guide to the core techniques."
 author: "Imtiaz Rayhan"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 tags: ["prompting", "few-shot", "chain-of-thought", "structured-output", "comparison"]
@@ -13,14 +15,14 @@ keyTakeaways:
   - "Few-shot prompting shows the model the shape of the answer with examples — the most reliable lever for fixing format, tone, and house-style drift."
   - "Chain-of-thought (\"think step by step\") lifts accuracy on multi-step reasoning but costs tokens and latency, and adds little on simple tasks."
   - "Structured prompting constrains the output to a schema so it's parseable downstream — back it with native structured-output/JSON mode, not just prose instructions."
-  - "Modern reasoning models do much of the chain-of-thought internally, so an explicit \"think step by step\" adds less than it used to — and is sometimes redundant."
+  - "Modern reasoning models do the chain-of-thought internally, so an explicit \"think step by step\" adds less than it used to. On those models, reasoning depth is a request parameter (effort), not a prompt phrase."
   - "The techniques compose: few-shot examples + an output contract + reasoning where the task needs it is the common production combination."
   - "Pick by failure mode — wrong format → few-shot/structured; wrong answer on hard reasoning → chain-of-thought; unparseable output → structured output."
 faq:
   - q: "What's the difference between few-shot and chain-of-thought prompting?"
     a: "Few-shot prompting puts a handful of input→output examples in the prompt so the model imitates their format, style, and conventions — it teaches the model what a good answer looks like. Chain-of-thought prompting instead asks the model to reason through intermediate steps before answering, which improves accuracy on tasks that need multi-step logic (math, planning, complex extraction). They solve different problems: few-shot fixes the shape of the answer, chain-of-thought improves the correctness of the reasoning behind it. You can use both at once — few-shot examples that themselves demonstrate the reasoning steps."
   - q: "Does chain-of-thought still help with 2026 reasoning models?"
-    a: "Less than it did with older models. Reasoning models (the o-series, Claude's extended thinking, and similar) already produce internal chain-of-thought before answering, so an explicit \"think step by step\" is often redundant and can even hurt by constraining how the model reasons. On those models, spend your prompt budget on a clear task spec and good examples rather than reasoning instructions. On standard (non-reasoning) models, explicit chain-of-thought still meaningfully lifts accuracy on multi-step problems. Match the technique to the model class."
+    a: "Less than it did with older models. Reasoning models (OpenAI's GPT-5 and GPT-6 reasoning models, Claude's adaptive thinking, and similar) already reason internally before answering, so an explicit \"think step by step\" is often redundant and can even hurt by constraining how the model reasons. On those models, set the reasoning effort parameter to control depth and spend your prompt on a clear task spec and good examples. On models without built-in reasoning, or with reasoning turned off, explicit chain-of-thought still lifts accuracy on multi-step problems. Match the technique to the model class."
   - q: "When should I use structured prompting or structured output?"
     a: "Whenever the model's output is consumed by code rather than read by a human — extraction, classification, form-filling, tool arguments, anything you'll parse. Structured prompting means specifying the exact output shape (a JSON schema, a table, a fixed set of fields), and it's most reliable when paired with the provider's native structured-output or JSON mode and a validate-and-retry loop, rather than just asking for JSON in prose. If the output is free-form text for a person to read, you usually don't need it."
   - q: "Can I combine few-shot, chain-of-thought, and structured prompting?"
@@ -58,7 +60,9 @@ Chain-of-thought (CoT) asks the model to work through intermediate steps before 
 The cost is real: more output tokens, higher latency, and a longer trace to read. And on *simple* tasks it can actually hurt — asking a model to over-explain a one-step answer invites it to talk itself into a wrong one.
 
 > [!NOTE]
-> Reasoning models change the calculus. Models with built-in reasoning (the o-series, Claude's extended thinking, and peers) already produce internal chain-of-thought before they answer, so an explicit "think step by step" is often redundant — and occasionally counterproductive, by constraining reasoning the model would have done better on its own. On those models, spend the prompt on a crisp task spec and good examples. Save explicit CoT for standard models, where it still pays.
+> Reasoning models change the calculus. Models with built-in reasoning (OpenAI's GPT-5 and GPT-6 reasoning models and the earlier o-series, and Claude's adaptive thinking, which replaced manual extended thinking) already reason internally before they answer, so an explicit "think step by step" is often redundant — and occasionally counterproductive, by constraining reasoning the model would have done better on its own. OpenAI's reasoning guide says to avoid chain-of-thought prompts on these models; Anthropic's advises general instructions ("think thoroughly") over a hand-written step-by-step plan. On those models, spend the prompt on a crisp task spec and good examples.
+
+On reasoning models, how much the model thinks is a request parameter rather than a phrase in the prompt: `reasoning.effort` in OpenAI's Responses API, the effort setting on Claude. If a hard task comes back wrong, raise the effort before you add reasoning instructions. Save explicit CoT for models without built-in reasoning, or for requests where you have turned reasoning off, and ask for the final answer in a delimited block (such as `<answer>` tags) so you can extract it from the reasoning text.
 
 ## Structured prompting: constrain the output
 
@@ -80,7 +84,7 @@ Diagnose by the failure you're seeing, then apply the matching lever:
 | Symptom | Reach for |
 |---|---|
 | Output format keeps drifting / wrong style | **Few-shot** (and/or a structured-output spec) |
-| Wrong answer on multi-step reasoning | **Chain-of-thought** (on non-reasoning models) |
+| Wrong answer on multi-step reasoning | **Chain-of-thought** on non-reasoning models; a higher reasoning effort on reasoning models |
 | Output isn't reliably parseable by code | **Structured prompting** + native structured output |
 | Model fumbles edge cases (empty, ambiguous) | **Few-shot** examples that *cover those cases* |
 | Right answer, far too many tokens | Drop redundant CoT; trim examples to the few that pay |

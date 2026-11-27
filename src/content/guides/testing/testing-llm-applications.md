@@ -9,6 +9,8 @@ tags: ["testing", "evals", "llm-as-judge", "regression", "ci"]
 related: ["guide:write-llm-evals", "guide:best-llm-eval-tools-2026", "guide:production-tool-calling", "skill:prompt-regression-tester", "skill:agent-trajectory-evaluator"]
 featured: false
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 summary: "You can't assertEqual an LLM output. Split your app into a deterministic layer you test like normal code and a model-behavior layer you test with evals over a golden dataset. Validate structure deterministically, judge subjective quality with a rubric or an LLM judge, pin a baseline, and gate CI on the score — not on exact strings."
 keyTakeaways:
   - "Exact-match assertions break the moment a model rewords an answer — test properties, not strings."
@@ -16,12 +18,12 @@ keyTakeaways:
   - "Test model behavior with evals over a frozen golden dataset, scored and compared against a committed baseline."
   - "Layer assertions cheapest-first: schema/regex, then semantic similarity, then an LLM-as-judge for subjective quality."
   - "For agents, evaluate the trajectory (tools called, order, arguments) — not just the final answer."
-  - "Gate CI on the aggregate eval score and pin temperature/seed so a green build means something."
+  - "Gate CI on the aggregate eval score and pin the model snapshot. Temperature 0 and seeds help only where the model still accepts them; many current models don't, so average repeated runs instead."
 faq:
   - q: "Why can't I just use assertEqual on LLM output?"
     a: "Because the same correct answer can be phrased a hundred ways. Exact-match assertions fail on harmless rewording and pass only by luck, so they're either flaky or vacuous. Assert on properties instead — valid JSON, required fields present, an expected substring, a numeric range, or a similarity/judge score above a threshold."
   - q: "How do I make LLM tests deterministic enough for CI?"
-    a: "You can't make generation fully deterministic, but you can reduce variance: set temperature to 0, pin a seed if the provider supports it, and pin the model version. Then gate on an aggregate score over a dataset rather than per-call exact output, so a single reworded response doesn't fail the build."
+    a: "You can't make generation fully deterministic, but you can reduce variance: pin the model snapshot, and set temperature to 0 and a seed where the model accepts them. Many current models reject sampling parameters (current Claude models return an error if you send temperature, and OpenAI lists it as unsupported on GPT-6.2), so don't depend on them. Gate on an aggregate score over a dataset, run each case more than once when the score is noisy, and a single reworded response won't fail the build."
   - q: "Should I call the real model in CI?"
     a: "Mock it for the deterministic layer (parsing, tool dispatch, error handling) so those tests are fast and free. Call the real model only in the eval suite that measures behavior, and run that as a gated job — nightly or on prompt/model changes — because it costs tokens and time."
   - q: "How do I test an agent, not just a single call?"
@@ -36,7 +38,7 @@ howtoSteps:
   - name: "Layer assertions cheapest-first"
     text: "Validate structure with schema/regex, then check semantic similarity against a reference, then use an LLM-as-judge with an explicit rubric only for subjective quality."
   - name: "Pin a baseline and gate CI on the score"
-    text: "Set temperature to 0, pin model and seed, record the baseline score per metric, and fail the build when a prompt or model change drops the aggregate below threshold."
+    text: "Pin the model snapshot, set temperature to 0 and a seed where the model accepts them, record the baseline score per metric, and fail the build when a prompt or model change drops the aggregate below threshold."
 keywords: ["testing llm applications", "llm eval testing", "non-deterministic testing", "llm-as-judge", "agent trajectory evaluation", "prompt regression testing"]
 ---
 
@@ -87,9 +89,11 @@ Seed the dataset from real production traffic and, critically, from past inciden
 
 You can't make generation fully deterministic, but you can cut the variance:
 
-- Set [temperature](/glossary/temperature) to 0 for tests so sampling is as stable as the provider allows.
-- Pin the **model version** explicitly (`-2026-xx-xx`, not a floating alias) — a silent model swap is a silent behavior change.
-- Use a **seed** if the provider supports it.
+- Pin the **model snapshot** explicitly, not a floating alias — a silent model swap is a silent behavior change. What a pinned ID looks like depends on the vendor: older model IDs carry a date suffix, while Claude IDs from the 4.6 generation on are dateless and each one is itself a fixed snapshot. Check the provider's model ID docs instead of assuming a suffix.
+- Set [temperature](/glossary/temperature) to 0 **where the model accepts it**. Many current models don't: Anthropic's migration guides for its current Claude models say to omit `temperature`, `top_p`, and `top_k` (sending them returns a 400 error), and OpenAI's GPT-6.2 migration notes list `temperature` and `top_p` as unsupported. Write the test harness so the parameter is set per model, not hardcoded.
+- Use a **seed** if the provider supports it, and treat it as best effort. OpenAI's Chat Completions reference describes `seed` as best-effort sampling with determinism not guaranteed, and tells you to watch the `system_fingerprint` response field for backend changes.
+
+Where you can't pin sampling at all, get stability from the statistics instead: run each eval case several times, score the pass rate or the mean, and set the CI tolerance from the run-to-run spread you measure on an unchanged prompt. Even temperature 0 never guaranteed identical outputs, so this is the more honest design anyway.
 
 Treat the [prompt](/glossary/prompt-template) and [system prompt](/glossary/system-prompt) as versioned artifacts under test, not strings buried in code. When the prompt changes, the eval suite reruns and the baseline diff tells you whether it helped or hurt.
 
@@ -115,6 +119,6 @@ A green build then means something concrete: the deterministic layer is correct,
 2. **Unit-test** the deterministic layer with the model mocked, including malformed responses.
 3. **Build** a frozen, versioned golden dataset of inputs and expected behavior.
 4. **Layer assertions** cheapest-first: schema/regex, then semantic similarity, then LLM-as-judge.
-5. **Pin a baseline** (temperature 0, pinned model/seed) and **gate CI** on the aggregate score.
+5. **Pin a baseline** (pinned model snapshot; temperature 0 and a seed where accepted, repeated runs where not) and **gate CI** on the aggregate score.
 
 Do these five and your LLM feature stops being a thing you hope works and becomes a thing you can prove works — and keep proving as models change underneath you.

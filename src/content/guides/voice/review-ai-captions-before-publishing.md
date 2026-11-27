@@ -17,7 +17,7 @@ related:
 - tool:veed
 - glossary:automatic-captioning
 - skill:caption-correction-ledger
-summary: Review AI-generated captions against recorded speech, speaker changes and meaningful sounds, then check a separate timing file before publication.
+summary: Freeze the media cut, then log each fix in a cue-level ledger with the original text, proposed repair, timing and listening evidence. Names, numbers, negations, speaker changes and meaningful sounds need a listener's confirmation, and uncertain words stay unresolved. After a checker validates SRT structure, play the repaired track in the delivery player.
 title: Review AI Captions Before Publishing
 depth: standard
 sources:

@@ -3,6 +3,8 @@ title: "Which Claude Plan (and Model) Should a Data Analyst Pay For?"
 description: "A decision guide by situation: occasional CSV work, daily Excel modeling, Claude Code against a warehouse, or a team sharing a Project. No prices."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["ai-at-work", "data-ml"]
@@ -15,7 +17,7 @@ keywords: ["which claude plan data analyst", "claude plan for excel", "claude pr
 summary: "Code execution runs on every plan, so occasional CSV work is free. Claude for Excel, Claude Code, and Cowork all need a paid plan, which makes Pro the floor for anyone whose data work is daily. Move to Max when long sessions over wide schemas keep hitting the reset, and to Team when two people need shared administration."
 keyTakeaways:
   - "Free covers chat plus code execution and file creation, which is enough to test the whole one-off CSV workflow before paying anything."
-  - "Claude for Excel is generally available on Pro, Max, Team, and Enterprise only; the Free plan does not include it."
+  - "Claude for Excel is generally available on Pro, Max, Ultra, Team, and Enterprise only; the Free plan does not include it."
   - "Claude Code and Cowork both require a paid subscription, and all surfaces draw from one shared usage pool."
   - "Analysts hit context limits sooner than most roles: a wide schema, a long session, and generated files fill a window fast."
   - "Pick the model per task, not per plan. A bigger plan buys hours, not smarter answers on the same question."
@@ -48,7 +50,7 @@ Every paid Claude plan opens the same doors, so the plan question for an analyst
 
 ## What each tier unlocks
 
-Three facts set the boundaries. Code execution and file creation, the thing that lets Claude actually compute over your CSV, is available to all users including Free, on the web, desktop, and mobile. [Claude for Excel](/guides/analytics/claude-for-excel-guide) is generally available on Pro, Max, Team, and Enterprise, and not on Free. Claude Code requires a subscription or an Anthropic Console account, and Cowork requires a paid plan (Pro, Max, Team, or Enterprise).
+Three facts set the boundaries. Code execution and file creation, the thing that lets Claude actually compute over your CSV, is available to all users including Free, on the web, desktop, and mobile. [Claude for Excel](/guides/analytics/claude-for-excel-guide) is generally available on Pro, Max, Ultra, Team, and Enterprise, and not on Free. Claude Code requires a subscription or an Anthropic Console account, and Cowork requires a paid plan (Pro, Max, Ultra, Team, or Enterprise).
 
 Everything above Pro is a usage multiplier, not a new capability. The feature-by-feature grid and the current prices are in [Claude plans compared (2026)](/guides/getting-started/claude-plans-compared-2026).
 

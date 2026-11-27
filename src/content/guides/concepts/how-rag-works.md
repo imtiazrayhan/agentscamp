@@ -3,6 +3,7 @@ title: "How RAG Actually Works: Ingestion, Chunking, Retrieval & Reranking"
 description: "A clear, practical walkthrough of the retrieval-augmented generation pipeline — what each stage does, where it fails, and how the pieces fit together."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
+reviewed: 2026-11-27
 image: "/images/guides/how-rag-works-architecture.png"
 color: "green"
 topics: ["rag-retrieval"]

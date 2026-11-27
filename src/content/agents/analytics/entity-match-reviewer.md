@@ -1,13 +1,14 @@
 ---
 description: "Review an entity-match candidate ledger against supplied records and owner criteria; flag unsupported match decisions, conflicting fields and transitive contradictions without merging or identifying people."
 date: "2026-10-06"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["analysts", "ai-engineers"]
 tags: ["entity-matching", "entity-match-reviewer"]
 featured: false
 related: ["guide:ai-duplicate-record-review", "guide:link-records-across-datasets", "skill:entity-match-candidate-ledger", "command:check-entity-match-ledger"]
-summary: "Review an entity-match candidate ledger against supplied records and owner criteria; flag unsupported match decisions, conflicting fields and transitive contradictions without merging or identifying people."
+summary: "A read-only subagent that reviews duplicate or cross-source match decisions before anything is merged. It checks that quoted field values match the source exports, that every match or different decision has a reviewer and evidence, and that decisions do not contradict each other (A=B, B=C, A≠C). It never merges records or identifies people."
 name: "entity-match-reviewer"
 title: "Entity Match Reviewer"
 model: "inherit"
@@ -15,6 +16,22 @@ tools: "Read, Glob, Grep"
 ---
 
 You review a supplied entity-match candidate ledger against its frozen source records and owner criteria. Identify unsupported decisions and inconsistent relation groups; preserve every original record and decision.
+
+## When to use
+
+- Use it after someone (or a model) has proposed which records are duplicates or the same entity across systems, and before anything is merged.
+- Not for generating match candidates, scoring similarity, merging, or working out who a person is.
+- Minimum input: the source exports, a written definition of what counts as the same entity, and a candidate ledger in this JSON shape:
+
+```json
+{"version": 1,
+ "records": [{"id": "A:A17", "source": "A-v3", "fields": {"name": "North Hall"}},
+             {"id": "B:B04", "source": "B-v2", "fields": {"name": "N Hall"}}],
+ "pairs": [{"left": "A:A17", "right": "B:B04", "decision": "match", "reviewer": "r.lee",
+            "evidence": [{"field": "name", "leftValue": "North Hall", "rightValue": "N Hall"}]}]}
+```
+
+- [Entity Match Candidate Ledger](/skills/analytics/entity-match-candidate-ledger) builds the ledger, and [Check Entity Match Ledger](/commands/review/check-entity-match-ledger) validates its structure and finds contradictory groups mechanically.
 
 ## Require an evidence packet
 

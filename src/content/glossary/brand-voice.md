@@ -3,6 +3,8 @@ term: "Brand Voice (in AI prompting)"
 seoTitle: "What Is Brand Voice in AI Prompting?"
 description: "Brand voice, in AI prompting, is the documented tone, vocabulary, and style rules a model is given so every draft sounds like one company, not the model."
 date: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["marketers"]
 tags: ["brand-voice", "prompting", "skills", "marketing", "style-guide"]
@@ -13,7 +15,7 @@ faq:
   - q: "What should a brand-voice definition contain?"
     a: "Fewer adjectives and more rules. A short positioning sentence, five to ten do-and-don't pairs with examples, a vocabulary list (words you use, words you never use), sentence-length and formatting norms, and two or three exemplar paragraphs the model can imitate. Exemplars do more work than descriptions; few-shot examples are how models learn a voice."
   - q: "Which tools have a brand-voice feature?"
-    a: "Most marketing platforms sell one by name: Jasper's Brand Voice inside Brand IQ, Copy.ai's Brand Voice, and HubSpot's Content Agent writing in brand voice. General assistants get there through configuration: a Claude skill or Project, a custom GPT or Project in ChatGPT, a Gem in Gemini. The skill route is the most portable, because the same folder applies in chat, Cowork, and the Office add-ins."
+    a: "Most marketing platforms sell one by name: Jasper's Brand Voice inside Brand IQ, Copy.ai's Brand Voice, and HubSpot's Content Agent writing in brand voice. General assistants get there through configuration: a Claude skill or Project, a Project or plugin in ChatGPT (custom GPTs retire on December 11, 2026), a Gem in Gemini. The skill route is the most portable, because the same folder applies in chat, Cowork, and the Office add-ins."
 summary: "Brand voice, in AI prompting, is the documented set of tone, vocabulary, structure, and example rules that a model is given so that everything it drafts sounds like one specific company instead of like the model's default register."
 ---
 

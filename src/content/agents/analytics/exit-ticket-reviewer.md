@@ -7,7 +7,7 @@ audience: []
 tags: ["content", "source-grounded", "review"]
 featured: false
 related: ["guide:ai-exit-tickets-from-lesson-objectives", "skill:exit-ticket-builder", "command:check-exit-ticket-map"]
-summary: "Review a draft exit ticket against educator-supplied objectives and taught material. Flag untaught facts, unclear prompts, mismatched answer keys and gaps in objective coverage; return revisions for educator judgment without grading learners or diagnosing ability."
+summary: "Supply objective IDs, the taught text, draft questions and keys. It maps every question to an objective and exact taught evidence, then returns a table of original prompts, proposed revisions, ambiguity notes and statuses, plus uncovered objectives and key conflicts. Untaught prompts are marked needs-review, and the educator approves before classroom use."
 name: "exit-ticket-reviewer"
 title: "Exit Ticket Reviewer"
 model: "sonnet"

@@ -3,7 +3,8 @@ title: "Writing Your First Skill"
 description: "A step-by-step guide to packaging a reusable procedure as a Claude Code skill that loads exactly when it's needed."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
-updated: 2026-08-25
+updated: 2026-11-27
+reviewed: 2026-11-27
 depth: cornerstone
 color: "green"
 topics: ["workflow-prompting"]
@@ -58,7 +59,7 @@ faq:
   - q: "What does allowed-tools do in a skill?"
     a: "It pre-approves listed tools so Claude can use them without per-call permission prompts during the turn that invokes the skill, and the grant clears when you send your next message. It's friction reduction, not a sandbox — every other tool remains callable under your normal permission settings. To genuinely remove a tool from a skill's reach, use disallowed-tools."
   - q: "Do I need to restart Claude Code after adding a skill?"
-    a: "Usually not — Claude Code watches skill directories for changes, so adding or editing a SKILL.md under ~/.claude/skills/ or a project's .claude/skills/ takes effect in the current session. The one exception: if the top-level skills directory itself didn't exist when the session started, restart once so it can be watched."
+    a: "Usually not — Claude Code watches skill directories for changes, so adding or editing a SKILL.md under ~/.claude/skills/ or a project's .claude/skills/ takes effect in the current session. If a new skill doesn't appear, run /reload-skills. The exception is bare mode, which does not watch for changes."
   - q: "Is a skill different from a slash command?"
     a: "They've converged. Custom commands were merged into skills, so .claude/commands/deploy.md and .claude/skills/deploy/SKILL.md both give you /deploy and behave the same way; existing command files keep working. Skills add what a flat file can't: a directory for supporting scripts and references, frontmatter controlling whether you or Claude invokes it, and automatic loading when the task matches."
   - q: "Can a skill run in its own context window?"
@@ -251,7 +252,7 @@ Do not run the migration. Creating the file is the whole job.
 Drop that folder in place and ask: "add a migration that adds a `last_login` column to users." The description matches "add a migration," the body loads, and Claude produces a correctly named, reversible file in your format — without you re-explaining the convention.
 
 > [!NOTE]
-> Claude Code watches skill directories live — adding or editing a `SKILL.md` under `~/.claude/skills/` or a project's `.claude/skills/` takes effect in the current session without restarting. The one exception: if you create a top-level skills directory that didn't exist when the session started, restart so it can be watched.
+> Claude Code watches skill directories live — adding or editing a `SKILL.md` under `~/.claude/skills/` or a project's `.claude/skills/` takes effect in the current session without restarting. If a new skill doesn't appear, run `/reload-skills`.
 
 ## Running a skill in its own context
 
@@ -291,7 +292,7 @@ Almost every "my skill doesn't work" report resolves to one of four causes, and 
 | Never triggers | Description lacks the phrasing users actually use | Rewrite trigger-first, with real verbs and nouns |
 | Triggers on everything | Description too broad | Narrow it, or add `paths` to scope activation |
 | Triggers, wrong behavior | Body too long or vague | Cut to numbered steps, add an explicit boundary |
-| Not listed at all | Skills directory created after session start | Restart once so the directory is watched |
+| Not listed at all | Wrong path, or the new skill hasn't been picked up yet | Check the path, then run `/reload-skills` |
 
 Start with the description in the first three cases — it's the lever that controls everything downstream, and the trigger buried past 1,536 characters is a surprisingly common culprit. For a systematic approach, see [testing and debugging skills](/guides/skills/testing-and-debugging-skills).
 

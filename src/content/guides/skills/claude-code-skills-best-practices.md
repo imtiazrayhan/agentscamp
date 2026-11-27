@@ -3,6 +3,8 @@ title: "Claude Code Skills: Best Practices"
 description: "The patterns that make Claude Code skills reliable: trigger-first descriptions, one job per skill, lean bodies, bundled scripts, and scoped tools."
 author: "Imtiaz Rayhan"
 date: 2026-06-20
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 tags: ["skills", "claude-code", "prompting", "agents", "workflow"]
@@ -25,7 +27,7 @@ faq:
   - q: "When should something be an MCP server instead of a skill?"
     a: "When the capability is a live connection to an external system — a database, a SaaS API, a ticketing tool — that needs real-time data, auth, and structured tool calls. Skills are know-how loaded into context; MCP servers are integrations that expose tools and resources. If you find yourself describing API endpoints and credentials in a SKILL.md, you wanted a server."
   - q: "Does allowed-tools sandbox a skill?"
-    a: "No. allowed-tools pre-approves listed tools so Claude can use them without a permission prompt while the skill is active — it removes friction, it doesn't restrict. Every other tool stays callable under your normal permission settings. To actually keep a tool out of a skill's reach, use disallowed-tools, and for a hard block across everything, add deny rules in your permission settings."
+    a: "No. allowed-tools pre-approves the listed tools for the turn that invokes the skill, and the grant clears when you send your next message — it removes friction, it doesn't restrict. Every other tool stays callable under your normal permission settings. To keep a tool out of reach while the skill runs, use disallowed-tools (it also clears on your next message), and for a hard block across everything, add deny rules in your permission settings."
 related: ["guide:what-are-claude-skills", "guide:claude-skills-examples", "guide:writing-your-first-skill", "guide:skills-vs-agents-vs-commands", "guide:writing-a-custom-agent", "guide:claude-md-best-practices", "guide:skills-vs-mcp-servers", "guide:testing-and-debugging-skills"]
 audience: ["developers"]
 ---
@@ -54,7 +56,7 @@ Two failure modes, two fixes:
 - **Never fires.** The description is too vague or written in implementation language. Add the concrete phrases a user would type. If you have a separate `when_to_use` field, that's exactly where extra trigger phrases and example requests go.
 - **Fires too often.** The description is too broad. "Helps with code" loads on nearly every request and burns the context budget the skill was supposed to save. Make it specific enough that it stays silent when the task isn't its job.
 
-One more thing worth knowing: descriptions aren't free at scale. Claude Code loads every skill's description into a budget that scales with the model's context window, and when you have many skills installed it **shortens or drops the least-used ones to fit** — which can strip the very keywords a skill needs to trigger. The combined description text is also capped (currently 1,536 characters) in the listing. Two consequences: keep descriptions tight and keyword-dense rather than padded, and if a skill mysteriously stops firing, check whether its description is being truncated (`/doctor` reports this) before you rewrite the body.
+One more thing worth knowing: descriptions aren't free at scale. Claude Code loads the skill listing into a character budget that scales at 1% of the model's context window. Every skill name always stays listed, but when the listing overflows, Claude Code **drops descriptions, starting with the skills you invoke least** — which removes the very keywords a skill needs to trigger. Separately, each entry's combined `description` and `when_to_use` text is truncated at 1,536 characters. Two consequences: keep descriptions tight and keyword-dense with the key use case first, and if a skill mysteriously stops firing, check the listing before you rewrite the body. `/doctor` estimates the listing's context cost and names its biggest contributors, `/skill-doctor` finds skills you no longer use, and `claude --debug` logs a warning when the listing exceeds its budget. You can raise the budget with the `skillListingBudgetFraction` setting, or set low-priority skills to `"name-only"` in `skillOverrides` to free room.
 
 ## One job per skill
 
@@ -72,7 +74,7 @@ This is the same instinct that keeps a [CLAUDE.md lean](/guides/configuration/cl
 
 ## Keep the body lean
 
-Progressive disclosure makes an *installed* skill cheap — but once a skill **loads**, its body enters the conversation and stays there across turns. It is not a one-time read; it's a recurring token cost on every subsequent turn until the session ends or compacts. A bloated body taxes the entire rest of the task.
+Progressive disclosure makes an *installed* skill cheap — but once a skill **loads**, its body enters the conversation and stays there across turns. It is not a one-time read; it's a recurring token cost on every subsequent turn until the session ends or compacts. A bloated body taxes the entire rest of the task. Compaction doesn't rescue a long body either: Claude Code re-attaches only the first 5,000 tokens of each invoked skill afterward (25,000 tokens across all of them), so the instructions that matter most belong near the top.
 
 So treat the body like a runbook, not an essay:
 
@@ -99,13 +101,13 @@ The convention is a `scripts/` directory for executables, a `references/` direct
 
 Two kinds of scoping make a skill safe to leave running.
 
-**Scope `allowed-tools` to what the procedure actually runs.** This field pre-approves tools so Claude can use them without a permission prompt while the skill is active — it's about removing friction, not about sandboxing. List only the tools the skill calls often enough that prompting each time would be annoying, and prefer specific grants over blanket ones:
+**Scope `allowed-tools` to what the procedure actually runs.** This field pre-approves tools so Claude can use them without a permission prompt during the turn that invokes the skill. The grant clears when you send your next message and is re-applied each time the skill is invoked — it's about removing friction, not about sandboxing. List only the tools the skill calls often enough that prompting each time would be annoying, and prefer specific grants over blanket ones:
 
 ```yaml
 allowed-tools: Read, Grep, Glob, Bash(git add *), Bash(git commit *)
 ```
 
-Be deliberate here: `allowed-tools` is a grant. For project skills checked into a repo, those grants take effect once you trust the workspace — so review a repo's skills before trusting it, the same way you'd review its settings. To genuinely keep a tool out of a skill's reach, use `disallowed-tools`; to block something everywhere, use deny rules in your permission settings. `allowed-tools` widens access without prompting; it never narrows it.
+Be deliberate here: `allowed-tools` is a grant. Claude Code applies a project skill's `allowed-tools` even in a non-interactive `-p` run in a folder you've never trusted — so read the skills checked into a repo before you run Claude Code there, the same way you'd review its settings. To keep a tool out of reach while a skill runs, use `disallowed-tools` (that restriction also clears on your next message); to block something everywhere, use deny rules in your permission settings. `allowed-tools` widens access without prompting; it never narrows it.
 
 **Set explicit boundaries in the body.** The most reliable skills tell Claude not just what to do but where to stop. State the negative space:
 
@@ -129,7 +131,7 @@ Most unreliable skills are one of these:
 
 ## Test it like you mean it
 
-A skill isn't done when it parses — it's done when you've confirmed it fires and improves the result. The honest test is a **baseline comparison**: collect a few realistic prompts, run each in a *fresh* session with the skill available, then run them again with the skill disabled, and compare. The fresh session matters — leftover context from authoring the skill will paper over gaps in what you actually wrote down, making a skill look like it works when it only works because you primed it.
+A skill isn't done when it parses — it's done when you've confirmed it fires and improves the result. The honest test is a **baseline comparison**: collect a few realistic prompts, run each in a *fresh* session with the skill available, then run them again with the skill disabled (set it to `"off"` in `skillOverrides`; for a skill that ships in a plugin, `claude plugin eval` runs the no-plugin baseline for you), and compare. The fresh session matters — leftover context from authoring the skill will paper over gaps in what you actually wrote down, making a skill look like it works when it only works because you primed it.
 
 Watch for both failure directions: prompts that *should* trigger the skill but don't (description too narrow or wrong keywords), and prompts that *shouldn't* but do (description too broad). [Testing and Debugging Skills](/guides/skills/testing-and-debugging-skills) covers the full loop, including what to do when a skill loads but stops influencing behavior partway through a task.
 

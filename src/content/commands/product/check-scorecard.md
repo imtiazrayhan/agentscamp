@@ -2,7 +2,8 @@
 description: "Validate a draft job-interview scorecard JSON with Python: unique criteria, exactly three nonblank behavioral anchor slots, task-source and question references, and positive human-supplied decimal weights totaling exactly one. Never read or calculate candidate scores."
 title: "Check Scorecard"
 date: "2026-08-14"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["founders"]
 tags: ["check-scorecard", "knowledge-work"]
@@ -11,7 +12,32 @@ related: ["guide:ai-interview-scorecard", "glossary:structured-interview", "skil
 seoDescription: "Check interview rubric JSON fields, three anchor slots, criterion IDs, question references, and exact decimal weights without scoring candidates."
 argument-hint: "<scorecard.json>"
 allowed-tools: "Read, Write, Bash(python3 *)"
+summary: "Check Scorecard validates the structure of a draft interview scorecard before any interview happens: unique criteria, three written anchor levels per criterion, a task source and question IDs for each, and human-set weights that total exactly one. It runs local Python on one JSON file and never reads or computes candidate scores."
 ---
+
+## What it checks and when to run it
+
+Run this once the hiring owner has chosen the criteria and weights and before the scorecard goes to interviewers. It catches the mechanical faults that make a rubric unusable in the room: a criterion missing one of its three anchor levels, a criterion with no interview question, a repeated criterion ID, or weights that add up to 0.9 because one was edited late.
+
+It expects one JSON file shaped like this (weights are decimal strings, not numbers):
+
+```json
+{
+  "role_id": "...",
+  "criteria": [
+    {
+      "criterion_id": "...",
+      "competency": "...",
+      "weight": "0.6",
+      "anchors": {"1": "...", "2": "...", "3": "..."},
+      "source_ref": "...",
+      "question_ids": ["..."]
+    }
+  ]
+}
+```
+
+[Job Scorecard Builder](/skills/product/job-scorecard-builder) offers JSON with these fields once every human weight is supplied. A complete fixture with literal expected output follows the checker code.
 
 Validate one local job-interview rubric JSON before interviews. Supply a POSIX-quoted rubric path and use Python 3.10 or later. The input contains no applicant records or candidate scores; this command does not assess people.
 
@@ -158,7 +184,39 @@ These are invented fixture inputs with literal expected output; they are not cus
 scorecard.json:
 
 ```json
-{"role_id": "support-l2", "criteria": [{"criterion_id": "C1", "competency": "Observable job task C1", "weight": "0.6", "anchors": {"1": "Omitted required step", "2": "Completed required step", "3": "Completed and verified required step"}, "source_ref": "role.md#C1", "question_ids": ["Q1"]}, {"criterion_id": "C2", "competency": "Observable job task C2", "weight": "0.4", "anchors": {"1": "Omitted required step", "2": "Completed required step", "3": "Completed and verified required step"}, "source_ref": "role.md#C2", "question_ids": ["Q2"]}]}
+{
+  "role_id": "support-l2",
+  "criteria": [
+    {
+      "criterion_id": "C1",
+      "competency": "Observable job task C1",
+      "weight": "0.6",
+      "anchors": {
+        "1": "Omitted required step",
+        "2": "Completed required step",
+        "3": "Completed and verified required step"
+      },
+      "source_ref": "role.md#C1",
+      "question_ids": [
+        "Q1"
+      ]
+    },
+    {
+      "criterion_id": "C2",
+      "competency": "Observable job task C2",
+      "weight": "0.4",
+      "anchors": {
+        "1": "Omitted required step",
+        "2": "Completed required step",
+        "3": "Completed and verified required step"
+      },
+      "source_ref": "role.md#C2",
+      "question_ids": [
+        "Q2"
+      ]
+    }
+  ]
+}
 ```
 
 Expected stdout JSON (exit 0):
@@ -182,7 +240,7 @@ Expected stdout JSON (exit 0):
 
 ## Edges and human review
 
-The full two-criterion example below totals one without calculating a candidate score. In the shared-question fixture, C1/C2 use 0.500000/0.50 and both include Q1; normalized weights are 0.5 and Q1 appears in `shared_question_ids`. Replacing 0.4 with 0.3 fails with total 0.9. Weight 0 fails; 0.1234567 fails the six-decimal contract.
+The two-criterion fixture above totals one without calculating a candidate score. In a separate case not shown here, C1 and C2 use weights 0.500000 and 0.50 and both list Q1; the normalized weights are 0.5 each and Q1 appears in `shared_question_ids`. Replacing 0.4 with 0.3 fails with total 0.9. Weight 0 fails; 0.1234567 fails the six-decimal contract.
 
 Do not change weights, add anchor wording, calculate applicant scores or infer traits to obtain a passing result. The hiring team reviews relevance, consistency, access needs, fairness and lawful use independently. Source references are not opened by this script, and nonblank anchors are not proof of observable behavior.
 

@@ -16,7 +16,7 @@ related:
 - tool:magicschool
 - glossary:formative-assessment
 - skill:exit-ticket-builder
-summary: Draft short AI-assisted exit tickets from taught material, map each prompt to a learning objective, and review the answer key before classroom use.
+summary: Register objective IDs and the taught passages, then prompt for the smallest question set with each prompt, expected answer and exact evidence. Reject questions on untaught concepts, answer each prompt from the passage to test the key, and keep rows marked needs-review until the educator approves. A wrong key is a draft defect, not a learner misconception.
 title: Draft AI Exit Tickets from Lesson Objectives
 depth: standard
 sources:

@@ -9,6 +9,8 @@ tags: ["system-prompt", "prompting", "agents", "llm-app-dev", "output-format"]
 related: ["guide:prompt-patterns", "guide:prompting-techniques-2026", "guide:context-engineering", "guide:structured-output-2026", "guide:effective-tool-use"]
 featured: false
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 summary: "The system prompt holds the durable contract: role, standing instructions, output format, constraints, and tool-use policy. Per-request facts belong in the user turn or retrieved context. Put the load-bearing rules first, say what to do (not just what to avoid), give the model an explicit out, and treat the prompt as a versioned, tested artifact."
 keyTakeaways:
   - "The system prompt is the durable contract; per-request data goes in the user turn or retrieved context."
@@ -65,6 +67,37 @@ What does *not* belong there: the user's actual question, the document to summar
 Write the prompt in labeled sections — `## Role`, `## Instructions`, `## Output format`, `## Constraints`, `## Tools`. Headings aren't decoration; they give the model anchors and give *you* something to diff.
 
 Order is load-bearing. Models attend unevenly across a long input, and the middle of a long context is where instructions quietly stop being followed (the [needle-in-a-haystack](/glossary/needle-in-a-haystack) problem applies to your own rules, not just retrieved data). Put the most important instructions near the top. For a single non-negotiable rule — "never fabricate a refund amount" — repeat it at the very end of the prompt too; recency helps as much as primacy.
+
+A compact skeleton for a fictional billing-support assistant shows the shape. Nothing in it changes between requests; the customer's question and the retrieved catalog rows arrive in the user turn.
+
+```markdown
+## Role
+You are the billing support assistant for Acme's invoicing API. You answer
+questions about invoices, refunds, and plan limits. Nothing else.
+
+## Instructions
+1. Never state a refund amount that is not in the provided account data.
+2. Answer from the provided context only. If the answer is not there,
+   reply exactly: "I don't have that information."
+3. If the request is ambiguous, ask one clarifying question before answering.
+
+## Output format
+Return a single JSON object:
+{"answer": "string", "sources": ["doc id"], "escalate": true | false}
+Dates are ISO-8601 (YYYY-MM-DD). Amounts are integer cents.
+
+## Constraints
+- Do not reveal internal account IDs.
+- Out-of-scope requests: decline in one sentence and set "escalate" to false.
+
+## Tools
+- lookup_invoice(invoice_id): call when the user gives an exact invoice ID.
+- open_ticket(summary): call only when "escalate" is true. Then stop.
+
+Reminder: never state a refund amount that is not in the provided account data.
+```
+
+The load-bearing rule sits first and is repeated last, every prohibition names the allowed alternative, and the "I don't know" branch has exact wording.
 
 ## Be specific and positive
 

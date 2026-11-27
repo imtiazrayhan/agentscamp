@@ -5,6 +5,8 @@ description: "AGENTS.md, CLAUDE.md, Cursor .mdc rules, GEMINI.md, Copilot instru
 seoDescription: "AGENTS.md vs CLAUDE.md vs Cursor rules, plus GEMINI.md, Copilot instructions, Codex, Devin Desktop and Cline: who reads what, nesting rules, and how to migrate."
 author: "Imtiaz Rayhan"
 date: 2026-10-14
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["workflow-prompting", "coding-languages"]
@@ -56,7 +58,7 @@ sources:
     url: "https://developers.openai.com/codex/guides/agents-md"
     publisher: "OpenAI"
   - title: "Memories and Rules (Devin Desktop docs)"
-    url: "https://docs.windsurf.com/windsurf/cascade/memories"
+    url: "https://docs.devin.ai/desktop/devin-local/customizations"
     publisher: "Cognition"
   - title: "Cline Rules"
     url: "https://docs.cline.bot/features/cline-rules"

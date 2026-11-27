@@ -8,7 +8,7 @@ audience: ["ai-engineers", "analysts"]
 tags: ["text-annotation", "adjudicate-ai-assisted-text-labels"]
 featured: false
 related: ["guide:ai-text-dataset-prelabeling", "tool:argilla", "skill:annotation-disagreement-ledger", "agent:annotation-evidence-reviewer"]
-summary: "Resolve disputed text labels by preserving each response, source excerpt and task-rule version rather than accepting the model or majority automatically."
+summary: "Log each disputed record with its exact text, every response, cited evidence and the rule version. If the rule covers the case, the adjudicator cites it; if the rule is silent, the record stays unresolved until the owner clarifies, whatever the vote count. After a rule revision, add new decisions, recheck affected rows and export from one named version."
 title: "Adjudicate AI-Assisted Text Labels with an Evidence Ledger"
 depth: "standard"
 sources: [{"title": "Annotate datasets", "url": "https://docs.argilla.io/latest/how_to_guides/annotate/", "publisher": "Argilla"}, {"title": "Integrate Label Studio into your ML pipeline", "url": "https://labelstud.io/guide/ml.html", "publisher": "HumanSignal"}, {"title": "Argilla Repository", "url": "https://github.com/argilla-io/argilla", "publisher": "Argilla"}]

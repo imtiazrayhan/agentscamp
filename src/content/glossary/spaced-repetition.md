@@ -15,7 +15,7 @@ related:
 - guide:ai-study-cards-from-notes
 - tool:remnote
 - agent:study-card-reviewer
-summary: Spaced repetition schedules reviews over time using recall feedback; AI can draft the cards, while the learner still checks their answers.
+summary: Explains the recall-and-rating loop a scheduler uses to space reviews over time, and why scheduling is a separate decision from checking an answer. A scheduler will keep presenting a badly worded or unsupported card, so accept each card against its source first. Guessed or disputed answers stay out of the practice set until the note owner resolves them.
 term: Spaced repetition
 seoTitle: "What Is Spaced Repetition?"
 ---

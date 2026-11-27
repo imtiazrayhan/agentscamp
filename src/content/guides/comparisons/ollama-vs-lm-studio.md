@@ -3,7 +3,7 @@ title: "Ollama vs LM Studio: Running LLMs Locally (2026)"
 description: "Ollama vs LM Studio compared — CLI-first server for developers vs polished desktop app for exploring local models. Which local LLM tool fits how you work."
 author: "Imtiaz Rayhan"
 date: 2026-06-11
-updated: 2026-11-25
+updated: 2026-11-27
 color: "green"
 topics: ["mlops-ai-infra"]
 audience: ["developers"]
@@ -64,11 +64,11 @@ Because both run the same underlying GGUF weights (plus Apple Silicon MLX builds
 Both expose OpenAI-compatible HTTP endpoints, so switching between them is usually a one-line URL change:
 
 - **Ollama** runs cleanly headless via `systemd`, launchd, or Docker, handles on-demand model loading and idle eviction (`OLLAMA_KEEP_ALIVE`), and supports parallel request slots (`OLLAMA_NUM_PARALLEL`). That makes it the default local backend for tools like [OpenCode](/tools/opencode), Cline, Aider, and local RAG pipelines in CI.
-- **LM Studio** now ships a companion `lms` CLI (`lms server start`, `lms load`) alongside its desktop app, so it is no longer GUI-only. Still, its real edge is the interactive loop: downloading two quantizations from Hugging Face, inspecting token speed and GPU memory live, verifying whether a local model actually emits valid tool-calling JSON, and testing prompt presets before committing to a model in code.
+- **LM Studio** now ships a companion `lms` CLI (`lms server start`, `lms load`) alongside its desktop app, plus llmster, a headless daemon for servers and CI, so it is no longer GUI-only. Still, its real edge is the interactive loop: downloading two quantizations from Hugging Face, inspecting token speed and GPU memory live, verifying whether a local model actually emits valid tool-calling JSON, and testing prompt presets before committing to a model in code.
 
 ## Licensing and team rollout
 
-If you are standardizing a local setup across an engineering team or baking a local model runner into Docker Compose and CI runners, Ollama's MIT license and single-binary/container ergonomics create zero procurement friction. LM Studio allows free personal and commercial workplace use, but its closed-source desktop binary is better suited to individual workstations than headless build infrastructure.
+If you are standardizing a local setup across an engineering team or baking a local model runner into Docker Compose and CI runners, Ollama's MIT license and single-binary/container ergonomics create zero procurement friction. LM Studio allows free personal and commercial workplace use, but it stays closed source, including its headless llmster daemon, and its paid Bionic+ and Pro plans cover hosted models, not the local runner. Teams that need to audit or redistribute the runtime still land on Ollama.
 
 ## How to actually choose
 

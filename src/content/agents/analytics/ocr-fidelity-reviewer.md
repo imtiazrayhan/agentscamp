@@ -7,7 +7,7 @@ audience: ["analysts"]
 tags: ["ocr", "document-processing", "source-verification"]
 featured: false
 related: ["guide:review-ocr-text-against-scans", "skill:ocr-correction-ledger", "command:check-ocr-correction-ledger"]
-summary: "Review supplied OCR text and readable source-page images for transcription fidelity. Flag changed characters, reading-order errors and unsupported proposed corrections with page/region evidence; do not interpret document meaning, guess unreadable text, certify authenticity or overwrite the source."
+summary: "Compares a frozen OCR transcription with readable scans or verified image notes and returns a fidelity report. Each proposal is anchored to a page and a zero-based Unicode code-point span, with original text, replacement, source location, evidence origin and status. Unreadable regions stay unresolved, and overlapping corrections are flagged, not applied."
 name: "ocr-fidelity-reviewer"
 title: "OCR Fidelity Reviewer"
 model: "sonnet"

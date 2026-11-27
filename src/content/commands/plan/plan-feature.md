@@ -2,6 +2,8 @@
 description: "Explore the codebase and produce an implementation plan for a feature."
 seoDescription: "/plan-feature explores the codebase and produces a step-by-step implementation plan for a feature — a Claude Code slash command for planning before building."
 date: 2026-06-03
+updated: 2026-11-27
+reviewed: 2026-11-27
 argument-hint: "<feature description>"
 allowed-tools: "Read, Grep, Glob"
 title: "Plan Feature"
@@ -9,8 +11,8 @@ color: "purple"
 topics: ["workflow-prompting", "architecture"]
 related: ["command:breakdown-task", "agent:system-architect"]
 featured: false
-summary: "A slash command that explores the codebase read-only and writes an implementation plan for a feature: it restates the request, maps the affected files and patterns with Read/Grep/Glob, then delivers a structured plan covering assumptions, approach, trade-offs, risks, ordered implementation steps, and a test plan."
-audience: ["founders"]
+summary: "Explores the codebase read-only and writes an implementation plan for a feature. It restates the request, maps the affected files and the closest existing pattern with Read, Grep, and Glob, then delivers a plan covering assumptions, approach, trade-offs, risks, ordered steps, and a test plan, citing real paths."
+audience: ["developers", "founders"]
 ---
 
 ## Scope
@@ -24,6 +26,12 @@ If `$ARGUMENTS` is empty, ask one focused question: *"What feature should I plan
 
 > [!NOTE]
 > Where the request is ambiguous (auth provider, storage backend, UI placement, scope boundaries), state your assumptions explicitly and plan against them rather than stalling. Flag each assumption so the user can correct it.
+
+## When to use
+
+- Before building a feature that touches more than one or two files, when you want the approach reviewed before any code exists.
+- When you are new to the codebase and need to know where a change belongs.
+- Not for a change you can already describe file by file: just make it. Not for splitting an agreed plan into tickets: use [/breakdown-task](/commands/plan/breakdown-task).
 
 ## Step 1 — Understand the request
 

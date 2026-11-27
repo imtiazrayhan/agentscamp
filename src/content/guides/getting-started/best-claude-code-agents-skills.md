@@ -85,5 +85,14 @@ The library's real value isn't static templates — it's working examples of [th
 
 ## Continue exploring
 
+- [The Best Claude Skills to Install in 2026](/guides/skills/best-claude-skills-2026) — A skills-only tour of the AgentsCamp library — the Claude Code skills that earn a permanent slot, organized by the job they do.
+- [How to Install Claude Skills](/guides/skills/how-to-install-claude-skills) — Every way to install Claude skills: manual copy, the agentscamp CLI, GitHub repos, plugins, team distribution, and uploading to claude.ai.
 - [system-architect](/agents/core-development/system-architect) — Use this agent for high-level system design — service boundaries, data flow, scaling, trade-offs.
 - [CLI Tooling Engineer](/agents/developer-tools/cli-tooling-engineer) — Use this agent to design or build a command-line tool — subcommand and flag layout, --help and error UX, exit codes, --json/machine output, config precedence,…
+- [Scaffold CLI Command](/commands/scaffold/scaffold-cli) — Scaffold a new subcommand for an existing CLI with argument parsing, help text, input validation, and correct exit codes.
+- [graphql-architect](/agents/core-development/graphql-architect) — Use this agent to design GraphQL schemas and resolvers — types, nullability, connections, dataloaders, federation, depth/complexity limits.
+- [Java Pro](/agents/language-specialists/java-pro) — Use this agent for idiomatic, modern Java (17/21+) — records, sealed types, pattern matching, virtual threads and structured concurrency, the Streams API, and JVM/GC performance.
+- [php-pro](/agents/language-specialists/php-pro) — Use this agent for idiomatic, modern PHP 8.3+ — strict types, enums, readonly and promoted properties, Composer/PSR-4 autoloading, and safe PDO data access.
+- [C# Pro](/agents/language-specialists/csharp-pro) — Use this agent for modern C#/.NET 8+ — records, pattern matching, nullable reference types, correct async/await, LINQ, Span<T>, and source generators — plus ASP.NET Core and EF…
+- [kotlin-pro](/agents/language-specialists/kotlin-pro) — Use this agent for idiomatic Kotlin — null safety, coroutines and structured concurrency, Flow, sealed classes with exhaustive when, data classes, and extension functions — on…
+- [swift-pro](/agents/language-specialists/swift-pro) — Use this agent for modern Swift 6 — value semantics, optionals done right, async/await and actors, Sendable/data-race safety, and idiomatic SwiftUI.

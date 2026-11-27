@@ -7,7 +7,7 @@ audience: ["founders", "analysts"]
 tags: ["survey-routing", "survey-path-test-builder"]
 featured: false
 related: ["guide:test-ai-survey-logic", "command:check-survey-paths", "guide:ai-survey-branching-plan"]
-summary: "Build a survey-paths.json test packet from approved single-choice question IDs, complete answer-to-destination rules and named endings; preserve missing routes for owner resolution."
+summary: "Supply question and choice IDs, endings, the start question and every approved answer-to-destination rule. The skill returns survey-paths.json inline with transitions and test cases covering every transition, each with its answers and expected path. A missing or conflicting route returns a blocked status and an owner question."
 name: "survey-path-test-builder"
 title: "Survey Path Test Builder"
 allowed-tools: "Read, Glob, Grep"

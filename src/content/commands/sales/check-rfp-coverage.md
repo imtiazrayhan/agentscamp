@@ -2,7 +2,8 @@
 description: "Check human-reviewed RFP requirement and response-matrix CSVs with Python: validate unique IDs and explicit flags, count supplied statuses including absent rows, and list mandatory attention items or ready rows missing required references. Does not prove claim accuracy or submit a bid."
 title: "Check RFP Coverage"
 date: "2026-09-07"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["founders", "sales"]
 tags: ["check-rfp-coverage", "knowledge-work"]
@@ -11,7 +12,24 @@ related: ["guide:ai-rfp-compliance-matrix", "glossary:compliance-matrix", "skill
 seoDescription: "Check RFP matrix coverage and mandatory attention items, including absent rows and ready responses missing required evidence or owners, with local Python."
 argument-hint: "<requirements.csv> <matrix.csv>"
 allowed-tools: "Read, Write, Bash(python3 *)"
+summary: "Check RFP Coverage compares a bid's response matrix with its requirements list. It reports requirements that have no response row, mandatory ones that still need attention, and rows marked ready that lack a response reference, owner or required evidence. It runs local Python on two CSVs and does not judge whether any claim is true."
 ---
+
+## What it checks and when to run it
+
+Run this before a bid review, after the bid owner has confirmed which requirements are mandatory and which need evidence. It answers one narrow question: does every requirement have a response row, and is every row marked `ready` actually complete? Requirements with no row at all are counted as `absent`, so a matrix that silently skips a requirement cannot look finished.
+
+It expects two CSVs with these headers:
+
+```csv
+requirement_id,mandatory,evidence_required
+```
+
+```csv
+requirement_id,response_status,response_ref,evidence_ref,owner,exception_ref
+```
+
+[RFP Requirement Mapper](/skills/sales/rfp-requirement-mapper) offers both files in this shape once its flags are resolved; a spreadsheet export with the same headers also works. Two fixtures with literal expected output, one clean and one with findings, follow the checker code.
 
 Check two human-reviewed CSVs: an RFP requirements denominator and a prepared response matrix. Supply both POSIX-quoted paths in that order. Python 3.10 or later is required. Counts describe supplied statuses, not proven claim accuracy or a complete compliance certification.
 
@@ -196,9 +214,47 @@ Expected stdout JSON (exit 0):
 }
 ```
 
+### Fixture with findings
+
+Keep the same `requirements.csv` and replace `matrix.csv` with a version where R1 is marked ready without its required evidence and mandatory R2 is declared not applicable:
+
+```csv
+requirement_id,response_status,response_ref,evidence_ref,owner,exception_ref
+R1,ready,proposal.md#1,,Jo,
+R2,not-applicable,,,Li,exceptions.md#1
+```
+
+Expected stdout JSON (exit 2):
+
+```json
+{
+  "requirement_count": 3,
+  "matrix_rows": 2,
+  "status_counts": {
+    "ready": 1,
+    "partial": 0,
+    "missing": 0,
+    "not-applicable": 1,
+    "absent": 1
+  },
+  "mandatory_attention_ids": [
+    "R1",
+    "R2"
+  ],
+  "incomplete_ready": {
+    "R1": [
+      "evidence_ref"
+    ]
+  },
+  "not_applicable_ids": [
+    "R2"
+  ]
+}
+```
+
 ## Edges and human review
 
-The first fixture below has three requirements and two ready rows: optional R3 stays absent even though exit 0. In the missing-evidence/N/A fixture, R1 lacks evidence, R2 is mandatory N/A and R3 is absent: ready1, N/A1, absent1, attention R1/R2, and `incomplete_ready` maps R1 to evidence_ref. A header-only matrix for mandatory R1 produces absent1 and attention R1. Unknown R9 and duplicate R1 in requirements fail.
+The first fixture above has three requirements and two ready rows: optional R3 stays absent even though the exit code is 0. In the second fixture, R1 lacks evidence, R2 is mandatory N/A and R3 is absent, so R1 and R2 need attention and `incomplete_ready` maps R1 to `evidence_ref`. Two cases not shown here: a header-only matrix against a single mandatory R1 reports one absent row with R1 needing attention (exit 2), and a matrix row for unknown R9 or a repeated R1 in requirements fails with exit 1.
 
 The checker does not open referenced documents, verify technical claims, interpret permitted exceptions or submit a bid. The bid owner reviews the actual package and source instructions before approving any submission.
 

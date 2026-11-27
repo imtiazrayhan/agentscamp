@@ -16,7 +16,7 @@ related:
 - tool:remnote
 - glossary:spaced-repetition
 - skill:study-card-builder
-summary: Turn approved notes into checked AI study cards with one learning target, source quotes, unresolved questions and a learner review before practice.
+summary: Give each note passage a source ID and locator, state one recall goal, and request a few cards with question, answer, exact evidence and a supported or unresolved status. Check the question, answer and quote separately, and split any card that tests two targets. Only reviewed cards go into practice; unanswered or disputed ones stay in a held list.
 title: Build AI Study Cards from Your Notes
 depth: standard
 sources:

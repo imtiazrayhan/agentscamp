@@ -18,7 +18,7 @@ related:
 - tool:boords
 - glossary:animatic
 - skill:storyboard-shot-brief
-summary: Map an approved script into AI-assisted storyboard shots with beat IDs, visual constraints, continuity checks and a human review before production.
+summary: Give each approved script beat a stable ID, then write shot briefs with the exact excerpt, visible action, composition, continuity note and a proposed duration. A three-shot library example shows how to flag prop mismatches and unsupported actions. A checker flags uncovered beats, while the director reviews continuity and animatic pacing before production.
 title: Plan an AI Storyboard from an Approved Script
 depth: standard
 sources:

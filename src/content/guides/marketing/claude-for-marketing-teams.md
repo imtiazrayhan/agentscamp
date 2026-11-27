@@ -3,7 +3,8 @@ title: "Claude for Marketing Teams: claude.ai, Cowork, Claude Design, and Connec
 description: "A surface map for marketing teams: which Claude product to open for brand context, asset folders, recurring reports, decks, CMS chores, and connectors."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
-updated: 2026-10-06
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["ai-at-work", "workflow-prompting"]
@@ -18,7 +19,7 @@ keyTakeaways:
   - "All surfaces share one usage pool. Which one you open decides where Claude can reach and what it leaves behind, not how good the model is."
   - "Projects hold brand context: upload the style guide, personas, and past work once, and every chat starts with it. Team plans share a project with edit rights."
   - "Cowork works in folders and desktop apps you choose and can run a task daily, weekly, or monthly. That is the surface for asset folders and the Monday report."
-  - "Claude Design (beta on paid plans) turns a conversation into one-pagers, decks, and prototypes, exports PDF, PowerPoint, and HTML, and hands off to Canva."
+  - "Claude Design (on every plan, Free included, as of November 2026) turns a conversation into one-pagers, decks, and prototypes, exports PDF, PowerPoint, and HTML, and hands off to Canva."
   - "Claude in Chrome reads, clicks, and fills forms in a website; Anthropic says it is still risky. Use it for CMS and ads-console chores you can watch."
   - "Connectors are MCP integrations. Google Drive, Slack, Gmail, and HubSpot are in the directory; the marketing plugin pre-configures HubSpot, Ahrefs, and Klaviyo."
 sources:
@@ -92,7 +93,7 @@ Anthropic's marketing plugin was built for this surface first: eight skills for 
 
 ## Claude Design: one-pagers, decks, social sets
 
-[Claude Design](/tools/claude-design) is, in Anthropic's words, a way to "create designs, interactive prototypes, presentations, and more by having a conversation with Claude." It lives at claude.ai/design and in the desktop sidebar, and as of September 2026 it is in beta on Pro, Max, Team, and Enterprise (off by default on Enterprise).
+[Claude Design](/tools/claude-design) is, in Anthropic's words, a way to "create designs, interactive prototypes, presentations, and more by having a conversation with Claude." It lives at claude.ai/design and in the desktop sidebar, and as of November 2026 it comes with every plan, Free included.
 
 Two things make it useful to a marketing team rather than a toy. It learns a design system from files you attach, so the third one-pager matches the first. And it exports where marketers need things: PDF, PowerPoint, standalone HTML, and handoffs to Canva, Gamma, Adobe, Miro, and others, or to Claude Code when a mockup should become a real page. The beta limits are the ones to expect: multi-person editing is listed as unreliable, and it is web and desktop only. Use it for the first version of the sales one-pager, the webinar deck, and the campaign landing-page mockup; finish in the designer's tool.
 

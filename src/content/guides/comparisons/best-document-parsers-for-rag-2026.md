@@ -5,7 +5,8 @@ seoTitle: "Best PDF & Document Parsers for RAG (2026): LlamaParse Alternatives"
 seoDescription: "Docling, Marker, LlamaParse, Reducto, Mistral OCR and Unstructured compared by license, deployment, OCR and tables, with a pick for every RAG constraint."
 author: "Imtiaz Rayhan"
 date: "2026-09-11"
-reviewed: "2026-09-11"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 color: "green"
 topics: ["rag-retrieval", "data-ml", "multimodal-ai"]
 audience: ["ai-engineers", "analysts"]
@@ -22,7 +23,7 @@ keyTakeaways:
   - "Decide on your own documents. Parse your hardest pages with two or three candidates and score tables, reading order and retrieval, not the rendered Markdown."
 faq:
   - q: "Is LlamaParse free?"
-    a: "LlamaParse has a free plan that gives new users 10,000 credits a month as of September 2026, but it is a commercial, closed-source service rather than open source. Parsing is metered in credits and the per-page cost rises with the tier, so the free allowance covers far fewer pages on the Agentic tiers than on Fast."
+    a: "LlamaParse has a free plan that gives every account 10,000 credits a month as of November 2026, but it is a commercial, closed-source service rather than open source. Parsing is metered in credits and the per-page cost rises with the tier, so the free allowance covers far fewer pages on the Agentic tiers than on Fast."
   - q: "What is the best open-source alternative to LlamaParse?"
     a: "Docling is the strongest fully open alternative: MIT-licensed, governed by the LF AI & Data Foundation, and able to run locally with OCR, table structure and reading order. Marker is the other option; its code is Apache-2.0, but its model weights restrict commercial use by larger companies and competitors, so read its model license before shipping it in a product."
   - q: "What are the best alternatives to Unstructured.io?"
@@ -148,7 +149,7 @@ The project runs no hosted service, so you own the compute, scaling and upgrades
 
 ### Marker: fast local conversion, with a license to read
 
-[Marker](/tools/marker), from Datalab, converts PDF, image, PPTX, DOCX, XLSX, HTML and EPUB files into Markdown, JSON, HTML or chunks on a GPU, a CPU or Apple MPS. Version 2.0.0 (July 20, 2026) introduced three modes: `balanced` uses Datalab's Surya VLM for layout and re-OCRs whole pages whose text is bad, `fast` trades accuracy for speed, and `--disable_ocr` skips OCR. The default is balanced on a GPU and fast on CPU or MPS. The release also requires Python 3.10+ and removed the structured-extraction features, a breaking change if you used them.
+[Marker](/tools/marker), from Datalab, converts PDF, image, PPTX, DOCX, XLSX, HTML and EPUB files into Markdown, JSON, HTML or chunks on a GPU, a CPU or Apple MPS. Version 2.0.0 (July 20, 2026) introduced conversion modes, and 2.2.0 (November 12, 2026) settled on four, chosen with `--mode`: `no_ocr` reads the embedded text layer with no OCR calls, `fast` adds in-process Indra ONNX layout and OCR with no model server, `balanced` keeps clean prose pages on CPU and routes tables, math, non-Latin scripts and scans to the Surya 2.5 VLM, and `vllm` runs that VLM on every page. The default is balanced on a GPU and fast on CPU or MPS; the two VLM modes start a local inference server (vLLM on NVIDIA GPUs, llama.cpp elsewhere). The 2.0 release also requires Python 3.10+ and removed the structured-extraction features, a breaking change if you used them.
 
 ```bash
 pip install marker-pdf
@@ -176,7 +177,7 @@ result = client.parsing.parse(file_id=file.id, tier="agentic", version="latest",
 print(result.markdown.pages[0].markdown)
 ```
 
-Pin a dated version in production so a parser upgrade can't silently change your chunks. It runs as SaaS in US and EU regions and, on enterprise plans, as self-hosted BYOC, in private VPCs or as a hybrid deployment. Billing is in credits: new users get 10,000 free credits a month (as of September 2026), per-page cost rises with the tier, and re-parsing a cached result costs zero credits.
+Pin a dated version in production so a parser upgrade can't silently change your chunks. It runs as SaaS in US and EU regions and, on enterprise plans, as self-hosted BYOC, in private VPCs or as a hybrid deployment. Billing is in credits: every account gets 10,000 free credits a month (as of November 2026), per-page cost rises with the tier, and re-parsing a cached result costs zero credits.
 
 **Verdict:** the managed pick for LlamaIndex shops and anyone who wants to trade cost against accuracy per document. Model the bill on the tier you'll really use for RAG, not on Fast.
 
@@ -222,7 +223,7 @@ As of September 2026 the docs call the commercial platform Unstructured Pipeline
 ## What changed in 2026
 
 - **LlamaParse** moved to v2 tiers with required versions (December 2025), LlamaIndex began renaming LlamaCloud to LlamaParse (February 2026), and the `llama_cloud_services` SDK lost maintenance after May 1, 2026.
-- **Marker** 2.0.0 (July 2026) introduced the balanced and fast modes, required Python 3.10+ and removed structured extraction. Its code is Apache-2.0; some older write-ups still list GPL-3.0.
+- **Marker** 2.0.0 (July 2026) introduced the balanced and fast modes, required Python 3.10+ and removed structured extraction; 2.2.0 (November 2026) added the `no_ocr` and `vllm` modes and an in-process ONNX engine for CPU. Its code is Apache-2.0; some older write-ups still list GPL-3.0.
 - **Mistral OCR** shipped OCR 4 (June 2026) and OCR 4.1 (July 2026, GA on August 31, 2026), and retired OCR 2 on May 31, 2026.
 - **Unstructured** calls its platform Unstructured Pipelines as of September 2026, separate from the open-source library.
 - **Docling**'s README highlights new inputs, including video, audio, email, ODF, XBRL, EPUB and Apple Pages, plus chart understanding.

@@ -6,6 +6,8 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 date: 2026-06-04
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["devops-infra"]
 audience: ["developers", "ai-engineers"]
 related: ["guide:llm-cost-latency-engineering", "guide:llm-gateways-compared", "agent:llm-cost-optimizer", "command:set-perf-budget", "skill:prompt-optimizer"]
@@ -28,7 +30,7 @@ Most providers cache the **longest common prefix** of your prompt: send the same
 2. **Put the stable prefix first.** Order the prompt **static → dynamic**: system prompt, durable instructions, few-shot examples, tool definitions, and long shared context at the top; the per-request user input and anything that changes every call at the **end**. The goal is the longest possible identical prefix across calls.
 3. **Hunt for cache-busters near the top.** A timestamp, a request ID, a per-user name, or shuffled few-shot order in the preamble invalidates the prefix for every call. Move all of it below the cacheable block, or remove it.
 4. **Set cache breakpoints where supported.** On providers with explicit cache control, mark the end of the stable block so the prefix up to that point is cached; keep the marked prefix byte-for-byte identical between requests.
-5. **Add response/semantic caching above the model.** For exact-repeat queries, cache the full response keyed on the normalized request. For near-duplicate queries (FAQs, classification), consider semantic caching at the gateway ([Portkey](/tools/portkey), [Helicone](/tools/helicone)) — with a TTL and invalidation that match how often the underlying answer changes.
+5. **Add response/semantic caching above the model.** For exact-repeat queries, cache the full response keyed on the normalized request. For near-duplicate queries (FAQs, classification), consider semantic caching at the gateway ([Portkey](/tools/portkey), [LiteLLM](/tools/litellm)) — with a TTL and invalidation that match how often the underlying answer changes.
 6. **Measure the hit rate and the savings.** Instrument cached vs. uncached tokens (or cache-hit count) and compare cost and time-to-first-token before and after. A cache you can't see the hit rate of is a cache you can't trust — report the real numbers, not the theoretical discount.
 
 > [!WARNING]

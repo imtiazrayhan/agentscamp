@@ -3,6 +3,8 @@ title: "How to Install Claude Skills"
 description: "Every way to install Claude skills: manual copy, the agentscamp CLI, GitHub repos, plugins, team distribution, and uploading to claude.ai."
 author: "Imtiaz Rayhan"
 date: 2026-07-18
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "orange"
 topics: ["workflow-prompting"]
 tags: ["skills", "claude-code", "installation", "cli", "setup"]
@@ -10,16 +12,16 @@ featured: false
 seoTitle: "How to Install Claude Skills (Claude Code + claude.ai)"
 seoDescription: "Install Claude skills in under a minute: where SKILL.md files go, project vs personal scope, npx agentscamp, GitHub repos, plugins, and claude.ai upload."
 keywords: ["install claude skills", "claude skills install", "claude code skills setup", "add skills to claude", "agentscamp cli"]
-summary: "Installing a Claude skill is copying a folder: .claude/skills/<name>/SKILL.md for the project, ~/.claude/skills/ to follow you everywhere. No restart — skills are picked up live. Faster paths: npx agentscamp add skills/<name> installs from our library in one command, plugins bundle skill sets for teams, and claude.ai takes skills as ZIP uploads with code execution enabled."
+summary: "Installing a Claude skill is copying a folder: .claude/skills/<name>/SKILL.md for the project, ~/.claude/skills/ to follow you everywhere. No restart needed. Faster paths: npx agentscamp add skills/<name> installs from our library in one command, plugins bundle sets for teams, and claude.ai takes ZIP uploads that sync down to Claude Code."
 howtoSteps:
   - name: "Pick the scope"
     text: "Project skills live in .claude/skills/ (checked in, shared with everyone who clones the repo); personal skills live in ~/.claude/skills/ (follow you across all projects). Default to project scope for team procedures, personal for your own habits."
   - name: "Create the folder and drop in SKILL.md"
     text: "mkdir -p .claude/skills/<name>, then save the SKILL.md inside it. The directory name becomes the /name invocation and must match the frontmatter name field — lowercase, numbers, hyphens."
   - name: "Or install from the AgentsCamp library in one command"
-    text: "npx agentscamp add skills/<slug> installs into the current project's .claude/; add -g for ~/.claude/. Bare npx agentscamp opens an interactive picker; npx agentscamp add --all installs the full library to ~/.claude/."
+    text: "npx agentscamp add skills/<slug> installs into the current project's .claude/; add -g for ~/.claude/. Bare npx agentscamp opens an interactive picker; npx agentscamp --all installs the full library to ~/.claude/."
   - name: "Verify it loaded"
-    text: "Type / in Claude Code — the skill appears in the menu under its name. Skill directories are watched live, so no restart is needed; if the top-level skills folder itself didn't exist when the session started, restart once."
+    text: "Type / in Claude Code — the skill appears in the menu under its name. Skill directories are watched live, so no restart is needed; if a new skill doesn't appear, run /reload-skills."
   - name: "Test the trigger"
     text: "Ask for the job in natural words ('write a commit message for this') and confirm the skill activates on its own. If it only works via /name, the description needs trigger phrasing — that's a description problem, not an install problem."
   - name: "Share it with the team"
@@ -28,13 +30,13 @@ faq:
   - q: "Where do Claude skills go?"
     a: "Project: .claude/skills/<name>/SKILL.md inside the repo. Personal: ~/.claude/skills/<name>/SKILL.md. The folder name is the skill's /name, and it must match the name field in the frontmatter."
   - q: "Do I need to restart Claude Code after installing a skill?"
-    a: "Usually not — skill directories are watched, so new and edited skills take effect in the current session. The one exception: if the skills directory itself didn't exist when the session started, restart once so it gets watched."
+    a: "No. Claude Code watches skill directories, so new, edited, and removed skills take effect in the current session. If a new skill doesn't appear, run /reload-skills. The exception is bare mode, which does not watch for changes."
   - q: "How do I install skills from GitHub?"
-    a: "Clone the repo and copy the skill folders you want into ~/.claude/skills/ or .claude/skills/. Anthropic's official anthropics/skills repository works exactly this way, and skills distributed as Claude Code plugins install through the plugin system with their own namespace."
+    a: "Clone the repo and copy the skill folders you want into ~/.claude/skills/ or .claude/skills/. Anthropic's official anthropics/skills repository works exactly this way (its skills sit under a skills/ subfolder), and skills distributed as Claude Code plugins install through the plugin system with their own namespace."
   - q: "How do I uninstall a skill?"
     a: "Delete its folder. There's no registry or lockfile — the filesystem is the source of truth, and removal is picked up live like installation."
   - q: "Can I install skills on claude.ai?"
-    a: "Yes — zip the skill folder and upload it under Settings → Customize → Skills, with code execution enabled under Settings → Capabilities. Note that surfaces don't sync: a skill on claude.ai doesn't appear in Claude Code or the API."
+    a: "Yes, on every plan. Zip the skill folder, go to Customize > Skills, click +, then Create skill, then Upload a skill, with Code execution and file creation enabled under Settings > Capabilities. As of November 2026, skills enabled on claude.ai also download into Claude Code v2.1.273 or later when you sign in with the same account; the API keeps a separate store."
   - q: "Is it safe to install skills from the internet?"
     a: "The same way installing packages is: read before you run. A skill's instructions and bundled scripts execute with your session's permissions, so review the SKILL.md, check what its allowed-tools pre-approves, and prefer sources you trust."
 related: ["guide:what-are-claude-skills", "guide:best-claude-skills-2026", "guide:packaging-and-sharing-skills", "guide:writing-your-first-skill", "skill:claude-settings-auditor", "guide:skill-md-reference"]
@@ -76,7 +78,7 @@ npx agentscamp add skills/conventional-commits -g
 npx agentscamp
 
 # the whole library in one shot (installs to ~/.claude/)
-npx agentscamp add --all
+npx agentscamp --all
 ```
 
 The CLI has zero runtime dependencies and installs agents and commands the same way (`agents/<slug>`, `commands/<slug>`). It's the fastest path from "that looks useful" to installed.
@@ -87,10 +89,10 @@ Skills distributed as git repos install by clone-and-copy:
 
 ```bash
 git clone https://github.com/anthropics/skills /tmp/skills
-cp -r /tmp/skills/<skill-name> ~/.claude/skills/
+cp -r /tmp/skills/skills/<skill-name> ~/.claude/skills/
 ```
 
-The anthropics/skills repository is Anthropic's official collection — including the document skills (`docx`, `xlsx`, `pptx`, `pdf`) that also power claude.ai. Community skills on GitHub follow the same shape: find the folder with the SKILL.md, copy it in.
+The anthropics/skills repository is Anthropic's official collection, with each skill in its own folder under `skills/` — including the document skills (`docx`, `xlsx`, `pptx`, `pdf`) that also power claude.ai. Community skills on GitHub follow the same shape: find the folder with the SKILL.md, copy it in.
 
 > [!WARNING]
 > Read before you install. A skill's body is instructions Claude follows, and bundled scripts are code it may run — all under your session's permissions. For unfamiliar sources, skim the SKILL.md and check what `allowed-tools` pre-approves. On a new repo, [claude-settings-auditor](/skills/workflow/claude-settings-auditor) reviews checked-in skills and settings before you trust them.
@@ -105,12 +107,12 @@ For a *set* of skills — your team's whole workflow — three tiers:
 
 ## Beyond Claude Code
 
-- **claude.ai** — zip the skill folder, upload under **Settings → Customize → Skills**, and make sure code execution is on under **Settings → Capabilities**. Available on all plans; Team/Enterprise admins can enable skills workspace-wide.
-- **Claude API** — upload to the `/v1/skills` endpoint and attach by `skill_id` to Messages requests via the code-execution container. Code and beta headers (as of November 2026) in [Claude Skills on claude.ai and the API](/guides/skills/claude-skills-on-claude-ai-and-api).
+- **claude.ai** — zip the skill folder so the folder is the root of the archive, go to **Customize > Skills**, click **+**, then **+ Create skill**, then **Upload a skill**. **Code execution and file creation** must be on under **Settings > Capabilities**. Available on all plans as of November 2026; Team and Enterprise owners can provision skills for the whole organization.
+- **Claude API** — upload to the `/v1/skills` endpoint and attach by `skill_id` to Messages requests via the code-execution container. As of November 2026 the Skills API needs no beta header; the code is in [Claude Skills on claude.ai and the API](/guides/skills/claude-skills-on-claude-ai-and-api).
 - **Other tools** — since Agent Skills became an open standard (agentskills.io), the same SKILL.md installs into GitHub Copilot, Cursor, VS Code, Gemini CLI, and more — each tool documents its own skills directory.
 
-Surfaces don't sync: each one needs its own copy of the skill.
+One sync exists, and it runs one way: skills you enable on claude.ai download into Claude Code (v2.1.273 or later) when you sign in with the same claude.ai account, land in `~/.claude/skills/synced/`, and show under `claude.ai sync` in `/skills`. Claude Code never uploads, so a skill you install locally stays local, and the API store is separate from both. Set `syncClaudeAiSkills` to `false` in your user settings to turn the download off.
 
 ## Verify and tune
 
-After installing, two checks. First, type `/` — the skill should be in the menu. Second, and more important: ask for the job in plain words and confirm the skill fires *on its own*. If it doesn't, the install is fine but the description isn't — see [Testing and Debugging Skills](/guides/skills/testing-and-debugging-skills) for the fix loop.
+After installing, two checks. First, type `/` — the skill should be in the menu (run `/reload-skills` if it isn't). Second, and more important: ask for the job in plain words and confirm the skill fires *on its own*. If it doesn't, the install is fine but the description isn't — see [Testing and Debugging Skills](/guides/skills/testing-and-debugging-skills) for the fix loop.

@@ -2,7 +2,8 @@
 description: "Check explicitly recorded SOP step dependencies with Python: validate IDs and prerequisite references, compute deterministic execution layers for acyclic graphs, and report steps blocked by a cycle without executing the procedure."
 title: "Check Procedure Graph"
 date: "2026-09-20"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["founders", "marketers", "analysts"]
 tags: ["check-procedure-graph", "knowledge-work"]
@@ -11,7 +12,20 @@ related: ["guide:ai-standard-operating-procedures", "glossary:process-capture", 
 seoDescription: "Validate recorded SOP prerequisite IDs and compute execution layers, roots, terminal steps, isolated steps, and cycle-blocked steps with local Python."
 argument-hint: "<steps.csv>"
 allowed-tools: "Read, Write, Bash(python3 *)"
+summary: "Check Procedure Graph reads a CSV of SOP steps and their recorded prerequisites, confirms every referenced step exists, and groups the steps into layers that can run once earlier layers are done. If the dependencies loop, it lists the blocked steps and gives no order. It runs local Python and never executes the procedure."
 ---
+
+## What it checks and when to run it
+
+Run this after drafting or editing a standard operating procedure, before the process owner reviews it. Two mistakes are easy to make in a dependency table and hard to see by eye: a prerequisite that points at a step ID that does not exist, and a loop where step A waits on B while B waits on A. This command catches both and shows which steps can happen in parallel.
+
+It expects one CSV with one row per step; separate multiple prerequisites with `|`:
+
+```csv
+step_id,depends_on
+```
+
+[Process to SOP](/skills/docs/process-to-sop) includes a dependency table with these two columns in its draft; save that table as a CSV. Two fixtures with literal expected output, one acyclic and one with a cycle, follow the checker code.
 
 Check recorded SOP dependencies without executing the procedure. Accept one local CSV path, quoted with POSIX-style argument quoting when it contains spaces or quote characters. Python 3.10 or later is required.
 
@@ -179,9 +193,46 @@ Expected stdout JSON (exit 0):
 }
 ```
 
+### Fixture with a cycle
+
+Here A waits on B and B waits on A, C depends on B, and Z stands alone:
+
+```csv
+step_id,depends_on
+A,B
+B,A
+C,B
+Z,
+```
+
+Expected stdout JSON (exit 2):
+
+```json
+{
+  "step_count": 4,
+  "acyclic": false,
+  "layers": [],
+  "root_ids": [
+    "Z"
+  ],
+  "terminal_ids": [
+    "C",
+    "Z"
+  ],
+  "isolated_ids": [
+    "Z"
+  ],
+  "blocked_ids": [
+    "A",
+    "B",
+    "C"
+  ]
+}
+```
+
 ## Edges and human review
 
-The diamond example below yields layers A, then B/C, then D. In the independent reordered-header/BOM case, isolated Z appears with A in the first layer and in both roots and terminals. For A depending on B, B on A, C on B and isolated Z, blocked IDs are A/B/C and layers remain empty. An unknown dependency reports `ERROR: Unknown dependency: Missing`; duplicate A reports `ERROR: Duplicate step_id: A`.
+The diamond fixture above yields layers A, then B/C, then D. In the cyclic fixture, the blocked IDs are A, B and C (C is not in the loop but can never be released) and `layers` stays empty even though Z has no prerequisites. In a separate case not shown here, a file with a UTF-8 BOM, the header written as `depends_on,step_id` and two steps A and Z without prerequisites puts both in one layer and lists both as roots, terminals and isolated. An unknown dependency reports `ERROR: Unknown dependency: Missing`; duplicate A reports `ERROR: Duplicate step_id: A`.
 
 The script checks recorded relations only. A process owner must still verify sufficient inputs, authorization, captured exceptions and actual walkthrough behavior. It changes no SOP and performs no operational action.
 

@@ -5,9 +5,11 @@ model: "opus"
 color: "blue"
 tools: "Read, Grep, Glob, Edit, Bash"
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["llm-evals", "ai-agents-systems"]
 audience: ["developers"]
-related: ["agent:llm-evaluation-engineer", "agent:prompt-engineer", "agent:agent-reliability-reviewer", "agent:test-engineer"]
+related: ["agent:llm-evaluation-engineer", "agent:prompt-engineer", "agent:agent-reliability-reviewer", "agent:test-engineer", "skill:llm-eval-suite-scaffolder"]
 featured: false
 summary: "Drives LLM feature work with evals like TDD drives code with tests: turn a fuzzy 'make it better' into measurable criteria and a representative eval set (failures included), pick assertion checks vs LLM-as-judge per criterion, set a baseline, then run a tight change → score → keep-or-revert loop and gate CI on regressions. Optimize against numbers, not vibes."
 ---
@@ -30,7 +32,7 @@ Default to the latest, most capable Claude model for both the system-under-test 
 - Hardening an already-built agent against runaway loops / cost / missing human gates — that is the **agent-reliability-reviewer**.
 - Assembling the context/retrieval that feeds the prompt — that is the **retrieval-engineer**.
 
-The boundary: llm-evaluation-engineer builds the scoring machine; you drive the development loop with it. If the user has no harness at all, build the smallest possible one (a script that runs N cases and prints scores) and hand off anything heavier.
+The boundary: llm-evaluation-engineer builds the scoring machine; you drive the development loop with it. If the user has no harness at all, scaffold a first suite with the [llm-eval-suite-scaffolder](/skills/data/llm-eval-suite-scaffolder) skill, or build the smallest possible one (a script that runs N cases and prints scores), and hand off anything heavier.
 
 ## Workflow
 

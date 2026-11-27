@@ -6,6 +6,8 @@ user-invocable: true
 version: "1.0.0"
 color: "cyan"
 date: 2026-06-17
+updated: 2026-11-27
+reviewed: 2026-11-27
 topics: ["architecture"]
 audience: ["developers"]
 related: ["skill:rate-limiter-designer", "skill:auth-flow-reviewer", "command:trace-data-flow"]
@@ -31,9 +33,9 @@ A webhook endpoint is untrusted input that arrives over the public internet, cla
 
 1. **Identify the provider's contract before writing code.** Find, for the specific provider: the signature scheme (HMAC-SHA256 is typical), which header carries the signature (`Stripe-Signature`, `X-Hub-Signature-256`, `X-Shopify-Hmac-Sha256`), what string is actually signed (often `timestamp + "." + raw_body`, not the body alone), the stable event id field (`id`, `delivery` GUID), and the event-type field. Grep the codebase for an existing handler to match its framework and error conventions rather than introducing a new pattern.
 2. **Capture the raw body, then verify before anything else.** Read the request body as raw bytes/string and compute the HMAC over those exact bytes with the signing secret from config (never hardcoded). Compare using a **constant-time** comparison (`crypto.timingSafeEqual`, `hmac.compare_digest`) — never `==`, which leaks the secret via timing. If verification fails, return `401` and stop. Only after a valid signature do you `JSON.parse` the body.
-3. **Reject stale requests to block replay.** If the provider signs a timestamp, parse it and reject (`400`) when it is outside a tolerance window (Stripe uses 5 minutes). This stops a captured-and-replayed valid request from being reprocessed indefinitely.
+3. **Reject stale requests to block replay.** If the provider signs a timestamp, parse it and reject (`400`) when it is outside a tolerance window (Stripe's libraries default to 5 minutes). This stops a captured-and-replayed valid request from being reprocessed indefinitely.
 4. **Dedupe on the provider's event id.** Before doing any work, insert the event id into a store with a **unique constraint** (a `webhook_events` table, or Redis `SET key NX EX`). If the insert conflicts, the event was already received — return `200` immediately and do nothing else. Treat the provider's id as the idempotency key; never derive your own from payload contents (two distinct events can have identical bodies).
-5. **Persist the raw event, then acknowledge fast.** Store the raw body, headers, event id, and type with a `received_at` timestamp and `processed = false`. Return `2xx` as soon as the event is durably recorded — do not run business logic inline. Providers enforce short timeouts (Stripe ~10s, GitHub ~10s); slow synchronous work guarantees a timeout and a redundant retry.
+5. **Persist the raw event, then acknowledge fast.** Store the raw body, headers, event id, and type with a `received_at` timestamp and `processed = false`. Return `2xx` as soon as the event is durably recorded — do not run business logic inline. Providers enforce short timeouts (GitHub ends the connection after 10 seconds; Stripe publishes no number and asks for a `2xx` before any complex logic); slow synchronous work guarantees a timeout and a redundant retry.
 6. **Process asynchronously and idempotently.** Enqueue the stored event to a worker/queue (or a background task) that performs the real side effects, then marks `processed = true`. The worker must itself be safe to re-run, because the queue is also at-least-once: scope writes by the event id, use upserts, and never assume the event arrives in causal order (a `subscription.updated` can land before `subscription.created`) — reconcile from the payload's own state rather than from event sequence.
 7. **Define the failure path explicitly.** Decide what a `5xx` means (provider will retry) versus a `2xx` on a malformed-but-authentic event (you accept and dead-letter it instead of looping forever). Add structured logging keyed by event id and a dead-letter destination for events the worker can't process after N attempts.
 

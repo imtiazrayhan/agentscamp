@@ -14,6 +14,7 @@ related:
   - "skill:token-usage-profiler"
 featured: false
 date: 2026-06-17
+reviewed: 2026-11-27
 summary: "A prototype that works in a notebook is not a production system. Shipping an LLM feature means engineering around a slow, non-deterministic, rate-limited, occasionally-down dependency you don't control. The work that separates demo from production is reliability, observability, cost control, and safe rollout — not the prompt."
 keyTakeaways:
   - "Treat every model call as an unreliable network dependency: timeouts, retries with backoff, and a fallback path are non-negotiable."

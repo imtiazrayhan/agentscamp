@@ -2,7 +2,8 @@
 description: "Create a deterministic inventory of an approved handoff directory: record relative file paths, byte lengths, and SHA-256 hashes with code, list skipped symlinks and unreadable files, and write a snapshot without interpreting project status or changing source files."
 title: "Snapshot Handoff"
 date: "2026-10-06"
-reviewed: "2026-10-06"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["founders", "marketers", "analysts"]
 tags: ["snapshot-handoff", "knowledge-work"]
@@ -10,8 +11,21 @@ featured: false
 related: ["guide:ai-project-handoff", "agent:project-handoff-auditor", "glossary:data-lineage"]
 seoDescription: "Create a handoff file inventory with paths, byte lengths, and SHA-256 hashes, recording unreadable files and symlinks without changing source files."
 argument-hint: "<source-directory> <snapshot.md>"
-allowed-tools: "Read, Bash, Write"
+allowed-tools: "Read, Write, Bash(python3 *)"
+summary: "Snapshot Handoff writes a file inventory of a project folder you are handing to someone else: every readable file's relative path, size in bytes and SHA-256 hash, plus what was skipped (hidden paths, symlinks) or could not be read. The recipient can later re-hash a file to confirm nothing changed. It does not assess the project's status."
 ---
+
+## What it checks and when to run it
+
+Run this at the moment you hand a project folder to a colleague, client or another agent session, and keep the output beside your handoff note. The inventory gives both sides a fixed reference: if a question comes up later about whether a deliverable changed after handoff, re-hash the file and compare it with the recorded value. It is also a quick way to see what a folder really contains, including hidden files and symlinks that a handoff note tends to leave out.
+
+It takes two arguments: the directory to inventory and a path for a new Markdown file outside that directory.
+
+```text
+/snapshot-handoff ./handoff-packet ../handoff-snapshot.md
+```
+
+Standard tools such as `sha256sum` can hash files too. What this command adds is a fixed report format, explicit lists of skipped and unreadable paths, detection of files that change while being hashed, and a refusal to overwrite an existing report. The [handoff workflow](/guides/workflow/ai-project-handoff) explains where the inventory fits, and [Project Handoff Auditor](/agents/product/project-handoff-auditor) can use it for mechanical file checks.
 
 Inventory the approved directory named in `$ARGUMENTS`: `<source-directory> <snapshot.md>`. Record relative paths, byte lengths, and SHA-256 hashes without interpreting project status. The output must be new and outside the resolved source directory.
 
@@ -140,9 +154,38 @@ if __name__ == '__main__':
         raise SystemExit(1)
 ```
 
-Illustrative fixture: `brief.md` contains bytes `alpha
-`; `assets/banner.txt` contains `beta
-`; `.private` is excluded; `outside-link` points outside the scope. Expect exactly two readable files with lengths 6 and 5, one skipped symlink, and the hidden-file exclusion. Independently check hashes, outside-file absence, and unchanged source bytes.
+## Illustrative fixture
+
+`brief.md` contains the five letters `alpha` followed by a newline; `assets/banner.txt` contains `beta` followed by a newline; `.private` is a hidden file; `outside-link` is a symlink pointing outside the scope. Expect exactly two listed files with lengths 6 and 5, one skipped symlink, and the hidden-file exclusion. The `files` and `skipped` parts of the printed JSON are:
+
+```json
+{
+  "files": [
+    {
+      "path": "assets/banner.txt",
+      "bytes": 5,
+      "sha256": "f2c82decdd7181cf98945929a62598db7e6b477e11f6e0eb0ae97020eff151ad"
+    },
+    {
+      "path": "brief.md",
+      "bytes": 6,
+      "sha256": "b6a98d9ce9a2d9149288fa3df42d377c3e42737afdcdaf714e33c0a100b51060"
+    }
+  ],
+  "skipped": [
+    {
+      "path": ".private",
+      "reason": "hidden file"
+    },
+    {
+      "path": "outside-link",
+      "reason": "symlink"
+    }
+  ]
+}
+```
+
+The full output also carries `root`, `generated_utc`, `hash_algorithm`, `exclusions`, `errors`, the three counts and `complete: true`; exit code 0. Independently check hashes, outside-file absence, and unchanged source bytes.
 
 Finish with approved root, observation time, hash algorithm, listed-file/read-failure/symlink counts, output path, and any incomplete-state warning from the script. Report source-relative references exactly as emitted. Do not turn an inventory into a readiness score, owner decision, completion claim, or proof that the packet's content is accurate.
 

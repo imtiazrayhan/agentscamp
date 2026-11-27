@@ -2,7 +2,8 @@
 name: "LangChain"
 description: "The provider-agnostic agent framework, post-1.0: a standard create_agent loop on the LangGraph runtime, middleware hooks, and the largest integration ecosystem."
 date: 2026-06-11
-updated: "2026-09-11"
+updated: 2026-11-27
+reviewed: 2026-11-27
 url: "https://www.langchain.com"
 pricing: "open-source"
 category: "sdk"
@@ -44,9 +45,37 @@ LangChain spent two years as both the most-used and most-criticized framework in
 ## In an AI-assisted workflow
 
 ```bash
-pip install langchain        # or: npm install langchain
-# agent = create_agent(model, tools, middleware=[HumanInTheLoopMiddleware(...)])
+pip install -U langchain "langchain[anthropic]"   # or: npm install langchain
 ```
+
+```python
+from langchain.agents import create_agent
+from langchain.agents.middleware import HumanInTheLoopMiddleware
+from langgraph.checkpoint.memory import InMemorySaver
+
+
+def get_weather(city: str) -> str:
+    """Get weather for a given city."""
+    return f"It's always sunny in {city}!"
+
+
+agent = create_agent(
+    model="claude-sonnet-4-6",          # or "openai:..." / "google_genai:..."
+    tools=[get_weather],
+    system_prompt="You are a helpful assistant",
+    checkpointer=InMemorySaver(),       # required for human-in-the-loop pauses
+    middleware=[
+        HumanInTheLoopMiddleware(interrupt_on={"get_weather": True}),
+    ],
+)
+
+result = agent.invoke(
+    {"messages": [{"role": "user", "content": "What's the weather in San Francisco?"}]},
+    {"configurable": {"thread_id": "demo-1"}},
+)
+```
+
+Swapping providers is a one-string change to `model` plus the matching `langchain-<provider>` package. The built-in middleware list is long: tool and model retry, model fallback, summarization, human-in-the-loop, model and tool call limits, PII detection, context editing and more.
 
 The 2026 fit: teams that want a standard agent loop **without marrying a provider**, and that value the graduated stack (LangChain → LangGraph → LangSmith) over assembling equivalents.
 
@@ -55,4 +84,8 @@ The 2026 fit: teams that want a standard agent loop **without marrying a provide
 
 ## Good to know
 
-MIT, ~146k GitHub stars (as of September 2026), free; the company monetizes LangSmith (freemium per-seat). Where it sits against the data-framework lineage of LlamaIndex — the classic confusion — is exactly the [LangChain vs LlamaIndex](/guides/comparisons/langchain-vs-llamaindex) question; the wider field is [Agent Frameworks in 2026](/guides/concepts/agent-frameworks-2026).
+MIT, about 150,000 GitHub stars as of November 2026, free. The latest `langchain` release on PyPI is 1.5.2 (November 18, 2026), which requires Python 3.11 or later; the npm package is at 1.6.8. The company monetizes [LangSmith](/tools/langsmith): as of November 2026 its pricing page lists a Developer plan at $0 with one seat and 5,000 base traces a month, Plus at $39 per seat per month, and custom Enterprise pricing, each with pay-as-you-go usage on top.
+
+Two things to weigh. LangChain is still a layer: on a single provider, the first-party SDK has fewer moving parts and exposes new model features sooner. And the stack now has three altitudes, so pick deliberately: the docs point to Deep Agents (planning, subagents, a virtual filesystem) for a batteries-included harness, `create_agent` for a customizable one, and LangGraph for workflows that mix deterministic and agentic steps.
+
+Among alternatives, [LlamaIndex](/tools/llamaindex) comes from the data and retrieval side, [Pydantic AI](/tools/pydantic-ai) is a smaller typed-Python agent framework, and the [OpenAI Agents SDK](/tools/openai-agents-sdk) is the lean option if you are staying on one provider. Where it sits against the data-framework lineage of LlamaIndex — the classic confusion — is exactly the [LangChain vs LlamaIndex](/guides/comparisons/langchain-vs-llamaindex) question; the wider field is [Agent Frameworks in 2026](/guides/concepts/agent-frameworks-2026).

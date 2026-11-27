@@ -1,14 +1,16 @@
 ---
 title: "Context Engineering"
-description: "Treating the context window as a finite budget — what to load, what to leave out, and when to reset."
+description: "Context engineering treats an agent's context window as a finite budget: what to load, what to leave out, when to /clear or /compact, and when to delegate."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 audience: ["developers", "ai-engineers"]
 featured: false
 related: ["guide:prompt-patterns", "guide:choosing-the-right-model", "guide:claude-md-best-practices", "guide:claude-code-memory-context"]
-summary: "Context engineering treats the window as a budget: load the 2–4 files the task touches, not the repo; keep durable facts in CLAUDE.md and ephemeral ones in the prompt; scope asks so discovery stays cheap; /clear at task boundaries and /compact mid-task; and push noisy investigations into subagents that return only the verdict. Signal-to-noise beats raw token count."
+summary: "Context engineering treats the window as a budget: load the 2–4 files the task touches, not the repo; durable facts in CLAUDE.md, ephemeral ones in the prompt; scope asks so discovery stays cheap; /clear at task boundaries and /compact mid-task; and push noisy investigations into subagents that return only the verdict. Signal-to-noise beats raw token count."
 keyTakeaways:
   - "The window is a budget, not a backpack: a focused 8K-token context routinely outperforms a 120K one that contains the same answer somewhere inside it."
   - "Durable facts go in CLAUDE.md, task-specific facts go in the prompt — the most common mistake is the reverse."
@@ -32,7 +34,7 @@ This isn't prompt wording. A perfectly phrased request still fails if the surrou
 
 ## The window is a budget, not a backpack
 
-Long context does not mean infinite attention. As a window fills, two things degrade together: the model's ability to find the relevant fact among everything else, and its tendency to lose facts buried in the middle of a long window while over-weighting whatever appears at the very start and end. A 200K window holds a lot, but the useful question is never "does it fit" — it's "does adding this make the *next* answer better or worse." This degradation has a name, [context rot](/glossary/context-rot): Chroma's 2025 report measured it across 18 models, and Anthropic defines it as recall accuracy decreasing as the tokens in the window increase.
+Long context does not mean infinite attention. As a window fills, two things degrade together: the model's ability to find the relevant fact among everything else, and its tendency to lose facts buried in the middle of a long window while over-weighting whatever appears at the very start and end. A 200K window holds a lot, and the 1M-token windows on current Opus and Sonnet models hold five times more, but the useful question is never "does it fit" — it's "does adding this make the *next* answer better or worse." This degradation has a name, [context rot](/glossary/context-rot): Chroma's 2025 report measured it across 18 models, and Anthropic defines it as recall accuracy decreasing as the tokens in the window increase.
 
 Treat every addition as a withdrawal from a budget:
 
@@ -63,7 +65,7 @@ The fix is to point precisely. Reference exact paths and symbols — `src/billin
 
 The most common context mistake is putting durable facts in prompts and ephemeral facts in `CLAUDE.md`. It should be the reverse.
 
-`CLAUDE.md` loads on every session, so it's the right home for things that are true across *all* tasks and expensive to re-explain: the package manager, the test command, directory layout, naming conventions, the "never do X" rules. Earn its place — every line here is paid for on every single turn, forever.
+`CLAUDE.md` loads at the start of every session, so it's the right home for things that are true across *all* tasks and expensive to re-explain: the package manager, the test command, directory layout, naming conventions, the "never do X" rules. Earn its place — every line here is paid for on every single turn, forever.
 
 The prompt is for what's true about *this* task only: which files, which bug, which acceptance criteria.
 
@@ -85,7 +87,7 @@ Reproduce with `pnpm test list.test.ts`, then make it pass.
 > A good test for any `CLAUDE.md` line: would you be annoyed to re-type it for the tenth time this week? If yes, it belongs there. If it's specific to today's task, it belongs in the prompt and should leave the window when the task ends.
 
 > [!WARNING]
-> A bloated `CLAUDE.md` is a permanent tax. A 600-line one that documents every edge case burns budget on every turn and buries the ten rules that matter. Keep it tight; link out to docs the agent can read on demand instead of inlining them.
+> A bloated `CLAUDE.md` is a permanent tax. A 600-line one that documents every edge case burns budget on every turn and buries the ten rules that matter. Anthropic's own guidance is to target under 200 lines per `CLAUDE.md` file, because longer files consume more context and reduce adherence. Keep it tight; link out to docs the agent can read on demand instead of inlining them.
 
 ## Scope the task so it loads only what it needs
 

@@ -54,6 +54,6 @@ And hold the meta-lesson loosely tied to any vendor: the model is one component.
 
 ## Continue exploring
 
-- [C# Pro](/agents/language-specialists/csharp-pro) — Use this agent for modern C#/.NET 8+ — records, pattern matching, nullable reference types, correct async/await, LINQ, Span<T>, and source generators — plus ASP.NET Core and EF…
-- [kotlin-pro](/agents/language-specialists/kotlin-pro) — Use this agent for idiomatic Kotlin — null safety, coroutines and structured concurrency, Flow, sealed classes with exhaustive when, data classes, and extension functions — on…
-- [swift-pro](/agents/language-specialists/swift-pro) — Use this agent for modern Swift 6 — value semantics, optionals done right, async/await and actors, Sendable/data-race safety, and idiomatic SwiftUI.
+- [SWE-bench](/glossary/swe-bench) — SWE-bench is a benchmark that scores language models on resolving real GitHub issues; SWE-bench Verified is its human-validated 500-task subset.
+- [Terminal-Bench](/glossary/terminal-bench) — Terminal-Bench is a benchmark of hard, containerized terminal tasks that scores AI agents by resolution rate; version 4.0 (August 2026) has 66 tasks.
+- [Cursor vs Claude Code vs GitHub Copilot vs Windsurf in 2026](/guides/prompting/cursor-vs-claude-code-vs-copilot-vs-windsurf-2026) — A practical, opinionated comparison of the four mainstream AI coding tools — form factor, agentic depth, model choice, and who each one is for.

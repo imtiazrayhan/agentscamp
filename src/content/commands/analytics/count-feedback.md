@@ -2,7 +2,8 @@
 description: "Count a single-label feedback CSV with code: validate record IDs, collapse exact duplicate rows, reject conflicting rows for one ID, and report records, distinct known respondents, missing identities, and label totals without inventing prevalence."
 title: "Count Feedback"
 date: "2026-10-06"
-reviewed: "2026-10-06"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["founders", "analysts"]
 tags: ["count-feedback", "knowledge-work"]
@@ -10,8 +11,21 @@ featured: false
 related: ["guide:analyze-customer-feedback-with-ai", "skill:feedback-codebook-designer", "glossary:thematic-analysis"]
 seoDescription: "Count labeled customer feedback with code, showing duplicate records, distinct respondents, missing identities, untagged rows, and counts per label."
 argument-hint: "<feedback.csv> [output.md]"
-allowed-tools: "Read, Bash, Write"
+allowed-tools: "Read, Write, Bash(python3 *)"
+summary: "Count Feedback totals a labeled customer-feedback CSV with code instead of model arithmetic. It collapses exact duplicate rows, stops if one record ID carries two different labels, and reports records and distinct known respondents per label, plus untagged rows and rows with no respondent ID. It does not assign labels or compute prevalence."
 ---
+
+## What it checks and when to run it
+
+Run this as the last step of a feedback analysis, after every comment has been given one reviewed label and before you write up which themes are biggest. Language models miscount long lists, and "12 mentions" can mean 12 customers or one customer writing 12 times. This command does the counting in Python and keeps the two apart: records per label and distinct known respondents per label.
+
+It expects a CSV with one row per feedback record and exactly these columns:
+
+```csv
+record_id,respondent_id,label
+```
+
+The [feedback analysis workflow](/guides/workflow/analyze-customer-feedback-with-ai) produces reviewed assignments with a record ID, a customer ID and a code; export those three fields under the column names above. [Feedback Codebook Designer](/skills/product/feedback-codebook-designer) defines the labels beforehand. A fixture with literal expected output follows the code.
 
 Count the reviewed, single-label feedback CSV named in `$ARGUMENTS`: `<feedback.csv> [output.md]`. This command performs arithmetic and structural checks in code. It does not classify text or decide product priorities.
 
@@ -130,7 +144,47 @@ if __name__ == '__main__':
         raise SystemExit(1)
 ```
 
-Illustrative fixture: six rows `F1,A,export-failure` twice, then `F2,A,export-failure`, `F3,B,export-failure`, `F4,C,`, and `F5,,chart-latency`. Expected: raw 6, duplicates 1, canonical 5, known respondents 3, unknown-identity records 1, tagged 4, untagged 1. Export-failure has 3 records and 2 known respondents; chart-latency has 1 record and no known respondent. Adding `F2,A,discoverability` must stop with F2 named.
+## Illustrative fixture
+
+Invented rows: F1 appears twice, respondent A filed two different records, F4 is untagged and F5 has no respondent ID.
+
+```csv
+record_id,respondent_id,label
+F1,A,export-failure
+F1,A,export-failure
+F2,A,export-failure
+F3,B,export-failure
+F4,C,
+F5,,chart-latency
+```
+
+Expected stdout JSON (exit 0):
+
+```json
+{
+  "raw_rows": 6,
+  "exact_duplicates": 1,
+  "canonical_records": 5,
+  "known_respondents": 3,
+  "missing_identity_records": 1,
+  "tagged": 4,
+  "untagged": 1,
+  "labels": {
+    "chart-latency": {
+      "records": 1,
+      "known_respondents": 0,
+      "unknown_identity_records": 1
+    },
+    "export-failure": {
+      "records": 3,
+      "known_respondents": 2,
+      "unknown_identity_records": 0
+    }
+  }
+}
+```
+
+Export-failure has 3 records but only 2 known respondents. Adding a row `F2,A,discoverability` must stop the run with `ERROR: Conflicting record_id(s): F2; no valid aggregates` and exit 1.
 
 Finish with the actual counts, normalization/duplicate policy, report path if written, and any error. Keep record counts distinct from respondent counts. Do not calculate prevalence or describe these as a percentage of customers.
 

@@ -9,6 +9,7 @@ tags: ["human-in-the-loop", "agents", "approval-gates", "safety", "workflow"]
 related: ["guide:getting-started-with-agents", "guide:building-multi-step-workflows", "guide:owasp-agentic-top-10", "guide:multi-agent-orchestration", "guide:effective-tool-use"]
 featured: false
 date: 2026-06-17
+reviewed: 2026-11-27
 summary: "Human-in-the-loop (HITL) means inserting a human approval or correction step at the moments where an agent's mistake would be expensive or irreversible. Gate the writes, payments, deletes, and external sends — let everything else run. The goal is to add human signal where it matters, not to make people rubber-stamp."
 keyTakeaways:
   - "Gate by blast radius: require approval for irreversible, high-stakes, or low-confidence actions; auto-run reversible reads and proposals."

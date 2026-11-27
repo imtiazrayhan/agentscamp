@@ -51,9 +51,9 @@ The destination isn't "AI reviews AI" theater — it's a pipeline where each ver
 ## Continue exploring
 
 - [git-github-expert](/agents/developer-tools/git-github-expert) — Use this agent for Git and GitHub workflows — rebases, conflict resolution, history surgery, PRs, and Actions.
-- [Circular Dependency Breaker](/skills/refactor/circular-dependency-breaker) — Detect and break a circular import — map the exact cycle with a real tool, then break the right edge by extracting the shared piece into a leaf module, inverting a layering…
-- [Type Coverage Improver](/skills/refactor/type-coverage-improver) — Raise TypeScript type strictness incrementally — measure the any/implicit-any baseline, enable one strict sub-flag at a time, and fix the fallout per flag instead of all at…
-- [Clean Branches](/commands/git/clean-branches) — Safely prune merged and stale Git branches: drop dead remote-tracking refs, list merged candidates for review, then delete with the safe -d variant.
-- [Refactor](/commands/refactor/refactor) — Refactor the target for readability and structure without changing behavior.
-- [Rename Symbol](/commands/refactor/rename-symbol) — Safely rename a symbol project-wide, distinguishing the real symbol from coincidental substring matches.
+- [9 Best Claude Skills for Code Review](/guides/skills/best-claude-skills-for-code-review) — Choose Claude skills for security, correctness, maintainability, and focused pull request review without relying on one vague review prompt.
+- [security-auditor](/agents/quality-security/security-auditor) — Use this agent to find security vulnerabilities — injection, auth flaws, secrets, unsafe deserialization, dependency risks.
+- [Security Scan](/commands/review/security-scan) — Scan the current diff or given paths for security vulnerabilities.
+- [Review Tests](/commands/review/review-tests) — Review the quality of a test suite, not just whether it passes — find weak assertions, missing edge cases, and tests coupled to implementation.
+- [CodeRabbit](/tools/coderabbit) — An AI code reviewer that posts line-by-line feedback and summaries on every pull request.
 - [Find Bug](/commands/review/find-bug) — Investigate a reported symptom, form hypotheses, and locate the root cause.

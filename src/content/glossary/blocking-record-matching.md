@@ -1,8 +1,9 @@
 ---
-description: Understand how a candidate-selection rule can miss known pairs and why missing fields need coverage
-  checks before identity review.
+description: Blocking is the record-matching step that picks candidate pairs by shared features, so only those pairs
+  are compared. It narrows work without deciding identity.
 date: '2026-09-01'
-reviewed: '2026-10-07'
+updated: '2026-11-27'
+reviewed: '2026-11-27'
 topics:
 - ai-at-work
 - workflow-prompting
@@ -20,8 +21,8 @@ related:
 summary: A fictional postcode rule illustrates why absence from a comparison queue cannot establish that two
   hall records are different.
 term: Blocking in Record Matching
-seoDescription: Understand blocking through a fictional missing-postcode example and owner-confirmed matching
-  pairs that test candidate coverage.
+seoDescription: Blocking selects candidate record pairs by shared features before comparison. A missing-postcode
+  example shows how a rule can miss known matches.
 ---
 
 Blocking selects candidate pairs through shared features, narrowing comparisons without deciding identity. A postcode rule is one possible example.

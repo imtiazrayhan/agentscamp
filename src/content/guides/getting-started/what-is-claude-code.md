@@ -3,15 +3,17 @@ title: "What Is Claude Code?"
 description: "A grounded explanation of Claude Code: an agentic command-line coding tool that reads files, runs commands, and works in a loop toward a goal."
 author: "Imtiaz Rayhan"
 date: 2026-06-03
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 topics: ["workflow-prompting"]
 featured: true
 related: ["guide:getting-started-with-agents", "guide:installing-claude-code"]
-summary: "Claude Code is Anthropic's agentic command-line coding tool: give it a goal in plain language and it reads your files, runs commands, edits code, observes the results, and iterates until done. Unlike autocomplete assistants, it closes the loop itself — you set the objective and review the diff. It extends via subagents, skills, slash commands, and MCP servers."
+summary: "Claude Code is Anthropic's agentic command-line coding tool: give it a goal in plain language and it reads your files, runs commands, edits code, observes the results, and iterates until done. Unlike autocomplete, it closes the loop itself — you set the objective and review the diff. It extends via subagents, skills, slash commands, and MCP servers."
 keyTakeaways:
   - "Claude Code is an agent, not autocomplete: the unit of work is a goal, not a suggestion — it runs commands, reads the output, and self-corrects."
   - "The loop is decide → act → observe → repeat; verifying its own edits by re-running the failing test is what separates it from a code generator."
-  - "It lives in the terminal first, but the same engine runs in IDE extensions, GitHub, and the SDK/headless mode."
+  - "It lives in the terminal first, but the same engine runs in IDE extensions, the desktop app, the browser, CI (GitHub Actions, GitLab CI/CD), and the Agent SDK."
   - "Four extension points, four jobs: subagents (delegate a focused role), skills (reuse a procedure), slash commands (replay a prompt), MCP servers (reach outside the repo)."
   - "It excels where success is verifiable — failing tests, mechanical multi-file changes, investigation; it struggles on ambiguous goals with no signal to check against."
 faq:
@@ -20,7 +22,7 @@ faq:
   - q: "How is Claude Code different from autocomplete tools like Copilot?"
     a: "Autocomplete operates one suggestion at a time: it sees context, produces text, and stops — you run the tests and paste back the errors. Claude Code closes that loop itself: it runs your commands, reads stderr, and adjusts. The unit of work shifts from 'the next few lines' to 'achieve this outcome.'"
   - q: "Where does Claude Code run?"
-    a: "The terminal is home — an interactive session started with claude in a project directory, plus a one-shot claude -p mode for scripting. The same engine also runs in VS Code and JetBrains extensions, on GitHub via the Action, and embedded in your own software through the Agent SDK."
+    a: "The terminal is home — an interactive session started with claude in a project directory, plus a one-shot claude -p mode for scripting. The same engine also runs in VS Code and JetBrains extensions, in the Claude desktop app, in the browser with no local setup, in CI through GitHub Actions or GitLab CI/CD, and embedded in your own software through the Agent SDK."
   - q: "What is Claude Code actually good at?"
     a: "Tasks with a verifiable signal: making a failing test pass, mechanical multi-file changes like renames and migrations, investigating why something breaks, and scaffolding against an existing pattern. It struggles when success has no check — ambiguous product decisions, or goals only a human eyeballing a UI can judge."
   - q: "Do I need subagents, skills, and MCP servers to start?"
@@ -79,11 +81,12 @@ It is not terminal-only, though. The same engine runs in several places:
 
 - **Terminal / CLI** — the interactive REPL, plus a one-shot [`claude -p "..."` mode](/guides/configuration/claude-code-headless-mode) for scripting and piping.
 - **IDE extensions** — VS Code and JetBrains integrations that run Claude Code alongside your editor, with diffs surfaced inline.
-- **GitHub** — a CI/Action mode that responds to issues and reviews pull requests in the repo.
-- **SDK / headless** — embed the same agent loop in your own scripts and applications.
+- **Desktop app and web** — the Claude desktop app has a Code tab that includes Claude Code, so there is no separate CLI install; the web version runs tasks in the cloud with no local setup, including on repos you have not cloned.
+- **CI** — GitHub Actions and GitLab CI/CD integrations that automate code review and issue triage in the repo.
+- **Agent SDK / headless** — embed the same agent loop in your own scripts and applications.
 
 > [!TIP]
-> Even if you live in an IDE, learn the terminal version. It is where every feature lands first, and understanding the raw loop makes the IDE integration far less mysterious when something behaves unexpectedly.
+> Even if you live in an IDE, learn the terminal version. Understanding the raw loop makes the IDE integration far less mysterious when something behaves unexpectedly.
 
 ## The four extension points
 
@@ -99,9 +102,9 @@ A **skill** is a `SKILL.md` file inside its own directory (`.claude/skills/<name
 
 ### Slash commands
 
-A **slash command** is a Markdown prompt in `.claude/commands/` that you trigger by name. `.claude/commands/create-pr.md` becomes `/create-pr`. Unlike a subagent (which Claude calls on its own), a slash command is something *you* invoke to replay a prompt you would otherwise retype. They are perfect for encoding a fixed workflow.
+A **slash command** is a Markdown prompt in `.claude/commands/` that you trigger by name. `.claude/commands/create-pr.md` becomes `/create-pr`. A slash command is mainly something *you* invoke to replay a prompt you would otherwise retype, which makes it a good fit for encoding a fixed workflow. Since commands were merged into skills, Claude can also invoke one on its own unless you edit the command to stop it.
 
-Skills and slash commands are the same mechanism under the hood. A `.claude/commands/*.md` file still works and is the simpler path for a fixed prompt; a `.claude/skills/<name>/SKILL.md` directory is the recommended forward path and additionally supports supporting files, frontmatter invocation control, and auto-loading. Both produce a `/<name>` you can run.
+Skills and slash commands are the same mechanism under the hood. A `.claude/commands/*.md` file is the older format, still works, and is the simpler path for a fixed prompt; a `.claude/skills/<name>/SKILL.md` directory is the recommended forward path and additionally supports supporting files, frontmatter invocation control, and auto-loading. Both produce a `/<name>` you can run.
 
 ### MCP servers
 
@@ -113,7 +116,7 @@ A quick way to keep them straight:
 |---|---|---|---|
 | Subagent | `.claude/agents/*.md` | Claude (delegation) | Isolating a focused job |
 | Skill | `.claude/skills/<name>/SKILL.md` | Claude (auto) or you (`/name`) | Reusing a procedure |
-| Slash command | `.claude/commands/*.md` | You (by name) | Replaying a prompt |
+| Slash command | `.claude/commands/*.md` | You (`/name`), sometimes Claude | Replaying a prompt |
 | MCP server | A running process | Claude (tool call) | Reaching outside the repo |
 
 > [!NOTE]

@@ -5,6 +5,8 @@ seoTitle: "Claude Design vs Figma Make (2026): Which One to Use"
 seoDescription: "Claude Design vs Figma Make in 2026: what each builds, plan and seat requirements, design-system ingestion, editing model, publishing, and handoff to code."
 author: "Imtiaz Rayhan"
 date: 2026-09-10
+updated: 2026-11-27
+reviewed: 2026-11-27
 color: "green"
 depth: standard
 topics: ["ai-at-work", "multimodal-ai"]
@@ -16,7 +18,7 @@ summary: "Verdict first: Figma Make if your team's source of truth is a Figma fi
 keyTakeaways:
   - "Figma Make makes functional prototypes and web apps inside Figma; Claude Design also makes decks, one-pagers, and landing pages."
   - "Figma Make needs a Full seat on a paid Figma plan; Dev, Collab, and View seats can only try it in drafts and cannot share or publish."
-  - "Claude Design is in beta on Pro, Max, Team, and Enterprise, included with the subscription and drawing on the same usage pool as chat and Claude Code."
+  - "As of November 2026 Claude Design comes with every Claude plan, Free included, and draws on the same usage pool as chat and Claude Code."
   - "Design system in: Figma Make wants a React package on npm plus written guidelines; Claude Design reads a repo, design files, or raw uploads."
   - "Refinement differs: Claude Design gives you canvas edits, inline comments, and generated sliders; Figma Make gives you the code and a GitHub push."
   - "Handoff differs: Figma Make publishes a URL and pushes code one way to GitHub; Claude Design packages a bundle for Claude Code."
@@ -69,7 +71,7 @@ Use [Figma Make](/tools/figma-make) if your team's source of truth is a Figma fi
 | --- | --- | --- |
 | What it makes | Prototypes, wireframes, mockups, decks, one-pagers, landing pages, documents | Functional prototypes, web apps, interactive UI |
 | Where it runs | claude.ai/design and Claude Desktop | Inside Figma |
-| Who can use it | Pro, Max, Team, Enterprise, included with the plan | Full seats on paid Figma plans; restricted trial on Starter |
+| Who can use it | Every Claude plan, Free included (as of November 2026) | Full seats on paid Figma plans; restricted trial on Starter |
 | Design system in | GitHub repo, design files, raw uploads, local codebase | Make kit: React design system from npm, plus written guidelines |
 | Refinement | Chat, inline comments, direct canvas editing, generated sliders | Chat, plan mode, editing the generated code |
 | Publish | Org-scoped link, PPTX, PDF, standalone HTML, Send to Canva | Public URL with custom domains, Figma Community, embeds |
@@ -80,13 +82,13 @@ Use [Figma Make](/tools/figma-make) if your team's source of truth is a Figma fi
 
 Figma's help center defines Make as a prompt-to-app tool for turning ideas and existing Figma designs into functional prototypes, web apps, and interactive UI. Figma says Make works with any web framework, with React, Vue, and Svelte verified. The output is an app you can open, click through, and read the code of.
 
-Claude Design covers that ground and keeps going into the artifacts around it: wireframes and mockups for a feature flow, pitch decks, marketing collateral, landing pages, dashboards, forms, and one-pagers, exported as PPTX, PDF, or standalone HTML. It launched from Anthropic Labs as a research preview on April 17, 2026 and is in beta as of September 2026. If half of what you produce is presentation material rather than interface, that difference decides it. Both belong to the [generative UI](/glossary/generative-ui) category, where the model builds the interface rather than a component you then arrange.
+Claude Design covers that ground and keeps going into the artifacts around it: wireframes and mockups for a feature flow, pitch decks, marketing collateral, landing pages, dashboards, forms, and one-pagers, exported as PPTX, PDF, or standalone HTML. It launched from Anthropic Labs as a research preview on April 17, 2026, was labeled beta through September 2026, and comes with every plan as of November 2026. If half of what you produce is presentation material rather than interface, that difference decides it. Both belong to the [generative UI](/glossary/generative-ui) category, where the model builds the interface rather than a component you then arrange.
 
 ## Who is allowed to use it
 
 This is where teams get surprised. Figma lists Make on Professional, Organization, and Enterprise plans, Full seats only. Dev, Collab, and View seats can create and try Make in drafts, but cannot share or publish. The free Starter plan gets a trial that cannot use team libraries for style context and can only publish to the web by also publishing to the Figma Community. So a developer or a PM on a Dev or Collab seat cannot run the prototype loop for you.
 
-Claude Design is in beta on Pro, Max, Team, and Enterprise and is included with the subscription rather than sold as a seat, though Enterprise organizations need an admin to enable it. It draws on the same usage pool as chat, Claude Code, and Cowork, so heavy Design sessions eat into your other Claude work. Which plan makes sense is covered in [which Claude plan for designers](/guides/design/which-claude-plan-for-designers).
+As of November 2026 Claude Design comes with every Claude plan, Free included, rather than being sold as a seat. In organizations it is on by default, except HIPAA-enabled ones and those with organization-wide zero data retention. It draws on the same usage pool as chat, Claude Code, and Cowork, so heavy Design sessions eat into your other Claude work. Which plan makes sense is covered in [which Claude plan for designers](/guides/design/which-claude-plan-for-designers).
 
 ## Getting the design system in
 

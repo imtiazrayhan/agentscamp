@@ -1,19 +1,26 @@
 ---
 description: "Check annotation-batch.json for approved labels, distinct response reviewers, exact text evidence and unresolved disagreements while preserving the input."
 date: "2026-09-08"
-reviewed: "2026-10-07"
+updated: "2026-11-27"
+reviewed: "2026-11-27"
 topics: ["ai-at-work", "workflow-prompting"]
 audience: ["ai-engineers", "analysts", "developers"]
 tags: ["text-annotation", "check-annotation-batch"]
 featured: false
 related: ["guide:ai-text-dataset-prelabeling", "guide:adjudicate-ai-assisted-text-labels", "skill:annotation-task-spec-builder"]
-summary: "Check annotation-batch.json for approved labels, distinct response reviewers, exact text evidence and unresolved disagreements while preserving the input."
+summary: "Check Annotation Batch audits a batch of human-labeled text records before it is exported for training or evaluation. It confirms every label is on the approved list, each record has at least two distinct reviewers, each quoted evidence span appears exactly in the text, and reviewers who disagree have a recorded resolution. It edits nothing."
 title: "Check Annotation Batch"
 model: "inherit"
 allowed-tools: "Bash(python3:*)"
 argument-hint: "No arguments; reads the fixed JSON basename in a confirmed working directory."
 seoDescription: "Check annotation-batch.json for approved labels, distinct response reviewers, exact text evidence and unresolved disagreements while preserving the input."
 ---
+
+## What it checks and when to run it
+
+Run this when a labeling team finishes a batch, after adjudication and before the batch is exported. It is the gate between "reviewers have clicked through everything" and "this batch is consistent enough to hand on": it catches a label that is not in the approved set, a record where the same reviewer responded twice, an evidence quote that does not occur in the text, and disagreements nobody resolved. Model suggestions are kept separate from human responses and are only checked against the label list.
+
+It reads `annotation-batch.json` from the confirmed working directory, limited to 500 records with 2 to 20 responses each. Its top-level keys are `version`, `labels` and `records`; the full schema and a complete fixture follow. [Annotation Task Spec Builder](/skills/data/annotation-task-spec-builder) defines the record and response fields this file uses, and the [adjudication workflow](/guides/data/adjudicate-ai-assisted-text-labels) covers resolving the disagreements it reports.
 
 Check only `annotation-batch.json` in the confirmed working directory. Require the named task owner/adjudicator and task-rule/source revisions as companion context. This checks a supervised single-label text batch, not label meaning or model-training readiness.
 
@@ -39,7 +46,13 @@ No separate abstention field exists. Use only an owner-approved abstention label
 The task owner supplies rule v5 stating that the indirect question below counts as a request:
 
 ```json
-{"version":1,"labels":["request","statement"],"records":[{"id":"T1","text":"Would you open later?","suggestion":"request","responses":[{"reviewer":"reviewer-a","label":"request","evidence":"Would you"},{"reviewer":"reviewer-b","label":"statement","evidence":"open later"}],"resolution":{"label":"request","reviewer":"adjudicator-c","reason":"Rule v5 includes indirect requests; owner reviewed T1."}}]}
+{
+  "version": 1,
+  "labels": ["request", "statement"],
+  "records": [
+    {"id": "T1", "text": "Would you open later?", "suggestion": "request", "responses": [{"reviewer": "reviewer-a", "label": "request", "evidence": "Would you"}, {"reviewer": "reviewer-b", "label": "statement", "evidence": "open later"}], "resolution": {"label": "request", "reviewer": "adjudicator-c", "reason": "Rule v5 includes indirect requests; owner reviewed T1."}}
+  ]
+}
 ```
 
 Expected exit 0, stdout `{"ok":true,"issues":[]}`. If the first response’s evidence is changed to `Please extend opening hours`, expected exit 1 and stdout `{"ok":false,"issues":[{"code":"evidence_not_in_text","at":"records/0"}]}`. If resolution is null with the original differing labels, expected exit 1 and stdout `{"ok":false,"issues":[{"code":"unresolved_disagreement","at":"records/0"}]}`.
@@ -180,7 +193,7 @@ Stdout is one compact JSON object and stderr is empty for handled outcomes:
 | 1 | Detected contract findings | `{"ok":false,"issues":[{"code":"…","at":"…"}]}` |
 | 2 | Missing, unsafe, malformed or schema-invalid input | `{"ok":false,"issues":[{"code":"input","at":"$"}]}` |
 
-Issue locations use the literal fields/index strings shown below, not a full JSON Pointer. Multiple findings can be reported. Return the exit and exact JSON inline with the input revision supplied by the user, any scope limits, and the named owner question. Do not rewrite the input, reinterpret a nonzero exit as approval, or autonomously perform the downstream action.
+Issue locations use the literal field and index strings listed in the next paragraph (for example `records/0`, where the number is a zero-based array index), not a full JSON Pointer. Multiple findings can be reported. Return the exit and exact JSON inline with the input revision supplied by the user, any scope limits, and the named owner question. Do not rewrite the input, reinterpret a nonzero exit as approval, or autonomously perform the downstream action.
 
 Annotation findings are `duplicate_record`, `unknown_suggestion`, `duplicate_reviewer`, `unknown_response_label`, `evidence_not_in_text`, `unresolved_disagreement` or `unknown_resolution_label`, each at `records/i`. Invalid schema types or duplicate approved labels are input errors. Multiple response defects can produce repeated codes for the same record.
 
